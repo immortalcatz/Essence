@@ -1,0 +1,90 @@
+{
+ "robot": {
+  "category":"master","sounds": [{
+    "name":
+      "robot",
+      "stream": false
+    }]
+  },
+ "robotHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "robotHurt",
+      "stream": false
+    }]
+  },
+ "psyollom": {
+  "category":"master","sounds": [{
+    "name":
+      "psyollom",
+      "stream": false
+    }]
+  },
+ "psyollomHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "psyollomHurt",
+      "stream": false
+    }]
+  },
+ "insecto": {
+  "category":"master","sounds": [{
+    "name":
+      "insecto",
+      "stream": false
+    }]
+  },
+ "insectoHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "insectoHurt",
+      "stream": false
+    }]
+  },
+ "spikedBeast": {
+  "category":"master","sounds": [{
+    "name":
+      "spikedBeast",
+      "stream": false
+    }]
+  },
+ "spikedBeastHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "spikedBeastHurt",
+      "stream": false
+    }]
+  },
+ "magmaGiant": {
+  "category":"master","sounds": [{
+    "name":
+      "magmaGiant",
+      "stream": false
+    }]
+  },
+ "magmaGiantHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "magmaGiantHurt",
+      "stream": false
+    }]
+  },
+ "spyclops": {
+  "category":"master","sounds": [{
+    "name":
+      "spyclops",
+      "stream": false
+    }]
+  },
+ "spyclopsHurt": {
+  "category":"master","sounds": [{
+    "name":
+      "spyclopsHurt",
+      "stream": false
+    }]
+  },
+ "staff": {
+  "category":"neutral","sounds":
+ ["staff"]
+ }
+}
