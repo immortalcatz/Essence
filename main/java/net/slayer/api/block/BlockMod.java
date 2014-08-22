@@ -132,10 +132,10 @@ public class BlockMod extends Block{
 	public void randomDisplayTick(World w, int x, int y, int z, Random r) {
 		if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock || w.getBlock(x, y, z) == EssenceBlocks.ashBlock || w.getBlock(x, y, z) == EssenceBlocks.ashual){
 			for(int i = 0; i < 1; ++i) {
-				float f = (float)x + r.nextFloat() * 0.1F;
+				float f = (float)x + r.nextFloat();
 				float f1 = (float)y + r.nextFloat() + 0.5F;
 				float f2 = (float)z + r.nextFloat();
-				w.spawnParticle("largesmoke", (double)f + 0.5F, (double)f1 + 0.5F, (double)f2 + 0.5F, 0.0D, 0.0D, 0.0D);
+				w.spawnParticle("largesmoke", (double)f + 0.5F, (double)f1, (double)f2 + 0.5F, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}

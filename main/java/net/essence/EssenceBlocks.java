@@ -86,5 +86,7 @@ public class EssenceBlocks {
 	public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
+	public static final Block duplicationBlock = new BlockDuplicate("duplicator");
+	
 	//public static final Block blockBreaker = new BlockBreaker("blockBreaker");
 }
