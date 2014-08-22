@@ -331,6 +331,12 @@ public class ChunkProviderDepths implements IChunkProvider{
 	}
 
 	@Override
+	public void recreateStructures(int i, int j) { }
+
+	@Override
+	public void saveExtraData() { }
+	
+	@Override
 	public boolean canSave() {
 		return true;
 	}
@@ -339,26 +345,20 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public String makeString() {
 		return "Depths";
 	}
+	
+	@Override
+	public int getLoadedChunkCount() {
+		return 0;
+	}
+	
+	@Override
+	public ChunkPosition func_147416_a(World var1, String var2, int var3, int var4, int var5) {
+		return null;
+	}
 
 	@Override
 	public List getPossibleCreatures(EnumCreatureType enumcreaturetype, int i,int j, int k) {
 		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(i, k);
 		return var5 == null ? null : var5.getSpawnableList(enumcreaturetype);
-	}
-
-	@Override
-	public int getLoadedChunkCount() {
-		return 0;
-	}
-
-	@Override
-	public void recreateStructures(int i, int j) { }
-
-	@Override
-	public void saveExtraData() { }
-
-	@Override
-	public ChunkPosition func_147416_a(World var1, String var2, int var3, int var4, int var5) {
-		return null;
 	}
 }

@@ -55,6 +55,21 @@ public class ChunkProviderEuca implements IChunkProvider {
 		return true;
 	}
 
+	@Override
+	public Chunk provideChunk(int par1, int par2) {
+		this.rand.setSeed((long)par1 * 391279128714L + (long)par2 * 132894987741L);
+		Block[] ablock = new Block[32768];
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
+		this.generateTerrain(par1, par2, ablock, this.biomesForGeneration);
+		this.replaceBlocksForBiome(par1, par2, ablock, this.biomesForGeneration);
+		Chunk chunk = new Chunk(this.worldObj, ablock, par1, par2);
+		byte[] abyte = chunk.getBiomeArray();
+		for(int k = 0; k < abyte.length; ++k)
+			abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
+		chunk.generateSkylightMap();
+		return chunk;
+	}
+	
 	public void generateTerrain(int var1, int var2, Block[] var3, BiomeGenBase[] var4) {
 		byte var6 = 2;
 		int var7 = var6 + 1;
@@ -104,21 +119,6 @@ public class ChunkProviderEuca implements IChunkProvider {
 				}
 			}
 		}
-	}
-
-	@Override
-	public Chunk provideChunk(int par1, int par2) {
-		this.rand.setSeed((long)par1 * 391279128714L + (long)par2 * 132894987741L);
-		Block[] ablock = new Block[32768];
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
-		this.generateTerrain(par1, par2, ablock, this.biomesForGeneration);
-		this.replaceBlocksForBiome(par1, par2, ablock, this.biomesForGeneration);
-		Chunk chunk = new Chunk(this.worldObj, ablock, par1, par2);
-		byte[] abyte = chunk.getBiomeArray();
-		for(int k = 0; k < abyte.length; ++k)
-			abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
-		chunk.generateSkylightMap();
-		return chunk;
 	}
 
 	public void replaceBlocksForBiome(int var1, int var2, Block[] var3, BiomeGenBase[] var4) {
