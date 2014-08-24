@@ -36,21 +36,19 @@ public class ItemAttractor extends ItemMod {
 	@Override 
 	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase hit) {
 		Random r = new Random();
-		if(!hit.worldObj.isRemote) {
-			if(essence ? EssenceBar.useBar(magic) : DarkEnergyBar.useBar(magic)){
-				if(!attracts){
-					hit.motionY = 1.0F;
-					hit.motionX = (hit.posX - player.posX) * 1.0F;
-					hit.motionZ = (hit.posZ - player.posZ) * 1.0F;
-					for(int i = 0; i < 50; i++)
-						FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
-				} else {
-					hit.motionY = 1.0F;
-					hit.motionX = (hit.posX + player.posX) * 1.0F;
-					hit.motionZ = (hit.posZ + player.posZ) * 1.0F;
-					for(int i = 0; i < 50; i++)
-						FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
-				}
+		if(essence ? EssenceBar.useBar(magic) : DarkEnergyBar.useBar(magic)){
+			if(!attracts){
+				hit.motionY = 1.0F;
+				hit.motionX = (hit.posX - player.posX) * 1.0F;
+				hit.motionZ = (hit.posZ - player.posZ) * 1.0F;
+				for(int i = 0; i < 50; i++)
+					FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
+			} else {
+				hit.motionY = 1.0F;
+				hit.motionX = (hit.posX + player.posX) * 1.0F;
+				hit.motionZ = (hit.posZ + player.posZ) * 1.0F;
+				for(int i = 0; i < 50; i++)
+					FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
 			}
 		}
 		return false;

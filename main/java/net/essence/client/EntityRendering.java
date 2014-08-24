@@ -3,13 +3,10 @@ package net.essence.client;
 import net.essence.EssenceBlocks;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.render.*;
-import net.essence.client.render.mob.RenderBoomBoom;
-import net.essence.client.render.mob.RenderDragonEgg;
-import net.essence.client.render.mob.RenderEucaHopper;
+import net.essence.client.render.mob.*;
 import net.essence.client.render.mob.model.*;
 import net.essence.client.render.mob.model.boss.*;
-import net.essence.client.render.mob.model.statue.ItemRendererStatue;
-import net.essence.client.render.mob.model.statue.StatueRenderer;
+import net.essence.client.render.mob.model.statue.*;
 import net.essence.entity.EntityDragonEgg;
 import net.essence.entity.MobStats;
 import net.essence.entity.mob.boiling.*;
@@ -19,6 +16,8 @@ import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.vanilla.*;
 import net.essence.entity.projectile.*;
 import net.essence.util.*;
+import net.minecraft.client.entity.AbstractClientPlayer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.client.registry.*;
 
@@ -49,6 +48,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCalcia.class, new RenderBoss(new ModelWitheringBeast(), 0.5F, 1.0F, tex.calcia, stat.calciaBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWraith.class, new RenderBoss(new ModelWraith(), 0.5F, 1.0F, tex.wraith, stat.wraithBossID));
 
+		RenderingRegistry.registerEntityRenderingHandler(EntityPlayer.class, new RenderCloakedPlayer());
+		
 		SlayerAPI.registerItemRenderer(EssenceBlocks.netherBeastStatue, new ItemRendererStatue("netherBeastStatue"));
 		SlayerAPI.registerItemRenderer(EssenceBlocks.witheringBeastStatue, new ItemRendererStatue("witheringBeastStatue"));
 		SlayerAPI.registerItemRenderer(EssenceBlocks.enderChampionStatue, new ItemRendererStatue("enderChampionStatue"));
