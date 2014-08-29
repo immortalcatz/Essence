@@ -16,7 +16,8 @@ public enum EnumMaterialTypes {
     VINES(Material.vine, Block.soundTypeGrass),
     PLANT(Material.plants, Block.soundTypeGrass),
     SNOW(Material.snow, Block.soundTypeSnow),
-    WOOL(Material.cloth, Block.soundTypeCloth);
+    WOOL(Material.cloth, Block.soundTypeCloth),
+    METAL_SOUND(Material.rock, Block.soundTypeMetal);
 
     private Material m;
     private SoundType s;

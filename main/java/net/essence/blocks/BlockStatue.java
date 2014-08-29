@@ -1,10 +1,13 @@
 package net.essence.blocks;
 
+import java.util.List;
+
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.render.mob.model.ModelStatue;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -35,7 +38,7 @@ public class BlockStatue extends BlockMod {
 
 		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1F, y + 1.9F, z + 1F);
 	}
-	
+
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
 		Block b = w.getBlock(x, y, z);

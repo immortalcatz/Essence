@@ -399,7 +399,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 				(new WorldGenVolcano()).generate(this.worldObj, this.rand, x, y, z);
 		}*/
 
-		for(times = 0; times < 100; times++){
+		for(times = 0; times < 200; times++){
 			y = this.worldObj.getHeightValue(x, z);
 			(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
 		}

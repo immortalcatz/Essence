@@ -135,7 +135,7 @@ public class BlockMod extends Block{
 				float f = (float)x + r.nextFloat();
 				float f1 = (float)y + r.nextFloat() + 0.5F;
 				float f2 = (float)z + r.nextFloat();
-				w.spawnParticle("largesmoke", (double)f + 0.5F, (double)f1, (double)f2 + 0.5F, 0.0D, 0.0D, 0.0D);
+				w.spawnParticle("largesmoke", (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}
