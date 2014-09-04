@@ -4,7 +4,8 @@ import java.util.Random;
 
 import net.essence.Essence;
 import net.essence.client.ModPlayerHealth;
-import net.essence.client.PlayerLevels;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,9 +13,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 
 public class PlayerEvent {
 
@@ -25,11 +28,10 @@ public class PlayerEvent {
 			//PlayerLevels.register((EntityPlayer)event.entity);
 		}
 	}
-	
+
 	@SubscribeEvent
-	public void onBlockHarvested(HarvestDropsEvent event){
+	public void onBlockHarvested(HarvestDropsEvent event) {
 		EntityPlayer p = event.harvester;
-		Random r = new Random();
 		boolean isWorking = false;
 		int amount = getEnch(Essence.hotTouch, p);
 		if(amount > 0) isWorking = true;
@@ -37,7 +39,7 @@ public class PlayerEvent {
 			if(isWorking){
 				if(!event.isSilkTouching){
 					ItemStack stack = FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block, 1, event.blockMetadata));
-					if(stack != null && event.block != Blocks.redstone_ore && event.block != Blocks.lapis_ore) {
+					if(stack != null && event.block != Blocks.redstone_ore && event.block != Blocks.lapis_ore && event.block != Blocks.lapis_ore) {
 						event.drops.clear();
 						event.drops.add(stack.copy());
 					}
@@ -45,7 +47,27 @@ public class PlayerEvent {
 			}
 		}
 	}
-	
+
+	@SubscribeEvent
+	public void onTick(TickEvent.PlayerTickEvent event) {
+		EntityPlayer player = event.player;
+		int i = MathHelper.floor_double(player.posX);
+		int j = MathHelper.floor_double(player.boundingBox.minY);
+		int k = MathHelper.floor_double(player.posZ);
+		Material m = event.player.worldObj.getBlock(i, j, k).getMaterial();
+		boolean mat = (m == Material.water);
+		boolean isWorking = false;
+		int amount = EnchantmentHelper.getMaxEnchantmentLevel(Essence.waterWalk.effectId, player.getLastActiveItems());
+		if(amount > 0) isWorking = true;
+		if(isWorking) {
+			if(mat && player.motionY < 0.0D){
+				if(player.worldObj.getBlock(i, j - 1, k).getMaterial() == Material.water || player.worldObj.getBlock(i, j, k).getMaterial() == Material.water) player.motionY = 0.0D;
+				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.0D; 
+				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.5D;
+			}
+		}
+	}
+
 	public static int getEnch(Enchantment en, EntityLivingBase e) {
 		if(en != null && e != null) return EnchantmentHelper.getEnchantmentLevel(en.effectId, e.getHeldItem());
 		else return 0;

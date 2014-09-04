@@ -39,6 +39,8 @@ public class CommonProxy {
 	
 	public static void init(FMLInitializationEvent event){
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 10);
+		SlayerAPI.addForgeEventBus(new PlayerEvent());
+		SlayerAPI.addEventBus(new PlayerEvent());
 	}
 	
 	public static void postInit(FMLPostInitializationEvent event){ }
