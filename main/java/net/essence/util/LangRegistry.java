@@ -35,6 +35,8 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.misc1=Essence Of The Gods: Misc.");
 		instance.addToFile("itemGroup.armor=Essence Of The Gods: Armor");
 		instance.addToFile("enchantment.HotTouch=Hot Touch");
+		instance.addToFile("enchantment.WaterWalk=Water Walker");
+
 	}
 
 	public static void addMob(String name) {

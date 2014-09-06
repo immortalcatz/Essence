@@ -33,8 +33,7 @@ public class PlayerEvent {
 	public void onBlockHarvested(HarvestDropsEvent event) {
 		EntityPlayer p = event.harvester;
 		boolean isWorking = false;
-		int amount = getEnch(Essence.hotTouch, p);
-		if(amount > 0) isWorking = true;
+		if(hasItemEnchantment(Essence.hotTouch, p)) isWorking = true;
 		if(event.harvester != null && event.harvester instanceof EntityPlayer) {
 			if(isWorking){
 				if(!event.isSilkTouching){
@@ -57,8 +56,7 @@ public class PlayerEvent {
 		Material m = event.player.worldObj.getBlock(i, j, k).getMaterial();
 		boolean mat = (m == Material.water);
 		boolean isWorking = false;
-		int amount = EnchantmentHelper.getMaxEnchantmentLevel(Essence.waterWalk.effectId, player.getLastActiveItems());
-		if(amount > 0) isWorking = true;
+		if(hasArmorEnchantment(Essence.waterWalk, player)) isWorking = true;
 		if(isWorking) {
 			if(mat && player.motionY < 0.0D){
 				if(player.worldObj.getBlock(i, j - 1, k).getMaterial() == Material.water || player.worldObj.getBlock(i, j, k).getMaterial() == Material.water) player.motionY = 0.0D;
@@ -68,8 +66,21 @@ public class PlayerEvent {
 		}
 	}
 
-	public static int getEnch(Enchantment en, EntityLivingBase e) {
+	public static int getItemEnchantment(Enchantment en, EntityLivingBase e) {
 		if(en != null && e != null) return EnchantmentHelper.getEnchantmentLevel(en.effectId, e.getHeldItem());
 		else return 0;
+	}
+	
+	public static boolean hasItemEnchantment(Enchantment en, EntityLivingBase e) {
+		return getItemEnchantment(en, e) > 0;
+	}
+	
+	public static int getArmorEnchantment(Enchantment en, EntityLivingBase e) {
+		if(en != null && e != null) return EnchantmentHelper.getMaxEnchantmentLevel(en.effectId, e.getLastActiveItems());
+		else return 0;
+	}
+	
+	public static boolean hasArmorEnchantment(Enchantment en, EntityLivingBase e) {
+		return getArmorEnchantment(en, e) > 0;
 	}
 }
