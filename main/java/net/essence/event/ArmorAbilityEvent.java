@@ -1,7 +1,11 @@
 package net.essence.event;
 
+import net.essence.Essence;
 import net.essence.EssenceItems;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -35,7 +39,7 @@ public class ArmorAbilityEvent{
 		if(stackHelmet != null) helmet = stackHelmet.getItem();
 		else helmet = null;
 
-		if(helmet == item.hellstoneHelmet && body == item.hellstoneChest && legs == item.hellstoneLegs && boots == item.hellstoneBoots){
+		if(helmet == item.hellstoneHelmet && body == item.hellstoneChest && legs == item.hellstoneLegs && boots == item.hellstoneBoots || hasArmorEnchantment(Essence.lavaWalk, event.player)) {
 			ObfuscationReflectionHelper.setPrivateValue(Entity.class, event.player, true, isImmuneToFire);
 		}
 
@@ -68,6 +72,15 @@ public class ArmorAbilityEvent{
 				ObfuscationReflectionHelper.setPrivateValue(Entity.class, event.player, false, isImmuneToFire);
 			}
 		}
+	}
+	
+	public static int getArmorEnchantment(Enchantment en, EntityLivingBase e) {
+		if(en != null && e != null) return EnchantmentHelper.getMaxEnchantmentLevel(en.effectId, e.getLastActiveItems());
+		else return 0;
+	}
+
+	public static boolean hasArmorEnchantment(Enchantment en, EntityLivingBase e) {
+		return getArmorEnchantment(en, e) > 0;
 	}
 
 	@SubscribeEvent

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 
 public class LangRegistry extends RegistryFile {
@@ -34,9 +35,10 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.util=Essence Of The Gods: Utilities");
 		instance.addToFile("itemGroup.misc1=Essence Of The Gods: Misc.");
 		instance.addToFile("itemGroup.armor=Essence Of The Gods: Armor");
-		instance.addToFile("enchantment.HotTouch=Hot Touch");
-		instance.addToFile("enchantment.WaterWalk=Water Walker");
-
+	}
+	
+	public static void addEnchantment(String name){
+		instance.addToFile("enchantment." + name + "=" + name);
 	}
 
 	public static void addMob(String name) {

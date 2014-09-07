@@ -6,12 +6,12 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentWaterWalk extends Enchantment {
+public class EnchantmentLavaWalk extends Enchantment {
 
-	public EnchantmentWaterWalk(int id, int weight) {
+	public EnchantmentLavaWalk(int id, int weight) {
 		super(id, weight, EnumEnchantmentType.armor_feet);
-		this.setName("Water Walker");
-		LangRegistry.addEnchantment("Water Walker");
+		this.setName("Lava Walker");
+		LangRegistry.addEnchantment("Lava Walker");
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package net.essence;
 import java.util.Random;
 
 import net.essence.misc.EnchantmentHotTouch;
+import net.essence.misc.EnchantmentLavaWalk;
 import net.essence.misc.EnchantmentWaterWalk;
 import net.essence.network.PacketHandler;
 import net.essence.network.PacketOpenGui;
@@ -32,6 +33,7 @@ public class Essence {
 	
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
 	public static final Enchantment waterWalk = new EnchantmentWaterWalk(166, 3);
+	public static final Enchantment lavaWalk = new EnchantmentLavaWalk(167, 3);
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event){

@@ -260,8 +260,9 @@ public class SlayerAPI {
 	/**
 	 * @param message Used to send messages to everyone thats in the same world
 	 */
-	public static void sendMessageToAll(String message) {
-		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + SlayerAPI.Colour.GREEN + message));
+	public static void sendMessageToAll(String message, boolean showMod) {
+		if(showMod) FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + SlayerAPI.Colour.GREEN + message));
+		else FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.GREEN + message));
 	}
 
 	/**

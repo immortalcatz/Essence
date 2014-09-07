@@ -123,17 +123,10 @@ public class ChunkProviderBoiling implements IChunkProvider {
 							double d15 = d10 - d16;
 
 							for(int k3 = 0; k3 < 4; ++k3) {
-								if((d15 += d16) > 0.0D) 
-									b[j3 += short1] = EssenceBlocks.ashBlock;
-
-								else if(k2 * 8 + l2 < 62) 
-									b[j3 += short1] = EssenceBlocks.hotBlock;
-
-								else if(k2 * 8 + l2 < b0) 
-									b[j3 += short1] = EssenceBlocks.hotBlock;
-
-								else 
-									b[j3 += short1] = null;
+								if((d15 += d16) > 0.0D) b[j3 += short1] = EssenceBlocks.ashBlock;
+								else if(k2 * 8 + l2 < 62) b[j3 += short1] = EssenceBlocks.hotBlock;
+								else if(k2 * 8 + l2 < b0) b[j3 += short1] = EssenceBlocks.hotBlock;
+								else b[j3 += short1] = null;
 							}
 							d10 += d12;
 							d11 += d13;
@@ -282,10 +275,9 @@ public class ChunkProviderBoiling implements IChunkProvider {
 						float f3 = biomegenbase1.rootHeight;
 						float f4 = biomegenbase1.heightVariation;
 
-						if(this.type == WorldType.AMPLIFIED && f3 > 0.0F) {
-							f3 = 1.0F + f3 * 2.0F;
-							f4 = 1.0F + f4 * 4.0F;
-						}
+						f3 = 1.0F + f3 * 1.0F;
+						f4 = 1.0F + f4 * 2.0F;
+
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
@@ -401,16 +393,16 @@ public class ChunkProviderBoiling implements IChunkProvider {
 
 		for(times = 0; times < 200; times++){
 			y = this.worldObj.getHeightValue(x, z);
-			(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
+			//(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
 		}
 
 		if(rand.nextInt(4) == 0) {
 			y = this.rand.nextInt(128) + 1;
 			(new WorldGenBoilingLava(Blocks.lava)).generate(this.worldObj, this.rand, x, y, z);
 		}
-		
+
 		for(times = 0; times < 10; times++){
-			y = rand.nextInt(124) + 1;
+			y = rand.nextInt(250) + 1;
 			(new WorldGenMinable(EssenceBlocks.ashual, 7, EssenceBlocks.ashBlock)).generate(worldObj, rand, x, y, z);
 		}
 	}

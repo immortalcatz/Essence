@@ -1,3 +1,5 @@
+enchantment.Hot Touch=Hot Touch
+enchantment.Water Walk=Water Walk
 tile.hellstoneOre.name=Hellstone Ore
 tile.celestiumOre.name=Celestium Ore
 tile.luniumOre.name=Lunium Ore
@@ -195,5 +197,3 @@ itemGroup.tools1=Essence Of The Gods: Tools
 itemGroup.util=Essence Of The Gods: Utilities
 itemGroup.misc1=Essence Of The Gods: Misc.
 itemGroup.armor=Essence Of The Gods: Armor
-enchantment.HotTouch=Hot Touch
-enchantment.WaterWalk=Water Walker

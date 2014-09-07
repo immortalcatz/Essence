@@ -29,17 +29,17 @@ public class ItemNetherBossSpawner extends ItemMod {
 			EntityCalcia calcia = new EntityCalcia(w);
 			EntityNetherBeast nether = new EntityNetherBeast(w);
 			if(item == EssenceItems.calciaOrb){
-				SlayerAPI.sendMessageToAll("Calcia has been summoned");
+				SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
 				calcia.setPosition(x, y + 1, z);
 				w.spawnEntityInWorld(calcia);
 			}
 			if(item == EssenceItems.netherBeastOrb){
-				SlayerAPI.sendMessageToAll("The Nether Beast has been summoned");
+				SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
 				nether.setPosition(x, y + 1, z);
 				w.spawnEntityInWorld(nether);
 			}
 			if(item == EssenceItems.witheringBeastOrb){
-				SlayerAPI.sendMessageToAll("The Withering Beast has been summoned");
+				SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
 				wither.setPosition(x, y + 1, z);
 				w.spawnEntityInWorld(wither);
 			}
