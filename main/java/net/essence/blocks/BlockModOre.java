@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.slayer.api.block.BlockMod;
 
@@ -19,5 +18,10 @@ public class BlockModOre extends BlockMod {
 		if(this == EssenceBlocks.ashual) return EssenceItems.ash;
 		if(this == EssenceBlocks.magneticOre) return EssenceItems.magnet;
 		return Item.getItemFromBlock(this);
+	}
+	
+	@Override
+	public int getRenderType() {
+		return this == EssenceBlocks.celestiumOre ? 50 : 0;
 	}
 }

@@ -8,17 +8,26 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
 
-public class WorldGenEucaTree1 extends WorldGenerator {
+public class WorldGenBigEucaTree extends WorldGenerator {
 
 	@Override
-	public boolean generate(World w, Random rand, int x, int y, int z) {
-		
-		int height = rand.nextInt(40) + 10;
+	public boolean generate(World w, Random r, int x, int y, int z) {
+		int height = r.nextInt(40) + 10;
 		int logHeight = height;
-		Block leaves = EssenceBlocks.greenEucaLeaves;
 		Block log = EssenceBlocks.eucaLog;
 		Block dirt = EssenceBlocks.eucaDirt;
-
+		Block leaves = null;
+		switch(r.nextInt(3)) {
+		case 0:
+			leaves = EssenceBlocks.greenEucaLeaves;
+			break;
+		case 1:
+			leaves = EssenceBlocks.blueEucaLeaves;
+			break;
+		case 2:
+			leaves = EssenceBlocks.redEucaLeaves;
+			break;
+		}
 		/*WorldGenAPI.addRectangleWithMetadata(1, 2, 1, w, x - 1, y + 1, z, log, 4);
 		WorldGenAPI.addRectangleWithMetadata(1, 2, 1, w, x + 2, y + 1, z, log, 4);
 		WorldGenAPI.addRectangleWithMetadata(2, 1, 1, w, x, y + 1, z - 1, log, 8);
@@ -33,7 +42,7 @@ public class WorldGenEucaTree1 extends WorldGenerator {
 		WorldGenAPI.addBlock(w, x + 1, y - 1, z - 3, log);*/
 		WorldGenAPI.addCornerlessRectangle(4, 4, height - 7, w, x - 1, y + 7, z - 1, leaves);
 		WorldGenAPI.addRectangle(2, 2, 2, w, x, y + height, z, leaves);
-		
+
 		if(height > 10){
 			height -= 6;
 			addRow(w, x, y, z, height, log, leaves);
@@ -52,19 +61,18 @@ public class WorldGenEucaTree1 extends WorldGenerator {
 			height -= 6;
 			addRow(w, x, y, z, height, log, leaves);
 		}
-		
+
 		if(height > 40){
 			height -= 6;
 			addRow(w, x, y, z, height, log, leaves);
 		}
-		
+
 		WorldGenAPI.addRectangle(2, 2, logHeight, w, x, y, z, log);
 		WorldGenAPI.addRectangle(2, 2, 1, w, x, y - 1, z, dirt);
-
 		return true;
 	}
-	
-	private void addRow(World w, int x, int y, int z, int height, Block log, Block leaves){
+
+	private static void addRow(World w, int x, int y, int z, int height, Block log, Block leaves){
 		WorldGenAPI.addCornerlessRectangle(4, 4, 1, w, x - 6, y + height - 5, z - 1, leaves);
 		WorldGenAPI.addCornerlessRectangle(4, 4, 1, w, x + 4, y + height - 5, z - 1, leaves);
 		WorldGenAPI.addCornerlessRectangle(4, 4, 1, w, x - 1, y + height - 5, z - 6, leaves);

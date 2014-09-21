@@ -55,6 +55,7 @@ public class BlockMod extends Block{
 	public BlockMod(EnumMaterialTypes blockType, String name, CreativeTabs tab) {
 		super(blockType.getMaterial());
 		this.blockType = blockType;
+		setHardness(2.0F);
 		rand = new Random();
 		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setStepSound(blockType.getSound());

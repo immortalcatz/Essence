@@ -1,5 +1,12 @@
 enchantment.Hot Touch=Hot Touch
-enchantment.Water Walk=Water Walk
+enchantment.Water Walker=Water Walker
+enchantment.Lava Walker=Lava Walker
+item.normalGoldenSteak.name=Golden Steak
+item.OPGoldenSteak.name=Golden Steak
+item.normalGoldenPotato.name=Golden Potato
+item.OPGoldenPotato.name=Golden Potato
+item.normalGoldenPork.name=Golden Porkchop
+item.OPGoldenPork.name=Golden Porkchop
 tile.hellstoneOre.name=Hellstone Ore
 tile.celestiumOre.name=Celestium Ore
 tile.luniumOre.name=Lunium Ore

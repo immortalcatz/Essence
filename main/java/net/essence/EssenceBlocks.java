@@ -29,6 +29,8 @@ public class EssenceBlocks {
 	public static final Block eucaLog = new BlockModLog("eucaLog");
 	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", true);
 	public static final Block eucaStairs = new BlockModStairs(eucaPlank, "eucaStairs");
+	public static final Block eucaSlab = new BlockModSlab("eucaHalfSlab", false, eucaPlank);
+	public static final Block eucaFullSlab = new BlockModSlab("eucaFullSlab", true, eucaPlank);
 	public static final Block redEucaLeaves = new BlockModLeaves("redEucaLeaves", 1.0F);
 	public static final Block greenEucaLeaves = new BlockModLeaves("greenEucaLeaves", 1.0F);
 	public static final Block blueEucaLeaves = new BlockModLeaves("blueEucaLeaves", 1.0F);
@@ -40,8 +42,10 @@ public class EssenceBlocks {
 	public static final Block depthsLog = new BlockModLog("depthsLog");
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", true);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs");
+	public static final Block depthsSlab = new BlockModSlab("depthsHalfSlab", false, depthsPlank);
+	public static final Block depthsFullSlab = new BlockModSlab("depthsFullSlab", true, depthsPlank);
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
-	
+
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
@@ -86,7 +90,7 @@ public class EssenceBlocks {
 	public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
-	public static final Block duplicationBlock = new BlockDuplicate("duplicator");
-	
-	//public static final Block blockBreaker = new BlockBreaker("blockBreaker");
+	//public static final Block duplicationBlock = new BlockDuplicate("duplicator");
+
+	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
 }

@@ -1,6 +1,7 @@
 package net.essence.client;
 
 import net.essence.EssenceBlocks;
+import net.essence.blocks.tileentity.TileEntityOre;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.render.*;
 import net.essence.client.render.mob.*;
@@ -56,5 +57,7 @@ public class EntityRendering {
 		SlayerAPI.registerItemRenderer(EssenceBlocks.wraithStatue, new ItemRendererStatue("wraithStatue"));
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityStatue.class, new StatueRenderer());
+		
+		RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
 	}
 }

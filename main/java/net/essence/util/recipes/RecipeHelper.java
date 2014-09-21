@@ -28,13 +28,22 @@ public class RecipeHelper {
 		addOre(b.shadiumOre, i.shadiumIngot, i.shadiumAxe, i.shadiumPickaxe, i.shadiumShovel, i.shadiumHoe, i.shadiumSword, i.shadiumMultiTool, i.shadiumHelmet, i.shadiumChest, i.shadiumLegs, i.shadiumBoots);
 		addOre(b.luniumOre, i.luniumIngot, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots);
 
-		addWood(b.eucaLog, b.eucaPlank, b.eucaStairs, false);
-		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, true);
+		addWood(b.eucaLog, b.eucaPlank, b.eucaStairs, b.eucaSlab, true);
+		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, b.depthsSlab, true);
 
 		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondHelmet), new Object[] {"iii", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondChest), new Object[] {"d d", "iii", "iii", 'i', Items.diamond, 'd', Blocks.diamond_block});	
 		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
+
+		addOPFood(EssenceItems.goldenPork, EssenceItems.goldenPorkOP, Items.porkchop);
+		addOPFood(EssenceItems.goldenSteak, EssenceItems.goldenSteakOP, Items.beef);
+		addOPFood(EssenceItems.goldenPotato, EssenceItems.goldenPotatoOP, Items.potato);
+	}
+	
+	public static void addOPFood(Item nonOP, Item OP, Item base) {
+		GameRegistry.addRecipe(new ItemStack(nonOP), new Object[] {"iii", "ibi", "iii", 'i', Items.gold_ingot, 'b', base});
+		GameRegistry.addRecipe(new ItemStack(OP), new Object[] {"iii", "ibi", "iii", 'i', Blocks.gold_block, 'b', base});
 
 	}
 
@@ -52,10 +61,11 @@ public class RecipeHelper {
 		GameRegistry.addSmelting(ore, new ItemStack(ingot), 0.5F);
 	}
 
-	private static void addWood(Block log, Block plank, Block stair, boolean smelt) {
+	private static void addWood(Block log, Block plank, Block stair, Block slab, boolean smelt) {
 		GameRegistry.addShapelessRecipe(new ItemStack(plank, 4), new Object[] {log});
 		GameRegistry.addRecipe(new ItemStack(stair, 4), new Object[] {"i  ", "ii ", "iii", 'i', plank});
 		GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object[] {"i", "i", 'i', plank});
+		GameRegistry.addRecipe(new ItemStack(slab, 6), new Object[] {"iii", 'i', plank});
 		if(smelt) GameRegistry.addSmelting(log, new ItemStack(Items.coal), 0.5F);
 	}
 

@@ -5,9 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.euca.gen.WorldGenEucaTree1;
-import net.essence.dimension.euca.gen.WorldGenEucaTree2;
-import net.essence.dimension.euca.gen.WorldGenEucaTree3;
+import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.WorldGenSmallTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
@@ -43,11 +42,10 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
-
-		trees = new ArrayList(2);
-		trees.add(new WorldGenEucaTree1());
-		trees.add(new WorldGenEucaTree2());
-		trees.add(new WorldGenEucaTree3());
+		
+		trees = new ArrayList(1);
+		trees.add(new WorldGenBigEucaTree());
+		trees.add(new WorldGenSmallTree());
 	}
 
 	@Override

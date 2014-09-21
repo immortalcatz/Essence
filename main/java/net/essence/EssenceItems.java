@@ -5,6 +5,7 @@ import net.essence.items.*;
 import net.essence.items.ItemEgg;
 import net.essence.util.*;
 import net.minecraft.item.*;
+import net.minecraft.potion.Potion;
 import net.slayer.api.*;
 import net.slayer.api.item.*;
 
@@ -140,4 +141,15 @@ public class EssenceItems {
 	public static final Item incubatedYellowEgg = new ItemEgg("incubatedYellowEgg");
 	public static final Item incubatedPinkEgg = new ItemEgg("incubatedPinkEgg");
 	public static final Item incubatedCyanEgg = new ItemEgg("incubatedCyanEgg");
+	
+	public static final Item goldenSteak = new ItemGoldenFood("normalGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	public static final Item goldenSteakOP = new ItemGoldenFood("OPGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	
+	public static final Item goldenPotato = new ItemGoldenFood("normalGoldenPotato", "goldenPotato", "Golden Potato", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	public static final Item goldenPotatoOP = new ItemGoldenFood("OPGoldenPotato", "goldenPotato", "Golden Potato", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	
+	public static final Item goldenPork = new ItemGoldenFood("normalGoldenPork", "goldenPorkchop", "Golden Porkchop", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	public static final Item goldenPorkOP = new ItemGoldenFood("OPGoldenPork", "goldenPorkchop", "Golden Porkchop", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();	
+
+	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
 }

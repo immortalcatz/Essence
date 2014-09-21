@@ -37,6 +37,10 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.armor=Essence Of The Gods: Armor");
 	}
 	
+	public static void addOPFood(String name, String actual) {
+		instance.addToFile("item." + name + ".name=" + actual);
+	}
+	
 	public static void addEnchantment(String name){
 		instance.addToFile("enchantment." + name + "=" + name);
 	}

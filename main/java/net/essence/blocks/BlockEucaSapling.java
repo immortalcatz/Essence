@@ -2,9 +2,8 @@ package net.essence.blocks;
 
 import java.util.Random;
 
-import net.essence.dimension.euca.gen.WorldGenEucaTree1;
-import net.essence.dimension.euca.gen.WorldGenEucaTree2;
-import net.essence.dimension.euca.gen.WorldGenEucaTree3;
+import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.WorldGenSmallTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.util.AxisAlignedBB;
@@ -38,23 +37,20 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 
 	private void generate(World w, int x, int y, int z, Random r) {
 		Object tree = null;
-		switch(r.nextInt(2)){
+		switch(r.nextInt(2)) {
 		case 0:
-			tree = new WorldGenEucaTree1();
+			tree = new WorldGenBigEucaTree();
 			break;
 		case 1:
-			tree = new WorldGenEucaTree2();
-			break;
-		case 2:
-			tree = new WorldGenEucaTree3();
+			tree = new WorldGenSmallTree();
 			break;
 		}
 		((WorldGenerator)tree).generate(w, r, x, y, z);
 	}
 
 	@Override
-	public boolean canPlaceBlockAt(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_) {
-		return super.canPlaceBlockAt(p_149742_1_, p_149742_2_, p_149742_3_, p_149742_4_) && this.canBlockStay(p_149742_1_, p_149742_2_, p_149742_3_, p_149742_4_);
+	public boolean canPlaceBlockAt(World w, int x, int y, int z) {
+		return super.canPlaceBlockAt(w, x, y, z) && this.canBlockStay(w, x, y, z);
 	}
 
 	@Override
