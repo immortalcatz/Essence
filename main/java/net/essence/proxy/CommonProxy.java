@@ -16,10 +16,10 @@ import cpw.mods.fml.common.registry.*;
 
 public class CommonProxy {
 
-	public void registerClient(){ }
-	public void clientInit(FMLInitializationEvent event){ }
+	public void registerClient() { }
+	public void clientInit(FMLInitializationEvent event) { }
 	
-	public static void preInit(FMLPreInitializationEvent event){
+	public static void preInit(FMLPreInitializationEvent event) {
 		Config.init();
 		EntityRegistry.init();
 		RecipeHelper.init();
@@ -37,19 +37,20 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 	}
 	
-	public static void init(FMLInitializationEvent event){
+	public static void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 10);
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
+		EssenceAchievements.init();
 	}
 	
-	public static void postInit(FMLPostInitializationEvent event){ }
+	public static void postInit(FMLPostInitializationEvent event) { }
 	
-	public static void serverStarting(FMLServerStartingEvent event){
+	public static void serverStarting(FMLServerStartingEvent event) {
 		SlayerAPI.registerCommand(new EssenceCommands());
 	}
 	
-	private static void addOreDictionary(){
+	private static void addOreDictionary() {
 		OreDictionary.registerOre("oreAshual", EssenceBlocks.ashual);
 		OreDictionary.registerOre("oreCelestium", EssenceBlocks.celestiumOre);
 		OreDictionary.registerOre("oreLunium", EssenceBlocks.luniumOre);

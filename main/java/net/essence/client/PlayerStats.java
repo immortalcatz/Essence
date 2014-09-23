@@ -95,6 +95,7 @@ public class PlayerStats {
 			font.drawString("Health: " + (int)player.getHealth() + "/20" , w + 20, h + 5, 0xFFFFFF);
 			if(player.getAir() <= 0) font.drawString("Air: " + "0/300" , w + 20, h + 36 + 40, 0xFFFFFF);
 			else font.drawString("Air: " + (int)player.getAir() + "/300" , w + 20, h + 36 + 42, 0xFFFFFF);
+			font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);
 		}
 	}
 

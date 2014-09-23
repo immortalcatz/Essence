@@ -275,9 +275,8 @@ public class ChunkProviderBoiling implements IChunkProvider {
 						float f3 = biomegenbase1.rootHeight;
 						float f4 = biomegenbase1.heightVariation;
 
-						f3 = 1.0F + f3 * 1.0F;
-						f4 = 1.0F + f4 * 2.0F;
-
+						f3 = 1.0F + f3 * 0.5F;
+						f4 = 1.0F + f4 * 1.0F;
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
