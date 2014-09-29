@@ -30,7 +30,7 @@ public class BlockModOre extends BlockMod {
 			return renderInfo;
 
 		try {
-			return renderInfo = new BlockRenderInfo( getRenderer().newInstance() );
+			return renderInfo = new BlockRenderInfo(getRenderer().newInstance());
 		}
 		catch (Throwable t) {
 			throw new RuntimeException( t );
@@ -38,14 +38,13 @@ public class BlockModOre extends BlockMod {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public Class<? extends BaseBlockRender> getRenderer()
-	{
+	public Class<? extends BaseBlockRender> getRenderer() {
 		return BaseBlockRender.class;
 	}
 	
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess par1iBlockAccess, int par2, int par3, int par4) {
-		int j1 = super.getMixedBrightnessForBlock( par1iBlockAccess, par2, par3, par4 );
+		int j1 = 500;//super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
 		if(enhanceBrightness) {
 			j1 = Math.max( j1 >> 20, j1 >> 4);
 			if(j1 > 4) j1 += boostBrightnessHigh;
@@ -67,6 +66,6 @@ public class BlockModOre extends BlockMod {
 	public int getRenderType() {
 		return this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
-						 || this == EssenceBlocks.hellstoneBlock ? 50 : 0;
+						 || this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre ? 50 : 0;
 	}
 }

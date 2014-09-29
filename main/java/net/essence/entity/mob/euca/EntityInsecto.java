@@ -2,7 +2,11 @@ package net.essence.entity.mob.euca;
 
 import net.essence.Sounds;
 import net.essence.entity.MobStats;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -37,6 +41,12 @@ public class EntityInsecto extends EntityModMob{
 	@Override
 	public String setDeathSound(Sounds s) {
 		return s.insectoHurt;
+	}
+	
+	@Override
+	protected void attackEntity(Entity e, float a) {
+		super.attackEntity(e, a);
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 30));
 	}
 	
 	@Override

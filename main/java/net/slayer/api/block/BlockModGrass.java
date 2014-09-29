@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceTabs;
 import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -59,16 +60,28 @@ public class BlockModGrass extends BlockMod implements IGrowable {
             }
         }
     }
+    
+    @Override
+    public Item getItemDropped(int par1, Random par2, int par3) {
+    	return Item.getItemFromBlock(dirt);
+    }
+    
+    @Override
+    public Item getItem(World w, int x, int y, int z) {
+    	return Item.getItemFromBlock(dirt);
+    }
 
     @Override
     public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {
         return true;
     }
 
+    @Override
     public boolean func_149851_a(World world, int x, int y, int z, boolean flag) {
         return true;
     }
 
+    @Override
     public boolean func_149852_a(World world, Random rand, int x, int y, int z) {
         return true;
     }

@@ -32,7 +32,7 @@ public class EssenceBlocks {
 	public static final Block celestiumOreOverlay = new BlockMod("celestiumOre_overlay", -1).setCreativeTab(null);
 	public static final Block shadiumOreOverlay = new BlockMod("shadiumOre_overlay", -1).setCreativeTab(null);
 	public static final Block flairiumOreOverlay = new BlockMod("flairiumOre_overlay", -1).setCreativeTab(null);
-	
+
 	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", true);
 	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);

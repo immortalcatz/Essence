@@ -10,12 +10,14 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
 public class EntityNetherBeast extends EntityEssenceBoss implements IRangedAttackMob {
 
-	private int waitTick, stage, ability, abilityCoolDown;
+	private int waitTick, stage, ability, abilityCoolDown, ticks;
 	public static final int basic = 0, jump = 1, charge = 2, explosion = 3, arrow = 4;
 	private final int melee = 0, ranged = 1;
 	private EntityAIBase rangedAI = new EntityAIArrowAttack(this, 0.25F, 5, 64.0F);
@@ -26,12 +28,34 @@ public class EntityNetherBeast extends EntityEssenceBoss implements IRangedAttac
 		setSize(3.0F, 3.5F);
 		ability = explosion;
 		stage = ranged;
+		ticks = 0;
 	}
 
-	/*@Override
+	@Override
 	protected void updateAITasks() {
 		super.updateAITasks();
 		abilitys();
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		//if(ticks >= 0)
+		//	ticks = 200;
+		//if(ticks <= 0)
+		//	abilitys();
+	}
+
+	@Override
+	public void writeToNBT(NBTTagCompound n) {
+		super.writeToNBT(n);
+		n.setInteger("Ticks", 200);
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound n) {
+		super.readFromNBT(n);
+		ticks = n.getInteger("Ticks");
 	}
 
 	private void abilitys(){
@@ -63,12 +87,12 @@ public class EntityNetherBeast extends EntityEssenceBoss implements IRangedAttac
 		}
 		}
 		if(stage != ranged) addAttackingAI();
-		
+
 		if(ability == explosion){
 			int ticks = rand.nextInt(500);
 			boolean goneUp = false;
 			if(ability == explosion && !goneUp && !worldObj.isRemote){
-				this.motionY += 1;
+				this.isJumping = true;
 				goneUp = true;
 			}
 			if(ticks == 0){
@@ -82,11 +106,16 @@ public class EntityNetherBeast extends EntityEssenceBoss implements IRangedAttac
 	@Override
 	protected void fall(float par1) {
 		super.fall(par1);
-		if(this.ability == explosion && !worldObj.isRemote){
-			this.fallDistance = 0.0F;
+		if(this.ability == explosion && !worldObj.isRemote && par1 >= 2){
 			this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 2.0F, false);
 		}
-	}*/
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource d, float a) {
+		if(d.isExplosion() || d.getDamageType() == "fall") return false;
+		else return super.attackEntityFrom(d, a);
+	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
@@ -117,7 +146,7 @@ public class EntityNetherBeast extends EntityEssenceBoss implements IRangedAttac
 	public Item getItemDropped() {
 		return EssenceItems.eucaPortalGem;
 	}
-	
+
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		Item item = getItemDropped();

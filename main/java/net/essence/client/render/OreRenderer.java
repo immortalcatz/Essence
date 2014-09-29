@@ -29,7 +29,8 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 		else if(block == EssenceBlocks.hellstoneBlock) render = EssenceBlocks.hellstoneBlockOverlay;
 		else if(block == EssenceBlocks.shadiumBlock) render = EssenceBlocks.shadiumBlockOverlay;
 		else if(block == EssenceBlocks.luniumBlock) render = EssenceBlocks.luniumBlockOverlay;
-		
+		else if(block == EssenceBlocks.hellstoneOre) render = Blocks.netherrack;
+
 		else render = Blocks.stone;
 		
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
@@ -195,16 +196,25 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			out = renderInWorld(blk, world, x, y, z, renderer);
 			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
-		return false;
+		
+		if(block == EssenceBlocks.hellstoneOre) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(Blocks.netherrack, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.hellstoneOre, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		return true;
 	}
 	
-	public boolean renderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
-	{
-		BaseBlockRender.preRenderInWorld( block, world, x, y, z, renderer );
-
-		boolean o = renderer.renderStandardBlock( block, x, y, z );
-
-		BaseBlockRender.postRenderInWorld( renderer );
+	public boolean renderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer) {
+		BaseBlockRender.preRenderInWorld(block, world, x, y, z, renderer);
+		boolean o = renderer.renderStandardBlock(block, x, y, z);
+		BaseBlockRender.postRenderInWorld(renderer );
 		return o;
 	}
 
