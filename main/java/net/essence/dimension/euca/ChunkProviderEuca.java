@@ -254,7 +254,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		
-		if(rand.nextInt(5) == 0){
+		if(rand.nextInt(3) == 0){
 			y = this.worldObj.getHeightValue(x, z);
 			if(worldObj.getBlock(x, y, z) == EssenceBlocks.eucaGrass || worldObj.getBlock(x, y - 1, z) == EssenceBlocks.eucaGrass)
 			trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, x, y, z);

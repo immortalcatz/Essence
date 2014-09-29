@@ -56,7 +56,7 @@ public class BarTickHandler {
 				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 				int width = scaledresolution.getScaledWidth();
 				int height = scaledresolution.getScaledHeight();
-
+				
 				int tempMagic = (int)((DarkEnergyBar.getBarValue() / 1.26));
 				int startY = (height - 30) * 2;
 				int startX = (width - 180) * 2;
@@ -78,8 +78,7 @@ public class BarTickHandler {
 				int distancePerVertex = (tempMagic / vertexes);
 				int distancePer = (barHeight / lines);
 				int lastX = 0;
-
-
+				
 				for(int i = 0; i < lines; i++) {
 					int[] vertexArray = new int[vertexes + 1];
 					vertexArray[0] = vertexArray[vertexes] = startY + distancePer * i;
@@ -120,9 +119,7 @@ public class BarTickHandler {
 				distancePer = (barHeight / lines);
 				lastX = 0;
 
-				//for(int i = 0; i < lines; i++)
-				//	drawSimpleLine(new Point(lastX, startY + distancePer * i), new Point(startX + barWidth, startY + distancePer * i), grayBarWidth, colorGray, 1F);
-
+				
 				for(int i = 0; i < lines; i++) {
 					int[] vertexArray = new int[vertexes + 1];
 					vertexArray[0] = vertexArray[vertexes] = startY + distancePer * i;
@@ -140,6 +137,9 @@ public class BarTickHandler {
 					drawSimpleLine(new Point(lastX, startY + distancePer * i), new Point(startX + barWidth, startY + distancePer * i), grayBarWidth, colorGray, 1F);
 				endDrawingLines();
 				GL11.glPopMatrix();
+				mc.fontRenderer.drawString("Dark Energy", width - 140, height - 27, 0xF);
+				mc.fontRenderer.drawString("Essence", width - 125, height - 67, 0xF);
+
 			}
 		}
 	}
