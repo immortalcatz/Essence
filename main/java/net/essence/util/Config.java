@@ -19,7 +19,7 @@ public class Config {
         cfg.save();
     }
 
-    public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, reRenderPlayerStats;
+    public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, reRenderPlayerStats, smallEnergyBars;
 
     public static int euca, depths, boil;
     public static int eucaBiome, depthsBiome, boilBiome;
@@ -38,6 +38,7 @@ public class Config {
         keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Poing", true).getBoolean(true);
         
         reRenderPlayerStats = cfg.get("Gui", "Re-render the players stats in the top right corner", true).getBoolean(true);
+        smallEnergyBars = cfg.get("Gui", "Adds smaller/less CPU usage bars", false).getBoolean(false);
 
     }
 
