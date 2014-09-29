@@ -4,6 +4,7 @@ import net.essence.blocks.*;
 import net.essence.client.render.mob.model.statue.*;
 import net.essence.util.Textures;
 import net.minecraft.block.*;
+import net.minecraft.creativetab.CreativeTabs;
 import net.slayer.api.*;
 import net.slayer.api.block.*;
 
@@ -13,16 +14,25 @@ public class EssenceBlocks {
 	public static final Block celestiumOre = new BlockModOre("celestiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block luniumOre = new BlockModOre("luniumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block flairiumOre = new BlockModOre("flariumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block ashual = new BlockModOre("ashual", 2.0F);
 	public static final Block magneticOre = new BlockModOre("magneticOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	
-	public static final Block hellstoneBlock = new BlockMod("hellstoneBlock", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block celestiumBlock = new BlockMod("celestiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block luniumBlock = new BlockMod("luniumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block shadiumBlock = new BlockMod("shadiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block flairiumBlock = new BlockMod("flariumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 
+	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block luniumBlock = new BlockModOre("luniumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block flairiumBlock = new BlockModOre("flairiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	
+	public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
+	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
+	public static final Block luniumBlockOverlay = new BlockModOre("luniumBlock_overlay", -1).setCreativeTab(null);
+	public static final Block shadiumBlockOverlay = new BlockModOre("shadiumBlock_overlay", -1).setCreativeTab(null);
+	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);
+	public static final Block celestiumOreOverlay = new BlockMod("celestiumOre_overlay", -1).setCreativeTab(null);
+	public static final Block shadiumOreOverlay = new BlockMod("shadiumOre_overlay", -1).setCreativeTab(null);
+	public static final Block flairiumOreOverlay = new BlockMod("flairiumOre_overlay", -1).setCreativeTab(null);
+	
 	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", true);
 	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);

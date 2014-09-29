@@ -1,15 +1,12 @@
 package net.essence.client.render;
 
 import net.essence.EssenceBlocks;
+import net.essence.blocks.BlockModOre;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.IIcon;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
-import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 
@@ -21,114 +18,194 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
 		Tessellator tess = Tessellator.instance;
-
 		block.setBlockBoundsForItemRender();
 		renderer.setRenderBoundsFromBlock(block);
-
+		Block render = Blocks.sandstone;
+		
+		if(block == EssenceBlocks.celestiumOre) render = EssenceBlocks.celestiumOreOverlay;
+		else if(block == EssenceBlocks.flairiumOre) render = EssenceBlocks.flairiumOreOverlay;
+		else if(block == EssenceBlocks.celestiumBlock) render = EssenceBlocks.celestiumBlockOverlay;
+		else if(block == EssenceBlocks.flairiumBlock) render = EssenceBlocks.flairiumBlockOverlay;
+		else if(block == EssenceBlocks.hellstoneBlock) render = EssenceBlocks.hellstoneBlockOverlay;
+		else if(block == EssenceBlocks.shadiumBlock) render = EssenceBlocks.shadiumBlockOverlay;
+		else if(block == EssenceBlocks.luniumBlock) render = EssenceBlocks.luniumBlockOverlay;
+		
+		else render = Blocks.stone;
+		
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);  
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, -1.0F, 0.0F);
-		renderer.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(0));
+		renderer.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(0));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, -1.0F, 0.0F);
 		renderer.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 0));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 1.0F, 0.0F);
-		renderer.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(1));  
+		renderer.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(1));  
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 1.0F, 0.0F);
 		renderer.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 1));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 0.0F, -1.0F);
-		renderer.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(2));
+		renderer.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(2));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 0.0F, -1.0F);
 		renderer.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 2));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 0.0F, 1.0F);
-		renderer.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(3));
+		renderer.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(3));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(0.0F, 0.0F, 1.0F);
 		renderer.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 3));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(-1.0F, 0.0F, 0.0F);
-		renderer.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(4));
+		renderer.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(4));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(-1.0F, 0.0F, 0.0F);
 		renderer.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 4));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(1.0F, 0.0F, 0.0F);
-		renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, Blocks.stone.getBlockTextureFromSide(5));
+		renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, render.getBlockTextureFromSide(5));
 		tess.draw();
-
 		tess.startDrawingQuads();
-		tess.setBrightness(240);
 		tess.setNormal(1.0F, 0.0F, 0.0F);
 		renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, renderer.getBlockIconFromSide(block, 5));
 		tess.draw();
-
 		GL11.glTranslatef(0.5F, 0.5F, 0.5F);
 	}
 
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
+		boolean out = false;
 		if(block == EssenceBlocks.celestiumOre) {
-			Tessellator tess = Tessellator.instance;
-			
-			int l = block.getMixedBrightnessForBlock(world, x, y, z);              
-			tess.setBrightness(Blocks.stone.getMixedBrightnessForBlock(world, x, y, z));
-			tess.setBrightness(block.getBlockBoundsMinY() > 0.0D ? l : 240);
-			renderer.renderFaceYNeg(block, x, y, z, block.getBlockTextureFromSide(1));
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.celestiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.celestiumOre, x, y, z);
+			blk.enhanceBrightness = true;
 
-			tess.setBrightness(block.getBlockBoundsMaxY() < 1.0D ? l : 240);
-			renderer.renderFaceYPos(block, x, y, z, block.getBlockTextureFromSide(1)); 
-
-			tess.setBrightness(block.getBlockBoundsMinZ() > 0.0D ? l : 240);
-			renderer.renderFaceZNeg(block, x, y, z, block.getBlockTextureFromSide(2)); 
-
-			tess.setBrightness(block.getBlockBoundsMaxZ() < 1.0D ? l : 240);
-			renderer.renderFaceZPos(block, x, y, z, block.getBlockTextureFromSide(3));
-
-			tess.setBrightness(block.getBlockBoundsMinX() > 0.0D ? l : 240);
-			renderer.renderFaceXNeg(block, x, y, z, block.getBlockTextureFromSide(4)); 
-
-			tess.setBrightness(block.getBlockBoundsMaxX() < 1.0D ? l : 240);
-			renderer.renderFaceXPos(block, x, y, z, block.getBlockTextureFromSide(5));
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
-		return true;
+		
+		if(block == EssenceBlocks.shadiumOre) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.shadiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.shadiumOre, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.luniumOre) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(Blocks.stone, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.luniumOre, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.flairiumOre) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.flairiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.flairiumOre, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.celestiumBlock) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.celestiumBlockOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.celestiumBlock, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.flairiumBlock) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.flairiumBlockOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.flairiumBlock, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.luniumBlock) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.luniumBlockOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.luniumBlock, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.hellstoneBlock) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlockOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlock, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.shadiumBlock) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(EssenceBlocks.shadiumBlockOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.shadiumBlock, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		return false;
+	}
+	
+	public boolean renderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
+	{
+		BaseBlockRender.preRenderInWorld( block, world, x, y, z, renderer );
+
+		boolean o = renderer.renderStandardBlock( block, x, y, z );
+
+		BaseBlockRender.postRenderInWorld( renderer );
+		return o;
 	}
 
 	@Override
