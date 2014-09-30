@@ -21,16 +21,15 @@ public class BlockModDoor extends BlockMod {
 
 	@SideOnly(Side.CLIENT)
 	protected IIcon[] topIcon, bottomIcon;
-	protected Item key, door;
+	protected Item key;
 	protected boolean canOpenByHand;
 
-	public BlockModDoor(EnumMaterialTypes blockType, String name, float hardness, Item key, Item door) {
+	public BlockModDoor(EnumMaterialTypes blockType, String name, float hardness, Item key) {
 		super(blockType, name, hardness);
 		if(hardness == -1F) setBlockUnbreakable();
 		setCreativeTab(null);
 		canOpenByHand = (key == null);
 		this.key = key;
-		this.door = door;
 		setTickRandomly(true);
 		float f = 0.5f;
 		float f1 = 1.0f;
@@ -243,7 +242,7 @@ public class BlockModDoor extends BlockMod {
 
 	@Override
 	public Item getItemDropped(int par1, Random par2Rand, int par3) {
-		return door;
+		return null;
 	}
 
 	@Override
@@ -283,7 +282,7 @@ public class BlockModDoor extends BlockMod {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World world, int x, int y, int z) {
-		return door;
+		return null;
 	}
 
 	@Override

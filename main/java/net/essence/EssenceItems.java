@@ -19,7 +19,12 @@ public class EssenceItems {
 	public static final Item luniumIngot = new ItemMod("luniumIngot");
 	public static final Item flairiumIngot = new ItemMod("flairiumIngot");
 	public static final Item ash = new ItemMod("ash");
-
+	public static final Item hellstoneClump = new ItemMod("hellstoneClump");
+	public static final Item shadiumClump = new ItemMod("shadiumClump");
+	public static final Item luniumClump = new ItemMod("luniumClump");
+	public static final Item spawnerClump = new ItemMod("spawnerClump");
+	public static final Item spawnerBar = new ItemMod("spawnerBar");
+	
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
 	public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
@@ -121,9 +126,7 @@ public class EssenceItems {
 	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false);
 	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 10, true, false);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
-	
-	public static final Item magnet = new ItemMod("magnet");
-	
+		
 	public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
 	public static final Item redEgg = new ItemMod("redEgg", EssenceTabs.misc);
 	public static final Item greenEgg = new ItemMod("greenEgg", EssenceTabs.misc);

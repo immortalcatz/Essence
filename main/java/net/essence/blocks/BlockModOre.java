@@ -58,7 +58,6 @@ public class BlockModOre extends BlockMod {
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3) {
 		if(this == EssenceBlocks.ashual) return EssenceItems.ash;
-		if(this == EssenceBlocks.magneticOre) return EssenceItems.magnet;
 		return Item.getItemFromBlock(this);
 	}
 	

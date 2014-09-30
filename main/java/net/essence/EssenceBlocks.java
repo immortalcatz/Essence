@@ -16,7 +16,6 @@ public class EssenceBlocks {
 	public static final Block shadiumOre = new BlockModOre("shadiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block ashual = new BlockModOre("ashual", 2.0F);
-	public static final Block magneticOre = new BlockModOre("magneticOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
 
 	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
@@ -105,5 +104,5 @@ public class EssenceBlocks {
 	
 	//public static final Block duplicationBlock = new BlockDuplicate("duplicator");
 
-	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null, EssenceItems.hotDoorItem);
+	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
 }

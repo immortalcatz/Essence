@@ -78,15 +78,6 @@ public class PlayerEvent {
 				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.5D;
 			}
 		}
-		mat = (m == Material.lava);
-		if(hasArmorEnchantment(Essence.lavaWalk, player)) isWorking = true;
-		if(isWorking) {
-			if(mat && player.motionY < 0.0D) {
-				if(player.worldObj.getBlock(i, j - 1, k).getMaterial() == Material.lava || player.worldObj.getBlock(i, j, k).getMaterial() == Material.lava) player.motionY = 0.0D;
-				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.0D; 
-				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.5D;
-			}
-		}
 	}
 
 	public static int getItemEnchantment(Enchantment en, EntityLivingBase e) {

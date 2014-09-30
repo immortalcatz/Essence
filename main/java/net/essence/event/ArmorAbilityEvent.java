@@ -39,7 +39,7 @@ public class ArmorAbilityEvent{
 		if(stackHelmet != null) helmet = stackHelmet.getItem();
 		else helmet = null;
 
-		if(helmet == item.hellstoneHelmet && body == item.hellstoneChest && legs == item.hellstoneLegs && boots == item.hellstoneBoots || hasArmorEnchantment(Essence.lavaWalk, event.player)) {
+		if(helmet == item.hellstoneHelmet && body == item.hellstoneChest && legs == item.hellstoneLegs && boots == item.hellstoneBoots) {
 			ObfuscationReflectionHelper.setPrivateValue(Entity.class, event.player, true, isImmuneToFire);
 		}
 

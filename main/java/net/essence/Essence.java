@@ -33,7 +33,6 @@ public class Essence {
 	
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
 	public static final Enchantment waterWalk = new EnchantmentWaterWalk(166, 3);
-	public static final Enchantment lavaWalk = new EnchantmentLavaWalk(167, 3);
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event){

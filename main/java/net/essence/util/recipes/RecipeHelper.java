@@ -39,6 +39,36 @@ public class RecipeHelper {
 		addOPFood(EssenceItems.goldenPork, EssenceItems.goldenPorkOP, Items.porkchop);
 		addOPFood(EssenceItems.goldenSteak, EssenceItems.goldenSteakOP, Items.beef);
 		addOPFood(EssenceItems.goldenPotato, EssenceItems.goldenPotatoOP, Items.potato);
+		GameRegistry.addRecipe(new ItemStack(i.hellstoneClump), new Object[] {"iii", 'i', i.hellstoneIngot});
+		GameRegistry.addRecipe(new ItemStack(i.shadiumClump), new Object[] {"iii", 'i', i.shadiumIngot});
+		GameRegistry.addRecipe(new ItemStack(i.luniumClump), new Object[] {"iii", 'i', i.luniumIngot});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.spawnerClump), new Object[]{i.shadiumClump, i.luniumClump, i.hellstoneClump});
+		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
+		
+		GameRegistry.addRecipe(new ItemStack(i.calciaOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.hellstoneBlock});
+		GameRegistry.addRecipe(new ItemStack(i.witheringBeastOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.luniumBlock});
+		GameRegistry.addRecipe(new ItemStack(i.netherBeastOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.shadiumBlock});
+		
+		addBlock(b.hellstoneBlock, i.hellstoneIngot);
+		addBlock(b.shadiumBlock, i.shadiumIngot);
+		addBlock(b.luniumBlock, i.luniumIngot);
+		addBlock(b.flairiumBlock, i.flairiumIngot);
+		addBlock(b.celestiumBlock, i.celestiumIngot);
+		
+		GameRegistry.addRecipe(new ItemStack(i.hellstoneSword), new Object[] {"b", "b", "s", 'b', b.hellstoneBlock, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(i.shadiumSword), new Object[] {"b", "b", "s", 'b', b.shadiumBlock, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(i.luniumSword), new Object[] {"b", "b", "s", 'b', b.luniumBlock, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(i.flairiumSword), new Object[] {"b", "b", "s", 'b', b.flairiumBlock, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(i.celestiumSword), new Object[] {"b", "b", "s", 'b', b.celestiumBlock, 's', Items.stick});
+
+	}
+	
+	public static void addBlock(Block made, Item used) {
+		GameRegistry.addRecipe(new ItemStack(made), new Object[] {"iii", "iii", "iii", 'i', used});
+	}
+	
+	public static void addBlock(Block made, Block used) {
+		GameRegistry.addRecipe(new ItemStack(made), new Object[] {"iii", "iii", "iii", 'i', used});
 	}
 	
 	public static void addOPFood(Item nonOP, Item OP, Item base) {
