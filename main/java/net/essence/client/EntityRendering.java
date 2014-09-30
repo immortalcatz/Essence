@@ -1,6 +1,7 @@
 package net.essence.client;
 
 import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
 import net.essence.blocks.tileentity.TileEntityOre;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.render.*;
@@ -16,6 +17,7 @@ import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.vanilla.*;
 import net.essence.entity.projectile.*;
+import net.essence.entity.projectile.spawner.EntityCalciaSpawner;
 import net.essence.util.*;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -30,6 +32,7 @@ public class EntityRendering {
 	public static void init(){
 		RenderingRegistry.registerEntityRenderingHandler(EntityBasicProjectile.class, new RenderStaffProjectile(tex.basic, 1.0F, 0.2F, 0.2F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBouncingProjectile.class, new RenderProjectile(tex.bouncingProjectile));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCalciaSpawner.class, new RenderItemProjectile(EssenceItems.calciaOrb));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderModMob(new ModelRobot(), tex.robot));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpikedBeast.class, new RenderModMob(new ModelSpikedBeast(), tex.spikedBeast));

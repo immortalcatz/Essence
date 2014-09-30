@@ -43,7 +43,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 				wither.setPosition(x, y + 1, z);
 				w.spawnEntityInWorld(wither);
 			}
-			i.stackSize--;
+			if(!p.capabilities.isCreativeMode) i.stackSize--;
 		}
 		return true;
 	}

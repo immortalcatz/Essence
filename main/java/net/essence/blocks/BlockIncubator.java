@@ -73,7 +73,7 @@ public class BlockIncubator extends BlockContainer {
 	}
 
 	public static void update(boolean active, World w, int x, int y, int z) {
-		int meta = w.getBlockMetadata(x, y, z);
+		/*int meta = w.getBlockMetadata(x, y, z);
 		TileEntity tileentity = w.getTileEntity(x, y, z);
 		keepInventory = true;
 		if(active) w.setBlock(x, y, z, EssenceBlocks.incubatorActive);
@@ -83,7 +83,7 @@ public class BlockIncubator extends BlockContainer {
 		if(tileentity != null) {
 			tileentity.validate();
 			w.setTileEntity(x, y, z, tileentity);
-		}
+		}*/
 	}
 
 	@Override

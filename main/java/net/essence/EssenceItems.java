@@ -127,7 +127,7 @@ public class EssenceItems {
 	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 10, true, false);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
 		
-	public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
+	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
 	public static final Item redEgg = new ItemMod("redEgg", EssenceTabs.misc);
 	public static final Item greenEgg = new ItemMod("greenEgg", EssenceTabs.misc);
 	public static final Item orangeEgg = new ItemMod("orangeEgg", EssenceTabs.misc);
@@ -143,7 +143,7 @@ public class EssenceItems {
 	public static final Item incubatedPurpleEgg = new ItemEgg("incubatedPurpleEgg");
 	public static final Item incubatedYellowEgg = new ItemEgg("incubatedYellowEgg");
 	public static final Item incubatedPinkEgg = new ItemEgg("incubatedPinkEgg");
-	public static final Item incubatedCyanEgg = new ItemEgg("incubatedCyanEgg");
+	public static final Item incubatedCyanEgg = new ItemEgg("incubatedCyanEgg");*/
 	
 	public static final Item goldenSteak = new ItemGoldenFood("normalGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item goldenSteakOP = new ItemGoldenFood("OPGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();

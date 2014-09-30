@@ -179,9 +179,9 @@ public class ModelSpyclops extends ModelBase {
         this.FrontLeftLeg.rotateAngleY += f9;
         this.BackRightLeg.rotateAngleY += -f9;
         this.BackLeftLeg.rotateAngleY += -f9;
-        this.FrontRightThigh.rotateAngleY += -f9;
-        this.FrontLeftThigh.rotateAngleY += -f9;
-        this.BackRightThigh.rotateAngleY += f9;
-        this.BackLeftThigh.rotateAngleY += f9;
+        this.FrontRightThigh.rotateAngleY -= -f9;
+        this.FrontLeftThigh.rotateAngleY -= -f9;
+        this.BackRightThigh.rotateAngleY -= f9;
+        this.BackLeftThigh.rotateAngleY -= f9;
 	}
 }

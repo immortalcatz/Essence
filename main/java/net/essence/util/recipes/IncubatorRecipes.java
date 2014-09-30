@@ -22,15 +22,14 @@ public class IncubatorRecipes {
 
     private IncubatorRecipes() {
 
-        this.smeltItem(EssenceItems.redEgg, new ItemStack(EssenceItems.incubatedRedEgg), 0.2F);
+        /*this.smeltItem(EssenceItems.redEgg, new ItemStack(EssenceItems.incubatedRedEgg), 0.2F);
         this.smeltItem(EssenceItems.greenEgg, new ItemStack(EssenceItems.incubatedGreenEgg), 0.2F);
         this.smeltItem(EssenceItems.blueEgg, new ItemStack(EssenceItems.incubatedBlueEgg), 0.2F);
         this.smeltItem(EssenceItems.orangeEgg, new ItemStack(EssenceItems.incubatedOrangeEgg), 0.2F);
         this.smeltItem(EssenceItems.purpleEgg, new ItemStack(EssenceItems.incubatedPurpleEgg), 0.2F);
         this.smeltItem(EssenceItems.yellowEgg, new ItemStack(EssenceItems.incubatedYellowEgg), 0.2F);
         this.smeltItem(EssenceItems.pinkEgg, new ItemStack(EssenceItems.incubatedPinkEgg), 0.2F);
-        this.smeltItem(EssenceItems.cyanEgg, new ItemStack(EssenceItems.incubatedCyanEgg), 0.2F);
-
+        this.smeltItem(EssenceItems.cyanEgg, new ItemStack(EssenceItems.incubatedCyanEgg), 0.2F);*/
     }
 
     public void smeltBlock(Block b, ItemStack i, float xp) {

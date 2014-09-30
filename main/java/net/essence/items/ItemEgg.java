@@ -19,7 +19,7 @@ public class ItemEgg extends ItemMod {
 
 	@Override
 	public boolean onItemUse(ItemStack item, EntityPlayer p, World w, int x, int y, int z, int j, float f, float f1, float f2) {
-		Item i = item.getItem();
+		/*Item i = item.getItem();
 		EntityDragonEgg egg = new EntityDragonEgg(w, "");
 		if(!w.isRemote) {
 			if(i == EssenceItems.incubatedBlueEgg) {
@@ -72,7 +72,7 @@ public class ItemEgg extends ItemMod {
 
 			if(!p.capabilities.isCreativeMode) item.stackSize--;
 			return true;
-		}
+		}*/
 		return true;
 	}
 
