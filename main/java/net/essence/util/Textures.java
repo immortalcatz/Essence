@@ -28,6 +28,9 @@ public class Textures {
     public static final ResourceLocation boomArmor = addMob("boomArmor");
     public static final ResourceLocation wraith = addMob("wraith");
     public static final ResourceLocation bigHongo = addMob("bigHongo");
+    public static final ResourceLocation mediumHongo = addMob("mediumHongo");
+    public static final ResourceLocation smallHongo = addMob("smallHongo");
+    public static final ResourceLocation eucaFighter = addMob("eucaFighter");    
     public static final ResourceLocation eucaHopper = addMob("eucaHopper");
     public static final ResourceLocation eucaHopperTamed = addMob("eucaHopperTamed");
 

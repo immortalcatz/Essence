@@ -10,12 +10,15 @@ import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
+import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.vanilla.EntityBigHongo;
 import net.essence.entity.mob.vanilla.EntityBoom;
+import net.essence.entity.mob.vanilla.EntityMediumHongo;
 import net.essence.entity.mob.vanilla.EntityRobot;
+import net.essence.entity.mob.vanilla.EntitySmallHongo;
 import net.essence.entity.mob.vanilla.EntitySpyclops;
 import net.essence.util.Config;
 import net.essence.util.LogHelper;
@@ -58,6 +61,7 @@ public class DimensionHelper {
 
 	private static void addEucaSpawns() {
 		EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.creature, euca);
+		EntityRegistry.addSpawn(EntityEucaFighter.class, 1, 1, 1, EnumCreatureType.creature, euca);
 		EntityRegistry.addSpawn(EntityInsecto.class, 1, 1, 1, EnumCreatureType.creature, euca);
 		EntityRegistry.addSpawn(EntityPsyollom.class, 1, 1, 1, EnumCreatureType.creature, euca);
 	}
@@ -81,6 +85,18 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityBigHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.WASTELAND));
 		EntityRegistry.addSpawn(EntityBigHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.FOREST));
 
+		EntityRegistry.addSpawn(EntityMediumHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityMediumHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityMediumHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityMediumHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityMediumHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.FOREST));
+		
+		EntityRegistry.addSpawn(EntitySmallHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntitySmallHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntitySmallHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntitySmallHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntitySmallHongo.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.FOREST));
+		
 		EntityRegistry.addSpawn(EntityBoom.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.PLAINS));
 
 		EntityRegistry.addSpawn(EntityRobot.class, 1, 1, 1, EnumCreatureType.creature, BiomeDictionary.getBiomesForType(Type.PLAINS));

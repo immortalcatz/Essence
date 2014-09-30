@@ -28,6 +28,9 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityDepthsBeast.class, "Depths Beast", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityBoom.class, "Boom Boom", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityBigHongo.class, "Big Hongo", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityMediumHongo.class, "Medium Hongo", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntitySmallHongo.class, "Small Hongo", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityEucaFighter.class, "Euca Fighter", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityEucaHopper.class, "Euca Hopper", SlayerAPI.mobID++);
 
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg", SlayerAPI.mobID++);
