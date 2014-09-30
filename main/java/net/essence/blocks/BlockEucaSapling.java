@@ -3,7 +3,7 @@ package net.essence.blocks;
 import java.util.Random;
 
 import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
-import net.essence.dimension.euca.gen.WorldGenSmallTree;
+import net.essence.dimension.euca.gen.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.util.AxisAlignedBB;
@@ -42,7 +42,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 			tree = new WorldGenBigEucaTree();
 			break;
 		case 1:
-			tree = new WorldGenSmallTree();
+			tree = new WorldGenSmallEucaTree();
 			break;
 		}
 		((WorldGenerator)tree).generate(w, r, x, y, z);

@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
 
-public class WorldGenSmallTree extends WorldGenerator {
+public class WorldGenSmallEucaTree extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
 		int height = r.nextInt(3) + 5;

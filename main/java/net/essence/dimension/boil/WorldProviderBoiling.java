@@ -7,6 +7,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.biome.WorldChunkManagerHell;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,6 +19,21 @@ public class WorldProviderBoiling extends WorldProvider {
 		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.5F);
 		this.dimensionId = Config.boil;
 		isHellWorld = false;
+	}
+	
+	@Override
+	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
+		return false;
+	}
+	
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk) {
+		return false;
+	}
+	
+	@Override
+	public boolean canSnowAt(int x, int y, int z, boolean checkLight) {
+		return false;
 	}
 
 	@Override

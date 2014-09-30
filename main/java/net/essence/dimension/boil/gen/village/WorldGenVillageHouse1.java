@@ -1,44 +1,30 @@
-package net.essence.items;
+package net.essence.dimension.boil.gen.village;
 
-import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.EssenceTabs;
-import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemDoor;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.slayer.api.SlayerAPI;
-import net.slayer.api.item.ItemMod;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
 
-public class ItemFlameCoin extends ItemMod {
+public class WorldGenVillageHouse1 extends WorldGenerator {
 
-	public ItemFlameCoin(String name) {
-		super(name);
-		setCreativeTab(EssenceTabs.util);
-		setMaxStackSize(1);
+	public boolean locationIsValidSpawn(World w, int x, int y, int z){
+		for(int i = 0; i < 7; i++) {
+			for(int l = 0; l < 7; l++) {
+				if(w.getBlock(x + i, y, z + l) == EssenceBlocks.hotBlock && w.getBlock(x + i, y + 1, z + l) == Blocks.air) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
-		Random r = new Random();
-		if(!SlayerAPI.DEVMODE) {
-			if(par7 != 1 && w.getBlock(x, y + 1, z) != Blocks.air){
-				return false;
-			} else {
-				Block block = w.getBlock(x, y, z);
-				if(block == EssenceBlocks.eucaPortalFrame || block == EssenceBlocks.depthsPortalFrame || block == EssenceBlocks.boilPortalFrame){
-					w.setBlock(x, y + 1, z, EssenceBlocks.fire);
-					return true;
-				}
-				else return false;
-			}
-		} else {
+	public boolean generate(World w, Random r, int x, int y, int z) {
+		if(locationIsValidSpawn(w, x, y, z)) {
 			WorldGenAPI.addCube(7, w, x, y - 1, z, EssenceBlocks.hotBrick);
 			WorldGenAPI.addHollowCube(5, w, x + 1, y - 2, z + 1, EssenceBlocks.hotBrick);
 			WorldGenAPI.addRectangle(7, 5, 1, w, x, y + 2, z + 1, EssenceBlocks.hotGlass);
@@ -69,12 +55,8 @@ public class ItemFlameCoin extends ItemMod {
 				ItemDoor.placeDoorBlock(w, x + 3, y + 1, z + 6, 3, EssenceBlocks.hotDoor);
 				break;
 			}
+			return true;
 		}
-		return true;
-	}
-
-	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(SlayerAPI.Colour.GREEN + "Used to light portals.");
+		return false;
 	}
 }

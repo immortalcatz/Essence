@@ -9,6 +9,7 @@ import net.essence.dimension.boil.gen.MapGenBoilingCaves;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.boil.gen.WorldGenVolcano;
+import net.essence.dimension.boil.gen.village.WorldGenVillageHouse1;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
@@ -52,8 +53,9 @@ public class ChunkProviderBoiling implements IChunkProvider {
 		this.type = par1World.getWorldInfo().getTerrainType();
 		this.rand = new Random(par2);
 
-		houses = new ArrayList(0);
-
+		houses = new ArrayList(1);
+		houses.add(new WorldGenVillageHouse1());
+		
 		dungeons = new ArrayList(0);
 
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -365,11 +367,11 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			z = var5 + this.rand.nextInt(16);
 			y = rand.nextInt(50);
 			(dungeons.get(rand.nextInt(dungeons.size()))).generate(this.worldObj, this.rand, x, y, z);
-		}
+		}*/
 
-		for(i = 0; i < 4; i++) { 
-			x = var4 + this.rand.nextInt(16);
-			z = var5 + this.rand.nextInt(16);
+		if(rand.nextInt(6) == 0) { 
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
 			boolean foundGround = false;
 			for(y = 32; i < 128; i++) {
 				if(worldObj.getBlock(x, i, z) == EssenceBlocks.hotBlock) {
@@ -379,7 +381,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 				}
 			}
 			if(foundGround) (houses.get(rand.nextInt(houses.size()))).generate(this.worldObj, this.rand, x, y, z);
-		}*/
+		}
 
 		/*if(rand.nextInt(1) == 0) {
 			y = rand.nextInt(250) + 1;
@@ -392,7 +394,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 
 		for(times = 0; times < 200; times++){
 			y = this.worldObj.getHeightValue(x, z);
-			//(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
+			(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
 		}
 
 		if(rand.nextInt(4) == 0) {

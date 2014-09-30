@@ -6,7 +6,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
-import net.essence.dimension.euca.gen.WorldGenSmallTree;
+import net.essence.dimension.euca.gen.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
@@ -45,7 +45,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		
 		trees = new ArrayList(1);
 		trees.add(new WorldGenBigEucaTree());
-		trees.add(new WorldGenSmallTree());
+		trees.add(new WorldGenSmallEucaTree());
 	}
 
 	@Override

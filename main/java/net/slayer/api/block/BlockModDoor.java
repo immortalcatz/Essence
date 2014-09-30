@@ -21,14 +21,16 @@ public class BlockModDoor extends BlockMod {
 
 	@SideOnly(Side.CLIENT)
 	protected IIcon[] topIcon, bottomIcon;
-	protected Item key;
+	protected Item key, door;
 	protected boolean canOpenByHand;
 
-	public BlockModDoor(EnumMaterialTypes blockType, String name, float hardness, Item key) {
+	public BlockModDoor(EnumMaterialTypes blockType, String name, float hardness, Item key, Item door) {
 		super(blockType, name, hardness);
 		if(hardness == -1F) setBlockUnbreakable();
 		setCreativeTab(null);
 		canOpenByHand = (key == null);
+		this.key = key;
+		this.door = door;
 		setTickRandomly(true);
 		float f = 0.5f;
 		float f1 = 1.0f;
@@ -123,42 +125,33 @@ public class BlockModDoor extends BlockMod {
 		this.setRotation(this.getBlockMetadata(blockAccess, x, y, z));
 	}
 
-	public int nameThisBetterBitwise(IBlockAccess world, int x, int y, int z) {
-		return this.getBlockMetadata(world, x, y, z) & 3;
-	}
-
-	public boolean isNameThisBetter(IBlockAccess blockAccess, int x, int y, int z) {
-		return (this.getBlockMetadata(blockAccess, x, y, z) & 4) != 0;
-	}
-
 	protected void setRotation(int meta) {
 		float f = 0.1875F;
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F);
 		int j = meta & 3;
 		boolean flag = (meta & 4) != 0;
 		boolean flag1 = (meta & 16) != 0;
-
 		switch (j) {
 		case 0:
-			if (flag) {
+			if(flag) {
 				if (!flag1) this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, f);
 				else this.setBlockBounds(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
 			} else this.setBlockBounds(0.0F, 0.0F, 0.0F, f, 1.0F, 1.0F);
 			break;
 		case 1:
-			if (flag) {
+			if(flag) {
 				if (!flag1) this.setBlockBounds(1.0F - f, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 				else this.setBlockBounds(0.0F, 0.0F, 0.0F, f, 1.0F, 1.0F);
 			} else this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, f);
 			break;
 		case 2:
-			if (flag) {
+			if(flag) {
 				if (!flag1) this.setBlockBounds(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
 				else this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, f);
 			} else this.setBlockBounds(1.0F - f, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 			break;
 		case 3:
-			if (flag) {
+			if(flag) {
 				if (!flag1) this.setBlockBounds(0.0F, 0.0F, 0.0F, f, 1.0F, 1.0F);
 				else this.setBlockBounds(1.0F - f, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 			} else this.setBlockBounds(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
@@ -250,7 +243,7 @@ public class BlockModDoor extends BlockMod {
 
 	@Override
 	public Item getItemDropped(int par1, Random par2Rand, int par3) {
-		return null;
+		return door;
 	}
 
 	@Override
@@ -290,7 +283,7 @@ public class BlockModDoor extends BlockMod {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World world, int x, int y, int z) {
-		return null;
+		return door;
 	}
 
 	@Override

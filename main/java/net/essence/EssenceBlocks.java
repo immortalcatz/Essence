@@ -90,6 +90,9 @@ public class EssenceBlocks {
 	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarved");
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLamp", true);
 	
+	public static final Block hotBrick = new BlockMod("hotBrick", true);
+	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
+
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue());
 	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue());
 	public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
@@ -102,5 +105,5 @@ public class EssenceBlocks {
 	
 	//public static final Block duplicationBlock = new BlockDuplicate("duplicator");
 
-	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
+	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null, EssenceItems.hotDoorItem);
 }
