@@ -46,6 +46,10 @@ public class ArmorAbilityEvent{
 		if(helmet == item.shadiumHelmet && body == item.shadiumChest && legs == item.shadiumLegs && boots == item.shadiumBoots){
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
+		
+		if(helmet == item.sapphireHelmet && body == item.sapphireChest && legs == item.sapphireLegs && boots == item.sapphireBoots){
+			if(event.player.isInWater()) event.player.setAir(300);
+		}
 
 		if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
 				helmet == item.condencedDiamondHelmet && body == item.condencedDiamondChest && legs == item.condencedDiamondLegs && boots == item.condencedDiamondBoots){

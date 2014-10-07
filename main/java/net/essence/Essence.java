@@ -47,21 +47,21 @@ public class Essence {
 	}
 	
 	@EventHandler
-	public static void init(FMLInitializationEvent event){
+	public static void init(FMLInitializationEvent event) {
 		proxy.init(event);
 		proxy.clientInit(event);
 		packetHandler.init();
 	}
 	
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent event){
+	public static void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
 		packetHandler.registerPacket(PacketOpenGui.class);
 		packetHandler.postInit();
 	}
 	
 	@EventHandler
-	public static void serverStarting(FMLServerStartingEvent event){
+	public static void serverStarting(FMLServerStartingEvent event) {
 		proxy.serverStarting(event);
 	}
 }

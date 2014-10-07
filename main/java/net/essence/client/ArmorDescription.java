@@ -31,5 +31,8 @@ public class ArmorDescription {
 		
 		if(i == EssenceItems.condencedDiamondBoots || i == EssenceItems.condencedDiamondChest || i == EssenceItems.condencedDiamondLegs || i == EssenceItems.condencedDiamondBoots)
 			list.add("Full set: Lets You Fly");
+		
+		if(i == EssenceItems.sapphireHelmet || i == EssenceItems.sapphireChest || i == EssenceItems.sapphireLegs || i == EssenceItems.sapphireBoots)
+			list.add("Full set: Water breathing");
 	}
 }
