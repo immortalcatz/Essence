@@ -56,10 +56,12 @@ public class CommonProxy {
 		OreDictionary.registerOre("oreLunium", EssenceBlocks.luniumOre);
 		OreDictionary.registerOre("oreShadium", EssenceBlocks.shadiumOre);
 		OreDictionary.registerOre("oreFlairium", EssenceBlocks.flairiumOre);
+		OreDictionary.registerOre("oreSapphire", EssenceBlocks.sapphireOre);
 		OreDictionary.registerOre("ash", EssenceItems.ash);
 		OreDictionary.registerOre("ingotCelestium", EssenceItems.celestiumIngot);
 		OreDictionary.registerOre("ingotLunium", EssenceItems.luniumIngot);
 		OreDictionary.registerOre("ingotShadium", EssenceItems.shadiumIngot);
 		OreDictionary.registerOre("ingotFlairium", EssenceItems.flairiumIngot);
+		OreDictionary.registerOre("gemSapphire", EssenceItems.sapphire);
 	}
 }
