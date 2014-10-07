@@ -22,14 +22,15 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 		renderer.setRenderBoundsFromBlock(block);
 		Block render = Blocks.sandstone;
 		
-		if(block == EssenceBlocks.celestiumOre) render = EssenceBlocks.celestiumOreOverlay;
-		else if(block == EssenceBlocks.flairiumOre) render = EssenceBlocks.flairiumOreOverlay;
+		if(block == EssenceBlocks.celestiumOre) render = EssenceBlocks.eucaStone;
+		else if(block == EssenceBlocks.flairiumOre) render = EssenceBlocks.depthsStone;
 		else if(block == EssenceBlocks.celestiumBlock) render = EssenceBlocks.celestiumBlockOverlay;
 		else if(block == EssenceBlocks.flairiumBlock) render = EssenceBlocks.flairiumBlockOverlay;
 		else if(block == EssenceBlocks.hellstoneBlock) render = EssenceBlocks.hellstoneBlockOverlay;
 		else if(block == EssenceBlocks.shadiumBlock) render = EssenceBlocks.shadiumBlockOverlay;
 		else if(block == EssenceBlocks.luniumBlock) render = EssenceBlocks.luniumBlockOverlay;
 		else if(block == EssenceBlocks.hellstoneOre) render = Blocks.netherrack;
+		else if(block == EssenceBlocks.sapphireOre) render = Blocks.stone;
 
 		else render = Blocks.stone;
 		
@@ -92,7 +93,7 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 		if(block == EssenceBlocks.celestiumOre) {
 			BlockModOre blk = (BlockModOre) block;
 			blk.enhanceBrightness = false;
-			renderer.renderStandardBlock(EssenceBlocks.celestiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.eucaStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.celestiumOre, x, y, z);
 			blk.enhanceBrightness = true;
 
@@ -104,7 +105,7 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 		if(block == EssenceBlocks.shadiumOre) {
 			BlockModOre blk = (BlockModOre) block;
 			blk.enhanceBrightness = false;
-			renderer.renderStandardBlock(EssenceBlocks.shadiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.shadiumOre, x, y, z);
 			blk.enhanceBrightness = true;
 
@@ -128,7 +129,7 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 		if(block == EssenceBlocks.flairiumOre) {
 			BlockModOre blk = (BlockModOre) block;
 			blk.enhanceBrightness = false;
-			renderer.renderStandardBlock(EssenceBlocks.flairiumOreOverlay, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.depthsStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.flairiumOre, x, y, z);
 			blk.enhanceBrightness = true;
 
@@ -202,6 +203,18 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.netherrack, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneOre, x, y, z);
+			blk.enhanceBrightness = true;
+
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.sapphireOre) {
+			BlockModOre blk = (BlockModOre) block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(Blocks.stone, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.sapphireOre, x, y, z);
 			blk.enhanceBrightness = true;
 
 			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());

@@ -27,6 +27,7 @@ public class RecipeHelper {
 		addOre(b.flairiumOre, i.flairiumIngot, i.flairiumAxe, i.flairiumPickaxe, i.flairiumShovel, i.flairiumHoe, i.flairiumSword, i.flairiumMultiTool, i.flairiumHelmet, i.flairiumChest, i.flairiumLegs, i.flairiumBoots);
 		addOre(b.shadiumOre, i.shadiumIngot, i.shadiumAxe, i.shadiumPickaxe, i.shadiumShovel, i.shadiumHoe, i.shadiumSword, i.shadiumMultiTool, i.shadiumHelmet, i.shadiumChest, i.shadiumLegs, i.shadiumBoots);
 		addOre(b.luniumOre, i.luniumIngot, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots);
+		addOre(b.sapphireOre, i.sapphire, i.sapphireAxe, i.sapphirePickaxe, i.sapphireShovel, i.sapphireHoe, i.sapphireSword, i.sapphireMultiTool, i.sapphireHelmet, i.sapphireChest, i.sapphireLegs, i.sapphireBoots);
 
 		addWood(b.eucaLog, b.eucaPlank, b.eucaStairs, b.eucaSlab, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, b.depthsSlab, true);

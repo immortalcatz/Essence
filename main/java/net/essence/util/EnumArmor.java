@@ -14,8 +14,9 @@ public enum EnumArmor {
     CELESTIUM(SlayerAPI.addArmorMaterial("celestium", 3000, new int[] {3, 4, 3, 2 }, 10), "celestium", false, 65, EssenceItems.celestiumIngot),
     LUNIUM(SlayerAPI.addArmorMaterial("lunium", 3000, new int[] {3, 4, 3, 2 }, 10), "lunium", false, 40, EssenceItems.luniumIngot),
     SHADIUM(SlayerAPI.addArmorMaterial("shadium", 3000, new int[] {3, 4, 3, 2 }, 10), "shadium", false, 40, EssenceItems.shadiumIngot),
-    CONDENCED_DIAMOND(SlayerAPI.addArmorMaterial("condencedDiamond", 3000, new int[] {3, 4, 3, 2 }, 10), "condencedDiamond", false, 60, Blocks.diamond_block);
-    
+    CONDENCED_DIAMOND(SlayerAPI.addArmorMaterial("condencedDiamond", 3000, new int[] {3, 4, 3, 2 }, 10), "condencedDiamond", false, 60, Blocks.diamond_block),
+    SAPPHIRE(SlayerAPI.addArmorMaterial("sapphire", 3000, new int[] {3, 4, 3, 2 }, 10), "sapphire", false, 40, EssenceItems.sapphire);
+
     private ArmorMaterial armorMaterial;
     private String type;
     private boolean undamageable;
