@@ -33,7 +33,7 @@ public class ItemMultiTool extends ItemTool {
 		super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
 		mat = tool;
         setCreativeTab(EssenceTabs.tools);
-        setTextureName(SlayerAPI.PREFIX + "/tools/" + name);
+        setTextureName(SlayerAPI.PREFIX + "tools/" + name);
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
         LangRegistry.addItem(this);

@@ -21,7 +21,7 @@ public class ItemModAxe extends ItemAxe {
 		super(tool.getToolMaterial());
 		mat = tool;
 		setUnlocalizedName(name);
-		setTextureName(SlayerAPI.PREFIX + "/tools/" + name);
+		setTextureName(SlayerAPI.PREFIX + "tools/" + name);
 		setCreativeTab(EssenceTabs.tools);
 		GameRegistry.registerItem(this, name);
 		LangRegistry.addItem(this);

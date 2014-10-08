@@ -55,6 +55,11 @@ public class WorldGenEssence implements IWorldGenerator {
 			y = rand.nextInt(20); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(EssenceBlocks.shadiumOre, 3, w, x, y, z);
 		}
+		
+		for(i = 0; i < 5; i++){
+			y = rand.nextInt(20); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			worldMinableGenVanilla(EssenceBlocks.sapphireOre, 3, w, x, y, z);
+		}
 	}
 
 	private void generateEnd(World w, Random r, int chunkX, int chunkZ) {

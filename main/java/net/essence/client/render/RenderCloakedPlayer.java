@@ -110,10 +110,10 @@ public class RenderCloakedPlayer extends RenderPlayer {
 		}
 
 		boolean flag = p_77029_1_.func_152122_n();
-		flag = event.renderCape && flag;
+		flag = p_77029_1_.getDisplayName().equalsIgnoreCase("the_slayermc");
 		float f4;
 
-		if (!p_77029_1_.isInvisible() && !p_77029_1_.getHideCape())
+		if (flag && !p_77029_1_.isInvisible() && !p_77029_1_.getHideCape())
 		{
 			this.bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/models/cape.png"));
 			GL11.glPushMatrix();

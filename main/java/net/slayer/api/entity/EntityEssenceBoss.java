@@ -12,6 +12,16 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 	public EntityEssenceBoss(World par1World) {
 		super(par1World);
 	}
+	
+	@Override
+	public final float getModHealth() {
+		return super.getHealth();
+	}
+	
+	@Override
+	public float getModMaxHealth() {
+		return getMaxHealth();
+	}
 
 	@Override
 	protected void onDeathUpdate() {

@@ -18,7 +18,7 @@ public class ItemModHoe extends ItemHoe {
     public ItemModHoe(String name, EssenceToolMaterial tool) {
 		super(tool.getToolMaterial());
 		mat = tool;
-        setTextureName(SlayerAPI.PREFIX + "/tools/" + name);
+		setTextureName(SlayerAPI.PREFIX + "tools/" + name);
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.tools);
         GameRegistry.registerItem(this, name);
