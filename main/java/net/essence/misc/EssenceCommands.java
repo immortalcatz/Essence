@@ -2,19 +2,15 @@ package net.essence.misc;
 
 import java.util.List;
 
+import net.essence.EssenceBlocks;
 import net.essence.client.DarkEnergyBar;
 import net.essence.client.EssenceBar;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.essence.dimension.ModTeleporter;
+import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandClearInventory;
-import net.minecraft.command.CommandException;
-import net.minecraft.command.CommandGive;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.command.server.CommandStop;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.Item;
+import net.minecraft.world.Teleporter;
 
 public class EssenceCommands extends CommandBase {
 
@@ -32,14 +28,58 @@ public class EssenceCommands extends CommandBase {
 	public void processCommand(ICommandSender var1, String[] var2) {
 		EntityPlayerMP p = getCommandSenderAsPlayer(var1);
 		if(var2[0].equalsIgnoreCase("Heal")){
-			if (p.getHealth() < p.getMaxHealth()) 
-	    		p.heal(20);
-	        
+			if(p.getHealth() < p.getMaxHealth()) 
+				p.heal(20);
+
 			if(p.getFoodStats().needFood())
 				p.getFoodStats().addStats(20, 1);
-			
+
 			EssenceBar.addBarPoints(400);
 			DarkEnergyBar.addBarPoints(400);
+		}
+
+		EntityPlayerMP playerMP = (EntityPlayerMP)var1;
+		if(!playerMP.worldObj.isRemote) {
+
+			if(var2[0].equalsIgnoreCase("Overworld")) {
+				if(playerMP.dimension != 0) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, 0, new Teleporter(playerMP.mcServer.worldServerForDimension(0)));
+				}
+			}
+
+			if(var2[0].equalsIgnoreCase("Nether")) {
+				if(playerMP.dimension != -1) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, -1, new Teleporter(playerMP.mcServer.worldServerForDimension(-1)));
+				}
+			}
+
+			if(var2[0].equalsIgnoreCase("End")) {
+				if(playerMP.dimension != 1) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, 1, new Teleporter(playerMP.mcServer.worldServerForDimension(1)));
+				}
+			}
+
+			if(var2[0].equalsIgnoreCase("Euca")) {
+				if(playerMP.dimension != Config.euca) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.euca,
+							new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.euca), Config.euca,
+									EssenceBlocks.eucaPortal, EssenceBlocks.eucaPortalFrame));
+				}
+			}
+
+			if(var2[0].equalsIgnoreCase("BoilingPoint")) {
+				if(playerMP.dimension != Config.euca) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.boil,
+							new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.boil), Config.boil,
+									EssenceBlocks.boilPortal, EssenceBlocks.boilPortalFrame));
+				}
+			}
+
+			if(var2[0].equalsIgnoreCase("Depths")) {
+				if(playerMP.dimension != Config.depths) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.depths, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.depths), Config.depths, EssenceBlocks.depthsPortal, EssenceBlocks.depthsPortalFrame));
+				}
+			}
 		}
 	}
 
@@ -47,9 +87,9 @@ public class EssenceCommands extends CommandBase {
 	public int getRequiredPermissionLevel() {
 		return 0;
 	}
-	
+
 	@Override
 	public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2) {
-		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"heal"}) : null;
+		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"heal", "overworld", "nether", "end", "euca", "boilingpoint", "depths"}) : null;
 	}
 }
