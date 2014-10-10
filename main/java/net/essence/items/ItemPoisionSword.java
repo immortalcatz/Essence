@@ -3,7 +3,7 @@ package net.essence.items;
 import java.util.List;
 import java.util.Random;
 
-import net.essence.client.particles.EntityPoisionFX;
+import net.essence.client.render.particles.EntityPoisionFX;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;

@@ -1,4 +1,4 @@
-package net.essence.client.particles;
+package net.essence.client.render.particles;
 
 import net.minecraft.client.particle.EntityCritFX;
 import net.minecraft.world.World;

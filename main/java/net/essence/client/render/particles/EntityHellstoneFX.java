@@ -1,4 +1,4 @@
-package net.essence.client.particles;
+package net.essence.client.render.particles;
 
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
@@ -7,12 +7,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class EntityBoilPotalFX extends EntityFX {
+public class EntityHellstoneFX extends EntityFX {
 	
     private float portalParticleScale;
     private double portalPosX, portalPosY, portalPosZ;
 
-    public EntityBoilPotalFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+    public EntityHellstoneFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
         super(var1, var2, var4, var6, var8, var10, var12);
         this.motionX = var8;
         this.motionY = var10;
@@ -22,8 +22,8 @@ public class EntityBoilPotalFX extends EntityFX {
         this.portalPosZ = this.posZ = var6;
         float var14 = this.rand.nextFloat() * 0.6F + 0.4F;
         this.portalParticleScale = this.particleScale = this.rand.nextFloat() * 0.2F + 0.5F;
-        this.particleBlue = 1.0F;
-        this.particleGreen = 1.0F;
+        this.particleBlue = 0.6F * rand.nextFloat();
+        this.particleGreen = 0.6F * rand.nextFloat();
         this.particleRed = 1.0F;
         this.particleMaxAge = (int)(Math.random() * 10.0D) + 40;
         this.noClip = true;

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.client.particles.EntityEucaPotalFX;
+import net.essence.client.render.particles.EntityEucaPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.essence.util.LangRegistry;

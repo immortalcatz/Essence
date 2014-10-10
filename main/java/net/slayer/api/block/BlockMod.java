@@ -131,7 +131,7 @@ public class BlockMod extends Block{
 
 	@Override
 	public void randomDisplayTick(World w, int x, int y, int z, Random r) {
-		if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock || w.getBlock(x, y, z) == EssenceBlocks.ashBlock || w.getBlock(x, y, z) == EssenceBlocks.ashual){
+		if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock){
 			for(int i = 0; i < 1; ++i) {
 				float f = (float)x + r.nextFloat();
 				float f1 = (float)y + r.nextFloat() + 0.5F;

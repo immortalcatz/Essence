@@ -3,27 +3,19 @@ package net.essence.client;
 import net.essence.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiChat;
-import net.minecraft.client.gui.GuiGameOver;
 import net.minecraft.client.gui.GuiIngame;
-import net.minecraft.client.gui.GuiMainMenu;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiSelectWorld;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.boss.BossStatus;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
 
 public class PlayerStats {
@@ -42,6 +34,11 @@ public class PlayerStats {
 				return;
 			mc.mcProfiler.endSection();
 		}
+	}
+	
+	@SubscribeEvent
+	public void renderCape(RenderPlayerEvent.Specials.Pre event) {
+		event.renderCape = true;
 	}
 
 	@SubscribeEvent

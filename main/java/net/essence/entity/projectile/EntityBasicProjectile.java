@@ -2,7 +2,7 @@ package net.essence.entity.projectile;
 
 import java.util.Random;
 
-import net.essence.client.particles.EntityHellstoneFX;
+import net.essence.client.render.particles.EntityHellstoneFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
