@@ -57,7 +57,7 @@ public class PlayerEvent {
 	public void onDeath(LivingDeathEvent event) {
 		if(event.entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)event.entity;
-			if(!event.entityLiving.worldObj.isRemote) SlayerAPI.sendMessageToAll(player.getDisplayName() + " Died at X: " + (int)player.posX + ", Y: " + (int)player.posY + ", Z: " + (int)player.posZ, false);
+			if(!player.worldObj.isRemote) SlayerAPI.sendMessageToAll(player.getDisplayName() + " Died at X: " + (int)player.posX + ", Y: " + (int)player.posY + ", Z: " + (int)player.posZ, false);
 		}
 	}
 
