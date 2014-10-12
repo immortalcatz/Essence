@@ -266,7 +266,7 @@ public class SlayerAPI {
 	}
 
 	/**
-	 * @param message Used to continue messages of they're too long to have as one message in the Ingame chat box
+	 * @param message Used to continue messages if they're too long to have as one message in the Ingame chat box
 	 */
 	public static void sendContinuedMessageToAll(String message) {
 		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.GREEN + message));

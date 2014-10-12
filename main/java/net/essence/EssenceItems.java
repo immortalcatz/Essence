@@ -5,12 +5,39 @@ import net.essence.items.*;
 import net.essence.items.ItemEgg;
 import net.essence.util.*;
 import net.minecraft.item.*;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.common.util.EnumHelper;
 import net.slayer.api.*;
 import net.slayer.api.item.*;
 
 public class EssenceItems {
 
+	public static ToolMaterial hellstoneSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial flairiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial luniumSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial celestiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial shadiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial sapphiretoolSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	
+	public static ToolMaterial hellstone = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial flairium = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial lunium = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial celestium = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial shadium = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial sapphiretool = addToolMaterial(3000, 13F, 5F, true);
+	
+	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial luniumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial celestiumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial shadiumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 13F, 5F, false);
+	
+	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
+		return EnumHelper.addToolMaterial("", 3, breakable ? uses : -1, efficiency, dam, 30);
+	}
+	
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 	
 	public static final Item hellstoneIngot = new ItemMod("hellstoneIngot");
@@ -70,7 +97,7 @@ public class EssenceItems {
 	public static final Item celestiumSword = new ItemModSword("celestiumSword", EssenceToolMaterial.CELESTIUM_SWORD);
 	public static final Item luniumSword = new ItemModSword("luniumSword", EssenceToolMaterial.LUNIUM_SWORD);
 	public static final Item flairiumSword = new ItemFireSword("flairiumSword", EssenceToolMaterial.FLAIRIUM_SWORD);
-	public static final Item sapphireSword = new ItemFireSword("sapphireSword", EssenceToolMaterial.SAPPHIRE_SWORD);
+	public static final Item sapphireSword = new ItemModSword("sapphireSword", EssenceToolMaterial.SAPPHIRE_SWORD);
 	public static final Item poisonSword = new ItemPoisionSword("poisonSword", EssenceToolMaterial.POISON_SWORD);
 	public static final Item cloudSlicer = new ItemModSword("cloudSlicer", EssenceToolMaterial.CLOUD_SLICER);
 	public static final Item dragonsTooth = new ItemModSword("dragonsTooth", EssenceToolMaterial.DRAGONS_TOOTH);
