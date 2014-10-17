@@ -25,25 +25,27 @@ public class ItemNetherBossSpawner extends ItemMod {
 	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
 		Item item = i.getItem();
 		if(!w.isRemote){
-			EntityWitheringBeast wither = new EntityWitheringBeast(w);
-			EntityCalcia calcia = new EntityCalcia(w);
-			EntityNetherBeast nether = new EntityNetherBeast(w);
-			if(item == EssenceItems.calciaOrb){
-				SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
-				calcia.setPosition(x, y + 1, z);
-				w.spawnEntityInWorld(calcia);
+			if(w.provider.dimensionId == -1) {
+				EntityWitheringBeast wither = new EntityWitheringBeast(w);
+				EntityCalcia calcia = new EntityCalcia(w);
+				EntityNetherBeast nether = new EntityNetherBeast(w);
+				if(item == EssenceItems.calciaOrb){
+					SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
+					calcia.setPosition(x, y + 1, z);
+					w.spawnEntityInWorld(calcia);
+				}
+				if(item == EssenceItems.netherBeastOrb){
+					SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
+					nether.setPosition(x, y + 1, z);
+					w.spawnEntityInWorld(nether);
+				}
+				if(item == EssenceItems.witheringBeastOrb){
+					SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
+					wither.setPosition(x, y + 1, z);
+					w.spawnEntityInWorld(wither);
+				}
+				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			}
-			if(item == EssenceItems.netherBeastOrb){
-				SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
-				nether.setPosition(x, y + 1, z);
-				w.spawnEntityInWorld(nether);
-			}
-			if(item == EssenceItems.witheringBeastOrb){
-				SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
-				wither.setPosition(x, y + 1, z);
-				w.spawnEntityInWorld(wither);
-			}
-			if(!p.capabilities.isCreativeMode) i.stackSize--;
 		}
 		return true;
 	}

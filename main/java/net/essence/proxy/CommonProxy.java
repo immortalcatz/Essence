@@ -20,7 +20,7 @@ public class CommonProxy {
 	public void clientInit(FMLInitializationEvent event) { }
 	
 	public static void preInit(FMLPreInitializationEvent event) {
-		Config.init();
+		Config.init(event);
 		EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.essence.Essence;
 import net.essence.client.ModPlayerHealth;
+import net.essence.util.Config;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -22,11 +23,12 @@ import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
 
 public class PlayerEvent {
 
 	public static final String[] isImmuneToFire = new String[] { "ag", "field_70178_ae", "isImmuneToFire" };
-	
+
 	@SubscribeEvent
 	public void entityConstructing(EntityConstructing event) {
 		if(event.entity instanceof EntityPlayer && ModPlayerHealth.getInstance().getPlayer((EntityPlayer)event.entity) == null){
@@ -96,5 +98,17 @@ public class PlayerEvent {
 
 	public static boolean hasArmorEnchantment(Enchantment en, EntityLivingBase e) {
 		return getArmorEnchantment(en, e) > 0;
+	}
+
+	@SubscribeEvent
+	public void transferDims(PlayerChangedDimensionEvent e) {
+		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
+			e.fromDim == Config.euca ? " Euca " : "§rUnknown";
+		String to = e.toDim == -1 ? " Nether " : e.toDim == 0 ? " Overworld " : e.toDim == 1 ? " The End " : e.toDim == Config.boil ? " Boiling Point " : e.toDim == Config.depths ? " The Depths " :
+			e.toDim == Config.euca ? " Euca " : " §rUnknown ";
+		if(Config.showDimensionChange) {
+			if(!e.player.worldObj.isRemote)
+				SlayerAPI.sendMessageToAll(e.player.getDisplayName() + " Has travelled from" + from + "to" + to, false);
+		}
 	}
 }
