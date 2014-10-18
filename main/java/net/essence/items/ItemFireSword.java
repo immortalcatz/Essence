@@ -29,6 +29,22 @@ public class ItemFireSword extends ItemModSword {
 			Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("lava", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
 			Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("flame", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
 		}
+		
+		/*
+		 Random random = new Random();
+		World w = player.worldObj;
+		double x = hit.posX, y = hit.posY, z = hit.posZ;
+		double d1 = (double)((float)x + random.nextFloat());
+		double d2 = (double)((float)y + random.nextFloat());
+		double d3 = (double)((float)z + random.nextFloat());
+		hit.setFire(10);
+		for(int i = 0; i < 40; i++){
+			EntityLavaFX fx = new EntityLavaFX(w, d1, d2, d3);
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(fx);
+			EntityFlameFX fx1 = new EntityFlameFX(w, d1, d2, d3, random.nextFloat() - 0.5F, random.nextFloat() - 0.5F, random.nextFloat() - 0.5F);
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(fx1);
+		}
+		 */
 		return super.hitEntity(par1ItemStack, hit, player);
 	}
 

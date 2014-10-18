@@ -34,10 +34,6 @@ public class EssenceItems {
 	public static ToolMaterial shadiumMulti = addToolMaterial(3000, 13F, 5F, false);
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 13F, 5F, false);
 	
-	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
-		return EnumHelper.addToolMaterial("", 3, breakable ? uses : -1, efficiency, dam, 30);
-	}
-	
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 	
 	public static final Item hellstoneIngot = new ItemMod("hellstoneIngot");
@@ -194,4 +190,8 @@ public class EssenceItems {
 	public static final Item goldenPorkOP = new ItemGoldenFood("OPGoldenPork", "goldenPorkchop", "Golden Porkchop", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();	
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
+	
+	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
+		return EnumHelper.addToolMaterial("", 3, breakable ? uses : -1, efficiency, dam, 30);
+	}
 }
