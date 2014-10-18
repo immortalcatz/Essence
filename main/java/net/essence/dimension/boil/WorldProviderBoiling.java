@@ -18,7 +18,7 @@ public class WorldProviderBoiling extends WorldProvider {
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.5F);
 		this.dimensionId = Config.boil;
-		isHellWorld = false;
+		isHellWorld = true;
 	}
 	
 	@Override

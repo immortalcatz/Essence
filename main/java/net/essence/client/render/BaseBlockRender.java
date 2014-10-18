@@ -19,6 +19,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.IItemRenderer.ItemRenderType;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.slayer.api.block.BlockMod;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -398,7 +399,7 @@ public class BaseBlockRender
 		renderer.uvRotateBottom = renderer.uvRotateEast = renderer.uvRotateNorth = renderer.uvRotateSouth = renderer.uvRotateTop = renderer.uvRotateWest = 0;
 	}
 
-	public static void preRenderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
+	public static void preRenderInWorld(BlockMod block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
 	{
 		ForgeDirection forward = ForgeDirection.SOUTH;
 		ForgeDirection up = ForgeDirection.UP;
@@ -412,7 +413,7 @@ public class BaseBlockRender
 		renderer.uvRotateBottom = renderer.uvRotateEast = renderer.uvRotateNorth = renderer.uvRotateSouth = renderer.uvRotateTop = renderer.uvRotateWest = 0;
 	}
 
-	public static boolean renderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
+	public static boolean renderInWorld(BlockMod block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer)
 	{
 		preRenderInWorld( block, world, x, y, z, renderer );
 

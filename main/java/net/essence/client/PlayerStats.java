@@ -6,6 +6,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -46,13 +47,13 @@ public class PlayerStats {
 		GuiIngame gig = mc.ingameGUI;
 		FontRenderer font = mc.fontRenderer;
 		EntityPlayer player = mc.thePlayer;
-		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat){
+		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
 			float health = player.getHealth() * 10;
 			float hunger = player.getFoodStats().getFoodLevel() * 10;
-			float experience = player.experience;
+			float experience = (int)(mc.thePlayer.experience * (float)(200));
 			float armor = player.getTotalArmorValue() * 10;
-			float air = (float)player.getAir() / 1.5F;
+			float air = (float)player.getAir() / 1.5F / 2F;
 			ScaledResolution res = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 			int w = res.getScaledWidth() - 210, h = 12;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -73,8 +74,6 @@ public class PlayerStats {
 			gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 109, 9, 9);
 
 			gig.drawTexturedModalRect(w, h + 54 + 36, 0, 144, 78, 18);
-
-			experience = (int)(mc.thePlayer.experience * (float)(200));
 			gig.drawTexturedModalRect(w + 1, h + 36, 1, 90, (int)experience, 18);
 
 			GL11.glPushMatrix();
@@ -90,8 +89,8 @@ public class PlayerStats {
 			font.drawString(st, w + 3, h + 41 + 36 + 18, 0xFFFFFF);
 			font.drawString("Armor", w + 20, h + 36 + 23, 0xFFFFFF);
 			font.drawString("Health: " + (int)player.getHealth() + "/20" , w + 20, h + 5, 0xFFFFFF);
-			if(player.getAir() <= 0) font.drawString("Air: " + "0/300" , w + 20, h + 36 + 40, 0xFFFFFF);
-			else font.drawString("Air: " + (int)player.getAir() + "/300" , w + 20, h + 36 + 42, 0xFFFFFF);
+			if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 + 42, 0xFFFFFF);
+			else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);
 		}
 	}

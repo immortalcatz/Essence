@@ -67,9 +67,11 @@ public class EssenceBlocks {
 	public static final Block fire = new BlockModFire("fire");
 	public static final Block boilingFire = new BlockBoilingFire("boilingFire");
 
-	public static final Block ultimateRail = new BlockModRail("ultimateRail", true, 6.0F);
+	//public static final Block ultimateRail = new BlockModRail("ultimateRail", true, 6.0F);
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", false);
+	public static final Block mossyEssenceStone_overlay = new BlockMod("mossyEssenceStone_overlay", false).setCreativeTab(null);
+
 	public static final Block dungeonBrick = new BlockDungeonBlock("dungeonBrick");
 	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick");
 	public static final Block dungeonChisledBrick = new BlockDungeonBlock("dungeonChiseledBrick");
@@ -101,7 +103,5 @@ public class EssenceBlocks {
 	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
-	//public static final Block duplicationBlock = new BlockDuplicate("duplicator");
-
 	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
 }
