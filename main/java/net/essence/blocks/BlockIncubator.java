@@ -7,6 +7,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityIncubator;
 import net.essence.client.GuiHandler;
+import net.essence.client.GuiHandler.GuiIDs;
 import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -66,7 +67,7 @@ public class BlockIncubator extends BlockContainer {
 		TileEntityIncubator furnace  = (TileEntityIncubator)w.getTileEntity(x, y, z);
 		if(!w.isRemote && furnace != null){
 			if(!p.isSneaking()){
-				p.openGui(Essence.instance, GuiHandler.incubator, w, x, y, z);
+				p.openGui(Essence.instance, GuiIDs.INCUBATOR.ordinal(), w, x, y, z);
 			}
 		}
 		return false;

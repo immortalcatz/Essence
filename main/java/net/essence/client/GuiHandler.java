@@ -14,24 +14,25 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {
 	
-	private static int guiID = 0;
-	public static int stats = guiID++, enrichmentTable = guiID++, incubator = guiID++;
+	public enum GuiIDs {
+		STATS, ENRICHMENT_TABLE, INCUBATOR;
+	}
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity entity = world.getTileEntity(x, y, z);
-		if(ID == stats) return new ContainerEmpty();
-		if(ID == enrichmentTable) return new ContainerEnrichedTable(player.inventory, world, x, y, z, player);
-		if(ID == incubator) return new ContainerIncubator(player.inventory, (TileEntityIncubator)entity);
+		if(ID == GuiIDs.STATS.ordinal()) return new ContainerEmpty();
+		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new ContainerEnrichedTable(player.inventory, world, x, y, z, player);
+		if(ID == GuiIDs.INCUBATOR.ordinal()) return new ContainerIncubator(player.inventory, (TileEntityIncubator)entity);
 		return null;
 	}
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity entity = world.getTileEntity(x, y, z);
-		if(ID == stats) return new GuiStats();
-		if(ID == enrichmentTable) return new GuiEnrichedEnchantmentTable(player.inventory, world, x, y, z, player);
-		if(ID == incubator) return new GuiIncubator(player.inventory, (TileEntityIncubator)entity);
+		if(ID == GuiIDs.STATS.ordinal()) return new GuiStats();
+		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new GuiEnrichedEnchantmentTable(player.inventory, world, x, y, z, player);
+		if(ID == GuiIDs.INCUBATOR.ordinal()) return new GuiIncubator(player.inventory, (TileEntityIncubator)entity);
 		return null;
 	}
 }

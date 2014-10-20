@@ -15,7 +15,7 @@ public class LogHelper {
 
     private static BufferedWriter writer;
     
-    static{
+    static {
         File dir = new File("./EssenceOfTheGods");
         dir.mkdir();
         dir = new File("./EssenceOfTheGods/debug.log");

@@ -39,38 +39,26 @@ public class ItemFlameCoin extends ItemMod {
 				else return false;
 			}
 		} else {
-			WorldGenAPI.addCube(7, w, x, y - 1, z, EssenceBlocks.hotBrick);
-			WorldGenAPI.addHollowCube(5, w, x + 1, y - 2, z + 1, EssenceBlocks.hotBrick);
-			WorldGenAPI.addRectangle(7, 5, 1, w, x, y + 2, z + 1, EssenceBlocks.hotGlass);
-			WorldGenAPI.addRectangle(5, 7, 1, w, x + 1, y + 2, z, EssenceBlocks.hotGlass);
-			WorldGenAPI.addCube(5, w, x + 1, y, z + 1, Blocks.air);
-			WorldGenAPI.addRectangle(7, 7, 5, w, x, y + 4, z, Blocks.air);
-			WorldGenAPI.addRectangle(5, 5, 1, w, x + 1, y + 4, z + 1, EssenceBlocks.hotBrick);
-			WorldGenAPI.addRectangle(3, 3, 1, w, x + 2, y + 4, z + 2, Blocks.air);
-			WorldGenAPI.addRectangle(3, 3, 1, w, x + 2, y + 5, z + 2, EssenceBlocks.hotGlass);
-			WorldGenAPI.addRectangle(3, 3, 1, w, x + 2, y - 1, z + 2, Blocks.flowing_lava);
-			WorldGenAPI.addRectangle(3, 3, 1, w, x + 2, y, z + 2, EssenceBlocks.hotGlass);
+			int radius = 16;
+			int centre = radius / 2, squareDistance = 0;
+			for(x = centre - radius; x < centre + radius; x++)
+				for(y = centre - radius; y < centre + radius; y++)
+					for(z = centre - radius; z < centre + radius; z++) {
+						squareDistance = (x-centre) * (x-centre) + (y-centre) * (y-centre) + (z-centre) * (z-centre);
+						if(squareDistance <= (radius) * (radius)) w.setBlock(x, y, z, Blocks.bedrock);
 
-			switch(r.nextInt(4)) {
-			case 0:
-				WorldGenAPI.addRectangle(1, 1, 2, w, x + 3, y + 1, z, Blocks.air);
-				ItemDoor.placeDoorBlock(w, x + 3, y + 1, z, 1, EssenceBlocks.hotDoor);
-				break;
-			case 1:
-				WorldGenAPI.addRectangle(1, 1, 2, w, x, y + 1, z + 3, Blocks.air);
-				ItemDoor.placeDoorBlock(w, x, y + 1, z + 3, 0, EssenceBlocks.hotDoor);
-				break;
-			case 2:
-				WorldGenAPI.addRectangle(1, 1, 2, w, x + 6, y + 1, z + 3, Blocks.air);
-				ItemDoor.placeDoorBlock(w, x + 6, y + 1, z + 3, 2, EssenceBlocks.hotDoor);
-				break;
-			case 3:
-				WorldGenAPI.addRectangle(1, 1, 2, w, x + 3, y + 1, z + 6, Blocks.air);
-				ItemDoor.placeDoorBlock(w, x + 3, y + 1, z + 6, 3, EssenceBlocks.hotDoor);
-				break;
-			}
+					}
+
+			/*for(float i = 0; i < radius; i += 0.5) {
+			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
+				w.setBlock((int)Math.floor(x + Math.sin(j) * i), y + radius, (int)Math.floor(z + Math.cos(j) * i), Blocks.bedrock);
+		}*/
 		}
 		return true;
+	}
+	
+	public int squareInt(int toSquare) {
+		return toSquare * toSquare;
 	}
 
 	@Override

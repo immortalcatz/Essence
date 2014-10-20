@@ -6,6 +6,7 @@ import net.essence.Essence;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityEnrichedTable;
 import net.essence.client.GuiHandler;
+import net.essence.client.GuiHandler.GuiIDs;
 import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -78,7 +79,7 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		TileEntityEnrichedTable tileEntity = (TileEntityEnrichedTable)par1World.getTileEntity(par2, par3, par4);
 		if(!par1World.isRemote) {
 			if(tileEntity != null) {
-				par5EntityPlayer.openGui(Essence.instance, GuiHandler.enrichmentTable, par1World, par2, par3, par4);
+				par5EntityPlayer.openGui(Essence.instance, GuiIDs.ENRICHMENT_TABLE.ordinal(), par1World, par2, par3, par4);
 			}
 			return true;
 		}

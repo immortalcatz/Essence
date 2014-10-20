@@ -1,6 +1,7 @@
 package net.essence.client;
 
 import net.essence.Essence;
+import net.essence.client.GuiHandler.GuiIDs;
 import net.essence.network.PacketOpenGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +14,7 @@ public class KeyInputHandler {
 	@SubscribeEvent
 	public void onKeyInput(KeyInputEvent event) {
 		if(Keybinding.stats.isPressed())
-			Essence.packetHandler.sendToServer(new PacketOpenGui().setID(GuiHandler.stats));
+			Essence.packetHandler.sendToServer(new PacketOpenGui().setID(GuiIDs.STATS.ordinal()));
 		
 	}
 

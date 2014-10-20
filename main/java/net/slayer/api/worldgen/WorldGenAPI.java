@@ -118,11 +118,8 @@ public class WorldGenAPI {
 	public static void placeSignWithText(World w, int x, int y, int z, int meta, String[] text, boolean standing){
 		if(standing) w.setBlock(x, y, z, Blocks.standing_sign, meta, 2);
 		else w.setBlock(x, y, z, Blocks.wall_sign, meta, 2);
-
 		TileEntitySign sign = (TileEntitySign)w.getTileEntity(x, y, z);
-
-		if(sign != null && !w.isRemote)
-			sign.signText = text;
+		if(sign != null && !w.isRemote) sign.signText = text;
 	}
 
 	public static void addHollowRectangle(int east, int south, int height, World w, int x, int y, int z, Block b){
@@ -150,7 +147,8 @@ public class WorldGenAPI {
 
 	private static void placeBlockCircle(World par1World, int x, int y, int z, int radius, Block block) {
 		for(float i = 0; i < radius; i += 0.5) {
-			for(float j = 0; j < 2 * Math.PI * i; j += 0.5) par1World.setBlock((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), block);
+			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
+				par1World.setBlock((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), block);
 		}
 	}
 }

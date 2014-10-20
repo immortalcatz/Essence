@@ -10,11 +10,11 @@ import net.slayer.api.block.*;
 
 public class EssenceBlocks {
 
-	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block celestiumOre = new BlockModOre("celestiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block luniumOre = new BlockModOre("luniumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block shadiumOre = new BlockModOre("shadiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", 3.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block celestiumOre = new BlockModOre("celestiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block luniumOre = new BlockModOre("luniumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block shadiumOre = new BlockModOre("shadiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block ashual = new BlockModOre("ashual", 2.0F);
 	public static final Block sapphireOre = new BlockModOre("sapphireOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 
