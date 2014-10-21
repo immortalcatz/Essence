@@ -57,6 +57,8 @@ public class PlayerStats {
 			ScaledResolution res = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 			int w = res.getScaledWidth() - 210, h = 12;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			GL11.glEnable(GL11.GL_BLEND);
+			
 			gig.drawTexturedModalRect(w, h, 0, 0, 202, 54);
 
 			gig.drawTexturedModalRect(w + 1, h, 1, 54, (int)health, 18);
@@ -69,7 +71,7 @@ public class PlayerStats {
 			gig.drawTexturedModalRect(w, h + 36 + 18, 0, 180, 202, 18);
 			gig.drawTexturedModalRect(w + 3, h + 36 + 22, 17, 119, 9, 9);
 
-			gig.drawTexturedModalRect(w, h + 36 + 36, 0, 198, (int)air, 18);
+			gig.drawTexturedModalRect(w, h + 36 + 36, 0, 198, (int)air * 2, 18);
 			gig.drawTexturedModalRect(w, h + 36 + 36, 0, 162, 202, 18);
 			gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 109, 9, 9);
 
@@ -92,6 +94,7 @@ public class PlayerStats {
 			if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);
+			GL11.glDisable(GL11.GL_BLEND);
 		}
 	}
 

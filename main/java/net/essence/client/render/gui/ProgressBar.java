@@ -21,7 +21,7 @@ public class ProgressBar {
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);
 		GL11.glPushMatrix();
 		Tessellator tessellator = Tessellator.instance;
-		GL11.glDisable(3553 /* GL_TEXTURE_2D */);
+		GL11.glDisable(3553);
 		tessellator.startDrawingQuads();
 		tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 1.0F);
 		tessellator.addVertex(x-width/2, y, 0.0);

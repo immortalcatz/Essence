@@ -40,7 +40,7 @@ public class ItemEssencePotion extends ItemMod {
 
 	@Override
 	public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
-		int amount = isStrong ? 200 : 100;
+		int amount = isStrong ? 300 : 100;
 		if(!world.isRemote){
 			if(essence) EssenceBar.addBarPoints(amount);
 			else DarkEnergyBar.addBarPoints(amount);
@@ -64,7 +64,7 @@ public class ItemEssencePotion extends ItemMod {
 		String type = "";
 		if(essence) type = " Essence";
 		else type = " Dark Energy";
-
-		list.add(isStrong ? "Replenishes 200" + type : "Replenishes 100" + type);
+		int amount = isStrong ? 300 : 100;
+		list.add("Replenishes " + amount + type);
 	}
 }
