@@ -1,6 +1,5 @@
 package net.essence.entity.mob.vanilla;
 
-import net.essence.Sounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.AI.EntityBoomSwell;
 import net.minecraft.entity.Entity;
@@ -36,17 +35,17 @@ public class EntityBoom extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
+	public String setLivingSound() {
 		return "mob.creeper.say";
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
+	public String setHurtSound() {
 		return "mob.creeper.death";
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
+	public String setDeathSound() {
 		return "mob.creeper.death";
 	}
 

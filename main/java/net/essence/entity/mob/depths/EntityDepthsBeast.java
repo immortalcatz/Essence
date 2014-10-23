@@ -1,6 +1,6 @@
 package net.essence.entity.mob.depths;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -25,18 +25,18 @@ public class EntityDepthsBeast extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
-		return s.magmaGiant;
+	public String setLivingSound() {
+		return EnumSounds.MAGMA_GIANT.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
-		return s.magmaGiantHurt;
+	public String setHurtSound() {
+		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
-		return s.magmaGiantHurt;
+	public String setDeathSound() {
+		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
 	}
 	
 	@Override

@@ -1,16 +1,11 @@
 package net.essence.entity.mob.boss;
 
 import net.essence.EssenceItems;
-import net.essence.Sounds;
 import net.essence.entity.MobStats;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -20,7 +15,7 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 
     private int attackTimer;
 	
-	public EntityNetherBeast(World par1World) {
+    public EntityNetherBeast(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(3.0F, 3.5F);
@@ -64,17 +59,17 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
+	public String setLivingSound() {
 		return null;
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
+	public String setHurtSound() {
 		return null;
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
+	public String setDeathSound() {
 		return null;
 	}
 

@@ -1,6 +1,6 @@
 package net.essence.entity.mob.vanilla;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -26,18 +26,18 @@ public class EntitySmallHongo extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound(Sounds sounds) {
-		return sounds.robot;
+	public String setLivingSound() {
+		return EnumSounds.ROBOT.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds sounds) {
-		return sounds.robotHurt;
+	public String setHurtSound() {
+		return EnumSounds.ROBOT_HURT.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds sounds) {
-		return sounds.robotHurt;
+	public String setDeathSound() {
+		return EnumSounds.ROBOT_HURT.getPrefixedName();
 	}
 
 	@Override

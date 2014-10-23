@@ -1,8 +1,7 @@
 package net.essence.entity.mob.vanilla;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -19,25 +18,25 @@ public class EntitySpyclops extends EntityModMob {
 	public double setAttackDamage(MobStats s) {
 		return s.spyclopsDamage;
 	}
-	
+
 	@Override
 	public double setMaxHealth(MobStats s) {
 		return s.spyclopsHealth;
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
-		return s.spyclops;
+	public String setLivingSound() {
+		return EnumSounds.SPYCLOPS.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
-		return s.spyclopsHurt;
+	public String setHurtSound() {
+		return EnumSounds.SPYCLOPS.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
-		return s.spyclopsHurt;
+	public String setDeathSound() {
+		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
 	}
 
 	@Override

@@ -1,12 +1,8 @@
 package net.essence.entity.mob.euca;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -29,18 +25,18 @@ public class EntityEucaFighter extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
-		return s.insecto;
+	public String setLivingSound() {
+		return EnumSounds.INSECTO.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
-		return s.insectoHurt;
+	public String setHurtSound() {
+		return EnumSounds.INSECTO_HURT.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
-		return s.insectoHurt;
+	public String setDeathSound() {
+		return EnumSounds.INSECTO_HURT.getPrefixedName();
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 package net.essence.entity.mob.euca;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -25,18 +25,18 @@ public class EntityPsyollom extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
-		return s.psyollom;
+	public String setLivingSound() {
+		return EnumSounds.PSYOLLOM.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
-		return s.psyollomHurt;
+	public String setHurtSound() {
+		return EnumSounds.PSYOLLOM_HURT.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
-		return s.psyollomHurt;
+	public String setDeathSound() {
+		return EnumSounds.PSYOLLOM_HURT.getPrefixedName();
 	}
 	
 	@Override

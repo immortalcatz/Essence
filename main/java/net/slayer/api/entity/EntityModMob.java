@@ -1,6 +1,5 @@
 package net.slayer.api.entity;
 
-import net.essence.Sounds;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -11,15 +10,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.EnumDifficulty;
-import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeModContainer;
 
 public abstract class EntityModMob extends EntityMob {
 
@@ -66,9 +58,9 @@ public abstract class EntityModMob extends EntityMob {
 
 	public abstract double setAttackDamage(MobStats s);
 	public abstract double setMaxHealth(MobStats s);
-	public abstract String setLivingSound(Sounds s);
-	public abstract String setHurtSound(Sounds s);
-	public abstract String setDeathSound(Sounds s);
+	public abstract String setLivingSound();
+	public abstract String setHurtSound();
+	public abstract String setDeathSound();
 	public abstract Item getItemDropped();
 
 	@Override
@@ -79,19 +71,19 @@ public abstract class EntityModMob extends EntityMob {
 	@Override
 	protected String getLivingSound() {
 		super.getLivingSound();
-		return setLivingSound(new Sounds());
+		return setLivingSound();
 	}
 
 	@Override
 	protected String getHurtSound() {
 		super.getHurtSound();
-		return setHurtSound(new Sounds());
+		return setHurtSound();
 	}
 
 	@Override
 	protected String getDeathSound() {
 		super.getDeathSound();
-		return setDeathSound(new Sounds());
+		return setDeathSound();
 	}
 
 	@Override

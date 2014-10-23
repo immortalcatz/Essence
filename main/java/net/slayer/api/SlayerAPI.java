@@ -1,6 +1,8 @@
 package net.slayer.api;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import net.essence.Essence;
 import net.essence.util.LangRegistry;
@@ -20,6 +22,7 @@ import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,10 +38,13 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.VillagerRegistry;
+import cpw.mods.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
 
 public class SlayerAPI {
 
 	public static int mobID = 400, projectileID = 230;
+	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
 	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "0.0.1"; 
 	public static final boolean DEVMODE = true;
@@ -53,8 +59,9 @@ public class SlayerAPI {
 
 	public static void scaleFont(FontRenderer f, String s, int x, int y, int color, double scale){
 		GL11.glScaled(scale, scale, scale);
-		f.drawString(s, x, y, color);
-		double fixScale = 1/scale;
+		f.drawString(s, 0, 0, color);
+		GL11.glTranslatef(x, y, 0);
+		double fixScale = 1 / scale;
 		GL11.glScaled(fixScale, fixScale, fixScale);
 	}
 	
@@ -64,6 +71,18 @@ public class SlayerAPI {
 	 */
 	public static void addBucket(Fluid fluid, ItemStack modBucket) {
 		FluidContainerRegistry.registerFluidContainer(new FluidContainerData(FluidRegistry.getFluidStack(fluid.getName(), FluidContainerRegistry.BUCKET_VOLUME), modBucket, new ItemStack(Items.bucket)));
+	}
+	
+	public static void addMapGen(Class c, String s){
+		try {
+			MapGenStructureIO.func_143031_a(c, s);
+		} catch(Exception e){
+			logger.log(Level.WARNING, "[" + MOD_NAME + "] Failed To Spawn The Map Piece With The ID: " + s);
+		}
+	}
+
+	public static void addVillageCreationHandler(IVillageCreationHandler v){
+		VillagerRegistry.instance().registerVillageCreationHandler(v);
 	}
 
 	/**

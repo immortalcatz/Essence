@@ -3,10 +3,9 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.client.EssenceBar;
 import net.essence.entity.projectile.EntityChaosProjectile;
-import net.essence.entity.projectile.EntityBasicProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -23,7 +22,7 @@ public class ItemChaosCannon extends ItemMod {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		spawnEntityIntoWorld(world, player, new EntityChaosProjectile(world, player), EssenceBar.useBar(10), Sounds.staff, true, stack, 1);
+		spawnEntityIntoWorld(world, player, new EntityChaosProjectile(world, player), EssenceBar.useBar(10), EnumSounds.STAFF.getPrefixedName(), true, stack, 1);
 		return stack;
 	}
 	

@@ -1,11 +1,8 @@
 package net.essence.entity.mob.boss;
 
 import net.essence.EssenceItems;
-import net.essence.Sounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
@@ -27,17 +24,17 @@ public class EntityCalcia extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
+	public String setLivingSound() {
 		return null;
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
+	public String setHurtSound() {
 		return null;
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
+	public String setDeathSound() {
 		return null;
 	}
 

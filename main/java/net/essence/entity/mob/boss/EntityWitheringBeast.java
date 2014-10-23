@@ -1,17 +1,13 @@
 package net.essence.entity.mob.boss;
 
 import net.essence.EssenceItems;
-import net.essence.Sounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityWitherSkull;
 import net.minecraft.item.Item;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
@@ -36,17 +32,17 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
+	public String setLivingSound() {
 		return "mob.wither.idle";
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
+	public String setHurtSound() {
 		return "mob.wither.hurt";
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
+	public String setDeathSound() {
 		return "mob.wither.death";
 	}
 

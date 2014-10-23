@@ -1,13 +1,12 @@
 package net.essence.entity;
 
-import net.essence.Sounds;
 import net.minecraft.item.Item;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 
 public class EntityDragonEgg extends EntityModMob {
 
@@ -31,21 +30,6 @@ public class EntityDragonEgg extends EntityModMob {
 	@Override
 	public double setMaxHealth(MobStats s) {
 		return 20;
-	}
-
-	@Override
-	public String setLivingSound(Sounds s) {
-		return null;
-	}
-
-	@Override
-	public String setHurtSound(Sounds s) {
-		return null;
-	}
-
-	@Override
-	public String setDeathSound(Sounds s) {
-		return null;
 	}
 
 	@Override
@@ -102,5 +86,20 @@ public class EntityDragonEgg extends EntityModMob {
 	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
 		return false;
+	}
+
+	@Override
+	public String setLivingSound() {
+		return null;
+	}
+
+	@Override
+	public String setHurtSound() {
+		return null;
+	}
+
+	@Override
+	public String setDeathSound() {
+		return null;
 	}
 }

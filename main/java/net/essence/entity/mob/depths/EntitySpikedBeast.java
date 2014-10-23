@@ -1,6 +1,6 @@
 package net.essence.entity.mob.depths;
 
-import net.essence.Sounds;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -25,18 +25,18 @@ public class EntitySpikedBeast extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound(Sounds s) {
-		return s.spikedBeast;
+	public String setLivingSound() {
+		return EnumSounds.SPIKED_BEAST.getPrefixedName();
 	}
 
 	@Override
-	public String setHurtSound(Sounds s) {
-		return s.spikedBeastHurt;
+	public String setHurtSound() {
+		return EnumSounds.SPIKED_BEAST_HURT.getPrefixedName();
 	}
 
 	@Override
-	public String setDeathSound(Sounds s) {
-		return s.spikedBeastHurt;
+	public String setDeathSound() {
+		return EnumSounds.SPIKED_BEAST_HURT.getPrefixedName();
 	}
 	
 	@Override

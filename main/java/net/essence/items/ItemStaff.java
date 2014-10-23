@@ -3,12 +3,11 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.Sounds;
 import net.essence.client.DarkEnergyBar;
+import net.essence.client.EnumSounds;
 import net.essence.client.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
@@ -33,8 +32,8 @@ public class ItemStaff extends ItemMod {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(essence) spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), EssenceBar.useBar(usage), Sounds.staff, unBreakable, stack, 1);
-		else spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), DarkEnergyBar.useBar(usage), Sounds.staff, unBreakable, stack, 1);
+		if(essence) spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), EssenceBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+		else spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), DarkEnergyBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
 		return stack;
 	}
 
