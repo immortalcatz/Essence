@@ -3,9 +3,7 @@ package net.slayer.api.item;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.Sounds;
-import net.essence.client.DarkEnergyBar;
-import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.client.EnumSounds;
 import net.essence.util.LangRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -55,7 +53,7 @@ public class ItemMod extends Item {
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound, boolean damage, ItemStack item, int dam) {
 		if(!w.isRemote && magic){
 			w.spawnEntityInWorld(entity);
-			Sounds.playSound(sound, w, p);
+			EnumSounds.playSound(sound, w, p);
 			if(damage) item.damageItem(dam, p);
 		}
 	}
