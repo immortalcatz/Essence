@@ -163,25 +163,24 @@ public class ModelSpyclops extends ModelBase {
 	}
 
 	@Override
-	@SuppressWarnings("fix the legs!")
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
 		this.Head.rotateAngleY = par4 / (180F / (float)Math.PI);
 		this.Head.rotateAngleX = par5 / (180F / (float)Math.PI);
-		
         this.RightShoulder.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
         this.LeftShoulder.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
         this.RightElbow.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
         this.LeftElbow.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
         this.RightArm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F + -1.5F;
         this.LeftArm.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F + -1.5F;
-        float f9 = -(MathHelper.cos(par1 * 0.9662F * 1.0F + 0.0F) * 0.4F) * par2;
-        this.FrontRightLeg.rotateAngleY += f9;
-        this.FrontLeftLeg.rotateAngleY += f9;
-        this.BackRightLeg.rotateAngleY += -f9;
-        this.BackLeftLeg.rotateAngleY += -f9;
-        this.FrontRightThigh.rotateAngleY -= -f9;
-        this.FrontLeftThigh.rotateAngleY -= -f9;
-        this.BackRightThigh.rotateAngleY -= f9;
-        this.BackLeftThigh.rotateAngleY -= f9;
+        
+        float f9 = -(MathHelper.cos(par1 * 0.9662F * 1.0F + 0.0F) * 0.5F) * par2;
+        this.FrontRightLeg.rotateAngleY = f9;
+        this.FrontLeftLeg.rotateAngleY = f9;
+        this.BackRightLeg.rotateAngleY = -f9;
+        this.BackLeftLeg.rotateAngleY = -f9;
+        this.FrontRightThigh.rotateAngleY = -f9;
+        this.FrontLeftThigh.rotateAngleY = -f9;
+        this.BackRightThigh.rotateAngleY = f9;
+        this.BackLeftThigh.rotateAngleY = f9;
 	}
 }

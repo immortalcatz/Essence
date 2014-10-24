@@ -8,6 +8,7 @@ import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.FoodStats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
@@ -49,8 +50,8 @@ public class PlayerStats {
 		EntityPlayer player = mc.thePlayer;
 		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
-			float health = player.getHealth() * 10;
-			float hunger = player.getFoodStats().getFoodLevel() * 10;
+			float health = player.getHealth() * 5;
+			float hunger = player.getFoodStats().getFoodLevel() * 5;
 			float experience = (int)(mc.thePlayer.experience * (float)(200));
 			float armor = player.getTotalArmorValue() * 10;
 			float air = (float)player.getAir() / 1.5F / 2F;
@@ -61,10 +62,10 @@ public class PlayerStats {
 			
 			gig.drawTexturedModalRect(w, h, 0, 0, 202, 54);
 
-			gig.drawTexturedModalRect(w + 1, h, 1, 54, (int)health, 18);
+			gig.drawTexturedModalRect(w + 1, h, 1, 54, (int)health * 2, 18);
 			gig.drawTexturedModalRect(w + 3, h + 3, 0, 108, 12, 11);
 
-			gig.drawTexturedModalRect(w + 1, h + 18, 1, 72, (int)hunger, 18);
+			gig.drawTexturedModalRect(w + 1, h + 18, 1, 72, (int)hunger * 2, 18);
 			gig.drawTexturedModalRect(w + 3, h + 21, 0, 119, 12, 11);
 
 			gig.drawTexturedModalRect(w + 1, h + 36 + 18, 1, 216, (int)armor, 18);
@@ -84,13 +85,12 @@ public class PlayerStats {
 			GL11.glPopMatrix();
 
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			font.drawString("Health: " + (int)player.getHealth() + "/" + (int)player.getMaxHealth() , w + 20, h + 5, 0xFFFFFF);
-			font.drawString("Hunger: " + (int)player.getFoodStats().getFoodLevel() + "/20" , w + 20, h + 23, 0xFFFFFF);
+			font.drawString("Health: " + health + "%", w + 20, h + 5, 0xFFFFFF);
+			font.drawString("Hunger: " + hunger + "%" , w + 20, h + 23, 0xFFFFFF);
 			font.drawString("Level: " + mc.thePlayer.experienceLevel , w + 20, h + 41, 0xFFFFFF);
 			String st = "Time: " + formatTime(getWorldTime(mc));
 			font.drawString(st, w + 3, h + 41 + 36 + 18, 0xFFFFFF);
 			font.drawString("Armor", w + 20, h + 36 + 23, 0xFFFFFF);
-			font.drawString("Health: " + (int)player.getHealth() + "/20" , w + 20, h + 5, 0xFFFFFF);
 			if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);

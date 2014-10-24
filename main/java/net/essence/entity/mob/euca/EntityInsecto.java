@@ -46,7 +46,7 @@ public class EntityInsecto extends EntityModMob{
 	@Override
 	protected void attackEntity(Entity e, float a) {
 		super.attackEntity(e, a);
-		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 30));
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 60));
 	}
 	
 	@Override

@@ -27,7 +27,7 @@ public enum EnumSounds {
 	}
 	
 	public String getPrefixedName() {
-		return SlayerAPI.MOD_ID + sound;
+		return "eotg:" + sound;
 	}
 	
 	public static void playSound(String sound, World w, EntityLivingBase e){
