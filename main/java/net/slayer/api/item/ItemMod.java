@@ -8,6 +8,7 @@ import net.essence.util.LangRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -59,7 +60,7 @@ public class ItemMod extends Item {
 	}
 
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound) {
-		spawnEntityIntoWorld(w, p, entity, magic, sound, false, null, 0);
+		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(Items.apple), 0);
 	}
 
 	public void addInformation(ItemStack stack, EntityPlayer player, List list){ }

@@ -31,6 +31,7 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.blocks=Essence Of The Gods: Blocks");
 		instance.addToFile("itemGroup.items=Essence Of The Gods: Items");
 		instance.addToFile("itemGroup.weapons=Essence Of The Gods: Weapons");
+		instance.addToFile("itemGroup.ranged=Essence Of The Gods: Ranged");
 		instance.addToFile("itemGroup.tools1=Essence Of The Gods: Tools");
 		instance.addToFile("itemGroup.util=Essence Of The Gods: Utilities");
 		instance.addToFile("itemGroup.misc1=Essence Of The Gods: Misc.");

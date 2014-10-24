@@ -1,13 +1,31 @@
 package net.essence.util;
 
-import net.essence.entity.EntityDragonEgg;
-import net.essence.entity.mob.boiling.*;
-import net.essence.entity.mob.boss.*;
-import net.essence.entity.mob.depths.*;
-import net.essence.entity.mob.euca.*;
-import net.essence.entity.mob.vanilla.*;
-import net.essence.entity.projectile.*;
-import net.essence.entity.projectile.spawner.EntityCalciaSpawner;
+import net.essence.entity.mob.boiling.EntityMagmaGiant;
+import net.essence.entity.mob.boss.EntityCalcia;
+import net.essence.entity.mob.boss.EntityNetherBeast;
+import net.essence.entity.mob.boss.EntityWitheringBeast;
+import net.essence.entity.mob.boss.EntityWraith;
+import net.essence.entity.mob.depths.EntityDarknessCrawler;
+import net.essence.entity.mob.depths.EntityDepthsBeast;
+import net.essence.entity.mob.depths.EntitySpikedBeast;
+import net.essence.entity.mob.euca.EntityEucaFighter;
+import net.essence.entity.mob.euca.EntityEucaHopper;
+import net.essence.entity.mob.euca.EntityInsecto;
+import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.vanilla.EntityBigHongo;
+import net.essence.entity.mob.vanilla.EntityBoom;
+import net.essence.entity.mob.vanilla.EntityMediumHongo;
+import net.essence.entity.mob.vanilla.EntityRobot;
+import net.essence.entity.mob.vanilla.EntitySmallHongo;
+import net.essence.entity.mob.vanilla.EntitySpyclops;
+import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.entity.projectile.EntityBouncingProjectile;
+import net.essence.entity.projectile.EntityChaosProjectile;
+import net.essence.entity.projectile.EntityConjuring;
+import net.essence.entity.projectile.EntityDoomsBringer;
+import net.essence.entity.projectile.EntityEnlightment;
+import net.essence.entity.projectile.EntityGreenpace;
+import net.essence.entity.projectile.EntityWizardsStar;
 import net.slayer.api.SlayerAPI;
 
 public class EntityRegistry {
@@ -16,7 +34,11 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityBasicProjectile.class, "basic");
 		SlayerAPI.registerProjectile(EntityBouncingProjectile.class, "bouncing");
 		SlayerAPI.registerProjectile(EntityChaosProjectile.class, "chaos");
-		SlayerAPI.registerProjectile(EntityCalciaSpawner.class, "calcia spawner");
+		SlayerAPI.registerProjectile(EntityDoomsBringer.class, "doom");
+		SlayerAPI.registerProjectile(EntityConjuring.class, "conjuring");
+		SlayerAPI.registerProjectile(EntityEnlightment.class, "enlightment");
+		SlayerAPI.registerProjectile(EntityGreenpace.class, "greenpace");
+		SlayerAPI.registerProjectile(EntityWizardsStar.class, "wizardsstar");
 
 		SlayerAPI.registerMob(EntityRobot.class, "Robot", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySpyclops.class, "Spyclops", SlayerAPI.mobID++);
@@ -38,6 +60,6 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "Beast of the Nether", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityWitheringBeast.class, "Withering Beast", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityCalcia.class, "Calcia", SlayerAPI.mobID++);
-		SlayerAPI.registerBossMob(EntityWraith.class, "Wraith", SlayerAPI.mobID++);
+		//SlayerAPI.registerBossMob(EntityWraith.class, "Wraith", SlayerAPI.mobID++);
 	}
 }

@@ -11,6 +11,7 @@ public class EssenceTabs extends CreativeTabs {
 	public static final EssenceTabs items = new EssenceTabs("items");
 	public static final EssenceTabs tools = new EssenceTabs("tools1");
 	public static final EssenceTabs weapons = new EssenceTabs("weapons");
+	public static final EssenceTabs ranged = new EssenceTabs("ranged");
 	public static final EssenceTabs util = new EssenceTabs("util");
 	public static final EssenceTabs misc = new EssenceTabs("misc1");
 	public static final EssenceTabs armor = new EssenceTabs("armor");
@@ -39,6 +40,7 @@ public class EssenceTabs extends CreativeTabs {
 		items.setIcon(EssenceItems.hellstoneIngot);
 		tools.setIcon(EssenceItems.hellstoneMultiTool);
 		weapons.setIcon(EssenceItems.flairiumSword);
+		ranged.setIcon(EssenceItems.staffOfHellstone);
 		util.setIcon(EssenceItems.flameCoin);
 		misc.setIcon(EssenceItems.weakDarkEnergyPotion);
 		armor.setIcon(EssenceItems.hellstoneHelmet);

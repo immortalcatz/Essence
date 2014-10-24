@@ -34,20 +34,14 @@ public class EntityDeathSkull extends EntityWitherSkull {
 	}
 
 	protected void onImpact(MovingObjectPosition par1MovingObjectPosition) {
-		if (!this.worldObj.isRemote) {
-			if (par1MovingObjectPosition.entityHit != null) {
-
+		if(!this.worldObj.isRemote) {
+			if(par1MovingObjectPosition.entityHit != null) {
 				par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.magic, 20.0F);
-
-				if (par1MovingObjectPosition.entityHit instanceof EntityLivingBase) {
+				if(par1MovingObjectPosition.entityHit instanceof EntityLivingBase) {
 					byte witherSeconds = 10;
-
-					if (witherSeconds > 0) {
-						((EntityLivingBase)par1MovingObjectPosition.entityHit).addPotionEffect(new PotionEffect(Potion.wither.id, 20 * witherSeconds, 1));
-					}
+					if(witherSeconds > 0) ((EntityLivingBase)par1MovingObjectPosition.entityHit).addPotionEffect(new PotionEffect(Potion.wither.id, 20 * witherSeconds, 1));
 				}
 			}
-
 			this.worldObj.newExplosion(this, this.posX, this.posY, this.posZ, 1.0F, false, this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"));
 			this.setDead();
 		}

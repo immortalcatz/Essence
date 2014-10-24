@@ -1,5 +1,6 @@
 package net.essence.items;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import net.essence.EssenceTabs;
@@ -7,7 +8,10 @@ import net.essence.client.DarkEnergyBar;
 import net.essence.client.EnumSounds;
 import net.essence.client.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
+import net.minecraft.client.particle.EntityFX;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
@@ -17,9 +21,11 @@ public class ItemStaff extends ItemMod {
 
 	private int usage, damage;
 	private boolean essence, unBreakable;
-
-	public ItemStaff(String name, int magic, int uses, int dam, boolean essence, boolean unbreakable) {
+	private Class<? extends EntityBasicProjectile> projectile; 
+	
+	public ItemStaff(String name, int magic, int uses, int dam, boolean essence, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
 		super(name);
+		this.projectile = projectile;
 		damage = dam;
 		usage = magic;
 		this.unBreakable = unbreakable;
@@ -27,13 +33,24 @@ public class ItemStaff extends ItemMod {
 		setMaxDamage(uses);
 		setMaxStackSize(1);
 		setFull3D();
-		setCreativeTab(EssenceTabs.weapons);
+		setCreativeTab(EssenceTabs.ranged);
 	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(essence) spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), EssenceBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
-		else spawnEntityIntoWorld(world, player, new EntityBasicProjectile(world, player, damage), DarkEnergyBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+		if(essence) {
+			try {
+				spawnEntityIntoWorld(world, player, projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage), EssenceBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			try {
+				spawnEntityIntoWorld(world, player, projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage), DarkEnergyBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		return stack;
 	}
 

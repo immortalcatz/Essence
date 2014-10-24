@@ -3,6 +3,7 @@ package net.essence.proxy;
 import net.essence.*;
 import net.essence.blocks.tileentity.*;
 import net.essence.dimension.*;
+import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.essence.event.*;
 import net.essence.misc.*;
 import net.essence.util.*;
@@ -35,6 +36,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "Statue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
+		SlayerAPI.addMapGen(MapGenBoilVillage.class, "Boil Village");
 	}
 	
 	public static void init(FMLInitializationEvent event) {

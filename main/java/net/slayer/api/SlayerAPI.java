@@ -76,6 +76,7 @@ public class SlayerAPI {
 	public static void addMapGen(Class c, String s){
 		try {
 			MapGenStructureIO.func_143031_a(c, s);
+			MapGenStructureIO.registerStructure(c, s);
 		} catch(Exception e){
 			logger.log(Level.WARNING, "[" + MOD_NAME + "] Failed To Spawn The Map Piece With The ID: " + s);
 		}

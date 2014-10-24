@@ -31,10 +31,10 @@ public enum EnumSounds {
 	}
 	
 	public static void playSound(String sound, World w, EntityLivingBase e){
-		w.playSoundAtEntity(e, SlayerAPI.MOD_ID + sound, 1.0F, 1.0F);
+		w.playSoundAtEntity(e, sound, 1.0F, 1.0F);
 	}
 	
 	public static void playSound(String sound, World w, EntityLivingBase e, float volume, float pitch){
-		w.playSoundAtEntity(e, SlayerAPI.MOD_ID + sound, volume, pitch);
+		w.playSoundAtEntity(e, sound, volume, pitch);
 	}
 }

@@ -1,12 +1,19 @@
 package net.essence;
 
 import net.essence.*;
+import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.entity.projectile.EntityConjuring;
+import net.essence.entity.projectile.EntityDoomsBringer;
+import net.essence.entity.projectile.EntityEnlightment;
+import net.essence.entity.projectile.EntityGreenpace;
+import net.essence.entity.projectile.EntityWizardsStar;
 import net.essence.items.*;
 import net.essence.items.ItemEgg;
 import net.essence.util.*;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
+import net.minecraft.world.gen.ChunkProviderFlat;
 import net.minecraftforge.common.util.EnumHelper;
 import net.slayer.api.*;
 import net.slayer.api.item.*;
@@ -154,12 +161,12 @@ public class EssenceItems {
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
 
-	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 10, false, false);
-	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 10, false, false);
-	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 10, true, false);
-	public static final Item staffOfEnlightment = new ItemStaff("staffOfEnlightment", 25, 1000, 10, true, false);
-	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false);
-	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 10, true, false);
+	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 10, false, false, EntityBasicProjectile.class);
+	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 10, false, false, EntityDoomsBringer.class);
+	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 10, true, false, EntityConjuring.class);
+	public static final Item staffOfEnlightment = new ItemStaff("staffOfEnlightment", 25, 1000, 10, true, false, EntityEnlightment.class);
+	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false, EntityGreenpace.class);
+	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 10, true, false, EntityWizardsStar.class);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
 		
 	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);

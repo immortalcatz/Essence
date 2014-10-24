@@ -8,8 +8,6 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.MapGenBoilingCaves;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
-import net.essence.dimension.boil.gen.WorldGenVolcano;
-import net.essence.dimension.boil.gen.village.WorldGenVillageHouse1;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
@@ -26,11 +24,9 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import net.slayer.api.worldgen.WorldGenAPI;
 
 public class ChunkProviderBoiling implements IChunkProvider {
 
@@ -46,16 +42,13 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	private BiomeGenBase[] biomesForGeneration;
 	private double[] gen1, gen2, gen3, gen4;
 	private int[][] ia = new int[32][32];
-	private ArrayList<WorldGenerator> houses, dungeons;
+	private ArrayList<WorldGenerator> dungeons;
 
 	public ChunkProviderBoiling(World par1World, long par2) {
 		this.worldObj = par1World;
 		this.type = par1World.getWorldInfo().getTerrainType();
 		this.rand = new Random(par2);
 
-		houses = new ArrayList(1);
-		houses.add(new WorldGenVillageHouse1());
-		
 		dungeons = new ArrayList(0);
 
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -368,20 +361,6 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			y = rand.nextInt(50);
 			(dungeons.get(rand.nextInt(dungeons.size()))).generate(this.worldObj, this.rand, x, y, z);
 		}*/
-
-		if(rand.nextInt(6) == 0) { 
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			boolean foundGround = false;
-			for(y = 32; i < 128; i++) {
-				if(worldObj.getBlock(x, i, z) == EssenceBlocks.hotBlock) {
-					y = i;
-					foundGround = true;
-					break;
-				}
-			}
-			if(foundGround) (houses.get(rand.nextInt(houses.size()))).generate(this.worldObj, this.rand, x, y, z);
-		}
 
 		/*if(rand.nextInt(1) == 0) {
 			y = rand.nextInt(250) + 1;

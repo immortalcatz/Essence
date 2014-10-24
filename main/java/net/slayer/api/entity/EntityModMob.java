@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 public abstract class EntityModMob extends EntityMob {
@@ -20,11 +21,6 @@ public abstract class EntityModMob extends EntityMob {
 		addBasicAI();
 	}
 	
-	@Override
-    public boolean isValidLightLevel() {
-        return true;
-    }
-
 	public double getHP(){return getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue();}
 	public double getMoveSpeed(){return getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue();}
 	public double getAttackDamage(){return getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();}
@@ -90,4 +86,9 @@ public abstract class EntityModMob extends EntityMob {
 	protected boolean isAIEnabled() {
 		return false;
 	}
+	
+	@Override
+    public boolean getCanSpawnHere() {
+        return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
+    }
 }
