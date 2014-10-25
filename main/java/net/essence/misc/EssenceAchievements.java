@@ -11,8 +11,8 @@ public class EssenceAchievements {
 	
 	public static Achievement getOverworldOre = addAchievement("essence.getModOre", 0, 0, EssenceBlocks.shadiumOre, null, false);
 	public static Achievement getSapphire = addAchievement("essence.getSapphire", 0, 10, EssenceItems.sapphire, null, false);
-	public static Achievement makeOreBlock = addAchievement("essence.getOreBlock", 0, 0, EssenceBlocks.shadiumOre, null, false);
-	public static Achievement makeSpawner = addAchievement("essence.getSpawner", 0, 0, EssenceBlocks.shadiumOre, null, false);
+	public static Achievement makeOreBlock = addAchievement("essence.getOreBlock", 0, 20, EssenceBlocks.shadiumOre, null, false);
+	public static Achievement makeSpawner = addAchievement("essence.getSpawner", 0, 30, EssenceItems.spawnerBar, null, false);
 
     private static Achievement addAchievement(String name, int x, int y, Block image, Achievement haveFirst, boolean isSpecial){
 		return isSpecial ? new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat() : new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat().setSpecial();

@@ -21,6 +21,7 @@ public class BiomeGenBoiling extends BiomeGenBase {
         this.spawnableCaveCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
         rainfall = 0.0F;
+        setDisableRain();
         setColor(0xC40600);
 	}
 	

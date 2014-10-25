@@ -59,9 +59,6 @@ public class WorldGenBoilPortal extends WorldGenerator {
 			w.setBlock(x + 1, y - 4 + i, z + 5 - i, Blocks.nether_brick_stairs, 3, 2);
 			w.setBlock(x + 2, y - 4 + i, z + 5 - i, Blocks.nether_brick_stairs, 3, 2);
 		}
-		
-		String coords = "X: " + x + ", Y: " + y + ", Z: " + z;
-		if(foundGround) System.err.print("GENERATED " + coords + "\n");
 
 		return true;
 	}

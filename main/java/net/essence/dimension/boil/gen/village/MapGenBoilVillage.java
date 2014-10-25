@@ -15,7 +15,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
-import net.minecraft.world.gen.structure.StructureVillagePieces;
 
 public class MapGenBoilVillage extends MapGenStructure
 {
@@ -110,8 +109,8 @@ public class MapGenBoilVillage extends MapGenStructure
             public Start(World p_i2092_1_, Random p_i2092_2_, int p_i2092_3_, int p_i2092_4_, int p_i2092_5_)
             {
                 super(p_i2092_3_, p_i2092_4_);
-                List list = StructureVillagePieces.getStructureVillageWeightedPieceList(p_i2092_2_, p_i2092_5_);
-                StructureVillagePieces.Start start = new StructureVillagePieces.Start(p_i2092_1_.getWorldChunkManager(), 0, p_i2092_2_, (p_i2092_3_ << 4) + 2, (p_i2092_4_ << 4) + 2, list, p_i2092_5_);
+                List list = StructureBoilVillagePieces.getStructureVillageWeightedPieceList(p_i2092_2_, p_i2092_5_);
+                StructureBoilVillagePieces.Start start = new StructureBoilVillagePieces.Start(p_i2092_1_.getWorldChunkManager(), 0, p_i2092_2_, (p_i2092_3_ << 4) + 2, (p_i2092_4_ << 4) + 2, list, p_i2092_5_);
                 this.components.add(start);
                 start.buildComponent(start, this.components, p_i2092_2_);
                 List list1 = start.field_74930_j;
@@ -144,7 +143,7 @@ public class MapGenBoilVillage extends MapGenStructure
                 {
                     StructureComponent structurecomponent1 = (StructureComponent)iterator.next();
 
-                    if (!(structurecomponent1 instanceof StructureVillagePieces.Road))
+                    if (!(structurecomponent1 instanceof StructureBoilVillagePieces.Road))
                     {
                         ++l;
                     }

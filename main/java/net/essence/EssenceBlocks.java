@@ -91,6 +91,9 @@ public class EssenceBlocks {
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLamp", true);
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", true);
+	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrick");
+	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs");
+
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
 
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue());

@@ -1,5 +1,8 @@
 package net.essence.dimension.boil;
 
+import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.NETHER_BRIDGE;
+import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.VILLAGE;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,6 +11,8 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.MapGenBoilingCaves;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
+import net.essence.dimension.boil.gen.fortress.MapGenBoilBridge;
+import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
@@ -26,6 +31,8 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.gen.structure.MapGenNetherBridge;
+import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class ChunkProviderBoiling implements IChunkProvider {
@@ -43,12 +50,15 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	private double[] gen1, gen2, gen3, gen4;
 	private int[][] ia = new int[32][32];
 	private ArrayList<WorldGenerator> dungeons;
-
+	private MapGenBoilVillage villageGenerator = new MapGenBoilVillage();
+	public MapGenBoilBridge genNetherBridge = new MapGenBoilBridge();
+	
 	public ChunkProviderBoiling(World par1World, long par2) {
 		this.worldObj = par1World;
 		this.type = par1World.getWorldInfo().getTerrainType();
 		this.rand = new Random(par2);
-
+		villageGenerator = (MapGenBoilVillage) TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
+		genNetherBridge = (MapGenBoilBridge) TerrainGen.getModdedMapGen(genNetherBridge, NETHER_BRIDGE);
 		dungeons = new ArrayList(0);
 
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -231,10 +241,12 @@ public class ChunkProviderBoiling implements IChunkProvider {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+		this.genNetherBridge.func_151539_a(this, this.worldObj, par1, par2, ablock);
 		Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);
 		byte[] abyte1 = chunk.getBiomeArray();
 
-		for(int k = 0; k < abyte1.length; ++k) 
+		for(int k = 0; k < abyte1.length; ++k)
 			abyte1[k] = (byte)this.biomesForGeneration[k].biomeID;
 
 		chunk.generateSkylightMap();
@@ -370,6 +382,8 @@ public class ChunkProviderBoiling implements IChunkProvider {
 					|| WorldGenAPI.isValidLocationToSpawn(-WorldGenVolcano.height, y, WorldGenVolcano.height, worldObj, EssenceBlocks.hotBlock)) 
 				(new WorldGenVolcano()).generate(this.worldObj, this.rand, x, y, z);
 		}*/
+		this.genNetherBridge.generateStructuresInChunk(this.worldObj, rand, x1, z1);
+		this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, x1, z1);
 
 		for(times = 0; times < 200; times++){
 			y = this.worldObj.getHeightValue(x, z);
@@ -409,12 +423,18 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	public String makeString() {
 		return "Boiling Point";
 	}
-
+	
 	@Override
-	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int par2, int par3, int par4) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par2, par4);
-		return biomegenbase.getSpawnableList(par1EnumCreatureType);
-	}
+    public List getPossibleCreatures(EnumCreatureType c, int x, int y, int z) {
+        if(c == EnumCreatureType.monster) {
+            if(this.genNetherBridge.hasStructureAt(x, y, z))
+                return this.genNetherBridge.getSpawnList();
+            if(this.genNetherBridge.func_142038_b(x, y, z) && this.worldObj.getBlock(x, y - 1, z) == EssenceBlocks.hotBrick)
+                return this.genNetherBridge.getSpawnList();
+        }
+        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(x, z);
+        return biomegenbase.getSpawnableList(c);
+    }
 
 	@Override
 	public ChunkPosition func_147416_a(World w, String s, int x, int y, int z) {
@@ -427,5 +447,8 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	}
 
 	@Override
-	public void recreateStructures(int par1, int par2) { }
+	public void recreateStructures(int par1, int par2) { 
+		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
+		this.genNetherBridge.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
+	}
 }
