@@ -152,57 +152,48 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public void generateTerrain(int var1, int var2, Block[] var3, BiomeGenBase[] var4, double[] var5) {
 		byte var6 = 2;
 		int var7 = var6 + 1;
-		byte i1 = 66;
+		byte var8 = 33;
 		int var9 = var6 + 1;
-		this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * var6, 0, var2 * var6, var7, i1, var9);
-
-		for(int j1 = 0; j1 < var6; ++j1) {
+		this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * var6, 0, var2 * var6, var7, var8, var9);
+		for(int var10 = 0; var10 < var6; ++var10) {
 			for(int var11 = 0; var11 < var6; ++var11) {
-				for(int i2 = 0; i2 < 32; ++i2) {
-					double j2 = 0.15D;
-					double k1 = this.noiseArray[((j1 + 0) * var9 + var11 + 1) * i1 + i2 + 0];
-					double k3 = this.noiseArray[((j1 + 0) * var9 + var11 + 1) * i1 + i2 + 1];
-					double j4 = this.noiseArray[((j1 + 1) * var9 + var11 + 1) * i1 + i2 + 0];
-					double k5 = this.noiseArray[((j1 + 1) * var9 + var11 + 1) * i1 + i2 + 1];
-					double j5 = (this.noiseArray[((j1 + 0) * var9 + var11 + 0) * i1 + i2 + 1] - k1) * j2;
-					double i5 = (this.noiseArray[((j1 + 0) * var9 + var11 + 1) * i1 + i2 + 1] - k3) * j2;
-					double var27 = (this.noiseArray[((j1 + 1) * var9 + var11 + 0) * i1 + i2 + 1] - j4) * j2;
-					double var29 = (this.noiseArray[((j1 + 1) * var9 + var11 + 1) * i1 + i2 + 1] - k5) * j2;
-
+				for(int var12 = 0; var12 < 32; ++var12) {
+					double var13 = 0.52D;
+					double var15 = this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 0];
+					double var17 = this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 0];
+					double var19 = this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 0];
+					double var21 = this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 0];
+					double var23 = (this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 1] - var15) * var13;
+					double var25 = (this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 1] - var17) * var13;
+					double var27 = (this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 1] - var19) * var13;
+					double var29 = (this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 1] - var21) * var13;
 					for(int var31 = 0; var31 < 4; ++var31) {
-						double l3 = 0.125D;
-						double l4 = k1;
-						double l5 = k3;
-						double var38 = (j4 - k1) * l3;
-						double var40 = (k5 - k3) * l3;
-
+						double var32 = 0.125D;
+						double var34 = var15;
+						double var36 = var17;
+						double var38 = (var19 - var15) * var32;
+						double var40 = (var21 - var17) * var32;
 						for(int var42 = 0; var42 < 8; ++var42) {
-							int var43 = var42 + j1 * 8 << 11 | 0 + var11 * 8 << 7 | i2 * 4 + var31;
+							int var43 = var42 + var10 * 8 << 11 | 0 + var11 * 8 << 7 | var12 * 4 + var31;
 							short var44 = 128;
-							double var45 = 0.25D;
-							double var47 = l4;
-							double var49 = (l5 - l4) * var45;
+							double var45 = 0.125D;
+							double var47 = var34;
+							double var49 = (var36 - var34) * var45;
 
 							for(int var51 = 0; var51 < 8; ++var51) {
 								Block var52 = null;
-
-								if(var47 > 0.0D) {
-									var52 = Blocks.stone;
-								}
-
+								if(var47 > 0.0D) var52 = Blocks.stone;
 								var3[var43] = var52;
 								var43 += var44;
 								var47 += var49;
 							}
-
-							l4 += var38;
-							l5 += var40;
+							var34 += var38;
+							var36 += var40;
 						}
-
-						k1 += j5;
-						k3 += i5;
-						j4 += var27;
-						k5 += var29;
+						var15 += var23;
+						var17 += var25;
+						var19 += var27;
+						var21 += var29;
 					}
 				}
 			}
@@ -224,7 +215,7 @@ public class ChunkProviderDepths implements IChunkProvider{
 			(new WorldGenMinable(EssenceBlocks.flairiumOre, 8, EssenceBlocks.depthsStone)).generate(this.worldObj, this.rand, x, y, z);
 		}
 
-		if(rand.nextInt(3) == 0) {
+		for(times = 0; times < 10; times++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);

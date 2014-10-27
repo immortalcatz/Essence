@@ -168,7 +168,7 @@ public class BlockMod extends Block{
 	
 	@Override
 	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone ||  this == EssenceBlocks.mossyEssenceStone_overlay ? 51 : 0;
+		return this == EssenceBlocks.mossyEssenceStone ? 51 : 0;
 	}
 
 	@Override

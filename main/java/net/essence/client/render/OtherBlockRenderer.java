@@ -5,6 +5,7 @@ import net.essence.blocks.BlockModOre;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.IBlockAccess;
 import net.slayer.api.block.BlockMod;
 
@@ -20,7 +21,7 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 		Tessellator tess = Tessellator.instance;
 		block.setBlockBoundsForItemRender();
 		renderer.setRenderBoundsFromBlock(block);
-		Block render = EssenceBlocks.mossyEssenceStone_overlay;
+		Block render = Blocks.mossy_cobblestone;
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);  
 		tess.startDrawingQuads();
@@ -80,7 +81,7 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 		if(block == EssenceBlocks.mossyEssenceStone) {
 			BlockMod blk = (BlockMod)block;
 			blk.enhanceBrightness = false;
-			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone_overlay, x, y, z);
+			renderer.renderStandardBlock(Blocks.mossy_cobblestone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone, x, y, z);
 			blk.enhanceBrightness = true;
 			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());

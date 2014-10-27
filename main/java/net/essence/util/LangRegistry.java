@@ -3,6 +3,7 @@ package net.essence.util;
 import java.util.ArrayList;
 
 import net.essence.EssenceTabs;
+import net.essence.blocks.BlockColouredBricks;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -36,6 +37,7 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.util=Essence Of The Gods: Utilities");
 		instance.addToFile("itemGroup.misc1=Essence Of The Gods: Misc.");
 		instance.addToFile("itemGroup.armor=Essence Of The Gods: Armor");
+		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockColouredBricks.textures[j] + "ColouredBricks.name=" + BlockColouredBricks.names[j] + " Coloured Brick");
 	}
 	
 	public static void addOPFood(String name, String actual) {

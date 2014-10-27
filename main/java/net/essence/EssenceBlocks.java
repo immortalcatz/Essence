@@ -70,7 +70,6 @@ public class EssenceBlocks {
 	//public static final Block ultimateRail = new BlockModRail("ultimateRail", true, 6.0F);
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", false);
-	public static final Block mossyEssenceStone_overlay = new BlockMod("mossyEssenceStone_overlay", false).setCreativeTab(null);
 
 	public static final Block dungeonBrick = new BlockDungeonBlock("dungeonBrick");
 	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick");
@@ -107,4 +106,6 @@ public class EssenceBlocks {
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
 	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
+	
+	public static final Block colouredBricks = new BlockColouredBricks();
 }
