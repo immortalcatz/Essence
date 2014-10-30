@@ -3,11 +3,14 @@ package net.essence.entity.mob.boss;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
@@ -29,6 +32,12 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	@Override
 	public double setMaxHealth(MobStats s) {
 		return s.witheringBeastHealth;
+	}
+	
+	@Override
+	protected void attackEntity(Entity e, float a) {
+		super.attackEntity(e, a);
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.wither.id, 60));
 	}
 
 	@Override

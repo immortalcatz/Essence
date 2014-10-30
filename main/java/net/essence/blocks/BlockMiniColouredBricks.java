@@ -3,7 +3,7 @@ package net.essence.blocks;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.items.ItemBlockMetadata;
+import net.essence.items.ItemMiniBlockMetadata;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,7 +17,7 @@ import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class BlockColouredBricks extends Block {
+public class BlockMiniColouredBricks extends Block {
 
 	public static String[] textures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
 	public static String[] names = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
@@ -30,12 +30,12 @@ public class BlockColouredBricks extends Block {
 			new ItemStack(Items.dye, 1, 13), new ItemStack(Items.dye, 1, 14), new ItemStack(Items.dye, 1, 9), 
 			new ItemStack(Items.dye, 1, 5), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 15), new ItemStack(Items.dye, 1, 11)};
 
-	public BlockColouredBricks() {
+	public BlockMiniColouredBricks() {
 		super(EnumMaterialTypes.STONE.getMaterial());
 		setStepSound(EnumMaterialTypes.STONE.getSound());
 		setCreativeTab(EssenceTabs.decoraton);
 		setHardness(2.0F);
-		GameRegistry.registerBlock(this, ItemBlockMetadata.class, "blockColouredBricks");
+		GameRegistry.registerBlock(this, ItemMiniBlockMetadata.class, "blockMiniColouredBricks");
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class BlockColouredBricks extends Block {
 	@Override
 	public void registerBlockIcons(IIconRegister r) {
 		for(int i = 0; i < textures.length; i++)
-			icons[i] = r.registerIcon(SlayerAPI.PREFIX + "bricks/large/brick_" + textures[i]);
+			icons[i] = r.registerIcon(SlayerAPI.PREFIX + "bricks/mini/" + textures[i] + "_brick");
 	}
 
 	@Override

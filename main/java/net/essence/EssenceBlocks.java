@@ -108,4 +108,5 @@ public class EssenceBlocks {
 	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
+	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import net.essence.EssenceTabs;
 import net.essence.blocks.BlockColouredBricks;
+import net.essence.blocks.BlockMiniColouredBricks;
 import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 
 public class LangRegistry extends RegistryFile {
@@ -29,15 +29,17 @@ public class LangRegistry extends RegistryFile {
     }
 
 	public static void addMisc() {
-		instance.addToFile("itemGroup.blocks=Essence Of The Gods: Blocks");
-		instance.addToFile("itemGroup.items=Essence Of The Gods: Items");
-		instance.addToFile("itemGroup.weapons=Essence Of The Gods: Weapons");
-		instance.addToFile("itemGroup.ranged=Essence Of The Gods: Ranged");
-		instance.addToFile("itemGroup.tools1=Essence Of The Gods: Tools");
-		instance.addToFile("itemGroup.util=Essence Of The Gods: Utilities");
-		instance.addToFile("itemGroup.misc1=Essence Of The Gods: Misc.");
-		instance.addToFile("itemGroup.armor=Essence Of The Gods: Armor");
+		instance.addToFile("itemGroup.essence.blocks=Essence Of The Gods: Blocks");
+		instance.addToFile("itemGroup.essence.items=Essence Of The Gods: Items");
+		instance.addToFile("itemGroup.essence.weapons=Essence Of The Gods: Weapons");
+		instance.addToFile("itemGroup.essence.ranged=Essence Of The Gods: Ranged");
+		instance.addToFile("itemGroup.essence.tools=Essence Of The Gods: Tools");
+		instance.addToFile("itemGroup.essence.util=Essence Of The Gods: Utilities");
+		instance.addToFile("itemGroup.essence.misc=Essence Of The Gods: Misc.");
+		instance.addToFile("itemGroup.essence.armor=Essence Of The Gods: Armor");
+		instance.addToFile("itemGroup.essence.decoration=Essence Of The Gods: Decoration");
 		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockColouredBricks.textures[j] + "ColouredBricks.name=" + BlockColouredBricks.names[j] + " Coloured Brick");
+		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockMiniColouredBricks.textures[j] + "MiniColouredBricks.name=" + BlockMiniColouredBricks.names[j] + " Coloured Mini Brick");
 	}
 	
 	public static void addOPFood(String name, String actual) {

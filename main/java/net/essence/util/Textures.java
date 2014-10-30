@@ -14,6 +14,7 @@ public class Textures {
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
 
     public static final ResourceLocation robot = addMob("robot");
+    public static final ResourceLocation blank = addMob("blank");
     public static final ResourceLocation spyclops = addMob("spyclops");
     public static final ResourceLocation spikedBeast = addMob("spikedBeast");
     public static final ResourceLocation magmaGiant = addMob("magmaGiant");

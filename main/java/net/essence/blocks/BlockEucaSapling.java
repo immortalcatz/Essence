@@ -36,7 +36,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	private void generate(World w, int x, int y, int z, Random r) {
-		Object tree = null;
+		Object tree = new WorldGenBigEucaTree();
 		switch(r.nextInt(2)) {
 		case 0:
 			tree = new WorldGenBigEucaTree();

@@ -182,7 +182,7 @@ public class BlockModOre extends BlockMod {
 			}
 			return j1;
 		}
-		if(this == EssenceBlocks.ashual)
+		if(this == EssenceBlocks.ashual || this == EssenceBlocks.sapphireBlock)
 			return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
 		return 70;
 	}

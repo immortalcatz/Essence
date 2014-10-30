@@ -24,7 +24,7 @@ public class BlockStatue extends BlockMod {
 	protected ResourceLocation texture;
 
 	public BlockStatue(String name, ModelStatue model) {
-		super(name, 3.0F, EssenceTabs.misc);
+		super(name, 3.0F, EssenceTabs.decoraton);
 		setBlockTextureName("cobblestone");
 		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/" + name + ".png");
 		this.model = model;

@@ -10,6 +10,7 @@ import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
@@ -45,6 +46,8 @@ public class ItemNetherBossSpawner extends ItemMod {
 					w.spawnEntityInWorld(wither);
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
+			} else {
+				p.addChatMessage(SlayerAPI.addChatMessage(EnumChatFormatting.GREEN + "Cannot be spawned unless in the Nether."));
 			}
 		}
 		return true;
