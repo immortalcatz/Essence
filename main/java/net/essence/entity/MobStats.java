@@ -2,7 +2,7 @@ package net.essence.entity;
 
 public class MobStats {
 
-	public static double normalSpeed = 0.36, follow = 20;
+	public static double normalSpeed = 0.36, follow = 20, knockBackResistance = 0.0D;
 	
 	public static final int witheringBeastBossID = 0, netherBeastBossID = 1, calciaBossID = 2, wraithBossID = 3;
 	

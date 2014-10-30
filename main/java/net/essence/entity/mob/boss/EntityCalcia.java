@@ -27,6 +27,11 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public double setAttackDamage(MobStats s) {
 		return s.calciaDamage;
 	}
+	
+	@Override
+	public double setKnockbackResistance() {
+		return 1.0D;
+	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
@@ -61,11 +66,6 @@ public class EntityCalcia extends EntityEssenceBoss {
 			if(entity != null)
 				((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 25, 2));
 		}
-	}
-	
-	@Override
-	public double getKnockbackResistance() {
-		return 1.0D;
 	}
 
 	@Override

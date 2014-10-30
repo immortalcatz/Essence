@@ -45,13 +45,15 @@ public abstract class EntityModMob extends EntityMob {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(setFollowRange());
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(setMovementSpeed());
+		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(setKnockbackResistance());
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(setMaxHealth(new MobStats()));
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(setAttackDamage(new MobStats()));
 	}
 
 	public double setFollowRange(){return MobStats.follow;}
 	public double setMovementSpeed(){return MobStats.normalSpeed;}
-
+	public double setKnockbackResistance() {return MobStats.knockBackResistance;}
+	
 	public abstract double setAttackDamage(MobStats s);
 	public abstract double setMaxHealth(MobStats s);
 	public abstract String setLivingSound();
