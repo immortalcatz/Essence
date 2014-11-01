@@ -212,17 +212,8 @@ public class ChunkProviderDepths implements IChunkProvider{
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			(new WorldGenMinable(EssenceBlocks.flairiumOre, 8, EssenceBlocks.depthsStone)).generate(this.worldObj, this.rand, x, y, z);
+			
 		}
-
-		for(times = 0; times < 10; times++) {
-			y = rand.nextInt(250);
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlock(x, y, z) != EssenceBlocks.depthsGrass || worldObj.getBlock(x, y - 1, z) != EssenceBlocks.depthsGrass)
-				new WorldGenDepthsTree(true).generate(worldObj, rand, x, y, z);
-		}
-
 		BlockSand.fallInstantly = false;
 	}
 

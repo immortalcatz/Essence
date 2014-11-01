@@ -24,7 +24,7 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 	protected String textureName = SlayerAPI.PREFIX + "textures/models/armor/", name;
 	protected int fullReduction;
 	protected EnumArmor armorMaterial;
-	
+
 	public ItemModArmor(EnumArmor armorMaterial, int type) {
 		this(armorMaterial, type, armorMaterial.getType());
 	}
@@ -45,12 +45,10 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		GameRegistry.registerItem(this, this.name);
 		LangRegistry.addItem(this);
 	}
-	
+
 	@Override
 	public boolean getIsRepairable(ItemStack i, ItemStack i1) {
-		boolean canRepair = armorMaterial.getRepairItem() != null;
-		if(canRepair) return armorMaterial.getRepairItem() == i1.getItem() ? true : super.getIsRepairable(i, i1);
-		return super.getIsRepairable(i, i1);
+		return armorMaterial.getRepairItem() != null && armorMaterial.getRepairItem() == i1.getItem() ? true : super.getIsRepairable(i, i1);
 	}
 
 	protected void setArmorType(String material, int armorType) {

@@ -365,9 +365,9 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	}
 
 	@Override
-	public void populate(IChunkProvider par1IChunkProvider, int i, int j) {
-		int x1 = i * 16;
-		int z1 = j * 16;
+	public void populate(IChunkProvider par1IChunkProvider, int chunkX, int chunkZ) {
+		int x1 = chunkX * 16;
+		int z1 = chunkZ * 16;
 		int x, y, z, times;
 		x = x1 + this.rand.nextInt(16) + 8;
 		z = z1 + this.rand.nextInt(16) + 8;
@@ -390,20 +390,6 @@ public class ChunkProviderBoiling implements IChunkProvider {
 		if(canSpawn) {
 			this.genNetherBridge.generateStructuresInChunk(this.worldObj, rand, x1, z1);
 			this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, x1, z1);
-		}
-		for(times = 0; times < 200; times++){
-			y = this.worldObj.getHeightValue(x, z);
-			(new WorldGenBoilingFire()).generate(worldObj, rand, x, y, z);
-		}
-
-		if(rand.nextInt(4) == 0) {
-			y = this.rand.nextInt(128) + 1;
-			(new WorldGenBoilingLava(Blocks.lava)).generate(this.worldObj, this.rand, x, y, z);
-		}
-
-		for(times = 0; times < 10; times++){
-			y = rand.nextInt(250) + 1;
-			(new WorldGenMinable(EssenceBlocks.ashual, 7, EssenceBlocks.ashBlock)).generate(worldObj, rand, x, y, z);
 		}
 	}
 

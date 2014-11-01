@@ -20,7 +20,7 @@ public class EntityEucaHopper extends EntityModTameable {
 
 	public EntityEucaHopper(World var1) {
 		super(var1);
-		this.setSize(0.5F, 0.5F);
+		this.setSize(1.0F, 1.0F);
 		this.experienceValue = 40;
 	}
 

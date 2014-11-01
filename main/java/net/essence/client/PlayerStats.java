@@ -39,7 +39,7 @@ public class PlayerStats {
 	}
 	
 	@SubscribeEvent
-	public void renderCape(RenderPlayerEvent.Specials.Pre event) {
+	public void renderPlayerPre(RenderPlayerEvent.Specials.Pre event) {
 		event.renderCape = true;
 	}
 

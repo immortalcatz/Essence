@@ -201,6 +201,6 @@ public class EssenceItems {
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
 	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
-		return EnumHelper.addToolMaterial("", 3, breakable ? uses : -1, efficiency, dam, 30);
+		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}
 }

@@ -109,4 +109,5 @@ public class EssenceBlocks {
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
+	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenBoilingLava extends WorldGenerator {
+	
 	private Block gen;
 
 	public WorldGenBoilingLava(Block gen) {

@@ -10,7 +10,7 @@ public class WorldGenBoilingFire extends WorldGenerator{
 
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
-		for(int i = 0; i < 50; i++){
+		for(int i = 0; i < 20; i++){
 			if(w.getBlock(x, y - 1, z) == EssenceBlocks.hotBlock){
 				w.setBlock(x, y, z, EssenceBlocks.boilingFire, 0, 2);
 				return true;
