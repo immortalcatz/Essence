@@ -54,6 +54,10 @@ public class EssenceBlocks {
 	public static final Block depthsFullSlab = new BlockModSlab("depthsFullSlab", true, depthsPlank);
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
 
+	public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", true);
+	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F, "godDirt");
+	public static final Block godStone = new BlockMod("godStone", 2.0F);
+	
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
@@ -66,8 +70,6 @@ public class EssenceBlocks {
 
 	public static final Block fire = new BlockModFire("fire");
 	public static final Block boilingFire = new BlockBoilingFire("boilingFire");
-
-	//public static final Block ultimateRail = new BlockModRail("ultimateRail", true, 6.0F);
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", false);
 

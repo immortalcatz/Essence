@@ -38,8 +38,8 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateBoilingPoint(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions("boilFire", w, chunkX , chunkZ);
 		if(rand.nextInt(4) == 0) GenerationHelper.generateEssenceDimensions("boilLava", w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions("boilFire", w, chunkX , chunkZ);
 		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions("ashualOre", w, chunkX , chunkZ);
 	}
 
@@ -61,9 +61,9 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 4; i++) GenerationHelper.generateVanilla("luniumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("shadiumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("sapphireOre", w, chunkX, chunkZ);
+		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("luniumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("shadiumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("sapphireOre", w, chunkX, chunkZ);
 		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("smallGlowshroom", w, chunkX, chunkZ);
 		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("tallGlowshroom", w, chunkX, chunkZ);
 

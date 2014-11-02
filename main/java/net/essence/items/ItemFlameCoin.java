@@ -39,26 +39,9 @@ public class ItemFlameCoin extends ItemMod {
 				else return false;
 			}
 		} else {
-			int radius = 16;
-			int centre = radius / 2, squareDistance = 0;
-			for(x = centre - radius; x < centre + radius; x++)
-				for(y = centre - radius; y < centre + radius; y++)
-					for(z = centre - radius; z < centre + radius; z++) {
-						squareDistance = (x-centre) * (x-centre) + (y-centre) * (y-centre) + (z-centre) * (z-centre);
-						if(squareDistance <= (radius) * (radius)) w.setBlock(x, y, z, Blocks.bedrock);
-
-					}
-
-			/*for(float i = 0; i < radius; i += 0.5) {
-			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
-				w.setBlock((int)Math.floor(x + Math.sin(j) * i), y + radius, (int)Math.floor(z + Math.cos(j) * i), Blocks.bedrock);
-		}*/
+			
 		}
 		return true;
-	}
-	
-	public int squareInt(int toSquare) {
-		return toSquare * toSquare;
 	}
 
 	@Override

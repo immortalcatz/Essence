@@ -12,10 +12,12 @@ public class BlockModGlass extends BlockMod {
 		super(EnumMaterialTypes.GLASS, name, hardness);
 	}
 	
+	@Override
     public int getRenderBlockPass() {
         return 1;
     }
     
+	@Override
     public boolean renderAsNormalBlock() {
         return false;
     }

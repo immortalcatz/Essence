@@ -2,6 +2,7 @@ package net.slayer.api.worldgen;
 
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -139,13 +140,58 @@ public class WorldGenAPI {
 			}
 		}
 	}
+	
+	public static void addSphere(World w, int size, int x, int y, int z, Block bottom, Block top) {
+		int XLength = x - size;
+		int XHeight = x + size;
+		int ZLength = z - size;
+		int ZHeight = z + size;
+		double realSize = size / 2;
+		double sizeOfSphere = realSize * realSize;
+		for(int i = XLength; i < XHeight; i++) {
+			for(int j = y - size; j < y + size; j++) {
+				for(int k = ZLength; k < ZHeight; k++) {
+					double dx = i - x;
+					double dy = j - y;
+					double dz = k - z;
+					if(dx * dx * 0.7 + dy * dy * 0.8 + dz * dz * 0.7 < sizeOfSphere) {
+						w.setBlock(i, j + size + 3, k, bottom);
+						w.setBlock(i, j + size + 4, k, top);
+					}
+				}
+			}
+		}
+	}
+	
+	public static void addWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass) {
+		int XLength = x - size;
+		int XHeight = x + size;
+		int ZLength = z - size;
+		int ZHeight = z + size;
+		double realSize = size / 2;
+		double sizeOfSphere = realSize * realSize;
+		for(int i = XLength; i < XHeight; i++) {
+			for(int j = y - size; j < y + size; j++) {
+				for(int k = ZLength; k < ZHeight; k++) {
+					double dx = i - x;
+					double dy = j - y;
+					double dz = k - z;
+					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
+						w.setBlock(i, j + size + 2, k, stone);
+						w.setBlock(i, j + size + 3, k, dirt);
+						w.setBlock(i, j + size + 4, k, grass);
+					}
+				}
+			}
+		}
+	}
 
 	public static void addCone(World w, int height, Random r, int x, int y, int z, Block b) {
 		int height1 = r.nextInt(4) + height;
-		for(int i = 0; i < height1; i++) placeBlockCircle(w, x, y + i, z, height1 - i, b);
+		for(int i = 0; i < height1; i++) placeFlatCircle(w, x, y + i, z, height1 - i, b);
 	}
 
-	private static void placeBlockCircle(World par1World, int x, int y, int z, int radius, Block block) {
+	private static void placeFlatCircle(World par1World, int x, int y, int z, int radius, Block block) {
 		for(float i = 0; i < radius; i += 0.5) {
 			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
 				par1World.setBlock((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), block);

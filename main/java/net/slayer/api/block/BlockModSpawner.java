@@ -60,5 +60,4 @@ public class BlockModSpawner extends BlockContainer {
     public boolean isOpaqueCube() {
         return false;
     }
-
 }

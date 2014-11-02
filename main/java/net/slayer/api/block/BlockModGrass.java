@@ -33,11 +33,13 @@ public class BlockModGrass extends BlockMod implements IGrowable {
         setTickRandomly(true);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int intSide, int meta) {
         return intSide == 1 ? top : (intSide == 0 ? bottom : side);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister icon) {
         side = icon.registerIcon(getTextureName() + "_side");
@@ -87,5 +89,5 @@ public class BlockModGrass extends BlockMod implements IGrowable {
     }
 
     @Override
-    public void func_149853_b(World world, Random rand, int x, int y, int z) {}
+    public void func_149853_b(World world, Random rand, int x, int y, int z) { }
 }

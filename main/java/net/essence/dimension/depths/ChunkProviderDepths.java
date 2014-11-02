@@ -202,18 +202,6 @@ public class ChunkProviderDepths implements IChunkProvider{
 
 	@Override
 	public void populate(IChunkProvider ichunkprovider, int i, int j) {
-		int x1 = i * 16;
-		int z1 = j * 16;
-		int x, y, z, times;
-		x = x1 + this.rand.nextInt(16);
-		z = z1 + this.rand.nextInt(16);
-
-		for(times = 0; times < 40; times++) {
-			y = rand.nextInt(250);
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			
-		}
 		BlockSand.fallInstantly = false;
 	}
 
