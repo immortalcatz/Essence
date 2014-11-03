@@ -39,7 +39,7 @@ public class ItemFlameCoin extends ItemMod {
 				else return false;
 			}
 		} else {
-			
+			WorldGenAPI.addOreWorldSphere(w, 16, x, y, z, EssenceBlocks.eucaStone, EssenceBlocks.eucaDirt, EssenceBlocks.eucaGrass, EssenceBlocks.celestiumOre);
 		}
 		return true;
 	}

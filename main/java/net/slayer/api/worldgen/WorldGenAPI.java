@@ -1,8 +1,8 @@
 package net.slayer.api.worldgen;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -12,6 +12,8 @@ import net.minecraft.world.World;
 
 public class WorldGenAPI {
 
+	private static Random r = new Random();
+	
 	public static boolean isValidLocationToSpawn(int x, int y, int z, World w, Block b){
 		for(int i = 0; i < x; i++) {
 			for(int l = 0; l < z; l++) {
@@ -86,9 +88,9 @@ public class WorldGenAPI {
 	public static void addCornerlessRectangleWithMetadata(int east, int south, int height, World w, int x, int y, int z, Block b, int meta){
 		addRectangleWithMetadata(east, south, height, w, x, y, z, b, meta);
 		addRectangleWithMetadata(1, 1, height, w, x, y, z, Blocks.air, meta);
-		addRectangleWithMetadata(1, 1, height, w, x+east-1 , y, z, Blocks.air, meta);
-		addRectangleWithMetadata(1, 1, height, w, x, y, z+south-1, Blocks.air, meta);
-		addRectangleWithMetadata(1, 1, height, w, x+east-1, y, z+south-1, Blocks.air, meta);
+		addRectangleWithMetadata(1, 1, height, w, x + east - 1 , y, z, Blocks.air, meta);
+		addRectangleWithMetadata(1, 1, height, w, x, y, z + south - 1, Blocks.air, meta);
+		addRectangleWithMetadata(1, 1, height, w, x + east - 1, y, z + south - 1, Blocks.air, meta);
 	}
 
 	public static void placeChestWithContents(World w, int x, int y, int z, int meta, int amountOfItems, boolean trapped, ItemStack...is){
@@ -180,6 +182,34 @@ public class WorldGenAPI {
 						w.setBlock(i, j + size + 2, k, stone);
 						w.setBlock(i, j + size + 3, k, dirt);
 						w.setBlock(i, j + size + 4, k, grass);
+					}
+				}
+			}
+		}
+	}
+	
+	public static void addOreWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass, Block... ores) {
+		ArrayList<Block> block = new ArrayList<Block>();
+		for(Block b : ores) block.add(b);
+		int XLength = x - size;
+		int XHeight = x + size;
+		int ZLength = z - size;
+		int ZHeight = z + size;
+		double realSize = size / 2;
+		double sizeOfSphere = realSize * realSize;
+		for(int i = XLength; i < XHeight; i++) {
+			for(int j = y - size; j < y + size; j++) {
+				for(int k = ZLength; k < ZHeight; k++) {
+					double dx = i - x;
+					double dy = j - y;
+					double dz = k - z;
+					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
+						w.setBlock(i, j + size + 2, k, stone);
+						w.setBlock(i, j + size + 3, k, dirt);
+						w.setBlock(i, j + size + 4, k, grass);
+					}
+					if(w.getBlock(i, j, k) == stone) {
+						if(r.nextInt(20) == 0) w.setBlock(i, j, k, block.get(r.nextInt(block.size())));
 					}
 				}
 			}
