@@ -11,7 +11,7 @@ public class EntityDepthsBeast extends EntityModMob{
 	public EntityDepthsBeast(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(0.7F, 2.0F);
+		setSize(1.2F, 2.5F);
 	}
 
 	@Override

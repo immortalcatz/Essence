@@ -21,10 +21,13 @@ public enum EnumSounds {
 	BLAZE("mob.blaze.breathe"),
 	BLAZE_HURT("mob.blaze.hit"),
 	BLAZE_DEATH("mob.blaze.death"),
+	WITHER("mob.wither.idle"),
+	WITHER_HURT("mob.wither.hurt"),
+	WITHER_DEATH("mob.wither.death"),
 	STAFF("staff");
 	
 	private String sound;
-	
+
 	private EnumSounds(String sound) {
 		this.sound = sound;
 	}

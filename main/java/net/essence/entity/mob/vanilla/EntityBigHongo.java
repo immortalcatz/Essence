@@ -13,6 +13,7 @@ public class EntityBigHongo extends EntityModMob {
 	public EntityBigHongo(World par1World) {
 		super(par1World);
 		addAttackingAI();
+		this.setSize(1.0F, 2.0F);
 	}
 
 	@Override

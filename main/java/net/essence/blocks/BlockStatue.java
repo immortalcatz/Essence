@@ -5,10 +5,12 @@ import java.util.List;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
+import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.ModelStatue;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -22,12 +24,14 @@ public class BlockStatue extends BlockMod {
 
 	protected ModelStatue model;
 	protected ResourceLocation texture;
+	protected String sound;
 
-	public BlockStatue(String name, ModelStatue model) {
+	public BlockStatue(String name, ModelStatue model, String s) {
 		super(name, 3.0F, EssenceTabs.decoraton);
 		setBlockTextureName("cobblestone");
 		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/" + name + ".png");
 		this.model = model;
+		this.sound = s;
 	}
 
 	@Override
@@ -35,8 +39,13 @@ public class BlockStatue extends BlockMod {
 		Block b = w.getBlock(x, y, z);
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
-
 		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1F, y + 1.9F, z + 1F);
+	}
+
+	@Override
+	public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer p, int i, float f, float f1, float f2) {
+		if(!w.isRemote) EnumSounds.playSound(sound, w, p);
+		return true;
 	}
 
 	@Override

@@ -14,7 +14,7 @@ public class EntityBurntMiner extends EntityModMob{
 	public EntityBurntMiner(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(0.7F, 1.0F);
+		setSize(0.7F, 2.0F);
 		isImmuneToFire = true;
 	}
 

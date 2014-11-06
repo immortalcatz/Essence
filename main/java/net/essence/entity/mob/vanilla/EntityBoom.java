@@ -22,6 +22,7 @@ public class EntityBoom extends EntityModMob {
 		super(par1World);
 		this.tasks.addTask(2, new EntityBoomSwell(this));
 		addAttackingAI();
+		this.setSize(1.0F, 2.0F);
 	}
 
 	@Override

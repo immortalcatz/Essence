@@ -1,12 +1,36 @@
 package net.essence;
 
-import net.essence.blocks.*;
-import net.essence.client.render.mob.model.statue.*;
-import net.essence.util.Textures;
-import net.minecraft.block.*;
-import net.minecraft.creativetab.CreativeTabs;
-import net.slayer.api.*;
-import net.slayer.api.block.*;
+import net.essence.blocks.BlockBoilPortal;
+import net.essence.blocks.BlockBoilingFire;
+import net.essence.blocks.BlockColouredBricks;
+import net.essence.blocks.BlockDepthsPortal;
+import net.essence.blocks.BlockDungeonBlock;
+import net.essence.blocks.BlockEnrichedEnchantmentTable;
+import net.essence.blocks.BlockEucaPortal;
+import net.essence.blocks.BlockEucaSapling;
+import net.essence.blocks.BlockGlowshroom;
+import net.essence.blocks.BlockJoinedGlass;
+import net.essence.blocks.BlockMiniColouredBricks;
+import net.essence.blocks.BlockModFire;
+import net.essence.blocks.BlockModOre;
+import net.essence.blocks.BlockStatue;
+import net.essence.client.EnumSounds;
+import net.essence.client.render.mob.model.statue.ModelCalciaStatue;
+import net.essence.client.render.mob.model.statue.ModelEnderChampionStatue;
+import net.essence.client.render.mob.model.statue.ModelNetherBeastStatue;
+import net.essence.client.render.mob.model.statue.ModelWitheringBeastStatue;
+import net.essence.client.render.mob.model.statue.ModelWraithStatue;
+import net.minecraft.block.Block;
+import net.slayer.api.EnumMaterialTypes;
+import net.slayer.api.EnumToolType;
+import net.slayer.api.block.BlockMod;
+import net.slayer.api.block.BlockModDoor;
+import net.slayer.api.block.BlockModFence;
+import net.slayer.api.block.BlockModGrass;
+import net.slayer.api.block.BlockModLeaves;
+import net.slayer.api.block.BlockModLog;
+import net.slayer.api.block.BlockModSlab;
+import net.slayer.api.block.BlockModStairs;
 
 public class EssenceBlocks {
 
@@ -97,10 +121,11 @@ public class EssenceBlocks {
 
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
 
-	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue());
-	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue());
-	public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
-	public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
+	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER.getNonPrefixedName());
+	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), "");
+	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), "");
+	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
+	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 
 	public static final Block enrichedEnchantmentTable = new BlockEnrichedEnchantmentTable("enrichedEnchantmentTable");
 	

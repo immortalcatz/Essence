@@ -20,26 +20,26 @@ import net.slayer.api.item.*;
 
 public class EssenceItems {
 
-	public static ToolMaterial hellstoneSwordMat = addToolMaterial(3000, 13F, 9F, true);
-	public static ToolMaterial flairiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
-	public static ToolMaterial luniumSwordMat = addToolMaterial(3000, 13F, 9F, true);
-	public static ToolMaterial celestiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
-	public static ToolMaterial shadiumSwordMat = addToolMaterial(3000, 13F, 9F, true);
-	public static ToolMaterial sapphiretoolSwordMat = addToolMaterial(3000, 13F, 9F, true);
+	public static ToolMaterial hellstoneSwordMat = addToolMaterial(2356, 13F, 15F, true);
+	public static ToolMaterial flairiumSwordMat = addToolMaterial(3120, 13F, 25F, true);
+	public static ToolMaterial celestiumSwordMat = addToolMaterial(3120, 13F, 20F, true);
+	public static ToolMaterial shadiumSwordMat = addToolMaterial(2210, 13F, 10F, true);
+	public static ToolMaterial luniumSwordMat = addToolMaterial(2210, 13F, 10F, true);
+	public static ToolMaterial sapphiretoolSwordMat = addToolMaterial(1561, 13F, 9F, true);
 	
-	public static ToolMaterial hellstone = addToolMaterial(3000, 13F, 5F, true);
-	public static ToolMaterial flairium = addToolMaterial(3000, 13F, 5F, true);
-	public static ToolMaterial lunium = addToolMaterial(3000, 13F, 5F, true);
-	public static ToolMaterial celestium = addToolMaterial(3000, 13F, 5F, true);
-	public static ToolMaterial shadium = addToolMaterial(3000, 13F, 5F, true);
-	public static ToolMaterial sapphiretool = addToolMaterial(3000, 13F, 5F, true);
+	public static ToolMaterial hellstone = addToolMaterial(1600, 10F, 5F, true);
+	public static ToolMaterial flairium = addToolMaterial(3000, 15F, 5F, true);
+	public static ToolMaterial lunium = addToolMaterial(3000, 9F, 5F, true);
+	public static ToolMaterial celestium = addToolMaterial(1600, 13F, 5F, true);
+	public static ToolMaterial shadium = addToolMaterial(1600, 10F, 5F, true);
+	public static ToolMaterial sapphiretool = addToolMaterial(1561, 8F, 5F, true);
 	
-	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 13F, 5F, false);
-	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 13F, 5F, false);
-	public static ToolMaterial luniumMulti = addToolMaterial(3000, 13F, 5F, false);
-	public static ToolMaterial celestiumMulti = addToolMaterial(3000, 13F, 5F, false);
-	public static ToolMaterial shadiumMulti = addToolMaterial(3000, 13F, 5F, false);
-	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial luniumMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial celestiumMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial shadiumMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 15F, 5F, false);
 	
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 	

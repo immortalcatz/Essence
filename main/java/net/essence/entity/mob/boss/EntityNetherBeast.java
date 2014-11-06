@@ -1,5 +1,6 @@
 package net.essence.entity.mob.boss;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.minecraft.block.Block;
@@ -82,5 +83,7 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 	protected void dropFewItems(boolean par1, int par2) {
 		Item item = getItemDropped();
 		for(int i = 0; i < rand.nextInt(5) + 4; i++) this.dropItem(item, 1);
+		if(rand.nextInt(1) == 0)
+			this.dropItem(Item.getItemFromBlock(EssenceBlocks.netherBeastStatue), 1);
 	}
 }

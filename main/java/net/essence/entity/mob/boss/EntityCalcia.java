@@ -2,6 +2,7 @@ package net.essence.entity.mob.boss;
 
 import java.util.List;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.Entity;
@@ -21,6 +22,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public EntityCalcia(World par1World) {
 		super(par1World);
 		addAttackingAI();
+		this.setSize(1.6F, 2.5F);
 	}
 
 	@Override
@@ -96,5 +98,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 		Item item = getItemDropped();
 		for(int i = 0; i < rand.nextInt(5) + 4; i++)
 			this.dropItem(item, 1);
+		if(rand.nextInt(1) == 0)
+			this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
 	}
 }

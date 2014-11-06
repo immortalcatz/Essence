@@ -1,5 +1,6 @@
 package net.essence.entity.mob.boss;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
@@ -65,7 +66,8 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 		Item item = getItemDropped();
 		for(int i = 0; i < rand.nextInt(5) + 4; i++)
 			this.dropItem(item, 1);
-		
+		if(rand.nextInt(1) == 0)
+			this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
 	}
 
 	@Override
