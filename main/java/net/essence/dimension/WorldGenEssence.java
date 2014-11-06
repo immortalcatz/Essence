@@ -55,7 +55,7 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		if(r.nextInt(30) == 0) GenerationHelper.generateVanilla("boilPortal", w, chunkX, chunkZ);
+		if(r.nextInt(40) == 0) GenerationHelper.generateVanilla("boilPortal", w, chunkX, chunkZ);
 		for(i = 0; i < 10; i++) GenerationHelper.generateVanilla("hellstoneOre", w, chunkX, chunkZ);
 	}
 

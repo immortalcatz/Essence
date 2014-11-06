@@ -139,7 +139,6 @@ public class BarTickHandler {
 				GL11.glPopMatrix();
 				mc.fontRenderer.drawString("Dark Energy", width - 140, height - 27, 0xF);
 				mc.fontRenderer.drawString("Essence", width - 125, height - 67, 0xF);
-
 			}
 		}
 	}

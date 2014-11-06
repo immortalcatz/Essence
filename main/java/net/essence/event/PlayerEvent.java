@@ -1,15 +1,11 @@
 package net.essence.event;
 
-import java.util.Random;
-
 import net.essence.Essence;
-import net.essence.client.ModPlayerHealth;
 import net.essence.util.Config;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -20,10 +16,9 @@ import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 
 public class PlayerEvent {
 
@@ -31,10 +26,7 @@ public class PlayerEvent {
 
 	@SubscribeEvent
 	public void entityConstructing(EntityConstructing event) {
-		if(event.entity instanceof EntityPlayer && ModPlayerHealth.getInstance().getPlayer((EntityPlayer)event.entity) == null){
-			ModPlayerHealth.getInstance().register((EntityPlayer)event.entity);
-			//PlayerLevels.register((EntityPlayer)event.entity);
-		}
+		
 	}
 
 	@SubscribeEvent

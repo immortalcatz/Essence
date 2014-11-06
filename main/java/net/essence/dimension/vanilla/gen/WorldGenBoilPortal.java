@@ -6,13 +6,14 @@ import net.essence.EssenceBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.slayer.api.SlayerAPI;
 import net.slayer.api.worldgen.WorldGenAPI;
 
 public class WorldGenBoilPortal extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
-		int i;
+		/*int i;
 		boolean foundGround = false;
 		for(i = 0; i < 100; i++) {
 			for(int x1 = 0; x1 < x - 6; x1++) {
@@ -58,8 +59,36 @@ public class WorldGenBoilPortal extends WorldGenerator {
 		for(i = 0; i < 7; i++){
 			w.setBlock(x + 1, y - 4 + i, z + 5 - i, Blocks.nether_brick_stairs, 3, 2);
 			w.setBlock(x + 2, y - 4 + i, z + 5 - i, Blocks.nether_brick_stairs, 3, 2);
+		}*/
+
+		boolean canSpawn = false;
+		
+		for(int x1 = 0; x1 < 5; x1++) {
+			for(int z1 = 0; z1 < 6; z1++) {
+				for(int y1 = 0; y1 < 6; y1++) {
+					if(w.getBlock(x + x1, y, z + z1) == Blocks.netherrack && w.getBlock(x + x1, y + y1, z + z1) == Blocks.air) {
+						canSpawn = true;
+						break;
+					}
+				}
+			}
+		}
+				
+		WorldGenAPI.addRectangle(5, 6, 5, w, x, y + 1, z, Blocks.air);
+		WorldGenAPI.addRectangle(5, 6, 1, w, x, y, z, Blocks.nether_brick);
+		WorldGenAPI.addRectangle(5, 6, 1, w, x, y + 6, z, Blocks.nether_brick);
+		WorldGenAPI.addRectangle(1, 1, 5, w, x, y + 1, z, Blocks.nether_brick_fence);
+		WorldGenAPI.addRectangle(1, 1, 5, w, x + 4, y + 1, z, Blocks.nether_brick_fence);
+		WorldGenAPI.addRectangle(1, 1, 5, w, x + 4, y + 1, z + 5, Blocks.nether_brick_fence);
+		WorldGenAPI.addRectangle(1, 1, 5, w, x, y + 1, z + 5, Blocks.nether_brick_fence);
+		WorldGenAPI.addRectangle(1, 4, 5, w, x + 2, y + 1, z + 1, EssenceBlocks.boilPortalFrame);
+		WorldGenAPI.addRectangle(1, 2, 3, w, x + 2, y + 2, z + 2, Blocks.air);
+		WorldGenAPI.addBlock(w, x + 2, y + 3, z + 2, EssenceBlocks.fire);
+		if(!w.isRemote && canSpawn) {
+			SlayerAPI.sendMessageToAll("A portal to Boiling Point has been", true);
+			SlayerAPI.sendContinuedMessageToAll("spawned. Find it randomly.");
 		}
 
-		return true;
+		return canSpawn;
 	}
 }

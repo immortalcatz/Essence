@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
+import net.essence.dimension.vanilla.gen.WorldGenBoilPortal;
 import net.essence.dimension.vanilla.gen.WorldGenSmallGlowshrooms;
 import net.essence.dimension.vanilla.gen.WorldGenTallGlowshrooms;
 import net.minecraft.block.Block;
@@ -46,7 +47,7 @@ public class GenerationHelper {
 			break;
 		case "boilPortal":
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			//if(y > 27) (new WorldGenBoilPortal()).generate(w, r, x, y, z);
+			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, x, y, z);
 			break;
 		}
 	}

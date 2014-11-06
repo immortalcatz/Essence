@@ -57,7 +57,7 @@ public class EssenceItems {
 	public static final Item spawnerBar = new ItemMod("spawnerBar");
 	
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
-	public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
+	//public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
 
 	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
