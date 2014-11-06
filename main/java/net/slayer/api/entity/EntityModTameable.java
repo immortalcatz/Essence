@@ -52,8 +52,8 @@ public abstract class EntityModTameable extends EntityTameable {
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
         this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
-        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, getMoveSpeed(), true));
-        this.tasks.addTask(5, new EntityAIFollowOwner(this, getMoveSpeed(), 10.0F, 2.0F));
+        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, 1.0F, true));
+        this.tasks.addTask(5, new EntityAIFollowOwner(this, 1.0F, 10.0F, 2.0F));
         this.tasks.addTask(6, new EntityAIMate(this, 1.0F));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0F));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -65,7 +65,7 @@ public abstract class EntityModTameable extends EntityTameable {
 	}
 	
 	protected void addAttackingAI(){
-        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityPlayer.class, getMoveSpeed(), false));
+        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0F, false));
 		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 
 	}

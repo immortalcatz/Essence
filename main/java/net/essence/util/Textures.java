@@ -12,6 +12,7 @@ public class Textures {
 
     public static final ResourceLocation basic = addProjectile("grey");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
+    public static final ResourceLocation magmaBall = addProjectile("magmaBall");
 
     public static final ResourceLocation robot = addMob("robot");
     public static final ResourceLocation blank = addMob("blank");
@@ -34,6 +35,13 @@ public class Textures {
     public static final ResourceLocation eucaFighter = addMob("eucaFighter");    
     public static final ResourceLocation eucaHopper = addMob("eucaHopper");
     public static final ResourceLocation eucaHopperTamed = addMob("eucaHopperTamed");
+    public static final ResourceLocation magmaBlaze = addMob("magmaBlaze");
+    public static final ResourceLocation crisp = addMob("crisp");
+    public static final ResourceLocation burntMiner = addMob("burntMiner");
+    public static final ResourceLocation exposedFlame = addMob("exposedFlame");
+    public static final ResourceLocation burningLight = addMob("burningLight");
+    public static final ResourceLocation ashHoarder = addMob("ashHoarder");
+    public static final ResourceLocation burntAsh = addMob("burntAsh");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

@@ -1,16 +1,21 @@
 package net.essence.entity.mob.euca;
 
 import net.essence.entity.MobStats;
-import net.minecraft.block.BlockColored;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
@@ -18,92 +23,142 @@ import net.slayer.api.entity.EntityModTameable;
 
 public class EntityEucaHopper extends EntityModTameable {
 
-	public EntityEucaHopper(World var1) {
-		super(var1);
+	public EntityEucaHopper(World w) {
+		super(w);
 		this.setSize(1.0F, 1.0F);
-		this.experienceValue = 40;
-	}
-
-	public EntityEucaHopper(World w, boolean tamed, String owner) {
-		this(w);
-		this.setTamed(tamed);
-		this.func_152115_b(owner);
 	}
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.eucaHopperHealth);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(MobStats.eucaHopperSpeed);
-		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(MobStats.eucaHopperFollowRange);
+		if(this.isTamed()) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.eucaHopperHealth);
+		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.eucaHopperHealth);
 	}
 
 	@Override
-	protected boolean canDespawn() {
-		return !this.isTamed();
+	public EntityAgeable createChild(EntityAgeable var1) {
+		EntityEucaHopper e = new EntityEucaHopper(this.worldObj);
+		String s = this.func_152113_b();
+		if(s != null && s.trim().length() > 0) {
+			e.func_152115_b(s);
+			e.setTamed(true);
+		}
+		return e;
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return worldObj.getBlock((int)posX, (int)posY - 1, (int)posZ) == Blocks.soul_sand && super.getCanSpawnHere();
+	}
+
+	@Override
+	public void setAttackTarget(EntityLivingBase par1EntityLivingBase) {
+		super.setAttackTarget(par1EntityLivingBase);
+		if(par1EntityLivingBase == null)
+			this.setAngry(false);
+
+		else if(!this.isTamed())
+			this.setAngry(true);
+
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataWatcher.addObject(18, new Float(this.getHealth()));
+	}
+
+	@Override
+	protected void updateAITick() {
+		this.dataWatcher.updateObject(18, Float.valueOf(this.getHealth()));
+	}
+
+	@Override
+	protected void func_145780_a(int x, int y, int z, Block b) {
+		this.playSound("mob.wolf.step", 0.15F, 1.0F);
+	}
+
+	@Override
+	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
+		super.writeEntityToNBT(par1NBTTagCompound);
+		par1NBTTagCompound.setBoolean("Angry", this.isAngry());
+	}
+
+	@Override
+	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
+		super.readEntityFromNBT(par1NBTTagCompound);
+		this.setAngry(par1NBTTagCompound.getBoolean("Angry"));
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
+		if(this.isEntityInvulnerable()) return false;
+		else {
+			Entity entity = par1DamageSource.getEntity();
+			this.aiSit.setSitting(false);
+			if(entity != null && !(entity instanceof EntityPlayer) && !(entity instanceof EntityArrow))            
+				par2 = (par2 + 1.0F) / 2.0F;
+			return super.attackEntityFrom(par1DamageSource, par2);
+		}
 	}
 
 	@Override
 	public boolean attackEntityAsMob(Entity par1Entity) {
-		double i = MobStats.eucaHopperDamage;
-		if(this.isTamed()) {
-			return false;
-		}
+		int i = this.isTamed() ? 10 : 5;
 		return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)i);
 	}
-	
-    protected void updateAITick() {
-        this.dataWatcher.updateObject(18, Float.valueOf(this.getHealth()));
-    }
-
-    protected void entityInit() {
-        super.entityInit();
-        this.dataWatcher.addObject(18, new Float(this.getHealth()));
-        this.dataWatcher.addObject(19, new Byte((byte)0));
-    }
 
 	@Override
-	public boolean interact(EntityPlayer var1) {
-		ItemStack var2 = var1.inventory.getCurrentItem();
+	public void setTamed(boolean par1) {
+		super.setTamed(par1);
+		if(par1) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.eucaHopperHealthTamed);
+		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.eucaHopperHealth);
+	}
+
+	@Override
+	public boolean interact(EntityPlayer par1EntityPlayer) {
+		ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
 
 		if(this.isTamed()) {
-			if(var2 != null && var2.getItem() instanceof ItemFood) {
-				ItemFood var3 = (ItemFood)var2.getItem();
-
-				if(var3.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectInt(18) < 20) {
-					if(!var1.capabilities.isCreativeMode) {
-						--var2.stackSize;
+			if(itemstack != null) {
+				if(itemstack.getItem() instanceof ItemFood) {
+					ItemFood itemfood = (ItemFood)itemstack.getItem();
+					if(itemfood.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectFloat(18) < 20.0F) {
+						if(!par1EntityPlayer.capabilities.isCreativeMode)
+							--itemstack.stackSize;            
+						this.heal((float)itemfood.func_150905_g(itemstack));
+						if(itemstack.stackSize <= 0)
+							par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
+						return true;
 					}
-					this.heal((float)var3.func_150905_g(var2));
-					if(var2.stackSize <= 0) {
-						var1.inventory.setInventorySlotContents(var1.inventory.currentItem, (ItemStack)null);
-					}
-					return true;
 				}
 			}
-			if(var1.getDisplayName().equalsIgnoreCase(this.func_152113_b()) && !this.worldObj.isRemote) {
+
+			if (func_152114_e(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
 				this.aiSit.setSitting(!this.isSitting());
 				this.isJumping = false;
 				this.setPathToEntity((PathEntity)null);
+				this.setTarget((Entity)null);
+				this.setAttackTarget((EntityLivingBase)null);
 			}
 		}
-		else if(var2 != null && var2.getItem() == Items.apple) {
-			if(!var1.capabilities.isCreativeMode) {
-				--var2.stackSize;
-			}
 
-			if(var2.stackSize <= 0) {
-				var1.inventory.setInventorySlotContents(var1.inventory.currentItem, (ItemStack)null);
-			}
+		else if (itemstack != null && itemstack.getItem() == Items.apple && !this.isAngry()) {
+			if(!par1EntityPlayer.capabilities.isCreativeMode)    
+				--itemstack.stackSize;
+
+			if(itemstack.stackSize <= 0) 
+				par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
 
 			if(!this.worldObj.isRemote) {
 				if(this.rand.nextInt(3) == 0) {
 					this.setTamed(true);
 					this.setPathToEntity((PathEntity)null);
-					this.setAttackTarget((EntityLiving)null);
+					this.setAttackTarget((EntityLivingBase)null);
 					this.aiSit.setSitting(true);
-					this.setHealth((int)MobStats.eucaHopperHealth);
-					this.func_152115_b(var1.getDisplayName());
+					this.setHealth(20.0F);
+					this.func_152115_b(par1EntityPlayer.getUniqueID().toString());
 					this.playTameEffect(true);
 					this.worldObj.setEntityState(this, (byte)7);
 				} else {
@@ -113,11 +168,38 @@ public class EntityEucaHopper extends EntityModTameable {
 			}
 			return true;
 		}
-		return super.interact(var1);
+		return super.interact(par1EntityPlayer);
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable var1) {
-		return null;
+	public boolean isBreedingItem(ItemStack i) {
+		return i == null ? false : i.getItem() == Items.apple;
+	}
+
+	public boolean isAngry() {
+		return (this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
+	}
+
+	private void setAngry(boolean b) {
+		byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+		if(b) this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 2)));
+		else this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 & -3)));
+	}
+
+	@Override
+	protected boolean canDespawn() {
+		return !this.isTamed() && this.ticksExisted > 2400;
+	}
+
+	@Override
+	public boolean func_142018_a(EntityLivingBase par1EntityLivingBase, EntityLivingBase par2EntityLivingBase) {
+		if (!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast)) {
+			if (par1EntityLivingBase instanceof EntityEucaHopper) {
+				EntityEucaHopper pig = (EntityEucaHopper)par1EntityLivingBase;
+				if(pig.isTamed() && pig.getOwner() == par2EntityLivingBase) return false;
+			}
+			return par1EntityLivingBase instanceof EntityPlayer && par2EntityLivingBase instanceof EntityPlayer && !((EntityPlayer)par2EntityLivingBase).canAttackPlayer((EntityPlayer)par1EntityLivingBase) ? false : !(par1EntityLivingBase instanceof EntityHorse) || !((EntityHorse)par1EntityLivingBase).isTame();
+		}
+		else return false;
 	}
 }

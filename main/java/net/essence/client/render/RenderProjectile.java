@@ -24,7 +24,7 @@ public class RenderProjectile extends Render {
         scale = scaleFactor;
     }
 
-    public void renderProjectile(EntityThrowable projectile, double x, double y, double z) {
+    public void renderProjectile(Entity projectile, double x, double y, double z) {
         GL11.glPushMatrix();
         this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
@@ -53,7 +53,7 @@ public class RenderProjectile extends Render {
 
     @Override
     public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9) {
-        this.renderProjectile((EntityThrowable)par1Entity, par2, par4, par6);
+        this.renderProjectile(par1Entity, par2, par4, par6);
     }
 
 	@Override

@@ -16,7 +16,14 @@ public class MobStats {
 	public static double darknessCrawlerHealth = 50.0D, darknessCrawlerDamage = 10.0D, darknessCrawlerSpeed = normalSpeed, darknessCrawlerFollowRange = follow;
 	public static double boomHealth = 50.0D, boomSpeed = normalSpeed, boomFollowRange = follow;
 	public static double bigHongoHealth = 50.0D, bigHongoDamage = 10.0D, bigHongoSpeed = normalSpeed, bigHongoFollowRange = follow;
-	public static double eucaHopperHealth = 50.0D, eucaHopperDamage = 10.0D, eucaHopperSpeed = normalSpeed, eucaHopperFollowRange = follow;
+	public static double eucaHopperHealth = 30.0D, eucaHopperHealthTamed = 50.0D, eucaHopperDamage = 10.0D, eucaHopperSpeed = normalSpeed, eucaHopperFollowRange = follow;
+	public static double magmaBlazeHealth = 35.0D, magmaBlazeDamage = 10.0D;
+	public static double crispHealth = 50.0D, crispDamage = 10.0D, crispSpeed = normalSpeed, crispFollowRange = follow;
+	public static double burntMinerHealth = 50.0D, burntMinerDamage = 10.0D, burntMinerSpeed = normalSpeed, burntMinerFollowRange = follow;
+	public static double exposedFlameHealth = 50.0D, exposedFlameDamage = 10.0D, exposedFlameSpeed = normalSpeed, exposedFlameFollowRange = follow;
+	public static double burningLightHealth = 50.0D, burningLightDamage = 10.0D, burningLightSpeed = normalSpeed, burningLightFollowRange = follow;
+	public static double ashHoarderHealth = 50.0D, ashHoarderDamage = 10.0D, ashHoarderSpeed = normalSpeed, ashHoarderFollowRange = follow;
+	public static double burntAshHealth = 50.0D, burntAshDamage = 10.0D, burntAshSpeed = normalSpeed, burntAshFollowRange = follow;
 
 	public static double witheringBeastHealth = 50.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
 	public static double netherBeastHealth = 50.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;

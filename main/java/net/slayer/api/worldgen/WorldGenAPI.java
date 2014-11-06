@@ -142,6 +142,27 @@ public class WorldGenAPI {
 			}
 		}
 	}
+
+	public static void addSphere(World w, int size, int x, int y, int z, Block b) {
+		int XLength = x - size;
+		int XHeight = x + size;
+		int ZLength = z - size;
+		int ZHeight = z + size;
+		double realSize = size / 2;
+		double sizeOfSphere = realSize * realSize;
+		for(int i = XLength; i < XHeight; i++) {
+			for(int j = y - size; j < y + size; j++) {
+				for(int k = ZLength; k < ZHeight; k++) {
+					double dx = i - x;
+					double dy = j - y;
+					double dz = k - z;
+					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
+						w.setBlock(i, j + size + 3, k, b);
+					}
+				}
+			}
+		}
+	}
 	
 	public static void addSphere(World w, int size, int x, int y, int z, Block bottom, Block top) {
 		int XLength = x - size;
@@ -188,7 +209,7 @@ public class WorldGenAPI {
 		}
 	}
 	
-	public static void addOreWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass, Block... ores) {
+	public static void addOreWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass, int chance, Block... ores) {
 		ArrayList<Block> block = new ArrayList<Block>();
 		for(Block b : ores) block.add(b);
 		int XLength = x - size;
@@ -209,7 +230,7 @@ public class WorldGenAPI {
 						w.setBlock(i, j + size + 4, k, grass);
 					}
 					if(w.getBlock(i, j, k) == stone) {
-						if(r.nextInt(20) == 0) w.setBlock(i, j, k, block.get(r.nextInt(block.size())));
+						if(r.nextInt(chance) == 0 && block != null) w.setBlock(i, j, k, block.get(r.nextInt(block.size())));
 					}
 				}
 			}

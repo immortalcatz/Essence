@@ -18,6 +18,9 @@ public enum EnumSounds {
 	MAGMA_GIANT_HURT("magmaGiantHurt"),
 	SPYCLOPS("spyclops"),
 	SPYCLOPS_HURT("spyclopsHurt"),
+	BLAZE("mob.blaze.breathe"),
+	BLAZE_HURT("mob.blaze.hit"),
+	BLAZE_DEATH("mob.blaze.death"),
 	STAFF("staff");
 	
 	private String sound;
@@ -28,6 +31,10 @@ public enum EnumSounds {
 	
 	public String getPrefixedName() {
 		return "eotg:" + sound;
+	}
+	
+	public String getNonPrefixedName() {
+		return sound;
 	}
 	
 	public static void playSound(String sound, World w, EntityLivingBase e){

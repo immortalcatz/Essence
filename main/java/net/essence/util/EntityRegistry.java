@@ -1,5 +1,12 @@
 package net.essence.util;
 
+import net.essence.entity.mob.boiling.EntityAshHoarder;
+import net.essence.entity.mob.boiling.EntityBurningLight;
+import net.essence.entity.mob.boiling.EntityBurntAsh;
+import net.essence.entity.mob.boiling.EntityBurntMiner;
+import net.essence.entity.mob.boiling.EntityCrisp;
+import net.essence.entity.mob.boiling.EntityExposedFlame;
+import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.boss.EntityCalcia;
 import net.essence.entity.mob.boss.EntityNetherBeast;
@@ -25,6 +32,7 @@ import net.essence.entity.projectile.EntityConjuring;
 import net.essence.entity.projectile.EntityDoomsBringer;
 import net.essence.entity.projectile.EntityEnlightment;
 import net.essence.entity.projectile.EntityGreenpace;
+import net.essence.entity.projectile.EntityMagmaFireball;
 import net.essence.entity.projectile.EntityWizardsStar;
 import net.slayer.api.SlayerAPI;
 
@@ -39,6 +47,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityEnlightment.class, "enlightment");
 		SlayerAPI.registerProjectile(EntityGreenpace.class, "greenpace");
 		SlayerAPI.registerProjectile(EntityWizardsStar.class, "wizardsstar");
+		SlayerAPI.registerProjectile(EntityMagmaFireball.class, "magmaball");
 
 		SlayerAPI.registerMob(EntityRobot.class, "Robot", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySpyclops.class, "Spyclops", SlayerAPI.mobID++);
@@ -54,6 +63,13 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntitySmallHongo.class, "Small Hongo", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityEucaFighter.class, "Euca Fighter", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityEucaHopper.class, "Euca Hopper", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityMagmaBlaze.class, "Magma Blaze", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityCrisp.class, "Crisp", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityBurntMiner.class, "Burnt Miner", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityExposedFlame.class, "Exposed Flame", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityBurningLight.class, "Burning Light", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityAshHoarder.class, "Ash Hoarder", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityBurntAsh.class, "Burnt Ash", SlayerAPI.mobID++);
 
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg", SlayerAPI.mobID++);
 

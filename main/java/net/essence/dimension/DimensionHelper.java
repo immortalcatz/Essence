@@ -6,6 +6,13 @@ import net.essence.dimension.depths.BiomeGenDepths;
 import net.essence.dimension.depths.WorldProviderDepths;
 import net.essence.dimension.euca.BiomeGenEuca;
 import net.essence.dimension.euca.WorldProviderEuca;
+import net.essence.entity.mob.boiling.EntityAshHoarder;
+import net.essence.entity.mob.boiling.EntityBurningLight;
+import net.essence.entity.mob.boiling.EntityBurntAsh;
+import net.essence.entity.mob.boiling.EntityBurntMiner;
+import net.essence.entity.mob.boiling.EntityCrisp;
+import net.essence.entity.mob.boiling.EntityExposedFlame;
+import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
@@ -67,9 +74,17 @@ public class DimensionHelper {
 	}
 
 	private static void addBoilSpawns() {
-		EntityRegistry.addSpawn(EntityMagmaGiant.class, 4, 1, 1, EnumCreatureType.creature, boiling);
-		EntityRegistry.addSpawn(EntityMagmaCube.class, 4, 1, 1, EnumCreatureType.creature, boiling);
-		EntityRegistry.addSpawn(EntityBlaze.class, 4, 1, 1, EnumCreatureType.creature, boiling);
+		int amount = 3;
+		EntityRegistry.addSpawn(EntityMagmaGiant.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityMagmaCube.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityBlaze.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityMagmaBlaze.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityCrisp.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityBurningLight.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityBurntAsh.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityExposedFlame.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityAshHoarder.class, amount, 1, 1, EnumCreatureType.creature, boiling);
+		EntityRegistry.addSpawn(EntityBurntMiner.class, amount, 1, 1, EnumCreatureType.creature, boiling);
 	}
 
 	private static void addDepthsSpawns() {
