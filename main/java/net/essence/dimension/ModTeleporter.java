@@ -19,10 +19,9 @@ public class ModTeleporter extends Teleporter {
     protected final WorldServer worldServerInstance;
     protected final Random random;
     protected final LongHashMap destinationCoordinateCache = new LongHashMap();
-    protected final List destinationCoordinateKeys  = new ArrayList();
+    protected final List destinationCoordinateKeys = new ArrayList();
     protected int dimensionID;
-    protected Block portal;
-    protected Block frameBlock;
+    protected Block portal, frameBlock;
 
     public ModTeleporter(WorldServer worldServer, int dimensionID, Block portal, Block frameBlock) {
         super(worldServer);
