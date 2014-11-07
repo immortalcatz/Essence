@@ -11,6 +11,12 @@ public class MobStats {
 	public static double robotHealth = 30.0D, robotDamage = 5.0D, robotSpeed = normalSpeed, robotFollowRange = follow;
 	public static double boomHealth = 50.0D, boomSpeed = normalSpeed, boomFollowRange = follow;
 	public static double bigHongoHealth = 50.0D, bigHongoDamage = 10.0D, bigHongoSpeed = normalSpeed, bigHongoFollowRange = follow;
+	public static double mediumHongoHealth = 50.0D, mediumHongoDamage = 10.0D, mediumHongoSpeed = normalSpeed, mediumHongoFollowRange = follow;
+	public static double smallHongoHealth = 50.0D, smallHongoDamage = 10.0D, smallHongoSpeed = normalSpeed, smallHongoFollowRange = follow;
+	public static double reaperHealth = 50.0D, reaperDamage = 10.0D, reaperSpeed = normalSpeed, reaperFollowRange = follow;
+	public static double bunnyHealth = 50.0D, bunnyDamage = 10.0D, bunnySpeed = normalSpeed, bunnyFollowRange = follow;
+	public static double sandCrawlerHealth = 50.0D, sandCrawlerDamage = 10.0D, sandCrawlerSpeed = normalSpeed, sandCrawlerFollowRange = follow;
+	public static double turtleHealth = 50.0D, turtleDamage = 10.0D, turtleSpeed = normalSpeed, turtleFollowRange = follow;
 
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 10.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;
@@ -26,11 +32,14 @@ public class MobStats {
 	public static double insectoHealth = 50.0D, insectoDamage = 10.0D, insectoSpeed = normalSpeed, insectoFollowRange = follow;
 	public static double psyollomHealth = 50.0D, psyollomDamage = 10.0D, psyollomSpeed = normalSpeed, psyollomFollowRange = follow;
 	public static double eucaHopperHealth = 30.0D, eucaHopperHealthTamed = 50.0D, eucaHopperDamage = 10.0D, eucaHopperSpeed = normalSpeed, eucaHopperFollowRange = follow;
+	public static double eucaFighterHealth = 50.0D, eucaFighterDamage = 10.0D, eucaFighterSpeed = normalSpeed, eucaFighterFollowRange = follow;
+	public static double eucaChargerHealth = 50.0D, eucaChargerDamage = 10.0D, eucaChargerSpeed = normalSpeed, eucaChargerFollowRange = follow;
 
 	//Depths
 	public static double depthsBeastHealth = 50.0D, depthsBeastDamage = 10.0D, depthsBeastSpeed = normalSpeed, depthsBeastFollowRange = follow;
 	public static double spikedBeastHealth = 60.0D, spikedBeastDamage = 12.0D, spikedBeastSpeed = normalSpeed, spikedBeastFollowRange = follow;
 	public static double darknessCrawlerHealth = 50.0D, darknessCrawlerDamage = 10.0D, darknessCrawlerSpeed = normalSpeed, darknessCrawlerFollowRange = follow;
+	public static double depthsHunterHealth = 50.0D, depthsHunterDamage = 10.0D, depthsHunterSpeed = normalSpeed, depthsHunterFollowRange = follow;
 
 	//Boss
 	public static double witheringBeastHealth = 50.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;

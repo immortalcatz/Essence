@@ -27,6 +27,7 @@ public abstract class EntityPeacefullUntillAttacked extends EntityModMob {
 	}
 
 	private int angerLevel = 0;
+	
 	public void writeEntityToNBT(NBTTagCompound var1) {
 		super.writeEntityToNBT(var1);
 		var1.setShort("Anger", (short)this.angerLevel);

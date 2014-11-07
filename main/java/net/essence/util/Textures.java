@@ -42,6 +42,12 @@ public class Textures {
     public static final ResourceLocation burningLight = addMob("burningLight");
     public static final ResourceLocation ashHoarder = addMob("ashHoarder");
     public static final ResourceLocation burntAsh = addMob("burntAsh");
+    public static final ResourceLocation reaper = addMob("reaper");
+    public static final ResourceLocation depthsHunter = addMob("depthsHunter");
+    public static final ResourceLocation eucaCharger = addMob("eucaCharger");
+    public static final ResourceLocation bunny = addMob("bunny");
+    public static final ResourceLocation sandCrawler = addMob("sandCrawler");
+    public static final ResourceLocation turtle = addMob("turtle");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

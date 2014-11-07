@@ -17,12 +17,12 @@ public class EntityMediumHongo extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.bigHongoDamage;
+		return s.mediumHongoDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.bigHongoHealth;
+		return s.mediumHongoHealth;
 	}
 
 	@Override

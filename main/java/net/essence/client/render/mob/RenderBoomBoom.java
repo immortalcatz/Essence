@@ -1,7 +1,7 @@
 package net.essence.client.render.mob;
 
 import net.essence.client.render.RenderModMob;
-import net.essence.client.render.mob.model.ModelBoomBoom;
+import net.essence.client.render.mob.model.vanilla.ModelBoomBoom;
 import net.essence.entity.mob.vanilla.EntityBoom;
 import net.essence.util.Textures;
 import net.minecraft.client.model.ModelBase;

@@ -8,22 +8,22 @@ import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntitySmallHongo extends EntityModMob {
+public class EntitySandCrawler extends EntityModMob {
 
-	public EntitySmallHongo(World par1World) {
+	public EntitySandCrawler(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		this.setSize(0.5F, 0.7F);
+		this.setSize(1.8F, 1.0F);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.smallHongoDamage;
+		return s.sandCrawlerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.smallHongoHealth;
+		return s.sandCrawlerHealth;
 	}
 
 	@Override
@@ -43,6 +43,6 @@ public class EntitySmallHongo extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.brown_mushroom);
+		return null;
 	}
 }

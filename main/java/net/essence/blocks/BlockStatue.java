@@ -6,7 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.EnumSounds;
-import net.essence.client.render.mob.model.ModelStatue;
+import net.essence.client.render.mob.model.statue.ModelStatue;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

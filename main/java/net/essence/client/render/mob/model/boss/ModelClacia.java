@@ -1,6 +1,6 @@
 package net.essence.client.render.mob.model.boss;
 
-import net.essence.client.render.mob.model.ModelStatue;
+import net.essence.client.render.mob.model.statue.ModelStatue;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

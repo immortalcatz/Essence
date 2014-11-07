@@ -1,4 +1,4 @@
-package net.essence.client.render.mob.model;
+package net.essence.client.render.mob.model.boil;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

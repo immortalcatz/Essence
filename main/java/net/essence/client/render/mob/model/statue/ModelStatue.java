@@ -1,4 +1,4 @@
-package net.essence.client.render.mob.model;
+package net.essence.client.render.mob.model.statue;
 
 import java.util.ArrayList;
 

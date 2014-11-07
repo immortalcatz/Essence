@@ -1,4 +1,4 @@
-package net.essence.client.render.mob.model;
+package net.essence.client.render.mob.model.vanilla;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;

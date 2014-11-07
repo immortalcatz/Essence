@@ -1,6 +1,5 @@
 package net.essence.client.render.mob.model.statue;
 
-import net.essence.client.render.mob.model.ModelStatue;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 

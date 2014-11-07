@@ -1,4 +1,4 @@
-package net.essence.client.render.mob.model;
+package net.essence.client.render.mob.model.euca;
 
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.minecraft.client.model.ModelBase;

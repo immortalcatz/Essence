@@ -1,4 +1,4 @@
-package net.essence.client.render.mob.model;
+package net.essence.client.render.mob.model.vanilla;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
@@ -99,6 +99,5 @@ public class ModelBoomBoom extends ModelBase {
 		this.leftlegBack.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 		this.rightarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
         this.leftarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
-        
 	}
 }

@@ -6,8 +6,12 @@ import net.essence.blocks.tileentity.*;
 import net.essence.client.render.*;
 import net.essence.client.render.mob.*;
 import net.essence.client.render.mob.model.*;
+import net.essence.client.render.mob.model.boil.*;
 import net.essence.client.render.mob.model.boss.*;
+import net.essence.client.render.mob.model.depths.*;
+import net.essence.client.render.mob.model.euca.*;
 import net.essence.client.render.mob.model.statue.*;
+import net.essence.client.render.mob.model.vanilla.*;
 import net.essence.entity.EntityDragonEgg;
 import net.essence.entity.MobStats;
 import net.essence.entity.mob.boiling.*;
@@ -60,6 +64,12 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEucaHopper.class, new RenderEucaHopper(new ModelEucaHopper(), tex.eucaHopper));
 		RenderingRegistry.registerEntityRenderingHandler(EntityAshHoarder.class, new RenderSizeable(new ModelDepthsBeast(), 0.8F, 1.5F, tex.ashHoarder));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBurntAsh.class, new RenderSizeable(new ModelPsyollom(), 0.5F, 1.5F, tex.burntAsh));
+		RenderingRegistry.registerEntityRenderingHandler(EntityReaper.class, new RenderReaper(new ModelReaper(), tex.reaper));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDepthsHunter.class, new RenderSizeable(new ModelDepthsHunter(), 0.5F, 1.5F, tex.depthsHunter));
+		RenderingRegistry.registerEntityRenderingHandler(EntityEucaCharger.class, new RenderSizeable(new ModelEucaCharger(), 0.5F, 1.5F, tex.eucaCharger));
+		RenderingRegistry.registerEntityRenderingHandler(EntityBunny.class, new RenderModMob(new ModelBunny(), 0.3F, tex.bunny));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySandCrawler.class, new RenderModMob(new ModelSandCrawler(), 0.5F, tex.sandCrawler));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new RenderModMob(new ModelTurtle(), 0.5F, tex.turtle));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 

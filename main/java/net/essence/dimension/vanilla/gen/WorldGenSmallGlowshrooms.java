@@ -12,7 +12,7 @@ public class WorldGenSmallGlowshrooms extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
 		for(int i = 0; i < 50; i++) {
-			if(w.getBlock(x, y - 1, z) == Blocks.stone && w.getBlock(x, y + 1, z) == Blocks.air && y < 63) {
+			if(w.getBlock(x, y, z) == Blocks.stone && w.getBlock(x, y + 1, z) == Blocks.air && y < 60) {
 				w.setBlock(x, y, z, EssenceBlocks.glowshroom, 1, 2);
 				w.setBlockMetadataWithNotify(z, y, z, 1, 2);
 			}
