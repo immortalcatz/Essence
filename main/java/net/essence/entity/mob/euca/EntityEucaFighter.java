@@ -8,10 +8,20 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityEucaFighter extends EntityModMob {
 
+	public static final int ENTITY_TYPE = 22;
+
 	public EntityEucaFighter(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.7F, 1.7F);
+		
+		dataWatcher.updateObject(ENTITY_TYPE, rand.nextInt(4));
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		dataWatcher.addObject(ENTITY_TYPE, (int)0);
 	}
 
 	@Override
@@ -38,7 +48,7 @@ public class EntityEucaFighter extends EntityModMob {
 	public String setDeathSound() {
 		return EnumSounds.INSECTO_HURT.getPrefixedName();
 	}
-	
+
 	@Override
 	public Item getItemDropped() {
 		return null;
