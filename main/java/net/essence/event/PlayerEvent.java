@@ -22,20 +22,15 @@ import cpw.mods.fml.common.gameevent.TickEvent;
 
 public class PlayerEvent {
 
-	public static final String[] isImmuneToFire = new String[] { "ag", "field_70178_ae", "isImmuneToFire" };
-
-	@SubscribeEvent
-	public void entityConstructing(EntityConstructing event) {
-		
-	}
+	public static final String[] isImmuneToFire = new String[] {"ag", "field_70178_ae", "isImmuneToFire"};
 
 	@SubscribeEvent
 	public void onBlockHarvested(HarvestDropsEvent event) {
 		EntityPlayer p = event.harvester;
 		boolean isWorking = false;
 		if(hasItemEnchantment(Essence.hotTouch, p)) isWorking = true;
-		if(event.harvester != null && event.harvester instanceof EntityPlayer) {
-			if(isWorking){
+		if(isWorking){
+			if(event.harvester != null && event.harvester instanceof EntityPlayer && event.harvester.getHeldItem() != null) {
 				if(!event.isSilkTouching){
 					ItemStack stack = FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block, 1, event.blockMetadata));
 					if(stack != null && event.block != Blocks.redstone_ore && event.block != Blocks.lapis_ore && event.block != Blocks.lapis_ore) {

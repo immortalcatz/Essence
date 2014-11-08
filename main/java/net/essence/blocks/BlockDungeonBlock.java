@@ -16,9 +16,4 @@ public class BlockDungeonBlock extends BlockMod {
 	public BlockDungeonBlock(String name){
 		this(name, false);
 	}
-
-	@Override
-	public void onBlockDestroyedByPlayer(World w, int x, int y, int z, int m) {
-		if(!SlayerAPI.DEVMODE) w.setBlock(x, y, z, this, 0, 2);
-	}
 }

@@ -15,14 +15,13 @@ public class ClientProxy extends CommonProxy {
 		if(SlayerAPI.DEVMODE) LangRegistry.registerNames();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
 		EntityRendering.init();
-		Keybinding.init();
-		SlayerAPI.addForgeEventBus(new KeyInputHandler());
+		//Keybinding.init();
+		//SlayerAPI.addForgeEventBus(new KeyInputHandler());
 	}
 	
 	@Override
 	public void clientInit(FMLInitializationEvent event) {
 		SlayerAPI.addForgeEventBus(new BossTickHandler());
-		SlayerAPI.addForgeEventBus(new LevelBarTickHandler());
 		SlayerAPI.addForgeEventBus(new BarTickHandler());
 		SlayerAPI.addForgeEventBus(new PlayerStats());
 		SlayerAPI.addEventBus(new PlayerStats());

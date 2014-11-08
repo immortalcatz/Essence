@@ -42,6 +42,7 @@ public class Essence {
 		event.getModMetadata().credits = "The_SlayerMC";
 		event.getModMetadata().description = "A mod with natural progression, a mod full of excitement with great added game play!";
 		event.getModMetadata().modId = SlayerAPI.MOD_ID;
+		event.getModMetadata().url = "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2274016-essence-of-the-gods-1-7-10-forge-currently-ssp-30";
 		event.getModMetadata().name = SlayerAPI.MOD_NAME;
 		event.getModMetadata().version = SlayerAPI.MOD_VERSION;
 	}

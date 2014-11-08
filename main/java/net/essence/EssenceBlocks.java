@@ -121,8 +121,8 @@ public class EssenceBlocks {
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
 
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER.getNonPrefixedName());
-	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), "");
-	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), "");
+	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST.getPrefixedName());
+	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), EnumSounds.CALCIA.getPrefixedName());
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 

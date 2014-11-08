@@ -26,7 +26,6 @@ public class PlayerStats {
 
 	@SubscribeEvent
 	public void renderEvent(RenderGameOverlayEvent event) {
-
 		if(Config.reRenderPlayerStats){
 			mc.mcProfiler.startSection("Essence Stats");
 			if(event.type == ElementType.EXPERIENCE || event.type == ElementType.HEALTH || event.type == ElementType.FOOD || event.type == ElementType.AIR || event.type == ElementType.ARMOR)
@@ -36,11 +35,6 @@ public class PlayerStats {
 				return;
 			mc.mcProfiler.endSection();
 		}
-	}
-	
-	@SubscribeEvent
-	public void renderPlayerPre(RenderPlayerEvent.Specials.Pre event) {
-		event.renderCape = true;
 	}
 
 	@SubscribeEvent

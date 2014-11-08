@@ -38,34 +38,35 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateBoilingPoint(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		if(rand.nextInt(4) == 0) GenerationHelper.generateEssenceDimensions("boilLava", w, chunkX, chunkZ);
-		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions("boilFire", w, chunkX , chunkZ);
-		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions("ashualOre", w, chunkX , chunkZ);
+		if(rand.nextInt(4) == 0) GenerationHelper.generateEssenceDimensions(4, w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(5, w, chunkX , chunkZ);
+		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions(3, w, chunkX , chunkZ);
 	}
 
 	private void generateDepths(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions("flairiumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(1, w, chunkX, chunkZ);
+		for(i = 0; i < 4; i++) GenerationHelper.generateEssenceDimensions(2, w, chunkX, chunkZ);
 	}
 
 	private void generateEuca(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions("celestiumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(0, w, chunkX, chunkZ);
 	}
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		if(r.nextInt(40) == 0) GenerationHelper.generateVanilla("boilPortal", w, chunkX, chunkZ);
-		for(i = 0; i < 10; i++) GenerationHelper.generateVanilla("hellstoneOre", w, chunkX, chunkZ);
+		if(r.nextInt(40) == 0) GenerationHelper.generateVanilla(6, w, chunkX, chunkZ);
+		for(i = 0; i < 10; i++) GenerationHelper.generateVanilla(5, w, chunkX, chunkZ);
 	}
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("luniumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("shadiumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("sapphireOre", w, chunkX, chunkZ);
-		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("smallGlowshroom", w, chunkX, chunkZ);
-		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("tallGlowshroom", w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(3, w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(2, w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(4, w, chunkX, chunkZ);
+		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla(1, w, chunkX, chunkZ);
+		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla(0, w, chunkX, chunkZ);
 
 	}
 

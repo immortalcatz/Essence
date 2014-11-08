@@ -35,7 +35,6 @@ public class CommonProxy {
 		SlayerAPI.addForgeEventBus(new ArmorAbilityEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
-		SlayerAPI.addEventBus(new LevelsEvent());
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "Statue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
@@ -43,14 +42,13 @@ public class CommonProxy {
 		SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		StructureBoilBridgePieces.registerBoilFortressPieces();
 		StructureBoilVillagePieces.registerVillagePieces();
-
 	}
 	
 	public static void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 10);
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
-		EssenceAchievements.init();
+		//EssenceAchievements.init();
 	}
 	
 	public static void postInit(FMLPostInitializationEvent event) { }
