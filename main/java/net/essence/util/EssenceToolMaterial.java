@@ -8,12 +8,12 @@ import net.slayer.api.SlayerAPI;
 
 public enum EssenceToolMaterial {
 
-	HELLSTONE_SWORD(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
-	FLAIRIUM_SWORD(EssenceItems.flairium, EssenceItems.flairiumIngot),
-	LUNIUM_SWORD(EssenceItems.lunium, EssenceItems.luniumIngot),
-	CELESTIUM_SWORD(EssenceItems.celestium, EssenceItems.celestiumIngot),
-	SHADIUM_SWORD(EssenceItems.shadium, EssenceItems.shadiumIngot),
-	SAPPHIRE_SWORD(EssenceItems.sapphiretool, EssenceItems.sapphire),
+	HELLSTONE_SWORD(EssenceItems.hellstoneSwordMat, EssenceItems.hellstoneIngot),
+	FLAIRIUM_SWORD(EssenceItems.flairiumSwordMat, EssenceItems.flairiumIngot),
+	LUNIUM_SWORD(EssenceItems.luniumSwordMat, EssenceItems.luniumIngot),
+	CELESTIUM_SWORD(EssenceItems.celestiumSwordMat, EssenceItems.celestiumIngot),
+	SHADIUM_SWORD(EssenceItems.shadiumSwordMat, EssenceItems.shadiumIngot),
+	SAPPHIRE_SWORD(EssenceItems.sapphiretoolSwordMat, EssenceItems.sapphire),
 
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
@@ -27,9 +27,9 @@ public enum EssenceToolMaterial {
 
 	HELLSTONE_PICKAXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_PICKAXE(EssenceItems.flairium, EssenceItems.flairiumIngot, 3),
-	LUNIUM_PICKAXE(EssenceItems.lunium, EssenceItems.luniumIngot, 2),
+	LUNIUM_PICKAXE(EssenceItems.lunium, EssenceItems.luniumIngot, 3),
 	CELESTIUM_PICKAXE(EssenceItems.celestium, EssenceItems.celestiumIngot, 3),
-	SHADIUM_PICKAXE(EssenceItems.shadium, EssenceItems.shadiumIngot, 2),
+	SHADIUM_PICKAXE(EssenceItems.shadium, EssenceItems.shadiumIngot, 3),
 	SAPPHIRE_PICKAXE(EssenceItems.sapphiretool, EssenceItems.sapphire, 2),
 
 	HELLSTONE_AXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
@@ -55,9 +55,9 @@ public enum EssenceToolMaterial {
 
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),
-	LUNIUM_MULTI_TOOL(EssenceItems.luniumMulti, EssenceItems.luniumIngot, 2),
+	LUNIUM_MULTI_TOOL(EssenceItems.luniumMulti, EssenceItems.luniumIngot, 3),
 	CELESTIUM_MULTI_TOOL(EssenceItems.celestiumMulti, EssenceItems.celestiumIngot, 3),
-	SHADIUM_MULTI_TOOL(EssenceItems.shadiumMulti, EssenceItems.shadiumIngot, 2),
+	SHADIUM_MULTI_TOOL(EssenceItems.shadiumMulti, EssenceItems.shadiumIngot, 3),
 	SAPPHIRE_MULTI_TOOL(EssenceItems.sapphireMulti, EssenceItems.sapphire, 2),
 
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 4, 25)),

@@ -49,6 +49,6 @@ public class EntitySandCrawler extends EntityModMob {
 	@Override
 	protected void dropFewItems(boolean b, int j) {
 		for(int i = 0; i < 32 + rand.nextInt(16); i++)
-			this.dropItem(SlayerAPI.toItem(Blocks.sand), i);
+			this.dropItem(SlayerAPI.toItem(Blocks.sand), 2);
 	}
 }

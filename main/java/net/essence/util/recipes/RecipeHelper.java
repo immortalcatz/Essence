@@ -86,6 +86,7 @@ public class RecipeHelper {
 		addLeggings(legs, ingot);
 		addBoots(boots, ingot);
 		GameRegistry.addShapelessRecipe(new ItemStack(multiTool), new Object[] {pick, shovel, hoe, axe});
+		GameRegistry.addShapelessRecipe(new ItemStack(ingot, 9), new Object[] {block});
 		GameRegistry.addSmelting(ore, new ItemStack(ingot), 0.5F);
 	}
 
