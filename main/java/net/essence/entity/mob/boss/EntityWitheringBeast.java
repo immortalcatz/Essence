@@ -2,6 +2,7 @@ package net.essence.entity.mob.boss;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
 import net.minecraft.entity.Entity;
@@ -38,22 +39,22 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	@Override
 	protected void attackEntity(Entity e, float a) {
 		super.attackEntity(e, a);
-		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.wither.id, 60));
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.wither.id, 60, 0));
 	}
 
 	@Override
 	public String setLivingSound() {
-		return "mob.wither.idle";
+		return EnumSounds.WITHER.getNonPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return "mob.wither.hurt";
+		return EnumSounds.WITHER_HURT.getNonPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return "mob.wither.death";
+		return EnumSounds.WITHER_DEATH.getNonPrefixedName();
 	}
 
 	@Override
@@ -64,8 +65,22 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		Item item = getItemDropped();
+		
+		switch(rand.nextInt(1)) {
+		case 0:
+			item = getItemDropped();
+			break;
+		case 1:
+			item = EssenceItems.depthsPortalGem;
+			break;
+		}
+		
 		for(int i = 0; i < rand.nextInt(5) + 4; i++)
 			this.dropItem(item, 1);
+		
+		
+		this.dropItem(EssenceItems.witheringBeastSword, 1);
+		
 		if(rand.nextInt(1) == 0)
 			this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
 	}

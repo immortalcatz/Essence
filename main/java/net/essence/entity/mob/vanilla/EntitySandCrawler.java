@@ -28,21 +28,27 @@ public class EntitySandCrawler extends EntityModMob {
 
 	@Override
 	public String setLivingSound() {
-		return EnumSounds.ROBOT.getPrefixedName();
+		return EnumSounds.SAND_CRAWLER.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
 	}
 
 	@Override
 	public Item getItemDropped() {
 		return null;
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		for(int i = 0; i < 32 + rand.nextInt(16); i++)
+			this.dropItem(SlayerAPI.toItem(Blocks.sand), i);
 	}
 }

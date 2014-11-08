@@ -4,12 +4,12 @@ import net.essence.entity.mob.vanilla.EntityBoom;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 
-public class EntityBoomSwell extends EntityAIBase {
+public class EntityAIBoomSwell extends EntityAIBase {
 	
     private EntityBoom swellingBoomBoom;
     private EntityLivingBase BoomBoomAttackTarget;
 
-    public EntityBoomSwell(EntityBoom par1EntityBoomBoom) {
+    public EntityAIBoomSwell(EntityBoom par1EntityBoomBoom) {
         this.swellingBoomBoom = par1EntityBoomBoom;
         this.setMutexBits(1);
     }

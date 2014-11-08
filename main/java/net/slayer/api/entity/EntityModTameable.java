@@ -16,6 +16,7 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -32,20 +33,27 @@ public abstract class EntityModTameable extends EntityTameable {
 	public double getFollowRange(){return getEntityAttribute(SharedMonsterAttributes.followRange).getAttributeValue();}
 	public double getKnockbackResistance(){return getEntityAttribute(SharedMonsterAttributes.knockbackResistance).getAttributeValue();}
 	
+	public abstract String setLivingSound();
+	public abstract String setHurtSound();
+	public abstract String setDeathSound();
+
 	@Override
-    protected String getLivingSound() {
-        return super.getLivingSound();
-    }
+	protected String getLivingSound() {
+		super.getLivingSound();
+		return setLivingSound();
+	}
 
-    @Override
-    protected String getHurtSound() {
-        return super.getHurtSound();
-    }
+	@Override
+	protected String getHurtSound() {
+		super.getHurtSound();
+		return setHurtSound();
+	}
 
-    @Override
-    protected String getDeathSound() {
-        return super.getDeathSound();
-    }
+	@Override
+	protected String getDeathSound() {
+		super.getDeathSound();
+		return setDeathSound();
+	}
 	
 	protected void addBasicAI(){
 		this.getNavigator().setAvoidsWater(true);
@@ -68,6 +76,11 @@ public abstract class EntityModTameable extends EntityTameable {
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0F, false));
 		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
 	}
 	
 	@Override

@@ -27,21 +27,16 @@ public class ItemFlameCoin extends ItemMod {
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
 		Random r = new Random();
-		if(!SlayerAPI.DEVMODE) {
-			if(par7 != 1 && w.getBlock(x, y + 1, z) != Blocks.air){
-				return false;
-			} else {
-				Block block = w.getBlock(x, y, z);
-				if(block == EssenceBlocks.eucaPortalFrame || block == EssenceBlocks.depthsPortalFrame || block == EssenceBlocks.boilPortalFrame){
-					w.setBlock(x, y + 1, z, EssenceBlocks.fire);
-					return true;
-				}
-				else return false;
-			}
+		if(par7 != 1 && w.getBlock(x, y + 1, z) != Blocks.air){
+			return false;
 		} else {
-			
+			Block block = w.getBlock(x, y, z);
+			if(block == EssenceBlocks.eucaPortalFrame || block == EssenceBlocks.depthsPortalFrame || block == EssenceBlocks.boilPortalFrame) {
+				w.setBlock(x, y + 1, z, EssenceBlocks.fire);
+				return true;
+			}
+			else return false;
 		}
-		return true;
 	}
 
 	@Override

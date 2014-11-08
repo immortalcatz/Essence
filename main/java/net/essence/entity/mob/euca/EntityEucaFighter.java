@@ -1,5 +1,6 @@
 package net.essence.entity.mob.euca;
 
+import net.essence.EssenceItems;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
@@ -14,7 +15,6 @@ public class EntityEucaFighter extends EntityModMob {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.7F, 1.7F);
-		
 		dataWatcher.updateObject(ENTITY_TYPE, rand.nextInt(4));
 	}
 
@@ -51,6 +51,6 @@ public class EntityEucaFighter extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return EssenceItems.eucaMeat;
 	}
 }

@@ -2,6 +2,7 @@ package net.essence.entity.mob.vanilla;
 
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
@@ -25,21 +26,21 @@ public class EntityTurtle extends EntityPeacefullUntillAttacked {
 
 	@Override
 	public String setLivingSound() {
-		return EnumSounds.ROBOT.getPrefixedName();
+		return EnumSounds.TURTLE.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.TURTLE_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.TURTLE_HURT.getPrefixedName();
 	}
 
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return Items.fish;
 	}
 }

@@ -28,17 +28,17 @@ public class EntitySmallHongo extends EntityModMob {
 
 	@Override
 	public String setLivingSound() {
-		return EnumSounds.ROBOT.getPrefixedName();
+		return EnumSounds.HONGO.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
 	}
 
 	@Override

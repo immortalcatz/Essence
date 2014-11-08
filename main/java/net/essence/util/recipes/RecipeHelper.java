@@ -34,10 +34,10 @@ public class RecipeHelper {
 		addWood(b.eucaLog, b.eucaPlank, b.eucaStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);
 
-		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondHelmet), new Object[] {"iii", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondChest), new Object[] {"d d", "iii", "iii", 'i', Items.diamond, 'd', Blocks.diamond_block});	
-		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-		GameRegistry.addRecipe(new ItemStack(i.condencedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
+		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondHelmet), new Object[] {"iii", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
+		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondChest), new Object[] {"d d", "iii", "iii", 'i', Items.diamond, 'd', Blocks.diamond_block});	
+		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
+		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 
 		addOPFood(EssenceItems.goldenPork, EssenceItems.goldenPorkOP, Items.porkchop);
 		addOPFood(EssenceItems.goldenSteak, EssenceItems.goldenSteakOP, Items.beef);

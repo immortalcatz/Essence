@@ -1,5 +1,6 @@
 package net.essence.entity.mob.vanilla;
 
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -33,17 +34,17 @@ public class EntityBunny extends EntityPeacefullUntillAttacked {
 
 	@Override
 	public String setLivingSound() {
-		return null;
+		return EnumSounds.BUNNY.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return null;
+		return EnumSounds.BUNNY_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return null;
+		return EnumSounds.BUNNY_HURT.getPrefixedName();
 	}
 
 	@Override

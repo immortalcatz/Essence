@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,7 +30,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public double setAttackDamage(MobStats s) {
 		return s.calciaDamage;
 	}
-	
+
 	@Override
 	public double setKnockbackResistance() {
 		return 1.0D;
@@ -42,17 +43,17 @@ public class EntityCalcia extends EntityEssenceBoss {
 
 	@Override
 	public String setLivingSound() {
-		return null;
+		return EnumSounds.CALCIA.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return null;
+		return EnumSounds.CALCIA_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return null;
+		return EnumSounds.CALCIA_HURT.getPrefixedName();
 	}
 
 	public boolean isInv() {
@@ -63,7 +64,8 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public void onUpdate() {
 		super.onUpdate();
 		if(isInv()) {
-			this.worldObj.spawnParticle("enchantmenttable", posX + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + rand.nextFloat(), 0, 0, 0);
+			for(int i = 0; i < 5; i++)
+				this.worldObj.spawnParticle("enchantmenttable", posX + 0.5F + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + 0.5F + rand.nextFloat(), 0, 0, 0);
 			Entity entity = attackingPlayer;
 			if(entity != null)
 				((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 25, 2));
@@ -98,6 +100,9 @@ public class EntityCalcia extends EntityEssenceBoss {
 		Item item = getItemDropped();
 		for(int i = 0; i < rand.nextInt(5) + 4; i++)
 			this.dropItem(item, 1);
+
+		this.dropItem(EssenceItems.calciaSword, 1);
+
 		if(rand.nextInt(1) == 0)
 			this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
 	}

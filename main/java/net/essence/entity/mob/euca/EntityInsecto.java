@@ -1,5 +1,6 @@
 package net.essence.entity.mob.euca;
 
+import net.essence.EssenceItems;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.Entity;
@@ -46,11 +47,11 @@ public class EntityInsecto extends EntityModMob{
 	@Override
 	protected void attackEntity(Entity e, float a) {
 		super.attackEntity(e, a);
-		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 60));
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 60, 1));
 	}
 	
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return EssenceItems.eucaMeat;
 	}
 }

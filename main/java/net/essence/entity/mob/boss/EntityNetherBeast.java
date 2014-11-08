@@ -2,6 +2,7 @@ package net.essence.entity.mob.boss;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -61,17 +62,17 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 
 	@Override
 	public String setLivingSound() {
-		return null;
+		return EnumSounds.NETHER_BEAST.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return null;
+		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return null;
+		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
 	}
 
 	@Override
@@ -82,7 +83,22 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		Item item = getItemDropped();
-		for(int i = 0; i < rand.nextInt(5) + 4; i++) this.dropItem(item, 1);
+		
+		switch(rand.nextInt(1)) {
+		case 0:
+			item = getItemDropped();
+			break;
+		case 1:
+			item = EssenceItems.depthsPortalGem;
+			break;
+		}
+		
+		for(int i = 0; i < rand.nextInt(5) + 4; i++)
+			this.dropItem(item, 1);
+		
+		
+		this.dropItem(EssenceItems.netherBeastSword, 1);
+		
 		if(rand.nextInt(1) == 0)
 			this.dropItem(Item.getItemFromBlock(EssenceBlocks.netherBeastStatue), 1);
 	}

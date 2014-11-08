@@ -1,5 +1,6 @@
 package net.essence.entity.mob.euca;
 
+import net.essence.EssenceItems;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
@@ -26,21 +27,21 @@ public class EntityEucaCharger extends EntityModMob {
 
 	@Override
 	public String setLivingSound() {
-		return EnumSounds.INSECTO.getPrefixedName();
+		return EnumSounds.HONGO.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.INSECTO_HURT.getPrefixedName();
+		return EnumSounds.SAND_CRAWLER.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.INSECTO_HURT.getPrefixedName();
+		return EnumSounds.SAND_CRAWLER.getPrefixedName();
 	}
 	
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return EssenceItems.eucaMeat;
 	}
 }

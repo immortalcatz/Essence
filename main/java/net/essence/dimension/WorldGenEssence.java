@@ -61,9 +61,9 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("luniumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("shadiumOre", w, chunkX, chunkZ);
-		for(i = 0; i < 2; i++) GenerationHelper.generateVanilla("sapphireOre", w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("luniumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("shadiumOre", w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla("sapphireOre", w, chunkX, chunkZ);
 		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("smallGlowshroom", w, chunkX, chunkZ);
 		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla("tallGlowshroom", w, chunkX, chunkZ);
 

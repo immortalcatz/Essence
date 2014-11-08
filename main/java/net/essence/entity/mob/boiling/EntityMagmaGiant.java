@@ -3,6 +3,8 @@ package net.essence.entity.mob.boiling;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
@@ -42,6 +44,12 @@ public class EntityMagmaGiant extends EntityModMob{
 	@Override
 	public String setDeathSound() {
 		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+	}
+	
+	@Override
+	protected void attackEntity(Entity e, float a) {
+		super.attackEntity(e, a);
+		((EntityPlayer)e).setFire(5 + rand.nextInt(7));
 	}
 	
 	@Override

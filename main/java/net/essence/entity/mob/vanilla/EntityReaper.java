@@ -33,21 +33,21 @@ public class EntityReaper extends EntityModMob{
 
 	@Override
 	public String setLivingSound() {
-		return EnumSounds.MAGMA_GIANT.getPrefixedName();
+		return EnumSounds.REAPER.getPrefixedName();
 	}
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+		return EnumSounds.REAPER_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+		return EnumSounds.REAPER_HURT.getPrefixedName();
 	}
 	
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return Items.coal;
 	}
 }

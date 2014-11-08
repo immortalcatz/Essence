@@ -2,6 +2,7 @@ package net.essence.entity.mob.vanilla;
 
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -41,6 +42,6 @@ public class EntitySpyclops extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return Items.spider_eye;
 	}
 }

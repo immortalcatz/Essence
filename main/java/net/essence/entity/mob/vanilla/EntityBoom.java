@@ -1,15 +1,26 @@
 package net.essence.entity.mob.vanilla;
 
 import net.essence.entity.MobStats;
-import net.essence.entity.AI.EntityBoomSwell;
+import net.essence.entity.AI.EntityAIBoomSwell;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,8 +31,14 @@ public class EntityBoom extends EntityModMob {
 
 	public EntityBoom(World par1World) {
 		super(par1World);
-		this.tasks.addTask(2, new EntityBoomSwell(this));
-		addAttackingAI();
+        this.tasks.addTask(1, new EntityAISwimming(this));
+        this.tasks.addTask(2, new EntityAIBoomSwell(this));
+        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, 1.0D, false));
+        this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
+        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(6, new EntityAILookIdle(this));
+        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
 		this.setSize(1.0F, 2.0F);
 	}
 
@@ -53,6 +70,13 @@ public class EntityBoom extends EntityModMob {
 	@Override
 	public Item getItemDropped() {
 		return null;
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		for(int i = 0; i < 1 + rand.nextInt(2); i++)
+			this.dropItem(SlayerAPI.toItem(Blocks.tnt), i);
+		this.dropItem(Items.gunpowder, 1 + rand.nextInt(2));
 	}
 
 	@Override

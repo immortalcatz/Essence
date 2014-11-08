@@ -52,7 +52,7 @@ public class ArmorAbilityEvent{
 		}
 
 		if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-				helmet == item.condencedDiamondHelmet && body == item.condencedDiamondChest && legs == item.condencedDiamondLegs && boots == item.condencedDiamondBoots){
+				helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
 			event.player.capabilities.allowFlying = true;
 			event.player.capabilities.setFlySpeed(0.11F);
 		}
@@ -67,7 +67,7 @@ public class ArmorAbilityEvent{
 				event.player.capabilities.setPlayerWalkSpeed(0.1F);
 			}
 			if(!(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-					helmet == item.condencedDiamondHelmet && body == item.condencedDiamondChest && legs == item.condencedDiamondLegs && boots == item.condencedDiamondBoots)){
+					helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots)){
 				event.player.capabilities.isFlying = false;
 				event.player.capabilities.allowFlying = false;
 				event.player.capabilities.setFlySpeed(0.1F);

@@ -1,5 +1,6 @@
 package net.essence.entity.mob.euca;
 
+import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -201,5 +202,20 @@ public class EntityEucaHopper extends EntityModTameable {
 			return par1EntityLivingBase instanceof EntityPlayer && par2EntityLivingBase instanceof EntityPlayer && !((EntityPlayer)par2EntityLivingBase).canAttackPlayer((EntityPlayer)par1EntityLivingBase) ? false : !(par1EntityLivingBase instanceof EntityHorse) || !((EntityHorse)par1EntityLivingBase).isTame();
 		}
 		else return false;
+	}
+
+	@Override
+	public String setLivingSound() {
+		return EnumSounds.HONGO.getNonPrefixedName();
+	}
+
+	@Override
+	public String setHurtSound() {
+		return EnumSounds.TURTLE.getNonPrefixedName();
+	}
+
+	@Override
+	public String setDeathSound() {
+		return EnumSounds.TURTLE.getNonPrefixedName();
 	}
 }

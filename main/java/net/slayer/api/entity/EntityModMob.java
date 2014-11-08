@@ -3,6 +3,7 @@ package net.slayer.api.entity;
 import net.essence.entity.MobStats;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -10,9 +11,11 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.slayer.api.SlayerAPI;
 
 public abstract class EntityModMob extends EntityMob {
 
@@ -20,7 +23,7 @@ public abstract class EntityModMob extends EntityMob {
 		super(par1World);
 		addBasicAI();
 	}
-	
+
 	public double getHP(){return getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue();}
 	public double getMoveSpeed(){return getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue();}
 	public double getAttackDamage(){return getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();}
@@ -28,9 +31,10 @@ public abstract class EntityModMob extends EntityMob {
 	public double getKnockbackResistance(){return getEntityAttribute(SharedMonsterAttributes.knockbackResistance).getAttributeValue();}
 
 	protected void addAttackingAI() {
-		this.tasks.addTask(4, new EntityAIAttackOnCollide(this, 1.0D, false));
-		this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0F, false));
-		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, 1.4D, false));
+		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.4F, false));
+		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 	}
 
 	protected void addBasicAI(){
@@ -51,9 +55,9 @@ public abstract class EntityModMob extends EntityMob {
 	}
 
 	public double setFollowRange(){return MobStats.follow;}
-	public double setMovementSpeed(){return MobStats.normalSpeed;}
+	public double setMovementSpeed(){return 0.600000011920929D;}
 	public double setKnockbackResistance() {return MobStats.knockBackResistance;}
-	
+
 	public abstract double setAttackDamage(MobStats s);
 	public abstract double setMaxHealth(MobStats s);
 	public abstract String setLivingSound();
@@ -64,6 +68,12 @@ public abstract class EntityModMob extends EntityMob {
 	@Override
 	protected Item getDropItem() {
 		return getItemDropped();
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		for(int i = 0; i < 1 + rand.nextInt(1); i++)
+			this.dropItem(getDropItem(), i);
 	}
 
 	@Override
@@ -88,9 +98,9 @@ public abstract class EntityModMob extends EntityMob {
 	protected boolean isAIEnabled() {
 		return false;
 	}
-	
+
 	@Override
-    public boolean getCanSpawnHere() {
-        return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
-    }
+	public boolean getCanSpawnHere() {
+		return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
+	}
 }

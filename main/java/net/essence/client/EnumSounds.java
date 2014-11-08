@@ -6,18 +6,36 @@ import net.slayer.api.SlayerAPI;
 
 public enum EnumSounds {
 
-	ROBOT("robot"),
-	ROBOT_HURT("robotHurt"),
-	PSYOLLOM("psyollom"),
-	PSYOLLOM_HURT("psyollomHurt"),
-	INSECTO("insecto"),
-	INSECTO_HURT("insectoHurt"),
-	SPIKED_BEAST("spikedBeast"),
-	SPIKED_BEAST_HURT("spikedBeastHurt"),
-	MAGMA_GIANT("magmaGiant"),
-	MAGMA_GIANT_HURT("magmaGiantHurt"),
-	SPYCLOPS("spyclops"),
-	SPYCLOPS_HURT("spyclopsHurt"),
+	ROBOT("eotg:robot"),
+	ROBOT_HURT("eotg:robotHurt"),
+	PSYOLLOM("eotg:psyollom"),
+	PSYOLLOM_HURT("eotg:psyollomHurt"),
+	INSECTO("eotg:insecto"),
+	INSECTO_HURT("eotg:insectoHurt"),
+	SPIKED_BEAST("eotg:spikedBeast"),
+	SPIKED_BEAST_HURT("eotg:spikedBeastHurt"),
+	MAGMA_GIANT("eotg:magmaGiant"),
+	MAGMA_GIANT_HURT("eotg:magmaGiantHurt"),
+	SPYCLOPS("eotg:spyclops"),
+	SPYCLOPS_HURT("eotg:spyclopsHurt"),
+	TURTLE("eotg:turtle"),
+	TURTLE_HURT("eotg:turtleHurt"),
+	BUNNY("eotg:bunny"),
+	BUNNY_HURT("eotg:bunnyHurt"),
+	HONGO("eotg:hongo"),
+	SMALL_HONGO_HURT("eotg:smallHongoHurt"),
+	HONGO_HURT("eotg:hongoHurt"),
+	REAPER("eotg:reaper"),
+	REAPER_HURT("eotg:reaperHurt"),
+	SAND_CRAWLER("eotg:sandCrawler"),
+	DEPTHS_HUNTER("eotg:depthsHunter"),
+	DEPTHS_HUNTER_HURT("eotg:depthsHunterHurt"),
+	NETHER_BEAST("eotg:netherBeast"),
+	NETHER_BEAST_HURT("eotg:netherBeastHurt"),
+	CALCIA("eotg:calcia"),
+	CALCIA_HURT("eotg:calciaHurt"),
+	IRON_GOLEM_HURT("mob.irongolem.hit"),
+	IRON_GOLEM_DEATH("mob.irongolem.death"),
 	BLAZE("mob.blaze.breathe"),
 	BLAZE_HURT("mob.blaze.hit"),
 	BLAZE_DEATH("mob.blaze.death"),
@@ -33,7 +51,7 @@ public enum EnumSounds {
 	}
 	
 	public String getPrefixedName() {
-		return "eotg:" + sound;
+		return sound;
 	}
 	
 	public String getNonPrefixedName() {

@@ -2,7 +2,11 @@ package net.essence.entity.mob.depths;
 
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -31,12 +35,18 @@ public class EntityDepthsBeast extends EntityModMob{
 
 	@Override
 	public String setHurtSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
 	}
 
 	@Override
 	public String setDeathSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
+	}
+	
+	@Override
+	protected void attackEntity(Entity e, float a) {
+		super.attackEntity(e, a);
+		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.poison.id, 60, 1));
 	}
 	
 	@Override
