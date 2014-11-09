@@ -73,7 +73,7 @@ public abstract class EntityModMob extends EntityMob {
 	@Override
 	protected void dropFewItems(boolean b, int j) {
 		for(int i = 0; i < 1 + rand.nextInt(1); i++)
-			this.dropItem(getDropItem(), i);
+			this.dropItem(getItemDropped(), i);
 	}
 
 	@Override

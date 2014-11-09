@@ -15,11 +15,11 @@ public enum EssenceToolMaterial {
 	SHADIUM_SWORD(EssenceItems.shadiumSwordMat, EssenceItems.shadiumIngot),
 	SAPPHIRE_SWORD(EssenceItems.sapphiretoolSwordMat, EssenceItems.sapphire),
 
-	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
-	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
-	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
-	CHAMPIONS_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
-	THE_WRAITH(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
+	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	CHAMPIONS_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	THE_WRAITH(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	
 	POISON_SWORD(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	CLOUD_SLICER(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
