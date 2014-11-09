@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 public class EssenceTabs extends CreativeTabs {
 	
 	public static final EssenceTabs blocks = new EssenceTabs("essence.blocks");
-	public static final EssenceTabs decoraton = new EssenceTabs("essence.decoraton");
+	public static final EssenceTabs decoraton = new EssenceTabs("essence.decoration");
 	public static final EssenceTabs items = new EssenceTabs("essence.items");
 	public static final EssenceTabs tools = new EssenceTabs("essence.tools");
 	public static final EssenceTabs weapons = new EssenceTabs("essence.weapons");
