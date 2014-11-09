@@ -34,7 +34,7 @@ public class EssenceItems {
 	public static ToolMaterial shadium = addToolMaterial(1600, 10F, 5F, true);
 	public static ToolMaterial sapphiretool = addToolMaterial(1561, 8F, 5F, true);
 	
-	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 10F, 5F, false);
+	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 12F, 5F, false);
 	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial luniumMulti = addToolMaterial(3000, 9F, 5F, false);
 	public static ToolMaterial celestiumMulti = addToolMaterial(3000, 13F, 5F, false);

@@ -42,7 +42,7 @@ public enum EnumSounds {
 	WITHER("mob.wither.idle"),
 	WITHER_HURT("mob.wither.hurt"),
 	WITHER_DEATH("mob.wither.death"),
-	STAFF("staff");
+	STAFF("eotg:staff");
 	
 	private String sound;
 
