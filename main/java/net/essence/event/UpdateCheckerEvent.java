@@ -21,9 +21,9 @@ public class UpdateCheckerEvent {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onPlayerLogin(EntityJoinWorldEvent e) {
-		if (e.entity instanceof EntityPlayer) {
-			EntityPlayer p = (EntityPlayer) e.entity;
-			if (p.worldObj.isRemote) {
+		if(e.entity instanceof EntityPlayer) {
+			EntityPlayer p =(EntityPlayer) e.entity;
+			if(p.worldObj.isRemote) {
 				if(!hasSeen) {
 					try {
 						if(!UpdateChecker.isOnline()){
@@ -41,10 +41,10 @@ public class UpdateCheckerEvent {
 								p.addChatMessage(SlayerAPI.addChatMessageWithColour(EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]"));
 								p.addChatMessage(SlayerAPI.addChatMessageWithColour(EnumChatFormatting.GREEN, "Essence Of The Gods is up to date."));
 						}
-					} catch (MalformedURLException e1) {
+					} catch(MalformedURLException e1) {
 						e1.printStackTrace();
 
-					} catch (IOException e1) {
+					} catch(IOException e1) {
 						e1.printStackTrace();
 					}
 				}

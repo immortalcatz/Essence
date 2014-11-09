@@ -21,25 +21,21 @@ public class UpdateChecker {
 	public static boolean isUpdateAvailable() throws IOException, MalformedURLException {
 		BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://raw.github.com/TheSlayerMC/Essence/master/Version.txt").openStream()));
 		String curVersion = versionFile.readLine();
-
 		versionFile.close();
-
-		if (!curVersion.contains(SlayerAPI.MOD_VERSION))
-			return true;
-
+		if(!curVersion.contains(SlayerAPI.MOD_VERSION)) return true;
 		return false;
 	}
 
 	public static boolean isOnline() throws SocketException {
 		Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-		while (interfaces.hasMoreElements()) {
+		while(interfaces.hasMoreElements()) {
 			NetworkInterface interf = interfaces.nextElement();
-			if (interf.isUp() && !interf.isLoopback()) {
+			if(interf.isUp() && !interf.isLoopback()) {
 				List<InterfaceAddress> adrs = interf.getInterfaceAddresses();
-				for (Iterator<InterfaceAddress> iter = adrs.iterator(); iter.hasNext();) {
+				for(Iterator<InterfaceAddress> iter = adrs.iterator(); iter.hasNext();) {
 					InterfaceAddress adr = iter.next();
 					InetAddress inadr = adr.getAddress();
-					if (inadr instanceof Inet4Address) return true;
+					if(inadr instanceof Inet4Address) return true;
 				}
 			}
 		}
