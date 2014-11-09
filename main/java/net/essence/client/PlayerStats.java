@@ -44,49 +44,47 @@ public class PlayerStats {
 		EntityPlayer player = mc.thePlayer;
 		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
-			float health = player.getHealth() * 5;
-			float hunger = player.getFoodStats().getFoodLevel() * 5;
+			float health = player.getHealth() * 5F;
+			float hunger = player.getFoodStats().getFoodLevel() * 5F;
 			float experience = (int)(mc.thePlayer.experience * (float)(200));
-			float armor = player.getTotalArmorValue() * 10;
+			float armor = player.getTotalArmorValue() * 5;
 			float air = (float)player.getAir() / 1.5F / 2F;
 			ScaledResolution res = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
-			int w = res.getScaledWidth() - 210, h = 12;
+			int w = res.getScaledWidth() - 660, h = 10;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glEnable(GL11.GL_BLEND);
+			int lengthOfBar = 151;
+			gig.drawTexturedModalRect(w, h, 0, 0, lengthOfBar, 108 - 18);
+			gig.drawTexturedModalRect(w, h + 108 - 18, 0, 90, lengthOfBar, 18);
+			gig.drawTexturedModalRect(w, h + 108, 0, 235, 182, 18);
+
+			gig.drawTexturedModalRect(w, h, 0, 109, (int)(health * 1.5F), 18);
+			gig.drawTexturedModalRect(w + 3, h + 3, 0, 199, 12, 11);
+
+			gig.drawTexturedModalRect(w, h + 18, 0, 127, (int)(hunger * 1.5F), 18);
+			gig.drawTexturedModalRect(w + 3, h + 21, 0, 210, 12, 11);
+
+			gig.drawTexturedModalRect(w, h + 36 + 18 + 17, 0, 180, (int)(armor * 1.5F), 18);
+			gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 210, 9, 9);
 			
-			gig.drawTexturedModalRect(w, h, 0, 0, 202, 54);
-
-			gig.drawTexturedModalRect(w + 1, h, 1, 54, (int)health * 2, 18);
-			gig.drawTexturedModalRect(w + 3, h + 3, 0, 108, 12, 11);
-
-			gig.drawTexturedModalRect(w + 1, h + 18, 1, 72, (int)hunger * 2, 18);
-			gig.drawTexturedModalRect(w + 3, h + 21, 0, 119, 12, 11);
-
-			gig.drawTexturedModalRect(w + 1, h + 36 + 18, 1, 216, (int)armor, 18);
-			gig.drawTexturedModalRect(w, h + 36 + 18, 0, 180, 202, 18);
-			gig.drawTexturedModalRect(w + 3, h + 36 + 22, 17, 119, 9, 9);
-
-			gig.drawTexturedModalRect(w, h + 36 + 36, 0, 198, (int)air * 2, 18);
-			gig.drawTexturedModalRect(w, h + 36 + 36, 0, 162, 202, 18);
-			gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 109, 9, 9);
-
-			gig.drawTexturedModalRect(w, h + 54 + 36, 0, 144, 78, 18);
-			gig.drawTexturedModalRect(w + 1, h + 36, 1, 90, (int)experience, 18);
-
+			gig.drawTexturedModalRect(w, h + 36 + 36 - 17, 0, 163, (int)(air * 2), 18);
+			gig.drawTexturedModalRect(w + 3, h + 36 + 40 - 17, 17, 200, 9, 9);
+			
+			gig.drawTexturedModalRect(w, h + 36, 0, 145, (int)experience, 18);
 			GL11.glPushMatrix();
 			GL11.glColor4f(0.4F, 1.0F, 0.3F, 1.0F);
-			gig.drawTexturedModalRect(w + 3, h + 38, 0, 130, 14, 14);
+			gig.drawTexturedModalRect(w + 3, h + 38, 0, 221, 14, 14);
 			GL11.glPopMatrix();
-
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			
 			font.drawString("Health: " + health + "%", w + 20, h + 5, 0xFFFFFF);
 			font.drawString("Hunger: " + hunger + "%" , w + 20, h + 23, 0xFFFFFF);
+			font.drawString("Armor: " + armor + "%", w + 20, h + 36 + 23 + 18, 0xFFFFFF);
+			if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 - 18 + 42, 0xFFFFFF);
+			else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 - 18 + 42, 0xFFFFFF);
 			font.drawString("Level: " + mc.thePlayer.experienceLevel , w + 20, h + 41, 0xFFFFFF);
 			String st = "Time: " + formatTime(getWorldTime(mc));
 			font.drawString(st, w + 3, h + 41 + 36 + 18, 0xFFFFFF);
-			font.drawString("Armor", w + 20, h + 36 + 23, 0xFFFFFF);
-			if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 + 42, 0xFFFFFF);
-			else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 + 42, 0xFFFFFF);
 			font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);
 			GL11.glDisable(GL11.GL_BLEND);
 		}
