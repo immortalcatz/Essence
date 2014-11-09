@@ -50,7 +50,7 @@ public class PlayerStats {
 			float armor = player.getTotalArmorValue() * 5;
 			float air = (float)player.getAir() / 1.5F / 2F;
 			ScaledResolution res = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
-			int w = res.getScaledWidth() - 660, h = 10;
+			int w = res.getScaledWidth() - 160, h = 10;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glEnable(GL11.GL_BLEND);
 			int lengthOfBar = 151;

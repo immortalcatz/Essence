@@ -218,7 +218,7 @@ public class SlayerAPI {
 	 * @param str What you want to print in the chat
 	 */
 	public static ChatComponentTranslation addChatMessageWithColour(EnumChatFormatting colour, String str) {
-		ChatComponentTranslation ret = new ChatComponentTranslation(str);
+		ChatComponentTranslation ret = new ChatComponentTranslation(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + str);
 		ret.getChatStyle().setColor(colour);
 		return ret;
 	}
