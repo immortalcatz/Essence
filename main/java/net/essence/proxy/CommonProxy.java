@@ -35,7 +35,7 @@ public class CommonProxy {
 		SlayerAPI.addForgeEventBus(new ArmorAbilityEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
-		GameRegistry.registerTileEntity(TileEntityStatue.class, "Statue");
+		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 		SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
