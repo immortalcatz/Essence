@@ -32,7 +32,7 @@ public class Essence {
 	public static CommonProxy proxy;
 	
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
-	public static final Enchantment waterWalk = new EnchantmentWaterWalk(166, 3);
+	public static final Enchantment waterWalk = new EnchantmentWaterWalk(164, 3);
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
