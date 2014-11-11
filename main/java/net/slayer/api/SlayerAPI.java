@@ -46,8 +46,8 @@ public class SlayerAPI {
 	public static int mobID = 400, projectileID = 230;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
-	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "1.2"; 
-	public static final boolean DEVMODE = true;
+	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "1.3"; 
+	public static final boolean DEVMODE = false;
 	
 	/**
 	 * @param i The ItemStack you want to be made
