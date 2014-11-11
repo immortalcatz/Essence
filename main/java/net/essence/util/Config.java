@@ -20,7 +20,7 @@ public class Config {
         cfg.save();
     }
 
-    public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, reRenderPlayerStats, smallEnergyBars, spawnNetherBossesInNether, showDimensionChange, showDeathMessage;
+    public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, reRenderPlayerStats, smallEnergyBars, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
 
     public static int euca, depths, boil;
     public static int eucaBiome, depthsBiome, boilBiome;
@@ -36,12 +36,12 @@ public class Config {
         keepLoadingDepths = cfg.get("Dimension", "Keep loading Depths", true).getBoolean(true);
         boilBiome = cfg.get("Dimension", "Boiling Point biome ID", 62).getInt();
         boil = cfg.get("Dimension", "Boiling Point ID", 22).getInt();
-        keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Poing", true).getBoolean(true);
+        keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Point", true).getBoolean(true);
+        keepLoadingBoil = cfg.get("Dimension", "Boiling point blocks spawn smoke (More lag)", true).getBoolean(true);
         //spawnNetherBossesInNether = cfg.get("Dimension", "Spawn the Nether Bosses (with the orbs) only in the Nether", true).getBoolean(true);
         showDimensionChange = cfg.get("Dimension", "Show the dimension change chat", true).getBoolean(true);
         reRenderPlayerStats = cfg.get("Gui", "Re-render the players stats in the top right corner", true).getBoolean(true);
         showDeathMessage = cfg.get("Gui", "Tell you where you died after death?", true).getBoolean(true);
-
         smallEnergyBars = cfg.get("Gui", "Adds smaller/less CPU usage bars", false).getBoolean(false);
 
     }

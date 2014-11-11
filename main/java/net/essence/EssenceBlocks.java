@@ -10,6 +10,7 @@ import net.essence.blocks.BlockEucaPortal;
 import net.essence.blocks.BlockEucaSapling;
 import net.essence.blocks.BlockGlowshroom;
 import net.essence.blocks.BlockJoinedGlass;
+import net.essence.blocks.BlockJoinedPane;
 import net.essence.blocks.BlockMiniColouredBricks;
 import net.essence.blocks.BlockModFire;
 import net.essence.blocks.BlockModOre;
@@ -119,7 +120,11 @@ public class EssenceBlocks {
 	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs");
 
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
+	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass");
 
+	public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
+	public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
+	
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER.getNonPrefixedName());
 	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST.getPrefixedName());
 	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), EnumSounds.CALCIA.getPrefixedName());

@@ -15,7 +15,7 @@ public class ArmorDescription {
 			list.add("Full set: Fire Protection");
 
 		if(i == EssenceItems.shadiumHelmet || i == EssenceItems.shadiumChest || i == EssenceItems.shadiumLegs || i == EssenceItems.shadiumBoots)
-			list.add("Full set: Underwater Breathing");
+			list.add("Full set: Water Breathing");
 
 		if(i == EssenceItems.celestiumHelmet || i == EssenceItems.celestiumChest || i == EssenceItems.celestiumLegs || i == EssenceItems.celestiumBoots) {
 			list.add("Full set: Jump 3 Blocks High");

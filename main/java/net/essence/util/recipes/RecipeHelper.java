@@ -39,6 +39,9 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 
+		GameRegistry.addRecipe(new ItemStack(b.hotGlassPane, 16), new Object[] {"iii", "iii", 'i', b.hotGlass});
+		GameRegistry.addRecipe(new ItemStack(b.smoothGlassPane, 16), new Object[] {"iii", "iii", 'i', b.smoothGlass});
+		
 		addOPFood(EssenceItems.goldenPork, EssenceItems.goldenPorkOP, Items.porkchop);
 		addOPFood(EssenceItems.goldenSteak, EssenceItems.goldenSteakOP, Items.beef);
 		addOPFood(EssenceItems.goldenPotato, EssenceItems.goldenPotatoOP, Items.potato);
@@ -47,7 +50,8 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(i.luniumClump), new Object[] {"iii", 'i', i.luniumIngot});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.spawnerClump), new Object[]{i.shadiumClump, i.luniumClump, i.hellstoneClump});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
-		
+		GameRegistry.addSmelting(Blocks.glass, new ItemStack(b.smoothGlass), 1.0F);
+
 		GameRegistry.addRecipe(new ItemStack(i.calciaOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.hellstoneBlock});
 		GameRegistry.addRecipe(new ItemStack(i.witheringBeastOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.luniumBlock});
 		GameRegistry.addRecipe(new ItemStack(i.netherBeastOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.shadiumBlock});

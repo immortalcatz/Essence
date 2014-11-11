@@ -42,6 +42,8 @@ public class LangRegistry extends RegistryFile {
 		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockMiniColouredBricks.textures[j] + "MiniColouredBricks.name=" + BlockMiniColouredBricks.names[j] + " Coloured Mini Brick");
 		instance.addToFile("tile.glowshroom_top.name=Glowshroom");
 		instance.addToFile("tile.glowshroom_bottom.name=Glowshroom");
+		instance.addToFile("tile.depthsSlab.name=Depths Slab");
+		instance.addToFile("tile.eucaSlab.name=Euca Slab");
 	}
 	
 	public static void addOPFood(String name, String actual) {

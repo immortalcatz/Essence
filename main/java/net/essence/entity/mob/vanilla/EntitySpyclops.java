@@ -9,10 +9,19 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntitySpyclops extends EntityModMob {
 
+	public static final int ENTITY_TYPE = 24;
+	
 	public EntitySpyclops(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(1.5F, 2.0F);
+		dataWatcher.updateObject(ENTITY_TYPE, rand.nextInt(4));
+	}
+	
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		dataWatcher.addObject(ENTITY_TYPE, (int)0);
 	}
 
 	@Override

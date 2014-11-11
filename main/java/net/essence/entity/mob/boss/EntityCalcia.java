@@ -97,10 +97,14 @@ public class EntityCalcia extends EntityEssenceBoss {
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-		Item item = getItemDropped();
-		for(int i = 0; i < rand.nextInt(5) + 4; i++)
-			this.dropItem(item, 1);
-
+		switch(rand.nextInt(1)){
+		case 0:
+			this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
+			break;
+		case 1:
+			this.dropItem(EssenceItems.depthsPortalGem, 6 + rand.nextInt(4));
+			break;
+		}
 		this.dropItem(EssenceItems.calciaSword, 1);
 
 		if(rand.nextInt(1) == 0)

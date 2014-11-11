@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.client.render.BaseBlockRender;
 import net.essence.client.render.BlockRenderInfo;
+import net.essence.util.Config;
 import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -26,7 +27,7 @@ public class BlockMod extends Block{
 	protected Item drop;
 	protected Random rand;
 	protected boolean exp = false;
-	
+
 	@SideOnly(Side.CLIENT)
 	BlockRenderInfo renderInfo;
 	public int boostBrightnessLow;
@@ -74,7 +75,7 @@ public class BlockMod extends Block{
 		GameRegistry.registerBlock(this, name);
 		LangRegistry.addBlock(this);
 	}
-	
+
 	public BlockMod(EnumMaterialTypes t, String texture, String name) {
 		super(t.getMaterial());
 		this.blockType = t;
@@ -117,7 +118,7 @@ public class BlockMod extends Block{
 	public Class<? extends BaseBlockRender> getRenderer() {
 		return BaseBlockRender.class;
 	}
-	
+
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess par1iBlockAccess, int par2, int par3, int par4) {
 		if(this == EssenceBlocks.mossyEssenceStone) {
@@ -133,7 +134,7 @@ public class BlockMod extends Block{
 		}
 		return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
 	}
-	
+
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3) {
 		if (drop == null)
@@ -165,7 +166,7 @@ public class BlockMod extends Block{
 		}
 		return 0;
 	}
-	
+
 	@Override
 	public int getRenderType() {
 		return this == EssenceBlocks.mossyEssenceStone ? 51 : 0;
@@ -178,12 +179,14 @@ public class BlockMod extends Block{
 
 	@Override
 	public void randomDisplayTick(World w, int x, int y, int z, Random r) {
-		if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock){
-			for(int i = 0; i < 1; ++i) {
-				float f = (float)x + r.nextFloat();
-				float f1 = (float)y + r.nextFloat() + 0.5F;
-				float f2 = (float)z + r.nextFloat();
-				w.spawnParticle("largesmoke", (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
+		if(Config.boilBlockSpawnSmoke){
+			if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock){
+				for(int i = 0; i < 1; ++i) {
+					float f = (float)x + r.nextFloat();
+					float f1 = (float)y + r.nextFloat() + 0.5F;
+					float f2 = (float)z + r.nextFloat();
+					w.spawnParticle("largesmoke", (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
+				}
 			}
 		}
 	}

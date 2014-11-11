@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -35,7 +36,7 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	public double setMaxHealth(MobStats s) {
 		return s.witheringBeastHealth;
 	}
-	
+
 	@Override
 	protected void attackEntity(Entity e, float a) {
 		super.attackEntity(e, a);
@@ -61,39 +62,32 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	public Item getItemDropped() {
 		return EssenceItems.eucaPortalGem;
 	}
-	
+
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-		Item item = getItemDropped();
-		
-		switch(rand.nextInt(1)) {
+		switch(rand.nextInt(1)){
 		case 0:
-			item = getItemDropped();
+			this.dropItem(EssenceItems.depthsPortalGem, 6 + rand.nextInt(4));
 			break;
 		case 1:
-			item = EssenceItems.depthsPortalGem;
+			this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
 			break;
 		}
-		
-		for(int i = 0; i < rand.nextInt(5) + 4; i++)
-			this.dropItem(item, 1);
-		
-		
 		this.dropItem(EssenceItems.witheringBeastSword, 1);
-		
+
 		if(rand.nextInt(1) == 0)
 			this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
 	}
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase var1, float var2) {
-        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
-        double vecX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
+		this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+		double vecX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
 		double vecY = (double)(-MathHelper.sin(var1.rotationPitch / 180.0F * (float)Math.PI));
 		double vecZ = (double)( MathHelper.cos(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
 		double deltaX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI));
 		double deltaZ = (double)( MathHelper.cos(var1.rotationYaw / 180.0F * (float)Math.PI));
-        EntityDeathSkull skull = new EntityDeathSkull(worldObj, var1, var1.posX + deltaX, var1.posY + 1, var1.posZ + deltaZ, vecX, vecY, vecZ);
-        this.worldObj.spawnEntityInWorld(skull);
+		EntityDeathSkull skull = new EntityDeathSkull(worldObj, var1, var1.posX + deltaX, var1.posY + 1, var1.posZ + deltaZ, vecX, vecY, vecZ);
+		this.worldObj.spawnEntityInWorld(skull);
 	}
 }
