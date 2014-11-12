@@ -15,7 +15,7 @@ public class ClientProxy extends CommonProxy {
 		if(SlayerAPI.DEVMODE) LangRegistry.registerNames();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
 		EntityRendering.init();
-		 SlayerAPI.addEventBus(new UpdateCheckerEvent());
+		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());
 		//Keybinding.init();
 		//SlayerAPI.addForgeEventBus(new KeyInputHandler());
 	}
