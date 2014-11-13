@@ -59,7 +59,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_) {
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
 		return null;
 	}
 
@@ -79,13 +79,13 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public boolean func_149851_a(World var1, int var2, int var3, int var4, boolean var5) {
+	public boolean func_149851_a(World w, int x, int y, int z, boolean b) {
 		return true;
 	}
 
 	@Override
-	public boolean func_149852_a(World var1, Random var2, int var3, int var4, int var5) {
-		return (double)var2.nextFloat() < 0.45D;
+	public boolean func_149852_a(World w, Random r, int x, int y, int z) {
+		return (double)r.nextFloat() < 0.45D;
 	}
 
 	@Override
