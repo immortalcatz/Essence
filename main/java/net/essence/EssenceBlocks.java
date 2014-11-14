@@ -144,6 +144,6 @@ public class EssenceBlocks {
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
 	
-	public static final Block cristmasLights = new BlockMod(EnumMaterialTypes.LEAVES, "cristmasLights", 0.2F).setLightLevel(0.5F);
+	public static final Block christmasLights = new BlockMod(EnumMaterialTypes.LEAVES, "christmasLights", 0.2F).setLightLevel(0.5F);
 
 }
