@@ -31,7 +31,7 @@ public class ItemRendererStatue implements IItemRenderer {
 	@Override
 	public void renderItem(ItemRenderType type, ItemStack i, Object...data) {
 		Item item = i.getItem();
-		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/models/" + texture + ".png"));
+		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/" + texture + ".png"));
 		float scale = 1.0F;
 		GL11.glPushMatrix();
 		GL11.glRotatef(180F, 0.0F, 0.0F, 4.0F);
@@ -177,6 +177,36 @@ public class ItemRendererStatue implements IItemRenderer {
 			default: break;
 			}
 			new ModelCalciaStatue().render(0.0625F);
+		}
+		
+		if(item == SlayerAPI.toItem(EssenceBlocks.eudorStatue)){
+			switch(type){
+			case EQUIPPED:
+				scale = 2.0F;
+				GL11.glScalef(scale, scale, scale);
+				GL11.glRotatef(-180F, 0.0F, 40.0F, 5.0F);
+				GL11.glRotatef(90F, 0.0F, 2.0F, 0.0F);
+				GL11.glTranslatef(0.3F, -0.6F, 0.4F);
+				break;
+			case ENTITY:
+				scale = 3.0F;
+				GL11.glScalef(scale, scale, scale);
+				GL11.glTranslatef(0.0F, -1.5F, 0.0F);
+				break;
+			case INVENTORY:
+				scale = 0.8F;
+				GL11.glScalef(scale, scale, scale);
+				GL11.glTranslatef(0.0F, -0.5F, 0.0F);
+				break;
+			case EQUIPPED_FIRST_PERSON:
+				scale = 1.7F;
+				GL11.glScalef(scale, scale, scale);
+				GL11.glTranslatef(0.0F, -1.0F, 0.7F);
+				GL11.glRotatef(90F, 0.0F, 2.0F, 0.0F);
+				break;
+			default: break;
+			}
+			new ModelEudorStatue().render(0.0625F);
 		}
 		GL11.glPopMatrix();
 	}

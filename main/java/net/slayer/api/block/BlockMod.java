@@ -121,7 +121,7 @@ public class BlockMod extends Block{
 
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess par1iBlockAccess, int par2, int par3, int par4) {
-		if(this == EssenceBlocks.mossyEssenceStone) {
+		if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.cristmasLights) {
 			int j1 = 500;
 			if(enhanceBrightness) {
 				j1 = Math.max( j1 >> 20, j1 >> 4);
@@ -166,10 +166,15 @@ public class BlockMod extends Block{
 		}
 		return 0;
 	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return !(this == EssenceBlocks.cristmasLights);
+	}
 
 	@Override
 	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone ? 51 : 0;
+		return this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.cristmasLights ? 51 : 0;
 	}
 
 	@Override

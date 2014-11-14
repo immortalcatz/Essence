@@ -53,6 +53,9 @@ public class BossTickHandler {
 		case MobStats.wraithBossID:
 			r = set("wraith");
 			break;
+		case MobStats.eudorBossID:
+			r = set("eudor");
+			break;
 		}
 
 		if(EssenceBossStatus.statusBarTime > 0) {

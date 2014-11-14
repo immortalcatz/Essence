@@ -9,6 +9,7 @@ import net.essence.entity.mob.boiling.EntityExposedFlame;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.boss.EntityCalcia;
+import net.essence.entity.mob.boss.EntityEudor;
 import net.essence.entity.mob.boss.EntityNetherBeast;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
@@ -87,6 +88,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "Beast of the Nether", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityWitheringBeast.class, "Withering Beast", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityCalcia.class, "Calcia", SlayerAPI.mobID++);
+		SlayerAPI.registerBossMob(EntityEudor.class, "Eudor", SlayerAPI.mobID++);
 		//SlayerAPI.registerBossMob(EntityWraith.class, "Wraith", SlayerAPI.mobID++);
 	}
 }

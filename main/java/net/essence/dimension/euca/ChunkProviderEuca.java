@@ -6,6 +6,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.WorldGenEucaSphere;
 import net.essence.dimension.euca.gen.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
@@ -260,6 +261,13 @@ public class ChunkProviderEuca implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16);
 			if(worldObj.getBlock(x, y, z) == EssenceBlocks.eucaGrass || worldObj.getBlock(x, y - 1, z) == EssenceBlocks.eucaGrass)
 			trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, x, y, z);
+		}
+		
+		if(rand.nextInt(5) == 0) {
+			x = x1 + this.rand.nextInt(16);
+			y = rand.nextInt(250) + 6;
+			z = z1 + this.rand.nextInt(16);
+			//new WorldGenEucaSphere().generate(worldObj, rand, x, y, z);
 		}
 	}
 

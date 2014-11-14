@@ -1,12 +1,7 @@
 package net.essence;
 
 import net.essence.*;
-import net.essence.entity.projectile.EntityBasicProjectile;
-import net.essence.entity.projectile.EntityConjuring;
-import net.essence.entity.projectile.EntityDoomsBringer;
-import net.essence.entity.projectile.EntityEnlightment;
-import net.essence.entity.projectile.EntityGreenpace;
-import net.essence.entity.projectile.EntityWizardsStar;
+import net.essence.entity.projectile.*;
 import net.essence.items.*;
 import net.essence.items.ItemEgg;
 import net.essence.util.*;
@@ -116,7 +111,8 @@ public class EssenceItems {
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
-	
+	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
+
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
 	public static final Item weakEssencePotion = new ItemEssencePotion("weakEssencePotion", false, true);

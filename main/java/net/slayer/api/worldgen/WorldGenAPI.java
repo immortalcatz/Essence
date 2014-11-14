@@ -24,6 +24,21 @@ public class WorldGenAPI {
 		}
 		return true;
 	}
+	
+	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
+		boolean is = false;
+		for(int x1 = 0; x1 < size; x1++) {
+			for(int y1 = 0; y1 < size; y1++) {
+				for(int z1 = 0; z1 < size; z1++) {
+					if(w.getBlock(x + x1, y + y1, z + z1) == Blocks.air) {
+						is = true;
+						break;
+					}
+				}
+			}
+		}
+		return is;
+	}
 
 	public static void addCube(int size, World w, int x, int y, int z, Block b){
 		for(int x1 = 0; x1 < size; x1++){

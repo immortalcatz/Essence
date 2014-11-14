@@ -18,6 +18,7 @@ import net.essence.blocks.BlockStatue;
 import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.statue.ModelCalciaStatue;
 import net.essence.client.render.mob.model.statue.ModelEnderChampionStatue;
+import net.essence.client.render.mob.model.statue.ModelEudorStatue;
 import net.essence.client.render.mob.model.statue.ModelNetherBeastStatue;
 import net.essence.client.render.mob.model.statue.ModelWitheringBeastStatue;
 import net.essence.client.render.mob.model.statue.ModelWraithStatue;
@@ -128,6 +129,7 @@ public class EssenceBlocks {
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER.getNonPrefixedName());
 	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST.getPrefixedName());
 	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), EnumSounds.CALCIA.getPrefixedName());
+	public static final Block eudorStatue = new BlockStatue("eudorStatue", new ModelEudorStatue(), EnumSounds.CALCIA.getPrefixedName());
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 
@@ -141,4 +143,7 @@ public class EssenceBlocks {
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
+	
+	public static final Block cristmasLights = new BlockMod(EnumMaterialTypes.LEAVES, "cristmasLights", 0.2F).setLightLevel(0.5F);
+
 }

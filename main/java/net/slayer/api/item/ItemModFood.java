@@ -2,6 +2,7 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
@@ -52,6 +53,7 @@ public class ItemModFood extends ItemFood {
         list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
         list.add(getSaturation(stack) + " Saturation");
         list.add(!isWolfsFavoriteMeat() ? "Pet Food: false" : "Pet Food: true");
+        if(stack.getItem() == EssenceItems.eucaMeat) list.add("Faster eating");
         list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }
 }

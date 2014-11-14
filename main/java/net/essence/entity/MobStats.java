@@ -4,7 +4,7 @@ public class MobStats {
 
 	public static double normalSpeed = 0.300000011920929D, follow = 30D, knockBackResistance = 0.0D;
 
-	public static final int witheringBeastBossID = 0, netherBeastBossID = 1, calciaBossID = 2, wraithBossID = 3;
+	public static final int witheringBeastBossID = 0, netherBeastBossID = 1, calciaBossID = 2, wraithBossID = 3, eudorBossID = 4;
 
 	//Overworld 
 	public static double spyclopsHealth = 20.0D, spyclopsDamage = 5.0D, spyclopsSpeed = normalSpeed, spyclopsFollowRange = follow;
@@ -45,5 +45,6 @@ public class MobStats {
 	public static double witheringBeastHealth = 250.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
 	public static double netherBeastHealth = 250.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
 	public static double calciaHealth = 250.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
+	public static double eudorHealth = 250.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
 }

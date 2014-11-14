@@ -26,6 +26,8 @@ public class Textures {
     public static final ResourceLocation netherBeast = addMob("netherBeast");
     public static final ResourceLocation witheringBeast = addMob("witheringBeast");
     public static final ResourceLocation calcia = addMob("calcia");
+    public static final ResourceLocation eudor = addMob("eudor");
+
     public static final ResourceLocation boom = addMob("boom");
     public static final ResourceLocation boomArmor = addMob("boomArmor");
     public static final ResourceLocation wraith = addMob("wraith");

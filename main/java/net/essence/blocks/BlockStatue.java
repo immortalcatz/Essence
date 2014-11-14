@@ -29,7 +29,7 @@ public class BlockStatue extends BlockMod {
 	public BlockStatue(String name, ModelStatue model, String s) {
 		super(name, 3.0F, EssenceTabs.decoraton);
 		setBlockTextureName("cobblestone");
-		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/" + name + ".png");
+		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/" + name + ".png");
 		this.model = model;
 		this.sound = s;
 	}

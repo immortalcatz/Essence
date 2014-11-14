@@ -22,6 +22,7 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 		block.setBlockBoundsForItemRender();
 		renderer.setRenderBoundsFromBlock(block);
 		Block render = Blocks.mossy_cobblestone;
+		if(block == EssenceBlocks.cristmasLights) render = Blocks.leaves;
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glTranslatef(-0.5F, -0.5F, -0.5F);  
 		tess.startDrawingQuads();
@@ -83,6 +84,17 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.mossy_cobblestone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone, x, y, z);
+			blk.enhanceBrightness = true;
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+			out = renderInWorld(blk, world, x, y, z, renderer);
+			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
+		}
+		
+		if(block == EssenceBlocks.cristmasLights) {
+			BlockMod blk = (BlockMod)block;
+			blk.enhanceBrightness = false;
+			renderer.renderStandardBlock(Blocks.leaves, x, y, z);
+			renderer.renderStandardBlock(EssenceBlocks.cristmasLights, x, y, z);
 			blk.enhanceBrightness = true;
 			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 			out = renderInWorld(blk, world, x, y, z, renderer);
