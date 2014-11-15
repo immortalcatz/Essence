@@ -2,6 +2,7 @@ package net.essence;
 
 import net.essence.blocks.BlockBoilPortal;
 import net.essence.blocks.BlockBoilingFire;
+import net.essence.blocks.BlockChristmasLights;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockDepthsPortal;
 import net.essence.blocks.BlockDungeonBlock;
@@ -153,6 +154,5 @@ public class EssenceBlocks {
 	public static final Block storageBlocks2 = new BlockStorageBlocks2();
 	public static final Block storageBlocks3 = new BlockStorageBlocks3();
 
-	public static final Block christmasLights = new BlockMod(EnumMaterialTypes.LEAVES, "christmasLights", 0.2F).setLightLevel(0.5F);
-
+	public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 }

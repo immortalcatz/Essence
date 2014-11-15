@@ -9,6 +9,7 @@ import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -27,7 +28,7 @@ public class ItemFlameCoin extends ItemMod {
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
 		Random r = new Random();
-		if(par7 != 1 && w.getBlock(x, y + 1, z) != Blocks.air){
+		/*if(par7 != 1 && w.getBlock(x, y + 1, z) != Blocks.air){
 			return false;
 		} else {
 			Block block = w.getBlock(x, y, z);
@@ -36,7 +37,8 @@ public class ItemFlameCoin extends ItemMod {
 				return true;
 			}
 			else return false;
-		}
+		}*/
+		return true;
 	}
 
 	@Override

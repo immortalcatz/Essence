@@ -7,8 +7,10 @@ import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.essence.dimension.vanilla.gen.WorldGenBoilPortal;
+import net.essence.dimension.vanilla.gen.WorldGenChristmasLights;
 import net.essence.dimension.vanilla.gen.WorldGenSmallGlowshrooms;
 import net.essence.dimension.vanilla.gen.WorldGenTallGlowshrooms;
+import net.essence.dimension.vanilla.gen.WorldGenTowerDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -48,6 +50,14 @@ public class GenerationHelper {
 		case 6:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, x, y, z);
+			break;
+		case 7:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			new WorldGenChristmasLights().generate(w, r, x, y, z);
+			break;
+		case 8:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlock(x, y - 1, z) == Blocks.grass) new WorldGenTowerDungeon().generate(w, r, x, y, z);
 			break;
 		}
 	}

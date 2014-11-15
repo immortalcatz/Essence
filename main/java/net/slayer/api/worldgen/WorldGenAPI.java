@@ -7,13 +7,14 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.world.World;
 
 public class WorldGenAPI {
 
 	private static Random r = new Random();
-	
+
 	public static boolean isValidLocationToSpawn(int x, int y, int z, World w, Block b){
 		for(int i = 0; i < x; i++) {
 			for(int l = 0; l < z; l++) {
@@ -24,7 +25,7 @@ public class WorldGenAPI {
 		}
 		return true;
 	}
-	
+
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
 		boolean is = false;
 		for(int x1 = 0; x1 < size; x1++) {
@@ -40,18 +41,24 @@ public class WorldGenAPI {
 		return is;
 	}
 
+	public static void addSpawner(World w, int x, int y, int z, String mobName) {
+		w.setBlock(x, y, z, Blocks.mob_spawner, 0, 2);
+		TileEntityMobSpawner spawner = (TileEntityMobSpawner)w.getTileEntity(x, y, z);
+		spawner.func_145881_a().setEntityName(mobName);
+	}
+
 	public static void addCube(int size, World w, int x, int y, int z, Block b){
 		for(int x1 = 0; x1 < size; x1++){
 			for(int z1 = 0; z1 < size; z1++){
 				for(int y1 = 0; y1 < size; y1++){
-					w.setBlock(x + x1, y + y1 + 1, z + z1, b);
+					w.setBlock(x + x1, y + y1, z + z1, b);
 				}
 			}
 		}
 	}
 
 	public static void addBlock(World w, int x, int y, int z, Block b) {
-		addCube(1, w, x, y, z, b);
+		addCube(1, w, x, y + 1, z, b);
 	}
 
 	public static void addHollowCube(int size, World w, int x, int y, int z, Block b){
@@ -108,15 +115,15 @@ public class WorldGenAPI {
 		addRectangleWithMetadata(1, 1, height, w, x + east - 1, y, z + south - 1, Blocks.air, meta);
 	}
 
-	public static void placeChestWithContents(World w, int x, int y, int z, int meta, int amountOfItems, boolean trapped, ItemStack...is){
+	public static void placeChestWithContents(World w, int x, int y, int z, int meta, boolean trapped, ItemStack ... is) {
 		Random r = new Random();
 		if(trapped) w.setBlock(x, y, z, Blocks.trapped_chest, meta, 2);
 		else w.setBlock(x, y, z, Blocks.chest, meta, 2);
 		TileEntityChest chest = (TileEntityChest)w.getTileEntity(x, y, z);
-		if(chest != null && !w.isRemote){// DOESNT WORK IF GENERATING 1 ITEM
-			for(int i = 0; i < chest.getSizeInventory(); i++){
-				ItemStack it = is[r.nextInt(is.length) + 1];
-				chest.setInventorySlotContents(chest.getSizeInventory(), it);
+		if(!w.isRemote && chest != null) {
+			for(int i = 0; i < r.nextInt(27); i++) {
+				ItemStack it = is[r.nextInt(is.length)];
+				if(r.nextInt(2) == 0) chest.setInventorySlotContents(i, it);
 			}
 		}
 	}
@@ -178,7 +185,7 @@ public class WorldGenAPI {
 			}
 		}
 	}
-	
+
 	public static void addSphere(World w, int size, int x, int y, int z, Block bottom, Block top) {
 		int XLength = x - size;
 		int XHeight = x + size;
@@ -200,7 +207,7 @@ public class WorldGenAPI {
 			}
 		}
 	}
-	
+
 	public static void addWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass) {
 		int XLength = x - size;
 		int XHeight = x + size;
@@ -223,7 +230,7 @@ public class WorldGenAPI {
 			}
 		}
 	}
-	
+
 	public static void addOreWorldSphere(World w, int size, int x, int y, int z, Block stone, Block dirt, Block grass, int chance, Block... ores) {
 		ArrayList<Block> block = new ArrayList<Block>();
 		for(Block b : ores) block.add(b);
