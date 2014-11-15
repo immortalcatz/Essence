@@ -15,6 +15,10 @@ import net.essence.blocks.BlockMiniColouredBricks;
 import net.essence.blocks.BlockModFire;
 import net.essence.blocks.BlockModOre;
 import net.essence.blocks.BlockStatue;
+import net.essence.blocks.BlockStorageBlocks;
+import net.essence.blocks.BlockStorageBlocks1;
+import net.essence.blocks.BlockStorageBlocks2;
+import net.essence.blocks.BlockStorageBlocks3;
 import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.statue.ModelCalciaStatue;
 import net.essence.client.render.mob.model.statue.ModelEnderChampionStatue;
@@ -144,6 +148,11 @@ public class EssenceBlocks {
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
 	
+	public static final Block storageBlocks = new BlockStorageBlocks();
+	public static final Block storageBlocks1 = new BlockStorageBlocks1();
+	public static final Block storageBlocks2 = new BlockStorageBlocks2();
+	public static final Block storageBlocks3 = new BlockStorageBlocks3();
+
 	public static final Block christmasLights = new BlockMod(EnumMaterialTypes.LEAVES, "christmasLights", 0.2F).setLightLevel(0.5F);
 
 }

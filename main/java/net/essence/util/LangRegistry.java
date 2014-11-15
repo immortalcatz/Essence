@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import net.essence.EssenceTabs;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockMiniColouredBricks;
+import net.essence.blocks.BlockStorageBlocks;
+import net.essence.blocks.BlockStorageBlocks1;
+import net.essence.blocks.BlockStorageBlocks2;
+import net.essence.blocks.BlockStorageBlocks3;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -44,6 +48,10 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("tile.glowshroom_bottom.name=Glowshroom");
 		instance.addToFile("tile.depthsSlab.name=Depths Slab");
 		instance.addToFile("tile.eucaSlab.name=Euca Slab");
+		for(int j = 0; j < 16; j++) instance.addToFile("tile." + BlockStorageBlocks.allNames[j] + "Storage.name=" + BlockStorageBlocks.allFinalNames[j] + " Storage Block");
+		for(int j = 0; j < 16; j++) instance.addToFile("tile." + BlockStorageBlocks1.names[j] + "Storage.name=" + BlockStorageBlocks1.allFinalNames[j] + " Storage Block");
+		for(int j = 0; j < 16; j++) instance.addToFile("tile." + BlockStorageBlocks2.names[j] + "Storage.name=" + BlockStorageBlocks2.allFinalNames[j] + " Storage Block");
+		for(int j = 0; j < 11; j++) instance.addToFile("tile." + BlockStorageBlocks3.names[j] + "Storage.name=" + BlockStorageBlocks3.allFinalNames[j] + " Storage Block");
 	}
 	
 	public static void addOPFood(String name, String actual) {

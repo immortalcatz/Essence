@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
@@ -149,7 +150,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     public Item getItemDropped(int par1, Random rand, int par3) {
         return null;
     }
-
+    
     @Override
     public boolean isShearable(ItemStack item, IBlockAccess world, int x, int y, int z) {
         return true;

@@ -3,7 +3,7 @@ package net.essence.blocks;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.items.ItemMiniBlockMetadata;
+import net.essence.items.block.ItemMiniBlockMetadata;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;

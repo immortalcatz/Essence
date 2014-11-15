@@ -1,4 +1,4 @@
-package net.essence.items;
+package net.essence.items.block;
 
 import java.util.List;
 

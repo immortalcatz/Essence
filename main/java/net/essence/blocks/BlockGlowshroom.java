@@ -5,8 +5,8 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.items.ItemBlockGlowshroom;
-import net.essence.items.ItemBlockMetadata;
+import net.essence.items.block.ItemBlockGlowshroom;
+import net.essence.items.block.ItemBlockMetadata;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
