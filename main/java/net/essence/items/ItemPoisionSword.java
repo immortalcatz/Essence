@@ -25,7 +25,7 @@ public class ItemPoisionSword extends ItemModSword {
 
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
-		hit.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 20));
+		hit.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 2));
 		Random r = new Random();
 		for(int i = 0; i < 50; i++){
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityPoisionFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
