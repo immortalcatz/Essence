@@ -46,6 +46,11 @@ public class BlockModVine extends BlockMod implements IShearable {
     public boolean renderAsNormalBlock() {
         return false;
     }
+    
+    @Override
+	public int getRenderBlockPass() {
+		return 1;
+	}
 
     @Override
     public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {

@@ -116,6 +116,7 @@ public class EssenceBlocks {
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
+	public static final Block caveVine = new BlockCaveVine("caveVine");
 	
 	public static final Block storageBlocks = new BlockStorageBlocks();
 	public static final Block storageBlocks1 = new BlockStorageBlocks1();
