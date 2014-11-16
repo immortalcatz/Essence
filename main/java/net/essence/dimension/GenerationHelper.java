@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
+import net.essence.dimension.euca.gen.WorldGenEucaPlant;
 import net.essence.dimension.vanilla.gen.WorldGenBoilPortal;
 import net.essence.dimension.vanilla.gen.WorldGenChristmasLights;
 import net.essence.dimension.vanilla.gen.WorldGenSmallGlowshrooms;
@@ -89,6 +90,18 @@ public class GenerationHelper {
 		case 5:
 			y = w.getHeightValue(chunkX + r.nextInt(16) + 8, chunkZ + r.nextInt(16) + 8); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenBoilingFire()).generate(w, r, x, y, z);
+			break;
+		case 6:
+			y = w.getHeightValue(chunkX + r.nextInt(16) + 8, chunkZ + r.nextInt(16) + 8); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenEucaPlant(EssenceBlocks.eucaTallGrass)).generate(w, r, x, y, z);
+			break;
+		case 7:
+			y = w.getHeightValue(chunkX + r.nextInt(16) + 8, chunkZ + r.nextInt(16) + 8); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenEucaPlant(EssenceBlocks.eucaGreenFlower)).generate(w, r, x, y, z);
+			break;
+		case 8:
+			y = w.getHeightValue(chunkX + r.nextInt(16) + 8, chunkZ + r.nextInt(16) + 8); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenEucaPlant(EssenceBlocks.eucaBlueFlower)).generate(w, r, x, y, z);
 			break;
 		}
 	}

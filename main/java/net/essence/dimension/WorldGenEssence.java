@@ -52,6 +52,9 @@ public class WorldGenEssence implements IWorldGenerator {
 	private void generateEuca(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
 		for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(0, w, chunkX, chunkZ);
+		for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(6, w, chunkX, chunkZ);
+		for(i = 0; i < 2; i++) GenerationHelper.generateEssenceDimensions(7, w, chunkX, chunkZ);
+		for(i = 0; i < 2; i++) GenerationHelper.generateEssenceDimensions(8, w, chunkX, chunkZ);
 	}
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {

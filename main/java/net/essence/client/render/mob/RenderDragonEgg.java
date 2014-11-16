@@ -21,6 +21,17 @@ public class RenderDragonEgg extends RenderLiving {
 	@Override
 	protected ResourceLocation getEntityTexture(Entity e) {
 		EntityDragonEgg egg = (EntityDragonEgg)e;		
-		return new ResourceLocation(SlayerAPI.PREFIX + "models/entity/dragonEgg_" + egg.getColour() + ".png");
+		String colour = "";
+		switch(egg.getColour()) {
+		case 0: colour = "blue"; break;
+		case 1: colour = "cyan"; break;
+		case 2: colour = "green"; break;
+		case 3: colour = "orange"; break;
+		case 4: colour = "purple"; break;
+		case 5: colour = "red"; break;
+		case 6: colour = "yellow"; break;
+		case 7: colour = "pink"; break;
+		}
+		return new ResourceLocation(SlayerAPI.PREFIX + "models/entity/dragonEgg_" + colour + ".png");
 	}
 }

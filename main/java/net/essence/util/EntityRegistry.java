@@ -1,5 +1,6 @@
 package net.essence.util;
 
+import net.essence.entity.EntityDragonEgg;
 import net.essence.entity.mob.boiling.EntityAshHoarder;
 import net.essence.entity.mob.boiling.EntityBurningLight;
 import net.essence.entity.mob.boiling.EntityBurntAsh;

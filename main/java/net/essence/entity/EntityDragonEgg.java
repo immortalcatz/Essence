@@ -10,15 +10,24 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityDragonEgg extends EntityModMob {
 
-	private String colour = "";
+	private int colour = 0;
 	
-	public EntityDragonEgg(World w, String colour) {
+	public static final int ENTITY_TYPE = 27;
+	
+	public EntityDragonEgg(World w, int colour) {
 		super(w);
 		setSize(0.4F, 0.5F);
 		this.colour = colour;
+		dataWatcher.updateObject(ENTITY_TYPE, colour);
 	}
 	
-	public String getColour() {
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		dataWatcher.addObject(ENTITY_TYPE, (int)0);
+	}
+	
+	public int getColour() {
 		return colour;
 	}
 
