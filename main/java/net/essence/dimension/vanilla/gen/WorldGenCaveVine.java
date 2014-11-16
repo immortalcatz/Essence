@@ -14,7 +14,7 @@ public class WorldGenCaveVine extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
         int l = x;
-        for(int i1 = z; y < 30; ++y) {
+        for(int i1 = z; y < 40; ++y) {
             if(w.isAirBlock(x, y, z)) {
                 for(int j1 = 2; j1 <= 5; ++j1) {
                     if(EssenceBlocks.caveVine.canPlaceBlockOnSide(w, x, y, z, j1)) {
