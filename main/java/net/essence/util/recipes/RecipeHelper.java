@@ -8,6 +8,7 @@ import net.essence.blocks.BlockStorageBlocks;
 import net.essence.blocks.BlockStorageBlocks1;
 import net.essence.blocks.BlockStorageBlocks2;
 import net.essence.blocks.BlockStorageBlocks3;
+import net.essence.items.ItemBackpack;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -65,6 +66,10 @@ public class RecipeHelper {
 			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.colouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.stonebrick, 'd', BlockColouredBricks.crafting[j]});
 			GameRegistry.addShapelessRecipe(new ItemStack(EssenceBlocks.miniColouredBricks, 1, j), new Object[] {Blocks.brick_block, BlockMiniColouredBricks.crafting[j]});
 			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.miniColouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.brick_block, 'd', BlockMiniColouredBricks.crafting[j]});
+		}
+		
+		for(int j = 0; j < 13; j++) {
+			//GameRegistry.addRecipe(new ItemStack(EssenceItems.backpack, 1, j), new Object[] {"lll", "lil", "lll", 'i', ItemBackpack.crafting[j], 'l', Items.leather});
 		}
 		
 		for(int j = 0; j < 16; j++) {

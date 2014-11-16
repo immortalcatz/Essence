@@ -9,6 +9,7 @@ import net.essence.blocks.BlockStorageBlocks;
 import net.essence.blocks.BlockStorageBlocks1;
 import net.essence.blocks.BlockStorageBlocks2;
 import net.essence.blocks.BlockStorageBlocks3;
+import net.essence.items.ItemBackpack;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -44,6 +45,7 @@ public class LangRegistry extends RegistryFile {
 		instance.addToFile("itemGroup.essence.decoration=Essence Of The Gods: Decoration");
 		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockColouredBricks.textures[j] + "ColouredBricks.name=" + BlockColouredBricks.names[j] + " Coloured Brick");
 		for(int j = 0; j < 13; j++) instance.addToFile("tile." + BlockMiniColouredBricks.textures[j] + "MiniColouredBricks.name=" + BlockMiniColouredBricks.names[j] + " Coloured Mini Brick");
+		for(int j = 0; j < 13; j++) instance.addToFile("item." + ItemBackpack.textures[j] + "backpack.name=" + ItemBackpack.names[j] + " Backpack");
 		instance.addToFile("tile.glowshroom_top.name=Glowshroom");
 		instance.addToFile("tile.glowshroom_bottom.name=Glowshroom");
 		instance.addToFile("tile.depthsSlab.name=Depths Slab");

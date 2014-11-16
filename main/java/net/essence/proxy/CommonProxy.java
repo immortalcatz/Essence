@@ -8,6 +8,7 @@ import net.essence.dimension.boil.gen.fortress.StructureBoilBridgePieces;
 import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.essence.dimension.boil.gen.village.StructureBoilVillagePieces;
 import net.essence.event.*;
+import net.essence.items.tileentity.TileEntityBackpack;
 import net.essence.misc.*;
 import net.essence.util.*;
 import net.essence.util.*;
@@ -38,6 +39,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
+		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
 		SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
 		SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		StructureBoilBridgePieces.registerBoilFortressPieces();

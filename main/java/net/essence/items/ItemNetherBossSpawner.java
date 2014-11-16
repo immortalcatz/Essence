@@ -47,7 +47,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
-				p.addChatMessage(SlayerAPI.addChatMessage(EnumChatFormatting.GREEN + "Cannot be spawned unless in the Nether."));
+				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the Nether.");
 			}
 		}
 		return true;

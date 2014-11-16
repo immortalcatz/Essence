@@ -12,7 +12,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.util.MathHelper;
-import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.slayer.api.SlayerAPI;
@@ -91,11 +90,15 @@ public class PlayerEvent {
 	public void transferDims(PlayerChangedDimensionEvent e) {
 		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
 			e.fromDim == Config.euca ? " Euca " : "§rUnknown";
+		
 		String to = e.toDim == -1 ? " Nether " : e.toDim == 0 ? " Overworld " : e.toDim == 1 ? " The End " : e.toDim == Config.boil ? " Boiling Point " : e.toDim == Config.depths ? " The Depths " :
 			e.toDim == Config.euca ? " Euca " : " §rUnknown ";
+		
+		boolean hasSeen = false;
 		if(Config.showDimensionChange) {
-			if(!e.player.worldObj.isRemote)
+			if(!e.player.worldObj.isRemote && !hasSeen) {
 				SlayerAPI.sendMessageToAll(e.player.getDisplayName() + " Has travelled from" + from + "to" + to, false);
+			}
 		}
 	}
 }
