@@ -12,7 +12,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerClient() {
-		if(SlayerAPI.DEVMODE) LangRegistry.registerNames();
+		if(SlayerAPI.DEVMODE) LangRegistry.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
 		EntityRendering.init();
 		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());

@@ -59,8 +59,8 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		if(r.nextInt(40) == 0) GenerationHelper.generateVanilla(6, w, chunkX, chunkZ);
-		for(i = 0; i < 10; i++) GenerationHelper.generateVanilla(5, w, chunkX, chunkZ);
+		if(r.nextInt(50) == 0) GenerationHelper.generateVanilla(6, w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateVanilla(5, w, chunkX, chunkZ);
 	}
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
