@@ -206,54 +206,22 @@ public class SlayerAPI {
 	public static void sendContinuedMessageToAll(String message) {
 		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.GREEN + message));
 	}
+	
+    public static ToolMaterial addMeleeMaterial(int maxUses, float damage, int enchantability) {
+        return EnumHelper.addEnum(ToolMaterial.class, "", 0, maxUses, 0, damage - 4, enchantability);
+    }
+    
+    public static ToolMaterial addMeleeMaterial(float damage, int enchantability) {
+        return EnumHelper.addEnum(ToolMaterial.class, "", 0, -1, 0, damage - 4, enchantability);
+    }
 
-	public static ToolMaterial addMeleeMaterial(int maxUses, float damage, int enchant) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", 0, maxUses, 0, damage - 4, enchant);
-	}
+    public static ToolMaterial addAxeMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
+        return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 4, enchantability);
+    }
 
-	public static ToolMaterial addMeleeMaterial(float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", 0, -1, 0, damage - 4, enchantability);
-	}
-
-	public static ToolMaterial addAxeMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addAxeMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addPickMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addPickMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addSpadeMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addSpadeMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addHoeMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addHoeMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 3, enchantability);
-	}	
-
-	public static ToolMaterial addShickMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
-	}
-
-	public static ToolMaterial addShickMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
-		return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 3, enchantability);
-	}
+    public static ToolMaterial addAxeMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {
+        return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, -1, efficiency, damage - 4, enchantability);
+    }
 
 	public static void removeCraftingRecipe(Item removed) {
 		ItemStack recipeResult = null;

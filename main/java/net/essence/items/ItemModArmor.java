@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.ISpecialArmor;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -65,7 +66,7 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 	public void addInformation(ItemStack item, EntityPlayer player, List list, boolean par4) {
 		double roundPH = Math.round(damageReduction * 1000);
 		double roundedDamage = roundPH / 10;
-		list.add(damageReduction == 0.0 ? ("No Protection") : "Damage Reduction: " + roundedDamage + "% (" + fullReduction + "% full)");
+		list.add(damageReduction == 0.0 ? (EnumChatFormatting.DARK_AQUA + "No Protection") : EnumChatFormatting.AQUA + "Damage Reduction: " + roundedDamage);
 		list.add(!unbreakable ? (item.getMaxDamage() - item.getItemDamage() + " Uses Remaining") : "Unlimited Uses");
 		ArmorDescription.add(item, player, list);
 		list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
