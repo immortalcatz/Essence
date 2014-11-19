@@ -3,10 +3,8 @@ package net.slayer.api.block;
 import java.util.Random;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
@@ -30,7 +28,6 @@ public class BlockModSpawner extends BlockContainer {
         setBlockTextureName(SlayerAPI.PREFIX + textureName);
         setCreativeTab(EssenceTabs.blocks);
         GameRegistry.registerBlock(this, name);
-        LangRegistry.addBlock(this);
     }
 
     @Override

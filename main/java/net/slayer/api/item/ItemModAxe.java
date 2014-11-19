@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,7 +23,6 @@ public class ItemModAxe extends ItemAxe {
 		setTextureName(SlayerAPI.PREFIX + "tools/" + name);
 		setCreativeTab(EssenceTabs.tools);
 		GameRegistry.registerItem(this, name);
-		LangRegistry.addItem(this);
 	}
 
 	@Override

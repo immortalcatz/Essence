@@ -4,11 +4,9 @@ import java.util.List;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -22,7 +20,6 @@ public class ItemModFood extends ItemFood {
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.misc);
         GameRegistry.registerItem(this, name);
-        LangRegistry.addItem(this);
     }
     
     public ItemModFood(String name, int food, float sat, int timeToEat, boolean wolfFood) {

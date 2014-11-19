@@ -5,7 +5,6 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.util.Config;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -16,8 +15,6 @@ import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMod extends Block{
 
@@ -69,7 +66,6 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setBlockName(name);
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	public BlockMod(EnumMaterialTypes t, String texture, String name) {
@@ -82,7 +78,6 @@ public class BlockMod extends Block{
 		setCreativeTab(EssenceTabs.blocks);
 		setBlockName(texture);
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	public BlockMod(EnumMaterialTypes blockType, String name, float hardness, CreativeTabs tab) {
@@ -96,7 +91,6 @@ public class BlockMod extends Block{
 		setHardness(hardness);
 		if(hardness == -1F) setBlockUnbreakable();
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	@Override

@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
@@ -21,7 +20,6 @@ public class ItemBattleAxe extends ItemModAxe {
 		setUnlocalizedName(name);
 		setTextureName(SlayerAPI.PREFIX + name);
 		setCreativeTab(EssenceTabs.weapons);
-		LangRegistry.addItem(this);
 	}
 	
     @Override

@@ -1,12 +1,10 @@
 package net.slayer.api.block;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.IBlockAccess;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -20,7 +18,6 @@ public class BlockModFence extends BlockFence {
 		if(light) setLightLevel(0.5F);
 		setHardness(block.getBlockHardness(null, 0, 0, 0));
 		GameRegistry.registerBlock(this, name + "Fence");
-		LangRegistry.addBlock(this);
 	}
 	
 	public BlockModFence(Block b, String n) {

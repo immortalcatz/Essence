@@ -5,9 +5,7 @@ import java.util.Random;
 import net.essence.Essence;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityEnrichedTable;
-import net.essence.client.GuiHandler;
 import net.essence.client.GuiHandler.GuiIDs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -31,7 +29,6 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setCreativeTab(EssenceTabs.blocks);
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	@Override

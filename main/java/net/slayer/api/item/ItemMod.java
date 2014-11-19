@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.client.EnumSounds;
-import net.essence.util.LangRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,7 +31,6 @@ public class ItemMod extends Item {
 		setTextureName(SlayerAPI.PREFIX + textureName);
 		setCreativeTab(tab);
 		GameRegistry.registerItem(this, name);
-		LangRegistry.addItem(this);
 	}
 
 	public ItemMod setHealAmount(int healAmount){

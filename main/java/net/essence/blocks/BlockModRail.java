@@ -1,8 +1,6 @@
 package net.essence.blocks;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockRail;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.world.World;
@@ -18,7 +16,6 @@ public class BlockModRail extends BlockRail {
 		setCreativeTab(EssenceTabs.blocks);
 		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setBlockName(name);
-		LangRegistry.addBlock(this);
 		GameRegistry.registerBlock(this, name);
 		power = isPowered;
 		this.speed = speed;

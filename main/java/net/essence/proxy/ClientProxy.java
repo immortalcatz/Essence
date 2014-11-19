@@ -9,7 +9,6 @@ import net.essence.client.MusicEvent;
 import net.essence.client.MusicHandler;
 import net.essence.client.PlayerStats;
 import net.essence.event.UpdateCheckerEvent;
-import net.essence.util.LangRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.IReloadableResourceManager;
 import net.slayer.api.SlayerAPI;
@@ -21,7 +20,6 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerClient() {
-		if(SlayerAPI.DEVMODE) LangRegistry.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
 		EntityRendering.init();
 		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());

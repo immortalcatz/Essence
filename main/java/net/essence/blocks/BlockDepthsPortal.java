@@ -7,13 +7,11 @@ import net.essence.EssenceTabs;
 import net.essence.client.render.particles.EntityDepthsPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChunkCoordinates;
@@ -37,7 +35,6 @@ public class BlockDepthsPortal extends BlockBreakable {
 		setBlockName(name);
 		setBlockUnbreakable();
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	@Override

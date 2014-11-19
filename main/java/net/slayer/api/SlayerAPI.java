@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.essence.Essence;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.command.CommandHandler;
@@ -23,7 +22,6 @@ import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.IChatComponent;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -119,7 +117,6 @@ public class SlayerAPI {
 	}
 
 	public static void registerMob(Class entityClass, String entityName, int ID) {
-		LangRegistry.addMob(entityName);
 		int entityID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID, 0x00CCB7, 0x16C400);
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
@@ -132,7 +129,6 @@ public class SlayerAPI {
 	}
 
 	public static void registerBossMob(Class entityClass, String entityName, int ID) {
-		LangRegistry.addMob(entityName);
 		int entityID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID, 0x000000, 0x9B0000);
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);

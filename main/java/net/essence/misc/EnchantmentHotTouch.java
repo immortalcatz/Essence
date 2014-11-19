@@ -1,6 +1,5 @@
 package net.essence.misc;
 
-import net.essence.util.LangRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemStack;
@@ -11,7 +10,6 @@ public class EnchantmentHotTouch extends Enchantment {
 	public EnchantmentHotTouch(int id, int weight) {
 		super(id, weight, EnumEnchantmentType.digger);
 		this.setName("Hot Touch");
-		LangRegistry.addEnchantment("Hot Touch");
 	}
 
 	@Override

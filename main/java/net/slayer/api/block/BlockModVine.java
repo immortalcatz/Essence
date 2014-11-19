@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,7 +22,6 @@ public class BlockModVine extends BlockMod implements IShearable {
         super(EnumMaterialTypes.VINES, name, 0.0F);
         this.setTickRandomly(true);
         setCreativeTab(EssenceTabs.blocks);
-        LangRegistry.addBlock(this);
     }
 
     @Override

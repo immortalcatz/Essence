@@ -7,7 +7,6 @@ import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
 import static net.minecraftforge.common.util.ForgeDirection.UP;
 import static net.minecraftforge.common.util.ForgeDirection.WEST;
 import net.essence.EssenceBlocks;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockFire;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
@@ -25,7 +24,6 @@ public class BlockModFire extends BlockFire {
     	setLightLevel(1.0F);
         setBlockName(name);
         GameRegistry.registerBlock(this, name);
-        LangRegistry.addBlock(this);
     }
 
 	@Override

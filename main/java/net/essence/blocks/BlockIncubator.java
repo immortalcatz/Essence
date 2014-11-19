@@ -3,12 +3,9 @@ package net.essence.blocks;
 import java.util.Random;
 
 import net.essence.Essence;
-import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityIncubator;
-import net.essence.client.GuiHandler;
 import net.essence.client.GuiHandler.GuiIDs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -39,7 +36,6 @@ public class BlockIncubator extends BlockContainer {
 		setBlockName(name);
 		GameRegistry.registerBlock(this, name);
 		active = act;
-		LangRegistry.addBlock(this);
 		if(act) setLightLevel(0.875F);
 	}
 

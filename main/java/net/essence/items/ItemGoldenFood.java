@@ -1,7 +1,6 @@
 package net.essence.items;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
@@ -23,7 +22,6 @@ public class ItemGoldenFood extends ItemFood {
         op = isOP;
         setUnlocalizedName(name);
         setTextureName(SlayerAPI.PREFIX + tex);
-        LangRegistry.addOPFood(name, actual);
         GameRegistry.registerItem(this, name);
         setCreativeTab(EssenceTabs.misc);
     }

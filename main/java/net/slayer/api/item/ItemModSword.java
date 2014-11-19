@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -24,7 +23,6 @@ public class ItemModSword extends ItemSword {
         setTextureName(SlayerAPI.PREFIX + name);
         setCreativeTab(EssenceTabs.weapons);
         GameRegistry.registerItem(this, name);
-        LangRegistry.addItem(this);
     }
     
 	@Override

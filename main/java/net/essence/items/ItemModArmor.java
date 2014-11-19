@@ -5,7 +5,6 @@ import java.util.List;
 import net.essence.EssenceTabs;
 import net.essence.client.ArmorDescription;
 import net.essence.util.EnumArmor;
-import net.essence.util.LangRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,7 +43,6 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		setUnlocalizedName(this.name);
 		setTextureName(SlayerAPI.PREFIX + "armor/" + this.name);
 		GameRegistry.registerItem(this, this.name);
-		LangRegistry.addItem(this);
 	}
 
 	@Override

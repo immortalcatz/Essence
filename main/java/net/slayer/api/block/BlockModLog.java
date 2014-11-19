@@ -1,7 +1,6 @@
 package net.slayer.api.block;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -30,7 +29,6 @@ public class BlockModLog extends BlockRotatedPillar {
 		setCreativeTab(EssenceTabs.blocks);
 		setStepSound(soundTypeWood);
 		GameRegistry.registerBlock(this, name);
-		LangRegistry.addBlock(this);
 	}
 
 	@SideOnly(Side.CLIENT)

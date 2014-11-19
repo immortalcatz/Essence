@@ -1,6 +1,5 @@
 package net.essence.misc;
 
-import net.essence.util.LangRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemArmor;
@@ -11,7 +10,6 @@ public class EnchantmentWaterWalk extends Enchantment {
 	public EnchantmentWaterWalk(int id, int weight) {
 		super(id, weight, EnumEnchantmentType.armor_feet);
 		this.setName("Water Walker");
-		LangRegistry.addEnchantment("Water Walker");
 	}
 
 	@Override

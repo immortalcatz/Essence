@@ -5,7 +5,6 @@ import java.util.Set;
 
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -36,7 +35,6 @@ public class ItemMultiTool extends ItemTool {
         setTextureName(SlayerAPI.PREFIX + "tools/" + name);
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
-        LangRegistry.addItem(this);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
     }
     

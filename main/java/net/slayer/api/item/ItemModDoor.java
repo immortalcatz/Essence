@@ -1,16 +1,13 @@
 package net.slayer.api.item;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.slayer.api.SlayerAPI;
 import net.slayer.api.block.BlockModDoor;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemModDoor extends ItemMod {
 

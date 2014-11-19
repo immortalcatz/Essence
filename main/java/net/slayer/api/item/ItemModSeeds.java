@@ -3,7 +3,6 @@ package net.slayer.api.item;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -20,7 +19,6 @@ public class ItemModSeeds extends ItemSeeds {
 		setTextureName(SlayerAPI.PREFIX + name);
 		setCreativeTab(EssenceTabs.util);
 		GameRegistry.registerItem(this, name);
-		LangRegistry.addItem(this);
 	}
 	
 	@Override

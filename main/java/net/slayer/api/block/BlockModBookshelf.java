@@ -1,10 +1,8 @@
 package net.slayer.api.block;
 
 import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 import net.slayer.api.SlayerAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -21,7 +19,6 @@ public class BlockModBookshelf extends BlockBookshelf {
         setBlockName(name);
         setCreativeTab(EssenceTabs.blocks);
         setStepSound(Block.soundTypeWood);
-        LangRegistry.addBlock(this);
         GameRegistry.registerBlock(this, name);
     }
 
