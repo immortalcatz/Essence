@@ -57,6 +57,7 @@ public class Essence {
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
+		//proxy.registerSounds();
 		packetHandler.registerPacket(PacketOpenGui.class);
 		packetHandler.postInit();
 	}

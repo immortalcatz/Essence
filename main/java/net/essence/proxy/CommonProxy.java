@@ -23,6 +23,7 @@ public class CommonProxy {
 
 	public void registerClient() { }
 	public void clientInit(FMLInitializationEvent event) { }
+	public void registerSounds() { }
 	
 	public static void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);

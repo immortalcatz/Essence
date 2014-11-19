@@ -4,8 +4,6 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
-import net.essence.client.render.BaseBlockRender;
-import net.essence.client.render.BlockRenderInfo;
 import net.essence.client.render.particles.OreParticleFX;
 import net.minecraft.block.Block;
 import net.minecraft.client.particle.EffectRenderer;
@@ -26,27 +24,9 @@ public class BlockModOre extends BlockMod {
 		super(name, hardness);
 	}
 
-	@SideOnly(Side.CLIENT)
-	BlockRenderInfo renderInfo;
 	public int boostBrightnessLow;
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
-
-	@SideOnly(Side.CLIENT)
-	public BlockRenderInfo getRendererInstance() {
-		if(renderInfo != null) return renderInfo;
-		try {
-			return renderInfo = new BlockRenderInfo(getRenderer().newInstance());
-		}
-		catch(Throwable t) {
-			throw new RuntimeException(t);
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	public Class<? extends BaseBlockRender> getRenderer() {
-		return BaseBlockRender.class;
-	}
 
 	@Override
 	public boolean addHitEffects(World w, MovingObjectPosition target, EffectRenderer effectRenderer) {

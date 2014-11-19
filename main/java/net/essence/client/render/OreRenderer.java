@@ -96,10 +96,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.eucaStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.celestiumOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.shadiumOre) {
@@ -108,10 +104,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.shadiumOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.luniumOre) {
@@ -120,10 +112,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.luniumOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.flairiumOre) {
@@ -132,10 +120,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.depthsStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.flairiumOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.celestiumBlock) {
@@ -144,10 +128,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.celestiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.celestiumBlock, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.flairiumBlock) {
@@ -156,10 +136,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.flairiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.flairiumBlock, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.luniumBlock) {
@@ -168,10 +144,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.luniumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.luniumBlock, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.hellstoneBlock) {
@@ -180,10 +152,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlock, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.shadiumBlock) {
@@ -192,10 +160,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(EssenceBlocks.shadiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.shadiumBlock, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.hellstoneOre) {
@@ -204,10 +168,6 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(Blocks.netherrack, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.sapphireOre) {
@@ -216,19 +176,8 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.sapphireOre, x, y, z);
 			blk.enhanceBrightness = true;
-
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		return true;
-	}
-	
-	public boolean renderInWorld(BlockModOre block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer) {
-		BaseBlockRender.preRenderInWorld(block, world, x, y, z, renderer);
-		boolean o = renderer.renderStandardBlock(block, x, y, z);
-		BaseBlockRender.postRenderInWorld(renderer );
-		return o;
 	}
 
 	@Override

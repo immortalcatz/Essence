@@ -23,6 +23,7 @@ public enum EnumSounds {
 	BUNNY("eotg:bunny"),
 	BUNNY_HURT("eotg:bunnyHurt"),
 	HONGO("eotg:hongo"),
+	SMALL_HONGO("eotg:smallHongo"),
 	SMALL_HONGO_HURT("eotg:smallHongoHurt"),
 	HONGO_HURT("eotg:hongoHurt"),
 	REAPER("eotg:reaper"),

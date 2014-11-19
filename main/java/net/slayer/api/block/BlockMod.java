@@ -4,8 +4,6 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.client.render.BaseBlockRender;
-import net.essence.client.render.BlockRenderInfo;
 import net.essence.util.Config;
 import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
@@ -28,8 +26,6 @@ public class BlockMod extends Block{
 	protected Random rand;
 	protected boolean exp = false;
 
-	@SideOnly(Side.CLIENT)
-	BlockRenderInfo renderInfo;
 	public int boostBrightnessLow;
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
@@ -101,22 +97,6 @@ public class BlockMod extends Block{
 		if(hardness == -1F) setBlockUnbreakable();
 		GameRegistry.registerBlock(this, name);
 		LangRegistry.addBlock(this);
-	}
-
-	@SideOnly(Side.CLIENT)
-	public BlockRenderInfo getRendererInstance() {
-		if(renderInfo != null) return renderInfo;
-		try {
-			return renderInfo = new BlockRenderInfo(getRenderer().newInstance());
-		}
-		catch(Throwable t) {
-			throw new RuntimeException(t);
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	public Class<? extends BaseBlockRender> getRenderer() {
-		return BaseBlockRender.class;
 	}
 
 	@Override

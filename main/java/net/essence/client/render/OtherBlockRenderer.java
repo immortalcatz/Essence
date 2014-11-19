@@ -84,10 +84,6 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.mossy_cobblestone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone, x, y, z);
-			blk.enhanceBrightness = true;
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		
 		if(block == EssenceBlocks.christmasLights) {
@@ -96,18 +92,8 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 			renderer.renderStandardBlock(Blocks.leaves, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.christmasLights, x, y, z);
 			blk.enhanceBrightness = true;
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
-			out = renderInWorld(blk, world, x, y, z, renderer);
-			blk.getRendererInstance().setTemporaryRenderIcon(ExtraBlockTextures.getMissing());
 		}
 		return true;
-	}
-	
-	public boolean renderInWorld(BlockMod block, IBlockAccess world, int x, int y, int z, RenderBlocks renderer) {
-		BaseBlockRender.preRenderInWorld(block, world, x, y, z, renderer);
-		boolean o = renderer.renderStandardBlock(block, x, y, z);
-		BaseBlockRender.postRenderInWorld(renderer );
-		return o;
 	}
 
 	@Override
