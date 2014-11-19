@@ -89,7 +89,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "Beast of the Nether", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityWitheringBeast.class, "Withering Beast", SlayerAPI.mobID++);
 		SlayerAPI.registerBossMob(EntityCalcia.class, "Calcia", SlayerAPI.mobID++);
-		SlayerAPI.registerBossMob(EntityEudor.class, "Eudor", SlayerAPI.mobID++);
+		//SlayerAPI.registerBossMob(EntityEudor.class, "Eudor", SlayerAPI.mobID++);
 		//SlayerAPI.registerBossMob(EntityWraith.class, "Wraith", SlayerAPI.mobID++);
 	}
 }
