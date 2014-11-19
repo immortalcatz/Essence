@@ -66,8 +66,8 @@ public class PlayerStats {
 				gig.drawTexturedModalRect(w, h + 36 + 18 + 17, 0, 180, (int)(armor * 1.5F), 18);
 				gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 210, 9, 9);
 
-				gig.drawTexturedModalRect(w, h + 36 + 36 - 16, 0, 163, (int)(air * 2), 18);
-				gig.drawTexturedModalRect(w + 3, h + 36 + 40 - 16, 17, 200, 9, 9);
+				gig.drawTexturedModalRect(w, h + 36 + 36 - 18, 0, 163, (int)(air * 2), 18);
+				gig.drawTexturedModalRect(w + 3, h + 36 + 40 - 18, 17, 200, 9, 9);
 
 				gig.drawTexturedModalRect(w, h + 36, 0, 145, (int)experience, 18);
 				GL11.glPushMatrix();

@@ -5,6 +5,7 @@ import java.awt.Point;
 
 import net.essence.util.Config;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.ResourceLocation;
@@ -34,8 +35,8 @@ public class BarTickHandler {
 	}
 
 	private void onTickRender() {
-		if(Config.smallEnergyBars) {
-			if(mc.currentScreen == null) {
+		//if(Config.smallEnergyBars) {
+			if(mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 				GL11.glPushMatrix();
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				GuiIngame gig = mc.ingameGUI;
@@ -51,7 +52,7 @@ public class BarTickHandler {
 				gig.drawTexturedModalRect(x, y, 0, 20, (int)((DarkEnergyBar.getBarValue() / 4)), 10);
 				GL11.glPopMatrix();
 			}
-		} else {
+			/*} else {
 			if(mc.currentScreen == null) {
 				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 				int width = scaledresolution.getScaledWidth();
@@ -140,7 +141,7 @@ public class BarTickHandler {
 				mc.fontRenderer.drawString("Dark Energy", width - 140, height - 27, 0xF);
 				mc.fontRenderer.drawString("Essence", width - 125, height - 67, 0xF);
 			}
-		}
+		}*/
 	}
 
 
