@@ -111,7 +111,7 @@ public class EssenceItems {
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
-	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
+	//public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
