@@ -96,15 +96,7 @@ public class BlockMod extends Block{
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess par1iBlockAccess, int par2, int par3, int par4) {
 		if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights) {
-			int j1 = 500;
-			if(enhanceBrightness) {
-				j1 = Math.max( j1 >> 20, j1 >> 4);
-				if(j1 > 4) j1 += boostBrightnessHigh;
-				else j1 += boostBrightnessLow;
-				if(j1 > 15) j1 = 15;
-				return j1 << 20 | j1 << 4;
-			}
-			return j1;
+			return 1000;
 		}
 		return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
 	}
@@ -148,7 +140,7 @@ public class BlockMod extends Block{
 
 	@Override
 	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights ? 51 : 0;
+		return this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights ? 173 : 0;
 	}
 
 	@Override

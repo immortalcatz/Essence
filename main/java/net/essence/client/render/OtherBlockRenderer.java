@@ -78,22 +78,18 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
-		boolean out = false;
 		if(block == EssenceBlocks.mossyEssenceStone) {
-			BlockMod blk = (BlockMod)block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.mossy_cobblestone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone, x, y, z);
+			return true;
 		}
 		
 		if(block == EssenceBlocks.christmasLights) {
-			BlockMod blk = (BlockMod)block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.leaves, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.christmasLights, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override

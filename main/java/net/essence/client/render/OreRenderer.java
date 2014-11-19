@@ -89,95 +89,72 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
 
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
-		boolean out = false;
 		if(block == EssenceBlocks.celestiumOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.eucaStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.celestiumOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.shadiumOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.shadiumOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.luniumOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.luniumOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.flairiumOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.depthsStone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.flairiumOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.celestiumBlock) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.celestiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.celestiumBlock, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.flairiumBlock) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.flairiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.flairiumBlock, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.luniumBlock) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.luniumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.luniumBlock, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.hellstoneBlock) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneBlock, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.shadiumBlock) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(EssenceBlocks.shadiumBlockOverlay, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.shadiumBlock, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.hellstoneOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.netherrack, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.hellstoneOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
 		
 		if(block == EssenceBlocks.sapphireOre) {
-			BlockModOre blk = (BlockModOre) block;
-			blk.enhanceBrightness = false;
 			renderer.renderStandardBlock(Blocks.stone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.sapphireOre, x, y, z);
-			blk.enhanceBrightness = true;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override

@@ -152,19 +152,9 @@ public class BlockModOre extends BlockMod {
 		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
 				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre) {
-			int j1 = 1000;
-			if(enhanceBrightness) {
-				j1 = Math.max( j1 >> 20, j1 >> 4);
-				if(j1 > 4) j1 += boostBrightnessHigh;
-				else j1 += boostBrightnessLow;
-				if(j1 > 15) j1 = 15;
-				return j1 << 20 | j1 << 4;
-			}
-			return j1;
+			return 1000;
 		}
-		if(this == EssenceBlocks.ashual || this == EssenceBlocks.sapphireBlock)
-			return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
-		return 70;
+		return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
 	}
 
 	@Override
@@ -178,6 +168,6 @@ public class BlockModOre extends BlockMod {
 	public int getRenderType() {
 		return this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
-				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre ? 50 : 0;
+				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre ? 172 : 0;
 	}
 }
