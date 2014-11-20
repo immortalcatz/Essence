@@ -53,7 +53,7 @@ public class MusicHandler implements IResourceManagerReloadListener {
 
 	@Override
 	public void onResourceManagerReload(IResourceManager var1) {
-		clearMusic();
+		//clearMusic();
 	}
 
 	public void clearMusic() {

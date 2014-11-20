@@ -28,6 +28,6 @@
  "calcia":{"category":"master","sounds": [{"name":"calcia","stream": false}]},
  "calciaHurt":{"category":"master","sounds": [{"name":"calciaHurt","stream": false}]},
  "staff":{"category":"neutral","sounds": ["staff"] },
- "music.game":{"category": "music", "sounds": [{"name": "music/underwaterWorld", "stream": true}]},
+ "music.underwaterWorld":{"category": "music", "sounds": [{"name": "music/underwaterWorld", "stream": true}]},
  "music.game.creative":{"category": "music", "sounds":[{"name": "music/underwaterWorld", "stream": true}]}
 }
