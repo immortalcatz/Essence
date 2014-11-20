@@ -2,7 +2,7 @@ package net.essence.entity;
 
 public class MobStats {
 
-	public static double normalSpeed = 0.300000011920929D, follow = 30D, knockBackResistance = 0.0D;
+	public static double normalSpeed = 0.350000011920929D, follow = 30D, knockBackResistance = 0.0D;
 
 	public static final int witheringBeastBossID = 0, netherBeastBossID = 1, calciaBossID = 2, wraithBossID = 3, eudorBossID = 4;
 
@@ -17,6 +17,7 @@ public class MobStats {
 	public static double bunnyHealth = 5.0D, bunnyDamage = 3.0D, bunnySpeed = normalSpeed, bunnyFollowRange = follow;
 	public static double sandCrawlerHealth = 35.0D, sandCrawlerDamage = 8.0D, sandCrawlerSpeed = normalSpeed, sandCrawlerFollowRange = follow;
 	public static double turtleHealth = 10.0D, turtleDamage = 3.0D, turtleSpeed = normalSpeed, turtleFollowRange = follow;
+	public static double fishHealth = 2.0D, fishSpeed = normalSpeed, fishFollowRange = follow;
 
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;

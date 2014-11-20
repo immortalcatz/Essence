@@ -1,47 +1,12 @@
 package net.essence.util;
 
-import net.essence.entity.EntityDragonEgg;
-import net.essence.entity.mob.boiling.EntityAshHoarder;
-import net.essence.entity.mob.boiling.EntityBurningLight;
-import net.essence.entity.mob.boiling.EntityBurntAsh;
-import net.essence.entity.mob.boiling.EntityBurntMiner;
-import net.essence.entity.mob.boiling.EntityCrisp;
-import net.essence.entity.mob.boiling.EntityExposedFlame;
-import net.essence.entity.mob.boiling.EntityMagmaBlaze;
-import net.essence.entity.mob.boiling.EntityMagmaGiant;
-import net.essence.entity.mob.boss.EntityCalcia;
-import net.essence.entity.mob.boss.EntityEudor;
-import net.essence.entity.mob.boss.EntityNetherBeast;
-import net.essence.entity.mob.boss.EntityWitheringBeast;
-import net.essence.entity.mob.depths.EntityDarknessCrawler;
-import net.essence.entity.mob.depths.EntityDepthsBeast;
-import net.essence.entity.mob.depths.EntityDepthsHunter;
-import net.essence.entity.mob.depths.EntitySpikedBeast;
-import net.essence.entity.mob.euca.EntityEucaCharger;
-import net.essence.entity.mob.euca.EntityEucaFighter;
-import net.essence.entity.mob.euca.EntityEucaHopper;
-import net.essence.entity.mob.euca.EntityInsecto;
-import net.essence.entity.mob.euca.EntityPsyollom;
-import net.essence.entity.mob.vanilla.EntityBigHongo;
-import net.essence.entity.mob.vanilla.EntityBoom;
-import net.essence.entity.mob.vanilla.EntityBunny;
-import net.essence.entity.mob.vanilla.EntityMediumHongo;
-import net.essence.entity.mob.vanilla.EntityReaper;
-import net.essence.entity.mob.vanilla.EntityRobot;
-import net.essence.entity.mob.vanilla.EntitySandCrawler;
-import net.essence.entity.mob.vanilla.EntitySmallHongo;
-import net.essence.entity.mob.vanilla.EntitySpyclops;
-import net.essence.entity.mob.vanilla.EntityTurtle;
-import net.essence.entity.projectile.EntityBasicProjectile;
-import net.essence.entity.projectile.EntityBouncingProjectile;
-import net.essence.entity.projectile.EntityChaosProjectile;
-import net.essence.entity.projectile.EntityConjuring;
-import net.essence.entity.projectile.EntityDoomsBringer;
-import net.essence.entity.projectile.EntityEnlightment;
-import net.essence.entity.projectile.EntityGreenpace;
-import net.essence.entity.projectile.EntityMagmaFireball;
-import net.essence.entity.projectile.EntityWizardsStar;
-import net.slayer.api.SlayerAPI;
+import net.essence.entity.mob.boiling.*;
+import net.essence.entity.mob.boss.*;
+import net.essence.entity.mob.depths.*;
+import net.essence.entity.mob.euca.*;
+import net.essence.entity.mob.vanilla.*;
+import net.essence.entity.projectile.*;
+import net.slayer.api.*;
 
 public class EntityRegistry {
 	
@@ -83,6 +48,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityBunny.class, "Bunny", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySandCrawler.class, "Sand Crawler", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityTurtle.class, "Turtle", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityFish.class, "Fish", SlayerAPI.mobID++);
 
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg", SlayerAPI.mobID++);
 
