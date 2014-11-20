@@ -37,19 +37,10 @@ public class ItemModFood extends ItemFood {
         setPotionEffect(potionID, potionDuration, potionAmplifier, potionEffectProbability);
     }
 
-    protected int getHealAmount(ItemStack stack) {
-        return func_150905_g(stack);
-    }
-
-    protected float getSaturation(ItemStack stack) {
-        return func_150906_h(stack);
-    }
-
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-        list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
-        list.add(getSaturation(stack) + " Saturation");
-        list.add(!isWolfsFavoriteMeat() ? "Pet Food: false" : "Pet Food: true");
+        list.add("Fills " + (double) func_150905_g(stack) / 2 + " Hunger Bars");
+        list.add(func_150906_h(stack) + " Saturation");
         if(stack.getItem() == EssenceItems.eucaMeat) list.add("Faster eating");
         list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }

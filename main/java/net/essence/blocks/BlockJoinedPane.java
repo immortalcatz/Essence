@@ -29,7 +29,7 @@ public class BlockJoinedPane extends BlockMod {
 	private IIcon[] icons = new IIcon[16];
 
 	public BlockJoinedPane(String name) {
-		super(EnumMaterialTypes.GLASS, name + "Pane", true);
+		super(EnumMaterialTypes.GLASS, name + "Pane", 0.2F);
         textures[0] = SlayerAPI.PREFIX + "glass/" + name + "/glass";
         textures[1] = SlayerAPI.PREFIX + "glass/" + name + "/glass_1_d";
         textures[2] = SlayerAPI.PREFIX + "glass/" + name + "/glass_1_u";

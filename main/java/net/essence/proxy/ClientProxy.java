@@ -23,13 +23,11 @@ public class ClientProxy extends CommonProxy {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
 		EntityRendering.init();
 		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());
-		//Keybinding.init();
-		//SlayerAPI.addForgeEventBus(new KeyInputHandler());
 	}
 	
 	@Override
 	public void registerSounds() {
-		((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
+		//((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
 		FMLCommonHandler.instance().bus().register(new MusicEvent());
 	}
 	

@@ -9,7 +9,7 @@ import net.slayer.api.block.BlockMod;
 public class BlockDungeonBlock extends BlockMod {
 
 	public BlockDungeonBlock(String name, boolean light) {
-		super(name, false);
+		super(name, -1.0F);
 		if(light) setLightLevel(0.5F);
 	}
 

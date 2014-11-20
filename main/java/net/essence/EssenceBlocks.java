@@ -33,26 +33,26 @@ public class EssenceBlocks {
 	public static final Block halfSlab = new BlockModSlab(false);
 	public static final Block fullSlab = new BlockModSlab(true);
 
-	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", true);
+	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", 2.0F);
 	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
 	public static final Block eucaLog = new BlockModLog("eucaLog");
-	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", true);
+	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", 1.0F);
 	public static final Block eucaStairs = new BlockModStairs(eucaPlank, "eucaStairs");
 	public static final Block redEucaLeaves = new BlockModLeaves("redEucaLeaves", 1.0F);
 	public static final Block greenEucaLeaves = new BlockModLeaves("greenEucaLeaves", 1.0F);
 	public static final Block blueEucaLeaves = new BlockModLeaves("blueEucaLeaves", 1.0F);
 	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling");
 	
-	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", true);
+	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", 2.0F);
 	public static final Block depthsGrass = new BlockModGrass(depthsDirt, "depthsGrass", 2.0F, "depthsDirt");
 	public static final Block depthsStone = new BlockMod("depthsStone", 2.0F);
 	public static final Block depthsLog = new BlockModLog("depthsLog");
-	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", true);
+	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", 1.0F);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs");
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
 
-	public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", true);
+	public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F, "godDirt");
 	public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
@@ -70,7 +70,7 @@ public class EssenceBlocks {
 	public static final Block fire = new BlockModFire("fire");
 	public static final Block boilingFire = new BlockBoilingFire("boilingFire");
 	
-	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", false);
+	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", 2.0F);
 
 	public static final Block dungeonBrick = new BlockDungeonBlock("dungeonBrick");
 	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick");
@@ -90,7 +90,7 @@ public class EssenceBlocks {
 	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarved");
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLamp", true);
 	
-	public static final Block hotBrick = new BlockMod("hotBrick", true);
+	public static final Block hotBrick = new BlockMod("hotBrick", 2.0F);
 	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrick");
 	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs");
 
@@ -100,10 +100,10 @@ public class EssenceBlocks {
 	public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
 	public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
 	
-	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER.getNonPrefixedName());
-	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST.getPrefixedName());
-	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), EnumSounds.CALCIA.getPrefixedName());
-	public static final Block eudorStatue = new BlockStatue("eudorStatue", new ModelEudorStatue(), EnumSounds.CALCIA.getPrefixedName());
+	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER);
+	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST);
+	public static final Block calciaStatue = new BlockStatue("calciaStatue", new ModelCalciaStatue(), EnumSounds.CALCIA);
+	public static final Block eudorStatue = new BlockStatue("eudorStatue", new ModelEudorStatue(), EnumSounds.CALCIA);
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 
@@ -112,7 +112,7 @@ public class EssenceBlocks {
 	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
-	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, "hotDoorBlock", 5.0F, null);
+	public static final BlockModDoor hotDoor = new BlockModDoor("hotDoorBlock", 5.0F, null);
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();

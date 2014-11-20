@@ -1,14 +1,10 @@
 package net.essence.blocks;
 
-import java.util.List;
-
-import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.statue.ModelStatue;
 import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -24,10 +20,11 @@ public class BlockStatue extends BlockMod {
 
 	protected ModelStatue model;
 	protected ResourceLocation texture;
-	protected String sound;
+	protected EnumSounds sound;
 
-	public BlockStatue(String name, ModelStatue model, String s) {
-		super(name, 3.0F, EssenceTabs.decoraton);
+	public BlockStatue(String name, ModelStatue model, EnumSounds s) {
+		super(name, 3.0F);
+		setCreativeTab(EssenceTabs.decoraton);
 		setBlockTextureName("cobblestone");
 		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/" + name + ".png");
 		this.model = model;
@@ -44,7 +41,7 @@ public class BlockStatue extends BlockMod {
 
 	@Override
 	public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer p, int i, float f, float f1, float f2) {
-		if(!w.isRemote) EnumSounds.playSound(sound, w, p);
+		if(!w.isRemote) EnumSounds.playSound(sound.getPrefixedName(), w, p);
 		return true;
 	}
 
