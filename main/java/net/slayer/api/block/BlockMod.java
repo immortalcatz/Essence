@@ -21,8 +21,6 @@ public class BlockMod extends Block{
 	protected EnumMaterialTypes blockType;
 	protected Item drop;
 	protected Random rand;
-	protected boolean exp = false;
-
 	public int boostBrightnessLow;
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
@@ -30,30 +28,13 @@ public class BlockMod extends Block{
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
 	}
-
-	public BlockMod(String name, float hardness, CreativeTabs tab) {
-		this(EnumMaterialTypes.STONE, name, hardness, tab);
-	}
-
-	public BlockMod(String name, boolean breakable) {
-		this(EnumMaterialTypes.STONE, name, breakable);
-	}
-
-	public BlockMod(EnumMaterialTypes blockType, String name, float hardness) {
-		this(blockType, name, hardness, EssenceTabs.blocks);
+	
+	public BlockMod(EnumMaterialTypes type, String name, float hardness) {
+		this(type, name, hardness, EssenceTabs.blocks);
 	}
 
 	public BlockMod(String name, boolean breakable, CreativeTabs tab) {
-		this(EnumMaterialTypes.STONE, name, breakable, tab);
-	}
-
-	public BlockMod(EnumMaterialTypes blockType, String name, boolean breakable) {
-		this(blockType, name, breakable, EssenceTabs.blocks);
-	}
-
-	public BlockMod(EnumMaterialTypes blockType, String name, boolean breakable, CreativeTabs tab) {
-		this(blockType, name, tab);
-		if (!breakable) setBlockUnbreakable();
+		this(EnumMaterialTypes.STONE, name, tab);
 	}
 
 	public BlockMod(EnumMaterialTypes blockType, String name, CreativeTabs tab) {
@@ -89,7 +70,6 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setBlockName(name);
 		setHardness(hardness);
-		if(hardness == -1F) setBlockUnbreakable();
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -103,34 +83,14 @@ public class BlockMod extends Block{
 
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3) {
-		if (drop == null)
+		if(drop == null)
 			return SlayerAPI.toItem(this);
 		return drop;
-	}
-
-	public BlockMod toggleExp(boolean exp) {
-		this.exp = exp;
-		return this;
-	}
-
-	public BlockMod setDropItem(Item drop) {
-		this.drop = drop;
-		return this;
 	}
 
 	public BlockMod setHarvestLevel(EnumToolType type) {
 		setHarvestLevel(type.getType(), type.getLevel());
 		return this;
-	}
-
-	@Override
-	public int getExpDrop(IBlockAccess block, int par5, int par7) {
-		if(this.getItemDropped(par5, rand, par7) != SlayerAPI.toItem(this)) {
-			int j1 = 0;
-			if (exp) j1 = MathHelper.getRandomIntegerInRange(rand, 0, 4);
-			return j1;
-		}
-		return 0;
 	}
 	
 	@Override

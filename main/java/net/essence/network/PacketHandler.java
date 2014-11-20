@@ -36,7 +36,7 @@ public class PacketHandler extends MessageToMessageCodec<FMLProxyPacket, Abstrac
 
 	public boolean registerPacket(Class<? extends AbstractPacket> clazz) {
 		if(this.packets.size() > 256) {
-			LogHelper.error("[Essence Of The Gods] More than 256 packets have been registered!!! This is bad!");
+			LogHelper.error("More than 256 packets have been registered!!! This is bad!");
 			return false;
 		}
 		if(this.packets.contains(clazz)) {

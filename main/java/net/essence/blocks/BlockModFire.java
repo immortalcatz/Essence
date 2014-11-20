@@ -40,6 +40,10 @@ public class BlockModFire extends BlockFire {
 			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
 			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
+		if(world.provider.dimensionId > 0 || !EssenceBlocks.frozenPortal.makePortal(world, x, y, z)) {
+			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
+			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
+		}
 	}
 
 	protected boolean canNeighborBurn(World world, int x, int y, int z) {

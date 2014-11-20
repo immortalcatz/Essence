@@ -6,6 +6,8 @@ import net.essence.dimension.depths.BiomeGenDepths;
 import net.essence.dimension.depths.WorldProviderDepths;
 import net.essence.dimension.euca.BiomeGenEuca;
 import net.essence.dimension.euca.WorldProviderEuca;
+import net.essence.dimension.frozen.BiomeGenFrozenLands;
+import net.essence.dimension.frozen.WorldProviderFrozenLands;
 import net.essence.entity.mob.boiling.EntityAshHoarder;
 import net.essence.entity.mob.boiling.EntityBurningLight;
 import net.essence.entity.mob.boiling.EntityBurntAsh;
@@ -48,15 +50,18 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 public class DimensionHelper {
 
 	protected static final BiomeGenBase.Height boilHeight = new BiomeGenBase.Height(0.0F, 0.9F); 
+	protected static final BiomeGenBase.Height frozenHeight = new BiomeGenBase.Height(-1.0F, 0.0F); 
 
 	public static BiomeGenBase euca = new BiomeGenEuca(Config.eucaBiome);
 	public static BiomeGenBase depths = new BiomeGenDepths(Config.depthsBiome);
 	public static BiomeGenBase boiling = new BiomeGenBoiling(Config.boilBiome).setHeight(boilHeight);
+	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome).setHeight(frozenHeight);
 
 	public static void init(){
 		addDimension(Config.euca, WorldProviderEuca.class, Config.keepLoadingEuca);
 		addDimension(Config.depths, WorldProviderDepths.class, Config.keepLoadingDepths);
 		addDimension(Config.boil, WorldProviderBoiling.class, Config.keepLoadingBoil);
+		addDimension(Config.frozen, WorldProviderFrozenLands.class, Config.keepLoadingFrozen);
 	}
 
 	private static void addDimension(int id, Class<? extends WorldProvider> w, boolean keeploading) {

@@ -24,9 +24,8 @@ public class BlockModDoor extends BlockMod {
 	protected Item key;
 	protected boolean canOpenByHand;
 
-	public BlockModDoor(EnumMaterialTypes blockType, String name, float hardness, Item key) {
-		super(blockType, name, hardness);
-		if(hardness == -1F) setBlockUnbreakable();
+	public BlockModDoor(String name, float hardness, Item key) {
+		super(name, hardness);
 		setCreativeTab(null);
 		canOpenByHand = (key == null);
 		this.key = key;
