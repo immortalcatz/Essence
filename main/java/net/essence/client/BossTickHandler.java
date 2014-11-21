@@ -58,7 +58,7 @@ public class BossTickHandler {
 			break;
 		}
 
-		if(EssenceBossStatus.statusBarTime > 0) {
+		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {
 			EssenceBossStatus.statusBarTime--;
 			GuiIngame gig = mc.ingameGUI;
 			FontRenderer fontrenderer = this.mc.fontRenderer;

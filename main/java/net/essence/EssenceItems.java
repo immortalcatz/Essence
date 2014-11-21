@@ -185,17 +185,15 @@ public class EssenceItems {
 	
 	public static final Item goldenSteak = new ItemGoldenFood("normalGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item goldenSteakOP = new ItemGoldenFood("OPGoldenSteak", "goldenSteak", "Golden Steak", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
-	
 	public static final Item goldenPotato = new ItemGoldenFood("normalGoldenPotato", "goldenPotato", "Golden Potato", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item goldenPotatoOP = new ItemGoldenFood("OPGoldenPotato", "goldenPotato", "Golden Potato", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
-	
 	public static final Item goldenPork = new ItemGoldenFood("normalGoldenPork", "goldenPorkchop", "Golden Porkchop", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item goldenPorkOP = new ItemGoldenFood("OPGoldenPork", "goldenPorkchop", "Golden Porkchop", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();	
-
-	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
-	
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
 	
+	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
+		
+	public static final Item spawners = new ItemSpawnEggs();
 	//public static final Item backpack = new ItemBackpack("backpack");
 	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {

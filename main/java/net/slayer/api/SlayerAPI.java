@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.essence.Essence;
+import net.essence.entity.EssenceEntityList;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.command.CommandHandler;
@@ -46,7 +47,7 @@ public class SlayerAPI {
 	public static int mobID = 400, projectileID = 230;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
-	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "1.4"; 
+	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "1.5"; 
 	public static final boolean DEVMODE = true;
 
 	public static void addRecipe(ItemStack i, Object... o) {
@@ -92,52 +93,23 @@ public class SlayerAPI {
 		FMLCommonHandler.instance().bus().register(o);
 	}
 
-	public static void addShapelessRecipe(ItemStack i, Object... o) {
-		GameRegistry.addShapelessRecipe(i, o);
-	}
-
-	public static void addSmeltingRecipe(ItemStack input, ItemStack output, float XP) {
-		GameRegistry.addSmelting(input, output, XP);
-	}
-
-	public static void addSmeltingRecipe(Item input, Block output, float XP) {
-		GameRegistry.addSmelting(new ItemStack(input), new ItemStack(output), XP);
-	}
-
-	public static void addSmeltingRecipe(Block input, Block output, float XP) {
-		GameRegistry.addSmelting(new ItemStack(input), new ItemStack(output), XP);
-	}
-
-	public static void addSmeltingRecipe(Item input, Item output, float XP) {
-		GameRegistry.addSmelting(new ItemStack(input), new ItemStack(output), XP);
-	}
-
-	public static void addSmeltingRecipe(Block input, Item output, float XP) {
-		GameRegistry.addSmelting(new ItemStack(input), new ItemStack(output), XP);
-	}
-
 	public static void registerMob(Class entityClass, String entityName, int ID) {
-		int entityID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID, 0x00CCB7, 0x16C400);
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
+		EssenceEntityList.addMapping(entityClass, entityName, ID, 0x123123, 0x321321);
 	}
 	
 	public static void registerEntity(Class entityClass, String entityName, int ID) {
-		int entityID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID, 0x123123, 0x321321);
-		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 250, 265, false);
+		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
 	}
 
 	public static void registerBossMob(Class entityClass, String entityName, int ID) {
-		int entityID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID, 0x000000, 0x9B0000);
+		EssenceEntityList.addMapping(entityClass, entityName, ID, 0x000000, 0x9B0000);
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
 	}
 
 	public static void registerProjectile(Class entityClass, String entityName) {
-		int ID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName + " Projectile", ID);
-		EntityRegistry.registerModEntity(entityClass, entityName + " Projectile", ID, Essence.instance, 250, 5, true);
+		EntityRegistry.registerModEntity(entityClass, entityName + " Projectile", projectileID, Essence.instance, 250, 5, true);
+		projectileID++;
 	}
 
     public static ArmorMaterial addArmorMaterial(String name, int durability, int[] oldArmor, int enchantability) {

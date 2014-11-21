@@ -17,6 +17,7 @@
  "bunnyHurt":{"category":"master","sounds": [{"name":"bunnyHurt","stream": false}]},
  "hongo":{"category":"master","sounds": [{"name":"hongo","stream": false}]},
  "hongoHurt":{"category":"master","sounds": [{"name":"hongoHurt","stream": false}]},
+ "smallHongo":{"category":"master","sounds": [{"name":"smallHongo","stream": false}]},
  "smallHongoHurt":{"category":"master","sounds": [{"name":"smallHongoHurt","stream": false}]},
  "reaper":{"category":"master","sounds": [{"name":"reaper","stream": false}]},
  "reaperHurt":{"category":"master","sounds": [{"name":"reaperHurt","stream": false}]},
@@ -29,5 +30,9 @@
  "calciaHurt":{"category":"master","sounds": [{"name":"calciaHurt","stream": false}]},
  "staff":{"category":"neutral","sounds": ["staff"] },
  "music.underwaterWorld":{"category": "music", "sounds": [{"name": "music/underwaterWorld", "stream": true}]},
- "music.game.creative":{"category": "music", "sounds":[{"name": "music/underwaterWorld", "stream": true}]}
+ "music.blueWater":{"category": "music", "sounds": [{"name": "music/blueWater", "stream": true}]},
+ "music.raceStar":{"category": "music", "sounds": [{"name": "music/raceStar", "stream": true}]},
+ "music.compBegins":{"category": "music", "sounds": [{"name": "music/compBegins", "stream": true}]},
+ "music.deepBlue":{"category": "music", "sounds": [{"name": "music/deepBlue", "stream": true}]},
+ "music.raceShore":{"category": "music", "sounds": [{"name": "music/raceShore", "stream": true}]}
 }
