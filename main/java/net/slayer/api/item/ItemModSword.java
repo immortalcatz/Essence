@@ -26,6 +26,11 @@ public class ItemModSword extends ItemSword {
     }
     
 	@Override
+	public boolean isItemTool(ItemStack i) {
+		return true;
+	}
+    
+	@Override
 	public boolean getIsRepairable(ItemStack i, ItemStack i1) {
 		boolean canRepair = mat.getRepairItem() != null;
 		if(canRepair) return mat.getRepairItem() == i1.getItem() ? true : super.getIsRepairable(i, i1);

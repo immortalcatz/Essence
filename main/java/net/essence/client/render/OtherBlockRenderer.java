@@ -79,14 +79,14 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
 		if(block == EssenceBlocks.mossyEssenceStone) {
-			renderer.renderStandardBlock(Blocks.mossy_cobblestone, x, y, z);
+			renderer.renderStandardBlock(Blocks.cobblestone, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.mossyEssenceStone, x, y, z);
 			return true;
 		}
 		
 		if(block == EssenceBlocks.christmasLights) {
-			renderer.renderStandardBlock(Blocks.leaves, x, y, z);
 			renderer.renderStandardBlock(EssenceBlocks.christmasLights, x, y, z);
+			renderer.renderStandardBlock(Blocks.leaves, x, y, z);
 			return true;
 		}
 		return false;

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.items.block.ItemBlockSlab;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.BlockStoneSlab;
@@ -18,7 +19,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
-import net.slayer.api.item.ItemBlockSlab;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

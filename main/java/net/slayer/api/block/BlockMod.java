@@ -100,7 +100,7 @@ public class BlockMod extends Block{
 
 	@Override
 	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights ? 173 : 0;
+		return this == EssenceBlocks.mossyEssenceStone ? 173 : 0;
 	}
 
 	@Override

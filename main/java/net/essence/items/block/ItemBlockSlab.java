@@ -1,4 +1,4 @@
-package net.slayer.api.item;
+package net.essence.items.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

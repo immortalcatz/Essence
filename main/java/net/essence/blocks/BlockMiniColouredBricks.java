@@ -57,22 +57,7 @@ public class BlockMiniColouredBricks extends Block {
 
 	@Override
 	public IIcon getIcon(int side, int meta) {
-		switch(meta) {
-		case 0: return icons[0];
-		case 1: return icons[1];
-		case 2: return icons[2];
-		case 3: return icons[3];
-		case 4: return icons[4];
-		case 5: return icons[5];
-		case 6: return icons[6];
-		case 7: return icons[7];
-		case 8: return icons[8];
-		case 9: return icons[9];
-		case 10: return icons[10];
-		case 11: return icons[11];
-		case 12: return icons[12];
-		}
-		return icons[0];
+		return icons[meta];
 	}
 	
 	@Override
