@@ -34,7 +34,7 @@ public class ItemSpawnEggs extends Item {
         this.setHasSubtypes(true);
         GameRegistry.registerItem(this, "essenceSpawners");
         setUnlocalizedName("essenceSpawner");
-        this.setCreativeTab(EssenceTabs.misc);
+        this.setCreativeTab(EssenceTabs.spawners);
     }
 
     @Override

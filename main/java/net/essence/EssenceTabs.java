@@ -2,6 +2,7 @@ package net.essence;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +18,7 @@ public class EssenceTabs extends CreativeTabs {
 	public static final EssenceTabs util = new EssenceTabs("essence.util");
 	public static final EssenceTabs misc = new EssenceTabs("essence.misc");
 	public static final EssenceTabs armor = new EssenceTabs("essence.armor");
+	public static final EssenceTabs spawners = new EssenceTabs("essence.spawners");
 
 	public Item item;
 	
@@ -43,6 +45,7 @@ public class EssenceTabs extends CreativeTabs {
 	
 	public static void init(){
 		decoraton.setIcon(new ItemStack(EssenceBlocks.colouredBricks, 1, 5));
+		spawners.setIcon(Blocks.mob_spawner);
 		blocks.setIcon(EssenceBlocks.celestiumBlock);
 		items.setIcon(EssenceItems.hellstoneIngot);
 		tools.setIcon(EssenceItems.hellstoneMultiTool);

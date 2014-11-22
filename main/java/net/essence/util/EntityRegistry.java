@@ -47,7 +47,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityEucaCharger.class, "Euca Charger", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityBunny.class, "Bunny", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySandCrawler.class, "Sand Crawler", SlayerAPI.mobID++);
-		SlayerAPI.registerMob(EntityTurtle.class, "Turtle", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityTurtle.class, "Essence Turtle", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityFish.class, "Fish", SlayerAPI.mobID++);
 
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg", SlayerAPI.mobID++);

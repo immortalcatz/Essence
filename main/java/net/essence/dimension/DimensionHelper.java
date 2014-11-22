@@ -28,6 +28,7 @@ import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.vanilla.EntityBigHongo;
 import net.essence.entity.mob.vanilla.EntityBoom;
 import net.essence.entity.mob.vanilla.EntityBunny;
+import net.essence.entity.mob.vanilla.EntityFish;
 import net.essence.entity.mob.vanilla.EntityMediumHongo;
 import net.essence.entity.mob.vanilla.EntityReaper;
 import net.essence.entity.mob.vanilla.EntityRobot;
@@ -177,6 +178,13 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityTurtle.class, amount, 1, 1, EnumCreatureType.monster, BiomeDictionary.getBiomesForType(Type.WATER));
 		EntityRegistry.addSpawn(EntityTurtle.class, amount, 1, 1, EnumCreatureType.monster, BiomeDictionary.getBiomesForType(Type.WET));
 
-
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.COLD));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.SWAMP));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityFish.class, amount, 2, 5, EnumCreatureType.waterCreature, BiomeDictionary.getBiomesForType(Type.WET));
 	}
 }
