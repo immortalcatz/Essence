@@ -2,8 +2,8 @@ package net.essence.blocks;
 
 import java.util.Random;
 
-import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
-import net.essence.dimension.euca.gen.WorldGenSmallEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.util.AxisAlignedBB;

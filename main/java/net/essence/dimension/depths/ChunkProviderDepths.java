@@ -141,6 +141,9 @@ public class ChunkProviderDepths implements IChunkProvider{
 					}
 				}
 			}
+			for(int i = 0; i < 32767; i++) {
+				if(var3[i] == EssenceBlocks.eucaGrass && var3[i + 1] != null) var3[i] = EssenceBlocks.eucaDirt;
+			}
 		}
 	}
 

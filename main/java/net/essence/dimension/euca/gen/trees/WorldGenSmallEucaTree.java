@@ -1,4 +1,4 @@
-package net.essence.dimension.euca.gen;
+package net.essence.dimension.euca.gen.trees;
 
 import java.util.Random;
 

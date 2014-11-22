@@ -5,7 +5,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.dimension.euca.gen.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;

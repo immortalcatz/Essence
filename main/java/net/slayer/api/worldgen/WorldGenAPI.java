@@ -3,6 +3,7 @@ package net.slayer.api.worldgen;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -24,6 +25,22 @@ public class WorldGenAPI {
 			}
 		}
 		return true;
+	}
+	
+	public static Block getEucaLeaves() {
+		Block leaves = null;
+		switch(r.nextInt(3)) {
+		case 0:
+			leaves = EssenceBlocks.greenEucaLeaves;
+			break;
+		case 1:
+			leaves = EssenceBlocks.blueEucaLeaves;
+			break;
+		case 2:
+			leaves = EssenceBlocks.redEucaLeaves;
+			break;
+		}
+		return leaves;
 	}
 
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
