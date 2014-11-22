@@ -6,6 +6,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.essence.util.Config;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFlameFX;
@@ -25,11 +26,14 @@ public class ItemFireSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.setFire(10);
-		for(int i = 0; i < 40; i++){
-			Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("lava", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
-			Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("flame", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
+		if(Config.spawnSwordParticles) {
+			for(int i = 0; i < 40; i++) {
+				if(!player.worldObj.isRemote) {
+					Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("lava", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
+					Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("flame", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
+				}
+			}
 		}
-		
 		/*
 		 Random random = new Random();
 		World w = player.worldObj;

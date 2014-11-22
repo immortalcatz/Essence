@@ -84,7 +84,7 @@ public class BlockGlowshroom extends Block {
 
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess w, int x, int y, int z) {
-		return 1000;
+		return 900;
 	}
 
 	@Override

@@ -21,7 +21,8 @@ public class Config {
     }
 
     public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, keepLoadingFrozen, reRenderPlayerStats, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
-
+    public static boolean spawnSwordParticles;
+    
     public static int euca, depths, boil, frozen;
     public static int eucaBiome, depthsBiome, boilBiome, frozenBiome;
     
@@ -41,6 +42,7 @@ public class Config {
         keepLoadingFrozen = cfg.get("Dimension", "Keep loading Frozen Lands", true).getBoolean(true);
         keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Point", true).getBoolean(true);
         boilBlockSpawnSmoke = cfg.get("Dimension", "Boiling point blocks spawn smoke (More lag)", true).getBoolean(true);
+        spawnSwordParticles = cfg.get("Items", "Swords spawn particles (if on a server, may crash)", true).getBoolean(true);
         //spawnNetherBossesInNether = cfg.get("Dimension", "Spawn the Nether Bosses (with the orbs) only in the Nether", true).getBoolean(true);
         showDimensionChange = cfg.get("Dimension", "Show the dimension change chat", true).getBoolean(true);
         reRenderPlayerStats = cfg.get("Gui", "Re-render the players stats in the top right corner", true).getBoolean(true);
