@@ -56,6 +56,10 @@ public class EssenceBlocks {
 	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F, "godDirt");
 	public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
+	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
+	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F, "frozenDirt");
+	public static final Block frozenStone = new BlockMod("frozenStone", 2.0F);
+	
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
@@ -96,7 +100,6 @@ public class EssenceBlocks {
 
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
 	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass");
-
 	public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
 	public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
 	
@@ -126,6 +129,16 @@ public class EssenceBlocks {
 
 	public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 	
+	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", 0.5F);
+	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass");
+	public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
+	public static final Block workshopLamp = new BlockMod(EnumMaterialTypes.GLASS, "workshopLamp", 0.5F).setLightLevel(1.0F);
+	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.WOOL, "workshopStone", 0.5F);
+	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
+	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStone");
+	public static final BlockModDoor frozenDoor = new BlockModDoor("frozenDoorBlock", 5.0F, null);
+	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
+
 	public static final Block eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final Block eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
 	public static final Block eucaBlueFlower = new BlockModFlower("eucaBlueFlower");

@@ -1,10 +1,12 @@
 package net.essence.dimension.frozen;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.boil.gen.MapGenBoilingCaves;
+import net.essence.dimension.frozen.gen.WorldGenCandyCane;
+import net.essence.dimension.frozen.gen.WorldGenSantasWorkshop;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
@@ -17,16 +19,14 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class ChunkProviderFrozenLands implements IChunkProvider {
 
-	private Block grass = EssenceBlocks.eucaGrass, dirt = EssenceBlocks.eucaDirt;
-	
 	private Random rand;
 	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, noiseGen5, noiseGen6;
 	private NoiseGeneratorPerlin noiseGen4;
@@ -35,17 +35,21 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	private final double[] da;
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
-	private MapGenBase caveGenerator = new MapGenBoilingCaves();
 	private BiomeGenBase[] biomesForGeneration;
 	private double[] gen1, gen2, gen3, gen4;
 	private int[][] ia = new int[32][32];
-	private boolean canSpawn = true;
+	private ArrayList<WorldGenerator> gens, rare;
 
 	public ChunkProviderFrozenLands(World par1World, long par2) {
 		this.worldObj = par1World;
 		this.type = par1World.getWorldInfo().getTerrainType();
 		this.rand = new Random(par2);
-
+		gens = new ArrayList(0);
+		gens.add(new WorldGenCandyCane());
+		
+		rare = new ArrayList(0);
+		rare.add(new WorldGenSantasWorkshop());
+		
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
@@ -72,7 +76,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	public void generate(int i, int j, Block[] b) {
-		byte b0 = 4;
+		byte b0 = 63;
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, i * 4 - 2, j * 4 - 2, 10, 10);
 		this.generate(i * 4, 0, j * 4);
 
@@ -113,9 +117,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 							double d15 = d10 - d16;
 
 							for(int k3 = 0; k3 < 4; ++k3) {
-								if((d15 += d16) > 0.0D) b[j3 += short1] = dirt;
-								else if(k2 * 8 + l2 < 20) b[j3 += short1] = grass;
-								else if(k2 * 8 + l2 < b0) b[j3 += short1] = grass;
+								if((d15 += d16) > 0.0D) b[j3 += short1] = EssenceBlocks.frozenStone;
+								else if(k2 * 8 + l2 < 62) b[j3 += short1] = EssenceBlocks.frozenDirt;
+								else if(k2 * 8 + l2 < b0) b[j3 += short1] = EssenceBlocks.frozenGrass;
 								else b[j3 += short1] = null;
 							}
 							d10 += d12;
@@ -161,12 +165,12 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 			} else {
 				Block block2 = blocks[i2];
 				if(block2 != null && block2.getMaterial() != Material.air) {
-					if(block2 == dirt) {
+					if(block2 == EssenceBlocks.frozenStone) {
 						if(k == -1) {
 							if(l <= 0) {
 								block = null;
 								b0 = 0;
-								block1 = dirt;
+								block1 = EssenceBlocks.frozenStone;
 							}
 							else if(l1 >= 59 && l1 <= 64) {
 								block = b.topBlock;
@@ -174,24 +178,24 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 								block1 = b.fillerBlock;
 							}
 
-							if(l1 < 4 && (block == null || block.getMaterial() == Material.air)) {
+							if(l1 < 63 && (block == null || block.getMaterial() == Material.air)) {
 								if(b.getFloatTemperature(i, l1, j) < 0.15F) {
 									block = Blocks.ice;
 									b0 = 0;
 								} else {
-									block = dirt;
+									block = EssenceBlocks.frozenStone;
 									b0 = 0;
 								}
 							}
 							k = l;
-							if(l1 >= 20) {
+							if(l1 >= 62) {
 								blocks[i2] = block;
 								bytes[i2] = b0;
 							}
 							else if(l1 < 56 - l) {
 								block = null;
-								block1 = dirt;
-								blocks[i2] = dirt;
+								block1 = EssenceBlocks.frozenStone;
+								blocks[i2] = EssenceBlocks.frozenStone;
 							} else {
 								blocks[i2] = block1;
 							}
@@ -199,9 +203,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 						else if(k > 0) {
 							--k;
 							blocks[i2] = block1;
-							if(k == 0 && block1 == dirt){
-								k = rand.nextInt(4) + Math.max(0, l1 - 4);
-								block1 = dirt;
+							if(k == 0 && block1 == EssenceBlocks.frozenStone){
+								k = rand.nextInt(4) + Math.max(0, l1 - 63);
+								block1 = EssenceBlocks.frozenStone;
 							}
 						}
 					}
@@ -225,15 +229,21 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		this.generate(par1, par2, ablock);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
-		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 		Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);
 		byte[] abyte1 = chunk.getBiomeArray();
-		for(int k = 0; k < abyte1.length; ++k) abyte1[k] = (byte)this.biomesForGeneration[k].biomeID;
+
+		for(int k = 0; k < abyte1.length; ++k)
+			abyte1[k] = (byte)this.biomesForGeneration[k].biomeID;
+
 		chunk.generateSkylightMap();
 		return chunk;
 	}
 
 	private void generate(int x, int y, int z) {
+		double d0 = 684.412D;
+		double d1 = 684.412D;
+		double d2 = 512.0D;
+		double d3 = 512.0D;
 		this.gen4 = this.noiseGen6.generateNoiseOctaves(this.gen4, x, z, 5, 5, 200.0D, 200.0D, 0.5D);
 		this.gen1 = this.noiseGen3.generateNoiseOctaves(this.gen1, x, y, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
 		this.gen2 = this.noiseGen1.generateNoiseOctaves(this.gen2, x, y, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
@@ -243,6 +253,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int l = 0;
 		int i1 = 0;
 		double d4 = 8.5D;
+
 		for(int j1 = 0; j1 < 5; ++j1) {
 			for(int k1 = 0; k1 < 5; ++k1) {
 				float f = 0.0F;
@@ -256,9 +267,12 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
 						float f3 = biomegenbase1.rootHeight;
 						float f4 = biomegenbase1.heightVariation;
+
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
+
 						if(biomegenbase1.rootHeight > biomegenbase.rootHeight)
 							f5 /= 2.0F;
+
 						f += f4 * f5;
 						f1 += f3 * f5;
 						f2 += f5;
@@ -333,9 +347,21 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int x1 = chunkX * 16;
 		int z1 = chunkZ * 16;
 		int x, y, z, times;
-		x = x1 + this.rand.nextInt(16) + 8;
-		z = z1 + this.rand.nextInt(16) + 8;
 		
+		for(times = 0; times < 2; times++){
+			y = this.worldObj.getHeightValue(x1, z1);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
+				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
+		}
+		if(rand.nextInt(20) == 0){
+			y = this.worldObj.getHeightValue(x1, z1);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
+				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
+		}
 	}
 
 	@Override
@@ -378,6 +404,5 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public void recreateStructures(int par1, int par2) { 
-	}
+	public void recreateStructures(int par1, int par2) {  }
 }
