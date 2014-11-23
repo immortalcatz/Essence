@@ -89,10 +89,10 @@ public class PlayerEvent {
 	@SubscribeEvent
 	public void transferDims(PlayerChangedDimensionEvent e) {
 		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
-			e.fromDim == Config.euca ? " Euca " : "§rUnknown";
+			e.fromDim == Config.euca ? " Euca " : e.fromDim == Config.frozen ? " Frozen Lands " : "§rUnknown";
 		
 		String to = e.toDim == -1 ? " Nether " : e.toDim == 0 ? " Overworld " : e.toDim == 1 ? " The End " : e.toDim == Config.boil ? " Boiling Point " : e.toDim == Config.depths ? " The Depths " :
-			e.toDim == Config.euca ? " Euca " : " §rUnknown ";
+			e.toDim == Config.euca ? " Euca " : e.toDim == Config.frozen ? " Frozen Lands " : " §rUnknown ";
 		
 		boolean hasSeen = false;
 		if(Config.showDimensionChange) {

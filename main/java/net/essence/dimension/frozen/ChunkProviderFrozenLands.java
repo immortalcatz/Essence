@@ -355,7 +355,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
 				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
 		}
-		if(rand.nextInt(20) == 0){
+		if(rand.nextInt(100) == 0){
 			y = this.worldObj.getHeightValue(x1, z1);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
