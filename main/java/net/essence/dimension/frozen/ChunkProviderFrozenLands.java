@@ -6,6 +6,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.frozen.gen.WorldGenCandyCane;
+import net.essence.dimension.frozen.gen.WorldGenPresent;
 import net.essence.dimension.frozen.gen.WorldGenSantasWorkshop;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -47,8 +48,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		gens = new ArrayList(0);
 		gens.add(new WorldGenCandyCane());
 		
-		rare = new ArrayList(0);
+		rare = new ArrayList(1);
 		rare.add(new WorldGenSantasWorkshop());
+		rare.add(new WorldGenPresent());
 		
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -348,19 +350,20 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int z1 = chunkZ * 16;
 		int x, y, z, times;
 		
-		for(times = 0; times < 2; times++){
-			y = this.worldObj.getHeightValue(x1, z1);
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
-				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
-		}
 		if(rand.nextInt(100) == 0){
 			y = this.worldObj.getHeightValue(x1, z1);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
 			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
 				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
+		}
+		
+		for(times = 0; times < 2; times++){
+			y = this.worldObj.getHeightValue(x1, z1);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
+				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
 		}
 	}
 

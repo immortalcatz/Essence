@@ -73,6 +73,16 @@ public class WorldGenAPI {
 			}
 		}
 	}
+	
+	public static void addMetadataCube(int size, World w, int x, int y, int z, Block b, int metadata){
+		for(int x1 = 0; x1 < size; x1++){
+			for(int z1 = 0; z1 < size; z1++){
+				for(int y1 = 0; y1 < size; y1++){
+					w.setBlock(x + x1, y + y1, z + z1, b, metadata, 2);
+				}
+			}
+		}
+	}
 
 	public static void addBlock(World w, int x, int y, int z, Block b) {
 		addCube(1, w, x, y + 1, z, b);
@@ -137,7 +147,7 @@ public class WorldGenAPI {
 		if(trapped) w.setBlock(x, y, z, Blocks.trapped_chest, meta, 2);
 		else w.setBlock(x, y, z, Blocks.chest, meta, 2);
 		TileEntityChest chest = (TileEntityChest)w.getTileEntity(x, y, z);
-		if(!w.isRemote && chest != null) {
+		if(!w.isRemote && chest != null && is != null) {
 			for(int i = 0; i < r.nextInt(27); i++) {
 				ItemStack it = is[r.nextInt(is.length)];
 				if(r.nextInt(2) == 0) chest.setInventorySlotContents(i, it);
@@ -149,9 +159,9 @@ public class WorldGenAPI {
 		Random r = new Random();
 		w.setBlock(x, y, z, c, meta, 2);
 		TileEntityChest chest = (TileEntityChest)w.getTileEntity(x, y, z);
-		if(chest != null && !w.isRemote){// DOESNT WORK IF GENERATING 1 ITEM
+		if(!w.isRemote && chest != null && is != null) {
 			for(int i = 0; i < chest.getSizeInventory(); i++){
-				ItemStack it = is[r.nextInt(is.length) + 1];
+				ItemStack it = is[r.nextInt(is.length)];
 				chest.setInventorySlotContents(chest.getSizeInventory(), it);
 			}
 		}
