@@ -11,8 +11,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemMod extends Item {
 

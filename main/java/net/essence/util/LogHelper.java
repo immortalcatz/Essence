@@ -5,11 +5,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import net.minecraftforge.fml.common.FMLLog;
 import net.slayer.api.SlayerAPI;
 
 import org.apache.logging.log4j.Level;
-
-import cpw.mods.fml.common.FMLLog;
 
 public class LogHelper {
 

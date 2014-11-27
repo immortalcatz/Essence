@@ -1,6 +1,5 @@
 package net.essence.entity.projectile;
 
-import cpw.mods.fml.client.FMLClientHandler;
 import net.essence.client.render.particles.EntityHellstoneFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class EntityMagmaFireball extends EntitySmallFireball {
 

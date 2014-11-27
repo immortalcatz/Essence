@@ -8,14 +8,13 @@ import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BossTickHandler {
 
@@ -61,7 +60,7 @@ public class BossTickHandler {
 		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {
 			EssenceBossStatus.statusBarTime--;
 			GuiIngame gig = mc.ingameGUI;
-			FontRenderer fontrenderer = this.mc.fontRenderer;
+			FontRenderer fontrenderer = this.mc.fontRendererObj;
 			ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 			int i = scaledresolution.getScaledWidth();
 			int barLength = 182;

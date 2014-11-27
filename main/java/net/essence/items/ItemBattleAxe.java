@@ -8,17 +8,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemModAxe;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBattleAxe extends ItemModAxe {
 	
 	public ItemBattleAxe(String name, EssenceToolMaterial m) {
 		super(name, m);
 		setUnlocalizedName(name);
-		setTextureName(SlayerAPI.PREFIX + name);
 		setCreativeTab(EssenceTabs.weapons);
 	}
 	
@@ -35,7 +34,7 @@ public class ItemBattleAxe extends ItemModAxe {
     
     @Override
     public EnumAction getItemUseAction(ItemStack i) {
-    	return EnumAction.block;
+    	return EnumAction.BLOCK;
     }
     
     @Override

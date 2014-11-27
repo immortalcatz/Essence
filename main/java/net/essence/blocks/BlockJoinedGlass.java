@@ -2,10 +2,14 @@ package net.essence.blocks;
 
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.slayer.api.EnumMaterialTypes;
@@ -189,12 +193,12 @@ public class BlockJoinedGlass extends BlockMod {
 	}
 	
 	@Override
-	public int getRenderBlockPass() {
-		return 1;
+	public EnumWorldBlockLayer getBlockLayer() {
+		return EnumWorldBlockLayer.TRANSLUCENT;
 	}
 	
 	@Override
-	public boolean renderAsNormalBlock() {
+	public boolean isFullCube() {
 		return false;
 	}
 	
@@ -203,35 +207,45 @@ public class BlockJoinedGlass extends BlockMod {
 		return true;
 	}
 
-	@Override
+	/*@Override
 	public void registerBlockIcons(IIconRegister r) {
 		for(int i = 0; i < textures.length; i++) {
 			icons[i] = r.registerIcon(textures[i]);
 		}
-	}
+	}*/
 	
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3) {
 		return null;
 	}
-
+	
 	@Override
-	public boolean canPlaceTorchOnTop(World world, int x, int y, int z) {
+	public boolean canPlaceTorchOnTop(IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 	
-	@Override
+	/*@Override
 	public IIcon getIcon(int s, int m) {
 		return icons[0];
-	}
-	
+	}*/
+    
     @Override
-    public boolean shouldSideBeRendered (IBlockAccess w, int x, int y, int z, int s) {
-        return w.getBlock(x, y, z) == this ? false : super.shouldSideBeRendered(w, x, y, z, s);
+    public boolean shouldSideBeRendered(IBlockAccess w, BlockPos pos, EnumFacing side) {
+    	IBlockState iblockstate = w.getBlockState(pos);
+        Block block = iblockstate.getBlock();
+        if(this == EssenceBlocks.hotGlass || this == EssenceBlocks.frozenGlass || this == EssenceBlocks.smoothGlass) {
+            if(w.getBlockState(pos.offset(side.getOpposite())) != iblockstate) {
+                return true;
+            }
+            if(block == this) {
+                return false;
+            }
+        }
+        return block == this ? false : super.shouldSideBeRendered(w, pos, side);
     }
 
-	@Override
+	/*@Override
 	public IIcon getIcon(IBlockAccess w, int x, int y, int z, int s) {
 		return getConnectedTexture(w, x, y, z, s);
-	}
+	}*/
 }

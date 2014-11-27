@@ -2,13 +2,11 @@ package net.essence.entity.projectile;
 
 import java.util.Random;
 
-import net.essence.client.render.particles.EntityConjuringFX;
-import net.essence.client.render.particles.EntityDoomFX;
 import net.essence.client.render.particles.EntityWizardsFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.world.World;
-import cpw.mods.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class EntityWizardsStar extends EntityBasicProjectile {
 

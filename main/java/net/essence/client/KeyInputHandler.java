@@ -1,13 +1,7 @@
 package net.essence.client;
 
-import net.essence.Essence;
-import net.essence.client.GuiHandler.GuiIDs;
-import net.essence.network.PacketOpenGui;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.InputEvent.KeyInputEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 
 public class KeyInputHandler {
 

@@ -26,7 +26,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
 		Item item = i.getItem();
 		if(!w.isRemote){
-			if(w.provider.dimensionId == -1) {
+			if(w.provider.getDimensionId() == -1) {
 				EntityWitheringBeast wither = new EntityWitheringBeast(w);
 				EntityCalcia calcia = new EntityCalcia(w);
 				EntityNetherBeast nether = new EntityNetherBeast(w);

@@ -8,7 +8,9 @@ import net.essence.client.EssenceBar;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 import net.slayer.api.item.ItemMod;
 
@@ -35,11 +37,19 @@ public class ItemEssencePotion extends ItemMod {
 
 	@Override
 	public EnumAction getItemUseAction(ItemStack par1ItemStack) {
-		return EnumAction.drink;
+		return EnumAction.DRINK;
 	}
 
 	@Override
-	public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
+    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn) {
+        --stack.stackSize;
+        worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+        this.onFoodEaten(stack, worldIn, playerIn);
+        playerIn.triggerAchievement(StatList.objectUseStats[Item.getIdFromItem(this)]);
+        return stack;
+    }
+	
+	public ItemStack onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
 		int amount = isStrong ? 300 : 100;
 		if(!world.isRemote){
 			if(essence) EssenceBar.addBarPoints(amount);
@@ -51,7 +61,7 @@ public class ItemEssencePotion extends ItemMod {
 
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack) {
-		return isStrong ? EnumRarity.epic : EnumRarity.rare;
+		return isStrong ? EnumRarity.EPIC : EnumRarity.RARE;
 	}
 	
 	@Override

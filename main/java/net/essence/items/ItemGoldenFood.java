@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemGoldenFood extends ItemFood {
 	
@@ -21,7 +21,6 @@ public class ItemGoldenFood extends ItemFood {
         super(heal, sat, wolf);
         op = isOP;
         setUnlocalizedName(name);
-        setTextureName(SlayerAPI.PREFIX + tex);
         GameRegistry.registerItem(this, name);
         setCreativeTab(EssenceTabs.misc);
     }
@@ -34,13 +33,13 @@ public class ItemGoldenFood extends ItemFood {
 
     @Override
     public EnumRarity getRarity(ItemStack i) {
-        return !op ? EnumRarity.rare : EnumRarity.epic;
+        return !op ? EnumRarity.RARE : EnumRarity.EPIC;
     }
 
     @Override
     protected void onFoodEaten(ItemStack i, World w, EntityPlayer p) {
         if(!w.isRemote) {
-            p.addPotionEffect(new PotionEffect(Potion.field_76444_x.id, 2400, 0));
+            p.addPotionEffect(new PotionEffect(Potion.absorption.id, 2400, 0));
 
         if(op) {
                 p.addPotionEffect(new PotionEffect(Potion.regeneration.id, 600, 4));

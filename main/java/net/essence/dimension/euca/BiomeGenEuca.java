@@ -8,8 +8,8 @@ public class BiomeGenEuca extends BiomeGenBase {
 	public BiomeGenEuca(int par1) {
 		super(par1);
 		this.setBiomeName("Euca");
-		this.topBlock = EssenceBlocks.eucaGrass;
-		this.fillerBlock = EssenceBlocks.eucaDirt;
+		this.topBlock = EssenceBlocks.eucaGrass.getDefaultState();
+		this.fillerBlock = EssenceBlocks.eucaDirt.getDefaultState();
 		this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();

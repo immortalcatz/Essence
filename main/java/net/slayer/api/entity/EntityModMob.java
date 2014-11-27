@@ -11,11 +11,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.slayer.api.SlayerAPI;
 
 public abstract class EntityModMob extends EntityMob {
 
@@ -34,7 +31,7 @@ public abstract class EntityModMob extends EntityMob {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, 1.4D, false));
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.4F, false));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 	}
 
 	protected void addBasicAI(){
@@ -98,9 +95,9 @@ public abstract class EntityModMob extends EntityMob {
 	protected boolean isAIEnabled() {
 		return false;
 	}
-
+	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
+		return this.worldObj.checkNoEntityCollision(this.getBoundingBox()) && this.worldObj.getCollidingBoundingBoxes(this, this.getBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getBoundingBox());
 	}
 }

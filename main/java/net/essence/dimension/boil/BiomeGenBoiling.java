@@ -14,8 +14,8 @@ public class BiomeGenBoiling extends BiomeGenBase {
 	public BiomeGenBoiling(int par1) {
 		super(par1);
 		this.setBiomeName("Boiling Point");
-		this.topBlock = EssenceBlocks.hotBlock;
-		this.fillerBlock = EssenceBlocks.hotBlock;
+		this.topBlock = EssenceBlocks.hotBlock.getDefaultState();
+		this.fillerBlock = EssenceBlocks.hotBlock.getDefaultState();
 		this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();

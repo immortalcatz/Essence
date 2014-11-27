@@ -1,19 +1,13 @@
 package net.essence.blocks;
 
-import static net.minecraftforge.common.util.ForgeDirection.DOWN;
-import static net.minecraftforge.common.util.ForgeDirection.EAST;
-import static net.minecraftforge.common.util.ForgeDirection.NORTH;
-import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
-import static net.minecraftforge.common.util.ForgeDirection.UP;
-import static net.minecraftforge.common.util.ForgeDirection.WEST;
 import net.essence.EssenceBlocks;
 import net.minecraft.block.BlockFire;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.util.IIcon;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModFire extends BlockFire {
 
@@ -22,25 +16,25 @@ public class BlockModFire extends BlockFire {
 	
     public BlockModFire(String name) {
     	setLightLevel(1.0F);
-        setBlockName(name);
+        setUnlocalizedName(name);
         GameRegistry.registerBlock(this, name);
     }
 
 	@Override
-	public void onBlockAdded(World world, int x, int y, int z) {
-		if(world.provider.dimensionId > 0 || !EssenceBlocks.eucaPortal.makePortal(world, x, y, z)) {
+	public void onBlockAdded(World world, BlockPos pos, IBlockState s) {
+		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.eucaPortal.makePortal(world, x, y, z)) {
+			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
+			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
+		}
+		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.depthsPortal.makePortal(world, x, y, z)) {
 			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
 			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-		if(world.provider.dimensionId > 0 || !EssenceBlocks.depthsPortal.makePortal(world, x, y, z)) {
+		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.boilPortal.makePortal(world, x, y, z)) {
 			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
 			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-		if(world.provider.dimensionId > 0 || !EssenceBlocks.boilPortal.makePortal(world, x, y, z)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
-			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
-		}
-		if(world.provider.dimensionId > 0 || !EssenceBlocks.frozenPortal.makePortal(world, x, y, z)) {
+		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.frozenPortal.makePortal(world, x, y, z)) {
 			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z) && !this.canNeighborBurn(world, x, y, z)) world.setBlockToAir(x, y, z);
 			else world.scheduleBlockUpdate(x, y, z, this, this.tickRate(world) + world.rand.nextInt(10));
 		}

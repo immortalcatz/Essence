@@ -7,8 +7,8 @@ import net.essence.util.EssenceToolMaterial;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemModShovel extends ItemSpade {
 
@@ -17,7 +17,6 @@ public class ItemModShovel extends ItemSpade {
     public ItemModShovel(String name, EssenceToolMaterial tool) {
 		super(tool.getToolMaterial());
 		mat = tool;
-        setTextureName(SlayerAPI.PREFIX + "tools/" + name);
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.tools);
         GameRegistry.registerItem(this, name);

@@ -25,8 +25,8 @@ import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBlaze;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.fml.client.registry.*;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.client.registry.*;
 
 public class EntityRendering {
 
@@ -92,7 +92,7 @@ public class EntityRendering {
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityStatue.class, new StatueRenderer());
 		
-		RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
-		RenderingRegistry.registerBlockHandler(EssenceBlocks.mossyEssenceStone.getRenderType(), new OtherBlockRenderer());
+		//RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
+		//RenderingRegistry.registerBlockHandler(EssenceBlocks.mossyEssenceStone.getRenderType(), new OtherBlockRenderer());
 	}
 }

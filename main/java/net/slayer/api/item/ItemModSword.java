@@ -7,10 +7,10 @@ import net.essence.util.EssenceToolMaterial;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemModSword extends ItemSword {
 
@@ -20,7 +20,6 @@ public class ItemModSword extends ItemSword {
         super(toolMaterial.getToolMaterial());
         setUnlocalizedName(name);
         mat = toolMaterial;
-        setTextureName(SlayerAPI.PREFIX + name);
         setCreativeTab(EssenceTabs.weapons);
         GameRegistry.registerItem(this, name);
     }

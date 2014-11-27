@@ -1,20 +1,15 @@
 package net.essence.items;
 
 import java.util.List;
-import java.util.Random;
 
-import net.essence.Essence;
-import net.essence.client.render.EnumParticlesClasses;
-import net.essence.proxy.ClientProxy;
-import net.essence.util.Config;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemModSword;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemFireSword extends ItemModSword {
 

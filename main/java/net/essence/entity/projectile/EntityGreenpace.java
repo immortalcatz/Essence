@@ -6,7 +6,7 @@ import net.essence.client.render.particles.EntityGreenpaceFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.world.World;
-import cpw.mods.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class EntityGreenpace extends EntityBasicProjectile {
 

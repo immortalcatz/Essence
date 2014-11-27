@@ -9,7 +9,9 @@ import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.Teleporter;
 
 public class EssenceCommands extends CommandBase {
@@ -26,7 +28,12 @@ public class EssenceCommands extends CommandBase {
 
 	@Override
 	public void processCommand(ICommandSender var1, String[] var2) {
-		EntityPlayerMP p = getCommandSenderAsPlayer(var1);
+		EntityPlayerMP p = null;
+		try {
+			p = getCommandSenderAsPlayer(var1);
+		} catch (PlayerNotFoundException e) {
+			e.printStackTrace();
+		}
 		if(var2[0].equalsIgnoreCase("Heal")){
 			if(p.getHealth() < p.getMaxHealth()) 
 				p.heal(20);
@@ -89,7 +96,7 @@ public class EssenceCommands extends CommandBase {
 	}
 
 	@Override
-	public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2) {
+	public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2, BlockPos pos) {
 		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"heal", "overworld", "nether", "end", "euca", "boilingpoint", "depths"}) : null;
 	}
 }

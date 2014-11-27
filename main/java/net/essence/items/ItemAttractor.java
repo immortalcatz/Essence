@@ -6,19 +6,13 @@ import java.util.Random;
 import net.essence.EssenceTabs;
 import net.essence.client.DarkEnergyBar;
 import net.essence.client.EssenceBar;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityCritFX;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.Vec3;
-import net.minecraft.util.MovingObjectPosition.MovingObjectType;
-import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
-import cpw.mods.fml.client.FMLClientHandler;
 
 public class ItemAttractor extends ItemMod {
 
@@ -41,14 +35,14 @@ public class ItemAttractor extends ItemMod {
 				hit.motionY = 1.0F;
 				hit.motionX = (hit.posX - player.posX) * 1.0F;
 				hit.motionZ = (hit.posZ - player.posZ) * 1.0F;
-				for(int i = 0; i < 50; i++)
-					FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(player.worldObj, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
+				//for(int i = 0; i < 50; i++)
+				//	FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(player.worldObj, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
 			} else {
 				hit.motionY = 1.0F;
 				hit.motionX = (hit.posX + player.posX) * 1.0F;
 				hit.motionZ = (hit.posZ + player.posZ) * 1.0F;
-				for(int i = 0; i < 50; i++)
-					FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(player.worldObj, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
+				//for(int i = 0; i < 50; i++)
+				//	FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityCritFX(player.worldObj, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
 			}
 		}
 		return false;

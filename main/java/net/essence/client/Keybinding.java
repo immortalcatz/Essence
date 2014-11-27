@@ -1,11 +1,5 @@
 package net.essence.client;
 
-import net.minecraft.client.settings.KeyBinding;
-import net.slayer.api.SlayerAPI;
-
-import org.lwjgl.input.Keyboard;
-
-import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class Keybinding {
 	

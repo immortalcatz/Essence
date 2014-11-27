@@ -13,8 +13,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 
@@ -41,7 +41,6 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		setCreativeTab(EssenceTabs.armor);
 		setArmorType(name, armorType);
 		setUnlocalizedName(this.name);
-		setTextureName(SlayerAPI.PREFIX + "armor/" + this.name);
 		GameRegistry.registerItem(this, this.name);
 	}
 

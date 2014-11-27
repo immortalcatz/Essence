@@ -14,10 +14,10 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 
 public class PlayerEvent {
 
@@ -31,7 +31,7 @@ public class PlayerEvent {
 		if(isWorking){
 			if(event.harvester != null && event.harvester instanceof EntityPlayer && event.harvester.getHeldItem() != null) {
 				if(!event.isSilkTouching){
-					ItemStack stack = FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block, 1, event.blockMetadata));
+					ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.block, 1, event.blockMetadata));
 					if(stack != null && event.block != Blocks.redstone_ore && event.block != Blocks.lapis_ore && event.block != Blocks.lapis_ore) {
 						event.drops.clear();
 						event.drops.add(stack.copy());

@@ -2,9 +2,12 @@ package net.slayer.api.item;
 
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.block.BlockModDoor;
@@ -20,19 +23,26 @@ public class ItemModDoor extends ItemMod {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
-		if(par7 != 1) 
-			return false;
-		else {
-			if(!par3World.isRemote){
-				++par5;
-				Block block = door;
-				int rotation = MathHelper.floor_double((double)((par2EntityPlayer.rotationYaw + 180.0F) * 4.0F / 360.0F) - 0.5D) & 3;
-				ItemDoor.placeDoorBlock(par3World, par4, par5, par6, rotation, block);
-				--par1ItemStack.stackSize;
-				return true;
-			}
-		}
-		return false;
-	}
+    public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (side != EnumFacing.UP) {
+            return false;
+        } else {
+            IBlockState iblockstate = worldIn.getBlockState(pos);
+            Block block = iblockstate.getBlock();
+
+            if(!block.isReplaceable(worldIn, pos)) {
+                pos = pos.offset(side);
+            }
+            if(!playerIn.func_175151_a(pos, side, stack)) {
+                return false;
+            }
+            else if(!this.door.canPlaceBlockAt(worldIn, pos)) {
+                return false;
+            } else {
+                ItemDoor.func_179235_a(worldIn, pos, EnumFacing.fromAngle((double)playerIn.rotationYaw), this.door);
+                stack.stackSize--;
+                return true;
+            }
+        }
+    }
 }

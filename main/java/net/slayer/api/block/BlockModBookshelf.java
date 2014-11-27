@@ -3,11 +3,9 @@ package net.slayer.api.block;
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
-import net.minecraft.util.IIcon;
-import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModBookshelf extends BlockBookshelf {
 	
@@ -15,8 +13,7 @@ public class BlockModBookshelf extends BlockBookshelf {
 
     public BlockModBookshelf(String name, Block top) {
         this.tex = top;
-        setBlockTextureName(SlayerAPI.PREFIX + name);
-        setBlockName(name);
+        setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.blocks);
         setStepSound(Block.soundTypeWood);
         GameRegistry.registerBlock(this, name);

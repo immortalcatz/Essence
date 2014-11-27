@@ -5,11 +5,13 @@ import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.statue.ModelStatue;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -25,20 +27,19 @@ public class BlockStatue extends BlockMod {
 	public BlockStatue(String name, ModelStatue model, EnumSounds s) {
 		super(name, 3.0F);
 		setCreativeTab(EssenceTabs.decoraton);
-		setBlockTextureName("cobblestone");
 		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/" + name + ".png");
 		this.model = model;
 		this.sound = s;
 	}
 
 	@Override
-	public AxisAlignedBB getSelectedBoundingBoxFromPool(World w, int x, int y, int z) {
-		Block b = w.getBlock(x, y, z);
+	public AxisAlignedBB getSelectedBoundingBox(World w, BlockPos pos) {
+		Block b = (Block) w.getBlockState(pos);
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
 		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1F, y + 1.9F, z + 1F);
 	}
-
+	
 	@Override
 	public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer p, int i, float f, float f1, float f2) {
 		if(!w.isRemote) EnumSounds.playSound(sound.getPrefixedName(), w, p);
@@ -47,7 +48,7 @@ public class BlockStatue extends BlockMod {
 
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
-		Block b = w.getBlock(x, y, z);
+		Block b = w.getBlockState(x, y, z);
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
 

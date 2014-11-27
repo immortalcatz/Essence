@@ -8,6 +8,8 @@ import net.essence.entity.EntityDragonEgg;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.slayer.api.item.ItemMod;
 
@@ -16,9 +18,9 @@ public class ItemEgg extends ItemMod {
 	public ItemEgg(String name) {
 		super(name, EssenceTabs.misc);
 	}
-
+	
 	@Override
-	public boolean onItemUse(ItemStack item, EntityPlayer p, World w, int x, int y, int z, int j, float f, float f1, float f2) {
+	public boolean onItemUse(ItemStack item, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float f, float f1, float f2) {
 		/*Item i = item.getItem();
 		EntityDragonEgg egg = new EntityDragonEgg(w, "");
 		if(!w.isRemote) {

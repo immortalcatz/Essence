@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IChatComponent;
 
 public class TileEntityBackpack extends TileEntity implements IInventory {
     
@@ -134,8 +135,47 @@ public class TileEntityBackpack extends TileEntity implements IInventory {
     }
 
 	@Override
-	public void closeInventory() { }
+	public String getName() {
+		return null;
+	}
 
 	@Override
-	public void openInventory() { }
+	public boolean hasCustomName() {
+		return false;
+	}
+
+	@Override
+	public IChatComponent getDisplayName() {
+		return null;
+	}
+
+	@Override
+	public void openInventory(EntityPlayer playerIn) {
+		
+	}
+
+	@Override
+	public void closeInventory(EntityPlayer playerIn) {
+		
+	}
+
+	@Override
+	public int getField(int id) {
+		return 0;
+	}
+
+	@Override
+	public void setField(int id, int value) {
+		
+	}
+
+	@Override
+	public int getFieldCount() {
+		return 0;
+	}
+
+	@Override
+	public void clearInventory() {
+		
+	}
 }

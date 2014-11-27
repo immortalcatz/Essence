@@ -1,5 +1,6 @@
 package net.essence.client.render.gui;
 
+import java.io.IOException;
 import java.util.Random;
 
 import net.essence.blocks.tileentity.container.ContainerEnrichedTable;
@@ -20,14 +21,13 @@ import net.minecraft.util.EnchantmentNameParts;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.util.glu.Project;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class GuiEnrichedEnchantmentTable extends GuiContainer {
@@ -93,7 +93,11 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
 
     @Override
     protected void mouseClicked(int par1, int par2, int par3) {
-        super.mouseClicked(par1, par2, par3);
+        try {
+			super.mouseClicked(par1, par2, par3);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         int l = (this.width - this.xSize) / 2;
         int i1 = (this.height - this.ySize) / 2;
         for(int j1 = 0; j1 < 3; ++j1) {
@@ -164,9 +168,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
         GL11.glPopMatrix();
         RenderHelper.disableStandardItemLighting();
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        EnchantmentNameParts.instance.reseedRandomGenerator(this.container.nameSeed);
+        EnchantmentNameParts.func_178176_a().reseedRandomGenerator(this.container.nameSeed);
         for (int i1 = 0; i1 < 3; ++i1) {
-            String s = EnchantmentNameParts.instance.generateNewRandomName();
+            String s = EnchantmentNameParts.func_178176_a().generateNewRandomName();
             this.zLevel = 0.0F;
             this.mc.getTextureManager().bindTexture(tex1);
             int j1 = this.container.enchantLevels[i1];
@@ -179,9 +183,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
                 if(this.mc.thePlayer.experienceLevel < j1 && !this.mc.thePlayer.capabilities.isCreativeMode) {
                     this.drawTexturedModalRect(k + 60, l + 14 + 19 * i1, 0, 185, 108, 19);
                     fontrenderer.drawSplitString(s, k + 62, l + 16 + 19 * i1, 104, (k1 & 16711422) >> 1);
-                    fontrenderer = this.mc.fontRenderer;
+                    fontrenderer = this.mc.fontRendererObj;
                     k1 = 4226832;
-                    fontrenderer.drawStringWithShadow(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
+                    fontrenderer.drawString(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
                 } else {
                     int l1 = i - (k + 60);
                     int i2 = j - (l + 14 + 19 * i1);
@@ -191,9 +195,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
                     } 
                     else this.drawTexturedModalRect(k + 60, l + 14 + 19 * i1, 0, 166, 108, 19);
                     fontrenderer.drawSplitString(s, k + 62, l + 16 + 19 * i1, 104, k1);
-                    fontrenderer = this.mc.fontRenderer;
+                    fontrenderer = this.mc.fontRendererObj;
                     k1 = 8453920;
-                    fontrenderer.drawStringWithShadow(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
+                    fontrenderer.drawString(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
                 }
             }
         }

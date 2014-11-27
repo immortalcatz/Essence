@@ -8,8 +8,8 @@ public class BiomeGenDepths extends BiomeGenBase {
 	public BiomeGenDepths(int par1) {
 		super(par1);
 		this.setBiomeName("The Depths");
-		this.topBlock = EssenceBlocks.depthsGrass;
-		this.fillerBlock = EssenceBlocks.depthsDirt;
+		this.topBlock = EssenceBlocks.depthsGrass.getDefaultState();
+		this.fillerBlock = EssenceBlocks.depthsDirt.getDefaultState();
 		this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();

@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.tileentity.TileEntitySign;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 public class WorldGenAPI {
@@ -19,7 +21,7 @@ public class WorldGenAPI {
 	public static boolean isValidLocationToSpawn(int x, int y, int z, World w, Block b){
 		for(int i = 0; i < x; i++) {
 			for(int l = 0; l < z; l++) {
-				if(w.getBlock(x + i, y, z + l) != b) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != b) {
 					return false;
 				}
 			}
@@ -48,7 +50,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < size; x1++) {
 			for(int y1 = 0; y1 < size; y1++) {
 				for(int z1 = 0; z1 < size; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == Blocks.air) {
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == Blocks.air) {
 						is = true;
 						break;
 					}
@@ -59,16 +61,16 @@ public class WorldGenAPI {
 	}
 
 	public static void addSpawner(World w, int x, int y, int z, String mobName) {
-		w.setBlock(x, y, z, Blocks.mob_spawner, 0, 2);
-		TileEntityMobSpawner spawner = (TileEntityMobSpawner)w.getTileEntity(x, y, z);
-		spawner.func_145881_a().setEntityName(mobName);
+		w.setBlockState(new BlockPos(x, y, z), Blocks.mob_spawner.getDefaultState(), 2);
+		TileEntityMobSpawner spawner = (TileEntityMobSpawner)w.getTileEntity(new BlockPos(x, y, z));
+		spawner.getSpawnerBaseLogic().setEntityName(mobName);
 	}
 
 	public static void addCube(int size, World w, int x, int y, int z, Block b){
 		for(int x1 = 0; x1 < size; x1++){
 			for(int z1 = 0; z1 < size; z1++){
 				for(int y1 = 0; y1 < size; y1++){
-					w.setBlock(x + x1, y + y1, z + z1, b);
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getDefaultState());
 				}
 			}
 		}
@@ -78,7 +80,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < size; x1++){
 			for(int z1 = 0; z1 < size; z1++){
 				for(int y1 = 0; y1 < size; y1++){
-					w.setBlock(x + x1, y + y1, z + z1, b, metadata, 2);
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getStateFromMeta(metadata), 2);
 				}
 			}
 		}
@@ -92,7 +94,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < size; x1++){
 			for(int z1 = 0; z1 < size; z1++){
 				for(int y1 = 0; y1 < size; y1++){
-					w.setBlock(x + x1, y + y1 + 1, z + z1, b);
+					w.setBlockState(new BlockPos(x + x1, y + y1 + 1, z + z1), b.getDefaultState());
 				}
 			}
 		}
@@ -100,7 +102,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < size - 2; x1++){
 			for(int z1 = 0; z1 < size - 2; z1++){
 				for(int y1 = 0; y1 < size - 2; y1++){
-					w.setBlock(x + x1 + 1, y + y1 + 2, z + z1 + 1, Blocks.air);
+					w.setBlockState(new BlockPos(x + x1 + 1, y + y1 + 2, z + z1 + 1), Blocks.air.getDefaultState());
 				}
 			}
 		}
@@ -110,7 +112,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < east; x1++){
 			for(int z1 = 0; z1 < south; z1++){
 				for(int y1 = 0; y1 < height; y1++){
-					w.setBlock(x + x1, y + y1, z + z1, b);
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getDefaultState());
 				}
 			}
 		}
@@ -128,7 +130,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < east; x1++){
 			for(int z1 = 0; z1 < south; z1++){
 				for(int y1 = 0; y1 < height; y1++){
-					w.setBlock(x + x1, y + y1, z + z1, b, meta, 2);
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getStateFromMeta(meta), 2);
 				}
 			}
 		}
@@ -144,9 +146,9 @@ public class WorldGenAPI {
 
 	public static void placeChestWithContents(World w, int x, int y, int z, int meta, boolean trapped, ItemStack ... is) {
 		Random r = new Random();
-		if(trapped) w.setBlock(x, y, z, Blocks.trapped_chest, meta, 2);
-		else w.setBlock(x, y, z, Blocks.chest, meta, 2);
-		TileEntityChest chest = (TileEntityChest)w.getTileEntity(x, y, z);
+		if(trapped) w.setBlockState(new BlockPos(x, y, z), Blocks.trapped_chest.getStateFromMeta(meta), 2);
+		else w.setBlockState(new BlockPos(x, y, z), Blocks.chest.getStateFromMeta(meta), 2);
+		TileEntityChest chest = (TileEntityChest)w.getTileEntity(new BlockPos(x, y, z));
 		if(!w.isRemote && chest != null && is != null) {
 			for(int i = 0; i < r.nextInt(27); i++) {
 				ItemStack it = is[r.nextInt(is.length)];
@@ -157,8 +159,8 @@ public class WorldGenAPI {
 
 	public static void placeModdedChestWithContents(World w, int x, int y, int z, int meta, int amountOfItems, Block c, ItemStack...is){
 		Random r = new Random();
-		w.setBlock(x, y, z, c, meta, 2);
-		TileEntityChest chest = (TileEntityChest)w.getTileEntity(x, y, z);
+		w.setBlockState(new BlockPos(x, y, z), c.getStateFromMeta(meta), 2);
+		TileEntityChest chest = (TileEntityChest)w.getTileEntity(new BlockPos(x, y, z));
 		if(!w.isRemote && chest != null && is != null) {
 			for(int i = 0; i < chest.getSizeInventory(); i++){
 				ItemStack it = is[r.nextInt(is.length)];
@@ -167,18 +169,18 @@ public class WorldGenAPI {
 		}
 	}
 
-	public static void placeSignWithText(World w, int x, int y, int z, int meta, String[] text, boolean standing){
-		if(standing) w.setBlock(x, y, z, Blocks.standing_sign, meta, 2);
-		else w.setBlock(x, y, z, Blocks.wall_sign, meta, 2);
-		TileEntitySign sign = (TileEntitySign)w.getTileEntity(x, y, z);
+	/*public static void placeSignWithText(World w, int x, int y, int z, int meta, ChatComponentText[] text, boolean standing){
+		if(standing) w.setBlockState(new BlockPos(x, y, z), Blocks.standing_sign.getStateFromMeta(meta), 2);
+		else w.setBlockState(new BlockPos(x, y, z), Blocks.wall_sign.getStateFromMeta(meta), 2);
+		TileEntitySign sign = (TileEntitySign)w.getTileEntity(new BlockPos(x, y, z));
 		if(sign != null && !w.isRemote) sign.signText = text;
-	}
+	}*/
 
 	public static void addHollowRectangle(int east, int south, int height, World w, int x, int y, int z, Block b){
 		for(int x1 = 0; x1 < east; x1++){
 			for(int z1 = 0; z1 < south; z1++){
 				for(int y1 = 0; y1 < height; y1++){
-					w.setBlock(x + x1, y + y1, z + z1, b);
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getDefaultState());
 				}
 			}
 		}
@@ -186,7 +188,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < east; x1++){
 			for(int z1 = 0; z1 < south; z1++){
 				for(int y1 = 0; y1 < height - 2; y1++){
-					w.setBlock(x + x1 + 1, y + y1 + 1, z + z1 + 1, Blocks.air);
+					w.setBlockState(new BlockPos(x + x1 + 1, y + y1 + 1, z + z1 + 1), Blocks.air.getDefaultState());
 				}
 			}
 		}
@@ -206,7 +208,7 @@ public class WorldGenAPI {
 					double dy = j - y;
 					double dz = k - z;
 					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
-						w.setBlock(i, j + size + 3, k, b);
+						w.setBlockState(new BlockPos(i, j + size + 3, k), b.getDefaultState());
 					}
 				}
 			}
@@ -227,8 +229,8 @@ public class WorldGenAPI {
 					double dy = j - y;
 					double dz = k - z;
 					if(dx * dx * 0.7 + dy * dy * 0.8 + dz * dz * 0.7 < sizeOfSphere) {
-						w.setBlock(i, j + size + 3, k, bottom);
-						w.setBlock(i, j + size + 4, k, top);
+						w.setBlockState(new BlockPos(i, j + size + 3, k), bottom.getDefaultState());
+						w.setBlockState(new BlockPos(i, j + size + 4, k), top.getDefaultState());
 					}
 				}
 			}
@@ -249,9 +251,9 @@ public class WorldGenAPI {
 					double dy = j - y;
 					double dz = k - z;
 					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
-						w.setBlock(i, j + size + 2, k, stone);
-						w.setBlock(i, j + size + 3, k, dirt);
-						w.setBlock(i, j + size + 4, k, grass);
+						w.setBlockState(new BlockPos(i, j + size + 2, k), stone.getDefaultState());
+						w.setBlockState(new BlockPos(i, j + size + 3, k), dirt.getDefaultState());
+						w.setBlockState(new BlockPos(i, j + size + 4, k), grass.getDefaultState());
 					}
 				}
 			}
@@ -274,12 +276,12 @@ public class WorldGenAPI {
 					double dy = j - y;
 					double dz = k - z;
 					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
-						w.setBlock(i, j + size + 2, k, stone);
-						w.setBlock(i, j + size + 3, k, dirt);
-						w.setBlock(i, j + size + 4, k, grass);
+						w.setBlockState(new BlockPos(i, j + size + 2, k), stone.getDefaultState());
+						w.setBlockState(new BlockPos(i, j + size + 3, k), dirt.getDefaultState());
+						w.setBlockState(new BlockPos(i, j + size + 4, k), grass.getDefaultState());
 					}
-					if(w.getBlock(i, j, k) == stone) {
-						if(r.nextInt(chance) == 0 && block != null) w.setBlock(i, j, k, block.get(r.nextInt(block.size())));
+					if(w.getBlockState(new BlockPos(i, j, k)) == stone) {
+						if(r.nextInt(chance) == 0 && block != null) w.setBlockState(new BlockPos(i, j, k), block.get(r.nextInt(block.size())).getDefaultState());
 					}
 				}
 			}
@@ -294,7 +296,7 @@ public class WorldGenAPI {
 	private static void placeFlatCircle(World par1World, int x, int y, int z, int radius, Block block) {
 		for(float i = 0; i < radius; i += 0.5) {
 			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
-				par1World.setBlock((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), block);
+				par1World.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i)), block.getDefaultState());
 		}
 	}
 }

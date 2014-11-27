@@ -4,11 +4,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 public class EnchantmentLavaWalk extends Enchantment {
 
 	public EnchantmentLavaWalk(int id, int weight) {
-		super(id, weight, EnumEnchantmentType.armor_feet);
+		super(id, new ResourceLocation("lavaWalk"), weight, EnumEnchantmentType.ARMOR_FEET);
 		this.setName("Lava Walker");
 	}
 

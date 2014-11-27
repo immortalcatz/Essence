@@ -21,7 +21,7 @@ public class GUIHelper extends Gui {
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			RenderHelper.enableGUIStandardItemLighting();
 			GL11.glEnable(GL11.GL_DEPTH_TEST);
-			itemRender.renderItemIntoGUI(mc.fontRenderer, mc.renderEngine, stack, x, y);
+			itemRender.renderItemIntoGUI(mc.fontRendererObj, mc.renderEngine, stack, x, y);
 			RenderHelper.disableStandardItemLighting();
 			itemRender.zLevel = 0.0F;
 			this.zLevel = 0.0F;

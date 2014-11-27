@@ -6,19 +6,15 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.FoodStats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
-import net.minecraftforge.client.event.RenderPlayerEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
 import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
 
 public class PlayerStats {
 
@@ -38,7 +34,7 @@ public class PlayerStats {
 	@SubscribeEvent
 	public void tickEvent(RenderTickEvent event) {
 		GuiIngame gig = mc.ingameGUI;
-		FontRenderer font = mc.fontRenderer;
+		FontRenderer font = mc.fontRendererObj;
 		EntityPlayer player = mc.thePlayer;
 		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			if(!player.capabilities.isCreativeMode) {

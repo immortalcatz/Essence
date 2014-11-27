@@ -13,8 +13,8 @@ import net.minecraft.client.audio.SoundRegistry;
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class MusicHandler implements IResourceManagerReloadListener {
@@ -69,7 +69,7 @@ public class MusicHandler implements IResourceManagerReloadListener {
 				for(int j = 0; j < soundPool.size(); j++) {
 					if(soundPool.get(j) instanceof SoundEventAccessor) {
 						SoundEventAccessor remSound = (SoundEventAccessor)soundPool.get(j);
-						if(remSound.func_148720_g().getSoundPoolEntryLocation().getResourceDomain().equals("minecraft")) {
+						if(remSound.cloneEntry().getSoundPoolEntryLocation().getResourceDomain().equals("minecraft")) {
 							soundPool.remove(j);
 							j--;
 						}

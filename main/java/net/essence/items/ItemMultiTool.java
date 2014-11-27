@@ -14,14 +14,13 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 import com.google.common.collect.Sets;
-
-import cpw.mods.fml.common.eventhandler.Event.Result;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemMultiTool extends ItemTool {
 
@@ -32,7 +31,6 @@ public class ItemMultiTool extends ItemTool {
 		super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
 		mat = tool;
         setCreativeTab(EssenceTabs.tools);
-        setTextureName(SlayerAPI.PREFIX + "tools/" + name);
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
@@ -52,14 +50,14 @@ public class ItemMultiTool extends ItemTool {
 
     @Override
     public boolean canHarvestBlock(Block block, ItemStack stack) {
-        return block.getBlockHardness(null, 0, 0, 0) != -1.0F;
+        return block.getBlockHardness(null, null) != -1.0F;
     }
 
-    @Override
+    /*@Override
     public boolean func_150897_b(Block block) {
         return isEfficient(block);
-    }
-
+    }*/
+    
     protected boolean isEfficient(Block block) {
         return block == Blocks.obsidian ? this.toolMaterial.getHarvestLevel() == 3 :
                 (block != Blocks.diamond_block && block != Blocks.diamond_ore ?

@@ -5,6 +5,7 @@ import net.essence.EssenceItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.stats.Achievement;
+import net.minecraft.stats.StatBase;
 import net.minecraftforge.common.AchievementPage;
 
 public class EssenceAchievements {
@@ -15,11 +16,11 @@ public class EssenceAchievements {
 	public static Achievement makeSpawner = addAchievement("essence.getSpawner", 0, 30, EssenceItems.spawnerBar, null, false);
 
     private static Achievement addAchievement(String name, int x, int y, Block image, Achievement haveFirst, boolean isSpecial){
-		return isSpecial ? new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat() : new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat().setSpecial();
+		return (Achievement) (isSpecial ? new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat() : new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat());
 	}
 	
 	private static Achievement addAchievement(String name, int x, int y, Item image, Achievement haveFirst, boolean isSpecial){
-		return isSpecial ? new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat() : new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat().setSpecial();
+		return (Achievement) (isSpecial ? new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat() : new Achievement(name, name, x, y, image, (Achievement)haveFirst).registerStat());
 	}
     
     public static AchievementPage page = new AchievementPage("Essence Of The Gods", getOverworldOre, getSapphire, makeOreBlock, makeSpawner);

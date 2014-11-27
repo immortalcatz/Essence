@@ -6,18 +6,16 @@ import net.essence.client.BossTickHandler;
 import net.essence.client.EntityRendering;
 import net.essence.client.GuiHandler;
 import net.essence.client.MusicEvent;
-import net.essence.client.MusicHandler;
 import net.essence.client.PlayerStats;
 import net.essence.client.render.EnumParticlesClasses;
 import net.essence.event.UpdateCheckerEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.resources.IReloadableResourceManager;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class ClientProxy extends CommonProxy {
 

@@ -6,15 +6,17 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockMod extends Block{
 
@@ -42,10 +44,9 @@ public class BlockMod extends Block{
 		this.blockType = blockType;
 		setHardness(2.0F);
 		rand = new Random();
-		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setStepSound(blockType.getSound());
 		setCreativeTab(tab);
-		setBlockName(name);
+		setUnlocalizedName(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -54,10 +55,9 @@ public class BlockMod extends Block{
 		this.blockType = t;
 		rand = new Random();
 		setHardness(2.0F);
-		setBlockTextureName(SlayerAPI.PREFIX + texture);
 		setStepSound(blockType.getSound());
 		setCreativeTab(EssenceTabs.blocks);
-		setBlockName(texture);
+		setUnlocalizedName(texture);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -65,27 +65,25 @@ public class BlockMod extends Block{
 		super(blockType.getMaterial());
 		this.blockType = blockType;
 		rand = new Random();
-		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setStepSound(blockType.getSound());
 		setCreativeTab(tab);
-		setBlockName(name);
+		setUnlocalizedName(name);
 		setHardness(hardness);
 		GameRegistry.registerBlock(this, name);
 	}
-
+	
 	@Override
-	public int getMixedBrightnessForBlock(IBlockAccess par1iBlockAccess, int par2, int par3, int par4) {
+	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
 		if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights) {
 			return 900;
 		} else {
-			return super.getMixedBrightnessForBlock(par1iBlockAccess, par2, par3, par4);
+			return super.getMixedBrightnessForBlock(worldIn, pos);
 		}
 	}
 
 	@Override
-	public Item getItemDropped(int par1, Random par2, int par3) {
-		if(drop == null)
-			return SlayerAPI.toItem(this);
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		if(drop == null) return SlayerAPI.toItem(this);
 		return drop;
 	}
 
@@ -110,14 +108,14 @@ public class BlockMod extends Block{
 	}
 
 	@Override
-	public void randomDisplayTick(World w, int x, int y, int z, Random r) {
+	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
 		if(Config.boilBlockSpawnSmoke){
-			if(w.getBlock(x, y, z) == EssenceBlocks.hotBlock){
+			if(worldIn.getBlockState(pos) == EssenceBlocks.hotBlock){
 				for(int i = 0; i < 1; ++i) {
-					float f = (float)x + r.nextFloat();
-					float f1 = (float)y + r.nextFloat() + 0.5F;
-					float f2 = (float)z + r.nextFloat();
-					w.spawnParticle("largesmoke", (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
+					float f = (float)pos.getX() + r.nextFloat();
+					float f1 = (float)pos.getY() + r.nextFloat() + 0.5F;
+					float f2 = (float)pos.getZ() + r.nextFloat();
+					worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
 				}
 			}
 		}

@@ -7,8 +7,8 @@ import net.essence.EssenceTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemModFood extends ItemFood {
 
@@ -16,7 +16,6 @@ public class ItemModFood extends ItemFood {
 	
     public ItemModFood(String name, int food, float sat, boolean wolfFood) {
         super(food, sat, wolfFood);
-        setTextureName(SlayerAPI.PREFIX + name);
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.misc);
         GameRegistry.registerItem(this, name);
@@ -39,8 +38,8 @@ public class ItemModFood extends ItemFood {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-        list.add("Fills " + (double) func_150905_g(stack) / 2 + " Hunger Bars");
-        list.add(func_150906_h(stack) + " Saturation");
+        list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
+        list.add(getSaturationModifier(stack) + " Saturation");
         if(stack.getItem() == EssenceItems.eucaMeat) list.add("Faster eating");
         list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }

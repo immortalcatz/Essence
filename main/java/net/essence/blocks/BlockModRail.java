@@ -4,8 +4,8 @@ import net.essence.EssenceTabs;
 import net.minecraft.block.BlockRail;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockModRail extends BlockRail {
 

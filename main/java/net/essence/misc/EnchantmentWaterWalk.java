@@ -4,11 +4,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 public class EnchantmentWaterWalk extends Enchantment {
 
 	public EnchantmentWaterWalk(int id, int weight) {
-		super(id, weight, EnumEnchantmentType.armor_feet);
+		super(id, new ResourceLocation("waterWalk"), weight, EnumEnchantmentType.ARMOR_FEET);
 		this.setName("Water Walker");
 	}
 

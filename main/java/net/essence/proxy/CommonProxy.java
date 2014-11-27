@@ -1,25 +1,34 @@
 package net.essence.proxy;
 
-import net.essence.*;
-import net.essence.blocks.tileentity.*;
+import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
+import net.essence.EssenceTabs;
+import net.essence.blocks.tileentity.TileEntityEnrichedTable;
+import net.essence.blocks.tileentity.TileEntityIncubator;
+import net.essence.blocks.tileentity.TileEntityStatue;
 import net.essence.client.render.EnumParticlesClasses;
-import net.essence.dimension.*;
+import net.essence.dimension.DimensionHelper;
+import net.essence.dimension.WorldGenEssence;
 import net.essence.dimension.boil.gen.fortress.MapGenBoilBridge;
 import net.essence.dimension.boil.gen.fortress.StructureBoilBridgePieces;
 import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.essence.dimension.boil.gen.village.StructureBoilVillagePieces;
-import net.essence.event.*;
+import net.essence.event.ArmorAbilityEvent;
+import net.essence.event.ParticleEvent;
+import net.essence.event.PlayerEvent;
 import net.essence.items.tileentity.TileEntityBackpack;
-import net.essence.misc.*;
-import net.essence.util.*;
-import net.essence.util.*;
+import net.essence.misc.EssenceCommands;
+import net.essence.util.Config;
 import net.essence.util.EntityRegistry;
 import net.essence.util.recipes.RecipeHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.*;
-import net.slayer.api.*;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.registry.*;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+import net.slayer.api.SlayerAPI;
 
 public class CommonProxy {
 
