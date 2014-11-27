@@ -10,7 +10,9 @@ import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
@@ -23,7 +25,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, int x, int y, int z, int par7, float par8, float par9, float par10) {
+	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float par8, float par9, float par10) {
 		Item item = i.getItem();
 		if(!w.isRemote){
 			if(w.provider.getDimensionId() == -1) {
@@ -32,17 +34,17 @@ public class ItemNetherBossSpawner extends ItemMod {
 				EntityNetherBeast nether = new EntityNetherBeast(w);
 				if(item == EssenceItems.calciaOrb){
 					SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
-					calcia.setPosition(x, y + 1, z);
+					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(calcia);
 				}
 				if(item == EssenceItems.netherBeastOrb){
 					SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
-					nether.setPosition(x, y + 1, z);
+					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(nether);
 				}
 				if(item == EssenceItems.witheringBeastOrb){
 					SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
-					wither.setPosition(x, y + 1, z);
+					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(wither);
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
