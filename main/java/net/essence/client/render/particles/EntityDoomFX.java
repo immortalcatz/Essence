@@ -1,10 +1,11 @@
 package net.essence.client.render.particles;
 
 import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class EntityDoomFX extends EntityFX {
@@ -31,13 +32,13 @@ public class EntityDoomFX extends EntityFX {
     }
 
     @Override
-    public void renderParticle(Tessellator var1, float par2, float par3, float par4, float par5, float par6, float par7) {
-        float var8 = (this.particleAge + par2) / this.particleMaxAge * 3;
+    public void func_180434_a(WorldRenderer var1, Entity e, float par2, float par3, float par4, float par5, float par6, float par7) {
+    	float var8 = (this.particleAge + par2) / this.particleMaxAge * 3;
         var8 = 1.0F - var8;
         var8 *= var8;
         var8 = 1.0F - var8;
         this.particleScale = this.portalParticleScale * var8;
-    	super.renderParticle(var1, par2, par3, par4, par5, par6, par7);
+        super.func_180434_a(var1, e, par2, par3, par4, par5, par6, par7);
     }
 
     @Override

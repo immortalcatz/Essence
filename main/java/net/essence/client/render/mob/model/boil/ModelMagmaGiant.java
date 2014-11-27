@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
 public class ModelMagmaGiant extends ModelBase {
-	
+
 	private ModelRenderer Chest;
 	private ModelRenderer Stomach;
 	private ModelRenderer Head;
@@ -138,17 +138,14 @@ public class ModelMagmaGiant extends ModelBase {
 		this.RightLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 		this.LeftLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 
-		if(this.onGround > -9990.0F) {
-			float f6 = this.onGround, f7;
-			this.Chest.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * (float)Math.PI * 2.0F) * 0.2F;
-			this.RightArm.rotationPointZ = 3.2F;
-			this.RightArm.rotationPointX = -MathHelper.cos(this.Chest.rotateAngleY) * 9.0F;
-			this.LeftArm.rotationPointZ = 3.2F;
-			this.LeftArm.rotationPointX = MathHelper.cos(this.Chest.rotateAngleY) * 9.0F;	
-			this.RightShoulder.rotationPointZ = 3.2F;
-			this.RightShoulder.rotationPointX = -MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;
-			this.LeftShoulder.rotationPointZ = 3.2F;
-			this.LeftShoulder.rotationPointX = MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;	
-		}
+
+		this.RightArm.rotationPointZ = 3.2F;
+		this.RightArm.rotationPointX = -MathHelper.cos(this.Chest.rotateAngleY) * 9.0F;
+		this.LeftArm.rotationPointZ = 3.2F;
+		this.LeftArm.rotationPointX = MathHelper.cos(this.Chest.rotateAngleY) * 9.0F;	
+		this.RightShoulder.rotationPointZ = 3.2F;
+		this.RightShoulder.rotationPointX = -MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;
+		this.LeftShoulder.rotationPointZ = 3.2F;
+		this.LeftShoulder.rotationPointX = MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;	
 	}
 }

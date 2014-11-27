@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
@@ -65,7 +66,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 		super.onUpdate();
 		if(isInv()) {
 			for(int i = 0; i < 5; i++)
-				this.worldObj.spawnParticle("enchantmenttable", posX + 0.5F + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + 0.5F + rand.nextFloat(), 0, 0, 0);
+				this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + 0.5F + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + 0.5F + rand.nextFloat(), 0, 0, 0);
 			Entity entity = attackingPlayer;
 			if(entity != null)
 				((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 25, 2));
