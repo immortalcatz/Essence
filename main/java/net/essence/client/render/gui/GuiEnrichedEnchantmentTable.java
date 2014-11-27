@@ -164,9 +164,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
         GL11.glPopMatrix();
         RenderHelper.disableStandardItemLighting();
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        EnchantmentNameParts.func_178176_a().reseedRandomGenerator(this.container.nameSeed);
+        EnchantmentNameParts.instance.reseedRandomGenerator(this.container.nameSeed);
         for (int i1 = 0; i1 < 3; ++i1) {
-            String s = EnchantmentNameParts.func_178176_a().generateNewRandomName();
+            String s = EnchantmentNameParts.instance.generateNewRandomName();
             this.zLevel = 0.0F;
             this.mc.getTextureManager().bindTexture(tex1);
             int j1 = this.container.enchantLevels[i1];
@@ -179,9 +179,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
                 if(this.mc.thePlayer.experienceLevel < j1 && !this.mc.thePlayer.capabilities.isCreativeMode) {
                     this.drawTexturedModalRect(k + 60, l + 14 + 19 * i1, 0, 185, 108, 19);
                     fontrenderer.drawSplitString(s, k + 62, l + 16 + 19 * i1, 104, (k1 & 16711422) >> 1);
-                    fontrenderer = this.mc.fontRendererObj;
+                    fontrenderer = this.mc.fontRenderer;
                     k1 = 4226832;
-                    fontrenderer.drawString(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
+                    fontrenderer.drawStringWithShadow(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
                 } else {
                     int l1 = i - (k + 60);
                     int i2 = j - (l + 14 + 19 * i1);
@@ -191,9 +191,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
                     } 
                     else this.drawTexturedModalRect(k + 60, l + 14 + 19 * i1, 0, 166, 108, 19);
                     fontrenderer.drawSplitString(s, k + 62, l + 16 + 19 * i1, 104, k1);
-                    fontrenderer = this.mc.fontRendererObj;
+                    fontrenderer = this.mc.fontRenderer;
                     k1 = 8453920;
-                    fontrenderer.drawString(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
+                    fontrenderer.drawStringWithShadow(s1, k + 62 + 104 - fontrenderer.getStringWidth(s1), l + 16 + 19 * i1 + 7, k1);
                 }
             }
         }

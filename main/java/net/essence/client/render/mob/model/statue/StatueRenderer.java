@@ -12,12 +12,12 @@ import org.lwjgl.opengl.GL11;
 public class StatueRenderer extends TileEntitySpecialRenderer {
 
 	@Override
-	public void renderTileEntityAt(TileEntity te, double x, double y, double z, float tick, int i) {
+	public void renderTileEntityAt(TileEntity te, double x, double y, double z, float tick) {
 		float scale = 0.0F;
 		if(te instanceof TileEntityStatue) {
 			TileEntityStatue tes = (TileEntityStatue)te;
 			int rotation = 0;
-			if(tes.getWorld() != null) rotation = tes.getBlockMetadata();            
+			if(tes.getWorldObj() != null) rotation = tes.getBlockMetadata();            
 			Minecraft.getMinecraft().getTextureManager().bindTexture(tes.texture);
 			GL11.glPushMatrix();
 			GL11.glDisable(GL11.GL_LIGHTING);

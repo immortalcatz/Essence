@@ -8,51 +8,53 @@ import net.essence.blocks.tileentity.TileEntityEnrichedTable;
 import net.essence.client.GuiHandler.GuiIDs;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockEnrichedEnchantmentTable extends BlockContainer {
+
+	private IIcon top, side, bottom;
 
 	public BlockEnrichedEnchantmentTable(String name) {
 		super(Material.rock);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
+		setBlockName(name);
+		setBlockTextureName(SlayerAPI.PREFIX + name);
 		setCreativeTab(EssenceTabs.blocks);
 		GameRegistry.registerBlock(this, name);
 	}
 
 	@Override
-	public boolean isFullCube() {
+	public boolean renderAsNormalBlock() {
 		return false;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World par1World, BlockPos pos, IBlockState state, Random rand) {
-		int par2 = pos.getZ(), par4 = pos.getZ(), par3 = pos.getY();
-		super.randomDisplayTick(par1World, pos, state, rand);
+	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random) {
+		super.randomDisplayTick(par1World, par2, par3, par4, par5Random);
 		for(int var6 = par2 - 2; var6 <= par2 + 2; ++var6) {
 			for(int var7 = par4 - 2; var7 <= par4 + 2; ++var7) {
 				if(var6 > par2 - 2 && var6 < par2 + 2 && var7 == par4 - 1)  
 					var7 = par4 + 2;
-				if(rand.nextInt(16) == 0) {
+
+				if(par5Random.nextInt(16) == 0) {
 					for (int var8 = par3; var8 <= par3 + 1; ++var8) {
-						par1World.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)par2 + 0.5D, (double)par3 + 2.0D, (double)par4 + 0.5D, (double)((float)(var6 - par2) + rand.nextFloat()) - 0.5D, (double)((float)(var8 - par3) - rand.nextFloat() - 1.0F), (double)((float)(var7 - par4) + rand.nextFloat()) - 0.5D);
+						par1World.spawnParticle("enchantmenttable", (double)par2 + 0.5D, (double)par3 + 2.0D, (double)par4 + 0.5D, (double)((float)(var6 - par2) + par5Random.nextFloat()) - 0.5D, (double)((float)(var8 - par3) - par5Random.nextFloat() - 1.0F), (double)((float)(var7 - par4) + par5Random.nextFloat()) - 0.5D);
 					}
 				}
 			}
 		}
 	}
 
-	/*@SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return side == 0 ? this.bottom : (side == 1 ? this.top : this.side);
 	}
@@ -62,19 +64,19 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		this.side = icon.registerIcon(this.getTextureName() + "_side");
 		this.top = icon.registerIcon(this.getTextureName() + "_top");
 		this.bottom = icon.registerIcon(this.getTextureName() + "_bottom");
-	}*/
+	}
 
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
 	}
-	
+
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-		TileEntityEnrichedTable tileEntity = (TileEntityEnrichedTable)worldIn.getTileEntity(pos);
-		if(!worldIn.isRemote) {
+	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9) {
+		TileEntityEnrichedTable tileEntity = (TileEntityEnrichedTable)par1World.getTileEntity(par2, par3, par4);
+		if(!par1World.isRemote) {
 			if(tileEntity != null) {
-				playerIn.openGui(Essence.instance, GuiIDs.ENRICHMENT_TABLE.ordinal(), worldIn, 0, 0, 0);
+				par5EntityPlayer.openGui(Essence.instance, GuiIDs.ENRICHMENT_TABLE.ordinal(), par1World, par2, par3, par4);
 			}
 			return true;
 		}

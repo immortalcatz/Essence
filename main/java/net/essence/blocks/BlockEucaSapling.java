@@ -6,9 +6,7 @@ import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -36,17 +34,8 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 				this.generate(w, x, y, z, r);
 		}
 	}
-	
-	@Override
-	public void updateTick(World w, BlockPos pos, IBlockState state, Random r) {
-		if(!w.isRemote) {
-			super.updateTick(w, pos, state, r);
-			if(w.getLightFromNeighbors(pos.offsetUp()) >= 9 && rand.nextInt(9) == 0) 
-				this.generate(w, pos, r);
-		}
-	}
 
-	private void generate(World w, BlockPos pos, Random r) {
+	private void generate(World w, int x, int y, int z, Random r) {
 		Object tree = new WorldGenBigEucaTree();
 		switch(r.nextInt(2)) {
 		case 0:
@@ -56,21 +45,19 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 			tree = new WorldGenSmallEucaTree();
 			break;
 		}
-		((WorldGenerator)tree).generate(w, r, pos);
+		((WorldGenerator)tree).generate(w, r, x, y, z);
 	}
 
 	@Override
-	public boolean canPlaceBlockAt(World w, BlockPos pos) {
-		return super.canPlaceBlockAt(w, pos) && this.canBlockStay(w, pos);
+	public boolean canPlaceBlockAt(World w, int x, int y, int z) {
+		return super.canPlaceBlockAt(w, x, y, z) && this.canBlockStay(w, x, y, z);
 	}
 
 	@Override
-	public boolean canBlockStay(World w, BlockPos pos) {
+	public boolean canBlockStay(World w, int x, int y, int z) {
 		return w.getBlock(x, y - 1, z).canSustainPlant(w, x, y - 1, z, ForgeDirection.UP, this);
 	}
 
-	
-	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
 		return null;
@@ -119,30 +106,5 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	@Override
 	public int getPlantMetadata(IBlockAccess world, int x, int y, int z) {
 		return world.getBlockMetadata(x, y, z);
-	}
-
-	@Override
-	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-		return EnumPlantType.Plains;
-	}
-
-	@Override
-	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
-		return this.getDefaultState();
-	}
-
-	@Override
-	public boolean isStillGrowing(World worldIn, BlockPos p_176473_2_, IBlockState p_176473_3_, boolean p_176473_4_) {
-		return false;
-	}
-
-	@Override
-	public boolean canUseBonemeal(World worldIn, Random p_180670_2_, BlockPos p_180670_3_, IBlockState p_180670_4_) {
-		return false;
-	}
-
-	@Override
-	public void grow(World worldIn, Random p_176474_2_, BlockPos p_176474_3_, IBlockState p_176474_4_) {
-		
 	}
 }

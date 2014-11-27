@@ -3,8 +3,8 @@ package net.essence.util;
 import java.io.File;
 import java.util.HashMap;
 
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class Config {
 
