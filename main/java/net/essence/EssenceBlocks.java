@@ -138,7 +138,8 @@ public class EssenceBlocks {
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStone");
 	public static final BlockModDoor frozenDoor = new BlockModDoor("frozenDoorBlock", 5.0F, null);
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
-
+	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab", workshopStone);
+	
 	public static final Block eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final Block eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
 	public static final Block eucaBlueFlower = new BlockModFlower("eucaBlueFlower");

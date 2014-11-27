@@ -15,7 +15,7 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 		Block carpet = EssenceBlocks.workshopCarpet;
 		Block glass = EssenceBlocks.frozenGlass;
-		Block slab = Blocks.stone_slab;
+		Block slab = EssenceBlocks.workshopSlab;
 		Block stair = EssenceBlocks.workshopStoneStair;
 		Block pane = EssenceBlocks.frozenPane;
 		Block stone = EssenceBlocks.workshopStone;

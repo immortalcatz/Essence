@@ -48,7 +48,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		gens = new ArrayList(0);
 		gens.add(new WorldGenCandyCane());
 		
-		rare = new ArrayList(1);
+		rare = new ArrayList(2);
 		rare.add(new WorldGenSantasWorkshop());
 		rare.add(new WorldGenPresent());
 		

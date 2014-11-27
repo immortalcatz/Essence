@@ -1,10 +1,13 @@
 package net.essence.items;
 
 import java.util.List;
+import java.util.Random;
 
+import net.essence.Essence;
+import net.essence.client.render.EnumParticlesClasses;
+import net.essence.proxy.ClientProxy;
 import net.essence.util.Config;
 import net.essence.util.EssenceToolMaterial;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -24,10 +27,6 @@ public class ItemFreezeSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 5));
-		if(Config.spawnSwordParticles) {
-			for(int i = 0; i < 700; i++)
-				Minecraft.getMinecraft().thePlayer.worldObj.spawnParticle("snowballpoof", hit.posX, hit.posY + 0.5F, hit.posZ, 0.0D, 0.0D, 0.0D);
-		}
 		hit.setFire(0);
 		return super.hitEntity(par1ItemStack, hit, player);
 	}

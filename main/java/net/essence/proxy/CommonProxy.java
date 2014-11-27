@@ -2,6 +2,7 @@ package net.essence.proxy;
 
 import net.essence.*;
 import net.essence.blocks.tileentity.*;
+import net.essence.client.render.EnumParticlesClasses;
 import net.essence.dimension.*;
 import net.essence.dimension.boil.gen.fortress.MapGenBoilBridge;
 import net.essence.dimension.boil.gen.fortress.StructureBoilBridgePieces;
@@ -14,6 +15,7 @@ import net.essence.util.*;
 import net.essence.util.*;
 import net.essence.util.EntityRegistry;
 import net.essence.util.recipes.RecipeHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.oredict.*;
 import net.slayer.api.*;
 import cpw.mods.fml.common.event.*;
@@ -24,6 +26,7 @@ public class CommonProxy {
 	public void registerClient() { }
 	public void clientInit(FMLInitializationEvent event) { }
 	public void registerSounds() { }
+	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double x, double y, double z, boolean b) { }
 	
 	public static void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
@@ -35,6 +38,8 @@ public class CommonProxy {
 		addOreDictionary();
 		SlayerAPI.addEventBus(new ArmorAbilityEvent());
 		SlayerAPI.addForgeEventBus(new ArmorAbilityEvent());
+		SlayerAPI.addEventBus(new ParticleEvent());
+		SlayerAPI.addForgeEventBus(new ParticleEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");

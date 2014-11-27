@@ -7,6 +7,7 @@ import net.essence.misc.EnchantmentLavaWalk;
 import net.essence.misc.EnchantmentWaterWalk;
 import net.essence.network.PacketHandler;
 import net.essence.network.PacketOpenGui;
+import net.essence.proxy.ClientProxy;
 import net.essence.proxy.CommonProxy;
 import net.minecraft.enchantment.Enchantment;
 import net.slayer.api.SlayerAPI;
@@ -29,7 +30,7 @@ public class Essence {
 	public static Essence instance;
 	
 	@SidedProxy(clientSide = "net.essence.proxy.ClientProxy", serverSide = "net.essence.proxy.CommonProxy")
-	public static CommonProxy proxy;
+	public static CommonProxy proxy;	
 	
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
 	public static final Enchantment waterWalk = new EnchantmentWaterWalk(164, 3);
