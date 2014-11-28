@@ -19,8 +19,8 @@ public class RenderStaffProjectile extends Render {
     public ResourceLocation texture;
     private float scale, red, green, blue;
 
-    public RenderStaffProjectile(RenderManager r, ResourceLocation par1, float red, float green, float blue) {
-    	super(r);
+    public RenderStaffProjectile(ResourceLocation par1, float red, float green, float blue) {
+    	super(Minecraft.getMinecraft().getRenderManager());
         texture = par1;
         scale = 1F;
         this.red = red;
@@ -28,8 +28,8 @@ public class RenderStaffProjectile extends Render {
         this.blue = blue;
     }
 
-    public RenderStaffProjectile(RenderManager r, ResourceLocation par1, float scaleFactor, float red, float green, float blue) {
-    	super(r);
+    public RenderStaffProjectile(ResourceLocation par1, float scaleFactor, float red, float green, float blue) {
+    	super(Minecraft.getMinecraft().getRenderManager());
         texture = par1;
         scale = scaleFactor;
         this.red = red;

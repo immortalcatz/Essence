@@ -1,6 +1,8 @@
 package net.essence.client.render;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -15,11 +17,13 @@ public class RenderProjectile extends Render {
     private float scale;
 
     public RenderProjectile(ResourceLocation par1) {
+    	super(Minecraft.getMinecraft().getRenderManager());
         texture = par1;
         scale = 1F;
     }
 
     public RenderProjectile(ResourceLocation par1, float scaleFactor) {
+    	super(Minecraft.getMinecraft().getRenderManager());
         texture = par1;
         scale = scaleFactor;
     }
@@ -30,7 +34,8 @@ public class RenderProjectile extends Render {
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);
-        Tessellator tessellator = Tessellator.instance;
+        Tessellator t = Tessellator.getInstance();
+        WorldRenderer tessellator = t.getWorldRenderer();
         float minU = 0;
         float maxU = 1;
         float minV = 0;
@@ -38,10 +43,11 @@ public class RenderProjectile extends Render {
         float f7 = 1.0F;
         float f8 = 0.5F;
         float f9 = 0.25F;
+        float f10 = 0.05625F;
         GL11.glRotatef(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
         tessellator.startDrawingQuads();
-        tessellator.setNormal(0.0F, 1.0F, 0.0F);
+        GL11.glNormal3f(f10, 0.0F, 0.0F);
         tessellator.addVertexWithUV(0.0F - f8, 0.0F - f9, 0.0D, minU, maxV);
         tessellator.addVertexWithUV(f7 - f8, 0.0F - f9, 0.0D, maxU, maxV);
         tessellator.addVertexWithUV(f7 - f8, 1.0F - f9, 0.0D, maxU, minV);

@@ -2,6 +2,7 @@ package net.essence.client.render;
 
 import org.lwjgl.opengl.GL11;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -14,14 +15,14 @@ public class RenderModMob extends RenderLiving {
 	private ResourceLocation texture;
 	
 	public RenderModMob(ModelBase model, float shadow, ResourceLocation tex) {
-		super(model, shadow);
+		super(Minecraft.getMinecraft().getRenderManager(), model, shadow);
 		texture = tex;
 	}
 	
 	public RenderModMob(ModelBase model, ResourceLocation tex) {
 		this(model, 0.5F, tex);
 	}
-
+	
 	@Override
 	protected ResourceLocation getEntityTexture(Entity var1) {
 		return texture;

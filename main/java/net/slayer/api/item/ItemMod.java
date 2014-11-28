@@ -4,6 +4,9 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.client.EnumSounds;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

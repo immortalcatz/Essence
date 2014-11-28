@@ -8,12 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public abstract class TileEntityModFurnace extends TileEntity implements ISidedInventory {
+public abstract class TileEntityModFurnace extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory {
 	
 	protected static final int[] slotsTop = new int[] {0};
     protected static final int[] slotsBottom = new int[] {2, 1};
@@ -76,13 +78,13 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
     }
 
     @Override
-    public String getInventoryName() {
-        return this.customName;
+    public String getName() {
+        return this.hasCustomName() ? this.customName : "container.furnace";
     }
 
     @Override
-    public boolean hasCustomInventoryName() {
-        return true;
+    public boolean hasCustomName() {
+        return this.customName != null && this.customName.length() > 0;
     }
 
     public void setCustomName(String s) {
@@ -124,7 +126,7 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
         }
 
         nbt.setTag("Items", nbttaglist);
-        if (this.hasCustomInventoryName()) nbt.setString("CustomName", this.customName);
+        if (this.hasCustomName()) nbt.setString("CustomName", this.customName);
     }
 
     @Override
@@ -152,7 +154,7 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
     public abstract void addUpdate();
 
 	@Override
-    public void updateEntity() {
+	public void update() {
         boolean flag = this.furnaceBurnTime > 0;
         boolean flag1 = false;
 
@@ -200,7 +202,7 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
 		if (this.furnaceItemStacks[0] == null) {
 			return false;
 		} else {
-			ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+			ItemStack itemstack = FurnaceRecipes.instance().getSmeltingResult(this.furnaceItemStacks[0]);
 			if (itemstack == null) return false;
 			if (this.furnaceItemStacks[2] == null) return true;
 			if (!this.furnaceItemStacks[2].isItemEqual(itemstack)) return false;
@@ -212,7 +214,7 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
 
     public void smeltItem() {
         if(this.canSmelt()) {
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+            ItemStack itemstack = FurnaceRecipes.instance().getSmeltingResult(this.furnaceItemStacks[0]);
 
             if(this.furnaceItemStacks[2] == null) 
                 this.furnaceItemStacks[2] = itemstack.copy();
@@ -251,33 +253,11 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
     }
 
     @Override
-    public void openInventory() {}
-
-    @Override
-    public void closeInventory() {}
-
-    @Override
     public boolean isItemValidForSlot(int slot, ItemStack par2ItemStack) {
         return slot == 2 ? false : (slot == 1 ? isItemFuel(par2ItemStack) : true);
     }
 
-    @Override
-    public int[] getAccessibleSlotsFromSide(int slot) {
-        return slot == 0 ? slotsBottom : (slot == 1 ? slotsTop : slotsSides);
-    }
-
-    @Override
-    public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3) {
-        return this.isItemValidForSlot(par1, par2ItemStack);
-    }
-
-    @Override
-    public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3) {
-        return par3 != 0 || par1 != 1 || par2ItemStack.getItem() == Items.bucket;
-    }
-
 	public void setCustomInventoryName(String displayName) {
-		// TODO Auto-generated method stub
-		
+		customName = displayName;
 	}
 }

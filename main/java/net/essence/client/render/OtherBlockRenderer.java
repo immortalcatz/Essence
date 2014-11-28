@@ -1,20 +1,11 @@
 package net.essence.client.render;
 
-import net.essence.EssenceBlocks;
-import net.essence.blocks.BlockModOre;
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.IBlockAccess;
-import net.slayer.api.block.BlockMod;
 
-import org.lwjgl.opengl.GL11;
+public class OtherBlockRenderer {
+	
+}
 
-import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-
-public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
+/*implements ISimpleBlockRenderingHandler {
 
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
@@ -101,4 +92,4 @@ public class OtherBlockRenderer implements ISimpleBlockRenderingHandler {
 	public int getRenderId() {
 		return RenderingRegistry.getNextAvailableRenderId();
 	}
-}
+}*/

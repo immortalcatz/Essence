@@ -19,6 +19,7 @@ public abstract class EntityModMob extends EntityMob {
 	public EntityModMob(World par1World) {
 		super(par1World);
 		addBasicAI();
+		setSize(1.0F, 1.0F);
 	}
 
 	public double getHP(){return getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue();}
@@ -93,6 +94,6 @@ public abstract class EntityModMob extends EntityMob {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.worldObj.checkNoEntityCollision(this.getBoundingBox()) && this.worldObj.getCollidingBoundingBoxes(this, this.getBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getBoundingBox());
+		return this.worldObj.checkNoEntityCollision(this.getEntityBoundingBox()) && this.worldObj.getCollidingBoundingBoxes(this, this.getEntityBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getEntityBoundingBox());
 	}
 }

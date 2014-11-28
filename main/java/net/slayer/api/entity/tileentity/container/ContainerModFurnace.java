@@ -5,11 +5,12 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
+import net.minecraft.inventory.SlotFurnaceFuel;
+import net.minecraft.inventory.SlotFurnaceOutput;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.entity.tileentity.TileEntityModFurnace;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ContainerModFurnace extends Container {
 
@@ -20,8 +21,8 @@ public class ContainerModFurnace extends Container {
 	public ContainerModFurnace(InventoryPlayer player, TileEntityModFurnace furnace, boolean hasFuel) {
 		this.tileFurnace = furnace;
 		this.addSlotToContainer(new Slot(furnace, 0, 56, 17));
-		this.addSlotToContainer(new Slot(furnace, 1, 56, 53));
-		this.addSlotToContainer(new SlotFurnace(player.player, furnace, 2, 116, 35));
+        this.addSlotToContainer(new SlotFurnaceFuel(furnace, 1, 56, 53));
+        this.addSlotToContainer(new SlotFurnaceOutput(player.player, furnace, 2, 116, 35));
 		this.hasFuel = hasFuel;
 		int i;
 		for(i = 0; i < 3; ++i) {
@@ -33,14 +34,14 @@ public class ContainerModFurnace extends Container {
 			this.addSlotToContainer(new Slot(player, i, 8 + i * 18, 142));
 		}
 	}
-
+	
 	@Override
-	public void addCraftingToCrafters(ICrafting par1ICrafting) {
-		super.addCraftingToCrafters(par1ICrafting);
-		par1ICrafting.sendProgressBarUpdate(this, 0, this.tileFurnace.furnaceCookTime);
+    public void onCraftGuiOpened(ICrafting par1ICrafting) {
+        super.onCraftGuiOpened(par1ICrafting);
+        par1ICrafting.sendProgressBarUpdate(this, 0, this.tileFurnace.furnaceCookTime);
 		par1ICrafting.sendProgressBarUpdate(this, 1, this.tileFurnace.furnaceBurnTime);
 		par1ICrafting.sendProgressBarUpdate(this, 2, this.tileFurnace.currentItemBurnTime);
-	}
+    }
 
 	@Override
 	public void detectAndSendChanges() {

@@ -37,10 +37,14 @@ public class CommonProxy {
 	public void registerSounds() { }
 	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double x, double y, double z, boolean b) { }
 	
-	public static void preInit(FMLPreInitializationEvent event) {
+	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
-		//EntityRegistry.init();
-		RecipeHelper.init();
+		EssenceBlocks.addBlockNames();
+		EssenceBlocks.addBlocks();
+		EssenceItems.addItemNames();
+		EssenceItems.addItems();
+		EntityRegistry.init();
+		//RecipeHelper.init();
 		DimensionHelper.init();
 		//DimensionHelper.addSpawns();
 		EssenceTabs.init();
@@ -61,16 +65,16 @@ public class CommonProxy {
 		StructureBoilVillagePieces.registerVillagePieces();
 	}
 	
-	public static void init(FMLInitializationEvent event) {
+	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 10);
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		//EssenceAchievements.init();
 	}
 	
-	public static void postInit(FMLPostInitializationEvent event) { }
+	public void postInit(FMLPostInitializationEvent event) { }
 	
-	public static void serverStarting(FMLServerStartingEvent event) {
+	public void serverStarting(FMLServerStartingEvent event) {
 		SlayerAPI.registerCommand(new EssenceCommands());
 	}
 	
