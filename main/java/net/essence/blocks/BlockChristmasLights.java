@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
@@ -23,7 +24,7 @@ public class BlockChristmasLights extends BlockMod implements IShearable {
 	}
 	
 	@Override
-	public Item getItemDropped(int par1, Random par2, int par3) {
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return SlayerAPI.toItem(this);
 	}
 	

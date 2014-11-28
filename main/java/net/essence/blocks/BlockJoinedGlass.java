@@ -19,7 +19,7 @@ import net.slayer.api.block.BlockMod;
 public class BlockJoinedGlass extends BlockMod {
 
 	private String[] textures = new String[16];
-	private IIcon[] icons = new IIcon[16];
+	//private IIcon[] icons = new IIcon[16];
 
 	public BlockJoinedGlass(String name) {
 		super(EnumMaterialTypes.GLASS, name, 0.5F);
@@ -46,7 +46,7 @@ public class BlockJoinedGlass extends BlockMod {
 		return b == this;
 	}
 
-	private IIcon getConnectedTexture(IBlockAccess w, int x, int y, int z, int side) {
+	/*private IIcon getConnectedTexture(IBlockAccess w, int x, int y, int z, int side) {
 		boolean isOpenUp = false, isOpenDown = false, isOpenLeft = false, isOpenRight = false;
 
 		switch(side) {
@@ -187,6 +187,15 @@ public class BlockJoinedGlass extends BlockMod {
 		return icons[0];
 	}
 
+	
+
+	/*@Override
+	public void registerBlockIcons(IIconRegister r) {
+		for(int i = 0; i < textures.length; i++) {
+			icons[i] = r.registerIcon(textures[i]);
+		}
+	}*/
+	
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
@@ -206,16 +215,9 @@ public class BlockJoinedGlass extends BlockMod {
 	protected boolean canSilkHarvest() {
 		return true;
 	}
-
-	/*@Override
-	public void registerBlockIcons(IIconRegister r) {
-		for(int i = 0; i < textures.length; i++) {
-			icons[i] = r.registerIcon(textures[i]);
-		}
-	}*/
 	
 	@Override
-	public Item getItemDropped(int par1, Random par2, int par3) {
+	public Item getItemDropped(IBlockState par1, Random par2, int par3) {
 		return null;
 	}
 	

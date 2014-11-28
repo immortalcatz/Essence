@@ -1,24 +1,12 @@
 package net.essence.blocks;
 
-import static net.minecraftforge.common.util.ForgeDirection.EAST;
-import static net.minecraftforge.common.util.ForgeDirection.NORTH;
-import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
-import static net.minecraftforge.common.util.ForgeDirection.WEST;
-
-import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockPane;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.block.BlockMod;
@@ -26,7 +14,7 @@ import net.slayer.api.block.BlockMod;
 public class BlockJoinedPane extends BlockMod {
 
 	private String[] textures = new String[16];
-	private IIcon[] icons = new IIcon[16];
+	//private IIcon[] icons = new IIcon[16];
 
 	public BlockJoinedPane(String name) {
 		super(EnumMaterialTypes.GLASS, name + "Pane", 0.2F);
@@ -48,7 +36,7 @@ public class BlockJoinedPane extends BlockMod {
         textures[15] = SlayerAPI.PREFIX + "glass/" + name + "/glass_4";
 	}
 	
-	@Override
+	/*@Override
     public void addCollisionBoxesToList(World p_149743_1_, int p_149743_2_, int p_149743_3_, int p_149743_4_, AxisAlignedBB p_149743_5_, List p_149743_6_, Entity p_149743_7_) {
         boolean flag  = this.canPaneConnectTo(p_149743_1_, p_149743_2_, p_149743_3_, p_149743_4_ - 1, NORTH);
         boolean flag1 = this.canPaneConnectTo(p_149743_1_, p_149743_2_, p_149743_3_, p_149743_4_ + 1, SOUTH);
@@ -276,7 +264,7 @@ public class BlockJoinedPane extends BlockMod {
 			break;
 		}
 		return icons[0];
-	}
+	}*/
 
 	@Override
 	public boolean isOpaqueCube() {
@@ -284,12 +272,12 @@ public class BlockJoinedPane extends BlockMod {
 	}
 	
 	@Override
-	public int getRenderBlockPass() {
-		return 1;
+	public EnumWorldBlockLayer getBlockLayer() {
+		return EnumWorldBlockLayer.TRANSLUCENT;
 	}
 	
 	@Override
-	public boolean renderAsNormalBlock() {
+	public boolean isFullCube() {
 		return false;
 	}
 	
@@ -297,36 +285,19 @@ public class BlockJoinedPane extends BlockMod {
 	protected boolean canSilkHarvest() {
 		return true;
 	}
-
+	
 	@Override
-	public void registerBlockIcons(IIconRegister r) {
-		for(int i = 0; i < textures.length; i++) {
-			icons[i] = r.registerIcon(textures[i]);
-		}
+	public Item getItemDropped(IBlockState par1, Random par2, int par3) {
+		return null;
 	}
 	
 	@Override
-	public Item getItemDropped(int par1, Random par2, int par3) {
-		return null;
-	}
-
-	@Override
-	public boolean canPlaceTorchOnTop(World world, int x, int y, int z) {
+	public boolean canPlaceTorchOnTop(IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 	
-	@Override
-	public IIcon getIcon(int s, int m) {
-		return icons[0];
-	}
-	
-    @Override
+    /*@Override
     public boolean shouldSideBeRendered (IBlockAccess w, int x, int y, int z, int s) {
         return w.getBlock(x, y, z) == this ? false : super.shouldSideBeRendered(w, x, y, z, s);
-    }
-
-	@Override
-	public IIcon getIcon(IBlockAccess w, int x, int y, int z, int s) {
-		return getConnectedTexture(w, x, y, z, s);
-	}
+    }*/
 }

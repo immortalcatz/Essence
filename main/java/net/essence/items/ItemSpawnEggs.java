@@ -5,16 +5,24 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.entity.EssenceEntityList;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
+import net.minecraft.tileentity.MobSpawnerBaseLogic;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.StatCollector;
@@ -24,8 +32,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemSpawnEggs extends Item {
-    @SideOnly(Side.CLIENT)
-    private IIcon theIcon;
 
     public ItemSpawnEggs() {
         this.setHasSubtypes(true);
@@ -50,73 +56,106 @@ public class ItemSpawnEggs extends Item {
     }
  
     @Override
-    public boolean onItemUse(ItemStack i, EntityPlayer p, World w, int x, int y, int z, int s, float f, float f1, float f2) {
-        if (w.isRemote) {
+    public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (worldIn.isRemote) {
             return true;
+        }
+        else if (!playerIn.func_175151_a(pos.offset(side), side, stack)) {
+            return false;
         } else {
-            Block block = w.getBlock(x, y, z);
-            x += Facing.offsetsXForSide[s];
-            y += Facing.offsetsYForSide[s];
-            z += Facing.offsetsZForSide[s];
+            IBlockState iblockstate = worldIn.getBlockState(pos);
+
+            if (iblockstate.getBlock() == Blocks.mob_spawner) {
+                TileEntity tileentity = worldIn.getTileEntity(pos);
+
+                if (tileentity instanceof TileEntityMobSpawner) {
+                    MobSpawnerBaseLogic mobspawnerbaselogic = ((TileEntityMobSpawner)tileentity).getSpawnerBaseLogic();
+                    mobspawnerbaselogic.setEntityName(EssenceEntityList.getStringFromID(stack.getMetadata()));
+                    tileentity.markDirty();
+                    worldIn.markBlockForUpdate(pos);
+
+                    if (!playerIn.capabilities.isCreativeMode) {
+                        --stack.stackSize;
+                    }
+
+                    return true;
+                }
+            }
+
+            pos = pos.offset(side);
             double d0 = 0.0D;
 
-            if (s == 1 && block.getRenderType() == 11) {
+            if (side == EnumFacing.UP && iblockstate instanceof BlockFence) {
                 d0 = 0.5D;
             }
 
-            Entity entity = spawnCreature(w, i.getItemDamage(), (double)x + 0.5D, (double)y + d0, (double)z + 0.5D);
+            Entity entity = spawnCreature(worldIn, stack.getMetadata(), (double)pos.getX() + 0.5D, (double)pos.getY() + d0, (double)pos.getZ() + 0.5D);
 
             if (entity != null) {
-                if (entity instanceof EntityLivingBase && i.hasDisplayName()) {
-                    ((EntityLiving)entity).setCustomNameTag(i.getDisplayName());
+                if (entity instanceof EntityLivingBase && stack.hasDisplayName()) {
+                    entity.setCustomNameTag(stack.getDisplayName());
                 }
 
-                if (!p.capabilities.isCreativeMode) {
-                    --i.stackSize;
+                if (!playerIn.capabilities.isCreativeMode) {
+                    --stack.stackSize;
                 }
             }
+
             return true;
         }
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack stack, World w, EntityPlayer p) {
-        if (w.isRemote) {
-            return stack;
-        } else {
-            MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(w, p, true);
+    public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
+    {
+        if (worldIn.isRemote)
+        {
+            return itemStackIn;
+        }
+        else
+        {
+            MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(worldIn, playerIn, true);
 
-            if (movingobjectposition == null) {
-                return stack;
-            } else {
-                if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
-                    int i = movingobjectposition.blockX;
-                    int j = movingobjectposition.blockY;
-                    int k = movingobjectposition.blockZ;
+            if (movingobjectposition == null)
+            {
+                return itemStackIn;
+            }
+            else
+            {
+                if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
+                {
+                    BlockPos blockpos = movingobjectposition.func_178782_a();
 
-                    if (!w.canMineBlock(p, i, j, k)) {
-                        return stack;
+                    if (!worldIn.isBlockModifiable(playerIn, blockpos))
+                    {
+                        return itemStackIn;
                     }
 
-                    if (!p.canPlayerEdit(i, j, k, movingobjectposition.sideHit, stack)) {
-                        return stack;
+                    if (!playerIn.func_175151_a(blockpos, movingobjectposition.field_178784_b, itemStackIn))
+                    {
+                        return itemStackIn;
                     }
 
-                    if (w.getBlock(i, j, k) instanceof BlockLiquid) {
-                        Entity entity = spawnCreature(w, stack.getItemDamage(), (double)i, (double)j, (double)k);
+                    if (worldIn.getBlockState(blockpos).getBlock() instanceof BlockLiquid) {
+                        Entity entity = spawnCreature(worldIn, itemStackIn.getMetadata(), (double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.5D, (double)blockpos.getZ() + 0.5D);
 
-                        if (entity != null) {
-                            if (entity instanceof EntityLivingBase && stack.hasDisplayName()) {
-                                ((EntityLiving)entity).setCustomNameTag(stack.getDisplayName());
+                        if (entity != null)
+                        {
+                            if (entity instanceof EntityLivingBase && itemStackIn.hasDisplayName())
+                            {
+                                ((EntityLiving)entity).setCustomNameTag(itemStackIn.getDisplayName());
                             }
 
-                            if (!p.capabilities.isCreativeMode) {
-                                --stack.stackSize;
+                            if (!playerIn.capabilities.isCreativeMode)  {
+                                --itemStackIn.stackSize;
                             }
+
+                            playerIn.triggerAchievement(StatList.objectUseStats[Item.getIdFromItem(this)]);
                         }
                     }
                 }
-                return stack;
+
+                return itemStackIn;
             }
         }
     }
@@ -135,7 +174,7 @@ public class ItemSpawnEggs extends Item {
                     entity.setLocationAndAngles(x, y, z, MathHelper.wrapAngleTo180_float(w.rand.nextFloat() * 360.0F), 0.0F);
                     entityliving.rotationYawHead = entityliving.rotationYaw;
                     entityliving.renderYawOffset = entityliving.rotationYaw;
-                    entityliving.onSpawnWithEgg((IEntityLivingData)null);
+                    entityliving.func_180482_a(w.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
                     w.spawnEntityInWorld(entity);
                     entityliving.playLivingSound();
                 }
@@ -146,30 +185,11 @@ public class ItemSpawnEggs extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public boolean requiresMultipleRenderPasses() {
-        return true;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIconFromDamageForRenderPass(int i, int j) {
-        return j > 0 ? this.theIcon : super.getIconFromDamageForRenderPass(i, j);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
     public void getSubItems(Item i, CreativeTabs c, List l) {
         Iterator iterator = EssenceEntityList.entityEggs.values().iterator();
         while (iterator.hasNext()) {
             EssenceEntityList.EntityEggInfo entityegginfo = (EssenceEntityList.EntityEggInfo)iterator.next();
             l.add(new ItemStack(i, 1, entityegginfo.entityID));
         }
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister i) {
-    	this.itemIcon = i.registerIcon("spawn_egg");
-        this.theIcon = i.registerIcon("spawn_egg_overlay");
     }
 }

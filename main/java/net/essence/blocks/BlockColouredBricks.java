@@ -5,11 +5,14 @@ import java.util.List;
 import net.essence.EssenceTabs;
 import net.essence.items.block.ItemBlockMetadata;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
@@ -19,8 +22,6 @@ public class BlockColouredBricks extends Block {
 
 	public static String[] textures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
 	public static String[] names = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
-
-	private IIcon[] icons = new IIcon[13];
 
 	public static ItemStack[] crafting = new ItemStack[] {
 			new ItemStack(Items.dye, 1, 0), new ItemStack(Items.dye, 1, 4), new ItemStack(Items.dye, 1, 3),
@@ -37,8 +38,8 @@ public class BlockColouredBricks extends Block {
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase e, ItemStack i) {
-		w.setBlock(x, y, z, this, i.getItemDamage(), 2);
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+		worldIn.setBlockState(pos, getStateFromMeta(stack.getItemDamage()), 2);
 	}
 
 	@Override
@@ -46,20 +47,9 @@ public class BlockColouredBricks extends Block {
 		for(int i = 0; i < 13; i++)
 			l.add(new ItemStack(it, 1, i));
 	}
-
-	@Override
-	public void registerBlockIcons(IIconRegister r) {
-		for(int i = 0; i < textures.length; i++)
-			icons[i] = r.registerIcon(SlayerAPI.PREFIX + "bricks/large/brick_" + textures[i]);
-	}
-
-	@Override
-	public IIcon getIcon(int side, int meta) {
-		return icons[meta];
-	}
 	
 	@Override
-	public int damageDropped(int m) {
-		return m;
+	public int damageDropped(IBlockState state) {
+		return state.getBlock().getMetaFromState(this.getDefaultState());
 	}
 }

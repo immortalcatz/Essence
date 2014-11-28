@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -41,14 +42,14 @@ public class BlockStatue extends BlockMod {
 	}
 	
 	@Override
-	public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer p, int i, float f, float f1, float f2) {
+	public boolean onBlockActivated(World w, BlockPos pos, IBlockState state, EntityPlayer p, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if(!w.isRemote) EnumSounds.playSound(sound.getPrefixedName(), w, p);
 		return true;
 	}
 
 	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
-		Block b = w.getBlockState(x, y, z);
+	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
+		Block b = worldIn.getBlockState(pos).getBlock();
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
 
