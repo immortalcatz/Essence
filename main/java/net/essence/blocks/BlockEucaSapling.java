@@ -6,13 +6,15 @@ import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.util.ForgeDirection;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.block.BlockMod;
 
@@ -26,16 +28,15 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public void updateTick(World w, int x, int y, int z, Random r)  {
+	public void updateTick(World w, BlockPos pos, IBlockState s, Random r)  {
 		if(!w.isRemote) {
-			super.updateTick(w, x, y, z, r);
-
-			if(w.getBlockLightValue(x, y + 1, z) >= 9 && r.nextInt(12) == 0)
-				this.generate(w, x, y, z, r);
+			super.updateTick(w, pos, s, r);
+			if(w.getLightFromNeighbors(pos.offsetUp()) >= 9 && r.nextInt(9) == 0)
+				this.generate(w, pos, r);
 		}
 	}
 
-	private void generate(World w, int x, int y, int z, Random r) {
+	private void generate(World w, BlockPos pos, Random r) {
 		Object tree = new WorldGenBigEucaTree();
 		switch(r.nextInt(2)) {
 		case 0:
@@ -45,21 +46,20 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 			tree = new WorldGenSmallEucaTree();
 			break;
 		}
-		((WorldGenerator)tree).generate(w, r, x, y, z);
+		((WorldGenerator)tree).generate(w, r, pos);
+	}
+	
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		return super.canPlaceBlockAt(worldIn, pos) && this.canBlockStay(worldIn, pos);
 	}
 
-	@Override
-	public boolean canPlaceBlockAt(World w, int x, int y, int z) {
-		return super.canPlaceBlockAt(w, x, y, z) && this.canBlockStay(w, x, y, z);
+	public boolean canBlockStay(World w, BlockPos pos) {
+		return w.getBlockState(pos.offsetDown()).getBlock().canSustainPlant(w, new BlockPos(pos.offsetDown()), EnumFacing.UP, this);
 	}
-
+	
 	@Override
-	public boolean canBlockStay(World w, int x, int y, int z) {
-		return w.getBlock(x, y - 1, z).canSustainPlant(w, x, y - 1, z, ForgeDirection.UP, this);
-	}
-
-	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World w, int x, int y, int z) {
+	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
 	}
 
@@ -69,7 +69,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public boolean renderAsNormalBlock() {
+	public boolean isFullCube() {
 		return false;
 	}
 
@@ -79,32 +79,27 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public boolean func_149851_a(World w, int x, int y, int z, boolean b) {
-		return true;
-	}
-
-	@Override
-	public boolean func_149852_a(World w, Random r, int x, int y, int z) {
-		return (double)r.nextFloat() < 0.45D;
-	}
-
-	@Override
-	public void func_149853_b(World w, Random r, int x, int y, int z) {
-		generate(w, x, y, z, r);
-	}
-
-	@Override
-	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
 		return EnumPlantType.Plains;
 	}
 
 	@Override
-	public Block getPlant(IBlockAccess world, int x, int y, int z) {
-		return this;
+	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
+		return world.getBlockState(pos);
 	}
 
 	@Override
-	public int getPlantMetadata(IBlockAccess world, int x, int y, int z) {
-		return world.getBlockMetadata(x, y, z);
+	public boolean isStillGrowing(World worldIn, BlockPos p_176473_2_, IBlockState p_176473_3_, boolean p_176473_4_) {
+		return true;
+	}
+
+	@Override
+	public boolean canUseBonemeal(World worldIn, Random p_180670_2_, BlockPos p_180670_3_, IBlockState p_180670_4_) {
+		return true;
+	}
+
+	@Override
+	public void grow(World w, Random r, BlockPos p, IBlockState p_176474_4_) {
+		generate(w, p, r);
 	}
 }

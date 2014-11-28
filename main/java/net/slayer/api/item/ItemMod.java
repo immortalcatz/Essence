@@ -28,7 +28,6 @@ public class ItemMod extends Item {
 
 	public ItemMod(String name, String textureName, CreativeTabs tab){
 		setUnlocalizedName(name);
-		setTextureName(SlayerAPI.PREFIX + textureName);
 		setCreativeTab(tab);
 		GameRegistry.registerItem(this, name);
 	}

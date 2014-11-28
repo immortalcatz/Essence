@@ -12,9 +12,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -151,9 +151,8 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 
 	public final void genBiomeTerrain(World w, Random rand, Block[] blocks, byte[] bytes, int i, int j, double d, BiomeGenBase b) {
 		boolean flag = true;
-		Block block = b.topBlock;
-		byte b0 = (byte)(b.field_150604_aj & 255);
-		Block block1 = b.fillerBlock;
+		Block block = b.topBlock.getBlock();
+		Block block1 = b.fillerBlock.getBlock();
 		int k = -1;
 		int l = (int)(d / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 		int i1 = i & 15;
@@ -171,28 +170,19 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 						if(k == -1) {
 							if(l <= 0) {
 								block = null;
-								b0 = 0;
 								block1 = EssenceBlocks.frozenStone;
 							}
 							else if(l1 >= 59 && l1 <= 64) {
-								block = b.topBlock;
-								b0 = (byte)(b.field_150604_aj & 255);
-								block1 = b.fillerBlock;
+								block = b.topBlock.getBlock();
+								block1 = b.fillerBlock.getBlock();
 							}
 
 							if(l1 < 63 && (block == null || block.getMaterial() == Material.air)) {
-								if(b.getFloatTemperature(i, l1, j) < 0.15F) {
-									block = Blocks.ice;
-									b0 = 0;
-								} else {
 									block = EssenceBlocks.frozenStone;
-									b0 = 0;
-								}
 							}
 							k = l;
 							if(l1 >= 62) {
 								blocks[i2] = block;
-								bytes[i2] = b0;
 							}
 							else if(l1 < 56 - l) {
 								block = null;
@@ -219,11 +209,6 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public Chunk loadChunk(int par1, int par2) {
-		return this.provideChunk(par1, par2);
-	}
-
-	@Override
 	public Chunk provideChunk(int par1, int par2) {
 		this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
 		Block[] ablock = new Block[65536];
@@ -231,7 +216,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		this.generate(par1, par2, ablock);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
-		Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);
+		Chunk chunk = new Chunk(this.worldObj, par1, par2);
 		byte[] abyte1 = chunk.getBiomeArray();
 
 		for(int k = 0; k < abyte1.length; ++k)
@@ -267,12 +252,12 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 				for(int l1 = -b0; l1 <= b0; ++l1) {
 					for(int i2 = -b0; i2 <= b0; ++i2) {
 						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
-						float f3 = biomegenbase1.rootHeight;
-						float f4 = biomegenbase1.heightVariation;
+						float f3 = biomegenbase1.minHeight;
+						float f4 = biomegenbase1.maxHeight;
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
-						if(biomegenbase1.rootHeight > biomegenbase.rootHeight)
+						if(biomegenbase1.minHeight > biomegenbase.minHeight)
 							f5 /= 2.0F;
 
 						f += f4 * f5;
@@ -351,19 +336,19 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int x, y, z, times;
 		
 		if(rand.nextInt(100) == 0){
-			y = this.worldObj.getHeightValue(x1, z1);
+			y = (int) this.worldObj.getHorizon();
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
-				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
 		}
 		
 		for(times = 0; times < 2; times++){
-			y = this.worldObj.getHeightValue(x1, z1);
+			y = (int) this.worldObj.getHorizon();
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.frozenGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
-				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, x, y - 1, z);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
 		}
 	}
 
@@ -391,21 +376,31 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public List getPossibleCreatures(EnumCreatureType c, int x, int y, int z) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(x, z);
-		return biomegenbase.getSpawnableList(c);
-	}
-
-	@Override
-	public ChunkPosition func_147416_a(World w, String s, int x, int y, int z) {
-		return null;
-	}
-
-	@Override
 	public int getLoadedChunkCount() {
 		return 0;
 	}
 
 	@Override
-	public void recreateStructures(int par1, int par2) {  }
+	public Chunk func_177459_a(BlockPos pos) {
+		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
+	}
+
+	@Override
+	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
+		return false;
+	}
+
+	@Override
+	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
+		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
+		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	}
+
+	@Override
+	public BlockPos func_180513_a(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
+		return null;
+	}
+
+	@Override
+	public void func_180514_a(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
 }

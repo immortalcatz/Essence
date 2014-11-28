@@ -8,12 +8,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class EntityBoilPotalFX extends EntityFX {
+public class EntityFrozenPotalFX extends EntityFX {
 	
     private float portalParticleScale;
     private double portalPosX, portalPosY, portalPosZ;
 
-    public EntityBoilPotalFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+    public EntityFrozenPotalFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
         super(var1, var2, var4, var6, var8, var10, var12);
         this.motionX = var8;
         this.motionY = var10;
@@ -30,7 +30,7 @@ public class EntityBoilPotalFX extends EntityFX {
         this.noClip = true;
         this.setParticleTextureIndex((int)(Math.random() * 8.0D));
     }
-    
+
     @Override
     public void func_180434_a(WorldRenderer p_180434_1_, Entity p_180434_2_, float par2, float p_180434_4_, float p_180434_5_, float p_180434_6_, float p_180434_7_, float p_180434_8_) {
     	float var8 = (this.particleAge + par2) / this.particleMaxAge * 3;

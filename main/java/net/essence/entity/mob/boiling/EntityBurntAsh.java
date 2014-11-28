@@ -6,6 +6,7 @@ import net.essence.entity.MobStats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -44,9 +45,10 @@ public class EntityBurntAsh extends EntityModMob{
 	}
 	
 	@Override
-	protected void attackEntity(Entity e, float a) {
-		super.attackEntity(e, a);
-		((EntityPlayer)e).setFire(5 + rand.nextInt(7));
+	public boolean attackEntityFrom(DamageSource e, float a) {
+		if(e.getSourceOfDamage() instanceof EntityPlayer)
+			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
+		return super.attackEntityFrom(e, a);
 	}
 	
 	@Override

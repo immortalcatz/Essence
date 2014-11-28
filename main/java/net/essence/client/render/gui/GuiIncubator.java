@@ -42,11 +42,30 @@ public class GuiIncubator extends GuiContainer {
         int i1;
 
         if(this.tileFurnace.isBurning()) {
-            i1 = this.tileFurnace.getBurnTimeRemainingScaled(12);
+            i1 = this.func_175382_i(12);
             this.drawTexturedModalRect(k + 57, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
         }
 
-        i1 = this.tileFurnace.getCookProgressScaled(24);
+        i1 = this.func_175381_h(24);
         this.drawTexturedModalRect(k + 79, l + 35, 176, 14, i1 + 1, 16);
+    }
+    
+    private int func_175381_h(int p_175381_1_)
+    {
+        int j = this.tileFurnace.getField(2);
+        int k = this.tileFurnace.getField(3);
+        return k != 0 && j != 0 ? j * p_175381_1_ / k : 0;
+    }
+    
+    private int func_175382_i(int p_175382_1_)
+    {
+        int j = this.tileFurnace.getField(1);
+
+        if (j == 0)
+        {
+            j = 200;
+        }
+
+        return this.tileFurnace.getField(0) * p_175382_1_ / j;
     }
 }

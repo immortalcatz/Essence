@@ -49,4 +49,9 @@ public class WorldProviderEuca extends WorldProvider {
     public String getDimensionName() {
         return "Euca";
     }
+
+	@Override
+	public String getInternalNameSuffix() {
+		return "Euca";
+	}
 }

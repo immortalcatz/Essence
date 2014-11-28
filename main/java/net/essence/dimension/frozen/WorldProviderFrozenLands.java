@@ -49,4 +49,9 @@ public class WorldProviderFrozenLands extends WorldProvider {
     public String getDimensionName() {
         return "Frozen Lands";
     }
+
+	@Override
+	public String getInternalNameSuffix() {
+		return "Frozen Lands";
+	}
 }

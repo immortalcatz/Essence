@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
@@ -11,7 +12,8 @@ import net.slayer.api.worldgen.WorldGenAPI;
 public class WorldGenPresent extends WorldGenerator {
 
 	@Override
-	public boolean generate(World w, Random r, int x, int y, int z) {
+	public boolean generate(World w, Random r, BlockPos pos) {
+		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
 		y = y + 1;
 		int glass1 = r.nextInt(13), glass2 = r.nextInt(13);
 		if(glass2 == glass1) glass2 = r.nextInt(13);

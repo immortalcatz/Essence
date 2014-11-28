@@ -6,9 +6,10 @@ import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 
@@ -62,9 +63,9 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 				for (int j1 = x - b0; j1 <= x + b0 && flag; ++j1) {
 					for (int k1 = z - b0; k1 <= z + b0 && flag; ++k1) {
 						if (i1 >= 0 && i1 < 256) {
-							Block block = w.getBlock(j1, i1, k1);
+							Block block = w.getBlockState(new BlockPos(j1, i1, k1)).getBlock();
 
-							if (!this.isReplaceable(w, j1, i1, k1)) {
+							if (!this.isReplaceable(w, new BlockPos(j1, i1, k1))) {
 								flag = false;
 							}
 						} else {
@@ -80,9 +81,9 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 	}
 
 	private boolean grow(World w, Random r, int x, int y, int z) {
-		Block block = w.getBlock(x, y - 1, z);
+		Block block = w.getBlockState(new BlockPos(x, y - 1, z)).getBlock();
 
-		boolean isSoil = block.canSustainPlant(w, x, y - 1, z, ForgeDirection.UP, (BlockSapling)Blocks.sapling);
+		boolean isSoil = block.canSustainPlant(w, new BlockPos(x, y - 1, z), EnumFacing.UP, (BlockSapling)Blocks.sapling);
 		if (isSoil && y >= 2) {
 			onPlantGrow(w, x, y - 1, z, x, y, z);
 			onPlantGrow(w, x + 1, y - 1, z, x, y, z);
@@ -110,10 +111,10 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 				int k2 = i2 - 1;
 
 				if (k1 * k1 + i2 * i2 <= i1 || j2 * j2 + k2 * k2 <= i1 || k1 * k1 + k2 * k2 <= i1 || j2 * j2 + i2 * i2 <= i1) {
-					Block block = w.getBlock(j1, y, l1);
+					Block block = w.getBlockState(new BlockPos(j1, y, l1)).getBlock();
 
-					if (block.isAir(w, j1, y, l1) || block.isLeaves(w, j1, y, l1)) {
-						this.setBlockAndNotifyAdequately(w, j1, y, l1, leaves, 0);
+					if (block.isAir(w, new BlockPos(j1, y, l1)) || block.isLeaves(w, new BlockPos(j1, y, l1))) {
+						this.func_175905_a(w, new BlockPos(j1, y, l1), leaves, 0);
 					}
 				}
 			}
@@ -130,10 +131,10 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 				int i2 = l1 - z;
 
 				if (k1 * k1 + i2 * i2 <= i1) {
-					Block block = w.getBlock(j1, y, l1);
+					Block block = w.getBlockState(new BlockPos(j1, y, l1)).getBlock();
 
-					if (block.isAir(w, j1, y, l1) || block.isLeaves(w, j1, y, l1)) {
-						this.setBlockAndNotifyAdequately(w, j1, y, l1, leaves, 0);
+					if (block.isAir(w, new BlockPos(j1, y, l1)) || block.isLeaves(w, new BlockPos(j1, y, l1))) {
+						this.func_175905_a(w, new BlockPos(j1, y, l1), leaves, 0);
 					}
 				}
 			}
@@ -141,6 +142,6 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 	}
 
 	private void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		world.getBlock(x, y, z).onPlantGrow(world, x, y, z, sourceX, sourceY, sourceZ);
+		world.getBlockState(new BlockPos(x, y, z)).getBlock().onPlantGrow(world, new BlockPos(x, y, z), new BlockPos(sourceX, sourceY, sourceZ));
 	}
 }

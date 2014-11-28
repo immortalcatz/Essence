@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -212,14 +213,14 @@ public class MapGenBoilingCaves extends MapGenBase {
     }
 
     private boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ) {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
+        BiomeGenBase biome = worldObj.getBiomeGenForCoords(new BlockPos(x + chunkX * 16, y, z + chunkZ * 16));
         return (isExceptionBiome(biome) ? data[index] == Blocks.grass : data[index] == biome.topBlock);
     }
 
     protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        Block top    = (isExceptionBiome(biome) ? EssenceBlocks.hotBlock : biome.topBlock);
-        Block filler = (isExceptionBiome(biome) ? EssenceBlocks.hotBlock  : biome.fillerBlock);
+        BiomeGenBase biome = worldObj.getBiomeGenForCoords(new BlockPos(x + chunkX * 16, y, z + chunkZ * 16));
+        Block top    = (Block) (isExceptionBiome(biome) ? EssenceBlocks.hotBlock : biome.topBlock);
+        Block filler = (Block)(isExceptionBiome(biome) ? EssenceBlocks.hotBlock  : biome.fillerBlock);
         Block block  = data[index];
 
         if (block == EssenceBlocks.ashBlock || block == filler || block == top) {

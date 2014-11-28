@@ -30,9 +30,9 @@ public class ItemTeleport extends ItemMod {
 		float var4 = par3.rotationPitch;
 		float var5 = par3.rotationYaw;
 		double var6 = par3.posX;
-		double var8 = par3.posY + 1.62D - (double)par3.yOffset;
+		double var8 = par3.posY + 1.62D;
 		double var10 = par3.posZ;
-		Vec3 var12 = Vec3.createVectorHelper(var6, var8, var10);
+		Vec3 var12 = new Vec3(var6, var8, var10);
 		float var13 = MathHelper.cos(-var5 * 0.01745329F - (float)Math.PI);
 		float var14 = MathHelper.sin(-var5 * 0.01745329F - (float)Math.PI);
 		float var15 = -MathHelper.cos(-var4 * 0.01745329F);
@@ -47,10 +47,10 @@ public class ItemTeleport extends ItemMod {
 			return par1;
 		} else {
 			if (var22.typeOfHit == MovingObjectType.BLOCK) {
-				int var23 = var22.blockX;
-				int var24 = var22.blockY;
-				int var25 = var22.blockZ;
-				int var26 = var22.sideHit;
+				int var23 = var22.func_178782_a().getX();
+				int var24 = var22.func_178782_a().getY();
+				int var25 = var22.func_178782_a().getZ();
+				int var26 = var22.subHit;
 
 				if (var26 == 0) --var24;                
 				if (var26 == 1) ++var24;               

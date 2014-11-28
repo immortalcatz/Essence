@@ -2,15 +2,11 @@ package net.essence.dimension.boil;
 
 import net.essence.dimension.DimensionHelper;
 import net.essence.util.Config;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderBoiling extends WorldProvider {
 
@@ -22,7 +18,7 @@ public class WorldProviderBoiling extends WorldProvider {
 	}
 	
 	@Override
-	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
+	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
 		return false;
 	}
 	
@@ -32,7 +28,7 @@ public class WorldProviderBoiling extends WorldProvider {
 	}
 	
 	@Override
-	public boolean canSnowAt(int x, int y, int z, boolean checkLight) {
+	public boolean canSnowAt(BlockPos pos, boolean checkLight) {
 		return false;
 	}
 
@@ -78,6 +74,11 @@ public class WorldProviderBoiling extends WorldProvider {
 
 	@Override
 	public String getDimensionName() {
+		return "Boiling Point";
+	}
+
+	@Override
+	public String getInternalNameSuffix() {
 		return "Boiling Point";
 	}
 }

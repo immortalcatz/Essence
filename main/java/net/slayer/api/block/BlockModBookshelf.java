@@ -9,18 +9,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModBookshelf extends BlockBookshelf {
 	
-	private Block tex;
-
-    public BlockModBookshelf(String name, Block top) {
-        this.tex = top;
+    public BlockModBookshelf(String name) {
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.blocks);
         setStepSound(Block.soundTypeWood);
         GameRegistry.registerBlock(this, name);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta) {
-        return side != 1 && side != 0 ? super.getIcon(side, meta) : tex.getBlockTextureFromSide(side);
     }
 }

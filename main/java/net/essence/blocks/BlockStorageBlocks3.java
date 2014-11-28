@@ -3,28 +3,25 @@ package net.essence.blocks;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.items.block.ItemStorageBlockMetadata;
 import net.essence.items.block.ItemStorageBlockMetadata3;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockStorageBlocks3 extends Block {
 
 	public static String[] names = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
 	public static String[] allFinalNames = {"Cactus", "Brick", "Bookshelf", "Glowstone", "Red Sand", "Sand", "Sponge", "Soul Sand", "TNT", "Stone", "Waterlilly"};
 	
-	private IIcon[] icons = new IIcon[12];
-
 	public static ItemStack[] crafting = new ItemStack[] {new ItemStack(Blocks.cactus), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.bookshelf), new ItemStack(Blocks.glowstone), new ItemStack(Blocks.sand, 1, 1)
 	, new ItemStack(Blocks.sand), new ItemStack(Blocks.sponge), new ItemStack(Blocks.soul_sand), new ItemStack(Blocks.tnt), new ItemStack(Blocks.stone)
 	, new ItemStack(Blocks.waterlily)};
@@ -40,11 +37,6 @@ public class BlockStorageBlocks3 extends Block {
 		setHardness(1.0F);
 		GameRegistry.registerBlock(this, ItemStorageBlockMetadata3.class, "blockStorageBlocks3");
 	}
-	
-	@Override
-	public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase e, ItemStack i) {
-		w.setBlock(x, y, z, this, i.getItemDamage(), 2);
-	}
 
 	@Override
 	public void getSubBlocks(Item it, CreativeTabs c, List l) {
@@ -53,18 +45,12 @@ public class BlockStorageBlocks3 extends Block {
 	}
 
 	@Override
-	public void registerBlockIcons(IIconRegister r) {
-		for(int i = 0; i < names.length; i++)
-			icons[i] = r.registerIcon(SlayerAPI.PREFIX + "storage/" + names[i]);
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+		worldIn.setBlockState(pos, getStateFromMeta(stack.getItemDamage()), 2);
 	}
 
 	@Override
-	public IIcon getIcon(int side, int meta) {
-		return icons[meta];
-	}
-	
-	@Override
-	public int damageDropped(int m) {
-		return m;
+	public int damageDropped(IBlockState state) {
+		return state.getBlock().getMetaFromState(this.getDefaultState());
 	}
 }

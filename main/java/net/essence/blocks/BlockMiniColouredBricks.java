@@ -42,13 +42,13 @@ public class BlockMiniColouredBricks extends Block {
 	}
 
 	@Override
-	public void getSubBlocks(Item it, CreativeTabs c, List l) {
-		for(int i = 0; i < 13; i++)
-			l.add(new ItemStack(it, 1, i));
+	public int damageDropped(IBlockState state) {
+		return state.getBlock().getMetaFromState(this.getDefaultState());
 	}
 	
 	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getBlock().getMetaFromState(this.getDefaultState());
+	public void getSubBlocks(Item it, CreativeTabs c, List l) {
+		for(int i = 0; i < 13; i++)
+			l.add(new ItemStack(it, 1, i));
 	}
 }

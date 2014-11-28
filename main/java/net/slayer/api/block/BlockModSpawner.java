@@ -5,11 +5,12 @@ import java.util.Random;
 import net.essence.EssenceTabs;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockModSpawner extends BlockContainer {
 
@@ -24,8 +25,7 @@ public class BlockModSpawner extends BlockContainer {
         super(Material.rock);
         this.name = name;
         this.mobName = mobName;
-        setBlockName(name);
-        setBlockTextureName(SlayerAPI.PREFIX + textureName);
+        setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.blocks);
         GameRegistry.registerBlock(this, name);
     }
@@ -38,7 +38,7 @@ public class BlockModSpawner extends BlockContainer {
     }
 
     protected void setEntityName(TileEntityMobSpawner spawner) {
-        spawner.func_145881_a().setEntityName(mobName);
+        spawner.getSpawnerBaseLogic().setEntityName(mobName);
     }
 
     @Override
@@ -47,10 +47,10 @@ public class BlockModSpawner extends BlockContainer {
     }
 
     @Override
-    public void dropBlockAsItemWithChance(World world, int x, int y, int z, int par5, float par6, int par7) {
-        super.dropBlockAsItemWithChance(world, x, y, z, par5, par6, par7);
+    public void dropBlockAsItemWithChance(World world, BlockPos pos, IBlockState par5, float par6, int par7) {
+        super.dropBlockAsItemWithChance(world, pos, par5, par6, par7);
         int var8 = 15 + world.rand.nextInt(15) + world.rand.nextInt(15);
-        this.dropXpOnBlockBreak(world, x, y, z, var8);
+        this.dropXpOnBlockBreak(world, pos, var8);
     }
 
     @Override

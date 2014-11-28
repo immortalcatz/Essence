@@ -1,6 +1,7 @@
 package net.essence.client.render.gui;
 
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -20,17 +21,17 @@ public class ProgressBar {
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);
 		GL11.glPushMatrix();
-		Tessellator tessellator = Tessellator.instance;
+		WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
 		GL11.glDisable(3553);
 		tessellator.startDrawingQuads();
-		tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 1.0F);
+		//tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 1.0F);
 		tessellator.addVertex(x-width/2, y, 0.0);
 		tessellator.addVertex(x-width/2, y+height, 0.0);
 		tessellator.addVertex(x + width/2, y+height, 0.0);
 		tessellator.addVertex(x + width/2, y, 0.0);
 		
 		int barWidth = (int) (((float) value) / ((float) maxValue) * (((float) width) - 6f));
-		tessellator.setColorRGBA_F(1.0f-((float)value/(float)maxValue)*0.8F, 0.2F+((float)value/(float)maxValue)*0.8F, 0.2F, 1.0F);
+		//tessellator.setColorRGBA_F(1.0f-((float)value/(float)maxValue)*0.8F, 0.2F+((float)value/(float)maxValue)*0.8F, 0.2F, 1.0F);
 		tessellator.addVertex(x - width/2+3, y+3, 0.0);
 		tessellator.addVertex(x - width/2+3, y+height-3, 0.0);
 		tessellator.addVertex(x - width/2+3+barWidth, y+height-3, 0.0);

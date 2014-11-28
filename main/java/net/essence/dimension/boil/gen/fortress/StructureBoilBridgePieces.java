@@ -1,6 +1,5 @@
 package net.essence.dimension.boil.gen.fortress;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -8,13 +7,19 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
+
+import com.google.common.collect.Lists;
 
 public class StructureBoilBridgePieces
 {
@@ -24,79 +29,79 @@ public class StructureBoilBridgePieces
 
     public static void registerBoilFortressPieces()
     {
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Crossing3.class, "BNeBCr");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.End.class, "BNeBEF");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Straight.class, "BNeBS");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Corridor3.class, "BNeCCS");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Corridor4.class, "BNeCTB");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Entrance.class, "BNeCE");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Crossing2.class, "BNeSCSC");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Corridor.class, "BNeSCLT");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Corridor5.class, "BNeSC");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Corridor2.class, "BNeSCRT");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.NetherStalkRoom.class, "BNeCSR");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Throne.class, "BNeMT");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Crossing.class, "BNeRC");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Stairs.class, "BNeSR");
-        MapGenStructureIO.func_143031_a(StructureBoilBridgePieces.Start.class, "BNeStart");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Crossing3.class, "BNeBCr");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.End.class, "BNeBEF");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Straight.class, "BNeBS");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Corridor3.class, "BNeCCS");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Corridor4.class, "BNeCTB");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Entrance.class, "BNeCE");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Crossing2.class, "BNeSCSC");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Corridor.class, "BNeSCLT");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Corridor5.class, "BNeSC");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Corridor2.class, "BNeSCRT");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.NetherStalkRoom.class, "BNeCSR");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Throne.class, "BNeMT");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Crossing.class, "BNeRC");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Stairs.class, "BNeSR");
+        MapGenStructureIO.registerStructureComponent(StructureBoilBridgePieces.Start.class, "BNeStart");
     }
 
-    private static StructureBoilBridgePieces.Piece createNextComponentRandom(StructureBoilBridgePieces.PieceWeight p_78738_0_, List p_78738_1_, Random p_78738_2_, int p_78738_3_, int p_78738_4_, int p_78738_5_, int p_78738_6_, int p_78738_7_)
+    private static StructureBoilBridgePieces.Piece func_175887_b(StructureBoilBridgePieces.PieceWeight p_175887_0_, List p_175887_1_, Random p_175887_2_, int p_175887_3_, int p_175887_4_, int p_175887_5_, EnumFacing p_175887_6_, int p_175887_7_)
     {
-        Class oclass = p_78738_0_.weightClass;
+        Class oclass = p_175887_0_.weightClass;
         Object object = null;
 
         if (oclass == StructureBoilBridgePieces.Straight.class)
         {
-            object = StructureBoilBridgePieces.Straight.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Straight.func_175882_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Crossing3.class)
         {
-            object = StructureBoilBridgePieces.Crossing3.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Crossing3.func_175885_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Crossing.class)
         {
-            object = StructureBoilBridgePieces.Crossing.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Crossing.func_175873_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Stairs.class)
         {
-            object = StructureBoilBridgePieces.Stairs.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Stairs.func_175872_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_7_, p_175887_6_);
         }
         else if (oclass == StructureBoilBridgePieces.Throne.class)
         {
-            object = StructureBoilBridgePieces.Throne.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Throne.func_175874_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_7_, p_175887_6_);
         }
         else if (oclass == StructureBoilBridgePieces.Entrance.class)
         {
-            object = StructureBoilBridgePieces.Entrance.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Entrance.func_175881_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Corridor5.class)
         {
-            object = StructureBoilBridgePieces.Corridor5.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Corridor5.func_175877_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Corridor2.class)
         {
-            object = StructureBoilBridgePieces.Corridor2.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Corridor2.func_175876_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Corridor.class)
         {
-            object = StructureBoilBridgePieces.Corridor.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Corridor.func_175879_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Corridor3.class)
         {
-            object = StructureBoilBridgePieces.Corridor3.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Corridor3.func_175883_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Corridor4.class)
         {
-            object = StructureBoilBridgePieces.Corridor4.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Corridor4.func_175880_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.Crossing2.class)
         {
-            object = StructureBoilBridgePieces.Crossing2.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.Crossing2.func_175878_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
         else if (oclass == StructureBoilBridgePieces.NetherStalkRoom.class)
         {
-            object = StructureBoilBridgePieces.NetherStalkRoom.createValidComponent(p_78738_1_, p_78738_2_, p_78738_3_, p_78738_4_, p_78738_5_, p_78738_6_, p_78738_7_);
+            object = StructureBoilBridgePieces.NetherStalkRoom.func_175875_a(p_175887_1_, p_175887_2_, p_175887_3_, p_175887_4_, p_175887_5_, p_175887_6_, p_175887_7_);
         }
 
         return (StructureBoilBridgePieces.Piece)object;
@@ -109,84 +114,62 @@ public class StructureBoilBridgePieces
 
             public Corridor() {}
 
-            public Corridor(int p_i2049_1_, Random p_i2049_2_, StructureBoundingBox p_i2049_3_, int p_i2049_4_)
+            public Corridor(int p_i45615_1_, Random p_i45615_2_, StructureBoundingBox p_i45615_3_, EnumFacing p_i45615_4_)
             {
-                super(p_i2049_1_);
-                this.coordBaseMode = p_i2049_4_;
-                this.boundingBox = p_i2049_3_;
-                this.field_111021_b = p_i2049_2_.nextInt(3) == 0;
+                super(p_i45615_1_);
+                this.coordBaseMode = p_i45615_4_;
+                this.boundingBox = p_i45615_3_;
+                this.field_111021_b = p_i45615_2_.nextInt(3) == 0;
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_)
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_)
             {
-                super.func_143011_b(p_143011_1_);
+                super.readStructureFromNBT(p_143011_1_);
                 this.field_111021_b = p_143011_1_.getBoolean("Chest");
             }
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_)
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_)
             {
-                super.func_143012_a(p_143012_1_);
+                super.writeStructureToNBT(p_143012_1_);
                 p_143012_1_.setBoolean("Chest", this.field_111021_b);
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentX((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 0, 1, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Corridor createValidComponent(List p_74978_0_, Random p_74978_1_, int p_74978_2_, int p_74978_3_, int p_74978_4_, int p_74978_5_, int p_74978_6_)
+            public static StructureBoilBridgePieces.Corridor func_175879_a(List p_175879_0_, Random p_175879_1_, int p_175879_2_, int p_175879_3_, int p_175879_4_, EnumFacing p_175879_5_, int p_175879_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74978_2_, p_74978_3_, p_74978_4_, -1, 0, 0, 5, 7, 5, p_74978_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74978_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor(p_74978_6_, p_74978_1_, structureboundingbox, p_74978_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175879_2_, p_175879_3_, p_175879_4_, -1, 0, 0, 5, 7, 5, p_175879_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175879_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor(p_175879_6_, p_175879_1_, structureboundingbox, p_175879_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 4, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 3, 4, 4, 3, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 0, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 4, 3, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 3, 4, 1, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 3, 4, 3, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick, false);
-                int i;
-                int j;
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 4, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 3, 4, 4, 3, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 0, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 4, 3, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 3, 4, 1, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 3, 3, 4, 3, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
-                if (this.field_111021_b)
+                if (this.field_111021_b && p_74875_3_.func_175898_b(new BlockPos(this.getXWithOffset(3, 3), this.getYWithOffset(2), this.getZWithOffset(3, 3))))
                 {
-                    i = this.getYWithOffset(2);
-                    j = this.getXWithOffset(3, 3);
-                    int k = this.getZWithOffset(3, 3);
-
-                    if (p_74875_3_.isVecInside(j, i, k))
-                    {
-                        this.field_111021_b = false;
-                        this.generateStructureChestContents(p_74875_1_, p_74875_3_, p_74875_2_, 3, 2, 3, field_111019_a, 2 + p_74875_2_.nextInt(4));
-                    }
+                    this.field_111021_b = false;
+                    this.func_180778_a(worldIn, p_74875_3_, p_74875_2_, 3, 2, 3, field_111019_a, 2 + p_74875_2_.nextInt(4));
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
-                for (i = 0; i <= 4; ++i)
+                for (int i = 0; i <= 4; ++i)
                 {
-                    for (j = 0; j <= 4; ++j)
+                    for (int j = 0; j <= 4; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -201,84 +184,62 @@ public class StructureBoilBridgePieces
 
             public Corridor2() {}
 
-            public Corridor2(int p_i2051_1_, Random p_i2051_2_, StructureBoundingBox p_i2051_3_, int p_i2051_4_)
+            public Corridor2(int p_i45613_1_, Random p_i45613_2_, StructureBoundingBox p_i45613_3_, EnumFacing p_i45613_4_)
             {
-                super(p_i2051_1_);
-                this.coordBaseMode = p_i2051_4_;
-                this.boundingBox = p_i2051_3_;
-                this.field_111020_b = p_i2051_2_.nextInt(3) == 0;
+                super(p_i45613_1_);
+                this.coordBaseMode = p_i45613_4_;
+                this.boundingBox = p_i45613_3_;
+                this.field_111020_b = p_i45613_2_.nextInt(3) == 0;
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_)
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_)
             {
-                super.func_143011_b(p_143011_1_);
+                super.readStructureFromNBT(p_143011_1_);
                 this.field_111020_b = p_143011_1_.getBoolean("Chest");
             }
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_)
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_)
             {
-                super.func_143012_a(p_143012_1_);
+                super.writeStructureToNBT(p_143012_1_);
                 p_143012_1_.setBoolean("Chest", this.field_111020_b);
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 0, 1, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Corridor2 createValidComponent(List p_74980_0_, Random p_74980_1_, int p_74980_2_, int p_74980_3_, int p_74980_4_, int p_74980_5_, int p_74980_6_)
+            public static StructureBoilBridgePieces.Corridor2 func_175876_a(List p_175876_0_, Random p_175876_1_, int p_175876_2_, int p_175876_3_, int p_175876_4_, EnumFacing p_175876_5_, int p_175876_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74980_2_, p_74980_3_, p_74980_4_, -1, 0, 0, 5, 7, 5, p_74980_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74980_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor2(p_74980_6_, p_74980_1_, structureboundingbox, p_74980_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175876_2_, p_175876_3_, p_175876_4_, -1, 0, 0, 5, 7, 5, p_175876_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175876_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor2(p_175876_6_, p_175876_1_, structureboundingbox, p_175876_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 0, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 3, 0, 4, 3, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 4, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 2, 4, 4, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 3, 4, 1, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 3, 4, 3, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick, false);
-                int i;
-                int j;
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 0, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 3, 0, 4, 3, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 4, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 2, 4, 4, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 3, 4, 1, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 3, 3, 4, 3, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
-                if (this.field_111020_b)
+                if (this.field_111020_b && p_74875_3_.func_175898_b(new BlockPos(this.getXWithOffset(1, 3), this.getYWithOffset(2), this.getZWithOffset(1, 3))))
                 {
-                    i = this.getYWithOffset(2);
-                    j = this.getXWithOffset(1, 3);
-                    int k = this.getZWithOffset(1, 3);
-
-                    if (p_74875_3_.isVecInside(j, i, k))
-                    {
-                        this.field_111020_b = false;
-                        this.generateStructureChestContents(p_74875_1_, p_74875_3_, p_74875_2_, 1, 2, 3, field_111019_a, 2 + p_74875_2_.nextInt(4));
-                    }
+                    this.field_111020_b = false;
+                    this.func_180778_a(worldIn, p_74875_3_, p_74875_2_, 1, 2, 3, field_111019_a, 2 + p_74875_2_.nextInt(4));
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
-                for (i = 0; i <= 4; ++i)
+                for (int i = 0; i <= 4; ++i)
                 {
-                    for (j = 0; j <= 4; ++j)
+                    for (int j = 0; j <= 4; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -292,38 +253,25 @@ public class StructureBoilBridgePieces
 
             public Corridor3() {}
 
-            public Corridor3(int p_i2045_1_, Random p_i2045_2_, StructureBoundingBox p_i2045_3_, int p_i2045_4_)
+            public Corridor3(int p_i45619_1_, Random p_i45619_2_, StructureBoundingBox p_i45619_3_, EnumFacing p_i45619_4_)
             {
-                super(p_i2045_1_);
-                this.coordBaseMode = p_i2045_4_;
-                this.boundingBox = p_i2045_3_;
+                super(p_i45619_1_);
+                this.coordBaseMode = p_i45619_4_;
+                this.boundingBox = p_i45619_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 1, 0, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Corridor3 createValidComponent(List p_74982_0_, Random p_74982_1_, int p_74982_2_, int p_74982_3_, int p_74982_4_, int p_74982_5_, int p_74982_6_)
+            public static StructureBoilBridgePieces.Corridor3 func_175883_a(List p_175883_0_, Random p_175883_1_, int p_175883_2_, int p_175883_3_, int p_175883_4_, EnumFacing p_175883_5_, int p_175883_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74982_2_, p_74982_3_, p_74982_4_, -1, -7, 0, 5, 14, 10, p_74982_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74982_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor3(p_74982_6_, p_74982_1_, structureboundingbox, p_74982_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175883_2_, p_175883_3_, p_175883_4_, -1, -7, 0, 5, 14, 10, p_175883_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175883_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor3(p_175883_6_, p_175883_1_, structureboundingbox, p_175883_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 int i = this.getMetadataWithOffset(EssenceBlocks.hotBrick_stairs, 2);
 
@@ -332,29 +280,29 @@ public class StructureBoilBridgePieces
                     int k = Math.max(1, 7 - j);
                     int l = Math.min(Math.max(k + 5, 14 - j), 13);
                     int i1 = j;
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, j, 4, k, j, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, k + 1, j, 3, l - 1, j, Blocks.air, Blocks.air, false);
+                    this.func_175804_a(worldIn, p_74875_3_, 0, 0, j, 4, k, j, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 1, k + 1, j, 3, l - 1, j, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
 
                     if (j <= 6)
                     {
-                        this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, i, 1, k + 1, j, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, i, 2, k + 1, j, p_74875_3_);
-                        this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, i, 3, k + 1, j, p_74875_3_);
+                        this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(i), 1, k + 1, j, p_74875_3_);
+                        this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(i), 2, k + 1, j, p_74875_3_);
+                        this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(i), 3, k + 1, j, p_74875_3_);
                     }
 
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, l, j, 4, l, j, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, k + 1, j, 0, l - 1, j, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, k + 1, j, 4, l - 1, j, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                    this.func_175804_a(worldIn, p_74875_3_, 0, l, j, 4, l, j, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 0, k + 1, j, 0, l - 1, j, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 4, k + 1, j, 4, l - 1, j, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                     if ((j & 1) == 0)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, k + 2, j, 0, k + 3, j, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, k + 2, j, 4, k + 3, j, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                        this.func_175804_a(worldIn, p_74875_3_, 0, k + 2, j, 0, k + 3, j, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                        this.func_175804_a(worldIn, p_74875_3_, 4, k + 2, j, 4, k + 3, j, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
                     }
 
                     for (int j1 = 0; j1 <= 4; ++j1)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, j1, -1, i1, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), j1, -1, i1, p_74875_3_);
                     }
                 }
 
@@ -368,21 +316,18 @@ public class StructureBoilBridgePieces
 
             public Corridor4() {}
 
-            public Corridor4(int p_i2046_1_, Random p_i2046_2_, StructureBoundingBox p_i2046_3_, int p_i2046_4_)
+            public Corridor4(int p_i45618_1_, Random p_i45618_2_, StructureBoundingBox p_i45618_3_, EnumFacing p_i45618_4_)
             {
-                super(p_i2046_1_);
-                this.coordBaseMode = p_i2046_4_;
-                this.boundingBox = p_i2046_3_;
+                super(p_i45618_1_);
+                this.coordBaseMode = p_i45618_4_;
+                this.boundingBox = p_i45618_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 byte b0 = 1;
 
-                if (this.coordBaseMode == 1 || this.coordBaseMode == 2)
+                if (this.coordBaseMode == EnumFacing.WEST || this.coordBaseMode == EnumFacing.NORTH)
                 {
                     b0 = 5;
                 }
@@ -391,49 +336,39 @@ public class StructureBoilBridgePieces
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 0, b0, p_74861_3_.nextInt(8) > 0);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Corridor4 createValidComponent(List p_74985_0_, Random p_74985_1_, int p_74985_2_, int p_74985_3_, int p_74985_4_, int p_74985_5_, int p_74985_6_)
+            public static StructureBoilBridgePieces.Corridor4 func_175880_a(List p_175880_0_, Random p_175880_1_, int p_175880_2_, int p_175880_3_, int p_175880_4_, EnumFacing p_175880_5_, int p_175880_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74985_2_, p_74985_3_, p_74985_4_, -3, 0, 0, 9, 7, 9, p_74985_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74985_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor4(p_74985_6_, p_74985_1_, structureboundingbox, p_74985_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175880_2_, p_175880_3_, p_175880_4_, -3, 0, 0, 9, 7, 9, p_175880_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175880_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor4(p_175880_6_, p_175880_1_, structureboundingbox, p_175880_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 8, 1, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 8, 5, 8, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 0, 8, 6, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 2, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 2, 0, 8, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 3, 0, 1, 4, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 3, 0, 7, 4, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 4, 8, 2, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 1, 4, 2, 2, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 1, 4, 7, 2, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 8, 8, 3, 8, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 6, 0, 3, 7, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 3, 6, 8, 3, 7, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 4, 0, 5, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 3, 4, 8, 5, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 3, 5, 2, 5, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 3, 5, 7, 5, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 4, 5, 1, 5, 5, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 4, 5, 7, 5, 5, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 8, 1, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 8, 5, 8, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 0, 8, 6, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 2, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 2, 0, 8, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 3, 0, 1, 4, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 3, 0, 7, 4, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 4, 8, 2, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 1, 4, 2, 2, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 1, 4, 7, 2, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 8, 8, 3, 8, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 6, 0, 3, 7, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 3, 6, 8, 3, 7, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 4, 0, 5, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 3, 4, 8, 5, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 3, 5, 2, 5, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 3, 5, 7, 5, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 4, 5, 1, 5, 5, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 4, 5, 7, 5, 5, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
 
                 for (int i = 0; i <= 5; ++i)
                 {
                     for (int j = 0; j <= 8; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, j, -1, i, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), j, -1, i, p_74875_3_);
                     }
                 }
 
@@ -447,54 +382,41 @@ public class StructureBoilBridgePieces
 
             public Corridor5() {}
 
-            public Corridor5(int p_i2050_1_, Random p_i2050_2_, StructureBoundingBox p_i2050_3_, int p_i2050_4_)
+            public Corridor5(int p_i45614_1_, Random p_i45614_2_, StructureBoundingBox p_i45614_3_, EnumFacing p_i45614_4_)
             {
-                super(p_i2050_1_);
-                this.coordBaseMode = p_i2050_4_;
-                this.boundingBox = p_i2050_3_;
+                super(p_i45614_1_);
+                this.coordBaseMode = p_i45614_4_;
+                this.boundingBox = p_i45614_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 1, 0, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Corridor5 createValidComponent(List p_74981_0_, Random p_74981_1_, int p_74981_2_, int p_74981_3_, int p_74981_4_, int p_74981_5_, int p_74981_6_)
+            public static StructureBoilBridgePieces.Corridor5 func_175877_a(List p_175877_0_, Random p_175877_1_, int p_175877_2_, int p_175877_3_, int p_175877_4_, EnumFacing p_175877_5_, int p_175877_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74981_2_, p_74981_3_, p_74981_4_, -1, 0, 0, 5, 7, 5, p_74981_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74981_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor5(p_74981_6_, p_74981_1_, structureboundingbox, p_74981_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175877_2_, p_175877_3_, p_175877_4_, -1, 0, 0, 5, 7, 5, p_175877_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175877_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Corridor5(p_175877_6_, p_175877_1_, structureboundingbox, p_175877_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 0, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 4, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 3, 0, 4, 3, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 3, 4, 4, 3, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 0, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 4, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 3, 0, 4, 3, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 3, 4, 4, 3, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                 for (int i = 0; i <= 4; ++i)
                 {
                     for (int j = 0; j <= 4; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -508,16 +430,13 @@ public class StructureBoilBridgePieces
 
             public Crossing() {}
 
-            public Crossing(int p_i2057_1_, Random p_i2057_2_, StructureBoundingBox p_i2057_3_, int p_i2057_4_)
+            public Crossing(int p_i45610_1_, Random p_i45610_2_, StructureBoundingBox p_i45610_3_, EnumFacing p_i45610_4_)
             {
-                super(p_i2057_1_);
-                this.coordBaseMode = p_i2057_4_;
-                this.boundingBox = p_i2057_3_;
+                super(p_i45610_1_);
+                this.coordBaseMode = p_i45610_4_;
+                this.boundingBox = p_i45610_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 2, 0, false);
@@ -525,48 +444,38 @@ public class StructureBoilBridgePieces
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 0, 2, false);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Crossing createValidComponent(List p_74974_0_, Random p_74974_1_, int p_74974_2_, int p_74974_3_, int p_74974_4_, int p_74974_5_, int p_74974_6_)
+            public static StructureBoilBridgePieces.Crossing func_175873_a(List p_175873_0_, Random p_175873_1_, int p_175873_2_, int p_175873_3_, int p_175873_4_, EnumFacing p_175873_5_, int p_175873_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74974_2_, p_74974_3_, p_74974_4_, -2, 0, 0, 7, 9, 7, p_74974_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74974_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing(p_74974_6_, p_74974_1_, structureboundingbox, p_74974_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175873_2_, p_175873_3_, p_175873_4_, -2, 0, 0, 7, 9, 7, p_175873_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175873_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing(p_175873_6_, p_175873_1_, structureboundingbox, p_175873_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 6, 1, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 6, 7, 6, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 1, 6, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 6, 1, 6, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 2, 0, 6, 6, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 2, 6, 6, 6, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 0, 6, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 5, 0, 6, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 2, 0, 6, 6, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 2, 5, 6, 6, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 6, 0, 4, 6, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 0, 4, 5, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 6, 6, 4, 6, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 6, 4, 5, 6, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 2, 0, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 2, 0, 5, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 6, 2, 6, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 5, 2, 6, 5, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 6, 1, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 6, 7, 6, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 1, 6, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 6, 1, 6, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 2, 0, 6, 6, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 2, 6, 6, 6, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 0, 6, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 5, 0, 6, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 2, 0, 6, 6, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 2, 5, 6, 6, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 6, 0, 4, 6, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 0, 4, 5, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 6, 6, 4, 6, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 6, 4, 5, 6, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 2, 0, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 2, 0, 5, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 6, 2, 6, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 5, 2, 6, 5, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
 
                 for (int i = 0; i <= 6; ++i)
                 {
                     for (int j = 0; j <= 6; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -580,16 +489,13 @@ public class StructureBoilBridgePieces
 
             public Crossing2() {}
 
-            public Crossing2(int p_i2048_1_, Random p_i2048_2_, StructureBoundingBox p_i2048_3_, int p_i2048_4_)
+            public Crossing2(int p_i45616_1_, Random p_i45616_2_, StructureBoundingBox p_i45616_3_, EnumFacing p_i45616_4_)
             {
-                super(p_i2048_1_);
-                this.coordBaseMode = p_i2048_4_;
-                this.boundingBox = p_i2048_3_;
+                super(p_i45616_1_);
+                this.coordBaseMode = p_i45616_4_;
+                this.boundingBox = p_i45616_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 1, 0, true);
@@ -597,37 +503,27 @@ public class StructureBoilBridgePieces
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 0, 1, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Crossing2 createValidComponent(List p_74979_0_, Random p_74979_1_, int p_74979_2_, int p_74979_3_, int p_74979_4_, int p_74979_5_, int p_74979_6_)
+            public static StructureBoilBridgePieces.Crossing2 func_175878_a(List p_175878_0_, Random p_175878_1_, int p_175878_2_, int p_175878_3_, int p_175878_4_, EnumFacing p_175878_5_, int p_175878_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74979_2_, p_74979_3_, p_74979_4_, -1, 0, 0, 5, 7, 5, p_74979_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74979_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing2(p_74979_6_, p_74979_1_, structureboundingbox, p_74979_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175878_2_, p_175878_3_, p_175878_4_, -1, 0, 0, 5, 7, 5, p_175878_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175878_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing2(p_175878_6_, p_175878_1_, structureboundingbox, p_175878_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 0, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 4, 5, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 4, 0, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 4, 4, 5, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 4, 1, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 4, 5, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 0, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 4, 5, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 4, 0, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 4, 4, 5, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 0, 4, 6, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                 for (int i = 0; i <= 4; ++i)
                 {
                     for (int j = 0; j <= 4; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -641,21 +537,21 @@ public class StructureBoilBridgePieces
 
             public Crossing3() {}
 
-            public Crossing3(int p_i2041_1_, Random p_i2041_2_, StructureBoundingBox p_i2041_3_, int p_i2041_4_)
+            public Crossing3(int p_i45622_1_, Random p_i45622_2_, StructureBoundingBox p_i45622_3_, EnumFacing p_i45622_4_)
             {
-                super(p_i2041_1_);
-                this.coordBaseMode = p_i2041_4_;
-                this.boundingBox = p_i2041_3_;
+                super(p_i45622_1_);
+                this.coordBaseMode = p_i45622_4_;
+                this.boundingBox = p_i45622_3_;
             }
 
             protected Crossing3(Random p_i2042_1_, int p_i2042_2_, int p_i2042_3_)
             {
                 super(0);
-                this.coordBaseMode = p_i2042_1_.nextInt(4);
+                this.coordBaseMode = EnumFacing.Plane.HORIZONTAL.random(p_i2042_1_);
 
-                switch (this.coordBaseMode)
+                switch (StructureBoilBridgePieces.SwitchEnumFacing.field_175888_a[this.coordBaseMode.ordinal()])
                 {
-                    case 0:
+                    case 1:
                     case 2:
                         this.boundingBox = new StructureBoundingBox(p_i2042_2_, 64, p_i2042_3_, p_i2042_2_ + 19 - 1, 73, p_i2042_3_ + 19 - 1);
                         break;
@@ -664,9 +560,6 @@ public class StructureBoilBridgePieces
                 }
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 8, 3, false);
@@ -674,40 +567,30 @@ public class StructureBoilBridgePieces
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 3, 8, false);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Crossing3 createValidComponent(List p_74966_0_, Random p_74966_1_, int p_74966_2_, int p_74966_3_, int p_74966_4_, int p_74966_5_, int p_74966_6_)
+            public static StructureBoilBridgePieces.Crossing3 func_175885_a(List p_175885_0_, Random p_175885_1_, int p_175885_2_, int p_175885_3_, int p_175885_4_, EnumFacing p_175885_5_, int p_175885_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74966_2_, p_74966_3_, p_74966_4_, -8, -3, 0, 19, 10, 19, p_74966_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74966_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing3(p_74966_6_, p_74966_1_, structureboundingbox, p_74966_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175885_2_, p_175885_3_, p_175885_4_, -8, -3, 0, 19, 10, 19, p_175885_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175885_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Crossing3(p_175885_6_, p_175885_1_, structureboundingbox, p_175885_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 3, 0, 11, 4, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 7, 18, 4, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 0, 10, 7, 18, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 8, 18, 7, 10, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 5, 0, 7, 5, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 5, 11, 7, 5, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 0, 11, 5, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 11, 11, 5, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 7, 7, 5, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 7, 18, 5, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 11, 7, 5, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 11, 18, 5, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 2, 0, 11, 2, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 2, 13, 11, 2, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 0, 0, 11, 1, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 0, 15, 11, 1, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 3, 0, 11, 4, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 7, 18, 4, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 0, 10, 7, 18, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 8, 18, 7, 10, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 5, 0, 7, 5, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 5, 11, 7, 5, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 0, 11, 5, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 11, 11, 5, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 7, 7, 5, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 7, 18, 5, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 11, 7, 5, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 11, 18, 5, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 2, 0, 11, 2, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 2, 13, 11, 2, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 0, 0, 11, 1, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 0, 15, 11, 1, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 int i;
                 int j;
 
@@ -715,22 +598,22 @@ public class StructureBoilBridgePieces
                 {
                     for (j = 0; j <= 2; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, 18 - j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, 18 - j, p_74875_3_);
                     }
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 7, 5, 2, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 13, 2, 7, 18, 2, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 7, 3, 1, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 15, 0, 7, 18, 1, 11, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 7, 5, 2, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 13, 2, 7, 18, 2, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 7, 3, 1, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 15, 0, 7, 18, 1, 11, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                 for (i = 0; i <= 2; ++i)
                 {
                     for (j = 7; j <= 11; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, 18 - i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 18 - i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -745,40 +628,33 @@ public class StructureBoilBridgePieces
 
             public End() {}
 
-            public End(int p_i2043_1_, Random p_i2043_2_, StructureBoundingBox p_i2043_3_, int p_i2043_4_)
+            public End(int p_i45621_1_, Random p_i45621_2_, StructureBoundingBox p_i45621_3_, EnumFacing p_i45621_4_)
             {
-                super(p_i2043_1_);
-                this.coordBaseMode = p_i2043_4_;
-                this.boundingBox = p_i2043_3_;
-                this.fillSeed = p_i2043_2_.nextInt();
+                super(p_i45621_1_);
+                this.coordBaseMode = p_i45621_4_;
+                this.boundingBox = p_i45621_3_;
+                this.fillSeed = p_i45621_2_.nextInt();
             }
 
-            public static StructureBoilBridgePieces.End func_74971_a(List p_74971_0_, Random p_74971_1_, int p_74971_2_, int p_74971_3_, int p_74971_4_, int p_74971_5_, int p_74971_6_)
+            public static StructureBoilBridgePieces.End func_175884_a(List p_175884_0_, Random p_175884_1_, int p_175884_2_, int p_175884_3_, int p_175884_4_, EnumFacing p_175884_5_, int p_175884_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74971_2_, p_74971_3_, p_74971_4_, -1, -3, 0, 5, 10, 8, p_74971_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74971_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.End(p_74971_6_, p_74971_1_, structureboundingbox, p_74971_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175884_2_, p_175884_3_, p_175884_4_, -1, -3, 0, 5, 10, 8, p_175884_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175884_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.End(p_175884_6_, p_175884_1_, structureboundingbox, p_175884_5_) : null;
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_)
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_)
             {
-                super.func_143011_b(p_143011_1_);
+                super.readStructureFromNBT(p_143011_1_);
                 this.fillSeed = p_143011_1_.getInteger("Seed");
             }
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_)
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_)
             {
-                super.func_143012_a(p_143012_1_);
+                super.writeStructureToNBT(p_143012_1_);
                 p_143012_1_.setInteger("Seed", this.fillSeed);
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 Random random1 = new Random((long)this.fillSeed);
                 int i;
@@ -790,19 +666,19 @@ public class StructureBoilBridgePieces
                     for (j = 3; j <= 4; ++j)
                     {
                         k = random1.nextInt(8);
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, i, j, 0, i, j, k, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                        this.func_175804_a(worldIn, p_74875_3_, i, j, 0, i, j, k, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                     }
                 }
 
                 i = random1.nextInt(8);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 0, 5, i, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 0, 5, i, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 i = random1.nextInt(8);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 5, 0, 4, 5, i, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 5, 0, 4, 5, i, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                 for (i = 0; i <= 4; ++i)
                 {
                     j = random1.nextInt(5);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 2, 0, i, 2, j, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                    this.func_175804_a(worldIn, p_74875_3_, i, 2, 0, i, 2, j, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 }
 
                 for (i = 0; i <= 4; ++i)
@@ -810,7 +686,7 @@ public class StructureBoilBridgePieces
                     for (j = 0; j <= 1; ++j)
                     {
                         k = random1.nextInt(3);
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, i, j, 0, i, j, k, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                        this.func_175804_a(worldIn, p_74875_3_, i, j, 0, i, j, k, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                     }
                 }
 
@@ -824,94 +700,81 @@ public class StructureBoilBridgePieces
 
             public Entrance() {}
 
-            public Entrance(int p_i2047_1_, Random p_i2047_2_, StructureBoundingBox p_i2047_3_, int p_i2047_4_)
+            public Entrance(int p_i45617_1_, Random p_i45617_2_, StructureBoundingBox p_i45617_3_, EnumFacing p_i45617_4_)
             {
-                super(p_i2047_1_);
-                this.coordBaseMode = p_i2047_4_;
-                this.boundingBox = p_i2047_3_;
+                super(p_i45617_1_);
+                this.coordBaseMode = p_i45617_4_;
+                this.boundingBox = p_i45617_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 5, 3, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Entrance createValidComponent(List p_74984_0_, Random p_74984_1_, int p_74984_2_, int p_74984_3_, int p_74984_4_, int p_74984_5_, int p_74984_6_)
+            public static StructureBoilBridgePieces.Entrance func_175881_a(List p_175881_0_, Random p_175881_1_, int p_175881_2_, int p_175881_3_, int p_175881_4_, EnumFacing p_175881_5_, int p_175881_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74984_2_, p_74984_3_, p_74984_4_, -5, -3, 0, 13, 14, 13, p_74984_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74984_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Entrance(p_74984_6_, p_74984_1_, structureboundingbox, p_74984_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175881_2_, p_175881_3_, p_175881_4_, -5, -3, 0, 13, 14, 13, p_175881_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175881_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Entrance(p_175881_6_, p_175881_1_, structureboundingbox, p_175881_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 0, 12, 4, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 12, 13, 12, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 1, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 0, 12, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 11, 4, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 11, 10, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 9, 11, 7, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 0, 4, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 0, 10, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 9, 0, 7, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 11, 2, 10, 12, 10, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 8, 0, 7, 8, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 0, 12, 4, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 12, 13, 12, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 1, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 0, 12, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 11, 4, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 11, 10, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 9, 11, 7, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 0, 4, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 0, 10, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 9, 0, 7, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 11, 2, 10, 12, 10, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 8, 0, 7, 8, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
                 int i;
 
                 for (i = 1; i <= 11; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 10, 0, i, 11, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 10, 12, i, 11, 12, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 10, i, 0, 11, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 12, 10, i, 12, 11, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, i, 13, 0, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, i, 13, 12, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 0, 13, i, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 12, 13, i, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, i + 1, 13, 0, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, i + 1, 13, 12, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, i + 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 12, 13, i + 1, p_74875_3_);
+                    this.func_175804_a(worldIn, p_74875_3_, i, 10, 0, i, 11, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, i, 10, 12, i, 11, 12, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 0, 10, i, 0, 11, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 12, 10, i, 12, 11, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, 13, 0, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, 13, 12, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 0, 13, i, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 12, 13, i, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), i + 1, 13, 0, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), i + 1, 13, 12, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, i + 1, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 12, 13, i + 1, p_74875_3_);
                 }
 
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 0, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 12, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 0, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 12, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 12, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 12, 13, 0, p_74875_3_);
 
                 for (i = 3; i <= 9; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 7, i, 1, 8, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 7, i, 11, 8, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                    this.func_175804_a(worldIn, p_74875_3_, 1, 7, i, 1, 8, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 11, 7, i, 11, 8, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 8, 2, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 4, 12, 2, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 0, 0, 8, 1, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 0, 9, 8, 1, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 4, 3, 1, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 0, 4, 12, 1, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 8, 2, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 4, 12, 2, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 0, 0, 8, 1, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 0, 9, 8, 1, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 4, 3, 1, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 9, 0, 4, 12, 1, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 int j;
 
                 for (i = 4; i <= 8; ++i)
                 {
                     for (j = 0; j <= 2; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, 12 - j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, 12 - j, p_74875_3_);
                     }
                 }
 
@@ -919,24 +782,20 @@ public class StructureBoilBridgePieces
                 {
                     for (j = 4; j <= 8; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, 12 - i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 12 - i, -1, j, p_74875_3_);
                     }
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 5, 5, 7, 5, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 1, 6, 6, 4, 6, Blocks.air, Blocks.air, false);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 6, 0, 6, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, Blocks.flowing_lava, 0, 6, 5, 6, p_74875_3_);
-                i = this.getXWithOffset(6, 6);
-                j = this.getYWithOffset(5);
-                int k = this.getZWithOffset(6, 6);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 5, 5, 7, 5, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 1, 6, 6, 4, 6, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 6, 0, 6, p_74875_3_);
+                this.func_175811_a(worldIn, Blocks.flowing_lava.getDefaultState(), 6, 5, 6, p_74875_3_);
+                BlockPos blockpos = new BlockPos(this.getXWithOffset(6, 6), this.getYWithOffset(5), this.getZWithOffset(6, 6));
 
-                if (p_74875_3_.isVecInside(i, j, k))
+                if (p_74875_3_.func_175898_b(blockpos))
                 {
-                    p_74875_1_.scheduledUpdatesAreImmediate = true;
-                    Blocks.flowing_lava.updateTick(p_74875_1_, i, j, k, p_74875_2_);
-                    p_74875_1_.scheduledUpdatesAreImmediate = false;
+                    worldIn.func_175637_a(Blocks.flowing_lava, blockpos, p_74875_2_);
                 }
 
                 return true;
@@ -949,78 +808,65 @@ public class StructureBoilBridgePieces
 
             public NetherStalkRoom() {}
 
-            public NetherStalkRoom(int p_i2052_1_, Random p_i2052_2_, StructureBoundingBox p_i2052_3_, int p_i2052_4_)
+            public NetherStalkRoom(int p_i45612_1_, Random p_i45612_2_, StructureBoundingBox p_i45612_3_, EnumFacing p_i45612_4_)
             {
-                super(p_i2052_1_);
-                this.coordBaseMode = p_i2052_4_;
-                this.boundingBox = p_i2052_3_;
+                super(p_i45612_1_);
+                this.coordBaseMode = p_i45612_4_;
+                this.boundingBox = p_i45612_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 5, 3, true);
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 5, 11, true);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.NetherStalkRoom createValidComponent(List p_74977_0_, Random p_74977_1_, int p_74977_2_, int p_74977_3_, int p_74977_4_, int p_74977_5_, int p_74977_6_)
+            public static StructureBoilBridgePieces.NetherStalkRoom func_175875_a(List p_175875_0_, Random p_175875_1_, int p_175875_2_, int p_175875_3_, int p_175875_4_, EnumFacing p_175875_5_, int p_175875_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74977_2_, p_74977_3_, p_74977_4_, -5, -3, 0, 13, 14, 13, p_74977_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74977_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.NetherStalkRoom(p_74977_6_, p_74977_1_, structureboundingbox, p_74977_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175875_2_, p_175875_3_, p_175875_4_, -5, -3, 0, 13, 14, 13, p_175875_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175875_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.NetherStalkRoom(p_175875_6_, p_175875_1_, structureboundingbox, p_175875_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 0, 12, 4, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 12, 13, 12, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 1, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 5, 0, 12, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 11, 4, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 11, 10, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 9, 11, 7, 12, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 0, 4, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 0, 10, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 9, 0, 7, 12, 1, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 11, 2, 10, 12, 10, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 0, 12, 4, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 12, 13, 12, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 1, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 11, 5, 0, 12, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 11, 4, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 11, 10, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 9, 11, 7, 12, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 0, 4, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 0, 10, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 9, 0, 7, 12, 1, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 11, 2, 10, 12, 10, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 int i;
 
                 for (i = 1; i <= 11; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 10, 0, i, 11, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, i, 10, 12, i, 11, 12, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 10, i, 0, 11, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 12, 10, i, 12, 11, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, i, 13, 0, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, i, 13, 12, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 0, 13, i, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 12, 13, i, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, i + 1, 13, 0, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, i + 1, 13, 12, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, i + 1, p_74875_3_);
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 12, 13, i + 1, p_74875_3_);
+                    this.func_175804_a(worldIn, p_74875_3_, i, 10, 0, i, 11, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, i, 10, 12, i, 11, 12, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 0, 10, i, 0, 11, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 12, 10, i, 12, 11, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, 13, 0, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, 13, 12, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 0, 13, i, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 12, 13, i, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), i + 1, 13, 0, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), i + 1, 13, 12, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, i + 1, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 12, 13, i + 1, p_74875_3_);
                 }
 
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 0, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 12, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 0, 13, 0, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 12, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 12, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 0, 13, 0, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 12, 13, 0, p_74875_3_);
 
                 for (i = 3; i <= 9; i += 2)
                 {
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 7, i, 1, 8, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                    this.fillWithBlocks(p_74875_1_, p_74875_3_, 11, 7, i, 11, 8, i, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                    this.func_175804_a(worldIn, p_74875_3_, 1, 7, i, 1, 8, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                    this.func_175804_a(worldIn, p_74875_3_, 11, 7, i, 11, 8, i, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
                 }
 
                 i = this.getMetadataWithOffset(EssenceBlocks.hotBrick_stairs, 3);
@@ -1034,66 +880,66 @@ public class StructureBoilBridgePieces
 
                     for (l = 5; l <= 7; ++l)
                     {
-                        this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, i, l, 5 + j, k, p_74875_3_);
+                        this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(i), l, 5 + j, k, p_74875_3_);
                     }
 
                     if (k >= 5 && k <= 8)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 5, k, 7, j + 4, k, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                        this.func_175804_a(worldIn, p_74875_3_, 5, 5, k, 7, j + 4, k, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                     }
                     else if (k >= 9 && k <= 10)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 8, k, 7, j + 4, k, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                        this.func_175804_a(worldIn, p_74875_3_, 5, 8, k, 7, j + 4, k, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                     }
 
                     if (j >= 1)
                     {
-                        this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 6 + j, k, 7, 9 + j, k, Blocks.air, Blocks.air, false);
+                        this.func_175804_a(worldIn, p_74875_3_, 5, 6 + j, k, 7, 9 + j, k, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
                     }
                 }
 
                 for (j = 5; j <= 7; ++j)
                 {
-                    this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, i, j, 12, 11, p_74875_3_);
+                    this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(i), j, 12, 11, p_74875_3_);
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 6, 7, 5, 7, 7, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 7, 6, 7, 7, 7, 7, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 13, 12, 7, 13, 12, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 2, 3, 5, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 9, 3, 5, 10, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 4, 2, 5, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 5, 2, 10, 5, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 5, 9, 10, 5, 10, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 10, 5, 4, 10, 5, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 6, 7, 5, 7, 7, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 7, 6, 7, 7, 7, 7, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 13, 12, 7, 13, 12, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 2, 3, 5, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 9, 3, 5, 10, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 4, 2, 5, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 9, 5, 2, 10, 5, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 9, 5, 9, 10, 5, 10, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 10, 5, 4, 10, 5, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 j = this.getMetadataWithOffset(EssenceBlocks.hotBrick_stairs, 0);
                 k = this.getMetadataWithOffset(EssenceBlocks.hotBrick_stairs, 1);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, k, 4, 5, 2, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, k, 4, 5, 3, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, k, 4, 5, 9, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, k, 4, 5, 10, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, j, 8, 5, 2, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, j, 8, 5, 3, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, j, 8, 5, 9, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_stairs, j, 8, 5, 10, p_74875_3_);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 4, 4, 4, 4, 8, Blocks.soul_sand, Blocks.soul_sand, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 4, 4, 9, 4, 8, Blocks.soul_sand, Blocks.soul_sand, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 5, 4, 4, 5, 8, Blocks.nether_wart, Blocks.nether_wart, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 8, 5, 4, 9, 5, 8, Blocks.nether_wart, Blocks.nether_wart, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 0, 8, 2, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 4, 12, 2, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 0, 0, 8, 1, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 0, 9, 8, 1, 12, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 4, 3, 1, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 9, 0, 4, 12, 1, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(k), 4, 5, 2, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(k), 4, 5, 3, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(k), 4, 5, 9, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(k), 4, 5, 10, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(j), 8, 5, 2, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(j), 8, 5, 3, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(j), 8, 5, 9, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_stairs.getStateFromMeta(j), 8, 5, 10, p_74875_3_);
+                this.func_175804_a(worldIn, p_74875_3_, 3, 4, 4, 4, 4, 8, Blocks.soul_sand.getDefaultState(), Blocks.soul_sand.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 4, 4, 9, 4, 8, Blocks.soul_sand.getDefaultState(), Blocks.soul_sand.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 3, 5, 4, 4, 5, 8, Blocks.nether_wart.getDefaultState(), Blocks.nether_wart.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 8, 5, 4, 9, 5, 8, Blocks.nether_wart.getDefaultState(), Blocks.nether_wart.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 0, 8, 2, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 4, 12, 2, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 0, 0, 8, 1, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 0, 9, 8, 1, 12, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 4, 3, 1, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 9, 0, 4, 12, 1, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
                 int i1;
 
                 for (l = 4; l <= 8; ++l)
                 {
                     for (i1 = 0; i1 <= 2; ++i1)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, l, -1, i1, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, l, -1, 12 - i1, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), l, -1, i1, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), l, -1, 12 - i1, p_74875_3_);
                     }
                 }
 
@@ -1101,8 +947,8 @@ public class StructureBoilBridgePieces
                 {
                     for (i1 = 4; i1 <= 8; ++i1)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, l, -1, i1, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, 12 - l, -1, i1, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), l, -1, i1, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 12 - l, -1, i1, p_74875_3_);
                     }
                 }
 
@@ -1112,7 +958,7 @@ public class StructureBoilBridgePieces
 
     abstract static class Piece extends StructureComponent
         {
-            protected static final WeightedRandomChestContent[] field_111019_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.diamond, 0, 1, 3, 5), new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 5), new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 3, 15), new WeightedRandomChestContent(Items.golden_sword, 0, 1, 1, 5), new WeightedRandomChestContent(Items.golden_chestplate, 0, 1, 1, 5), new WeightedRandomChestContent(Items.flint_and_steel, 0, 1, 1, 5), new WeightedRandomChestContent(Items.nether_wart, 0, 3, 7, 5), new WeightedRandomChestContent(Items.saddle, 0, 1, 1, 10), new WeightedRandomChestContent(Items.golden_horse_armor, 0, 1, 1, 8), new WeightedRandomChestContent(Items.iron_horse_armor, 0, 1, 1, 5), new WeightedRandomChestContent(Items.diamond_horse_armor, 0, 1, 1, 3)};
+            protected static final List field_111019_a = Lists.newArrayList(new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.diamond, 0, 1, 3, 5), new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 5), new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 3, 15), new WeightedRandomChestContent(Items.golden_sword, 0, 1, 1, 5), new WeightedRandomChestContent(Items.golden_chestplate, 0, 1, 1, 5), new WeightedRandomChestContent(Items.flint_and_steel, 0, 1, 1, 5), new WeightedRandomChestContent(Items.nether_wart, 0, 3, 7, 5), new WeightedRandomChestContent(Items.saddle, 0, 1, 1, 10), new WeightedRandomChestContent(Items.golden_horse_armor, 0, 1, 1, 8), new WeightedRandomChestContent(Items.iron_horse_armor, 0, 1, 1, 5), new WeightedRandomChestContent(Items.diamond_horse_armor, 0, 1, 1, 3), new WeightedRandomChestContent(Item.getItemFromBlock(Blocks.obsidian), 0, 2, 4, 2)});
             private static final String __OBFID = "CL_00000466";
 
             public Piece() {}
@@ -1122,9 +968,9 @@ public class StructureBoilBridgePieces
                 super(p_i2054_1_);
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_) {}
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_) {}
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_) {}
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_) {}
 
             private int getTotalWeight(List p_74960_1_)
             {
@@ -1145,40 +991,40 @@ public class StructureBoilBridgePieces
                 return flag ? i : -1;
             }
 
-            private StructureBoilBridgePieces.Piece getNextComponent(StructureBoilBridgePieces.Start p_74959_1_, List p_74959_2_, List p_74959_3_, Random p_74959_4_, int p_74959_5_, int p_74959_6_, int p_74959_7_, int p_74959_8_, int p_74959_9_)
+            private StructureBoilBridgePieces.Piece func_175871_a(StructureBoilBridgePieces.Start p_175871_1_, List p_175871_2_, List p_175871_3_, Random p_175871_4_, int p_175871_5_, int p_175871_6_, int p_175871_7_, EnumFacing p_175871_8_, int p_175871_9_)
             {
-                int j1 = this.getTotalWeight(p_74959_2_);
-                boolean flag = j1 > 0 && p_74959_9_ <= 30;
-                int k1 = 0;
+                int i1 = this.getTotalWeight(p_175871_2_);
+                boolean flag = i1 > 0 && p_175871_9_ <= 30;
+                int j1 = 0;
 
-                while (k1 < 5 && flag)
+                while (j1 < 5 && flag)
                 {
-                    ++k1;
-                    int l1 = p_74959_4_.nextInt(j1);
-                    Iterator iterator = p_74959_2_.iterator();
+                    ++j1;
+                    int k1 = p_175871_4_.nextInt(i1);
+                    Iterator iterator = p_175871_2_.iterator();
 
                     while (iterator.hasNext())
                     {
                         StructureBoilBridgePieces.PieceWeight pieceweight = (StructureBoilBridgePieces.PieceWeight)iterator.next();
-                        l1 -= pieceweight.field_78826_b;
+                        k1 -= pieceweight.field_78826_b;
 
-                        if (l1 < 0)
+                        if (k1 < 0)
                         {
-                            if (!pieceweight.func_78822_a(p_74959_9_) || pieceweight == p_74959_1_.theNetherBridgePieceWeight && !pieceweight.field_78825_e)
+                            if (!pieceweight.func_78822_a(p_175871_9_) || pieceweight == p_175871_1_.theNetherBridgePieceWeight && !pieceweight.field_78825_e)
                             {
                                 break;
                             }
 
-                            StructureBoilBridgePieces.Piece piece = StructureBoilBridgePieces.createNextComponentRandom(pieceweight, p_74959_3_, p_74959_4_, p_74959_5_, p_74959_6_, p_74959_7_, p_74959_8_, p_74959_9_);
+                            StructureBoilBridgePieces.Piece piece = StructureBoilBridgePieces.func_175887_b(pieceweight, p_175871_3_, p_175871_4_, p_175871_5_, p_175871_6_, p_175871_7_, p_175871_8_, p_175871_9_);
 
                             if (piece != null)
                             {
                                 ++pieceweight.field_78827_c;
-                                p_74959_1_.theNetherBridgePieceWeight = pieceweight;
+                                p_175871_1_.theNetherBridgePieceWeight = pieceweight;
 
                                 if (!pieceweight.func_78823_a())
                                 {
-                                    p_74959_2_.remove(pieceweight);
+                                    p_175871_2_.remove(pieceweight);
                                 }
 
                                 return piece;
@@ -1187,102 +1033,96 @@ public class StructureBoilBridgePieces
                     }
                 }
 
-                return StructureBoilBridgePieces.End.func_74971_a(p_74959_3_, p_74959_4_, p_74959_5_, p_74959_6_, p_74959_7_, p_74959_8_, p_74959_9_);
+                return StructureBoilBridgePieces.End.func_175884_a(p_175871_3_, p_175871_4_, p_175871_5_, p_175871_6_, p_175871_7_, p_175871_8_, p_175871_9_);
             }
 
-            /**
-             * Finds a random component to tack on to the bridge. Or builds the end.
-             */
-            private StructureComponent getNextComponent(StructureBoilBridgePieces.Start p_74962_1_, List p_74962_2_, Random p_74962_3_, int p_74962_4_, int p_74962_5_, int p_74962_6_, int p_74962_7_, int p_74962_8_, boolean p_74962_9_)
+            private StructureComponent func_175870_a(StructureBoilBridgePieces.Start p_175870_1_, List p_175870_2_, Random p_175870_3_, int p_175870_4_, int p_175870_5_, int p_175870_6_, EnumFacing p_175870_7_, int p_175870_8_, boolean p_175870_9_)
             {
-                if (Math.abs(p_74962_4_ - p_74962_1_.getBoundingBox().minX) <= 112 && Math.abs(p_74962_6_ - p_74962_1_.getBoundingBox().minZ) <= 112)
+                if (Math.abs(p_175870_4_ - p_175870_1_.getBoundingBox().minX) <= 112 && Math.abs(p_175870_6_ - p_175870_1_.getBoundingBox().minZ) <= 112)
                 {
-                    List list1 = p_74962_1_.primaryWeights;
+                    List list1 = p_175870_1_.primaryWeights;
 
-                    if (p_74962_9_)
+                    if (p_175870_9_)
                     {
-                        list1 = p_74962_1_.secondaryWeights;
+                        list1 = p_175870_1_.secondaryWeights;
                     }
 
-                    StructureBoilBridgePieces.Piece piece = this.getNextComponent(p_74962_1_, list1, p_74962_2_, p_74962_3_, p_74962_4_, p_74962_5_, p_74962_6_, p_74962_7_, p_74962_8_ + 1);
+                    StructureBoilBridgePieces.Piece piece = this.func_175871_a(p_175870_1_, list1, p_175870_2_, p_175870_3_, p_175870_4_, p_175870_5_, p_175870_6_, p_175870_7_, p_175870_8_ + 1);
 
                     if (piece != null)
                     {
-                        p_74962_2_.add(piece);
-                        p_74962_1_.field_74967_d.add(piece);
+                        p_175870_2_.add(piece);
+                        p_175870_1_.field_74967_d.add(piece);
                     }
 
                     return piece;
                 }
                 else
                 {
-                    return StructureBoilBridgePieces.End.func_74971_a(p_74962_2_, p_74962_3_, p_74962_4_, p_74962_5_, p_74962_6_, p_74962_7_, p_74962_8_);
+                    return StructureBoilBridgePieces.End.func_175884_a(p_175870_2_, p_175870_3_, p_175870_4_, p_175870_5_, p_175870_6_, p_175870_7_, p_175870_8_);
                 }
             }
 
-            /**
-             * Gets the next component in any cardinal direction
-             */
             protected StructureComponent getNextComponentNormal(StructureBoilBridgePieces.Start p_74963_1_, List p_74963_2_, Random p_74963_3_, int p_74963_4_, int p_74963_5_, boolean p_74963_6_)
             {
-                switch (this.coordBaseMode)
+                if (this.coordBaseMode != null)
                 {
-                    case 0:
-                        return this.getNextComponent(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX + p_74963_4_, this.boundingBox.minY + p_74963_5_, this.boundingBox.maxZ + 1, this.coordBaseMode, this.getComponentType(), p_74963_6_);
-                    case 1:
-                        return this.getNextComponent(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ + p_74963_4_, this.coordBaseMode, this.getComponentType(), p_74963_6_);
-                    case 2:
-                        return this.getNextComponent(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX + p_74963_4_, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ - 1, this.coordBaseMode, this.getComponentType(), p_74963_6_);
-                    case 3:
-                        return this.getNextComponent(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ + p_74963_4_, this.coordBaseMode, this.getComponentType(), p_74963_6_);
-                    default:
-                        return null;
+                    switch (StructureBoilBridgePieces.SwitchEnumFacing.field_175888_a[this.coordBaseMode.ordinal()])
+                    {
+                        case 1:
+                            return this.func_175870_a(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX + p_74963_4_, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ - 1, this.coordBaseMode, this.getComponentType(), p_74963_6_);
+                        case 2:
+                            return this.func_175870_a(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX + p_74963_4_, this.boundingBox.minY + p_74963_5_, this.boundingBox.maxZ + 1, this.coordBaseMode, this.getComponentType(), p_74963_6_);
+                        case 3:
+                            return this.func_175870_a(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ + p_74963_4_, this.coordBaseMode, this.getComponentType(), p_74963_6_);
+                        case 4:
+                            return this.func_175870_a(p_74963_1_, p_74963_2_, p_74963_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74963_5_, this.boundingBox.minZ + p_74963_4_, this.coordBaseMode, this.getComponentType(), p_74963_6_);
+                    }
                 }
+
+                return null;
             }
 
-            /**
-             * Gets the next component in the +/- X direction
-             */
             protected StructureComponent getNextComponentX(StructureBoilBridgePieces.Start p_74961_1_, List p_74961_2_, Random p_74961_3_, int p_74961_4_, int p_74961_5_, boolean p_74961_6_)
             {
-                switch (this.coordBaseMode)
+                if (this.coordBaseMode != null)
                 {
-                    case 0:
-                        return this.getNextComponent(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ + p_74961_5_, 1, this.getComponentType(), p_74961_6_);
-                    case 1:
-                        return this.getNextComponent(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX + p_74961_5_, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ - 1, 2, this.getComponentType(), p_74961_6_);
-                    case 2:
-                        return this.getNextComponent(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ + p_74961_5_, 1, this.getComponentType(), p_74961_6_);
-                    case 3:
-                        return this.getNextComponent(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX + p_74961_5_, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ - 1, 2, this.getComponentType(), p_74961_6_);
-                    default:
-                        return null;
+                    switch (StructureBoilBridgePieces.SwitchEnumFacing.field_175888_a[this.coordBaseMode.ordinal()])
+                    {
+                        case 1:
+                            return this.func_175870_a(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ + p_74961_5_, EnumFacing.WEST, this.getComponentType(), p_74961_6_);
+                        case 2:
+                            return this.func_175870_a(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX - 1, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ + p_74961_5_, EnumFacing.WEST, this.getComponentType(), p_74961_6_);
+                        case 3:
+                            return this.func_175870_a(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX + p_74961_5_, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ - 1, EnumFacing.NORTH, this.getComponentType(), p_74961_6_);
+                        case 4:
+                            return this.func_175870_a(p_74961_1_, p_74961_2_, p_74961_3_, this.boundingBox.minX + p_74961_5_, this.boundingBox.minY + p_74961_4_, this.boundingBox.minZ - 1, EnumFacing.NORTH, this.getComponentType(), p_74961_6_);
+                    }
                 }
+
+                return null;
             }
 
-            /**
-             * Gets the next component in the +/- Z direction
-             */
             protected StructureComponent getNextComponentZ(StructureBoilBridgePieces.Start p_74965_1_, List p_74965_2_, Random p_74965_3_, int p_74965_4_, int p_74965_5_, boolean p_74965_6_)
             {
-                switch (this.coordBaseMode)
+                if (this.coordBaseMode != null)
                 {
-                    case 0:
-                        return this.getNextComponent(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74965_4_, this.boundingBox.minZ + p_74965_5_, 3, this.getComponentType(), p_74965_6_);
-                    case 1:
-                        return this.getNextComponent(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.minX + p_74965_5_, this.boundingBox.minY + p_74965_4_, this.boundingBox.maxZ + 1, 0, this.getComponentType(), p_74965_6_);
-                    case 2:
-                        return this.getNextComponent(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74965_4_, this.boundingBox.minZ + p_74965_5_, 3, this.getComponentType(), p_74965_6_);
-                    case 3:
-                        return this.getNextComponent(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.minX + p_74965_5_, this.boundingBox.minY + p_74965_4_, this.boundingBox.maxZ + 1, 0, this.getComponentType(), p_74965_6_);
-                    default:
-                        return null;
+                    switch (StructureBoilBridgePieces.SwitchEnumFacing.field_175888_a[this.coordBaseMode.ordinal()])
+                    {
+                        case 1:
+                            return this.func_175870_a(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74965_4_, this.boundingBox.minZ + p_74965_5_, EnumFacing.EAST, this.getComponentType(), p_74965_6_);
+                        case 2:
+                            return this.func_175870_a(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.maxX + 1, this.boundingBox.minY + p_74965_4_, this.boundingBox.minZ + p_74965_5_, EnumFacing.EAST, this.getComponentType(), p_74965_6_);
+                        case 3:
+                            return this.func_175870_a(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.minX + p_74965_5_, this.boundingBox.minY + p_74965_4_, this.boundingBox.maxZ + 1, EnumFacing.SOUTH, this.getComponentType(), p_74965_6_);
+                        case 4:
+                            return this.func_175870_a(p_74965_1_, p_74965_2_, p_74965_3_, this.boundingBox.minX + p_74965_5_, this.boundingBox.minY + p_74965_4_, this.boundingBox.maxZ + 1, EnumFacing.SOUTH, this.getComponentType(), p_74965_6_);
+                    }
                 }
+
+                return null;
             }
 
-            /**
-             * Checks if the bounding box's minY is > 10
-             */
             protected static boolean isAboveGround(StructureBoundingBox p_74964_0_)
             {
                 return p_74964_0_ != null && p_74964_0_.minY > 10;
@@ -1291,7 +1131,6 @@ public class StructureBoilBridgePieces
 
     static class PieceWeight
         {
-            /** The class of the StructureComponent to which this weight corresponds. */
             public Class weightClass;
             public final int field_78826_b;
             public int field_78827_c;
@@ -1329,64 +1168,51 @@ public class StructureBoilBridgePieces
 
             public Stairs() {}
 
-            public Stairs(int p_i2058_1_, Random p_i2058_2_, StructureBoundingBox p_i2058_3_, int p_i2058_4_)
+            public Stairs(int p_i45609_1_, Random p_i45609_2_, StructureBoundingBox p_i45609_3_, EnumFacing p_i45609_4_)
             {
-                super(p_i2058_1_);
-                this.coordBaseMode = p_i2058_4_;
-                this.boundingBox = p_i2058_3_;
+                super(p_i45609_1_);
+                this.coordBaseMode = p_i45609_4_;
+                this.boundingBox = p_i45609_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentZ((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 6, 2, false);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Stairs createValidComponent(List p_74973_0_, Random p_74973_1_, int p_74973_2_, int p_74973_3_, int p_74973_4_, int p_74973_5_, int p_74973_6_)
+            public static StructureBoilBridgePieces.Stairs func_175872_a(List p_175872_0_, Random p_175872_1_, int p_175872_2_, int p_175872_3_, int p_175872_4_, int p_175872_5_, EnumFacing p_175872_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74973_2_, p_74973_3_, p_74973_4_, -2, 0, 0, 7, 11, 7, p_74973_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74973_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Stairs(p_74973_6_, p_74973_1_, structureboundingbox, p_74973_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175872_2_, p_175872_3_, p_175872_4_, -2, 0, 0, 7, 11, 7, p_175872_6_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175872_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Stairs(p_175872_5_, p_175872_1_, structureboundingbox, p_175872_6_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 6, 1, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 6, 10, 6, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 1, 8, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 2, 0, 6, 8, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 1, 0, 8, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 2, 1, 6, 8, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 2, 6, 5, 8, 6, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 2, 0, 5, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 3, 2, 6, 5, 2, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 3, 4, 6, 5, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick, 0, 5, 2, 5, p_74875_3_);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 2, 5, 4, 3, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 3, 2, 5, 3, 4, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 2, 5, 2, 5, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 2, 5, 1, 6, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 7, 1, 5, 7, 4, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 8, 2, 6, 8, 4, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 6, 0, 4, 8, 0, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 5, 0, 4, 5, 0, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 6, 1, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 6, 10, 6, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 1, 8, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 2, 0, 6, 8, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 1, 0, 8, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 2, 1, 6, 8, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 2, 6, 5, 8, 6, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 2, 0, 5, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 3, 2, 6, 5, 2, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 3, 4, 6, 5, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick.getDefaultState(), 5, 2, 5, p_74875_3_);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 2, 5, 4, 3, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 3, 2, 5, 3, 4, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 2, 5, 2, 5, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 2, 5, 1, 6, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 7, 1, 5, 7, 4, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 8, 2, 6, 8, 4, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 6, 0, 4, 8, 0, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 5, 0, 4, 5, 0, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
 
                 for (int i = 0; i <= 6; ++i)
                 {
                     for (int j = 0; j <= 6; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 
@@ -1396,13 +1222,10 @@ public class StructureBoilBridgePieces
 
     public static class Start extends StructureBoilBridgePieces.Crossing3
         {
-            /** Instance of StructureNetherBridgePieceWeight. */
             public StructureBoilBridgePieces.PieceWeight theNetherBridgePieceWeight;
-            /** Contains the list of valid piece weights for the set of nether bridge structure pieces. */
             public List primaryWeights;
-            /** Contains the list of valid piece weights for the secondary set of nether bridge structure pieces. */
             public List secondaryWeights;
-            public ArrayList field_74967_d = new ArrayList();
+            public List field_74967_d = Lists.newArrayList();
             private static final String __OBFID = "CL_00000470";
 
             public Start() {}
@@ -1410,7 +1233,7 @@ public class StructureBoilBridgePieces
             public Start(Random p_i2059_1_, int p_i2059_2_, int p_i2059_3_)
             {
                 super(p_i2059_1_, p_i2059_2_, p_i2059_3_);
-                this.primaryWeights = new ArrayList();
+                this.primaryWeights = Lists.newArrayList();
                 StructureBoilBridgePieces.PieceWeight[] apieceweight = StructureBoilBridgePieces.primaryComponents;
                 int k = apieceweight.length;
                 int l;
@@ -1423,7 +1246,7 @@ public class StructureBoilBridgePieces
                     this.primaryWeights.add(pieceweight);
                 }
 
-                this.secondaryWeights = new ArrayList();
+                this.secondaryWeights = Lists.newArrayList();
                 apieceweight = StructureBoilBridgePieces.secondaryComponents;
                 k = apieceweight.length;
 
@@ -1435,14 +1258,14 @@ public class StructureBoilBridgePieces
                 }
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_)
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_)
             {
-                super.func_143011_b(p_143011_1_);
+                super.readStructureFromNBT(p_143011_1_);
             }
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_)
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_)
             {
-                super.func_143012_a(p_143012_1_);
+                super.writeStructureToNBT(p_143012_1_);
             }
         }
 
@@ -1452,66 +1275,98 @@ public class StructureBoilBridgePieces
 
             public Straight() {}
 
-            public Straight(int p_i2044_1_, Random p_i2044_2_, StructureBoundingBox p_i2044_3_, int p_i2044_4_)
+            public Straight(int p_i45620_1_, Random p_i45620_2_, StructureBoundingBox p_i45620_3_, EnumFacing p_i45620_4_)
             {
-                super(p_i2044_1_);
-                this.coordBaseMode = p_i2044_4_;
-                this.boundingBox = p_i2044_3_;
+                super(p_i45620_1_);
+                this.coordBaseMode = p_i45620_4_;
+                this.boundingBox = p_i45620_3_;
             }
 
-            /**
-             * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 this.getNextComponentNormal((StructureBoilBridgePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, 1, 3, false);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Straight createValidComponent(List p_74983_0_, Random p_74983_1_, int p_74983_2_, int p_74983_3_, int p_74983_4_, int p_74983_5_, int p_74983_6_)
+            public static StructureBoilBridgePieces.Straight func_175882_a(List p_175882_0_, Random p_175882_1_, int p_175882_2_, int p_175882_3_, int p_175882_4_, EnumFacing p_175882_5_, int p_175882_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74983_2_, p_74983_3_, p_74983_4_, -1, -3, 0, 5, 10, 19, p_74983_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74983_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Straight(p_74983_6_, p_74983_1_, structureboundingbox, p_74983_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175882_2_, p_175882_3_, p_175882_4_, -1, -3, 0, 5, 10, 19, p_175882_5_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175882_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Straight(p_175882_6_, p_175882_1_, structureboundingbox, p_175882_5_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 0, 4, 4, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 5, 0, 3, 7, 18, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 0, 0, 5, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 5, 0, 4, 5, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 4, 2, 5, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 13, 4, 2, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 0, 4, 1, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 0, 15, 4, 1, 18, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 0, 4, 4, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 5, 0, 3, 7, 18, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 0, 0, 5, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 5, 0, 4, 5, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 4, 2, 5, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 13, 4, 2, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 0, 4, 1, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 0, 15, 4, 1, 18, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
 
                 for (int i = 0; i <= 4; ++i)
                 {
                     for (int j = 0; j <= 2; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, 18 - j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, 18 - j, p_74875_3_);
                     }
                 }
 
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 4, 0, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 3, 14, 0, 4, 14, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 1, 17, 0, 4, 17, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 4, 4, 4, 4, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 3, 14, 4, 4, 14, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 4, 1, 17, 4, 4, 17, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 1, 1, 0, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 4, 0, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 3, 14, 0, 4, 14, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 1, 17, 0, 4, 17, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 1, 1, 4, 4, 1, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 4, 4, 4, 4, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 3, 14, 4, 4, 14, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 4, 1, 17, 4, 4, 17, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
                 return true;
+            }
+        }
+
+    static final class SwitchEnumFacing
+        {
+            static final int[] field_175888_a = new int[EnumFacing.values().length];
+            private static final String __OBFID = "CL_00001997";
+
+            static
+            {
+                try
+                {
+                    field_175888_a[EnumFacing.NORTH.ordinal()] = 1;
+                }
+                catch (NoSuchFieldError var4)
+                {
+                    ;
+                }
+
+                try
+                {
+                    field_175888_a[EnumFacing.SOUTH.ordinal()] = 2;
+                }
+                catch (NoSuchFieldError var3)
+                {
+                    ;
+                }
+
+                try
+                {
+                    field_175888_a[EnumFacing.WEST.ordinal()] = 3;
+                }
+                catch (NoSuchFieldError var2)
+                {
+                    ;
+                }
+
+                try
+                {
+                    field_175888_a[EnumFacing.EAST.ordinal()] = 4;
+                }
+                catch (NoSuchFieldError var1)
+                {
+                    ;
+                }
             }
         }
 
@@ -1522,88 +1377,74 @@ public class StructureBoilBridgePieces
 
             public Throne() {}
 
-            public Throne(int p_i2053_1_, Random p_i2053_2_, StructureBoundingBox p_i2053_3_, int p_i2053_4_)
+            public Throne(int p_i45611_1_, Random p_i45611_2_, StructureBoundingBox p_i45611_3_, EnumFacing p_i45611_4_)
             {
-                super(p_i2053_1_);
-                this.coordBaseMode = p_i2053_4_;
-                this.boundingBox = p_i2053_3_;
+                super(p_i45611_1_);
+                this.coordBaseMode = p_i45611_4_;
+                this.boundingBox = p_i45611_3_;
             }
 
-            protected void func_143011_b(NBTTagCompound p_143011_1_)
+            protected void readStructureFromNBT(NBTTagCompound p_143011_1_)
             {
-                super.func_143011_b(p_143011_1_);
+                super.readStructureFromNBT(p_143011_1_);
                 this.hasSpawner = p_143011_1_.getBoolean("Mob");
             }
 
-            protected void func_143012_a(NBTTagCompound p_143012_1_)
+            protected void writeStructureToNBT(NBTTagCompound p_143012_1_)
             {
-                super.func_143012_a(p_143012_1_);
+                super.writeStructureToNBT(p_143012_1_);
                 p_143012_1_.setBoolean("Mob", this.hasSpawner);
             }
 
-            /**
-             * Creates and returns a new component piece. Or null if it could not find enough room to place it.
-             */
-            public static StructureBoilBridgePieces.Throne createValidComponent(List p_74975_0_, Random p_74975_1_, int p_74975_2_, int p_74975_3_, int p_74975_4_, int p_74975_5_, int p_74975_6_)
+            public static StructureBoilBridgePieces.Throne func_175874_a(List p_175874_0_, Random p_175874_1_, int p_175874_2_, int p_175874_3_, int p_175874_4_, int p_175874_5_, EnumFacing p_175874_6_)
             {
-                StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_74975_2_, p_74975_3_, p_74975_4_, -2, 0, 0, 7, 8, 9, p_74975_5_);
-                /**
-                 * Checks if the bounding box's minY is > 10
-                 */
-                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_74975_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Throne(p_74975_6_, p_74975_1_, structureboundingbox, p_74975_5_) : null;
+                StructureBoundingBox structureboundingbox = StructureBoundingBox.func_175897_a(p_175874_2_, p_175874_3_, p_175874_4_, -2, 0, 0, 7, 8, 9, p_175874_6_);
+                return isAboveGround(structureboundingbox) && StructureComponent.findIntersecting(p_175874_0_, structureboundingbox) == null ? new StructureBoilBridgePieces.Throne(p_175874_5_, p_175874_1_, structureboundingbox, p_175874_6_) : null;
             }
 
-            /**
-             * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
-             * Mineshafts at the end, it adds Fences...
-             */
-            public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
+            public boolean addComponentParts(World worldIn, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 2, 0, 6, 7, 7, Blocks.air, Blocks.air, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 0, 0, 5, 1, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 2, 1, 5, 2, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 3, 2, 5, 3, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 4, 3, 5, 4, 7, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 2, 0, 1, 4, 2, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 2, 0, 5, 4, 2, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 5, 2, 1, 5, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 5, 5, 2, 5, 5, 3, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 5, 3, 0, 5, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 5, 3, 6, 5, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 5, 8, 5, 5, 8, EssenceBlocks.hotBrick, EssenceBlocks.hotBrick, false);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 1, 6, 3, p_74875_3_);
-                this.placeBlockAtCurrentPosition(p_74875_1_, EssenceBlocks.hotBrick_fence, 0, 5, 6, 3, p_74875_3_);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 0, 6, 3, 0, 6, 8, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 6, 6, 3, 6, 6, 8, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 1, 6, 8, 5, 7, 8, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                this.fillWithBlocks(p_74875_1_, p_74875_3_, 2, 8, 8, 4, 8, 8, EssenceBlocks.hotBrick_fence, EssenceBlocks.hotBrick_fence, false);
-                int i;
-                int j;
+                this.func_175804_a(worldIn, p_74875_3_, 0, 2, 0, 6, 7, 7, Blocks.air.getDefaultState(), Blocks.air.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 0, 0, 5, 1, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 2, 1, 5, 2, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 3, 2, 5, 3, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 4, 3, 5, 4, 7, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 2, 0, 1, 4, 2, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 2, 0, 5, 4, 2, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 5, 2, 1, 5, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 5, 5, 2, 5, 5, 3, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 5, 3, 0, 5, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 5, 3, 6, 5, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 5, 8, 5, 5, 8, EssenceBlocks.hotBrick.getDefaultState(), EssenceBlocks.hotBrick.getDefaultState(), false);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 1, 6, 3, p_74875_3_);
+                this.func_175811_a(worldIn, EssenceBlocks.hotBrick_fence.getDefaultState(), 5, 6, 3, p_74875_3_);
+                this.func_175804_a(worldIn, p_74875_3_, 0, 6, 3, 0, 6, 8, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 6, 6, 3, 6, 6, 8, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 1, 6, 8, 5, 7, 8, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
+                this.func_175804_a(worldIn, p_74875_3_, 2, 8, 8, 4, 8, 8, EssenceBlocks.hotBrick_fence.getDefaultState(), EssenceBlocks.hotBrick_fence.getDefaultState(), false);
 
                 if (!this.hasSpawner)
                 {
-                    i = this.getYWithOffset(5);
-                    j = this.getXWithOffset(3, 5);
-                    int k = this.getZWithOffset(3, 5);
+                    BlockPos blockpos = new BlockPos(this.getXWithOffset(3, 5), this.getYWithOffset(5), this.getZWithOffset(3, 5));
 
-                    if (p_74875_3_.isVecInside(j, i, k))
+                    if (p_74875_3_.func_175898_b(blockpos))
                     {
                         this.hasSpawner = true;
-                        p_74875_1_.setBlock(j, i, k, Blocks.mob_spawner, 0, 2);
-                        TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)p_74875_1_.getTileEntity(j, i, k);
+                        worldIn.setBlockState(blockpos, Blocks.mob_spawner.getDefaultState(), 2);
+                        TileEntity tileentity = worldIn.getTileEntity(blockpos);
 
-                        if (tileentitymobspawner != null)
+                        if (tileentity instanceof TileEntityMobSpawner)
                         {
-                            tileentitymobspawner.func_145881_a().setEntityName("Blaze");
+                            ((TileEntityMobSpawner)tileentity).getSpawnerBaseLogic().setEntityName("Blaze");
                         }
                     }
                 }
 
-                for (i = 0; i <= 6; ++i)
+                for (int i = 0; i <= 6; ++i)
                 {
-                    for (j = 0; j <= 6; ++j)
+                    for (int j = 0; j <= 6; ++j)
                     {
-                        this.func_151554_b(p_74875_1_, EssenceBlocks.hotBrick, 0, i, -1, j, p_74875_3_);
+                        this.func_175808_b(worldIn, EssenceBlocks.hotBrick.getDefaultState(), i, -1, j, p_74875_3_);
                     }
                 }
 

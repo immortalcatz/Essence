@@ -1,33 +1,30 @@
 package net.slayer.api.block;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
-import net.slayer.api.SlayerAPI;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class BlockModCrop extends BlockBush implements IGrowable {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] icons;
-	private int amountOfStages;
-	private String cropName;
+    public static PropertyInteger AGE;
 
-	public BlockModCrop(String name, int stages, String crop) {
+	public BlockModCrop(String name, int stages) {
+		PropertyInteger.create("age", 0, stages);
 		this.setTickRandomly(true);
 		float f = 0.5F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
@@ -36,132 +33,168 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 		this.setStepSound(soundTypeGrass);
 		this.disableStats();
 		GameRegistry.registerBlock(this, name);
-		amountOfStages = stages;
-		cropName = crop;
 	}
 
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        super.updateTick(worldIn, pos, state, rand);
 
-	@Override
-	protected boolean canPlaceBlockOn(Block block) {
-		return block == Blocks.farmland;
-	}
+        if (worldIn.getLightFromNeighbors(pos.offsetUp()) >= 9)
+        {
+            int i = ((Integer)state.getValue(AGE)).intValue();
 
-	@Override
-	public void updateTick(World w, int x, int y, int z, Random r) {
-		super.updateTick(w, x, y, z, r);
-		if(w.getBlockLightValue(x, y + 1, z) >= 9) {
-			int l = w.getBlockMetadata(x, y, z);
-			if(l < amountOfStages) {
-				float f = this.grow(w, x, y, z);
-				if(r.nextInt((int)(25.0F / f) + 1) == 0) {
-					++l;
-					w.setBlockMetadataWithNotify(x, y, z, l, 2);
-				}
-			}
-		}
-	}
+            if (i < 7)
+            {
+                float f = getGrowthChance(this, worldIn, pos);
 
-	public void boneMeal(World w, int x, int y, int z) {
-		int meta = w.getBlockMetadata(x, y, z) + MathHelper.getRandomIntegerInRange(w.rand, 2, 5);
-		if(meta > amountOfStages) 
-			meta = amountOfStages;
-		w.setBlockMetadataWithNotify(x, y, z, meta, 2);
-	}
+                if (rand.nextInt((int)(25.0F / f) + 1) == 0)
+                {
+                    worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(i + 1)), 2);
+                }
+            }
+        }
+    }
 
-	private float grow(World w, int x, int y, int z) {
-		float f = 1.0F;
-		Block block = w.getBlock(x, y, z - 1);
-		Block block1 = w.getBlock(x, y, z + 1);
-		Block block2 = w.getBlock(x - 1, y, z);
-		Block block3 = w.getBlock(x + 1, y, z);
-		Block block4 = w.getBlock(x - 1, y, z - 1);
-		Block block5 = w.getBlock(x + 1, y, z - 1);
-		Block block6 = w.getBlock(x + 1, y, z + 1);
-		Block block7 = w.getBlock(x - 1, y, z + 1);
-		boolean flag = block2 == this || block3 == this;
-		boolean flag1 = block == this || block1 == this;
-		boolean flag2 = block4 == this || block5 == this || block6 == this || block7 == this;
-		for(int l = x - 1; l <= x + 1; ++l) {
-			for(int i1 = z - 1; i1 <= z + 1; ++i1) {
-				float f1 = 0.0F;
-				if(w.getBlock(l, y - 1, i1).canSustainPlant(w, l, y - 1, i1, ForgeDirection.UP, this)) {
-					f1 = 1.0F;
-					if (w.getBlock(l, y - 1, i1).isFertile(w, l, y - 1, i1))
-						f1 = 3.0F;
-				}
-				if(l != x || i1 != z)
-					f1 /= 4.0F;
-				f += f1;
-			}
-		}
-		if(flag2 || flag && flag1)
-			f /= 2.0F;		
-		return f;
-	}
+    public void growCrops(World worldIn, BlockPos p_176487_2_, IBlockState p_176487_3_)
+    {
+        int i = ((Integer)p_176487_3_.getValue(AGE)).intValue() + MathHelper.getRandomIntegerInRange(worldIn.rand, 2, 5);
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int p_149691_1_, int meta) {
-		if (meta < 0 || meta > amountOfStages) meta = amountOfStages;
-		return this.icons[meta];
-	}
+        if (i > 7)
+        {
+            i = 7;
+        }
 
-	@Override
-	public boolean func_149851_a(World w, int x, int y, int z, boolean b) {
-		return w.getBlockMetadata(x, y, z) != amountOfStages;
-	}
+        worldIn.setBlockState(p_176487_2_, p_176487_3_.withProperty(AGE, Integer.valueOf(i)), 2);
+    }
 
-	@Override
-	public boolean func_149852_a(World w, Random r, int x, int y, int z) {
-		return true;
-	}
+    protected static float getGrowthChance(Block p_180672_0_, World worldIn, BlockPos p_180672_2_)
+    {
+        float f = 1.0F;
+        BlockPos blockpos1 = p_180672_2_.offsetDown();
 
-	@Override
-	public void dropBlockAsItemWithChance(World w, int x, int y, int z, int m, float f, int i) {
-		super.dropBlockAsItemWithChance(w, x, y, z, m, f, 0);
-	}
+        for (int i = -1; i <= 1; ++i)
+        {
+            for (int j = -1; j <= 1; ++j)
+            {
+                float f1 = 0.0F;
+                IBlockState iblockstate = worldIn.getBlockState(blockpos1.add(i, 0, j));
 
-	@Override
-	public Item getItemDropped(int meta, Random r, int i) {
-		return meta == amountOfStages ? this.getDropItem() : this.getSeeds();
-	}
+                if (iblockstate.getBlock().canSustainPlant(worldIn, blockpos1.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)p_180672_0_))
+                {
+                    f1 = 1.0F;
 
-	@Override
-	public int quantityDropped(Random r) {
-		return r.nextInt(2) + 1;
-	}
+                    if (iblockstate.getBlock().isFertile(worldIn, blockpos1.add(i, 0, j)))
+                    {
+                        f1 = 3.0F;
+                    }
+                }
 
-	public abstract Item getDropItem();
-	public abstract Item getSeeds();
+                if (i != 0 || j != 0)
+                {
+                    f1 /= 4.0F;
+                }
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public Item getItem(World w, int x, int y, int z) {
-		return this.getSeeds();
-	}
+                f += f1;
+            }
+        }
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister icon) {
-		this.icons = new IIcon[amountOfStages + 1];
-		for(int i = 0; i < this.icons.length; ++i)
-			this.icons[i] = icon.registerIcon(SlayerAPI.PREFIX + cropName + "_" + i);
-	}
+        BlockPos blockpos2 = p_180672_2_.offsetNorth();
+        BlockPos blockpos3 = p_180672_2_.offsetSouth();
+        BlockPos blockpos4 = p_180672_2_.offsetWest();
+        BlockPos blockpos5 = p_180672_2_.offsetEast();
+        boolean flag = p_180672_0_ == worldIn.getBlockState(blockpos4).getBlock() || p_180672_0_ == worldIn.getBlockState(blockpos5).getBlock();
+        boolean flag1 = p_180672_0_ == worldIn.getBlockState(blockpos2).getBlock() || p_180672_0_ == worldIn.getBlockState(blockpos3).getBlock();
 
-	@Override
-	public void func_149853_b(World w, Random r, int x, int y, int z) {
-		this.boneMeal(w, x, y, z);
-	}
+        if (flag && flag1)
+        {
+            f /= 2.0F;
+        }
+        else
+        {
+            boolean flag2 = p_180672_0_ == worldIn.getBlockState(blockpos4.offsetNorth()).getBlock() || p_180672_0_ == worldIn.getBlockState(blockpos5.offsetNorth()).getBlock() || p_180672_0_ == worldIn.getBlockState(blockpos5.offsetSouth()).getBlock() || p_180672_0_ == worldIn.getBlockState(blockpos4.offsetSouth()).getBlock();
 
-	@Override
-	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
-		ArrayList<ItemStack> ret = super.getDrops(world, x, y, z, metadata, fortune);
-		if(metadata >= amountOfStages) {
-			for(int i = 0; i < 3 + fortune; i++) {
-				if(world.rand.nextInt(15) <= metadata)
-					ret.add(new ItemStack(this.getSeeds(), 1, 0));
-			}
-		}
-		return ret;
-	}
+            if (flag2)
+            {
+                f /= 2.0F;
+            }
+        }
+
+        return f;
+    }
+
+    public boolean canBlockStay(World worldIn, BlockPos p_180671_2_, IBlockState p_180671_3_)
+    {
+        return (worldIn.getLight(p_180671_2_) >= 8 || worldIn.isAgainstSky(p_180671_2_)) && this.canPlaceBlockOn(worldIn.getBlockState(p_180671_2_.offsetDown()).getBlock());
+    }
+
+    public abstract Item getSeed();
+    public abstract Item getCrop();
+
+    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
+    {
+        super.dropBlockAsItemWithChance(worldIn, pos, state, chance, 0);
+    }
+
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return ((Integer)state.getValue(AGE)).intValue() == 7 ? this.getCrop() : this.getSeed();
+    }
+
+    public boolean isStillGrowing(World worldIn, BlockPos p_176473_2_, IBlockState p_176473_3_, boolean p_176473_4_)
+    {
+        return ((Integer)p_176473_3_.getValue(AGE)).intValue() < 7;
+    }
+
+    public boolean canUseBonemeal(World worldIn, Random p_180670_2_, BlockPos p_180670_3_, IBlockState p_180670_4_)
+    {
+        return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public Item getItem(World worldIn, BlockPos pos)
+    {
+        return this.getSeed();
+    }
+
+    public void grow(World worldIn, Random p_176474_2_, BlockPos p_176474_3_, IBlockState p_176474_4_)
+    {
+        this.growCrops(worldIn, p_176474_3_, p_176474_4_);
+    }
+
+    public IBlockState getStateFromMeta(int meta)
+    {
+        return this.getDefaultState().withProperty(AGE, Integer.valueOf(meta));
+    }
+
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((Integer)state.getValue(AGE)).intValue();
+    }
+
+    protected BlockState createBlockState()
+    {
+        return new BlockState(this, new IProperty[] {AGE});
+    }
+
+    @Override
+    public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        java.util.List<ItemStack> ret = super.getDrops(world, pos, state, fortune);
+        int age = ((Integer)state.getValue(AGE)).intValue();
+        Random rand = world instanceof World ? ((World)world).rand : new Random();
+
+        if (age >= 7)
+        {
+            int k = 3 + fortune;
+
+            for (int i = 0; i < 3 + fortune; ++i)
+            {
+                if (rand.nextInt(15) <= age)
+                {
+                    ret.add(new ItemStack(this.getSeed(), 1, 0));
+                }
+            }
+        }
+        return ret;
+    }
 }

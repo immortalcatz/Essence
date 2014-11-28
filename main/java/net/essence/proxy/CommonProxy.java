@@ -39,10 +39,10 @@ public class CommonProxy {
 	
 	public static void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
-		EntityRegistry.init();
+		//EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();
-		DimensionHelper.addSpawns();
+		//DimensionHelper.addSpawns();
 		EssenceTabs.init();
 		addOreDictionary();
 		SlayerAPI.addEventBus(new ArmorAbilityEvent());

@@ -3,30 +3,18 @@ package net.essence.entity.mob.vanilla;
 import net.essence.entity.MobStats;
 import net.essence.entity.AI.EntityAIBoomSwell;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityBoom extends EntityModMob {
 
@@ -83,18 +71,13 @@ public class EntityBoom extends EntityModMob {
 	}
 
 	@Override
-	public boolean isAIEnabled() {
-		return true;
-	}
+    public int getMaxFallHeight() {
+        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
+    }
 
 	@Override
-	public int getMaxSafePointTries() {
-		return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
-	}
-
-	@Override
-	protected void fall(float f) {
-		super.fall(f);
+	public void fall(float f, float f1) {
+		super.fall(f, f1);
 		this.timeSinceIgnited = (int)((float)this.timeSinceIgnited + f * 1.5F);
 
 		if (this.timeSinceIgnited > this.fuseTime - 5)  {

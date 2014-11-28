@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 public class GUIHelper extends Gui {
 
 	private void drawItemOrBlock(ItemStack stack, Minecraft mc, int x, int y) {
-		RenderItem itemRender = new RenderItem();
+		/*RenderItem itemRender = new RenderItem();
 		if(stack != null && stack.getItem() != null) {
 			GL11.glDisable(GL11.GL_LIGHTING);
 			GL11.glScaled(2, 2, 0);
@@ -26,6 +26,6 @@ public class GUIHelper extends Gui {
 			itemRender.zLevel = 0.0F;
 			this.zLevel = 0.0F;
 			GL11.glPopMatrix();
-		}
+		}*/
 	}
 }

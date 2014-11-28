@@ -38,7 +38,7 @@ public class BlockStatue extends BlockMod {
 		Block b = (Block) w.getBlockState(pos);
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
-		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1F, y + 1.9F, z + 1F);
+		return AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1F, pos.getY() + 1.9F, pos.getZ() + 1F);
 	}
 	
 	@Override
@@ -52,17 +52,16 @@ public class BlockStatue extends BlockMod {
 		Block b = worldIn.getBlockState(pos).getBlock();
 		float f = 0.0625F;
 		AxisAlignedBB bb = null;
-
-		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1F, y + 1.9F, z + 1F);
+		return AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1F, pos.getY() + 1.9F, pos.getZ() + 1F);
 	}
 
 	@Override
-	public boolean hasTileEntity(int metadata) {
+	public boolean hasTileEntity() {
 		return true;
 	}
-
+	
 	@Override
-	public TileEntity createTileEntity(World world, int metadata) {
+	public TileEntity createTileEntity(World world, IBlockState state) {
 		return new TileEntityStatue(texture, model);
 	}
 
@@ -72,7 +71,7 @@ public class BlockStatue extends BlockMod {
 	}
 
 	@Override
-	public boolean renderAsNormalBlock() {
+	public boolean isFullCube() {
 		return false;
 	}
 
@@ -82,12 +81,12 @@ public class BlockStatue extends BlockMod {
 	}
 
 	@Override
-	public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase entity, ItemStack item) {
-		int l = ((MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) + 1) % 4;
+	public void onBlockPlacedBy(World w, BlockPos pos, IBlockState state, EntityLivingBase entity, ItemStack stack) {
+		/*int l = ((MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) + 1) % 4;
 		int i1 = w.getBlockMetadata(x, y, z);
 		if(l == 0) w.setBlockMetadataWithNotify(x, y, z, 3, 2);
 		if(l == 1) w.setBlockMetadataWithNotify(x, y, z, 2, 2);
 		if(l == 2) w.setBlockMetadataWithNotify(x, y, z, 1, 2);
-		if(l == 3) w.setBlockMetadataWithNotify(x, y, z, 0, 2);
+		if(l == 3) w.setBlockMetadataWithNotify(x, y, z, 0, 2);*/
 	}
 }

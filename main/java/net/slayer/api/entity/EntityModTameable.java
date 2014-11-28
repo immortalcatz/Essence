@@ -56,7 +56,6 @@ public abstract class EntityModTameable extends EntityTameable {
 	}
 	
 	protected void addBasicAI(){
-		this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
         this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
@@ -74,17 +73,12 @@ public abstract class EntityModTameable extends EntityTameable {
 	
 	protected void addAttackingAI(){
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0F, false));
-		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 
 	}
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.boundingBox);
-	}
-	
-	@Override
-	protected boolean isAIEnabled() {
-		return true;
+		return this.worldObj.checkNoEntityCollision(this.getBoundingBox()) && this.worldObj.getCollidingBoundingBoxes(this, this.getBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getBoundingBox());
 	}
 }

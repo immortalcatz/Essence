@@ -20,7 +20,6 @@ public class ItemModAxe extends ItemAxe {
 		super(tool.getToolMaterial());
 		mat = tool;
 		setUnlocalizedName(name);
-		setTextureName(SlayerAPI.PREFIX + "tools/" + name);
 		setCreativeTab(EssenceTabs.tools);
 		GameRegistry.registerItem(this, name);
 	}
@@ -38,8 +37,8 @@ public class ItemModAxe extends ItemAxe {
 	}
 
 	@Override
-	public float func_150893_a(ItemStack stack, Block block) {
-		return block.getMaterial() != Material.wood && block.getMaterial() != Material.web && block.getMaterial() != Material.plants && block.getMaterial() != Material.vine ? super.func_150893_a(stack, block) : this.efficiencyOnProperMaterial;
+	public float getStrVsBlock(ItemStack stack, Block block) {
+		return block.getMaterial() != Material.wood && block.getMaterial() != Material.web && block.getMaterial() != Material.plants && block.getMaterial() != Material.vine ? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
 	}
 
 	@Override

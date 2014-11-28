@@ -5,13 +5,16 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
 
 public class WorldGenSmallEucaTree extends WorldGenerator {
+	
 	@Override
-	public boolean generate(World w, Random r, int x, int y, int z) {
+	public boolean generate(World w, Random r, BlockPos p) {
+		int x = p.getX(), y = p.getY(), z = p.getZ();
 		int height = r.nextInt(3) + 5;
 		Block leaf = null;
 		switch(r.nextInt(3)) {

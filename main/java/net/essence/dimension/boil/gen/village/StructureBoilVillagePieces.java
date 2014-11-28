@@ -1,33 +1,5 @@
 package net.essence.dimension.boil.gen.village;
 
-import static net.minecraftforge.common.ChestGenHooks.VILLAGE_BLACKSMITH;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-
-import net.essence.EssenceBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.WorldChunkManager;
-import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraft.world.gen.structure.StructureBoundingBox;
-import net.minecraft.world.gen.structure.StructureComponent;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.BiomeEvent;
-import cpw.mods.fml.common.eventhandler.Event.Result;
-import cpw.mods.fml.common.registry.VillagerRegistry;
 
 public class StructureBoilVillagePieces
 {
@@ -35,7 +7,11 @@ public class StructureBoilVillagePieces
 
     public static void registerVillagePieces()
     {
-        MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.House1.class, "BViBH");
+    	
+    }
+}
+
+       /* MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.House1.class, "BViBH");
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Field1.class, "BViDF");
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Field2.class, "BViF");
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Torch.class, "BViL");
@@ -47,10 +23,10 @@ public class StructureBoilVillagePieces
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Start.class, "BViStart");
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Path.class, "BViSR");
         MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.House3.class, "BViTRH");
-        MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Well.class, "BViW");
+        MapGenStructureIO.func_143031_a(StructureBoilVillagePieces.Well.class, "BViW");*
     }
 
-    public static List getStructureVillageWeightedPieceList(Random p_75084_0_, int p_75084_1_)
+    /*public static List getStructureVillageWeightedPieceList(Random p_75084_0_, int p_75084_1_)
     {
         ArrayList arraylist = new ArrayList();
         arraylist.add(new StructureBoilVillagePieces.PieceWeight(StructureBoilVillagePieces.House4Garden.class, 4, MathHelper.getRandomIntegerInRange(p_75084_0_, 2 + p_75084_1_, 4 + p_75084_1_ * 2)));
@@ -143,7 +119,7 @@ public class StructureBoilVillagePieces
 
     /**
      * attempts to find a next Village Component to be spawned
-     */
+     *
     private static StructureBoilVillagePieces.Village getNextVillageComponent(StructureBoilVillagePieces.Start p_75081_0_, List p_75081_1_, Random p_75081_2_, int p_75081_3_, int p_75081_4_, int p_75081_5_, int p_75081_6_, int p_75081_7_)
     {
         int j1 = func_75079_a(p_75081_0_.structureVillageWeightedPieceList);
@@ -207,7 +183,7 @@ public class StructureBoilVillagePieces
 
     /**
      * attempts to find a next Structure Component to be spawned, private Village function
-     */
+     *
     private static StructureComponent getNextVillageStructureComponent(StructureBoilVillagePieces.Start p_75077_0_, List p_75077_1_, Random p_75077_2_, int p_75077_3_, int p_75077_4_, int p_75077_5_, int p_75077_6_, int p_75077_7_)
     {
         if (p_75077_7_ > 50)
@@ -299,7 +275,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -392,7 +368,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
-             */
+             *
             protected int getVillagerType(int p_74888_1_)
             {
                 return 2;
@@ -401,13 +377,13 @@ public class StructureBoilVillagePieces
 
     public static class Field1 extends StructureBoilVillagePieces.Village
         {
-            /** First crop type for this field. */
+            /** First crop type for this field. *
             private Block cropTypeA;
-            /** Second crop type for this field. */
+            /** Second crop type for this field. *
             private Block cropTypeB;
-            /** Third crop type for this field. */
+            /** Third crop type for this field. *
             private Block cropTypeC;
-            /** Fourth crop type for this field. */
+            /** Fourth crop type for this field. *
             private Block cropTypeD;
             private static final String __OBFID = "CL_00000518";
 
@@ -464,7 +440,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -520,9 +496,9 @@ public class StructureBoilVillagePieces
 
     public static class Field2 extends StructureBoilVillagePieces.Village
         {
-            /** First crop type for this field. */
+            /** First crop type for this field. *
             private Block cropTypeA;
-            /** Second crop type for this field. */
+            /** Second crop type for this field. *
             private Block cropTypeB;
             private static final String __OBFID = "CL_00000519";
 
@@ -573,7 +549,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -641,7 +617,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -741,7 +717,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
-             */
+             *
             protected int getVillagerType(int p_74888_1_)
             {
                 return p_74888_1_ == 0 ? 4 : 0;
@@ -770,7 +746,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -873,7 +849,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
-             */
+             *
             protected int getVillagerType(int p_74888_1_)
             {
                 return 1;
@@ -882,7 +858,7 @@ public class StructureBoilVillagePieces
 
     public static class House2 extends StructureBoilVillagePieces.Village
         {
-            /** List of items that Village's Blacksmith chest can contain. */
+            /** List of items that Village's Blacksmith chest can contain. *
             public static final WeightedRandomChestContent[] villageBlacksmithChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.diamond, 0, 1, 3, 3), new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 10), new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 3, 5), new WeightedRandomChestContent(Items.bread, 0, 1, 3, 15), new WeightedRandomChestContent(Items.apple, 0, 1, 3, 15), new WeightedRandomChestContent(Items.iron_pickaxe, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_sword, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_chestplate, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_helmet, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_leggings, 0, 1, 1, 5), new WeightedRandomChestContent(Items.iron_boots, 0, 1, 1, 5), new WeightedRandomChestContent(Item.getItemFromBlock(Blocks.obsidian), 0, 3, 7, 5), new WeightedRandomChestContent(Item.getItemFromBlock(Blocks.sapling), 0, 3, 7, 5), new WeightedRandomChestContent(Items.saddle, 0, 1, 1, 3), new WeightedRandomChestContent(Items.iron_horse_armor, 0, 1, 1, 1), new WeightedRandomChestContent(Items.golden_horse_armor, 0, 1, 1, 1), new WeightedRandomChestContent(Items.diamond_horse_armor, 0, 1, 1, 1)};
             private boolean hasMadeChest;
             private static final String __OBFID = "CL_00000526";
@@ -917,7 +893,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -1006,7 +982,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
-             */
+             *
             protected int getVillagerType(int p_74888_1_)
             {
                 return 3;
@@ -1035,7 +1011,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -1214,7 +1190,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -1341,7 +1317,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
+             *
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 boolean flag = false;
@@ -1425,7 +1401,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 Block block = this.func_151558_b(Blocks.gravel, 0);
@@ -1448,7 +1424,7 @@ public class StructureBoilVillagePieces
 
     public static class PieceWeight
         {
-            /** The Class object for the represantation of this village piece. */
+            /** The Class object for the represantation of this village piece. *
             public Class villagePieceClass;
             public final int villagePieceWeight;
             public int villagePiecesSpawned;
@@ -1488,15 +1464,15 @@ public class StructureBoilVillagePieces
     public static class Start extends StructureBoilVillagePieces.Well
         {
             public WorldChunkManager worldChunkMngr;
-            /** Boolean that determines if the village is in a desert or not. */
+            /** Boolean that determines if the village is in a desert or not. *
             public boolean inDesert;
-            /** World terrain type, 0 for normal, 1 for flap map */
+            /** World terrain type, 0 for normal, 1 for flap map *
             public int terrainType;
             public StructureBoilVillagePieces.PieceWeight structVillagePieceWeight;
             /**
              * Contains List of all spawnable Structure Piece Weights. If no more Pieces of a type can be spawned, they
              * are removed from this list
-             */
+             *
             public List structureVillageWeightedPieceList;
             public List field_74932_i = new ArrayList();
             public List field_74930_j = new ArrayList();
@@ -1544,7 +1520,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -1575,7 +1551,7 @@ public class StructureBoilVillagePieces
     public abstract static class Village extends StructureComponent
         {
             protected int field_143015_k = -1;
-            /** The number of villagers that have been spawned in this component. */
+            /** The number of villagers that have been spawned in this component. *
             private int villagersSpawned;
             private boolean field_143014_b;
             private static final String __OBFID = "CL_00000531";
@@ -1610,7 +1586,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Gets the next village component, with the bounding box shifted -1 in the X and Z direction.
-             */
+             *
             protected StructureComponent getNextComponentNN(StructureBoilVillagePieces.Start p_74891_1_, List p_74891_2_, Random p_74891_3_, int p_74891_4_, int p_74891_5_)
             {
                 switch (this.coordBaseMode)
@@ -1630,7 +1606,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Gets the next village component, with the bounding box shifted +1 in the X and Z direction.
-             */
+             *
             protected StructureComponent getNextComponentPP(StructureBoilVillagePieces.Start p_74894_1_, List p_74894_2_, Random p_74894_3_, int p_74894_4_, int p_74894_5_)
             {
                 switch (this.coordBaseMode)
@@ -1651,7 +1627,7 @@ public class StructureBoilVillagePieces
             /**
              * Discover the y coordinate that will serve as the ground level of the supplied BoundingBox. (A median of
              * all the levels in the BB's horizontal rectangle).
-             */
+             *
             protected int getAverageGroundLevel(World p_74889_1_, StructureBoundingBox p_74889_2_)
             {
                 int i = 0;
@@ -1687,7 +1663,7 @@ public class StructureBoilVillagePieces
             /**
              * Spawns a number of villagers in this component. Parameters: world, component bounding box, x offset, y
              * offset, z offset, number of villagers
-             */
+             *
             protected void spawnVillagers(World p_74893_1_, StructureBoundingBox p_74893_2_, int p_74893_3_, int p_74893_4_, int p_74893_5_, int p_74893_6_)
             {
                 if (this.villagersSpawned < p_74893_6_)
@@ -1713,7 +1689,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
-             */
+             *
             protected int getVillagerType(int p_74888_1_)
             {
                 return 0;
@@ -1788,7 +1764,7 @@ public class StructureBoilVillagePieces
 
             /**
              * current Position depends on currently set Coordinates mode, is computed here
-             */
+             *
             protected void placeBlockAtCurrentPosition(World p_151550_1_, Block p_151550_2_, int p_151550_3_, int p_151550_4_, int p_151550_5_, int p_151550_6_, StructureBoundingBox p_151550_7_)
             {
                 Block block1 = this.func_151558_b(p_151550_2_, p_151550_3_);
@@ -1799,7 +1775,7 @@ public class StructureBoilVillagePieces
             /**
              * arguments: (World worldObj, StructureBoundingBox structBB, int minX, int minY, int minZ, int maxX, int
              * maxY, int maxZ, int placeBlock, int replaceBlock, boolean alwaysreplace)
-             */
+             *
             protected void fillWithBlocks(World p_151549_1_, StructureBoundingBox p_151549_2_, int p_151549_3_, int p_151549_4_, int p_151549_5_, int p_151549_6_, int p_151549_7_, int p_151549_8_, Block p_151549_9_, Block p_151549_10_, boolean p_151549_11_)
             {
                 Block block2 = this.func_151558_b(p_151549_9_, 0);
@@ -1841,7 +1817,7 @@ public class StructureBoilVillagePieces
 
             /**
              * Initiates construction of the Structure Component picked, at the current Location of StructGen
-             */
+             *
             public void buildComponent(StructureComponent p_74861_1_, List p_74861_2_, Random p_74861_3_)
             {
                 StructureBoilVillagePieces.getNextComponentVillagePath((StructureBoilVillagePieces.Start)p_74861_1_, p_74861_2_, p_74861_3_, this.boundingBox.minX - 1, this.boundingBox.maxY - 4, this.boundingBox.minZ + 1, 1, this.getComponentType());
@@ -1853,7 +1829,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -1939,7 +1915,7 @@ public class StructureBoilVillagePieces
             /**
              * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
              * Mineshafts at the end, it adds Fences...
-             */
+             *
             public boolean addComponentParts(World p_74875_1_, Random p_74875_2_, StructureBoundingBox p_74875_3_)
             {
                 if (this.field_143015_k < 0)
@@ -2015,5 +1991,5 @@ public class StructureBoilVillagePieces
                 this.spawnVillagers(p_74875_1_, p_74875_3_, 1, 1, 2, 1);
                 return true;
             }
-        }
-}
+        }*
+}*/

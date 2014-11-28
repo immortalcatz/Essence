@@ -6,9 +6,10 @@ import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
 	
@@ -31,8 +32,8 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
 		}
     }
 
-    public boolean generate(World p_76484_1_, Random p_76484_2_, int p_76484_3_, int p_76484_4_, int p_76484_5_)
-    {
+    public boolean generate(World p_76484_1_, Random p_76484_2_, BlockPos pos) {
+    	int p_76484_3_ = pos.getX(), p_76484_4_ = pos.getY(), p_76484_5_ = pos.getZ();
         int l = p_76484_2_.nextInt(5) + 7;
         int i1 = l - p_76484_2_.nextInt(2) - 3;
         int j1 = l - i1;
@@ -64,9 +65,9 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
                     {
                         if (l1 >= 0 && l1 < 256)
                         {
-                            Block block = p_76484_1_.getBlock(i2, l1, j2);
+                            Block block = p_76484_1_.getBlockState(new BlockPos(i2, l1, j2)).getBlock();
 
-                            if (!this.isReplaceable(p_76484_1_, i2, l1, j2))
+                            if (!this.isReplaceable(p_76484_1_, new BlockPos(i2, l1, j2)))
                             {
                                 flag = false;
                             }
@@ -85,12 +86,12 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
             }
             else
             {
-                Block block1 = p_76484_1_.getBlock(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
+                Block block1 = p_76484_1_.getBlockState(new BlockPos(p_76484_3_, p_76484_4_ - 1, p_76484_5_)).getBlock();
 
-                boolean isSoil = block1.canSustainPlant(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, ForgeDirection.UP, (BlockSapling)Blocks.sapling);
+                boolean isSoil = block1.canSustainPlant(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ - 1, p_76484_5_), EnumFacing.UP, (BlockSapling)Blocks.sapling);
                 if (isSoil && p_76484_4_ < 256 - l - 1)
                 {
-                    block1.onPlantGrow(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, p_76484_3_, p_76484_4_, p_76484_5_);
+                    block1.onPlantGrow(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ - 1, p_76484_5_), new BlockPos(p_76484_3_, p_76484_4_, p_76484_5_));
                     i3 = 0;
 
                     for (i2 = p_76484_4_ + l; i2 >= p_76484_4_ + i1; --i2)
@@ -103,9 +104,9 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
                             {
                                 int l2 = k2 - p_76484_5_;
 
-                                if ((Math.abs(j3) != i3 || Math.abs(l2) != i3 || i3 <= 0) && p_76484_1_.getBlock(j2, i2, k2).canBeReplacedByLeaves(p_76484_1_, j2, i2, k2))
+                                if ((Math.abs(j3) != i3 || Math.abs(l2) != i3 || i3 <= 0) && p_76484_1_.getBlockState(new BlockPos(j2, i2, k2)).getBlock().canBeReplacedByLeaves(p_76484_1_, new BlockPos(j2, i2, k2)))
                                 {
-                                    this.setBlockAndNotifyAdequately(p_76484_1_, j2, i2, k2, leaves, 1);
+                                    this.func_175905_a(p_76484_1_, new BlockPos(j2, i2, k2), leaves, 1);
                                 }
                             }
                         }
@@ -122,11 +123,11 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
 
                     for (i2 = 0; i2 < l - 1; ++i2)
                     {
-                        Block block2 = p_76484_1_.getBlock(p_76484_3_, p_76484_4_ + i2, p_76484_5_);
+                        Block block2 = p_76484_1_.getBlockState(new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_)).getBlock();
 
-                        if (block2.isAir(p_76484_1_, p_76484_3_, p_76484_4_ + i2, p_76484_5_) || block2.isLeaves(p_76484_1_, p_76484_3_, p_76484_4_ + i2, p_76484_5_))
+                        if (block2.isAir(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_)) || block2.isLeaves(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_)))
                         {
-                            this.setBlockAndNotifyAdequately(p_76484_1_, p_76484_3_, p_76484_4_ + i2, p_76484_5_, EssenceBlocks.eucaLog, 1);
+                            this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_), EssenceBlocks.eucaLog, 1);
                         }
                     }
 

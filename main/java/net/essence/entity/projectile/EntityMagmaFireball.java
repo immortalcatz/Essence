@@ -2,9 +2,11 @@ package net.essence.entity.projectile;
 
 import net.essence.client.render.particles.EntityHellstoneFX;
 import net.minecraft.client.particle.EntityFX;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -32,41 +34,36 @@ public class EntityMagmaFireball extends EntitySmallFireball {
 
 	@Override
 	protected void onImpact(MovingObjectPosition m) {
-        if(!this.worldObj.isRemote) {
-            if(m.entityHit != null) {
-                if(!m.entityHit.isImmuneToFire() && m.entityHit.attackEntityFrom(DamageSource.causeFireballDamage(this, this.shootingEntity), 10.0F)) {
-                    m.entityHit.setFire(10);
+		if (!this.worldObj.isRemote) {
+            boolean flag;
+
+            if (m.entityHit != null) {
+                flag = m.entityHit.attackEntityFrom(DamageSource.causeFireballDamage(this, this.shootingEntity), 5.0F);
+
+                if (flag) {
+                    this.func_174815_a(this.shootingEntity, m.entityHit);
+
+                    if (!m.entityHit.isImmuneToFire()) {
+                        m.entityHit.setFire(5);
+                    }
                 }
             } else {
-                int i = m.blockX;
-                int j = m.blockY;
-                int k = m.blockZ;
-                switch(m.sideHit) {
-                    case 0:
-                        --j;
-                        break;
-                    case 1:
-                        ++j;
-                        break;
-                    case 2:
-                        --k;
-                        break;
-                    case 3:
-                        ++k;
-                        break;
-                    case 4:
-                        --i;
-                        break;
-                    case 5:
-                        ++i;
+                flag = true;
+
+                if (this.shootingEntity != null && this.shootingEntity instanceof EntityLiving) {
+                    flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
                 }
 
-                if(this.worldObj.isAirBlock(i, j, k)) {
-                    this.worldObj.setBlock(i, j, k, Blocks.fire);
+                if (flag) {
+                    BlockPos blockpos = m.func_178782_a().offset(m.field_178784_b);
+
+                    if (this.worldObj.isAirBlock(blockpos)) {
+                        this.worldObj.setBlockState(blockpos, Blocks.fire.getDefaultState());
+                    }
                 }
             }
+
             this.setDead();
         }
     }
-	
 }

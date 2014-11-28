@@ -10,7 +10,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
@@ -21,17 +20,18 @@ import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ContainerEnrichedTable extends Container {
 
 	public InventoryCrafting craftMatrix = new InventoryCrafting(this, 2, 2);
 	public InventoryCrafting bigCraftMatrix = new InventoryCrafting(this, 3, 3);
 	public IInventory craftResult = new InventoryCraftResult();
+	public BlockPos pos;
 	
 	public IInventory tableInventory = new InventoryBasic("Enriched Table", true, 1) {
 		public int getInventoryStackLimit() {
@@ -53,12 +53,13 @@ public class ContainerEnrichedTable extends Container {
 	public long nameSeed;
 	public int[] enchantLevels = new int[3];
 
-	public ContainerEnrichedTable(InventoryPlayer par1InventoryPlayer, World par2World, int par3, int par4, int par5, final EntityPlayer player) {
+	public ContainerEnrichedTable(InventoryPlayer par1InventoryPlayer, World par2World, BlockPos pos, final EntityPlayer player) {
 		thePlayer = player;
+		this.pos = pos;
 		this.worldPointer = par2World;
-		this.posX = par3;
-		this.posY = par4;
-		this.posZ = par5;
+		this.posX = pos.getX();
+		this.posY = pos.getY();
+		this.posZ = pos.getZ();
 		this.addSlotToContainer(new SlotCrafting(player, this.craftMatrix, this.craftResult, 0, 170, 142));
 		this.addSlotToContainer(new Slot(this.tableInventory, 0, -19, 46) {
 			@Override
@@ -107,16 +108,16 @@ public class ContainerEnrichedTable extends Container {
                 
                 @Override
                 @SideOnly(Side.CLIENT)
-                public IIcon getBackgroundIconIndex() {
-                    return ItemArmor.func_94602_b(k);
+                public String func_178171_c() {
+                    return ItemArmor.EMPTY_SLOT_NAMES[k];
                 }
             });
         }
 	}
 
 	@Override
-	public void addCraftingToCrafters(ICrafting par1ICrafting) {
-		super.addCraftingToCrafters(par1ICrafting);
+	public void onCraftGuiOpened(ICrafting par1ICrafting) {
+		super.onCraftGuiOpened(par1ICrafting);
 		par1ICrafting.sendProgressBarUpdate(this, 0, this.enchantLevels[0]);
 		par1ICrafting.sendProgressBarUpdate(this, 1, this.enchantLevels[1]);
 		par1ICrafting.sendProgressBarUpdate(this, 2, this.enchantLevels[2]);
@@ -163,10 +164,10 @@ public class ContainerEnrichedTable extends Container {
 								power += 2;
 
 								if (k != 0 && j != 0) {
-									power += ForgeHooks.getEnchantPower(worldPointer, posX + k * 2, posY,     posZ + j    );
-									power += ForgeHooks.getEnchantPower(worldPointer, posX + k * 2, posY + 1, posZ + j    );
-									power += ForgeHooks.getEnchantPower(worldPointer, posX + k,     posY,     posZ + j * 2);
-									power += ForgeHooks.getEnchantPower(worldPointer, posX + k,     posY + 1, posZ + j * 2);
+                                    power += net.minecraftforge.common.ForgeHooks.getEnchantPower(worldPointer, pos.add(k * 2, 0, j));
+                                    power += net.minecraftforge.common.ForgeHooks.getEnchantPower(worldPointer, pos.add(k * 2, 1, j));
+                                    power += net.minecraftforge.common.ForgeHooks.getEnchantPower(worldPointer, pos.add(k, 0, j * 2));
+                                    power += net.minecraftforge.common.ForgeHooks.getEnchantPower(worldPointer, pos.add(k, 1, j * 2));
 								}
 							}
 						}
@@ -200,7 +201,7 @@ public class ContainerEnrichedTable extends Container {
 					par1EntityPlayer.addExperienceLevel(-this.enchantLevels[par2]);
 
 					if (flag) {
-						itemstack.func_150996_a(Items.enchanted_book);
+						itemstack.setItem(Items.enchanted_book);
 					}
 
 					int j = flag && list.size() > 1 ? this.rand.nextInt(list.size()) : -1;
@@ -245,7 +246,7 @@ public class ContainerEnrichedTable extends Container {
 
 	@Override
 	public boolean canInteractWith(EntityPlayer par1EntityPlayer) {
-		return this.worldPointer.getBlock(this.posX, this.posY, this.posZ) != EssenceBlocks.enrichedEnchantmentTable ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+		return this.worldPointer.getBlockState(pos) != EssenceBlocks.enrichedEnchantmentTable ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
 	}
  
 	@Override

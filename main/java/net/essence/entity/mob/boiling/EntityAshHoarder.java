@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -44,13 +45,14 @@ public class EntityAshHoarder extends EntityModMob{
 	public String setDeathSound() {
 		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
 	}
-	
+
 	@Override
-	protected void attackEntity(Entity e, float a) {
-		super.attackEntity(e, a);
-		((EntityPlayer)e).setFire(5 + rand.nextInt(7));
+	public boolean attackEntityFrom(DamageSource e, float a) {
+		if(e.getSourceOfDamage() instanceof EntityPlayer)
+			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
+		return super.attackEntityFrom(e, a);
 	}
-	
+
 	@Override
 	public Item getItemDropped() {
 		return EssenceItems.ash;

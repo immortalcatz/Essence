@@ -35,13 +35,13 @@ public class EntityBouncingProjectile extends EntityThrowable {
 			if(!this.worldObj.isRemote) this.setDead();
 			return;
 		}
-		if(par1.sideHit == 0 || par1.sideHit == 1) {
+		/*if(par1.sideHit == 0 || par1.sideHit == 1) {
 			this.motionY *= -1.0D;
 		} else if(par1.sideHit == 2 || par1.sideHit == 3) {
 			this.motionZ *= -1.0D;
 		} else if(par1.sideHit == 4 || par1.sideHit == 5) {
 			this.motionX *= -1.0D;
-		}
+		}*/
 		
 		this.bounces++;
 		

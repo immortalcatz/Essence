@@ -3,9 +3,9 @@ package net.essence.entity;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.entity.EntityModMob;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 
 public class EntityDragonEgg extends EntityModMob {
@@ -49,11 +49,6 @@ public class EntityDragonEgg extends EntityModMob {
 	@Override
 	protected boolean canDespawn() {
 		return false;
-	}
-
-	@Override
-	protected boolean isMovementCeased() {
-		return true;
 	}
 
 	@Override

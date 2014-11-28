@@ -138,7 +138,7 @@ public class ModelMagmaGiant extends ModelBase {
 		this.RightLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 		this.LeftLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 
-		if(this.onGround > -9990.0F) {
+		/*if(this.onGround > -9990.0F) {
 			float f6 = this.onGround, f7;
 			this.Chest.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * (float)Math.PI * 2.0F) * 0.2F;
 			this.RightArm.rotationPointZ = 3.2F;
@@ -149,6 +149,6 @@ public class ModelMagmaGiant extends ModelBase {
 			this.RightShoulder.rotationPointX = -MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;
 			this.LeftShoulder.rotationPointZ = 3.2F;
 			this.LeftShoulder.rotationPointX = MathHelper.cos(this.Chest.rotateAngleY) * 7.0F;	
-		}
+		}*/
 	}
 }

@@ -47,6 +47,11 @@ public class WorldProviderDepths extends WorldProvider {
     
     @Override
     public String getDimensionName() {
-        return "Depths";
+        return "The Depths";
     }
+
+	@Override
+	public String getInternalNameSuffix() {
+		return "Depths";
+	}
 }

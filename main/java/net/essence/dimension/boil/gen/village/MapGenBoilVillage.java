@@ -109,7 +109,7 @@ public class MapGenBoilVillage extends MapGenStructure
             public Start(World p_i2092_1_, Random p_i2092_2_, int p_i2092_3_, int p_i2092_4_, int p_i2092_5_)
             {
                 super(p_i2092_3_, p_i2092_4_);
-                List list = StructureBoilVillagePieces.getStructureVillageWeightedPieceList(p_i2092_2_, p_i2092_5_);
+                /*List list = StructureBoilVillagePieces.getStructureVillageWeightedPieceList(p_i2092_2_, p_i2092_5_);
                 StructureBoilVillagePieces.Start start = new StructureBoilVillagePieces.Start(p_i2092_1_.getWorldChunkManager(), 0, p_i2092_2_, (p_i2092_3_ << 4) + 2, (p_i2092_4_ << 4) + 2, list, p_i2092_5_);
                 this.components.add(start);
                 start.buildComponent(start, this.components, p_i2092_2_);
@@ -143,13 +143,13 @@ public class MapGenBoilVillage extends MapGenStructure
                 {
                     StructureComponent structurecomponent1 = (StructureComponent)iterator.next();
 
-                    if (!(structurecomponent1 instanceof StructureBoilVillagePieces.Road))
+                   /* if (!(structurecomponent1 instanceof StructureBoilVillagePieces.Road))
                     {
                         ++l;
                     }
                 }
 
-                this.hasMoreThanTwoComponents = l > 2;
+                this.hasMoreThanTwoComponents = l > 2;*/
             }
 
             /**
@@ -172,4 +172,9 @@ public class MapGenBoilVillage extends MapGenStructure
                 this.hasMoreThanTwoComponents = p_143017_1_.getBoolean("Valid");
             }
         }
+
+	@Override
+	public String getStructureName() {
+		return "Boil Village";
+	}
 }

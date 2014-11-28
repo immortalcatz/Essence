@@ -90,11 +90,6 @@ public abstract class EntityModMob extends EntityMob {
 		super.getDeathSound();
 		return setDeathSound();
 	}
-
-	@Override
-	protected boolean isAIEnabled() {
-		return false;
-	}
 	
 	@Override
 	public boolean getCanSpawnHere() {

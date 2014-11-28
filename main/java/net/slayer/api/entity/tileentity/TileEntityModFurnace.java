@@ -275,4 +275,9 @@ public abstract class TileEntityModFurnace extends TileEntity implements ISidedI
     public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3) {
         return par3 != 0 || par1 != 1 || par2ItemStack.getItem() == Items.bucket;
     }
+
+	public void setCustomInventoryName(String displayName) {
+		// TODO Auto-generated method stub
+		
+	}
 }

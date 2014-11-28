@@ -5,15 +5,15 @@ import net.essence.EssenceItems;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
@@ -36,11 +36,12 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	public double setMaxHealth(MobStats s) {
 		return s.witheringBeastHealth;
 	}
-
+	
 	@Override
-	protected void attackEntity(Entity e, float a) {
-		super.attackEntity(e, a);
-		((EntityPlayer)e).addPotionEffect(new PotionEffect(Potion.wither.id, 60, 0));
+	public boolean attackEntityFrom(DamageSource e, float a) {
+		if(e.getSourceOfDamage() instanceof EntityPlayer)
+			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.wither.id, 60, 0));
+		return super.attackEntityFrom(e, a);
 	}
 
 	@Override
@@ -81,7 +82,7 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase var1, float var2) {
-		this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+		this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, new BlockPos((int)this.posX, (int)this.posY, (int)this.posZ), 0);
 		double vecX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
 		double vecY = (double)(-MathHelper.sin(var1.rotationPitch / 180.0F * (float)Math.PI));
 		double vecZ = (double)( MathHelper.cos(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));

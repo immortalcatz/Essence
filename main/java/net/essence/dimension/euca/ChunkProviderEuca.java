@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.euca.gen.WorldGenEucaSphere;
 import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenEucaPyramidTree;
 import net.essence.dimension.euca.gen.trees.WorldGenEucaSmallRectangleTree;
@@ -19,14 +18,13 @@ import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree2;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ChunkProviderEuca implements IChunkProvider {
@@ -77,7 +75,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.generateTerrain(par1, par2, ablock, this.biomesForGeneration);
 		this.replaceBlocksForBiome(par1, par2, ablock, this.biomesForGeneration);
-		Chunk chunk = new Chunk(this.worldObj, ablock, par1, par2);
+		Chunk chunk = new Chunk(this.worldObj, par1, par2);
 		byte[] abyte = chunk.getBiomeArray();
 		for(int k = 0; k < abyte.length; ++k)
 			abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
@@ -143,10 +141,9 @@ public class ChunkProviderEuca implements IChunkProvider {
 		for(int var8 = 0; var8 < 16; ++var8) {
 			for(int var9 = 0; var9 < 16; ++var9) {
 				BiomeGenBase var10 = var4[var9 + var8 * 16];
-				float var11 = var10.getFloatTemperature(var9, var9, var9);
 				int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
 				int var13 = -1;
-				Block var14 = var10.topBlock;
+				Block var14 = var10.topBlock.getBlock();
 				Block var15 = EssenceBlocks.eucaGrass;
 				for(int var16 = 127; var16 >= 0; --var16) {
 					int var17 = (var9 * 16 + var8) * 128 + var16;
@@ -199,11 +196,6 @@ public class ChunkProviderEuca implements IChunkProvider {
 				if(var3[i] == EssenceBlocks.eucaGrass && var3[i + 1] != null) var3[i] = EssenceBlocks.eucaDirt;
 			}
 		}
-	}
-
-	@Override
-	public Chunk loadChunk(int i, int j) {
-		return this.provideChunk(i, j);
 	}
 
 	private double[] initializeNoiseField(double[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -275,11 +267,11 @@ public class ChunkProviderEuca implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 
 		if(rand.nextInt(1) == 0){
-			y = this.worldObj.getHeightValue(x, z);
+			y = (int)this.worldObj.getHorizon();
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlock(x, y, z) == Blocks.air && worldObj.getBlock(x, y - 1, z) == EssenceBlocks.eucaGrass && worldObj.getBlock(x, y + 1, z) == Blocks.air)
-				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, x, y, z);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
 		if(rand.nextInt(5) == 0) {
@@ -311,24 +303,34 @@ public class ChunkProviderEuca implements IChunkProvider {
 	}
 
 	@Override
-	public List getPossibleCreatures(EnumCreatureType enumcreaturetype, int i, int j, int k) {
-		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(i, k);
-		return var5 == null ? null : var5.getSpawnableList(enumcreaturetype);
-	}
-
-	@Override
-	public ChunkPosition func_147416_a(World world, String s, int i, int j, int k) {
-		return null;
-	}
-
-	@Override
 	public int getLoadedChunkCount() {
 		return 0;
 	}
 
 	@Override
-	public void recreateStructures(int i, int j) { }
+	public void saveExtraData() { }
 
 	@Override
-	public void saveExtraData() { }
+	public Chunk func_177459_a(BlockPos pos) {
+		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
+	}
+
+	@Override
+	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
+		return false;
+	}
+
+	@Override
+	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
+		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
+		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	}
+
+	@Override
+	public BlockPos func_180513_a(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
+		return null;
+	}
+
+	@Override
+	public void func_180514_a(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
 }

@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
@@ -13,7 +14,8 @@ import net.slayer.api.worldgen.WorldGenAPI;
 public class WorldGenTowerDungeon extends WorldGenerator {
 
 	@Override
-	public boolean generate(World w, Random r, int x, int y, int z) {
+	public boolean generate(World w, Random r, BlockPos pos) {
+		int x = pos.getZ(), y = pos.getY(), z = pos.getZ();
 		int levels = 4;
 		int height = levels * 4;
 		
@@ -54,23 +56,23 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		WorldGenAPI.addRectangle(4, 2, 1, w, x + 2, y + height + 8, z + 1, Blocks.air);
 
 		for(int i = 0; i < 4; i++) {
-			w.setBlock(x + 5 - i, y + i + height + 5, z + 1, EssenceBlocks.dungeonBrickStairs, 1, 2);
-			w.setBlock(x + 5 - i, y + i + height + 5, z + 2, EssenceBlocks.dungeonBrickStairs, 1, 2);
+			w.setBlockState(new BlockPos(x + 5 - i, y + i + height + 5, z + 1), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
+			w.setBlockState(new BlockPos(x + 5 - i, y + i + height + 5, z + 2), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
 		}
 		
-		w.setBlock(x + 13, y + height + 9, z + 1, EssenceBlocks.dungeonLamp);
-		w.setBlock(x + 1, y + height + 9, z + 8, EssenceBlocks.dungeonLamp);
-		w.setBlock(x + 13, y + height + 9, z + 8, EssenceBlocks.dungeonLamp);
+		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 1), EssenceBlocks.dungeonLamp.getDefaultState());
+		w.setBlockState(new BlockPos(x + 1, y + height + 9, z + 8), EssenceBlocks.dungeonLamp.getDefaultState());
+		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 8), EssenceBlocks.dungeonLamp.getDefaultState());
 
-		w.setBlock(x + 12, y + height + 9, z + 8, EssenceBlocks.dungeonLampStairs, 0, 2);
-		w.setBlock(x + 12, y + height + 9, z + 7, EssenceBlocks.dungeonLampStairs, 0, 2);
-		w.setBlock(x + 13, y + height + 9, z + 7, EssenceBlocks.dungeonLampStairs, 2, 2);
-		w.setBlock(x + 12, y + height + 9, z + 2, EssenceBlocks.dungeonLampStairs, 0, 2);
-		w.setBlock(x + 12, y + height + 9, z + 1, EssenceBlocks.dungeonLampStairs, 0, 2);
-		w.setBlock(x + 13, y + height + 9, z + 2, EssenceBlocks.dungeonLampStairs, 3, 2);
-		w.setBlock(x + 2, y + height + 9, z + 7, EssenceBlocks.dungeonLampStairs, 2, 2);
-		w.setBlock(x + 1, y + height + 9, z + 7, EssenceBlocks.dungeonLampStairs, 2, 2);
-		w.setBlock(x + 2, y + height + 9, z + 8, EssenceBlocks.dungeonLampStairs, 1, 2);
+		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 8), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
+		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
+		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(2), 2);
+		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 2), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
+		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 1), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
+		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 2), EssenceBlocks.dungeonLampStairs.getStateFromMeta(3), 2);
+		w.setBlockState(new BlockPos(x + 2, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(2), 2);
+		w.setBlockState(new BlockPos(x + 1, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(2), 2);
+		w.setBlockState(new BlockPos(x + 2, y + height + 9, z + 8), EssenceBlocks.dungeonLampStairs.getStateFromMeta(1), 2);
 		
 		addDifferentBlocks(w, x, y, z);
 		return true;
@@ -81,8 +83,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrick && r.nextInt(15) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonChisledBrick);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrick && r.nextInt(15) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonChisledBrick.getDefaultState());
 						break;
 					}
 				}
@@ -92,8 +94,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrick && r.nextInt(10) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonBrickCarved);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrick && r.nextInt(10) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonBrickCarved.getDefaultState());
 						break;
 					}
 				}
@@ -103,8 +105,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrick && r.nextInt(10) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonCrackedBrick);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrick && r.nextInt(10) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonCrackedBrick.getDefaultState());
 						break;
 					}
 				}
@@ -114,8 +116,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int i = 0; i < 50; i++) {
 			for(int j = 0; j < 200; j++) {
 				for(int k = 0; k < 50; k++) {
-					if(w.getBlock(i, j, k) == EssenceBlocks.dungeonBrick) {
-						if(r.nextInt(10) == 0) w.setBlock(i, j, k, EssenceBlocks.dungeonCrackedBrick);
+					if(w.getBlockState(new BlockPos(i, j, k)) == EssenceBlocks.dungeonBrick) {
+						if(r.nextInt(10) == 0) w.setBlockState(new BlockPos(i, j, k), EssenceBlocks.dungeonCrackedBrick.getDefaultState());
 					}
 				}
 			}
@@ -139,21 +141,21 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 
 		for(int i = 0; i < 4; i++) {
 			if(lor == 0) {
-				w.setBlock(x + 5 - i, y + i + 1 + height, z + 1, EssenceBlocks.dungeonBrickStairs, 1, 2);
-				w.setBlock(x + 5 - i, y + i + 1 + height, z + 2, EssenceBlocks.dungeonBrickStairs, 1, 2);
+				w.setBlockState(new BlockPos(x + 5 - i, y + i + 1 + height, z + 1), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
+				w.setBlockState(new BlockPos(x + 5 - i, y + i + 1 + height, z + 2), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
 			} else {
-				w.setBlock(x + 5 - i, y + i + 1 + height - 4, z + 7, EssenceBlocks.dungeonBrickStairs, 1, 2);
-				w.setBlock(x + 5 - i, y + i + 1 + height - 4, z + 8, EssenceBlocks.dungeonBrickStairs, 1, 2);
+				w.setBlockState(new BlockPos(x + 5 - i, y + i + 1 + height - 4, z + 7), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
+				w.setBlockState(new BlockPos(x + 5 - i, y + i + 1 + height - 4, z + 8), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
 			}
 		}
-		w.setBlock(x + 2, y + 1 + height - 1, z + 7, EssenceBlocks.dungeonBrickStairs, 1, 2);
-		w.setBlock(x + 2, y + 1 + height - 1, z + 8, EssenceBlocks.dungeonBrickStairs, 1, 2);
+		w.setBlockState(new BlockPos(x + 2, y + 1 + height - 1, z + 7), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
+		w.setBlockState(new BlockPos(x + 2, y + 1 + height - 1, z + 8), EssenceBlocks.dungeonBrickStairs.getStateFromMeta(1), 2);
 		
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrickStairs && r.nextInt(15) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonChisledBrickStairs, 1, 2);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrickStairs && r.nextInt(15) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonChisledBrickStairs.getStateFromMeta(1), 2);
 						break;
 					}
 				}
@@ -163,8 +165,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrickStairs && r.nextInt(10) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonBrickCarvedStairs, 1, 2);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrickStairs && r.nextInt(10) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonBrickCarvedStairs.getStateFromMeta(1), 2);
 						break;
 					}
 				}
@@ -174,8 +176,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int x1 = 0; x1 < 15; x1++) {
 			for(int y1 = 0; y1 < 200; y1++) {
 				for(int z1 = 0; z1 < 15; z1++) {
-					if(w.getBlock(x + x1, y + y1, z + z1) == EssenceBlocks.dungeonBrickStairs && r.nextInt(10) == 0) {
-						w.setBlock(x + x1, y + y1, z + z1, EssenceBlocks.dungeonCrackedBrickStairs, 1, 2);
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == EssenceBlocks.dungeonBrickStairs && r.nextInt(10) == 0) {
+						w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), EssenceBlocks.dungeonCrackedBrickStairs.getStateFromMeta(1), 2);
 						break;
 					}
 				}
@@ -185,8 +187,8 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		for(int i = 0; i < 50; i++) {
 			for(int j = 0; j < 200; j++) {
 				for(int k = 0; k < 50; k++) {
-					if(w.getBlock(i, j, k) == EssenceBlocks.dungeonBrickStairs) {
-						if(r.nextInt(10) == 0) w.setBlock(i, j, k, EssenceBlocks.dungeonCrackedBrickStairs, 1, 2);
+					if(w.getBlockState(new BlockPos(i, j, k)) == EssenceBlocks.dungeonBrickStairs) {
+						if(r.nextInt(10) == 0) w.setBlockState(new BlockPos(i, j, k), EssenceBlocks.dungeonCrackedBrickStairs.getStateFromMeta(1), 2);
 					}
 				}
 			}

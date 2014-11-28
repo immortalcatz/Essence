@@ -3,10 +3,10 @@ package net.essence.entity.mob.boiling;
 import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -47,9 +47,10 @@ public class EntityMagmaGiant extends EntityModMob{
 	}
 	
 	@Override
-	protected void attackEntity(Entity e, float a) {
-		super.attackEntity(e, a);
-		((EntityPlayer)e).setFire(5 + rand.nextInt(7));
+	public boolean attackEntityFrom(DamageSource e, float a) {
+		if(e.getSourceOfDamage() instanceof EntityPlayer)
+			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
+		return super.attackEntityFrom(e, a);
 	}
 	
 	@Override
@@ -80,8 +81,8 @@ public class EntityMagmaGiant extends EntityModMob{
             i = MathHelper.floor_double(this.posX + (double)((float)(l % 2 * 2 - 1) * 0.25F));
             j = MathHelper.floor_double(this.posY);
             k = MathHelper.floor_double(this.posZ + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
-            if(this.worldObj.getBlock(i, j, k).getMaterial() == Material.air && Blocks.fire.canPlaceBlockAt(this.worldObj, i, j, k)) 
-            	this.worldObj.setBlock(i, j, k, Blocks.fire);
+            if(this.worldObj.getBlockState(new BlockPos(i, j, k)).getBlock().getMaterial() == Material.air && Blocks.fire.canPlaceBlockAt(this.worldObj, new BlockPos(i, j, k))) 
+            	this.worldObj.setBlockState(new BlockPos(i, j, k), Blocks.fire.getDefaultState());
         }
     }
 }

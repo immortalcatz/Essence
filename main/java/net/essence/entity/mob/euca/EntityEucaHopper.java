@@ -12,12 +12,12 @@ import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathEntity;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModTameable;
@@ -49,11 +49,6 @@ public class EntityEucaHopper extends EntityModTameable {
 	}
 
 	@Override
-	public boolean getCanSpawnHere() {
-		return worldObj.getBlock((int)posX, (int)posY - 1, (int)posZ) == Blocks.soul_sand && super.getCanSpawnHere();
-	}
-
-	@Override
 	public void setAttackTarget(EntityLivingBase par1EntityLivingBase) {
 		super.setAttackTarget(par1EntityLivingBase);
 		if(par1EntityLivingBase == null)
@@ -76,10 +71,10 @@ public class EntityEucaHopper extends EntityModTameable {
 	}
 
 	@Override
-	protected void func_145780_a(int x, int y, int z, Block b) {
+	protected void func_180429_a(BlockPos pos, Block b) {
 		this.playSound("mob.wolf.step", 0.15F, 1.0F);
 	}
-
+	
 	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
 		super.writeEntityToNBT(par1NBTTagCompound);
@@ -94,7 +89,7 @@ public class EntityEucaHopper extends EntityModTameable {
 
 	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
-		if(this.isEntityInvulnerable()) return false;
+		if(this.func_180431_b(par1DamageSource)) return false;
 		else {
 			Entity entity = par1DamageSource.getEntity();
 			this.aiSit.setSitting(false);
@@ -128,7 +123,7 @@ public class EntityEucaHopper extends EntityModTameable {
 					if(itemfood.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectFloat(18) < 20.0F) {
 						if(!par1EntityPlayer.capabilities.isCreativeMode)
 							--itemstack.stackSize;            
-						this.heal((float)itemfood.func_150905_g(itemstack));
+						this.heal((float)itemfood.getHealAmount(itemstack));
 						if(itemstack.stackSize <= 0)
 							par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
 						return true;
@@ -139,8 +134,7 @@ public class EntityEucaHopper extends EntityModTameable {
 			if (func_152114_e(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
 				this.aiSit.setSitting(!this.isSitting());
 				this.isJumping = false;
-				this.setPathToEntity((PathEntity)null);
-				this.setTarget((Entity)null);
+				this.navigator.clearPathEntity();
 				this.setAttackTarget((EntityLivingBase)null);
 			}
 		}
@@ -155,7 +149,7 @@ public class EntityEucaHopper extends EntityModTameable {
 			if(!this.worldObj.isRemote) {
 				if(this.rand.nextInt(3) == 0) {
 					this.setTamed(true);
-					this.setPathToEntity((PathEntity)null);
+					this.navigator.clearPathEntity();
 					this.setAttackTarget((EntityLivingBase)null);
 					this.aiSit.setSitting(true);
 					this.setHealth(20.0F);

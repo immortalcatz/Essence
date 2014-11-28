@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
@@ -31,8 +32,8 @@ public class PlayerEvent {
 		if(isWorking){
 			if(event.harvester != null && event.harvester instanceof EntityPlayer && event.harvester.getHeldItem() != null) {
 				if(!event.isSilkTouching){
-					ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.block, 1, event.blockMetadata));
-					if(stack != null && event.block != Blocks.redstone_ore && event.block != Blocks.lapis_ore && event.block != Blocks.lapis_ore) {
+					ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.state.getBlock(), 1, event.world.getBlockState(event.pos).getBlock().getMetaFromState(event.state)));
+					if(stack != null && event.state.getBlock() != Blocks.redstone_ore && event.state.getBlock() != Blocks.lapis_ore && event.state.getBlock() != Blocks.lapis_ore) {
 						event.drops.clear();
 						event.drops.add(stack.copy());
 					}
@@ -53,15 +54,15 @@ public class PlayerEvent {
 	public void onTick(TickEvent.PlayerTickEvent event) {
 		EntityPlayer player = event.player;
 		int i = MathHelper.floor_double(player.posX);
-		int j = MathHelper.floor_double(player.boundingBox.minY);
+		int j = MathHelper.floor_double(player.posY);
 		int k = MathHelper.floor_double(player.posZ);
-		Material m = event.player.worldObj.getBlock(i, j, k).getMaterial();
+		Material m = event.player.worldObj.getBlockState(new BlockPos(i, j, k)).getBlock().getMaterial();
 		boolean mat = (m == Material.water);
 		boolean isWorking = false;
 		if(hasArmorEnchantment(Essence.waterWalk, player)) isWorking = true;
 		if(isWorking) {
 			if(mat && player.motionY < 0.0D) {
-				if(player.worldObj.getBlock(i, j - 1, k).getMaterial() == Material.water || player.worldObj.getBlock(i, j, k).getMaterial() == Material.water) player.motionY = 0.0D;
+				if(player.worldObj.getBlockState(new BlockPos(i, j - 1, k)).getBlock().getMaterial() == Material.water || player.worldObj.getBlockState(new BlockPos(i, j, k)).getBlock().getMaterial() == Material.water) player.motionY = 0.0D;
 				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.0D; 
 				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.5D;
 			}
@@ -78,7 +79,7 @@ public class PlayerEvent {
 	}
 
 	public static int getArmorEnchantment(Enchantment en, EntityLivingBase e) {
-		if(en != null && e != null) return EnchantmentHelper.getMaxEnchantmentLevel(en.effectId, e.getLastActiveItems());
+		if(en != null && e != null) return EnchantmentHelper.getMaxEnchantmentLevel(en.effectId, e.getInventory());
 		else return 0;
 	}
 

@@ -115,7 +115,7 @@ public class EssenceBlocks {
 	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
-	public static final BlockModDoor hotDoor = new BlockModDoor("hotDoorBlock", 5.0F, null);
+	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "hotDoorBlock");
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
@@ -136,7 +136,7 @@ public class EssenceBlocks {
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", 0.5F);
 	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStone");
-	public static final BlockModDoor frozenDoor = new BlockModDoor("frozenDoorBlock", 5.0F, null);
+	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock");
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
 	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab", workshopStone);
 	

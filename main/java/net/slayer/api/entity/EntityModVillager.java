@@ -3,20 +3,17 @@ package net.slayer.api.entity;
 import java.util.Iterator;
 
 import net.essence.Essence;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.INpc;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAILookAtTradePlayer;
 import net.minecraft.entity.ai.EntityAIMoveIndoors;
-import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAIOpenDoor;
 import net.minecraft.entity.ai.EntityAIRestrictOpenDoor;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITradePlayer;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.EntityAIWatchClosest2;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.IMob;
@@ -27,13 +24,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.util.DamageSource;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
+
+import com.google.common.base.Predicate;
 
 public abstract class EntityModVillager extends EntityVillager implements INpc, IMerchant, IMob {
 
@@ -53,9 +51,14 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 		this.setSize(1.0F, 2.0F);
 		this.randomTickDivider = 0;
 		this.villageObj = null;
-		this.getNavigator().setBreakDoors(true);
-		this.getNavigator().setAvoidsWater(true);
-		this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityZombie.class, 8.0F, 0.3F, 0.35F));
+		this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate() {
+            public boolean func_179958_a(Entity p_179958_1_) {
+                return p_179958_1_ instanceof EntityZombie;
+            }
+            public boolean apply(Object p_apply_1_) {
+                return this.func_179958_a((Entity)p_apply_1_);
+            }
+        }, 6.0F, 1.0D, 1.2D));
 		this.tasks.addTask(1, new EntityAITradePlayer(this));
 		this.tasks.addTask(1, new EntityAILookAtTradePlayer(this));
 		this.tasks.addTask(2, new EntityAIMoveIndoors(this));
@@ -70,11 +73,6 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	    super.applyEntityAttributes();
 	    this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
 	    this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D);
-	}
-
-	@Override
-	public boolean isAIEnabled() {
-		return true;
 	}
 
 	@Override
@@ -101,7 +99,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	protected void updateAITick() {
 		if(this.randomTickDivider-- <= 0) {
 			this.randomTickDivider = 70 + this.rand.nextInt(50);
-			this.villageObj = this.worldObj.villageCollectionObj.findNearestVillage(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ), 32);
+			this.villageObj = this.worldObj.villageCollectionObj.func_176056_a(new BlockPos(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)), 32);
 
 			if(this.villageObj == null) {
 				this.detachHome();
@@ -181,12 +179,12 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	public void useRecipe(MerchantRecipe var1) {
 		var1.incrementToolUses();
 
-		if(var1.hasSameIDsAs((MerchantRecipe)this.buyingList.get(this.buyingList.size() - 1))) {
+		if(var1.func_180321_e() == 1 || this.rand.nextInt(5) == 0) {
 			this.timeUntilReset = 40;
 			this.needsInitilization = true;
 
 			if(this.buyingPlayer != null) {
-				this.buyersName = this.buyingPlayer.getCommandSenderName();
+				this.buyersName = this.buyingPlayer.getName();
 			} else {
 				this.buyersName = null;
 			}
@@ -196,9 +194,6 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 			this.wealth += var1.getItemToBuy().stackSize;
 		}
 	}
-
-	@Override
-	public void func_110297_a_(ItemStack par1ItemStack) { }
 
 	@Override
 	public MerchantRecipeList getRecipes(EntityPlayer var1) {
@@ -224,7 +219,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 		}
 
 		for(int var3 = 0; var3 < par1 && var3 < rec.size(); ++var3) {
-			this.buyingList.addToListWithCheck((MerchantRecipe)rec.get(var3));
+			this.buyingList.add((MerchantRecipe)rec.get(var3));
 		}
 	}
 }

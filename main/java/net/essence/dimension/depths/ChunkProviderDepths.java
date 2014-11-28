@@ -4,13 +4,12 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
@@ -18,10 +17,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.ChunkProviderEvent;
-import cpw.mods.fml.common.eventhandler.Event.Result;
 
 public class ChunkProviderDepths implements IChunkProvider{
 
@@ -59,7 +54,7 @@ public class ChunkProviderDepths implements IChunkProvider{
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, i * 16, j * 16, 16, 16);
 		this.generateTerrain(i, j, var3, this.biomesForGeneration, this.generatedTemperatures);
 		this.replaceBlocksForBiome(i, j, var3, this.biomesForGeneration);
-		Chunk var4 = new Chunk(this.worldObj, var3, i, j);
+		Chunk var4 = new Chunk(this.worldObj, i, j);
 		byte[] var5 = var4.getBiomeArray();
 
 		for(int var6 = 0; var6 < var5.length; ++var6) {
@@ -77,17 +72,16 @@ public class ChunkProviderDepths implements IChunkProvider{
 		double var6 = 0.03125D;
 		this.stoneNoise = this.noiseGen4.generateNoiseOctaves(this.stoneNoise, var1 * 16, var2 * 16, 0, 16, 16, 1, var6 * 2.0D, var6 * 2.0D, var6 * 2.0D);
 
-		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, var1, var2, var3, var4);
-		MinecraftForge.EVENT_BUS.post(event);
-		if(event.getResult() == Result.DENY) return;
+		//ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, var1, var2, var3, var4);
+		//MinecraftForge.EVENT_BUS.post(event);
+		//if(event.getResult() == Result.DENY) return;
 
 		for(int i1 = 0; i1 < 16; ++i1) {
 			for(int var9 = 0; var9 < 16; ++var9) {
 				BiomeGenBase j1 = var4[var9 + i1 * 16];
-				float var11 = j1.getFloatTemperature(var9, var9, var9);
 				int i2 = (int)(this.stoneNoise[i1 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
 				int j2 = -1;
-				Block i3 = j1.topBlock;
+				Block i3 = j1.topBlock.getBlock();
 				Block k1 = EssenceBlocks.depthsGrass;
 
 				for(int k2 = 127; k2 >= 0; --k2) {
@@ -145,11 +139,6 @@ public class ChunkProviderDepths implements IChunkProvider{
 				if(var3[i] == EssenceBlocks.eucaGrass && var3[i + 1] != null) var3[i] = EssenceBlocks.eucaDirt;
 			}
 		}
-	}
-
-	@Override
-	public Chunk loadChunk(int i, int j) {
-		return this.provideChunk(i, j);
 	}
 
 	public void generateTerrain(int var1, int var2, Block[] var3, BiomeGenBase[] var4, double[] var5) {
@@ -306,10 +295,7 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public boolean unloadQueuedChunks() {
 		return false;
 	}
-
-	@Override
-	public void recreateStructures(int i, int j) { }
-
+	
 	@Override
 	public void saveExtraData() { }
 	
@@ -327,15 +313,28 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public int getLoadedChunkCount() {
 		return 0;
 	}
-	
+
 	@Override
-	public ChunkPosition func_147416_a(World var1, String var2, int var3, int var4, int var5) {
+	public Chunk func_177459_a(BlockPos pos) {
+		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
+	}
+
+	@Override
+	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
+		return false;
+	}
+
+	@Override
+	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
+		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
+		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	}
+
+	@Override
+	public BlockPos func_180513_a(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
 		return null;
 	}
 
 	@Override
-	public List getPossibleCreatures(EnumCreatureType enumcreaturetype, int i,int j, int k) {
-		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(i, k);
-		return var5 == null ? null : var5.getSpawnableList(enumcreaturetype);
-	}
+	public void func_180514_a(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
 }

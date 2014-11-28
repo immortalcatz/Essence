@@ -62,7 +62,7 @@ public class MapGenBoilBridge extends MapGenStructure
                 StructureBoilBridgePieces.Start start = new StructureBoilBridgePieces.Start(p_i2040_2_, (p_i2040_3_ << 4) + 2, (p_i2040_4_ << 4) + 2);
                 this.components.add(start);
                 start.buildComponent(start, this.components, p_i2040_2_);
-                ArrayList arraylist = start.field_74967_d;
+                List arraylist = start.field_74967_d;
 
                 while (!arraylist.isEmpty())
                 {
@@ -75,4 +75,9 @@ public class MapGenBoilBridge extends MapGenStructure
                 this.setRandomHeight(p_i2040_1_, p_i2040_2_, 48, 70);
             }
         }
+
+	@Override
+	public String getStructureName() {
+		return "BoilBridge";
+	}
 }

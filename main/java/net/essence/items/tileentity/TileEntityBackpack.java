@@ -63,13 +63,11 @@ public class TileEntityBackpack extends TileEntity implements IInventory {
             s.stackSize = this.getInventoryStackLimit();
         }
     }
-
-    @Override
+    
     public String getInventoryName() {
         return this.hasCustomInventoryName() ? this.customName : "container.backpack";
     }
 
-    @Override
     public boolean hasCustomInventoryName() {
         return this.customName != null && this.customName.length() > 0;
     }

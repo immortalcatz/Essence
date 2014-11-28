@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import net.essence.blocks.tileentity.container.ContainerEnrichedTable;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -17,6 +18,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnchantmentNameParts;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
@@ -49,7 +51,7 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
     private float ySizeFloat;
     
     public GuiEnrichedEnchantmentTable(InventoryPlayer par1InventoryPlayer, World par2World, int par3, int par4, int par5, EntityPlayer player) {
-        super(new ContainerEnrichedTable(par1InventoryPlayer, par2World, par3, par4, par5, player));
+        super(new ContainerEnrichedTable(par1InventoryPlayer, par2World, new BlockPos(par3, par4, par5), player));
         this.container = (ContainerEnrichedTable)this.inventorySlots;
     }
 
@@ -224,9 +226,9 @@ public class GuiEnrichedEnchantmentTable extends GuiContainer {
         player.rotationPitch = -((float)Math.atan((double)(rotation / 40.0F))) * 20.0F;
         player.rotationYawHead = player.rotationYaw;
         player.prevRotationYawHead = player.rotationYaw;
-        GL11.glTranslatef(0.0F, player.yOffset, 0.0F);
-        RenderManager.instance.playerViewY = 180.0F;
-        RenderManager.instance.renderEntityWithPosYaw(player, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
+        GL11.glTranslatef(0.0F, 0.0F, 0.0F);
+        Minecraft.getMinecraft().getRenderManager().playerViewY = 180.0F;
+        Minecraft.getMinecraft().getRenderManager().renderEntityWithPosYaw(player, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
         player.renderYawOffset = f2;
         player.rotationYaw = f3;
         player.rotationPitch = f4;
