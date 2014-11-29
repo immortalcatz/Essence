@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -94,17 +95,32 @@ public class BlockMod extends Block{
 	
 	@Override
 	public boolean isOpaqueCube() {
-		return !(this == EssenceBlocks.christmasLights);
+		return this != EssenceBlocks.christmasLights;
 	}
 
+	/*@Override
+	public int getRenderType() {
+		return this == EssenceBlocks.mossyEssenceStone ? 173 : 3;
+	}*/
+	
 	@Override
 	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone ? 173 : 0;
+		return 3;
 	}
 
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+        return EnumWorldBlockLayer.SOLID;
+    }
+	
 	@Override
 	public int quantityDropped(Random rand) {
 		return 1;
+	}
+	
+	@Override
+	public boolean isNormalCube() {
+		return true;
 	}
 
 	@Override

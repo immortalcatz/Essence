@@ -35,9 +35,6 @@ public class BlockStatue extends BlockMod {
 
 	@Override
 	public AxisAlignedBB getSelectedBoundingBox(World w, BlockPos pos) {
-		Block b = (Block) w.getBlockState(pos);
-		float f = 0.0625F;
-		AxisAlignedBB bb = null;
 		return AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1F, pos.getY() + 1.9F, pos.getZ() + 1F);
 	}
 	
@@ -49,9 +46,6 @@ public class BlockStatue extends BlockMod {
 
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
-		Block b = worldIn.getBlockState(pos).getBlock();
-		float f = 0.0625F;
-		AxisAlignedBB bb = null;
 		return AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1F, pos.getY() + 1.9F, pos.getZ() + 1F);
 	}
 

@@ -38,9 +38,9 @@ public class BlockIncubator extends BlockContainer {
 		setStepSound(Block.soundTypeStone);
 		if(!act) setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
-		GameRegistry.registerBlock(this, name);
 		active = act;
 		if(act) setLightLevel(0.875F);
+		GameRegistry.registerBlock(this, name);
 	}
 
 	@Override

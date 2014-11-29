@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -33,20 +34,13 @@ public class BlockGlowshroom extends Block {
 		setHardness(0.0F);
 		setLightLevel(0.6F);
 		setTickRandomly(true);
-		GameRegistry.registerBlock(this, ItemBlockGlowshroom.class, name);
+		GameRegistry.registerBlock(this, ItemBlockGlowshroom.class, "glowshroom");
 	}
 	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
 	}
-
-	/*@Override
-	public void registerBlockIcons(IIconRegister i) {
-		icons = new IIcon[2];
-		icons[0] = i.registerIcon(textures[0]);
-		icons[1] = i.registerIcon(textures[1]);
-	}*/
 
 	@Override
 	public void getSubBlocks(Item it, CreativeTabs c, List l) {
@@ -74,10 +68,10 @@ public class BlockGlowshroom extends Block {
 		return 1;
 	}
 
-	/*@Override
-	public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase e, ItemStack i) {
-		w.setBlock(x, y, z, this, i.getItemDamage(), 2);
-	}*/
+	@Override
+	public void onBlockPlacedBy(World w, BlockPos pos, IBlockState s, EntityLivingBase e, ItemStack i) {
+		w.setBlockState(pos, this.getStateFromMeta(i.getItemDamage()), 2);
+	}
 	
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
@@ -102,15 +96,5 @@ public class BlockGlowshroom extends Block {
 	@Override
 	public boolean canBlockStay(World w, int x, int y, int z) {
 		return canPlaceBlockAt(w, x, y, z);
-	}
-
-	@Override
-	public IIcon getIcon(int s, int m) {
-		return m == 0 ? icons[0] : m == 1 ? icons[1] : icons[0];
-	}
-	
-	@Override
-	public int damageDropped(int m) {
-		return 1;
 	}*/
 }

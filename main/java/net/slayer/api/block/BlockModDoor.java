@@ -23,6 +23,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
@@ -41,18 +42,15 @@ public class BlockModDoor extends BlockMod {
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING_PROP, EnumFacing.NORTH).withProperty(OPEN_PROP, Boolean.valueOf(false)).withProperty(HINGEPOSITION_PROP, BlockModDoor.EnumHingePosition.LEFT).withProperty(POWERED_PROP, Boolean.valueOf(false)).withProperty(HALF_PROP, BlockModDoor.EnumDoorHalf.LOWER));
     }
 
-    public boolean isOpaqueCube()
-    {
+    public boolean isOpaqueCube() {
         return false;
     }
 
-    public boolean isPassable(IBlockAccess blockAccess, BlockPos pos)
-    {
+    public boolean isPassable(IBlockAccess blockAccess, BlockPos pos) {
         return func_176516_g(func_176515_e(blockAccess, pos));
     }
 
-    public boolean isFullCube()
-    {
+    public boolean isFullCube() {
         return false;
     }
 

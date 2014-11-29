@@ -36,15 +36,15 @@ public class CommonProxy {
 	public void clientInit(FMLInitializationEvent event) { }
 	public void registerSounds() { }
 	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double x, double y, double z, boolean b) { }
+	public void registerModModels() { }
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
 		EssenceBlocks.addBlockNames();
-		EssenceBlocks.addBlocks();
 		EssenceItems.addItemNames();
 		EssenceItems.addItems();
 		EntityRegistry.init();
-		//RecipeHelper.init();
+		RecipeHelper.init();
 		DimensionHelper.init();
 		//DimensionHelper.addSpawns();
 		EssenceTabs.init();

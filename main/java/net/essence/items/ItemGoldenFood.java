@@ -17,7 +17,7 @@ public class ItemGoldenFood extends ItemFood {
 	
 	private boolean op;
 	
-    public ItemGoldenFood(String name, String tex, String actual, int heal, float sat, boolean wolf, boolean isOP) {
+    public ItemGoldenFood(String name, String actual, int heal, float sat, boolean wolf, boolean isOP) {
         super(heal, sat, wolf);
         op = isOP;
         setUnlocalizedName(name);

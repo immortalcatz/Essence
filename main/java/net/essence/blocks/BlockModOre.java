@@ -163,10 +163,10 @@ public class BlockModOre extends BlockMod {
 		return Item.getItemFromBlock(this);
 	}
 
-	@Override
+	/*@Override
 	public int getRenderType() {
 		return this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
 				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre ? 172 : 0;
-	}
+	}*/
 }

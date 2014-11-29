@@ -19,8 +19,8 @@ public class ItemModPickaxe extends ItemPickaxe {
 		mat = tool;
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.tools);
-        GameRegistry.registerItem(this, name);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
+        GameRegistry.registerItem(this, name);
     }
     
 	@Override

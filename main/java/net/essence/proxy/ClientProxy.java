@@ -48,11 +48,20 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.addEventBus(new PlayerStats());
 	}
 
+
+	public static String[] names = {"dirt", "birchPlanks", "oakPlanks", "junglePlanks", "sprucePlanks", "darkOakPlanks", "acaciaPlanks", "potatoes", "wheat", "carrots", "obsidian", "netherrack", "netherBrick", "redMushroom", "brownMushroom", "melon"};
+	public static String[] names1 = {"pumpkin", "birchLog", "oakLog", "jungleLog", "spruceLog", "darkOakLog", "acaciaLog", "lapisOre", "diamondOre", "goldOre", "quartzOre", "shadiumOre", "luniumOre", "sapphireOre", "celestiumOre", "flairiumOre"};
+	public static String[] names2 = {"hellstoneOre", "ashualOre", "ironOre", "coalOre", "redstoneOre", "emeraldOre", "hay", "gravel", "glass", "redFlower", "yellowFlower", "endStone", "bush", "cobblestone", "mossyCobblestone", "cake"};
+	public static String[] names3 = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
+	public static String[] brickNames = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
+
 	@Override
-	public void init(FMLInitializationEvent event) {
+	public void registerModModels() {
 		for(String s : EssenceBlocks.blockName) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
+			Block b = GameRegistry.findBlock(SlayerAPI.MOD_ID, s);
 			registerItem(i, s);
+			registerBlock(b, s);
 		}
 
 		for(String s : EssenceItems.itemNames) {
@@ -63,7 +72,7 @@ public class ClientProxy extends CommonProxy {
 
 	public static void registerItem(Item item, int metadata, String itemName) {
 		ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
-		mesher.register(item, metadata, new ModelResourceLocation("eotg" + itemName, "inventory"));
+		mesher.register(item, metadata, new ModelResourceLocation("eotg:" + itemName, "inventory"));
 	}
 
 	public static void registerBlock(Block block, int metadata, String blockName) {

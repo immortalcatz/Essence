@@ -34,8 +34,8 @@ public class ItemMultiTool extends ItemTool {
 		mat = tool;
         setCreativeTab(EssenceTabs.tools);
         setUnlocalizedName(name);
-        GameRegistry.registerItem(this, name);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
+        GameRegistry.registerItem(this, name);
     }
     
 	@Override

@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import net.essence.blocks.*;
 import net.essence.client.*;
 import net.essence.client.render.mob.model.statue.*;
+import net.essence.items.block.*;
 import net.minecraft.block.*;
+import net.minecraftforge.fml.common.registry.*;
 import net.slayer.api.*;
 import net.slayer.api.block.*;
 
@@ -148,7 +150,7 @@ public class EssenceBlocks {
 	public static final Block eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final Block eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
 	public static final Block eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
-
+	
 	public static void addBlockNames() {
 		blockName.add("workshopSlab");
 		blockName.add("workshopStone");
@@ -203,8 +205,6 @@ public class EssenceBlocks {
 		blockName.add("boilingPortalFrame");
 		blockName.add("hotGround");
 		blockName.add("ash");
-		blockName.add("fire");
-		blockName.add("boilingFire");
 		blockName.add("mossyEssenceStone");
 		blockName.add("dungeonBrick");
 		blockName.add("dungeonCrackedBrick");
@@ -239,97 +239,5 @@ public class EssenceBlocks {
 		blockName.add("eucaGreenFlower");
 		blockName.add("eucaBlueFlower");
 		blockName.add("caveVine");
-	}
-	
-	public static void addBlocks() {
-		blocks.add(workshopSlab);
-		blocks.add(workshopStone);
-		blocks.add(workshopStoneStair);
-		blocks.add(workshopLamp);
-		blocks.add(workshopStoneFence);
-		blocks.add(candyCane);
-		blocks.add(frozenPortal);
-		blocks.add(frozenGlass);
-		blocks.add(frozenPane);
-		blocks.add(frozenStone);
-		blocks.add(frozenGrass);
-		blocks.add(frozenDirt);
-		blocks.add(hellstoneOre);
-		blocks.add(shadiumOre);
-		blocks.add(luniumOre);
-		blocks.add(celestiumOre);
-		blocks.add(flairiumOre);
-		blocks.add(ashual);
-		blocks.add(sapphireOre);
-		blocks.add(hellstoneBlock);
-		blocks.add(shadiumBlock);
-		blocks.add(luniumBlock);
-		blocks.add(celestiumBlock);
-		blocks.add(flairiumBlock);
-		blocks.add(sapphireBlock);
-		blocks.add(eucaDirt);
-		blocks.add(eucaGrass);
-		blocks.add(eucaStone);
-		blocks.add(eucaLog);
-		blocks.add(eucaPlank);
-		blocks.add(eucaStairs);
-		blocks.add(redEucaLeaves);
-		blocks.add(greenEucaLeaves);
-		blocks.add(blueEucaLeaves);
-		blocks.add(eucaSapling);
-		blocks.add(depthsDirt);
-		blocks.add(depthsGrass);
-		blocks.add(depthsStone);
-		blocks.add(depthsLog);
-		blocks.add(depthsPlank);
-		blocks.add(depthsStairs);
-		blocks.add(depthsLeaves);
-		blocks.add(godDirt);
-		blocks.add(godGrass);
-		blocks.add(godStone);
-		blocks.add(eucaPortal);
-		blocks.add(eucaPortalFrame);
-		blocks.add(depthsPortal);
-		blocks.add(depthsPortalFrame);
-		blocks.add(boilPortal);
-		blocks.add(boilPortalFrame);
-		blocks.add(hotBlock);
-		blocks.add(ashBlock);
-		blocks.add(fire);
-		blocks.add(boilingFire);
-		blocks.add(mossyEssenceStone);
-		blocks.add(dungeonBrick);
-		blocks.add(dungeonCrackedBrick);
-		blocks.add(dungeonChisledBrick);
-		blocks.add(dungeonBrickCarved);
-		blocks.add(dungeonLamp);
-		blocks.add(dungeonBrickStairs);
-		blocks.add(dungeonCrackedBrickStairs);
-		blocks.add(dungeonChisledBrickStairs);
-		blocks.add(dungeonBrickCarvedStairs);
-		blocks.add(dungeonLampStairs);
-		blocks.add(dungeonBrickFence);
-		blocks.add(dungeonCrackedBrickFence);
-		blocks.add(dungeonChisledBrickFence);
-		blocks.add(dungeonBrickCarvedFence);
-		blocks.add(dungeonLampFence);
-		blocks.add(hotBrick);
-		blocks.add(hotBrick_fence);
-		blocks.add(hotBrick_stairs);
-		blocks.add(hotGlass);
-		blocks.add(hotGlassPane);
-		blocks.add(smoothGlass);
-		blocks.add(smoothGlassPane);
-		blocks.add(netherBeastStatue);
-		blocks.add(witheringBeastStatue);
-		blocks.add(calciaStatue);
-		blocks.add(eudorStatue);
-		blocks.add(enrichedEnchantmentTable);
-		blocks.add(hotDoor);
-		blocks.add(christmasLights);
-		blocks.add(eucaTallGrass);
-		blocks.add(eucaGreenFlower);
-		blocks.add(eucaBlueFlower);
-		blocks.add(caveVine);
 	}
 }

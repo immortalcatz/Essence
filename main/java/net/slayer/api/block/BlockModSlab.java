@@ -30,7 +30,7 @@ public class BlockModSlab extends BlockSlab {
 		String s = "";
 		if(full) s = "double";
 		else s = "half";
-		GameRegistry.registerBlock(this, ItemBlockSlab.class, s + "EssenceSlabs");
+		GameRegistry.registerBlock(this, ItemBlockSlab.class, s + "EssenceSlab");
 	}
 
 	/*@Override

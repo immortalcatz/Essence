@@ -23,13 +23,13 @@ public class Essence {
 
 	public static Random rand = new Random();
 	public static final PacketHandler packetHandler = new PacketHandler();
-	
+
 	@Instance(SlayerAPI.MOD_ID)
 	public static Essence instance;
-	
+
 	@SidedProxy(clientSide = "net.essence.proxy.ClientProxy", serverSide = "net.essence.proxy.CommonProxy")
-	public static CommonProxy proxy;	
-	
+	public static CommonProxy proxy;
+
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
 	public static final Enchantment waterWalk = new EnchantmentWaterWalk(164, 3);
 
@@ -45,14 +45,15 @@ public class Essence {
 		event.getModMetadata().name = SlayerAPI.MOD_NAME;
 		event.getModMetadata().version = SlayerAPI.MOD_VERSION;
 	}
-	
+
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
 		proxy.init(event);
 		proxy.clientInit(event);
+		proxy.registerModModels();
 		packetHandler.init();
 	}
-	
+
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
@@ -60,7 +61,7 @@ public class Essence {
 		packetHandler.registerPacket(PacketOpenGui.class);
 		packetHandler.postInit();
 	}
-	
+
 	@EventHandler
 	public static void serverStarting(FMLServerStartingEvent event) {
 		proxy.serverStarting(event);
