@@ -68,10 +68,10 @@ public class BlockMiniColouredBricks extends Block {
 		return new BlockState(this, new IProperty[] {type});
 	}
 	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getBlock().getMetaFromState(this.getDefaultState());
-	}
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((BlockMiniColouredBricks.EnumMetadata)state.getValue(type)).getMetaFromState();
+    }
 
 	public enum EnumMetadata implements IStringSerializable {
 		BLACK(0, "black", "black"),

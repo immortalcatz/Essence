@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:smoothGlass" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:smoothGlass"}
+	}
 }

@@ -59,9 +59,7 @@ public class ClientProxy extends CommonProxy {
 	public void registerModModels() {
 		for(String s : EssenceBlocks.blockName) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
-			Block b = GameRegistry.findBlock(SlayerAPI.MOD_ID, s);
 			registerItem(i, s);
-			registerBlock(b, s);
 		}
 
 		for(String s : EssenceItems.itemNames) {

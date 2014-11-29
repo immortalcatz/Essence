@@ -27,6 +27,7 @@ public class BlockMod extends Block{
 	public int boostBrightnessLow;
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
+	public String name;
 
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
@@ -48,6 +49,7 @@ public class BlockMod extends Block{
 		setStepSound(blockType.getSound());
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
+		this.name = name; 
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -59,6 +61,7 @@ public class BlockMod extends Block{
 		setStepSound(blockType.getSound());
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(texture);
+		this.name = name; 
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -70,7 +73,12 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		setHardness(hardness);
+		this.name = name; 
 		GameRegistry.registerBlock(this, name);
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 	@Override

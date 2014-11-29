@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:hellstoneOre" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:hellstoneOre"}
+	}
 }

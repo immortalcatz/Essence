@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:blueEucaLeaves" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:blueEucaLeaves"}
+	}
 }

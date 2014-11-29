@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:eucaDirt" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:eucaDirt"}
+	}
 }

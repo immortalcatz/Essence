@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:celestiumBlock" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:celestiumBlock"}
+	}
 }

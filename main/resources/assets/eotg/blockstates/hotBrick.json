@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:hotBrick" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:hotBrick"}
+	}
 }

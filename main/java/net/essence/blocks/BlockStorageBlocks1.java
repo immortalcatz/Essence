@@ -75,10 +75,10 @@ public class BlockStorageBlocks1 extends Block {
 		return new BlockState(this, new IProperty[] {type});
 	}
 	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getBlock().getMetaFromState(this.getDefaultState());
-	}
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((BlockStorageBlocks1.EnumMetadata)state.getValue(type)).getMetaFromState();
+    }
 	
 	public enum EnumMetadata implements IStringSerializable {
 		PUMPKIN(0, "pumpkin", "pumpkin"),

@@ -14,7 +14,6 @@ import net.slayer.api.block.*;
 public class EssenceBlocks {
 
 	public static ArrayList<String> blockName = new ArrayList<String>();
-	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	
 	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", 3.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block celestiumOre = new BlockModOre("celestiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
@@ -31,11 +30,11 @@ public class EssenceBlocks {
 	public static final Block flairiumBlock = new BlockModOre("flairiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 
-	public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
+	/*public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
 	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
 	public static final Block luniumBlockOverlay = new BlockModOre("luniumBlock_overlay", -1).setCreativeTab(null);
 	public static final Block shadiumBlockOverlay = new BlockModOre("shadiumBlock_overlay", -1).setCreativeTab(null);
-	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);
+	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);*/
 
 	public static final Block halfSlab = new BlockModSlab(false);
 	public static final Block fullSlab = new BlockModSlab(true);

@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:boilingFire" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:boilingFire"}
+	}
 }

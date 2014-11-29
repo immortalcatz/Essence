@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:workshopStone" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:workshopStone"}
+	}
 }

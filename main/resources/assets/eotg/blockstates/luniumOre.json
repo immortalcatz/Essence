@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:luniumOre" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:luniumOre"}
+	}
 }

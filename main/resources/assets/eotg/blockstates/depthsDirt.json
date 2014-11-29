@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:depthsDirt" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:depthsDirt"}
+	}
 }

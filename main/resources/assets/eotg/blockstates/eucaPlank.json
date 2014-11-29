@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:eucaPlank" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:eucaPlank"}
+	}
 }

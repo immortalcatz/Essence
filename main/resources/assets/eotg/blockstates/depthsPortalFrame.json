@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:depthsPortalFrame" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:depthsPortalFrame"}
+	}
 }

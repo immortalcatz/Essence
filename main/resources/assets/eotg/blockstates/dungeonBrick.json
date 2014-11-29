@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:dungeonBrick" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:dungeonBrick"}
+	}
 }

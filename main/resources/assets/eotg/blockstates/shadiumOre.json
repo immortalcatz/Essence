@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:shadiumOre" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:shadiumOre"}
+	}
 }

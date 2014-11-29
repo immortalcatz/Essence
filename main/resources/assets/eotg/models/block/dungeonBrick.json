@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "eotg:blocks/dungeonBrick"
-    }
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "eotg:blocks/dungeonBrick"
+	}
 }

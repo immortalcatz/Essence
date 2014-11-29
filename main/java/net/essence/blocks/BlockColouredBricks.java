@@ -15,12 +15,10 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
-import net.slayer.api.SlayerAPI;
 
 public class BlockColouredBricks extends Block {
 	
@@ -70,10 +68,10 @@ public class BlockColouredBricks extends Block {
 		return new BlockState(this, new IProperty[] {type});
 	}
 	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getBlock().getMetaFromState(this.getDefaultState());
-	}
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((BlockColouredBricks.EnumMetadata)state.getValue(type)).getMetaFromState();
+    }
 	
 	public enum EnumMetadata implements IStringSerializable {
 		BLACK(0, "black", "black"),

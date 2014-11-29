@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "eotg:depthsPlank" }
-    }
+	"variants": {
+		"normal": { "model": "eotg:depthsPlank"}
+	}
 }

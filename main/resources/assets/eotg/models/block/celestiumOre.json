@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "eotg:blocks/celestiumOre"
-    }
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "eotg:blocks/celestiumOre"
+	}
 }

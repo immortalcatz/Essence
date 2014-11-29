@@ -19,7 +19,6 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
-import net.slayer.api.SlayerAPI;
 
 public class BlockStorageBlocks3 extends Block {
 	
@@ -71,10 +70,10 @@ public class BlockStorageBlocks3 extends Block {
 		return new BlockState(this, new IProperty[] {type});
 	}
 	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getBlock().getMetaFromState(this.getDefaultState());
-	}
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((BlockStorageBlocks3.EnumMetadata)state.getValue(type)).getMetaFromState();
+    }
 	
 	public enum EnumMetadata implements IStringSerializable {
 		CACTUS(0, "cactus", "cactus"),
