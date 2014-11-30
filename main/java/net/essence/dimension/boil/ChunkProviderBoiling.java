@@ -49,7 +49,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	private ArrayList<WorldGenerator> dungeons;
 	private MapGenBoilVillage villageGenerator = new MapGenBoilVillage();
 	public MapGenBoilBridge genNetherBridge = new MapGenBoilBridge();
-	private boolean canSpawn = true;
+	private boolean canSpawn = false;
 
 	public ChunkProviderBoiling(World par1World, long par2) {
 		this.worldObj = par1World;

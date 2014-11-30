@@ -1,8 +1,5 @@
 {
-    "variants": {
-            { "model": "eotg:eucaGrass" },
-            { "model": "eotg:eucaGrass", "y": 90 },
-            { "model": "eotg:eucaGrass", "y": 180 },
-            { "model": "eotg:eucaGrass", "y": 270 }
-    }
+	"variants": {
+		"normal": { "model": "eotg:eucaGrass"}
+	}
 }

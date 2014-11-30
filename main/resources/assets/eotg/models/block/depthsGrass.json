@@ -1,0 +1,9 @@
+{
+	"parent": "eotg:block/grass",
+	"textures": {
+		"particle": "eotg:blocks/depthsDirt",
+		"bottom": "eotg:blocks/depthsDirt",
+		"top": "eotg:blocks/depthsGrass_top",
+		"side": "eotg:blocks/depthsGrass_side"
+	}
+}

@@ -42,7 +42,6 @@ public class CommonProxy {
 		Config.init(event);
 		EssenceBlocks.addBlockNames();
 		EssenceItems.addItemNames();
-		EssenceItems.addItems();
 		EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();

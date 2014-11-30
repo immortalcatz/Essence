@@ -1,9 +1,9 @@
 {
-    "parent": "block/grass",
-    "textures": {
-        "particle": "eotg:blocks/eucaDirt",
-        "bottom": "eotg:blocks/eucaDirt",
-        "top": "eotg:blocks/eucaGrass_top",
-        "side": "eotg:blocks/eucaGrass_side",
-    }
+	"parent": "eotg:block/grass",
+	"textures": {
+		"particle": "eotg:blocks/eucaDirt",
+		"bottom": "eotg:blocks/eucaDirt",
+		"top": "eotg:blocks/eucaGrass_top",
+		"side": "eotg:blocks/eucaGrass_side"
+	}
 }

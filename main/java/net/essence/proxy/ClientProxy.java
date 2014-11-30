@@ -15,6 +15,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -48,12 +49,13 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.addEventBus(new PlayerStats());
 	}
 
-
 	public static String[] names = {"dirt", "birchPlanks", "oakPlanks", "junglePlanks", "sprucePlanks", "darkOakPlanks", "acaciaPlanks", "potatoes", "wheat", "carrots", "obsidian", "netherrack", "netherBrick", "redMushroom", "brownMushroom", "melon"};
 	public static String[] names1 = {"pumpkin", "birchLog", "oakLog", "jungleLog", "spruceLog", "darkOakLog", "acaciaLog", "lapisOre", "diamondOre", "goldOre", "quartzOre", "shadiumOre", "luniumOre", "sapphireOre", "celestiumOre", "flairiumOre"};
 	public static String[] names2 = {"hellstoneOre", "ashualOre", "ironOre", "coalOre", "redstoneOre", "emeraldOre", "hay", "gravel", "glass", "redFlower", "yellowFlower", "endStone", "bush", "cobblestone", "mossyCobblestone", "cake"};
 	public static String[] names3 = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
 	public static String[] brickNames = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
+	public static String[] finalBrickNames = {"blackColouredBrick", "blueColouredBrick", "brownColouredBrick", "cyanColouredBrick", "grayColouredBrick", "limeColouredBrick", "magentaColouredBrick", "orangeColouredBrick", "pinkColouredBrick", "purpleColouredBrick", "redColouredBrick", "whiteColouredBrick", "yellowColouredBrick"};
+	public static String[] finalMiniBrickNames = {"blackMiniColouredBrick", "blueMiniColouredBrick", "brownMiniColouredBrick", "cyanMiniColouredBrick", "grayMiniColouredBrick", "limeMiniColouredBrick", "magentaMiniColouredBrick", "orangeMiniColouredBrick", "pinkMiniColouredBrick", "purpleMiniColouredBrick", "redMiniColouredBrick", "whiteMiniColouredBrick", "yellowMiniColouredBrick"};
 
 	@Override
 	public void registerModModels() {
@@ -66,6 +68,26 @@ public class ClientProxy extends CommonProxy {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
 			registerItem(i, s);
 		}
+		
+		for(int i = 0; i < brickNames.length; i++) {
+			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
+			registerItem(it, i, finalBrickNames[i]);
+		}
+		registerModelBakery(EssenceBlocks.colouredBricks, finalBrickNames);
+		
+		for(int i = 0; i < finalMiniBrickNames.length; i++) {
+			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
+			registerItem(it, i, finalMiniBrickNames[i]);
+		}
+		registerModelBakery(EssenceBlocks.miniColouredBricks, finalMiniBrickNames);
+	}
+	
+	public static void registerModelBakery(Item i, String[] names) {
+		ModelBakery.addVariantName(i, "eotg:" + names);
+	}
+	
+	public static void registerModelBakery(Block b, String[] names) {
+		ModelBakery.addVariantName(SlayerAPI.toItem(b), "eotg:" + names);
 	}
 
 	public static void registerItem(Item item, int metadata, String itemName) {

@@ -1,5 +1,6 @@
 {
 	"variants": {
-		"normal": { "model": "eotg:eucaPortal"}
+		"axis=z": { "model": "eotg:eucaPortal_ew" },
+		"axis=x": { "model": "eotg:eucaPortal_ns" }
 	}
 }

@@ -1,0 +1,8 @@
+{
+	"parent": "block/stairs",
+	"textures": {
+		"bottom": "eotg:blocks/depthsPlank",
+		"top": "eotg:blocks/depthsPlank",
+		"side": "eotg:blocks/depthsPlank"
+	}
+}

@@ -26,6 +26,7 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		super(Material.rock);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 		setCreativeTab(EssenceTabs.blocks);
+		setUnlocalizedName("enrichedEnchantmentTable");
 		GameRegistry.registerBlock(this, name);
 	}
 

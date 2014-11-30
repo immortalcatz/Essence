@@ -99,7 +99,7 @@ public class BlockEucaPortal extends BlockBreakable {
 	}
 
 	@Override
-	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, Entity entity) {
+	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
 		if ((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
 			int dimensionID = Config.euca;
@@ -161,27 +161,6 @@ public class BlockEucaPortal extends BlockBreakable {
 				return true;
 			} else {
 				return false;
-			}
-		}
-	}
-
-	@Override
-	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
-		EnumFacing.Axis axis = (EnumFacing.Axis)state.getValue(field_176550_a);
-		BlockEucaPortal.Size size;
-
-		if (axis == EnumFacing.Axis.X) {
-			size = new BlockEucaPortal.Size(worldIn, pos, EnumFacing.Axis.X);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-			}
-		}
-		else if (axis == EnumFacing.Axis.Z) {
-			size = new BlockEucaPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
 			}
 		}
 	}
