@@ -21,6 +21,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
@@ -46,7 +47,7 @@ public class SlayerAPI {
 	public static int mobID = 400, projectileID = 230;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
-	public static final String MOD_NAME = "Essence Of The Gods", MOD_ID = "eotg", PREFIX = MOD_ID + ":", MOD_VERSION = "1.6"; 
+	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "1.6"; 
 	public static final boolean DEVMODE = true;
 
 	public static void addRecipe(ItemStack i, Object... o) {
@@ -117,13 +118,13 @@ public class SlayerAPI {
     }
 
 	public static void addChatMessageWithColour(EntityPlayer p, EnumChatFormatting colour, String str) {
-		ChatComponentTranslation chat = new ChatComponentTranslation(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + str);
+		ChatComponentText chat = new ChatComponentText(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + str);
 		chat.getChatStyle().setColor(colour);
 		p.addChatMessage(chat);
 	}
 
 	public static void addChatMessage(EntityPlayer p, String str) {
-		ChatComponentTranslation ret = new ChatComponentTranslation(str);
+		ChatComponentText ret = new ChatComponentText(str);
 		p.addChatMessage(ret);
 	}
 
@@ -166,12 +167,12 @@ public class SlayerAPI {
 	}
 
 	public static void sendMessageToAll(String message, boolean showMod) {
-		if(showMod) FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.DARK_AQUA + "[" + SlayerAPI.Colour.DARK_GREEN + MOD_NAME + SlayerAPI.Colour.DARK_AQUA + "] " + SlayerAPI.Colour.GREEN + message));
-		else FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.GREEN + message));
+		if(showMod) FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.DARK_AQUA + "[" + SlayerAPI.Colour.DARK_GREEN + MOD_NAME + SlayerAPI.Colour.DARK_AQUA + "] " + SlayerAPI.Colour.GREEN + message));
+		else FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.GREEN + message));
 	}
 
 	public static void sendContinuedMessageToAll(String message) {
-		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentTranslation(SlayerAPI.Colour.GREEN + message));
+		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.GREEN + message));
 	}
 	
     public static ToolMaterial addMeleeMaterial(int maxUses, float damage, int enchantability) {

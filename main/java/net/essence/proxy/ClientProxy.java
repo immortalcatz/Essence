@@ -83,16 +83,16 @@ public class ClientProxy extends CommonProxy {
 	}
 	
 	public static void registerModelBakery(Item i, String[] names) {
-		ModelBakery.addVariantName(i, "eotg:" + names);
+		ModelBakery.addVariantName(i, SlayerAPI.PREFIX + names);
 	}
 	
 	public static void registerModelBakery(Block b, String[] names) {
-		ModelBakery.addVariantName(SlayerAPI.toItem(b), "eotg:" + names);
+		ModelBakery.addVariantName(SlayerAPI.toItem(b), SlayerAPI.PREFIX + names);
 	}
 
 	public static void registerItem(Item item, int metadata, String itemName) {
 		ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
-		mesher.register(item, metadata, new ModelResourceLocation("eotg:" + itemName, "inventory"));
+		mesher.register(item, metadata, new ModelResourceLocation(SlayerAPI.PREFIX + itemName, "inventory"));
 	}
 
 	public static void registerBlock(Block block, int metadata, String blockName) {

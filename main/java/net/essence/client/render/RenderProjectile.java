@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.ResourceLocation;
@@ -30,7 +31,7 @@ public class RenderProjectile extends Render {
 
     public void renderProjectile(Entity projectile, double x, double y, double z) {
         GL11.glPushMatrix();
-        this.bindEntityTexture(projectile);
+        this.bindTexture(TextureMap.locationBlocksTexture);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);

@@ -1,8 +1,0 @@
-{
-	"parent": "block/stairs",
-	"textures": {
-		"bottom": "eotg:blocks/eucaPlank",
-		"top": "eotg:blocks/eucaPlank",
-		"side": "eotg:blocks/eucaPlank"
-	}
-}

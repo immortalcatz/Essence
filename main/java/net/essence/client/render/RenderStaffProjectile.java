@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -39,7 +40,7 @@ public class RenderStaffProjectile extends Render {
 
     public void renderProjectile(EntityThrowable projectile, double x, double y, double z) {
         GL11.glPushMatrix();
-        this.bindEntityTexture(projectile);
+        this.bindTexture(TextureMap.locationBlocksTexture);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glColor4f(red, green, blue, 1.0F);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);

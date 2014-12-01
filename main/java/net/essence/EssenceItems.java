@@ -42,7 +42,6 @@ public class EssenceItems {
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
-	public static ArrayList<Item> items = new ArrayList<Item>();
 
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 
@@ -119,7 +118,7 @@ public class EssenceItems {
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
-	//public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
+	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
@@ -272,7 +271,7 @@ public class EssenceItems {
 		itemNames.add("calciaOrb");
 		itemNames.add("netherBeastOrb");
 		itemNames.add("witheringBeastOrb");
-		//itemNames.add("eudorOrb");
+		itemNames.add("eudorOrb");
 		itemNames.add("weakEssencePotion");
 		itemNames.add("strongEssencePotion");
 		itemNames.add("weakDarkEnergyPotion");
