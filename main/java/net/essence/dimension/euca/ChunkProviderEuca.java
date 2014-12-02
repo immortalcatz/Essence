@@ -5,8 +5,17 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaPyramidTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaSmallRectangleTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaSmallSphereTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree1;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaTallPine;
+import net.essence.dimension.euca.gen.trees.WorldGenHugeEucaSpruceTree;
+import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree2;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -21,9 +30,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.ChunkProviderEvent;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 
 public class ChunkProviderEuca implements IChunkProvider {
 
@@ -50,7 +56,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 
-		/*trees = new ArrayList(9);
+		trees = new ArrayList(9);
 		trees.add(new WorldGenBigEucaTree());
 		trees.add(new WorldGenSmallEucaTree());
 		trees.add(new WorldGenHugeEucaSpruceTree(true, true));
@@ -60,7 +66,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		trees.add(new WorldGenEucaSmallRectangleTree());
 		trees.add(new WorldGenEucaSmallSphereTree());
 		trees.add(new WorldGenEucaTallPine());
-		trees.add(new WorldGenSmallEucaTree2());*/
+		trees.add(new WorldGenSmallEucaTree2());
 	}
 
 	@Override
@@ -270,7 +276,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 
-		/*if(rand.nextInt(1) == 0){
+		if(rand.nextInt(1) == 0){
 			y = (int)this.worldObj.getHorizon();
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
@@ -283,7 +289,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 			y = rand.nextInt(250) + 6;
 			z = z1 + this.rand.nextInt(16);
 			//new WorldGenEucaSphere().generate(worldObj, rand, x, y, z);
-		}*/
+		}
 	}
 
 	@Override
