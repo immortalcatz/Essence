@@ -40,7 +40,7 @@ public class RenderStaffProjectile extends Render {
 
     public void renderProjectile(EntityThrowable projectile, double x, double y, double z) {
         GL11.glPushMatrix();
-        this.bindTexture(TextureMap.locationBlocksTexture);
+        this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glColor4f(red, green, blue, 1.0F);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);

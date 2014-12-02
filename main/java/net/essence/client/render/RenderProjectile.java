@@ -31,7 +31,7 @@ public class RenderProjectile extends Render {
 
     public void renderProjectile(Entity projectile, double x, double y, double z) {
         GL11.glPushMatrix();
-        this.bindTexture(TextureMap.locationBlocksTexture);
+        this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);

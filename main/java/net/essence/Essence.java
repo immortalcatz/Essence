@@ -4,8 +4,6 @@ import java.util.Random;
 
 import net.essence.misc.EnchantmentHotTouch;
 import net.essence.misc.EnchantmentWaterWalk;
-import net.essence.network.PacketHandler;
-import net.essence.network.PacketOpenGui;
 import net.essence.proxy.CommonProxy;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +20,6 @@ import net.slayer.api.SlayerAPI;
 public class Essence {
 
 	public static Random rand = new Random();
-	public static final PacketHandler packetHandler = new PacketHandler();
 
 	@Instance(SlayerAPI.MOD_ID)
 	public static Essence instance;
@@ -51,15 +48,12 @@ public class Essence {
 		proxy.init(event);
 		proxy.clientInit(event);
 		proxy.registerModModels();
-		packetHandler.init();
 	}
 
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);
 		proxy.registerSounds();
-		packetHandler.registerPacket(PacketOpenGui.class);
-		packetHandler.postInit();
 	}
 
 	@EventHandler

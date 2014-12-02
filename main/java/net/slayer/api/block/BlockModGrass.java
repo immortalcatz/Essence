@@ -52,7 +52,7 @@ public class BlockModGrass extends BlockMod implements IGrowable {
     
     @Override
     public Item getItem(World w, BlockPos pos) {
-    	return Item.getItemFromBlock(dirt);
+    	return Item.getItemFromBlock(this);
     }
     
     @Override
