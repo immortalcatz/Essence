@@ -126,7 +126,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 
 								if (d15 > 0.0D)
 								{
-									iblockstate = Blocks.stone.getDefaultState();
+									iblockstate = EssenceBlocks.eucaStone.getDefaultState();
 								}
 
 								int k2 = i2 + i1 * 8;
@@ -152,64 +152,52 @@ public class ChunkProviderEuca implements IChunkProvider {
 
 	public final void replaceBlocksForBiome(World worldIn, Random p_180628_2_, ChunkPrimer p_180628_3_, Block[] var3, int p_180628_4_, int p_180628_5_)
 	{
-		byte var5 = 63;
-		double var6 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.generateNoiseOctaves(this.stoneNoise, p_180628_4_ * 16, p_180628_5_ * 16, 0, 16, 16, 1, var6 * 2.0D, var6 * 2.0D, var6 * 2.0D);
-		for(int var8 = 0; var8 < 16; ++var8) {
-			for(int var9 = 0; var9 < 16; ++var9) {
-				int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
-				int var13 = -1;
-				IBlockState var14 = EssenceBlocks.eucaGrass.getDefaultState();
-				IBlockState var15 = EssenceBlocks.eucaDirt.getDefaultState();
-				for(int var16 = 127; var16 >= 0; --var16) {
-					int var17 = (var9 * 16 + var8) * 128 + var16;
-					if(var16 <= 0 + this.rand.nextInt(5)) {
-						var3[var17] = null;
-					} else {
-						Block var18 = var3[var17];
-						if(var18 == null) var13 = -1;
-						else if(var18 == Blocks.stone) {
-							if(var13 == -1) {
-								if(var12 <= 0) {
-									var14 = EssenceBlocks.eucaGrass.getDefaultState();
-									var15 = EssenceBlocks.eucaGrass.getDefaultState();
-								}
-								else if(var16 >= var5 - 4 && var16 <= var5 + 1) {
-									var14 = EssenceBlocks.eucaGrass.getDefaultState();
-									var15 = EssenceBlocks.eucaStone.getDefaultState();
-								}
- 
-								if(var16 >= var5 - 1) {
-									var3[var17] = var14.getBlock();
-								} else {
-									var3[var17] = var15.getBlock();
-								}
+		for (int i = 0; i < 16; ++i)
+		{
+			for (int j = 0; j < 16; ++j)
+			{
+				byte b0 = 1;
+				int k = -1;
+				IBlockState iblockstate = EssenceBlocks.eucaGrass.getDefaultState();
+				IBlockState iblockstate1 = EssenceBlocks.eucaGrass.getDefaultState();
+				IBlockState iblockstate3 = EssenceBlocks.eucaDirt.getDefaultState();
+
+				for (int l = 127; l >= 0; --l)
+				{
+					IBlockState iblockstate2 = p_180628_3_.getBlockState(i, l, j);
+
+					if (iblockstate2.getBlock().getMaterial() == Material.air)
+					{
+						k = -1;
+					}
+					else if (iblockstate2.getBlock() == EssenceBlocks.eucaStone)
+					{
+						if (k == -1)
+						{
+							if (b0 <= 0)
+							{
+								iblockstate = Blocks.air.getDefaultState();
+								iblockstate1 = EssenceBlocks.eucaGrass.getDefaultState();
 							}
-							else if(var13 > 0) {
-								--var13;
-								var3[var17] = var15.getBlock();
- 
-								if(var13 == 0 && var15 == EssenceBlocks.eucaGrass) {
-									var13 = -1;
-									var15 = EssenceBlocks.eucaGrass.getDefaultState();
-								}
+
+							k = b0;
+
+							if (l >= -4)
+							{
+								p_180628_3_.setBlockState(i, l, j, iblockstate);
+							}
+							else
+							{
+								p_180628_3_.setBlockState(i, l, j, iblockstate1);
 							}
 						}
- 
-						if(var13 > 0) {
-							--var13;
-							var3[var17] = var15.getBlock();
- 
-							if(var13 == 0 && var15 == EssenceBlocks.eucaStone) {
-								var13 = -1;
-								var15 = EssenceBlocks.eucaStone.getDefaultState();
-							}
+						else if (k > 0)
+						{
+							--k;
+							p_180628_3_.setBlockState(i, l, j, iblockstate1);
 						}
 					}
 				}
-			}
-			for(int i = 0; i < 32767; i++) {
-				if(var3[i] == EssenceBlocks.eucaGrass && var3[i + 1] != null) var3[i] = EssenceBlocks.eucaDirt;
 			}
 		}
 	}
