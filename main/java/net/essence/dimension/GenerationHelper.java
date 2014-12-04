@@ -62,7 +62,7 @@ public class GenerationHelper {
 			break;
 		case 8:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass) new WorldGenTowerDungeon().generate(w, r, new BlockPos(x, y, z));
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState()) new WorldGenTowerDungeon().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 9:
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;

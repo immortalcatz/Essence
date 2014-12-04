@@ -80,7 +80,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		ChunkPrimer primer = new ChunkPrimer();
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.generateTerrain(par1, par2, primer);
-		this.replaceBlocksForBiome(worldObj, rand, primer, new Block[32768], par1, par2);
+		this.replaceBlocksForBiome(primer);
 		Chunk chunk = new Chunk(this.worldObj, primer, par1, par2);
 		byte[] abyte = chunk.getBiomeArray();
 		for(int k = 0; k < abyte.length; ++k)
@@ -96,12 +96,9 @@ public class ChunkProviderEuca implements IChunkProvider {
 		int l = b0 + 1;
 		this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * b0, 0, var2 * b0, k, b1, l);
 
-		for (int i1 = 0; i1 < b0; ++i1)
-		{
-			for (int j1 = 0; j1 < b0; ++j1)
-			{
-				for (int k1 = 0; k1 < 32; ++k1)
-				{
+		for (int i1 = 0; i1 < b0; ++i1) {
+			for (int j1 = 0; j1 < b0; ++j1) {
+				for (int k1 = 0; k1 < 32; ++k1) {
 					double d0 = 0.25D;
 					double d1 = this.noiseArray[((i1 + 0) * l + j1 + 0) * b1 + k1 + 0];
 					double d2 = this.noiseArray[((i1 + 0) * l + j1 + 1) * b1 + k1 + 0];
@@ -112,26 +109,22 @@ public class ChunkProviderEuca implements IChunkProvider {
 					double d7 = (this.noiseArray[((i1 + 1) * l + j1 + 0) * b1 + k1 + 1] - d3) * d0;
 					double d8 = (this.noiseArray[((i1 + 1) * l + j1 + 1) * b1 + k1 + 1] - d4) * d0;
 
-					for (int l1 = 0; l1 < 4; ++l1)
-					{
+					for (int l1 = 0; l1 < 4; ++l1) {
 						double d9 = 0.125D;
 						double d10 = d1;
 						double d11 = d2;
 						double d12 = (d3 - d1) * d9;
 						double d13 = (d4 - d2) * d9;
 
-						for (int i2 = 0; i2 < 8; ++i2)
-						{
+						for (int i2 = 0; i2 < 8; ++i2) {
 							double d14 = 0.125D;
 							double d15 = d10;
 							double d16 = (d11 - d10) * d14;
 
-							for (int j2 = 0; j2 < 8; ++j2)
-							{
+							for (int j2 = 0; j2 < 8; ++j2) {
 								IBlockState iblockstate = null;
 
-								if (d15 > 0.0D)
-								{
+								if (d15 > 0.0D) {
 									iblockstate = EssenceBlocks.eucaStone.getDefaultState();
 								}
 
@@ -156,51 +149,42 @@ public class ChunkProviderEuca implements IChunkProvider {
 		}
 	}
 
-	public final void replaceBlocksForBiome(World worldIn, Random p_180628_2_, ChunkPrimer p_180628_3_, Block[] var3, int p_180628_4_, int p_180628_5_)
-	{
-		for (int i = 0; i < 16; ++i)
-		{
-			for (int j = 0; j < 16; ++j)
-			{
+	public final void replaceBlocksForBiome(ChunkPrimer c) {
+		for (int i = 0; i < 16; ++i) {
+			for (int j = 0; j < 16; ++j) {
 				byte b0 = 1;
 				int k = -1;
 				IBlockState iblockstate = EssenceBlocks.eucaGrass.getDefaultState();
-				IBlockState iblockstate1 = EssenceBlocks.eucaGrass.getDefaultState();
-				IBlockState iblockstate3 = EssenceBlocks.eucaDirt.getDefaultState();
+				IBlockState iblockstate1 = EssenceBlocks.eucaDirt.getDefaultState();
 
-				for (int l = 127; l >= 0; --l)
-				{
-					IBlockState iblockstate2 = p_180628_3_.getBlockState(i, l, j);
+				for (int l = 127; l >= 0; --l) {
+					IBlockState iblockstate2 = c.getBlockState(i, l, j);
 
-					if (iblockstate2.getBlock().getMaterial() == Material.air)
-					{
+					if (iblockstate2.getBlock().getMaterial() == Material.air) {
 						k = -1;
 					}
-					else if (iblockstate2.getBlock() == EssenceBlocks.eucaStone)
-					{
-						if (k == -1)
-						{
-							if (b0 <= 0)
-							{
+					else if (iblockstate2.getBlock() == EssenceBlocks.eucaStone) {
+						if (k == -1) {
+							if (b0 <= 0) {
 								iblockstate = Blocks.air.getDefaultState();
 								iblockstate1 = EssenceBlocks.eucaGrass.getDefaultState();
 							}
 
 							k = b0;
 
-							if (l >= -4)
-							{
-								p_180628_3_.setBlockState(i, l, j, iblockstate);
-							}
-							else
-							{
-								p_180628_3_.setBlockState(i, l, j, iblockstate1);
+							if (l >= 0) {
+								c.setBlockState(i, l, j, iblockstate);
+							} else {
+								c.setBlockState(i, l, j, iblockstate1);
+								c.setBlockState(i, l - 1, j, iblockstate1);
+								c.setBlockState(i, l - 2, j, iblockstate1);
 							}
 						}
-						else if (k > 0)
-						{
+						else if (k > 0) {
 							--k;
-							p_180628_3_.setBlockState(i, l, j, iblockstate1);
+							c.setBlockState(i, l, j, iblockstate1);
+							c.setBlockState(i, l - 1, j, iblockstate1);
+							c.setBlockState(i, l - 2, j, iblockstate1);
 						}
 					}
 				}
@@ -276,12 +260,13 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 
-		if(rand.nextInt(1) == 0){
-			y = (int)this.worldObj.getHorizon();
+		for(times = 0; times < 15; times++){
+			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
 				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
 		}
 
 		if(rand.nextInt(5) == 0) {

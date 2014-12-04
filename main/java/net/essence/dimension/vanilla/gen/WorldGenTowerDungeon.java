@@ -3,6 +3,7 @@ package net.essence.dimension.vanilla.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.util.Helper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -18,7 +19,6 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		int x = pos.getZ(), y = pos.getY(), z = pos.getZ();
 		int levels = 4;
 		int height = levels * 4;
-		
 		ItemStack[] items = {new ItemStack(Items.apple), new ItemStack(Items.arrow), new ItemStack(Blocks.acacia_stairs)};
 
 		/*WorldGenAPI.placeChestWithContents(w, x + 13, y + 14, z + 1, 1, false, items);
