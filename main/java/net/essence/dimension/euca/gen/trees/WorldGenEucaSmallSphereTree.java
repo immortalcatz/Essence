@@ -12,7 +12,8 @@ import net.slayer.api.worldgen.WorldGenAPI;
 public class WorldGenEucaSmallSphereTree extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
-		int i = p.getX(), j = p.getY(), k = p.getZ();
+		int i = p.getX() - 5, j = p.getY() + 1, k = p.getZ() - 5;
+		WorldGenAPI.addRectangle(3, 3, 2, world, i + 4, j - 3, k + 4, EssenceBlocks.eucaDirt);
 		Block leaves = WorldGenAPI.getEucaLeaves();
 		Block wood = EssenceBlocks.eucaLog;
 		world.setBlockState(new BlockPos(i + 0, j + 15, k + 4), leaves.getDefaultState());

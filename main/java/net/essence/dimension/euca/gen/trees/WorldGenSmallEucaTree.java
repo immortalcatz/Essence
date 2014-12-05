@@ -14,7 +14,7 @@ public class WorldGenSmallEucaTree extends WorldGenerator {
 	
 	@Override
 	public boolean generate(World w, Random r, BlockPos p) {
-		int x = p.getX(), y = p.getY(), z = p.getZ();
+		int x = p.getX(), y = p.getY() + 1, z = p.getZ();
 		int height = r.nextInt(3) + 5;
 		Block leaf = null;
 		switch(r.nextInt(3)) {

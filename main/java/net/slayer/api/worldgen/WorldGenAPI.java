@@ -193,6 +193,24 @@ public class WorldGenAPI {
 			}
 		}
 	}
+	
+	public static void addFilledHollowRectangle(int east, int south, int height, World w, int x, int y, int z, Block b, Block fill){
+		for(int x1 = 0; x1 < east; x1++){
+			for(int z1 = 0; z1 < south; z1++){
+				for(int y1 = 0; y1 < height; y1++){
+					w.setBlockState(new BlockPos(x + x1, y + y1, z + z1), b.getDefaultState());
+				}
+			}
+		}
+
+		for(int x1 = 0; x1 < east; x1++){
+			for(int z1 = 0; z1 < south; z1++){
+				for(int y1 = 0; y1 < height - 2; y1++){
+					w.setBlockState(new BlockPos(x + x1 + 1, y + y1 + 1, z + z1 + 1), fill.getDefaultState());
+				}
+			}
+		}
+	}
 
 	public static void addSphere(World w, int size, int x, int y, int z, Block b) {
 		int XLength = x - size;
@@ -207,7 +225,7 @@ public class WorldGenAPI {
 					double dx = i - x;
 					double dy = j - y;
 					double dz = k - z;
-					if(dx * dx * 0.7 + dy * dy * 0.9 + dz * dz * 0.7 < sizeOfSphere) {
+					if(dx * dx * 0.7 + dy * dy * 0.7 + dz * dz * 0.7 < sizeOfSphere) {
 						w.setBlockState(new BlockPos(i, j + size + 3, k), b.getDefaultState());
 					}
 				}

@@ -5,6 +5,8 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.dimension.euca.gen.trees.*;
+import net.essence.dimension.vanilla.gen.WorldGenTowerDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 

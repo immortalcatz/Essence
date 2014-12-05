@@ -12,7 +12,8 @@ import net.slayer.api.worldgen.WorldGenAPI;
 public class WorldGenEucaSmallRectangleTree extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
-		int i = p.getX(), j = p.getY(), k = p.getZ();
+		int i = p.getX() - 3, j = p.getY(), k = p.getZ() - 3;
+		WorldGenAPI.addRectangle(3, 3, 3, world, i + 2, j - 2, k + 2, EssenceBlocks.eucaDirt);
 		Block leaves = WorldGenAPI.getEucaLeaves();
 		Block wood = EssenceBlocks.eucaLog;
 		world.setBlockState(new BlockPos(i + 0, j + 13, k + 2), leaves.getDefaultState());
