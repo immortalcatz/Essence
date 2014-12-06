@@ -264,7 +264,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 
-		for(times = 0; times < 25; times++){
+		for(times = 0; times < 30; times++){
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);

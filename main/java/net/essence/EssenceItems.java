@@ -42,6 +42,7 @@ public class EssenceItems {
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
+	public static ArrayList<String> bowNames = new ArrayList<String>();
 
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 
@@ -199,12 +200,19 @@ public class EssenceItems {
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
+	
+	public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
+	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, 72000, EntityFlameArrow.class);
 
 	public static final Item spawners = new ItemSpawnEggs();
 	//public static final Item backpack = new ItemBackpack("backpack");
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
+	}
+	
+	public static void bowNames() {
+		bowNames.add("flameBow");
 	}
 
 	public static void addItemNames() {
@@ -316,12 +324,14 @@ public class EssenceItems {
 		itemNames.add("wizardsStar");
 		itemNames.add("teleportationStaff");
 		itemNames.add("normalGoldenSteak");
-		itemNames.add("goldenSteakOP");
+		itemNames.add("OPGoldenSteak");
 		itemNames.add("goldenPotato");
-		itemNames.add("goldenPotatoOP");
+		itemNames.add("OPGoldenPotato");
 		itemNames.add("goldenPork");
-		itemNames.add("goldenPorkOP");
+		itemNames.add("OPGoldenPork");
 		itemNames.add("hotDoor");
 		itemNames.add("eucaMeat");
+		itemNames.add("flameArrow");
+		//itemNames.add("flameBow");
 	}
 }

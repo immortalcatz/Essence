@@ -20,6 +20,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityGreenpace.class, "greenpace");
 		SlayerAPI.registerProjectile(EntityWizardsStar.class, "wizardsstar");
 		SlayerAPI.registerProjectile(EntityMagmaFireball.class, "magmaball");
+		SlayerAPI.registerProjectile(EntityFlameArrow.class, "flamearrow");
 
 		SlayerAPI.registerMob(EntityRobot.class, "Robot", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySpyclops.class, "Spyclops", SlayerAPI.mobID++);

@@ -12,7 +12,9 @@ import net.essence.dimension.boil.gen.MapGenBoilingCaves;
 import net.essence.dimension.boil.gen.fortress.MapGenBoilBridge;
 import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
@@ -86,141 +88,154 @@ public class ChunkProviderBoiling implements IChunkProvider {
 		this.noiseGen6 = (NoiseGeneratorOctaves)noiseGens[5];
 	}
 
-	public void generate(int i, int j, Block[] b) {
-		byte b0 = 63;
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, i * 4 - 2, j * 4 - 2, 10, 10);
-		this.generate(i * 4, 0, j * 4);
+	public void generate(int p_180518_1_, int p_180518_2_, ChunkPrimer p_180518_3_)
+    {
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_180518_1_ * 4 - 2, p_180518_2_ * 4 - 2, 10, 10);
+        this.generate(p_180518_1_ * 4, 0, p_180518_2_ * 4);
 
-		for(int k = 0; k < 4; ++k) {
-			int l = k * 5;
-			int i1 = (k + 1) * 5;
+        for (int k = 0; k < 4; ++k)
+        {
+            int l = k * 5;
+            int i1 = (k + 1) * 5;
 
-			for(int j1 = 0; j1 < 4; ++j1) {
-				int k1 = (l + j1) * 33;
-				int l1 = (l + j1 + 1) * 33;
-				int i2 = (i1 + j1) * 33;
-				int j2 = (i1 + j1 + 1) * 33;
+            for (int j1 = 0; j1 < 4; ++j1)
+            {
+                int k1 = (l + j1) * 33;
+                int l1 = (l + j1 + 1) * 33;
+                int i2 = (i1 + j1) * 33;
+                int j2 = (i1 + j1 + 1) * 33;
 
-				for(int k2 = 0; k2 < 32; ++k2) {
-					double d0 = 0.125D;
-					double d1 = this.da[k1 + k2];
-					double d2 = this.da[l1 + k2];
-					double d3 = this.da[i2 + k2];
-					double d4 = this.da[j2 + k2];
-					double d5 = (this.da[k1 + k2 + 1] - d1) * d0;
-					double d6 = (this.da[l1 + k2 + 1] - d2) * d0;
-					double d7 = (this.da[i2 + k2 + 1] - d3) * d0;
-					double d8 = (this.da[j2 + k2 + 1] - d4) * d0;
+                for (int k2 = 0; k2 < 32; ++k2)
+                {
+                    double d0 = 0.125D;
+                    double d1 = this.da[k1 + k2];
+                    double d2 = this.da[l1 + k2];
+                    double d3 = this.da[i2 + k2];
+                    double d4 = this.da[j2 + k2];
+                    double d5 = (this.da[k1 + k2 + 1] - d1) * d0;
+                    double d6 = (this.da[l1 + k2 + 1] - d2) * d0;
+                    double d7 = (this.da[i2 + k2 + 1] - d3) * d0;
+                    double d8 = (this.da[j2 + k2 + 1] - d4) * d0;
 
-					for(int l2 = 0; l2 < 8; ++l2) {
-						double d9 = 0.25D;
-						double d10 = d1;
-						double d11 = d2;
-						double d12 = (d3 - d1) * d9;
-						double d13 = (d4 - d2) * d9;
+                    for (int l2 = 0; l2 < 8; ++l2)
+                    {
+                        double d9 = 0.25D;
+                        double d10 = d1;
+                        double d11 = d2;
+                        double d12 = (d3 - d1) * d9;
+                        double d13 = (d4 - d2) * d9;
 
-						for(int i3 = 0; i3 < 4; ++i3) {
-							int j3 = i3 + k * 4 << 12 | 0 + j1 * 4 << 8 | k2 * 8 + l2;
-							short short1 = 256;
-							j3 -= short1;
-							double d14 = 0.25D;
-							double d16 = (d11 - d10) * d14;
-							double d15 = d10 - d16;
+                        for (int i3 = 0; i3 < 4; ++i3)
+                        {
+                            double d14 = 0.25D;
+                            double d16 = (d11 - d10) * d14;
+                            double d15 = d10 - d16;
 
-							for(int k3 = 0; k3 < 4; ++k3) {
-								if((d15 += d16) > 0.0D) b[j3 += short1] = EssenceBlocks.ashBlock;
-								else if(k2 * 8 + l2 < 62) b[j3 += short1] = EssenceBlocks.hotBlock;
-								else if(k2 * 8 + l2 < b0) b[j3 += short1] = EssenceBlocks.hotBlock;
-								else b[j3 += short1] = null;
-							}
-							d10 += d12;
-							d11 += d13;
-						}
-						d1 += d5;
-						d2 += d6;
-						d3 += d7;
-						d4 += d8;
-					}
-				}
-			}
-		}
+                            for (int j3 = 0; j3 < 4; ++j3)
+                            {
+                                if ((d15 += d16) > 0.0D)
+                                {
+                                    p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.stone.getDefaultState());
+                                }
+                            }
+
+                            d10 += d12;
+                            d11 += d13;
+                        }
+
+                        d1 += d5;
+                        d2 += d6;
+                        d3 += d7;
+                        d4 += d8;
+                    }
+                }
+            }
+        }
 	}
 
-	public void replaceBlocksForBiome(int i, int j, Block[] ba, byte[] by, BiomeGenBase[] b) {
+	public void replaceBlocksForBiome(int i, int j, ChunkPrimer ba, byte[] by, BiomeGenBase[] b) {
 		double d0 = 0.03125D;
 		this.stoneNoise = this.noiseGen4.func_151599_a(this.stoneNoise, (double)(i * 16), (double)(j * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 
 		for(int k = 0; k < 16; ++k) {
 			for(int l = 0; l < 16; ++l) {
 				BiomeGenBase biomegenbase = b[l + k * 16];
-				genBiomeTerrain(this.worldObj, this.rand, ba, by, i * 16 + k, j * 16 + l, this.stoneNoise[l + k * 16], biomegenbase);
+				genBiomeTerrain(this.rand, ba, i * 16 + k, j * 16 + l, this.stoneNoise[l + k * 16]);
 			}
 		}
 	}
 
-	public final void genBiomeTerrain(World w, Random rand, Block[] blocks, byte[] bytes, int i, int j, double d, BiomeGenBase b) {
-		boolean flag = true;
-		Block block = b.topBlock.getBlock();
-		Block block1 = b.fillerBlock.getBlock();
-		int k = -1;
-		int l = (int)(d / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int i1 = i & 15;
-		int j1 = j & 15;
-		int k1 = blocks.length / 256;
+	public final void genBiomeTerrain(Random p_180628_2_, ChunkPrimer p_180628_3_, int p_180628_4_, int p_180628_5_, double p_180628_6_)
+    {
+        boolean flag = true;
+        IBlockState iblockstate = EssenceBlocks.hotBlock.getDefaultState();
+        IBlockState iblockstate1 = EssenceBlocks.hotBlock.getDefaultState();
+        int k = -1;
+        int l = (int)(p_180628_6_ / 3.0D + 3.0D + p_180628_2_.nextDouble() * 0.25D);
+        int i1 = p_180628_4_ & 15;
+        int j1 = p_180628_5_ & 15;
 
-		for(int l1 = 255; l1 >= 0; --l1) {
-			int i2 = (j1 * 16 + i1) * k1 + l1;
-			if(l1 <= 0 + rand.nextInt(5)) {
-				blocks[i2] = Blocks.bedrock;
-			} else {
-				Block block2 = blocks[i2];
-				if(block2 != null && block2.getMaterial() != Material.air) {
-					if(block2 == EssenceBlocks.ashBlock) {
-						if(k == -1) {
-							if(l <= 0) {
-								block = null;
-								block1 = EssenceBlocks.ashBlock;
-							}
-							else if(l1 >= 59 && l1 <= 64) {
-								block = b.topBlock.getBlock();
-								block1 = b.fillerBlock.getBlock();
-							}
+        for (int k1 = 255; k1 >= 0; --k1)
+        {
+            if (k1 <= p_180628_2_.nextInt(5))
+            {
+                p_180628_3_.setBlockState(j1, k1, i1, Blocks.bedrock.getDefaultState());
+            }
+            else
+            {
+                IBlockState iblockstate2 = p_180628_3_.getBlockState(j1, k1, i1);
 
-							if(l1 < 63 && (block == null || block.getMaterial() == Material.air)) {
-								block = EssenceBlocks.ashBlock;
-							}
-							k = l;
-							if(l1 >= 62) {
-								blocks[i2] = block;
-							}
-							else if(l1 < 56 - l) {
-								block = null;
-								block1 = EssenceBlocks.ashBlock;
-								blocks[i2] = EssenceBlocks.ashBlock;
-							} else {
-								blocks[i2] = block1;
-							}
-						}
-						else if(k > 0) {
-							--k;
-							blocks[i2] = block1;
-							if(k == 0 && block1 == EssenceBlocks.ashBlock){
-								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = EssenceBlocks.ashBlock;
-							}
-						}
-					}
-				} else {
-					k = -1;
-				}
-			}
-		}
-	}
+                if (iblockstate2.getBlock().getMaterial() == Material.air)
+                {
+                    k = -1;
+                }
+                else if (iblockstate2.getBlock() == Blocks.stone)
+                {
+                    if (k == -1)
+                    {
+                        if (l <= 0)
+                        {
+                            iblockstate = null;
+                            iblockstate1 = EssenceBlocks.ashBlock.getDefaultState();
+                        }
+                        else if (k1 >= 59 && k1 <= 64)
+                        {
+                            iblockstate = EssenceBlocks.hotBlock.getDefaultState();
+                            iblockstate1 = EssenceBlocks.hotBlock.getDefaultState();
+                        }
+
+                        k = l;
+
+                        if (k1 >= 62)
+                        {
+                            p_180628_3_.setBlockState(j1, k1, i1, iblockstate);
+                        }
+                        else if (k1 < 56 - l)
+                        {
+                            iblockstate = null;
+                            iblockstate1 = EssenceBlocks.ashBlock.getDefaultState();
+                        }
+                        else
+                        {
+                            p_180628_3_.setBlockState(j1, k1, i1, iblockstate1);
+                        }
+                    }
+                    else if (k > 0)
+                    {
+                        --k;
+                        p_180628_3_.setBlockState(j1, k1, i1, iblockstate1);
+                    }
+                }
+            }
+        }
+    }
+	
+	
 
 	@Override
 	public Chunk provideChunk(int par1, int par2) {
 		this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
-		Block[] ablock = new Block[65536];
+		ChunkPrimer ablock = new ChunkPrimer();
 		byte[] abyte = new byte[65536];
 		ChunkPrimer primer = new ChunkPrimer();
 		this.generate(par1, par2, ablock);

@@ -31,7 +31,6 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerClient() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
-		EntityRendering.init();
 		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());
 	}
 
@@ -43,19 +42,20 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void clientInit(FMLInitializationEvent event) {
+		EntityRendering.init();
 		SlayerAPI.addForgeEventBus(new BossTickHandler());
 		SlayerAPI.addForgeEventBus(new BarTickHandler());
 		SlayerAPI.addForgeEventBus(new PlayerStats());
 		SlayerAPI.addEventBus(new PlayerStats());
 	}
 
-	public static String[] names = {"dirt", "birchPlanks", "oakPlanks", "junglePlanks", "sprucePlanks", "darkOakPlanks", "acaciaPlanks", "potatoes", "wheat", "carrots", "obsidian", "netherrack", "netherBrick", "redMushroom", "brownMushroom", "melon"};
-	public static String[] names1 = {"pumpkin", "birchLog", "oakLog", "jungleLog", "spruceLog", "darkOakLog", "acaciaLog", "lapisOre", "diamondOre", "goldOre", "quartzOre", "shadiumOre", "luniumOre", "sapphireOre", "celestiumOre", "flairiumOre"};
-	public static String[] names2 = {"hellstoneOre", "ashualOre", "ironOre", "coalOre", "redstoneOre", "emeraldOre", "hay", "gravel", "glass", "redFlower", "yellowFlower", "endStone", "bush", "cobblestone", "mossyCobblestone", "cake"};
-	public static String[] names3 = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
-	public static String[] brickNames = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
-	public static String[] finalBrickNames = {"blackColouredBrick", "blueColouredBrick", "brownColouredBrick", "cyanColouredBrick", "grayColouredBrick", "limeColouredBrick", "magentaColouredBrick", "orangeColouredBrick", "pinkColouredBrick", "purpleColouredBrick", "redColouredBrick", "whiteColouredBrick", "yellowColouredBrick"};
-	public static String[] finalMiniBrickNames = {"blackMiniColouredBrick", "blueMiniColouredBrick", "brownMiniColouredBrick", "cyanMiniColouredBrick", "grayMiniColouredBrick", "limeMiniColouredBrick", "magentaMiniColouredBrick", "orangeMiniColouredBrick", "pinkMiniColouredBrick", "purpleMiniColouredBrick", "redMiniColouredBrick", "whiteMiniColouredBrick", "yellowMiniColouredBrick"};
+	public static String[] names = {SlayerAPI.PREFIX + "dirt", SlayerAPI.PREFIX + "birchPlanks", SlayerAPI.PREFIX + "oakPlanks", SlayerAPI.PREFIX + "junglePlanks", SlayerAPI.PREFIX + "sprucePlanks", SlayerAPI.PREFIX + "darkOakPlanks", SlayerAPI.PREFIX + "acaciaPlanks", SlayerAPI.PREFIX + "potatoes", SlayerAPI.PREFIX + "wheat", SlayerAPI.PREFIX + "carrots", SlayerAPI.PREFIX + "obsidian", SlayerAPI.PREFIX + "netherrack", SlayerAPI.PREFIX + "netherBrick", SlayerAPI.PREFIX + "redMushroom", SlayerAPI.PREFIX + "brownMushroom", SlayerAPI.PREFIX + "melon"};
+	public static String[] names1 = {SlayerAPI.PREFIX + "pumpkin", SlayerAPI.PREFIX + "birchLog", SlayerAPI.PREFIX + "oakLog", SlayerAPI.PREFIX + "jungleLog", SlayerAPI.PREFIX + "spruceLog", SlayerAPI.PREFIX + "darkOakLog", SlayerAPI.PREFIX + "acaciaLog", SlayerAPI.PREFIX + "lapisOre", SlayerAPI.PREFIX + "diamondOre", SlayerAPI.PREFIX + "goldOre", SlayerAPI.PREFIX + "quartzOre", SlayerAPI.PREFIX + "shadiumOre", SlayerAPI.PREFIX + "luniumOre", SlayerAPI.PREFIX + "sapphireOre", SlayerAPI.PREFIX + "celestiumOre", SlayerAPI.PREFIX + "flairiumOre"};
+	public static String[] names2 = {SlayerAPI.PREFIX + "hellstoneOre", SlayerAPI.PREFIX + "ashualOre", SlayerAPI.PREFIX + "ironOre", SlayerAPI.PREFIX + "coalOre", SlayerAPI.PREFIX + "redstoneOre", SlayerAPI.PREFIX + "emeraldOre", SlayerAPI.PREFIX + "hay", SlayerAPI.PREFIX + "gravel", SlayerAPI.PREFIX + "glass", SlayerAPI.PREFIX + "redFlower", SlayerAPI.PREFIX + "yellowFlower", SlayerAPI.PREFIX + "endStone", SlayerAPI.PREFIX + "bush", SlayerAPI.PREFIX + "cobblestone", SlayerAPI.PREFIX + "mossyCobblestone", SlayerAPI.PREFIX + "cake"};
+	public static String[] names3 = {SlayerAPI.PREFIX + "cactus", SlayerAPI.PREFIX + "brick", SlayerAPI.PREFIX + "bookshelf", SlayerAPI.PREFIX + "glowstone", SlayerAPI.PREFIX + "redSand", SlayerAPI.PREFIX + "sand", SlayerAPI.PREFIX + "sponge", SlayerAPI.PREFIX + "soulSand", SlayerAPI.PREFIX + "tnt", SlayerAPI.PREFIX + "stone", SlayerAPI.PREFIX + "waterlilly"};
+	public static String[] brickNames = {SlayerAPI.PREFIX + "black", SlayerAPI.PREFIX + "blue", SlayerAPI.PREFIX + "brown", SlayerAPI.PREFIX + "cyan", SlayerAPI.PREFIX + "gray", SlayerAPI.PREFIX + "lime", SlayerAPI.PREFIX + "magenta", SlayerAPI.PREFIX + "orange", SlayerAPI.PREFIX + "pink", SlayerAPI.PREFIX + "purple", SlayerAPI.PREFIX + "red", SlayerAPI.PREFIX + "white", SlayerAPI.PREFIX + "yellow"};
+	public static String[] finalBrickNames = {SlayerAPI.PREFIX + "blackColouredBrick", SlayerAPI.PREFIX + "blueColouredBrick", SlayerAPI.PREFIX + "brownColouredBrick", SlayerAPI.PREFIX + "cyanColouredBrick", SlayerAPI.PREFIX + "grayColouredBrick", SlayerAPI.PREFIX + "limeColouredBrick", SlayerAPI.PREFIX + "magentaColouredBrick", SlayerAPI.PREFIX + "orangeColouredBrick", SlayerAPI.PREFIX + "pinkColouredBrick", SlayerAPI.PREFIX + "purpleColouredBrick", SlayerAPI.PREFIX + "redColouredBrick", SlayerAPI.PREFIX + "whiteColouredBrick", SlayerAPI.PREFIX + "yellowColouredBrick"};
+	public static String[] finalMiniBrickNames = {SlayerAPI.PREFIX + "blackMiniColouredBrick", SlayerAPI.PREFIX + "blueMiniColouredBrick", SlayerAPI.PREFIX + "brownMiniColouredBrick", SlayerAPI.PREFIX + "cyanMiniColouredBrick", SlayerAPI.PREFIX + "grayMiniColouredBrick", SlayerAPI.PREFIX + "limeMiniColouredBrick", SlayerAPI.PREFIX + "magentaMiniColouredBrick", SlayerAPI.PREFIX + "orangeMiniColouredBrick", SlayerAPI.PREFIX + "pinkMiniColouredBrick", SlayerAPI.PREFIX + "purpleMiniColouredBrick", SlayerAPI.PREFIX + "redMiniColouredBrick", SlayerAPI.PREFIX + "whiteMiniColouredBrick", SlayerAPI.PREFIX + "yellowMiniColouredBrick"};
 
 	@Override
 	public void registerModModels() {
@@ -68,6 +68,13 @@ public class ClientProxy extends CommonProxy {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
 			registerItem(i, s);
 		}
+		
+		registerItem(EssenceItems.flameBow, 0, "flameBow");
+		registerItem(EssenceItems.flameBow, 1, "flameBow_0");
+		registerItem(EssenceItems.flameBow, 2, "flameBow_1");
+		registerItem(EssenceItems.flameBow, 3, "flameBow_2");
+		
+		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
 		
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
@@ -83,11 +90,11 @@ public class ClientProxy extends CommonProxy {
 	}
 	
 	public static void registerModelBakery(Item i, String[] names) {
-		ModelBakery.addVariantName(i, SlayerAPI.PREFIX + names);
+		ModelBakery.addVariantName(i, names);
 	}
 	
 	public static void registerModelBakery(Block b, String[] names) {
-		ModelBakery.addVariantName(SlayerAPI.toItem(b), SlayerAPI.PREFIX + names);
+		ModelBakery.addVariantName(SlayerAPI.toItem(b), names);
 	}
 
 	public static void registerItem(Item item, int metadata, String itemName) {

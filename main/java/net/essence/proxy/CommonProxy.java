@@ -45,7 +45,7 @@ public class CommonProxy {
 		EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();
-		//DimensionHelper.addSpawns();
+		DimensionHelper.addSpawns();
 		EssenceTabs.init();
 		addOreDictionary();
 		SlayerAPI.addEventBus(new ArmorAbilityEvent());
