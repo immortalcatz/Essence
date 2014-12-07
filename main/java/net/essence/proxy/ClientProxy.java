@@ -35,6 +35,10 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@Override
+	public void clientPreInit() {
+	}
+	
+	@Override
 	public void registerSounds() {
 		//((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
 		FMLCommonHandler.instance().bus().register(new MusicEvent());
@@ -80,28 +84,29 @@ public class ClientProxy extends CommonProxy {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
 			registerItem(it, i, finalBrickNames[i]);
 		}
-		registerModelBakery(EssenceBlocks.colouredBricks, finalBrickNames);
+		//registerModelBakery(EssenceBlocks.colouredBricks, finalBrickNames);
 		
 		/*for(int i = 0; i < finalMiniBrickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
 			registerItem(it, i, finalMiniBrickNames[i]);
 		}*/
 		//registerModelBakery(EssenceBlocks.miniColouredBricks, finalMiniBrickNames);
-		Block it = GameRegistry.findBlock(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
-		registerModelBakery(it, new String[] {"essence:blackMiniColouredBrick", "essence:blueMiniColouredBrick", "essence:brownMiniColouredBrick", "essence:cyanMiniColouredBrick", "essence:grayMiniColouredBrick", "essence:limeMiniColouredBrick", "essence:magentaMiniColouredBrick", "essence:orangeMiniColouredBrick", "essence:pinkMiniColouredBrick", "essence:purpleMiniColouredBrick", "essence:redMiniColouredBrick", "essence:whiteMiniColouredBrick", "essence:yellowMiniColouredBrick"});
-		registerBlock(it, 0, "blackMiniColouredBrick");
-		registerBlock(it, 1, "blueMiniColouredBrick");
-		registerBlock(it, 2, "brownMiniColouredBrick");
-		registerBlock(it, 3, "cyanMiniColouredBrick");
-		registerBlock(it, 4, "grayMiniColouredBrick");
-		registerBlock(it, 5, "limeMiniColouredBrick");
-		registerBlock(it, 6, "magentaMiniColouredBrick");
-		registerBlock(it, 7, "orangeMiniColouredBrick");
-		registerBlock(it, 8, "pinkMiniColouredBrick");
-		registerBlock(it, 9, "purpleMiniColouredBrick");
-		registerBlock(it, 10, "redMiniColouredBrick");
-		registerBlock(it, 11, "whiteMiniColouredBrick");
-		registerBlock(it, 12, "yellowMiniColouredBrick");
+		Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
+		registerItem(it, 0, "blackMiniColouredBrick");
+		registerItem(it, 1, "blueMiniColouredBrick");
+		registerItem(it, 2, "brownMiniColouredBrick");
+		registerItem(it, 3, "cyanMiniColouredBrick");
+		registerItem(it, 4, "grayMiniColouredBrick");
+		registerItem(it, 5, "limeMiniColouredBrick");
+		registerItem(it, 6, "magentaMiniColouredBrick");
+		registerItem(it, 7, "orangeMiniColouredBrick");
+		registerItem(it, 8, "pinkMiniColouredBrick");
+		registerItem(it, 9, "purpleMiniColouredBrick");
+		registerItem(it, 10, "redMiniColouredBrick");
+		registerItem(it, 11, "whiteMiniColouredBrick");
+		registerItem(it, 12, "yellowMiniColouredBrick");
+		registerModelBakery(EssenceBlocks.miniColouredBricks, new String[] {"essence:blackMiniColouredBrick", "essence:blueMiniColouredBrick", "essence:brownMiniColouredBrick", "essence:cyanMiniColouredBrick", "essence:grayMiniColouredBrick", "essence:limeMiniColouredBrick", "essence:magentaMiniColouredBrick", "essence:orangeMiniColouredBrick", "essence:pinkMiniColouredBrick", "essence:purpleMiniColouredBrick", "essence:redMiniColouredBrick", "essence:whiteMiniColouredBrick", "essence:yellowMiniColouredBrick"});
+
 	}
 	
 	public static void registerModelBakery(Item i, String[] names) {

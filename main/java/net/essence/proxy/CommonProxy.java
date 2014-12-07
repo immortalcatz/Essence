@@ -34,6 +34,7 @@ public class CommonProxy {
 
 	public void registerClient() { }
 	public void clientInit(FMLInitializationEvent event) { }
+	public void clientPreInit() { }
 	public void registerSounds() { }
 	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double x, double y, double z, boolean b) { }
 	public void registerModModels() { }

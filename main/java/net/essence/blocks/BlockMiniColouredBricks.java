@@ -74,26 +74,25 @@ public class BlockMiniColouredBricks extends Block {
     }
 
 	public enum EnumMetadata implements IStringSerializable {
-		BLACK(0, "black", "black"),
-		BLUE(1, "blue", "blue"),
-		BROWN(2, "brown", "brown"),
-		CYAN(3, "cyan", "cyan"),
-		GRAY(4, "gray", "gray"),
-		LIME(5, "lime", "lime"),
-		MAGENTA(6, "magenta", "magenta"),
-		ORANGE(7, "orange", "orange"),
-		PINK(8, "pink", "pink"),
-		PURPLE(9, "purple", "purple"),
-		RED(10, "red", "red"),
-		WHITE(11, "white", "white"),
-		YELLOW(12, "yellow", "yellow");
+		BLACK(0, "blackMiniColouredBrick"),
+		BLUE(1, "blueMiniColouredBrick"),
+		BROWN(2, "brownMiniColouredBrick"),
+		CYAN(3, "cyanMiniColouredBrick"),
+		GRAY(4, "grayMiniColouredBrick"),
+		LIME(5, "limeMiniColouredBrick"),
+		MAGENTA(6, "magentaMiniColouredBrick"),
+		ORANGE(7, "orangeMiniColouredBrick"),
+		PINK(8, "pinkMiniColouredBrick"),
+		PURPLE(9, "purpleMiniColouredBrick"),
+		RED(10, "redMiniColouredBrick"),
+		WHITE(11, "whiteMiniColouredBrick"),
+		YELLOW(12, "yellowMiniColouredBrick");
 		private static final EnumMetadata[] TYPES_ARRAY = new BlockMiniColouredBricks.EnumMetadata[values().length];
 		private final int meta;
-		private final String textureName, type;
+		private final String type;
 
-		private EnumMetadata(int m, String t, String ty) {
+		private EnumMetadata(int m, String ty) {
 			this.meta = m;
-			this.textureName = "bricks/mini/" + t;
 			this.type = ty;
 		}
 
@@ -103,7 +102,7 @@ public class BlockMiniColouredBricks extends Block {
 
 		@Override
 		public String toString() {
-			return this.textureName;
+			return type;
 		}
 
 		public static BlockMiniColouredBricks.EnumMetadata getStateFromMeta(int m) {
