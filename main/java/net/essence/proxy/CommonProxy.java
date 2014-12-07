@@ -58,10 +58,10 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
-		SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
-		SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
-		StructureBoilBridgePieces.registerBoilFortressPieces();
-		StructureBoilVillagePieces.registerVillagePieces();
+		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
+		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
+		//StructureBoilBridgePieces.registerBoilFortressPieces();
+		//StructureBoilVillagePieces.registerVillagePieces();
 	}
 	
 	public void init(FMLInitializationEvent event) {

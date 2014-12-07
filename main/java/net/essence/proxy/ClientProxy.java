@@ -82,11 +82,26 @@ public class ClientProxy extends CommonProxy {
 		}
 		registerModelBakery(EssenceBlocks.colouredBricks, finalBrickNames);
 		
-		for(int i = 0; i < finalMiniBrickNames.length; i++) {
+		/*for(int i = 0; i < finalMiniBrickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
 			registerItem(it, i, finalMiniBrickNames[i]);
-		}
-		registerModelBakery(EssenceBlocks.miniColouredBricks, finalMiniBrickNames);
+		}*/
+		//registerModelBakery(EssenceBlocks.miniColouredBricks, finalMiniBrickNames);
+		Block it = GameRegistry.findBlock(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
+		registerModelBakery(it, new String[] {"essence:blackMiniColouredBrick", "essence:blueMiniColouredBrick", "essence:brownMiniColouredBrick", "essence:cyanMiniColouredBrick", "essence:grayMiniColouredBrick", "essence:limeMiniColouredBrick", "essence:magentaMiniColouredBrick", "essence:orangeMiniColouredBrick", "essence:pinkMiniColouredBrick", "essence:purpleMiniColouredBrick", "essence:redMiniColouredBrick", "essence:whiteMiniColouredBrick", "essence:yellowMiniColouredBrick"});
+		registerBlock(it, 0, "blackMiniColouredBrick");
+		registerBlock(it, 1, "blueMiniColouredBrick");
+		registerBlock(it, 2, "brownMiniColouredBrick");
+		registerBlock(it, 3, "cyanMiniColouredBrick");
+		registerBlock(it, 4, "grayMiniColouredBrick");
+		registerBlock(it, 5, "limeMiniColouredBrick");
+		registerBlock(it, 6, "magentaMiniColouredBrick");
+		registerBlock(it, 7, "orangeMiniColouredBrick");
+		registerBlock(it, 8, "pinkMiniColouredBrick");
+		registerBlock(it, 9, "purpleMiniColouredBrick");
+		registerBlock(it, 10, "redMiniColouredBrick");
+		registerBlock(it, 11, "whiteMiniColouredBrick");
+		registerBlock(it, 12, "yellowMiniColouredBrick");
 	}
 	
 	public static void registerModelBakery(Item i, String[] names) {
