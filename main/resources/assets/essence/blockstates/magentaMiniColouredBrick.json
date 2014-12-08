@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"magentaMiniColouredBrick": { "model": "essence:magentaMiniColouredBrick"}
+		"normal": { "model": "essence:magentaMiniColouredBrick"}
 	}
 }

@@ -47,7 +47,7 @@ public class SlayerAPI {
 	public static int mobID = 400, projectileID = 230;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
-	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "1.6"; 
+	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "1.7"; 
 	public static final boolean DEVMODE = true;
 
 	public static void addRecipe(ItemStack i, Object... o) {
