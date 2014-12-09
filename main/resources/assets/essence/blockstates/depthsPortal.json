@@ -1,5 +1,6 @@
 {
-	"variants": {
-		"normal": { "model": "essence:depthsPortal"}
-	}
+    "variants": {
+        "axis=z": { "model": "essence:depthsPortal_ew" },
+        "axis=x": { "model": "essence:depthsPortal_ns" }
+    }
 }

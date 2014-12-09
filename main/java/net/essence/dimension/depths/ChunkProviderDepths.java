@@ -1,11 +1,13 @@
 package net.essence.dimension.depths;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
@@ -13,30 +15,32 @@ import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class ChunkProviderDepths implements IChunkProvider{
+public class ChunkProviderDepths implements IChunkProvider {
 
-	private BiomeGenBase[] biomesForGeneration;
-	private World worldObj;
 	private Random rand;
-	private double[] stoneNoise = new double[256];
-	private MapGenBase caveGenerator = new MapGenCaves();
-	double[] noise1, noise2, noise3, noise4, noise5;
-	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6;
+	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, field_909_n, noiseGen4, noiseGen5, noiseGen6;
+	private World worldObj;
+	private double[] noiseArray, stoneNoise = new double[256];
+	private BiomeGenBase[] biomesForGeneration;
+	private double[] noise3, noise1, noise2, noise5, noise6;
+	private NoiseGeneratorPerlin field_147430_m;
+	private int[][] field_914_i = new int[32][32];
 	private double[] generatedTemperatures;
-	private double[] noiseArray;
-
 
 	public ChunkProviderDepths(World var1, long var2){
 		this.worldObj = var1;
-		this.rand = new Random(var2 + 4);
+		this.rand = new Random(var2);
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
+		this.field_909_n = new NoiseGeneratorOctaves(this.rand, 4);
+		this.field_147430_m = new NoiseGeneratorPerlin(this.rand, 4);
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -48,161 +52,129 @@ public class ChunkProviderDepths implements IChunkProvider{
 	}
 
 	@Override
-	public Chunk provideChunk(int i, int j) {
-		this.rand.setSeed(i * 341873128712L + j * 132897987541L);
-		Block[] var3 = new Block[65536];
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, i * 16, j * 16, 16, 16);
-		this.generateTerrain(i, j, var3, this.biomesForGeneration, this.generatedTemperatures);
-		this.replaceBlocksForBiome(i, j, var3, this.biomesForGeneration);
-		Chunk var4 = new Chunk(this.worldObj, i, j);
-		byte[] var5 = var4.getBiomeArray();
-
-		for(int var6 = 0; var6 < var5.length; ++var6) {
-			var5[var6] = (byte)this.biomesForGeneration[var6].biomeID;
-		}
-
-		var4.generateSkylightMap();
-		return var4;
+	public Chunk provideChunk(int par1, int par2) {
+		this.rand.setSeed((long)par1 * 391279128714L + (long)par2 * 132894987741L);
+		ChunkPrimer primer = new ChunkPrimer();
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
+		this.generateTerrain(par1, par2, primer);
+		this.replaceBlocksForBiome(primer);
+		Chunk chunk = new Chunk(this.worldObj, primer, par1, par2);
+		byte[] abyte = chunk.getBiomeArray();
+		for(int k = 0; k < abyte.length; ++k)
+			abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
+		chunk.generateSkylightMap();
+		return chunk;
 	}
 
+	public void generateTerrain(int var1, int var2, ChunkPrimer primer) {
+		byte b0 = 2;
+		int k = b0 + 1;
+		byte b1 = 33;
+		int l = b0 + 1;
+		this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * b0, 0, var2 * b0, k, b1, l);
 
+		for (int i1 = 0; i1 < b0; ++i1) {
+			for (int j1 = 0; j1 < b0; ++j1) {
+				for (int k1 = 0; k1 < 32; ++k1) {
+					double d0 = 0.25D;
+					double d1 = this.noiseArray[((i1 + 0) * l + j1 + 0) * b1 + k1 + 0];
+					double d2 = this.noiseArray[((i1 + 0) * l + j1 + 1) * b1 + k1 + 0];
+					double d3 = this.noiseArray[((i1 + 1) * l + j1 + 0) * b1 + k1 + 0];
+					double d4 = this.noiseArray[((i1 + 1) * l + j1 + 1) * b1 + k1 + 0];
+					double d5 = (this.noiseArray[((i1 + 0) * l + j1 + 0) * b1 + k1 + 1] - d1) * d0;
+					double d6 = (this.noiseArray[((i1 + 0) * l + j1 + 1) * b1 + k1 + 1] - d2) * d0;
+					double d7 = (this.noiseArray[((i1 + 1) * l + j1 + 0) * b1 + k1 + 1] - d3) * d0;
+					double d8 = (this.noiseArray[((i1 + 1) * l + j1 + 1) * b1 + k1 + 1] - d4) * d0;
 
-	public void replaceBlocksForBiome(int var1, int var2, Block[] var3, BiomeGenBase[] var4) {
-		byte var5 = 65;
-		double var6 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.generateNoiseOctaves(this.stoneNoise, var1 * 16, var2 * 16, 0, 16, 16, 1, var6 * 2.0D, var6 * 2.0D, var6 * 2.0D);
+					for (int l1 = 0; l1 < 4; ++l1) {
+						double d9 = 0.125D;
+						double d10 = d1;
+						double d11 = d2;
+						double d12 = (d3 - d1) * d9;
+						double d13 = (d4 - d2) * d9;
 
-		//ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, var1, var2, var3, var4);
-		//MinecraftForge.EVENT_BUS.post(event);
-		//if(event.getResult() == Result.DENY) return;
+						for (int i2 = 0; i2 < 8; ++i2) {
+							double d14 = 0.125D;
+							double d15 = d10;
+							double d16 = (d11 - d10) * d14;
 
-		for(int i1 = 0; i1 < 16; ++i1) {
-			for(int var9 = 0; var9 < 16; ++var9) {
-				BiomeGenBase j1 = var4[var9 + i1 * 16];
-				int i2 = (int)(this.stoneNoise[i1 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
-				int j2 = -1;
-				Block i3 = j1.topBlock.getBlock();
-				Block k1 = EssenceBlocks.depthsGrass;
+							for (int j2 = 0; j2 < 8; ++j2) {
+								IBlockState iblockstate = null;
 
-				for(int k2 = 127; k2 >= 0; --k2) {
-					int k3 = (var9 * 16 + i1) * 128 + k2;
-
-					if(k2 <= 0 + this.rand.nextInt(5)) {
-						var3[k3] = null;
-					} else {
-						Block i4 = var3[k3];
-
-						if(i4 == null) {
-							j2 = -1;
-						}
-						else if(i4 == Blocks.stone) {
-							if(j2 == -1) {
-								if(i2 <= 0) {
-									i3 = EssenceBlocks.depthsGrass;
-									k1 = EssenceBlocks.depthsGrass;
-								}
-								else if(k2 >= var5 - 4 && k2 <= var5 + 1) {
-									i3 = EssenceBlocks.depthsGrass;
-									k1 = EssenceBlocks.depthsStone;
+								if (d15 > 0.0D) {
+									iblockstate = EssenceBlocks.depthsStone.getDefaultState();
 								}
 
-								if(k2 >= var5 - 1) {
-									var3[k3] = i3;
-								} else {
-									var3[k3] = k1;
-								}
+								int k2 = i2 + i1 * 8;
+								int l2 = l1 + k1 * 4;
+								int i3 = j2 + j1 * 8;
+								primer.setBlockState(k2, l2, i3, iblockstate);
+								d15 += d16;
 							}
-							else if(j2 > 0) {
-								--j2;
-								var3[k3] = k1;
 
-								if(j2 == 0 && k1 == EssenceBlocks.depthsGrass) {
-									j2 = -1;
-									k1 = EssenceBlocks.depthsGrass;
-								}
-							}
+							d10 += d12;
+							d11 += d13;
 						}
 
-						if(j2 > 0) {
-							--j2;
-							var3[k3] = k1;
-
-							if(j2 == 0 && k1 == EssenceBlocks.depthsStone) {
-								j2 = -1;
-								k1 = EssenceBlocks.depthsStone;
-							}
-						}
-					}
-				}
-			}
-			for(int i = 0; i < 32767; i++) {
-				if(var3[i] == EssenceBlocks.eucaGrass && var3[i + 1] != null) var3[i] = EssenceBlocks.eucaDirt;
-			}
-		}
-	}
-
-	public void generateTerrain(int var1, int var2, Block[] var3, BiomeGenBase[] var4, double[] var5) {
-		byte var6 = 2;
-		int var7 = var6 + 1;
-		byte var8 = 33;
-		int var9 = var6 + 1;
-		this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * var6, 0, var2 * var6, var7, var8, var9);
-		for(int var10 = 0; var10 < var6; ++var10) {
-			for(int var11 = 0; var11 < var6; ++var11) {
-				for(int var12 = 0; var12 < 32; ++var12) {
-					double var13 = 0.52D;
-					double var15 = this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 0];
-					double var17 = this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 0];
-					double var19 = this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 0];
-					double var21 = this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 0];
-					double var23 = (this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 1] - var15) * var13;
-					double var25 = (this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 1] - var17) * var13;
-					double var27 = (this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 1] - var19) * var13;
-					double var29 = (this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 1] - var21) * var13;
-					for(int var31 = 0; var31 < 4; ++var31) {
-						double var32 = 0.125D;
-						double var34 = var15;
-						double var36 = var17;
-						double var38 = (var19 - var15) * var32;
-						double var40 = (var21 - var17) * var32;
-						for(int var42 = 0; var42 < 8; ++var42) {
-							int var43 = var42 + var10 * 8 << 11 | 0 + var11 * 8 << 7 | var12 * 4 + var31;
-							short var44 = 128;
-							double var45 = 0.125D;
-							double var47 = var34;
-							double var49 = (var36 - var34) * var45;
-
-							for(int var51 = 0; var51 < 8; ++var51) {
-								Block var52 = null;
-								if(var47 > 0.0D) var52 = Blocks.stone;
-								var3[var43] = var52;
-								var43 += var44;
-								var47 += var49;
-							}
-							var34 += var38;
-							var36 += var40;
-						}
-						var15 += var23;
-						var17 += var25;
-						var19 += var27;
-						var21 += var29;
+						d1 += d5;
+						d2 += d6;
+						d3 += d7;
+						d4 += d8;
 					}
 				}
 			}
 		}
 	}
 
-	@Override
-	public void populate(IChunkProvider ichunkprovider, int i, int j) {
-		BlockSand.fallInstantly = false;
-	}
+	public final void replaceBlocksForBiome(ChunkPrimer c) {
+		for (int i = 0; i < 16; ++i) {
+			for (int j = 0; j < 16; ++j) {
+				byte b0 = 1;
+				int k = -1;
+				IBlockState iblockstate = EssenceBlocks.depthsGrass.getDefaultState();
+				IBlockState iblockstate1 = EssenceBlocks.depthsDirt.getDefaultState();
 
+				for (int l = 127; l >= 0; --l) {
+					IBlockState iblockstate2 = c.getBlockState(i, l, j);
+
+					if (iblockstate2.getBlock().getMaterial() == Material.air) {
+						k = -1;
+					}
+					else if (iblockstate2.getBlock() == EssenceBlocks.depthsStone) {
+						if (k == -1) {
+							if (b0 <= 0) {
+								iblockstate = Blocks.air.getDefaultState();
+								iblockstate1 = EssenceBlocks.depthsGrass.getDefaultState();
+							}
+
+							k = b0;
+
+							if (l >= 0) {
+								c.setBlockState(i, l, j, iblockstate);
+							} else {
+								c.setBlockState(i, l, j, iblockstate1);
+								c.setBlockState(i, l - 1, j, iblockstate1);
+								c.setBlockState(i, l - 2, j, iblockstate1);
+							}
+						}
+						else if (k > 0) {
+							--k;
+							c.setBlockState(i, l, j, iblockstate1);
+							c.setBlockState(i, l - 1, j, iblockstate1);
+							c.setBlockState(i, l - 2, j, iblockstate1);
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	private double[] initializeNoiseField(double[] d, int x, int y, int z, int i, int j, int k) {
 		if(d == null) d = new double[i * j * k];
 		double i1 = 684.412D;
 		double j1 = 684.412D;
 		this.noise5 = this.noiseGen5.generateNoiseOctaves(this.noise5, x, z, i, k, 1.121D, 1.121D, 0.5D);
-		this.noise4 = this.noiseGen6.generateNoiseOctaves(this.noise4, x, z, i, k, 200.0D, 200.0D, 0.5D);
+		this.noise6 = this.noiseGen6.generateNoiseOctaves(this.noise6, x, z, i, k, 200.0D, 200.0D, 0.5D);
 		i1 *= 2.0D;
 		this.noise3 = this.noiseGen3.generateNoiseOctaves(this.noise3, x, y, z, i, j, k, i1 / 80.0D, i1 / 160.0D, i1 / 80.0D);
 		this.noise1 = this.noiseGen1.generateNoiseOctaves(this.noise1, x, y, z, i, j, k, i1, j1, i1);
@@ -217,7 +189,7 @@ public class ChunkProviderDepths implements IChunkProvider{
 			for(int k3 = 0; k3 < k; ++k3) {
 				int i4 = k3 * i3 + i3 / 2;
 				double j4 = (this.noise5[j2] + 256.0D) / 512.0D;
-				double k5 = this.noise4[j2] / 8000.0D;
+				double k5 = this.noise6[j2] / 8000.0D;
 
 				if(k5 < 0.0D) {
 					k5 = -k5 * 0.3D;
@@ -287,7 +259,14 @@ public class ChunkProviderDepths implements IChunkProvider{
 	}
 
 	@Override
-	public boolean saveChunks(boolean flag, IProgressUpdate iprogressupdate) {
+	public void populate(IChunkProvider ichunkprovider, int i, int j) {
+		int x1 = i * 16;
+		int z1 = j * 16;
+		int x, y, z, times;
+	}
+
+	@Override
+	public boolean saveChunks(boolean par1, IProgressUpdate par2) {
 		return true;
 	}
 
@@ -295,10 +274,7 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public boolean unloadQueuedChunks() {
 		return false;
 	}
-	
-	@Override
-	public void saveExtraData() { }
-	
+
 	@Override
 	public boolean canSave() {
 		return true;
@@ -308,11 +284,14 @@ public class ChunkProviderDepths implements IChunkProvider{
 	public String makeString() {
 		return "Depths";
 	}
-	
+
 	@Override
 	public int getLoadedChunkCount() {
 		return 0;
 	}
+
+	@Override
+	public void saveExtraData() { }
 
 	@Override
 	public Chunk func_177459_a(BlockPos pos) {

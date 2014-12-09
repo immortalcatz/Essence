@@ -1,5 +1,6 @@
 {
-	"variants": {
-		"normal": { "model": "essence:frozenPortal"}
-	}
+    "variants": {
+        "axis=z": { "model": "essence:frozenPortal_ew" },
+        "axis=x": { "model": "essence:frozenPortal_ns" }
+    }
 }

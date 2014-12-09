@@ -16,8 +16,7 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
-		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
-		Helper.printCoords(x, y, z);
+		int x = pos.getX(), y = pos.getY() - 1, z = pos.getZ();
 		int levels = 4;
 		int height = levels * 4;
 		ItemStack[] items = {new ItemStack(Items.apple), new ItemStack(Items.arrow), new ItemStack(Blocks.acacia_stairs)};

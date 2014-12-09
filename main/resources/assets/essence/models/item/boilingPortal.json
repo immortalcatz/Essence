@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/eucaPortal_ns",
+	"parent": "essence:block/boilingPortal_ns",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],
