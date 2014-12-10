@@ -24,9 +24,9 @@ public class BlockModFence extends BlockFence {
 	public BlockModFence(Block b, String n) {
 		this(b, n, false);
 	}
-
+	
 	@Override
-	public boolean func_176524_e(IBlockAccess blockAccess, BlockPos pos) {
+	public boolean canConnectTo(IBlockAccess blockAccess, BlockPos pos) {
 		Block block = blockAccess.getBlockState(pos).getBlock();
 		 return block == Blocks.barrier ? false : ((!(block instanceof BlockFence) || block.getMaterial() != this.blockMaterial) && !(block instanceof BlockFenceGate) ? (block.getMaterial().isOpaque() && block.isFullCube() ? block.getMaterial() != Material.gourd : false) : true);
 	}

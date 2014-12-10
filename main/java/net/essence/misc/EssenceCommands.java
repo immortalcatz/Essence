@@ -8,6 +8,7 @@ import net.essence.client.EssenceBar;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
+import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -18,17 +19,17 @@ import net.minecraft.world.Teleporter;
 public class EssenceCommands extends CommandBase {
 
 	@Override
-	public String getCommandName() {
+	public String getName() {
 		return "essence";
 	}
-
+	
 	@Override
-	public String getCommandUsage(ICommandSender var1) {
+	public String getCommandUsage(ICommandSender sender) {
 		return "/essence";
 	}
 
 	@Override
-	public void processCommand(ICommandSender var1, String[] var2) {
+	public void execute(ICommandSender var1, String[] var2) throws CommandException {
 		EntityPlayerMP p = null;
 		try {
 			p = getCommandSenderAsPlayer(var1);
@@ -91,7 +92,7 @@ public class EssenceCommands extends CommandBase {
 			}
 		}
 	}
-
+	
 	@Override
 	public int getRequiredPermissionLevel() {
 		return 0;

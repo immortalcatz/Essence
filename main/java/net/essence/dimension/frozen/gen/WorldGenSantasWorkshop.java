@@ -2812,8 +2812,8 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 15), glass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 16), glass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 17), glass.getDefaultState());
-		ItemDoor.func_179235_a(world, new BlockPos(i + 0, j + 1, k + 8), EnumFacing.NORTH, door);
-		ItemDoor.func_179235_a(world, new BlockPos(i + 0, j + 1, k + 9), EnumFacing.NORTH, door);
+		ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 8), EnumFacing.NORTH, door);
+		ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 9), EnumFacing.NORTH, door);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 4), Blocks.trapdoor.getStateFromMeta(10), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 13), Blocks.trapdoor.getStateFromMeta(10), 2);
 		world.setBlockState(new BlockPos(i + 8, j + 9, k + 1), Blocks.trapdoor.getStateFromMeta(8), 2);

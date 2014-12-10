@@ -431,7 +431,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			if(c == EnumCreatureType.MONSTER) {
 				if(this.genNetherBridge.func_175795_b(pos))
 					return this.genNetherBridge.getSpawnList();
-				if(this.genNetherBridge.func_175796_a(worldObj, pos) && this.worldObj.getBlockState(pos.offsetDown()) == EssenceBlocks.hotBrick)
+				if(this.genNetherBridge.func_175796_a(worldObj, pos) && this.worldObj.getBlockState(pos.down()) == EssenceBlocks.hotBrick)
 					return this.genNetherBridge.getSpawnList();
 			}
 		}
@@ -440,20 +440,20 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	}
 
 	@Override
-	public BlockPos func_180513_a(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
+	public Chunk provideChunk(BlockPos pos) {
+		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
+	}
+
+	@Override
+	public BlockPos getStrongholdGen(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
 		return null;
 	}
 
 	@Override
-	public void func_180514_a(Chunk c, int par1, int par2) {
+	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) {
 		if(canSpawn) {
 			this.villageGenerator.func_175792_a(this, this.worldObj, par1, par2, (ChunkPrimer)null);
 			this.genNetherBridge.func_175792_a(this, this.worldObj, par1, par2, (ChunkPrimer)null);
 		}
-	}
-
-	@Override
-	public Chunk func_177459_a(BlockPos pos) {
-		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
 	}
 }

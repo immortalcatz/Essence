@@ -381,11 +381,6 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public Chunk func_177459_a(BlockPos pos) {
-		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
-	}
-
-	@Override
 	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
 		return false;
 	}
@@ -397,10 +392,15 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public BlockPos func_180513_a(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
+	public Chunk provideChunk(BlockPos pos) {
+		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
+	}
+
+	@Override
+	public BlockPos getStrongholdGen(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
 		return null;
 	}
 
 	@Override
-	public void func_180514_a(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
+	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) { }
 }

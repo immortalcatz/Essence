@@ -34,11 +34,11 @@ public class ModTeleporter extends Teleporter {
     }
 
     @Override
-    public void func_180266_a(Entity entity, float par8) {
+    public void placeInPortal(Entity entity, float par8) {
         if (this.worldServerInstance.provider.getDimensionId() == dimensionID) {
-            if (!this.func_180620_b(entity, par8)) {
+            if (!this.placeInExistingPortal(entity, par8)) {
                 this.makePortal(entity);
-                this.func_180620_b(entity, par8);
+                this.placeInExistingPortal(entity, par8);
             }
         } else {
             int i = MathHelper.floor_double(entity.posX);
@@ -64,7 +64,7 @@ public class ModTeleporter extends Teleporter {
     }
 
     @Override
-    public boolean func_180620_b(Entity p_180620_1_, float p_180620_2_) {
+    public boolean placeInExistingPortal(Entity p_180620_1_, float p_180620_2_) {
     	boolean flag = true;
         double d0 = -1.0D;
         int i = MathHelper.floor_double(p_180620_1_.posX);
@@ -93,11 +93,11 @@ public class ModTeleporter extends Teleporter {
                 {
                     for (BlockPos blockpos = blockpos4.add(l, this.worldServerInstance.getActualHeight() - 1 - blockpos4.getY(), i1); blockpos.getY() >= 0; blockpos = blockpos1)
                     {
-                        blockpos1 = blockpos.offsetDown();
+                        blockpos1 = blockpos.down();
 
                         if (this.worldServerInstance.getBlockState(blockpos).getBlock() == portal)
                         {
-                            while (this.worldServerInstance.getBlockState(blockpos1 = blockpos.offsetDown()).getBlock() == portal)
+                            while (this.worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == portal)
                             {
                                 blockpos = blockpos1;
                             }
@@ -128,22 +128,22 @@ public class ModTeleporter extends Teleporter {
             double d6 = (double)((BlockPos)object).getZ() + 0.5D;
             EnumFacing enumfacing = null;
 
-            if (this.worldServerInstance.getBlockState(((BlockPos)object).offsetWest()).getBlock() == portal)
+            if (this.worldServerInstance.getBlockState(((BlockPos)object).west()).getBlock() == portal)
             {
                 enumfacing = EnumFacing.NORTH;
             }
 
-            if (this.worldServerInstance.getBlockState(((BlockPos)object).offsetEast()).getBlock() == portal)
+            if (this.worldServerInstance.getBlockState(((BlockPos)object).east()).getBlock() == portal)
             {
                 enumfacing = EnumFacing.SOUTH;
             }
 
-            if (this.worldServerInstance.getBlockState(((BlockPos)object).offsetNorth()).getBlock() == portal)
+            if (this.worldServerInstance.getBlockState(((BlockPos)object).north()).getBlock() == portal)
             {
                 enumfacing = EnumFacing.EAST;
             }
 
-            if (this.worldServerInstance.getBlockState(((BlockPos)object).offsetSouth()).getBlock() == portal)
+            if (this.worldServerInstance.getBlockState(((BlockPos)object).south()).getBlock() == portal)
             {
                 enumfacing = EnumFacing.WEST;
             }
@@ -236,7 +236,7 @@ public class ModTeleporter extends Teleporter {
     
     private boolean func_180265_a(BlockPos p_180265_1_)
     {
-        return !this.worldServerInstance.isAirBlock(p_180265_1_) || !this.worldServerInstance.isAirBlock(p_180265_1_.offsetUp());
+        return !this.worldServerInstance.isAirBlock(p_180265_1_) || !this.worldServerInstance.isAirBlock(p_180265_1_.up());
     }
 
     @Override

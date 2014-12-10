@@ -33,7 +33,7 @@ public class BlockModOre extends BlockMod {
 
 	@Override
 	public boolean addHitEffects(World w, MovingObjectPosition target, EffectRenderer effectRenderer) {
-		int x = target.func_178782_a().getX(), y = target.func_178782_a().getY(), z = target.func_178782_a().getZ();
+		int x = target.getBlockPos().getX(), y = target.getBlockPos().getY(), z = target.getBlockPos().getZ();
 		renderParticle(w, x, y, z);
 		Random random = new Random();
 		Block particle = Blocks.stone;

@@ -173,7 +173,8 @@ public class TileEntityBackpack extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public void clearInventory() {
+	public void clear() {
+		// TODO Auto-generated method stub
 		
 	}
 }

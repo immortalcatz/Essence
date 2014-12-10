@@ -19,19 +19,19 @@ public class BlockModFire extends BlockFire {
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState s) {
 		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.eucaPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.offsetDown()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
 		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.depthsPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.offsetDown()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
 		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.boilPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.offsetDown()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
 		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.frozenPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.offsetDown()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
 	}

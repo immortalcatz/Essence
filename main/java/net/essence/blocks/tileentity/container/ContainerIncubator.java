@@ -3,6 +3,7 @@ package net.essence.blocks.tileentity.container;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
@@ -44,9 +45,8 @@ public class ContainerIncubator extends Container
         }
     }
 
-    public void onCraftGuiOpened(ICrafting p_75132_1_)
-    {
-        super.onCraftGuiOpened(p_75132_1_);
+    public void addCraftingToCrafters(ICrafting p_75132_1_) {
+        super.addCraftingToCrafters(p_75132_1_);
         p_75132_1_.func_175173_a(this, this.tileFurnace);
     }
 

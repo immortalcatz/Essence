@@ -55,7 +55,7 @@ public class EntityMagmaFireball extends EntitySmallFireball {
                 }
 
                 if (flag) {
-                    BlockPos blockpos = m.func_178782_a().offset(m.field_178784_b);
+                    BlockPos blockpos = m.getBlockPos().offset(m.sideHit);
 
                     if (this.worldObj.isAirBlock(blockpos)) {
                         this.worldObj.setBlockState(blockpos, Blocks.fire.getDefaultState());

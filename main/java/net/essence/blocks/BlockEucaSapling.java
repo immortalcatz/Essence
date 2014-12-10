@@ -31,7 +31,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	public void updateTick(World w, BlockPos pos, IBlockState s, Random r)  {
 		if(!w.isRemote) {
 			super.updateTick(w, pos, s, r);
-			if(w.getLightFromNeighbors(pos.offsetUp()) >= 9 && r.nextInt(9) == 0)
+			if(w.getLightFromNeighbors(pos.up()) >= 9 && r.nextInt(9) == 0)
 				this.generate(w, pos, r);
 		}
 	}
@@ -55,7 +55,7 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	public boolean canBlockStay(World w, BlockPos pos) {
-		return w.getBlockState(pos.offsetDown()).getBlock().canSustainPlant(w, new BlockPos(pos.offsetDown()), EnumFacing.UP, this);
+		return w.getBlockState(pos.down()).getBlock().canSustainPlant(w, new BlockPos(pos.down()), EnumFacing.UP, this);
 	}
 	
 	@Override
@@ -89,11 +89,6 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	}
 
 	@Override
-	public boolean isStillGrowing(World worldIn, BlockPos p_176473_2_, IBlockState p_176473_3_, boolean p_176473_4_) {
-		return true;
-	}
-
-	@Override
 	public boolean canUseBonemeal(World worldIn, Random p_180670_2_, BlockPos p_180670_3_, IBlockState p_180670_4_) {
 		return true;
 	}
@@ -101,5 +96,10 @@ public class BlockEucaSapling extends BlockMod implements IGrowable, IPlantable 
 	@Override
 	public void grow(World w, Random r, BlockPos p, IBlockState p_176474_4_) {
 		generate(w, p, r);
+	}
+
+	@Override
+	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+		return true;
 	}
 }

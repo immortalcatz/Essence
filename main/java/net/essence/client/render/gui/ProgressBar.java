@@ -36,7 +36,7 @@ public class ProgressBar {
 		tessellator.addVertex(x - width/2+3, y+height-3, 0.0);
 		tessellator.addVertex(x - width/2+3+barWidth, y+height-3, 0.0);
 		tessellator.addVertex(x - width/2+3+barWidth, y+3, 0.0);
-		tessellator.draw();
+		//tessellator.draw();
 		GL11.glPopMatrix();
 		GL11.glEnable(3553);
 		GL11.glDisable(GL12.GL_RESCALE_NORMAL);

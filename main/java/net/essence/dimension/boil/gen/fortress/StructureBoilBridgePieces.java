@@ -795,7 +795,7 @@ public class StructureBoilBridgePieces
 
                 if (p_74875_3_.func_175898_b(blockpos))
                 {
-                    worldIn.func_175637_a(Blocks.flowing_lava, blockpos, p_74875_2_);
+                   worldIn.forceBlockUpdateTick(Blocks.flowing_lava, blockpos, p_74875_2_);
                 }
 
                 return true;

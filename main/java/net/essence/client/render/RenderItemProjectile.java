@@ -33,7 +33,7 @@ public class RenderItemProjectile extends Render {
         GlStateManager.rotate(-this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
         this.bindTexture(TextureMap.locationBlocksTexture);
-        this.item.func_175043_b(this.getMeta(par1Entity));
+        this.item.renderItemModel(this.getMeta(par1Entity));
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }

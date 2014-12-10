@@ -49,22 +49,22 @@ public class BlockHalfSlab extends BlockSlab {
 	}
 
 	@Override
-	public String getFullSlabName(int p_150002_1_) {
-		return null;
-	}
-
-	@Override
 	public boolean isDouble() {
 		return false;
 	}
 
 	@Override
-	public IProperty func_176551_l() {
+	public String getUnlocalizedName(int meta) {
 		return null;
 	}
 
 	@Override
-	public Object func_176553_a(ItemStack p_176553_1_) {
+	public IProperty getVariantProperty() {
+		return null;
+	}
+
+	@Override
+	public Object getVariant(ItemStack stack) {
 		return null;
 	}
 }

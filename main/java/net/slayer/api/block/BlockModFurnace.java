@@ -55,10 +55,10 @@ public abstract class BlockModFurnace extends BlockContainer {
 	public void onBlockAdded(World w, BlockPos pos, IBlockState s) {
 		super.onBlockAdded(w, pos, s);
 		if(!w.isRemote) {
-			Block block = w.getBlockState(pos.offsetNorth()).getBlock();
-			Block block1 = w.getBlockState(pos.offsetSouth()).getBlock();
-			Block block2 = w.getBlockState(pos.offsetWest()).getBlock();
-			Block block3 = w.getBlockState(pos.offsetEast()).getBlock();
+			Block block = w.getBlockState(pos.north()).getBlock();
+			Block block1 = w.getBlockState(pos.south()).getBlock();
+			Block block2 = w.getBlockState(pos.west()).getBlock();
+			Block block3 = w.getBlockState(pos.east()).getBlock();
 			EnumFacing enumfacing = (EnumFacing)s.getValue(FACING);
 
 			if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock()) {
@@ -104,7 +104,7 @@ public abstract class BlockModFurnace extends BlockContainer {
 
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-		worldIn.setBlockState(pos, state.withProperty(FACING, placer.func_174811_aO().getOpposite()), 2);
+		worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
 		if (stack.hasDisplayName()) {
 			TileEntity tileentity = worldIn.getTileEntity(pos);

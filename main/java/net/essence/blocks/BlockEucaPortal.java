@@ -84,10 +84,10 @@ public class BlockEucaPortal extends BlockBreakable {
 				return false;
 			}
 		}
-		boolean flag = worldIn.getBlockState(pos.offsetWest()).getBlock() == this && worldIn.getBlockState(pos.offsetWest(2)).getBlock() != this;
-		boolean flag1 = worldIn.getBlockState(pos.offsetEast()).getBlock() == this && worldIn.getBlockState(pos.offsetEast(2)).getBlock() != this;
-		boolean flag2 = worldIn.getBlockState(pos.offsetNorth()).getBlock() == this && worldIn.getBlockState(pos.offsetNorth(2)).getBlock() != this;
-		boolean flag3 = worldIn.getBlockState(pos.offsetSouth()).getBlock() == this && worldIn.getBlockState(pos.offsetSouth(2)).getBlock() != this;
+		boolean flag = worldIn.getBlockState(pos.west()).getBlock() == this && worldIn.getBlockState(pos.west(2)).getBlock() != this;
+		boolean flag1 = worldIn.getBlockState(pos.east()).getBlock() == this && worldIn.getBlockState(pos.east(2)).getBlock() != this;
+		boolean flag2 = worldIn.getBlockState(pos.north()).getBlock() == this && worldIn.getBlockState(pos.north(2)).getBlock() != this;
+		boolean flag3 = worldIn.getBlockState(pos.south()).getBlock() == this && worldIn.getBlockState(pos.south(2)).getBlock() != this;
 		boolean flag4 = flag || flag1 || axis == EnumFacing.Axis.X;
 		boolean flag5 = flag2 || flag3 || axis == EnumFacing.Axis.Z;
 		return flag4 && side == EnumFacing.WEST ? true : (flag4 && side == EnumFacing.EAST ? true : (flag5 && side == EnumFacing.NORTH ? true : flag5 && side == EnumFacing.SOUTH));
@@ -137,7 +137,7 @@ public class BlockEucaPortal extends BlockBreakable {
 			double d4 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
 			double d5 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
 			int j = rand.nextInt(2) * 2 - 1;
-			if(worldIn.getBlockState(pos.offsetWest()).getBlock() != this && worldIn.getBlockState(pos.offsetEast()).getBlock() != this) {
+			if(worldIn.getBlockState(pos.west()).getBlock() != this && worldIn.getBlockState(pos.east()).getBlock() != this) {
 				d0 = (double)pos.getX() + 0.5D + 0.25D * (double)j;
 				d3 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			} else {
@@ -211,7 +211,7 @@ public class BlockEucaPortal extends BlockBreakable {
 				this.field_150866_c = EnumFacing.SOUTH;
 			}
 
-			for (BlockPos blockpos1 = p_i45694_2_; p_i45694_2_.getY() > blockpos1.getY() - 21 && p_i45694_2_.getY() > 0 && this.func_150857_a(worldIn.getBlockState(p_i45694_2_.offsetDown()).getBlock()); p_i45694_2_ = p_i45694_2_.offsetDown())
+			for (BlockPos blockpos1 = p_i45694_2_; p_i45694_2_.getY() > blockpos1.getY() - 21 && p_i45694_2_.getY() > 0 && this.func_150857_a(worldIn.getBlockState(p_i45694_2_.down()).getBlock()); p_i45694_2_ = p_i45694_2_.down())
 			{
 				;
 			}
@@ -244,7 +244,7 @@ public class BlockEucaPortal extends BlockBreakable {
 			{
 				BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
 
-				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.offsetDown()).getBlock() != EssenceBlocks.eucaPortalFrame)
+				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.eucaPortalFrame)
 				{
 					break;
 				}
@@ -263,7 +263,7 @@ public class BlockEucaPortal extends BlockBreakable {
 				{
 					for (i = 0; i < this.field_150868_h; ++i)
 					{
-						BlockPos blockpos = this.field_150861_f.offset(this.field_150866_c, i).offsetUp(this.field_150862_g);
+						BlockPos blockpos = this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g);
 						Block block = this.field_150867_a.getBlockState(blockpos).getBlock();
 
 						if (!this.func_150857_a(block))
@@ -299,7 +299,7 @@ public class BlockEucaPortal extends BlockBreakable {
 
 			for (i = 0; i < this.field_150868_h; ++i)
 			{
-				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).offsetUp(this.field_150862_g)).getBlock() != EssenceBlocks.eucaPortalFrame)
+				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.eucaPortalFrame)
 				{
 					this.field_150862_g = 0;
 					break;
@@ -337,7 +337,7 @@ public class BlockEucaPortal extends BlockBreakable {
 
 				for (int j = 0; j < this.field_150862_g; ++j)
 				{
-					this.field_150867_a.setBlockState(blockpos.offsetUp(j), EssenceBlocks.eucaPortal.getDefaultState().withProperty(BlockPortal.field_176550_a, this.field_150865_b), 2);
+					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.eucaPortal.getDefaultState().withProperty(BlockEucaPortal.field_176550_a, this.field_150865_b), 2);
 				}
 			}
 		}

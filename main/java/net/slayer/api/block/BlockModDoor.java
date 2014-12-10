@@ -153,7 +153,7 @@ public class BlockModDoor extends BlockMod {
         }
         else
         {
-            BlockPos blockpos1 = state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? pos : pos.offsetDown();
+            BlockPos blockpos1 = state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? pos : pos.down();
             IBlockState iblockstate1 = pos.equals(blockpos1) ? state : worldIn.getBlockState(blockpos1);
 
             if (iblockstate1.getBlock() != this)
@@ -177,7 +177,7 @@ public class BlockModDoor extends BlockMod {
 
         if (iblockstate.getBlock() == this)
         {
-            BlockPos blockpos1 = iblockstate.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? p_176512_2_ : p_176512_2_.offsetDown();
+            BlockPos blockpos1 = iblockstate.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? p_176512_2_ : p_176512_2_.down();
             IBlockState iblockstate1 = p_176512_2_ == blockpos1 ? iblockstate : worldIn.getBlockState(blockpos1);
 
             if (iblockstate1.getBlock() == this && ((Boolean)iblockstate1.getValue(OPEN_PROP)).booleanValue() != p_176512_3_)
@@ -193,7 +193,7 @@ public class BlockModDoor extends BlockMod {
     {
         if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER)
         {
-            BlockPos blockpos1 = pos.offsetDown();
+            BlockPos blockpos1 = pos.down();
             IBlockState iblockstate1 = worldIn.getBlockState(blockpos1);
 
             if (iblockstate1.getBlock() != this)
@@ -208,7 +208,7 @@ public class BlockModDoor extends BlockMod {
         else
         {
             boolean flag1 = false;
-            BlockPos blockpos2 = pos.offsetUp();
+            BlockPos blockpos2 = pos.up();
             IBlockState iblockstate2 = worldIn.getBlockState(blockpos2);
 
             if (iblockstate2.getBlock() != this)
@@ -217,7 +217,7 @@ public class BlockModDoor extends BlockMod {
                 flag1 = true;
             }
 
-            if (!World.doesBlockHaveSolidTopSurface(worldIn, pos.offsetDown()))
+            if (!World.doesBlockHaveSolidTopSurface(worldIn, pos.down()))
             {
                 worldIn.setBlockToAir(pos);
                 flag1 = true;
@@ -267,7 +267,7 @@ public class BlockModDoor extends BlockMod {
 
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-        return pos.getY() >= worldIn.getHeight() - 1 ? false : World.doesBlockHaveSolidTopSurface(worldIn, pos.offsetDown()) && super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.offsetUp());
+        return pos.getY() >= worldIn.getHeight() - 1 ? false : World.doesBlockHaveSolidTopSurface(worldIn, pos.down()) && super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up());
     }
 
     public int getMobilityFlag()
@@ -280,10 +280,10 @@ public class BlockModDoor extends BlockMod {
         IBlockState iblockstate = p_176515_0_.getBlockState(p_176515_1_);
         int i = iblockstate.getBlock().getMetaFromState(iblockstate);
         boolean flag = func_176518_i(i);
-        IBlockState iblockstate1 = p_176515_0_.getBlockState(p_176515_1_.offsetDown());
+        IBlockState iblockstate1 = p_176515_0_.getBlockState(p_176515_1_.down());
         int j = iblockstate1.getBlock().getMetaFromState(iblockstate1);
         int k = flag ? j : i;
-        IBlockState iblockstate2 = p_176515_0_.getBlockState(p_176515_1_.offsetUp());
+        IBlockState iblockstate2 = p_176515_0_.getBlockState(p_176515_1_.up());
         int l = iblockstate2.getBlock().getMetaFromState(iblockstate2);
         int i1 = flag ? i : l;
         boolean flag1 = (i1 & 1) != 0;
@@ -304,7 +304,7 @@ public class BlockModDoor extends BlockMod {
 
     public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn)
     {
-        BlockPos blockpos1 = pos.offsetDown();
+        BlockPos blockpos1 = pos.down();
 
         if (playerIn.capabilities.isCreativeMode && state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER && worldIn.getBlockState(blockpos1).getBlock() == this)
         {
@@ -318,7 +318,7 @@ public class BlockModDoor extends BlockMod {
 
         if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER)
         {
-            iblockstate1 = worldIn.getBlockState(pos.offsetUp());
+            iblockstate1 = worldIn.getBlockState(pos.up());
 
             if (iblockstate1.getBlock() == this)
             {
@@ -327,7 +327,7 @@ public class BlockModDoor extends BlockMod {
         }
         else
         {
-            iblockstate1 = worldIn.getBlockState(pos.offsetDown());
+            iblockstate1 = worldIn.getBlockState(pos.down());
 
             if (iblockstate1.getBlock() == this)
             {

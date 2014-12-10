@@ -40,9 +40,9 @@ public class EntityEucaHopper extends EntityModTameable {
 	@Override
 	public EntityAgeable createChild(EntityAgeable var1) {
 		EntityEucaHopper e = new EntityEucaHopper(this.worldObj);
-		String s = this.func_152113_b();
+		String s = this.getOwnerId();
 		if(s != null && s.trim().length() > 0) {
-			e.func_152115_b(s);
+			e.setOwnerId(s);
 			e.setTamed(true);
 		}
 		return e;
@@ -71,7 +71,7 @@ public class EntityEucaHopper extends EntityModTameable {
 	}
 
 	@Override
-	protected void func_180429_a(BlockPos pos, Block b) {
+	protected void playStepSound(BlockPos pos, Block b) {
 		this.playSound("mob.wolf.step", 0.15F, 1.0F);
 	}
 	
@@ -89,7 +89,7 @@ public class EntityEucaHopper extends EntityModTameable {
 
 	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
-		if(this.func_180431_b(par1DamageSource)) return false;
+		if(this.isEntityInvulnerable(par1DamageSource)) return false;
 		else {
 			Entity entity = par1DamageSource.getEntity();
 			this.aiSit.setSitting(false);
@@ -131,7 +131,7 @@ public class EntityEucaHopper extends EntityModTameable {
 				}
 			}
 
-			if (func_152114_e(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
+			if (isOwner(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
 				this.aiSit.setSitting(!this.isSitting());
 				this.isJumping = false;
 				this.navigator.clearPathEntity();
@@ -153,7 +153,7 @@ public class EntityEucaHopper extends EntityModTameable {
 					this.setAttackTarget((EntityLivingBase)null);
 					this.aiSit.setSitting(true);
 					this.setHealth(20.0F);
-					this.func_152115_b(par1EntityPlayer.getUniqueID().toString());
+					this.setOwnerId(par1EntityPlayer.getUniqueID().toString());
 					this.playTameEffect(true);
 					this.worldObj.setEntityState(this, (byte)7);
 				} else {

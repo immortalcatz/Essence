@@ -33,40 +33,9 @@ public class BlockModSlab extends BlockSlab {
 		GameRegistry.registerBlock(this, ItemBlockSlab.class, s + "EssenceSlab");
 	}
 
-	/*@Override
-	public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase e, ItemStack i) {
-		w.setBlock(x, y, z, this, i.getItemDamage(), 2);
-	}*/
-
-	public boolean isSlab(Block b) {
-		return b == EssenceBlocks.halfSlab;
-	}
-
 	@Override
 	public void onBlockAdded(World w, BlockPos pos, IBlockState s) {
-		/*if(w.getBlockMetadata(x, y - 1, z) == 1) {
-			if(w.getBlock(x, y - 1, z) == EssenceBlocks.halfSlab) {
-				w.setBlock(x, y, z, Blocks.air);
-				w.setBlock(x, y - 1, z, EssenceBlocks.fullSlab, 1, 2);
-			}
-			if(w.getBlock(x, y + 1, z) == EssenceBlocks.halfSlab) {
-				w.setBlock(x, y, z, Blocks.air);
-				w.setBlock(x, y + 1, z, EssenceBlocks.fullSlab, 1, 2);
-			}
-		}
-		if(w.getBlock(x, y - 1, z) == EssenceBlocks.halfSlab) {
-			w.setBlock(x, y, z, Blocks.air);
-			w.setBlock(x, y - 1, z, EssenceBlocks.fullSlab);
-		}
-		if(w.getBlock(x, y + 1, z) == EssenceBlocks.halfSlab) {
-			w.setBlock(x, y, z, Blocks.air);
-			w.setBlock(x, y + 1, z, EssenceBlocks.fullSlab);
-		}*/
-	}
 
-	@Override
-	public String getFullSlabName(int p_150002_1_) {
-		return null;
 	}
 
 	@Override
@@ -75,38 +44,17 @@ public class BlockModSlab extends BlockSlab {
 	}
 
 	@Override
-	public IProperty func_176551_l() {
+	public String getUnlocalizedName(int meta) {
 		return null;
 	}
 
 	@Override
-	public Object func_176553_a(ItemStack p_176553_1_) {
+	public IProperty getVariantProperty() {
 		return null;
 	}
 
-	/*@Override
-	public Item getItemDropped(IBlockState m, Random r, int j) {
-		return new ItemStack(EssenceBlocks.halfSlab, full ? 2 : 1, m.).getItem();
-	}
-
 	@Override
-	public Item getItem(World w, int x, int y, int z) {
-		return isSlab(this) ? SlayerAPI.toItem(this) : SlayerAPI.toItem(EssenceBlocks.fullSlab);
+	public Object getVariant(ItemStack stack) {
+		return null;
 	}
-
-	@Override
-	protected ItemStack createStackedBlock(int m) {
-		return new ItemStack(Item.getItemFromBlock(EssenceBlocks.halfSlab), 2, m & 1);
-	}
-
-	@Override //Slab Names
-	public String func_150002_b(int m) {
-		return super.getUnlocalizedName() + "." + types[m];
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(Item i, CreativeTabs c, List l) {
-		for(int j = 0; j < types.length; j++)
-			l.add(new ItemStack(i, 0, j));
-	}*/
 }

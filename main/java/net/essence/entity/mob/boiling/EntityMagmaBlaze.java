@@ -69,7 +69,7 @@ public class EntityMagmaBlaze extends EntityModMob {
 
         if (this.worldObj.isRemote)
         {
-            if (this.rand.nextInt(24) == 0 && !this.isSlient())
+            if (this.rand.nextInt(24) == 0 && !this.isSilent())
             {
                 this.worldObj.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, "fire.fire", 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
             }

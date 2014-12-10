@@ -63,8 +63,8 @@ public class PlayerEvent {
 		if(isWorking) {
 			if(mat && player.motionY < 0.0D) {
 				if(player.worldObj.getBlockState(new BlockPos(i, j - 1, k)).getBlock().getMaterial() == Material.water || player.worldObj.getBlockState(new BlockPos(i, j, k)).getBlock().getMaterial() == Material.water) player.motionY = 0.0D;
-				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.0D; 
-				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed()) player.motionY = 0.5D;
+				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.isPressed()) player.motionY = 0.0D; 
+				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.isPressed()) player.motionY = 0.5D;
 			}
 		}
 	}

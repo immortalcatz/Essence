@@ -117,7 +117,7 @@ public class BlockModVine extends BlockMod implements IShearable {
             flag = true;
         }
 
-        if (!flag && this.func_150093_a(access.getBlockState(pos.offsetUp()).getBlock()))
+        if (!flag && this.func_150093_a(access.getBlockState(pos.up()).getBlock()))
         {
             f2 = Math.min(f2, 0.9375F);
             f5 = 1.0F;
@@ -175,7 +175,7 @@ public class BlockModVine extends BlockMod implements IShearable {
                 EnumFacing enumfacing1 = EnumFacing.random(rand);
                 EnumFacing enumfacing2;
 
-                if (enumfacing1 == EnumFacing.UP && pos.getY() < 255 && worldIn.isAirBlock(pos.offsetUp()))
+                if (enumfacing1 == EnumFacing.UP && pos.getY() < 255 && worldIn.isAirBlock(pos.up()))
                 {
                     if (!flag)
                     {
@@ -186,7 +186,7 @@ public class BlockModVine extends BlockMod implements IShearable {
                         {
                             enumfacing2 = (EnumFacing)iterator1.next();
 
-                            if (rand.nextBoolean() || !this.func_150093_a(worldIn.getBlockState(pos.offset(enumfacing2).offsetUp()).getBlock()))
+                            if (rand.nextBoolean() || !this.func_150093_a(worldIn.getBlockState(pos.offset(enumfacing2).up()).getBlock()))
                             {
                                 iblockstate2 = iblockstate2.withProperty(func_176267_a(enumfacing2), Boolean.valueOf(false));
                             }
@@ -194,7 +194,7 @@ public class BlockModVine extends BlockMod implements IShearable {
 
                         if (((Boolean)iblockstate2.getValue(field_176273_b)).booleanValue() || ((Boolean)iblockstate2.getValue(field_176278_M)).booleanValue() || ((Boolean)iblockstate2.getValue(field_176279_N)).booleanValue() || ((Boolean)iblockstate2.getValue(field_176280_O)).booleanValue())
                         {
-                            worldIn.setBlockState(pos.offsetUp(), iblockstate2, 2);
+                            worldIn.setBlockState(pos.up(), iblockstate2, 2);
                         }
                     }
                 }
@@ -234,7 +234,7 @@ public class BlockModVine extends BlockMod implements IShearable {
                                 {
                                     worldIn.setBlockState(blockpos1, this.getDefaultState().withProperty(func_176267_a(enumfacing1.getOpposite()), Boolean.valueOf(true)), 2);
                                 }
-                                else if (this.func_150093_a(worldIn.getBlockState(blockpos2.offsetUp()).getBlock()))
+                                else if (this.func_150093_a(worldIn.getBlockState(blockpos2.up()).getBlock()))
                                 {
                                     worldIn.setBlockState(blockpos2, this.getDefaultState(), 2);
                                 }
@@ -249,7 +249,7 @@ public class BlockModVine extends BlockMod implements IShearable {
                     {
                         if (pos.getY() > 1)
                         {
-                            blockpos2 = pos.offsetDown();
+                            blockpos2 = pos.down();
                             IBlockState iblockstate3 = worldIn.getBlockState(blockpos2);
                             Block block = iblockstate3.getBlock();
                             IBlockState iblockstate1;

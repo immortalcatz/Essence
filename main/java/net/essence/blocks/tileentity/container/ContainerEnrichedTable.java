@@ -108,16 +108,16 @@ public class ContainerEnrichedTable extends Container {
                 
                 @Override
                 @SideOnly(Side.CLIENT)
-                public String func_178171_c() {
-                    return ItemArmor.EMPTY_SLOT_NAMES[k];
+                public String getSlotTexture() {
+                	return ItemArmor.EMPTY_SLOT_NAMES[k];
                 }
             });
         }
 	}
 
 	@Override
-	public void onCraftGuiOpened(ICrafting par1ICrafting) {
-		super.onCraftGuiOpened(par1ICrafting);
+	public void addCraftingToCrafters(ICrafting par1ICrafting) {
+		super.addCraftingToCrafters(par1ICrafting);
 		par1ICrafting.sendProgressBarUpdate(this, 0, this.enchantLevels[0]);
 		par1ICrafting.sendProgressBarUpdate(this, 1, this.enchantLevels[1]);
 		par1ICrafting.sendProgressBarUpdate(this, 2, this.enchantLevels[2]);

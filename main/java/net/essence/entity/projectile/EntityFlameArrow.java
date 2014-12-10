@@ -311,7 +311,7 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 						this.ticksInAir = 0;
 					}
 				} else {
-					BlockPos blockpos1 = movingobjectposition.func_178782_a();
+					BlockPos blockpos1 = movingobjectposition.getBlockPos();
 					this.field_145791_d = blockpos1.getX();
 					this.field_145792_e = blockpos1.getY();
 					this.field_145789_f = blockpos1.getZ();

@@ -99,7 +99,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	protected void updateAITick() {
 		if(this.randomTickDivider-- <= 0) {
 			this.randomTickDivider = 70 + this.rand.nextInt(50);
-			this.villageObj = this.worldObj.villageCollectionObj.func_176056_a(new BlockPos(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)), 32);
+			this.villageObj = this.worldObj.villageCollectionObj.getNearestVillage(new BlockPos(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)), 32);
 
 			if(this.villageObj == null) {
 				this.detachHome();
@@ -117,7 +117,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 							MerchantRecipe merchantrecipe = (MerchantRecipe)iterator.next();
 
 							if (merchantrecipe.isRecipeDisabled()) {
-								merchantrecipe.func_82783_a(this.rand.nextInt(6) + this.rand.nextInt(6) + 2);
+								merchantrecipe.increaseMaxTradeUses(this.rand.nextInt(6) + this.rand.nextInt(6) + 2);
 							}
 						}
 					}
@@ -179,7 +179,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	public void useRecipe(MerchantRecipe var1) {
 		var1.incrementToolUses();
 
-		if(var1.func_180321_e() == 1 || this.rand.nextInt(5) == 0) {
+		if(var1.getToolUses() == 1 || this.rand.nextInt(5) == 0) {
 			this.timeUntilReset = 40;
 			this.needsInitilization = true;
 

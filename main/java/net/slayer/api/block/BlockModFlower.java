@@ -28,7 +28,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 	
     public boolean canBlockStay(World w, BlockPos p, IBlockState s) {
-        return w.getBlockState(p.offsetDown()).getBlock().canSustainPlant(w, p, EnumFacing.UP, this);
+        return w.getBlockState(p.down()).getBlock().canSustainPlant(w, p, EnumFacing.UP, this);
     }
 	
 	@Override

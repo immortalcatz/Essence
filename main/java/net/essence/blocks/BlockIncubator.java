@@ -13,6 +13,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -52,10 +53,10 @@ public class BlockIncubator extends BlockContainer {
 	public void onBlockAdded(World w, BlockPos pos, IBlockState s) {
 		super.onBlockAdded(w, pos, s);
 		if(!w.isRemote) {
-			Block block = w.getBlockState(pos.offsetNorth()).getBlock();
-			Block block1 = w.getBlockState(pos.offsetSouth()).getBlock();
-			Block block2 = w.getBlockState(pos.offsetWest()).getBlock();
-			Block block3 = w.getBlockState(pos.offsetEast()).getBlock();
+			Block block = w.getBlockState(pos.north()).getBlock();
+			Block block1 = w.getBlockState(pos.south()).getBlock();
+			Block block2 = w.getBlockState(pos.west()).getBlock();
+			Block block3 = w.getBlockState(pos.east()).getBlock();
 			EnumFacing enumfacing = (EnumFacing)s.getValue(FACING);
 
 			if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock()) {
@@ -101,7 +102,7 @@ public class BlockIncubator extends BlockContainer {
 
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-		worldIn.setBlockState(pos, state.withProperty(FACING, placer.func_174811_aO().getOpposite()), 2);
+		worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
 		if (stack.hasDisplayName()) {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -156,6 +157,26 @@ public class BlockIncubator extends BlockContainer {
 			}
 		}
 	}
+	
+    public static void setState(boolean active, World worldIn, BlockPos pos) {
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        keepInventory = true;
+        if (active) {
+           // worldIn.setBlockState(pos, EssenceBlocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+           // worldIn.setBlockState(pos, Blocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        } else {
+          //  worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+           // worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        }
+
+        keepInventory = false;
+
+        if (tileentity != null) {
+            tileentity.validate();
+            worldIn.setTileEntity(pos, tileentity);
+        }
+    }
 
 	@Override
 	public Item getItem(World w, BlockPos pos) {

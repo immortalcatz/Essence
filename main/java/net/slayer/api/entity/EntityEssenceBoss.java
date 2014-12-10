@@ -48,7 +48,7 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 				}
 			}
 
-			if(this.deathTicks == 1) this.worldObj.func_175669_a(1018, new BlockPos(this), 0);
+			if(this.deathTicks == 1) this.worldObj.playBroadcastSound(1018, new BlockPos(this), 0);
 		}
 		this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
 		this.renderYawOffset = this.rotationYaw += 20.0F;

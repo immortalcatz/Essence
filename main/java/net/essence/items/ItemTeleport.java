@@ -47,9 +47,9 @@ public class ItemTeleport extends ItemMod {
 			return par1;
 		} else {
 			if (var22.typeOfHit == MovingObjectType.BLOCK) {
-				int var23 = var22.func_178782_a().getX();
-				int var24 = var22.func_178782_a().getY();
-				int var25 = var22.func_178782_a().getZ();
+				int var23 = var22.getBlockPos().getX();
+				int var24 = var22.getBlockPos().getY();
+				int var25 = var22.getBlockPos().getZ();
 				int var26 = var22.subHit;
 
 				if (var26 == 0) --var24;                

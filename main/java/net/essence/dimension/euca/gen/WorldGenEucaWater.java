@@ -22,27 +22,27 @@ public class WorldGenEucaWater extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, BlockPos p) {
 		Block genOn = EssenceBlocks.eucaStone;
-		if (w.getBlockState(p.offsetUp()).getBlock() != genOn) {
+		if (w.getBlockState(p.up()).getBlock() != genOn) {
 			return false;
 		}
 		else if (w.getBlockState(p).getBlock().getMaterial() != Material.air && w.getBlockState(p).getBlock() != genOn) {
 			return false;
 		} else {
 			int i = 0;
-			if(w.getBlockState(p.offsetWest()).getBlock() == genOn) ++i;          
-			if(w.getBlockState(p.offsetEast()).getBlock() == genOn) ++i;         
-			if(w.getBlockState(p.offsetNorth()).getBlock() == genOn) ++i;           
-			if(w.getBlockState(p.offsetSouth()).getBlock() == genOn) ++i;           
-			if(w.getBlockState(p.offsetDown()).getBlock() == genOn) ++i;            
+			if(w.getBlockState(p.west()).getBlock() == genOn) ++i;          
+			if(w.getBlockState(p.east()).getBlock() == genOn) ++i;         
+			if(w.getBlockState(p.north()).getBlock() == genOn) ++i;           
+			if(w.getBlockState(p.south()).getBlock() == genOn) ++i;           
+			if(w.getBlockState(p.down()).getBlock() == genOn) ++i;            
 			int j = 0;
-			if(w.isAirBlock(p.offsetWest())) ++j;           
-			if(w.isAirBlock(p.offsetEast())) ++j;           
-			if(w.isAirBlock(p.offsetNorth())) ++j;
-			if(w.isAirBlock(p.offsetSouth())) ++j;            
-			if(w.isAirBlock(p.offsetDown())) ++j;           
+			if(w.isAirBlock(p.west())) ++j;           
+			if(w.isAirBlock(p.east())) ++j;           
+			if(w.isAirBlock(p.north())) ++j;
+			if(w.isAirBlock(p.south())) ++j;            
+			if(w.isAirBlock(p.down())) ++j;           
 			if(!this.update && i == 4 && j == 1 || i == 5) {
 				w.setBlockState(p, this.block.getDefaultState(), 2);
-				w.func_175637_a(this.block, p, r);
+				w.forceBlockUpdateTick(this.block, p, r);
 			}
 			return true;
 		}

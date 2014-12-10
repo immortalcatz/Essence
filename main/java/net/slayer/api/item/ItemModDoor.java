@@ -34,13 +34,13 @@ public class ItemModDoor extends ItemMod {
             if(!block.isReplaceable(worldIn, pos)) {
                 pos = pos.offset(side);
             }
-            if(!playerIn.func_175151_a(pos, side, stack)) {
+            if(!playerIn.canPlayerEdit(pos, side, stack)) {
                 return false;
             }
             else if(!this.door.canPlaceBlockAt(worldIn, pos)) {
                 return false;
             } else {
-                ItemDoor.func_179235_a(worldIn, pos, EnumFacing.fromAngle((double)playerIn.rotationYaw), this.door);
+                ItemDoor.placeDoor(worldIn, pos, EnumFacing.fromAngle((double)playerIn.rotationYaw), this.door);
                 stack.stackSize--;
                 return true;
             }
