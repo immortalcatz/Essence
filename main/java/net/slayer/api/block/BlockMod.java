@@ -83,11 +83,11 @@ public class BlockMod extends Block{
 	
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-		if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights) {
+		/*if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights) {
 			return 900;
-		} else {
+		} else {*/
 			return super.getMixedBrightnessForBlock(worldIn, pos);
-		}
+		//}
 	}
 
 	@Override

@@ -26,9 +26,9 @@ public class ParticleEvent {
 					if(player != null && player.getHeldItem() != null) {
 						if(player.getHeldItem().getItem() instanceof ItemFireSword) {
 							for(int i = 0; i < 70; i++) {
-								event.entityLiving.worldObj.spawnParticle(EnumParticleTypes.FLAME, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
-								event.entityLiving.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
-								event.entityLiving.worldObj.spawnParticle(EnumParticleTypes.LAVA, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
+								player.worldObj.spawnParticle(EnumParticleTypes.FLAME, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
+								player.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
+								player.worldObj.spawnParticle(EnumParticleTypes.LAVA, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0D, 0D, 0D);
 							}
 						}
 						if(player.getHeldItem().getItem() instanceof ItemFreezeSword) {

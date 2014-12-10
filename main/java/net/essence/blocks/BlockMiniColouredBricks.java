@@ -22,7 +22,7 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockMiniColouredBricks extends Block {
 	
-	public static final PropertyEnum type = PropertyEnum.create("meta", BlockMiniColouredBricks.EnumMetadata.class);
+	public static final PropertyEnum type = PropertyEnum.create("variant", BlockMiniColouredBricks.EnumMetadata.class);
 
 	public static String[] textures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
 	public static String[] names = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
@@ -49,8 +49,12 @@ public class BlockMiniColouredBricks extends Block {
 
 	@Override
 	public void getSubBlocks(Item it, CreativeTabs c, List l) {
-		for(int i = 0; i < 13; i++)
-			l.add(new ItemStack(it, 1, i));
+		BlockMiniColouredBricks.EnumMetadata[] aenumtype = BlockMiniColouredBricks.EnumMetadata.values();
+        int i = aenumtype.length;
+        for(int j = 0; j < i; ++j) {
+        	BlockMiniColouredBricks.EnumMetadata enumtype = aenumtype[j];
+            l.add(new ItemStack(it, 1, enumtype.getMetaFromState()));
+        }
 	}
 
 	@Override

@@ -36,6 +36,8 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void clientPreInit() {
+		registerModelBakery(Item.getItemFromBlock(EssenceBlocks.miniColouredBricks), finalMiniBrickNames);
+		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
 	}
 	
 	@Override
@@ -78,8 +80,6 @@ public class ClientProxy extends CommonProxy {
 		registerItem(EssenceItems.flameBow, 2, "flameBow_1");
 		registerItem(EssenceItems.flameBow, 3, "flameBow_2");
 		
-		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
-		
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
 			registerItem(it, i, finalBrickNames[i]);
@@ -105,7 +105,6 @@ public class ClientProxy extends CommonProxy {
 		registerItem(it, 10, "redMiniColouredBrick");
 		registerItem(it, 11, "whiteMiniColouredBrick");
 		registerItem(it, 12, "yellowMiniColouredBrick");
-		registerModelBakery(EssenceBlocks.miniColouredBricks, new String[] {"essence:blackMiniColouredBrick", "essence:blueMiniColouredBrick", "essence:brownMiniColouredBrick", "essence:cyanMiniColouredBrick", "essence:grayMiniColouredBrick", "essence:limeMiniColouredBrick", "essence:magentaMiniColouredBrick", "essence:orangeMiniColouredBrick", "essence:pinkMiniColouredBrick", "essence:purpleMiniColouredBrick", "essence:redMiniColouredBrick", "essence:whiteMiniColouredBrick", "essence:yellowMiniColouredBrick"});
 
 	}
 	

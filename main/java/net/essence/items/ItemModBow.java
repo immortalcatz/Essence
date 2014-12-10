@@ -1,6 +1,7 @@
 package net.essence.items;
 
 import net.essence.EssenceTabs;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -10,6 +11,8 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.item.ItemMod;
 
 public class ItemModBow extends ItemMod {
@@ -17,7 +20,7 @@ public class ItemModBow extends ItemMod {
 	private Class<? extends EntityArrow> arrowClass;
 	public Item arrowItem;
 	public int dur;
-	
+
 	public ItemModBow(String name, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
 		super(name, EssenceTabs.ranged);
 		this.maxStackSize = 1;
@@ -55,7 +58,7 @@ public class ItemModBow extends ItemMod {
 			int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, stack);
 			if (l > 0) entityarrow.setKnockbackStrength(l);
 			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, stack) > 0) entityarrow.setFire(100);
-			
+
 			stack.damageItem(1, playerIn);
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 			if(flag) entityarrow.canBePickedUp = 2;
@@ -85,6 +88,18 @@ public class ItemModBow extends ItemMod {
 		if(net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event)) return event.result;
 		if(playerIn.capabilities.isCreativeMode || playerIn.inventory.hasItem(arrowItem)) playerIn.setItemInUse(itemStackIn, this.getMaxItemUseDuration(itemStackIn));
 		return itemStackIn;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining) {
+		if(stack.getItem() instanceof ItemModBow && player.getItemInUse() != null) {
+			int i = stack.getMaxItemUseDuration() - player.getItemInUseCount();
+			if(i >= 18) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_2", "inventory");
+			else if(i > 13) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_1", "inventory");
+			else if(i > 0) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_0", "inventory");
+		}
+		return null;
 	}
 
 	@Override

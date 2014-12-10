@@ -15,4 +15,8 @@ public class Helper {
 	public static void printCoords(BlockPos pos) {
 		System.out.println("X: " + pos.getX() + ", Y: " + pos.getY() + ", Z:" + pos.getZ());
 	}
+	
+	public static void print(Object o) {
+		System.out.println(o);
+	}
 }

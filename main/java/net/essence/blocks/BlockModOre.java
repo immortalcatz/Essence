@@ -147,12 +147,13 @@ public class BlockModOre extends BlockMod {
 		}
 	}
 	
+	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
+		/*if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
 				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre) {
 			return 1000;
-		}
+		}*/
 		return super.getMixedBrightnessForBlock(worldIn, pos);
 	}
 
