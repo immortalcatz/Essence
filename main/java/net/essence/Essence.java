@@ -19,8 +19,6 @@ import net.slayer.api.SlayerAPI;
 @Mod(name = SlayerAPI.MOD_NAME, modid = SlayerAPI.MOD_ID, version = SlayerAPI.MOD_VERSION)
 public class Essence {
 
-	public static Random rand = new Random();
-
 	@Instance(SlayerAPI.MOD_ID)
 	public static Essence instance;
 

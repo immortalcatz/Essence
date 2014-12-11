@@ -23,7 +23,7 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockStorageBlocks1 extends Block {
 
-	public static final PropertyEnum type = PropertyEnum.create("meta", BlockStorageBlocks1.EnumMetadata.class);
+	public static final PropertyEnum type = PropertyEnum.create("variant", BlockStorageBlocks1.EnumMetadata.class);
 	
 	public static String[] names = {"pumpkin", "birchLog", "oakLog", "jungleLog", "spruceLog", "darkOakLog", "acaciaLog", "lapisOre", "diamondOre", "goldOre", "quartzOre", "shadiumOre", "luniumOre", "sapphireOre", "celestiumOre", "flairiumOre"};
 
@@ -46,7 +46,7 @@ public class BlockStorageBlocks1 extends Block {
 		setCreativeTab(EssenceTabs.decoraton);
 		setHardness(1.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(type, BlockStorageBlocks1.EnumMetadata.PUMPKIN));
-		GameRegistry.registerBlock(this, ItemStorageBlockMetadata1.class, "BlockStorageBlocks1");
+		GameRegistry.registerBlock(this, ItemStorageBlockMetadata1.class, "blockStorageBlocks1");
 	}
 
 	@Override
@@ -81,30 +81,29 @@ public class BlockStorageBlocks1 extends Block {
     }
 	
 	public enum EnumMetadata implements IStringSerializable {
-		PUMPKIN(0, "pumpkin", "pumpkin"),
-		BIRCH_LOG(1, "birchLog", "birchLog"),
-		OAK_LOG(2, "oakLog", "oakLog"),
-		JUNGLE_LOG(3, "jungleLog", "jungleLog"),
-		SPRUCE_SPRUCE(4, "spruceLog", "spruceLog"),
-		DARK_OAK_LOG(5, "darkOakLog", "darkOakLog"),
-		ACACIA_LOG(6, "acaciaLog", "acaciaLog"),
-		LAPIS_ORE(7, "lapisOre", "lapisOre"),
-		DIAMOND_ORE(8, "diamondOre", "diamondOre"),
-		GOLD_ORE(9, "goldOre", "goldOre"),
-		QUARTZ_ORE(10, "quartzOre", "quartzOre"),
-		SHADIUM_ORE(11, "shadiumOre", "shadiumOre"),
-		LUNIUM_ORE(12, "luniumOre", "luniumOre"),
-		SAPPHIRE_ORE(13, "sapphireOre", "sapphireOre"),
-		CELESTIUM_ORE(14, "celestiumOre", "celestiumOre"),
-		FLARIUM_ORE(15, "flariumOre", "flariumOre");
+		PUMPKIN(0, "pumpkin"),
+		BIRCH_LOG(1, "birch"),
+		OAK_LOG(2, "oak"),
+		JUNGLE_LOG(3, "jungle"),
+		SPRUCE_SPRUCE(4, "spruce"),
+		DARK_OAK_LOG(5, "dark"),
+		ACACIA_LOG(6, "acacia"),
+		LAPIS_ORE(7, "lapis"),
+		DIAMOND_ORE(8, "diamond"),
+		GOLD_ORE(9, "gold"),
+		QUARTZ_ORE(10, "quartz"),
+		SHADIUM_ORE(1, "shadium"),
+		LUNIUM_ORE(12, "lunium"),
+		SAPPHIRE_ORE(13, "sapphire"),
+		CELESTIUM_ORE(14, "celestium"),
+		FLAIRIUM_ORE(15, "flairium");
 		private static final BlockStorageBlocks1.EnumMetadata[] TYPES_ARRAY = new BlockStorageBlocks1.EnumMetadata[values().length];
 		private final int meta;
-		private final String textureName, type;
+		private final String type;
 
-		private EnumMetadata(int m, String t, String ty) {
+		private EnumMetadata(int m, String t) {
 			this.meta = m;
-			this.textureName = "storage/" + t;
-			this.type = ty;
+			this.type = t;
 		}
 
 		public int getMetaFromState() {
@@ -113,7 +112,7 @@ public class BlockStorageBlocks1 extends Block {
 
 		@Override
 		public String toString() {
-			return this.textureName;
+			return this.type;
 		}
 
 		public static BlockStorageBlocks1.EnumMetadata getStateFromMeta(int m) {

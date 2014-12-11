@@ -2,9 +2,11 @@ package net.essence.blocks;
 
 import java.util.List;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.items.block.ItemMiniBlockMetadata;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -53,18 +55,18 @@ public class BlockMiniColouredBricks extends Block {
         int i = aenumtype.length;
         for(int j = 0; j < i; ++j) {
         	BlockMiniColouredBricks.EnumMetadata enumtype = aenumtype[j];
-            l.add(new ItemStack(it, 1, enumtype.getMetaFromState()));
+            l.add(new ItemStack(it, 1, enumtype.getMetadata()));
         }
 	}
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(type, BlockMiniColouredBricks.EnumMetadata.getStateFromMeta(meta));
+		return this.getDefaultState().withProperty(type, BlockMiniColouredBricks.EnumMetadata.byMetadata(meta));
 	}
 
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return ((BlockMiniColouredBricks.EnumMetadata)state.getValue(type)).getMetaFromState();
+		return ((BlockMiniColouredBricks.EnumMetadata)state.getValue(type)).getMetadata();
 	}
 
 	@Override
@@ -74,63 +76,71 @@ public class BlockMiniColouredBricks extends Block {
 	
     @Override
     public int damageDropped(IBlockState state) {
-        return ((BlockMiniColouredBricks.EnumMetadata)state.getValue(type)).getMetaFromState();
+        return ((BlockMiniColouredBricks.EnumMetadata)state.getValue(type)).getMetadata();
     }
 
-	public enum EnumMetadata implements IStringSerializable {
-		BLACK(0, "blackMiniColouredBrick"),
-		BLUE(1, "blueMiniColouredBrick"),
-		BROWN(2, "brownMiniColouredBrick"),
-		CYAN(3, "cyanMiniColouredBrick"),
-		GRAY(4, "grayMiniColouredBrick"),
-		LIME(5, "limeMiniColouredBrick"),
-		MAGENTA(6, "magentaMiniColouredBrick"),
-		ORANGE(7, "orangeMiniColouredBrick"),
-		PINK(8, "pinkMiniColouredBrick"),
-		PURPLE(9, "purpleMiniColouredBrick"),
-		RED(10, "redMiniColouredBrick"),
-		WHITE(11, "whiteMiniColouredBrick"),
-		YELLOW(12, "yellowMiniColouredBrick");
-		private static final EnumMetadata[] TYPES_ARRAY = new BlockMiniColouredBricks.EnumMetadata[values().length];
-		private final int meta;
-		private final String type;
+    public static enum EnumMetadata implements IStringSerializable {
+        BLACK(0, "black"),
+        BLUE(1, "blue"),
+        BROWN(2, "brown"),
+        CYAN(3, "cyan"),
+        GRAY(4, "gray"),
+        LIME(5, "lime"),
+        MAGENTA(6, "magenta"),
+        ORANGE(7, "orange"),
+        PINK(8, "pink"),
+        PURPLE(9, "purple"),
+        RED(10, "red"),
+        WHITE(11, "white"),
+        YELLOW(12, "yellow");
+        
+        private static final BlockMiniColouredBricks.EnumMetadata[] META_LOOKUP = new BlockMiniColouredBricks.EnumMetadata[values().length];
+        private final int meta;
+        private final String name;
+        private final String unlocalizedName;
 
-		private EnumMetadata(int m, String ty) {
-			this.meta = m;
-			this.type = ty;
-		}
+        private EnumMetadata(int meta, String name) {
+            this(meta, name, name);
+        }
 
-		public int getMetaFromState() {
-			return this.meta;
-		}
+        private EnumMetadata(int meta, String name, String unlocalizedName) {
+            this.meta = meta;
+            this.name = name;
+            this.unlocalizedName = unlocalizedName;
+        }
 
-		@Override
-		public String toString() {
-			return type;
-		}
+        public int getMetadata() {
+            return this.meta;
+        }
 
-		public static BlockMiniColouredBricks.EnumMetadata getStateFromMeta(int m) {
-			if(m < 0 || m >= TYPES_ARRAY.length) m = 0;
-			return TYPES_ARRAY[m];
-		}
+        public String toString() {
+            return this.name;
+        }
 
-		@Override
-		public String getName() {
-			return this.type;
-		}
+        public static BlockMiniColouredBricks.EnumMetadata byMetadata(int meta) {
+            if (meta < 0 || meta >= META_LOOKUP.length) {
+                meta = 0;
+            }
 
-		public String getTypeName() {
-			return this.type;
-		}
+            return META_LOOKUP[meta];
+        }
 
-		static {
-			BlockMiniColouredBricks.EnumMetadata[] var0 = values();
-			int var1 = var0.length;
+        public String getName() {
+            return this.name;
+        }
 
-			for(int var2 = 0; var2 < var1; ++var2) {
-				BlockMiniColouredBricks.EnumMetadata var3 = var0[var2];
-				TYPES_ARRAY[var3.getMetaFromState()] = var3;
-			}
-		}
-	}
+        public String getUnlocalizedName() {
+            return this.unlocalizedName;
+        }
+
+        static {
+            BlockMiniColouredBricks.EnumMetadata[] var0 = values();
+            int var1 = var0.length;
+
+            for (int var2 = 0; var2 < var1; ++var2) {
+            	BlockMiniColouredBricks.EnumMetadata var3 = var0[var2];
+                META_LOOKUP[var3.getMetadata()] = var3;
+            }
+        }
+    }
 }

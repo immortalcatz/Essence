@@ -23,7 +23,7 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockStorageBlocks extends Block {
 
-	public static final PropertyEnum type = PropertyEnum.create("meta", BlockStorageBlocks.EnumMetadata.class);
+	public static final PropertyEnum type = PropertyEnum.create("variant", BlockStorageBlocks.EnumMetadata.class);
 
 	public static String[] allNames = {"dirt", "birchPlanks", "oakPlanks", "junglePlanks", "sprucePlanks", "darkOakPlanks", "acaciaPlanks", "potatoes", "wheat", "carrots",
 		"obsidian", "netherrack", "netherBrick", "redMushroom", "brownMushroom", "melon"};
@@ -85,30 +85,29 @@ public class BlockStorageBlocks extends Block {
     }
 
 	public enum EnumMetadata implements IStringSerializable {
-		DIRT(0, "dirt", "dirt"),
-		BIRCH_PLANKS(1, "birchPlanks", "birchPlanks"),
-		OAK_PLANKS(2, "oakPlanks", "oakPlanks"),
-		JUNGLE_PLANKS(3, "junglePlanks", "junglePlanks"),
-		SPRUCE_PLANKS(4, "sprucePlanks", "sprucePlanks"),
-		DARK_OAK_PLANKS(5, "darkOakPlanks", "darkOakPlanks"),
-		ACACIA_PLANKS(6, "acaciaPlanks", "acaciaPlanks"),
-		POTATOES(7, "potatoes", "potatoes"),
-		WHEAT(8, "wheat", "wheat"),
-		CARROTS(9, "carrots", "carrots"),
-		OBSIDIAN(10, "obsidian", "obsidian"),
-		NETHERRACK(11, "netherrack", "netherrack"),
-		NETHER_BRICK(12, "netherBrick", "netherBrick"),
-		RED_MUSHROOM(13, "redMushroom", "redMushroom"),
-		BROWN_MUSHROOM(14, "brownMushroom", "brownMushroom"),
-		MELON(15, "melon", "melon");
+		DIRT(0, "dirt"),
+		BIRCH_PLANKS(1, "birch"),
+		OAK_PLANKS(2, "oak"),
+		JUNGLE_PLANKS(3, "jungle"),
+		SPRUCE_PLANKS(4, "spruce"),
+		DARK_OAK_PLANKS(5, "dark"),
+		ACACIA_PLANKS(6, "acacia"),
+		POTATOES(7, "potatoes"),
+		WHEAT(8, "wheat"),
+		CARROTS(9, "carrots"),
+		OBSIDIAN(10, "obsidian"),
+		NETHERRACK(11, "netherrack"),
+		NETHER_BRICK(12, "netherbrick"),
+		RED_MUSHROOM(13, "redmushroom"),
+		BROWN_MUSHROOM(14, "brownmushroom"),
+		MELON(15, "melon");
 		private static final BlockStorageBlocks.EnumMetadata[] TYPES_ARRAY = new BlockStorageBlocks.EnumMetadata[values().length];
 		private final int meta;
-		private final String textureName, type;
+		private final String type;
 
-		private EnumMetadata(int m, String t, String ty) {
+		private EnumMetadata(int m, String t) {
 			this.meta = m;
-			this.textureName = "storage/" + t;
-			this.type = ty;
+			this.type = t;
 		}
 
 		public int getMetaFromState() {
@@ -117,7 +116,7 @@ public class BlockStorageBlocks extends Block {
 
 		@Override
 		public String toString() {
-			return this.textureName;
+			return this.type;
 		}
 
 		public static BlockStorageBlocks.EnumMetadata getStateFromMeta(int m) {

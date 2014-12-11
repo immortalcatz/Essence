@@ -16,6 +16,7 @@ import net.essence.dimension.boil.gen.village.StructureBoilVillagePieces;
 import net.essence.event.ArmorAbilityEvent;
 import net.essence.event.ParticleEvent;
 import net.essence.event.PlayerEvent;
+import net.essence.items.block.ItemMiniBlockMetadata;
 import net.essence.items.tileentity.TileEntityBackpack;
 import net.essence.misc.EssenceCommands;
 import net.essence.util.Config;

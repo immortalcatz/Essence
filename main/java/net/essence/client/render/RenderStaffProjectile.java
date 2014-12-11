@@ -63,7 +63,7 @@ public class RenderStaffProjectile extends Render {
         tessellator.addVertexWithUV(f7 - f8, 0.0F - f9, 0.0D, maxU, maxV);
         tessellator.addVertexWithUV(f7 - f8, 1.0F - f9, 0.0D, maxU, minV);
         tessellator.addVertexWithUV(0.0F - f8, 1.0F - f9, 0.0D, minU, minV);
-        tessellator.reset();
+        t.draw();
         GL11.glDisable(GL12.GL_RESCALE_NORMAL);
         GL11.glPopMatrix();
     }
