@@ -16,6 +16,12 @@ public class WorldGenEucaSphere extends WorldGenerator {
 		if(!WorldGenAPI.isAirBlocks(w, size + 5, p.getX(), p.getY(), p.getZ()))
 			return false;
 		WorldGenAPI.addOreWorldSphere(w, size, p.getX(), p.getY(), p.getZ(), EssenceBlocks.eucaStone, EssenceBlocks.eucaDirt, EssenceBlocks.eucaGrass, 40, EssenceBlocks.celestiumOre);
+		int y = r.nextInt(250); int x = p.getX() + r.nextInt(16) + 8; int z = p.getZ() + r.nextInt(16) + 8;
+		(new WorldGenEucaPlant(EssenceBlocks.eucaTallGrass)).generate(w, r, new BlockPos(x, y, z));
+		y = r.nextInt(250); x = p.getX() + r.nextInt(16) + 8; z = p.getZ() + r.nextInt(16) + 8;
+		(new WorldGenEucaPlant(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
+		y = r.nextInt(250); x = p.getX() + r.nextInt(16) + 8; z = p.getZ() + r.nextInt(16) + 8;
+		(new WorldGenEucaPlant(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
 		return true;
 	}
 }

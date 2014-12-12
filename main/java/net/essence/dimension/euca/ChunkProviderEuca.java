@@ -183,14 +183,14 @@ public class ChunkProviderEuca implements IChunkProvider {
 							} else {
 								c.setBlockState(i, l, j, iblockstate1);
 								if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
-								if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 2, j, iblockstate1);
+								if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
 							}
 						}
 						else if (k > 0) {
 							--k;
 							c.setBlockState(i, l, j, iblockstate1);
 							if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
-							if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 2, j, iblockstate1);
+							if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
 						}
 					}
 				}
@@ -280,7 +280,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 			water2.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		if(rand.nextInt(100) == 0) {
+		if(rand.nextInt(130) == 0) {
 			x = x1 + this.rand.nextInt(16);
 			y = rand.nextInt(100) + 1;
 			z = z1 + this.rand.nextInt(16);

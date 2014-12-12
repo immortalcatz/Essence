@@ -11,7 +11,7 @@ public enum EnumSounds {
 	PSYOLLOM("essence:psyollom"),
 	PSYOLLOM_HURT("essence:psyollomHurt"),
 	INSECTO("essence:insecto"),
-	INSECTO_HURT("essence:insectoHurt"),
+	INSECTO_HURT("essence:turtleHurt"),
 	SPIKED_BEAST("essence:spikedBeast"),
 	SPIKED_BEAST_HURT("essence:spikedBeastHurt"),
 	MAGMA_GIANT("essence:magmaGiant"),
