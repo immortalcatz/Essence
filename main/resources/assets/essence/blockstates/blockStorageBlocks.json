@@ -1,20 +1,20 @@
 {
     "variants": {
-        "variant=pumpkin": { "model": "essence:pumpkin" },
-        "variant=birch": { "model": "essence:birchLog" },
-        "variant=oak": { "model": "essence:oakLog" },
-		"variant=jungle": { "model": "essence:jungleLog" },
-		"variant=spruce": { "model": "essence:spruceLog" },
-		"variant=dark": { "model": "essence:darkOakLog" },
-		"variant=acacia": { "model": "essence:acaciaLog" },
-		"variant=lapis": { "model": "essence:lapis" },
-		"variant=diamond": { "model": "essence:diamond" },
-		"variant=gold": { "model": "essence:gold" },
-	    "variant=quartz": { "model": "essence:quartz" },
-		"variant=shadium": { "model": "essence:shadiumOreStorage" },
-		"variant=lunium": { "model": "essence:luniumOreStorage" },
-		"variant=sapphire": { "model": "essence:sapphireOreStorage" },
-		"variant=celestium": { "model": "essence:celestiumOreStorage" },
-		"variant=flairium": { "model": "essence:flairiumOreStorage" }
+        "variant=dirt": { "model": "essence:dirt" },
+        "variant=birch": { "model": "essence:birchPlanks" },
+        "variant=oak": { "model": "essence:oakPlanks" },
+		"variant=jungle": { "model": "essence:junglePlanks" },
+		"variant=spruce": { "model": "essence:sprucePlanks" },
+		"variant=dark": { "model": "essence:darkOakPlanks" },
+		"variant=acacia": { "model": "essence:acaciaPlanks" },
+		"variant=potatoes": { "model": "essence:potatoes" },
+		"variant=wheat": { "model": "essence:wheat" },
+		"variant=carrots": { "model": "essence:carrots" },
+	    "variant=obsidian": { "model": "essence:obsidian" },
+		"variant=netherrack": { "model": "essence:netherrack" },
+		"variant=netherbrick": { "model": "essence:netherBrick" },
+		"variant=redmushroom": { "model": "essence:redMushroom" },
+		"variant=brownmushroom": { "model": "essence:brownMushroom" },
+		"variant=melon": { "model": "essence:melon" }
     }
 }

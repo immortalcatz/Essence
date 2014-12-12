@@ -1,0 +1,15 @@
+{
+    "variants": {
+        "variant=cactus": { "model": "essence:cactus" },
+        "variant=brick": { "model": "essence:brick" },
+        "variant=bookshelf": { "model": "essence:bookshelf" },
+		"variant=glowstone": { "model": "essence:glowstone" },
+		"variant=redsand": { "model": "essence:redSand" },
+		"variant=sand": { "model": "essence:sand" },
+		"variant=sponge": { "model": "essence:sponge" },
+		"variant=soulsand": { "model": "essence:soulSand" },
+		"variant=tnt": { "model": "essence:tnt" },
+		"variant=stone": { "model": "essence:stone" },
+	    "variant=waterlilly": { "model": "essence:waterlilly" }
+    }
+}

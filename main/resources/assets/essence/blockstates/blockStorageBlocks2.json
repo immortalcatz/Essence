@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "variant=hellstone": { "model": "essence:hellstoneOreStorage" },
+        "variant=ashual": { "model": "essence:ashualOreStorage" },
+        "variant=iron": { "model": "essence:ironOre" },
+		"variant=coal": { "model": "essence:coalOre" },
+		"variant=redstone": { "model": "essence:redstoneOre" },
+		"variant=emerald": { "model": "essence:emeraldOre" },
+		"variant=hay": { "model": "essence:hay" },
+		"variant=gravel": { "model": "essence:gravel" },
+		"variant=glass": { "model": "essence:glass" },
+		"variant=redflower": { "model": "essence:redFlower" },
+	    "variant=yellowflower": { "model": "essence:yellowFlower" },
+		"variant=endstone": { "model": "essence:endStone" },
+		"variant=bush": { "model": "essence:bush" },
+		"variant=cobblestone": { "model": "essence:cobblestone" },
+		"variant=mossycobblestone": { "model": "essence:mossyCobblestone" },
+		"variant=cake": { "model": "essence:cake" }
+    }
+}

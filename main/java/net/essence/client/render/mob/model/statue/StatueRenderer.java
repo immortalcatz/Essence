@@ -1,6 +1,7 @@
 package net.essence.client.render.mob.model.statue;
 
 import net.essence.blocks.tileentity.TileEntityStatue;
+import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -21,7 +22,6 @@ public class StatueRenderer extends TileEntitySpecialRenderer {
 			Minecraft.getMinecraft().getTextureManager().bindTexture(tes.texture);
 			GL11.glPushMatrix();
 			GL11.glDisable(GL11.GL_LIGHTING);
-
 			scale = 1.0F;
 			if(tes.model instanceof ModelWraithStatue){
 				scale = 0.5F;
@@ -32,9 +32,21 @@ public class StatueRenderer extends TileEntitySpecialRenderer {
 			} else {
 				GL11.glTranslatef((float)x + 0.5F, (float)y + 1.5F, (float)z + 0.5F);
 			}
-
 			GL11.glScalef(scale, scale, scale);
-			GL11.glRotatef(rotation * 90, 0.0F, 1.0F, 0.0F);
+			switch(rotation) {
+			case 5:
+				GL11.glRotatef(90, 0.0F, 1.0F, 0.0F);
+				break;
+			case 2:
+				GL11.glRotatef(180, 0.0F, 1.0F, 0.0F);
+				break;
+			case 3:
+				GL11.glRotatef(0, 0.0F, 1.0F, 0.0F);
+				break;
+			case 4:
+				GL11.glRotatef(-90, 0.0F, 1.0F, 0.0F);
+				break;
+			}
 			GL11.glRotatef(180, 1.0F, 0.0F, 0.0F);
 			tes.model.render(0.0625F);
 			GL11.glEnable(GL11.GL_LIGHTING);

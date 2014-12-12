@@ -9,6 +9,8 @@ public class TileEntityStatue extends TileEntity {
 	public ResourceLocation texture;
 	public ModelStatue model;
 
+	public TileEntityStatue() { }
+	
 	public TileEntityStatue(ResourceLocation texture, ModelStatue model) {
 		this.model = model;
 		this.texture = texture;

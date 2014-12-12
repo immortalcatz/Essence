@@ -52,6 +52,12 @@ public class BlockStorageBlocks extends Block {
 		this.setDefaultState(this.blockState.getBaseState().withProperty(type, BlockStorageBlocks.EnumMetadata.DIRT));
 		GameRegistry.registerBlock(this, ItemStorageBlockMetadata.class, "blockStorageBlocks");
 	}
+	
+	@Override
+	public Block setStepSound(SoundType sound) {
+		this.stepSound = sound;
+		return this;
+	}
 
 	@Override
 	public void getSubBlocks(Item it, CreativeTabs c, List l) {

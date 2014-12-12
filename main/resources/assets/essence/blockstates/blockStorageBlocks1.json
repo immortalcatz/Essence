@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "variant=pumpkin": { "model": "essence:pumpkin" },
+        "variant=birch": { "model": "essence:birchLog" },
+        "variant=oak": { "model": "essence:oakLog" },
+		"variant=jungle": { "model": "essence:jungleLog" },
+		"variant=spruce": { "model": "essence:spruceLog" },
+		"variant=dark": { "model": "essence:darkOakLog" },
+		"variant=acacia": { "model": "essence:acaciaLog" },
+		"variant=lapis": { "model": "essence:lapis" },
+		"variant=diamond": { "model": "essence:diamond" },
+		"variant=gold": { "model": "essence:gold" },
+	    "variant=quartz": { "model": "essence:quartz" },
+		"variant=shadium": { "model": "essence:shadiumOreStorage" },
+		"variant=lunium": { "model": "essence:luniumOreStorage" },
+		"variant=sapphire": { "model": "essence:sapphireOreStorage" },
+		"variant=celestium": { "model": "essence:celestiumOreStorage" },
+		"variant=flairium": { "model": "essence:flairiumOreStorage" }
+    }
+}

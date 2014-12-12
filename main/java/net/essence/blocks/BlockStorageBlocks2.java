@@ -17,6 +17,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -24,7 +25,7 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockStorageBlocks2 extends Block {
 
-	public static final PropertyEnum type = PropertyEnum.create("meta", BlockStorageBlocks2.EnumMetadata.class);
+	public static final PropertyEnum type = PropertyEnum.create("variant", BlockStorageBlocks2.EnumMetadata.class);
 	
 	public static String[] names = {"hellstoneOre", "ashualOre", "ironOre", "coalOre", "redstoneOre", "emeraldOre", "hay", "gravel", "glass", "redFlower", "yellowFlower", "endStone", "bush", "cobblestone", "mossyCobblestone", "cake"};
 
@@ -47,7 +48,7 @@ public class BlockStorageBlocks2 extends Block {
 		setCreativeTab(EssenceTabs.decoraton);
 		setHardness(1.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(type, BlockStorageBlocks2.EnumMetadata.HELLSTONE_ORE));
-		GameRegistry.registerBlock(this, ItemStorageBlockMetadata2.class, "BlockStorageBlocks2");
+		GameRegistry.registerBlock(this, ItemStorageBlockMetadata2.class, "blockStorageBlocks2");
 	}
 
 	@Override
@@ -76,36 +77,45 @@ public class BlockStorageBlocks2 extends Block {
 		return new BlockState(this, new IProperty[] {type});
 	}
 	
+	@Override
+	public EnumWorldBlockLayer getBlockLayer() {
+		return EnumWorldBlockLayer.CUTOUT;
+	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+	
     @Override
     public int damageDropped(IBlockState state) {
-        return ((BlockStorageBlocks1.EnumMetadata)state.getValue(type)).getMetaFromState();
+        return ((BlockStorageBlocks2.EnumMetadata)state.getValue(type)).getMetaFromState();
     }
 	
 	public enum EnumMetadata implements IStringSerializable {
-		HELLSTONE_ORE(0, "hellstoneOre", "hellstoneOre"),
-		ASHUAL_ORE(1, "ashualOre", "ashualOre"),
-		IRON_ORE(2, "ironOre", "ironOre"),
-		COAL_ORE(3, "coalOre", "coalOre"),
-		REDSTONE_ORE(4, "redstoneOre", "redstoneOre"),
-		EMERALD_ORE(5, "emeraldOre", "emeraldOre"),
-		HAY(6, "hay", "hay"),
-		GRAVEL(7, "gravel", "gravel"),
-		GLASS(8, "grass", "grass"),
-		RED_FLOWER(9, "redFlower", "redFlower"),
-		YELLOW_FLOWER(10, "yellowFlower", "yellowFlower"),
-		END_STONE(11, "endStone", "endStone"),
-		BUSH(12, "bush", "bush"),
-		COBBLESTONE(13, "cobblestone", "cobblestone"),
-		MOSSY_COBBLESTONE(14, "mossyCobblestone", "mossyCobblestone"),
-		CAKE(15, "cake", "cake");
+		HELLSTONE_ORE(0, "hellstone"),
+		ASHUAL_ORE(1, "ashual"),
+		IRON_ORE(2, "iron"),
+		COAL_ORE(3, "coal"),
+		REDSTONE_ORE(4, "redstone"),
+		EMERALD_ORE(5, "emerald"),
+		HAY(6, "hay"),
+		GRAVEL(7, "gravel"),
+		GLASS(8, "glass"),
+		RED_FLOWER(9, "redflower"),
+		YELLOW_FLOWER(10, "yellowflower"),
+		END_STONE(11, "endstone"),
+		BUSH(12, "bush"),
+		COBBLESTONE(13, "cobblestone"),
+		MOSSY_COBBLESTONE(14, "mossycobblestone"),
+		CAKE(15, "cake");
 		private static final BlockStorageBlocks2.EnumMetadata[] TYPES_ARRAY = new BlockStorageBlocks2.EnumMetadata[values().length];
 		private final int meta;
-		private final String textureName, type;
+		private final String type;
 
-		private EnumMetadata(int m, String t, String ty) {
+		private EnumMetadata(int m, String t) {
 			this.meta = m;
-			this.textureName = "storage/" + t;
-			this.type = ty;
+			this.type = t;
 		}
 
 		public int getMetaFromState() {
@@ -114,7 +124,7 @@ public class BlockStorageBlocks2 extends Block {
 
 		@Override
 		public String toString() {
-			return this.textureName;
+			return this.type;
 		}
 
 		public static BlockStorageBlocks2.EnumMetadata getStateFromMeta(int m) {

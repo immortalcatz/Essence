@@ -22,7 +22,7 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockStorageBlocks3 extends Block {
 	
-	public static final PropertyEnum type = PropertyEnum.create("meta", BlockStorageBlocks3.EnumMetadata.class);
+	public static final PropertyEnum type = PropertyEnum.create("variant", BlockStorageBlocks3.EnumMetadata.class);
 
 	public static String[] names = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
 	public static String[] allFinalNames = {"Cactus", "Brick", "Bookshelf", "Glowstone", "Red Sand", "Sand", "Sponge", "Soul Sand", "TNT", "Stone", "Waterlilly"};
@@ -41,7 +41,7 @@ public class BlockStorageBlocks3 extends Block {
 		setCreativeTab(EssenceTabs.decoraton);
 		setHardness(1.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(type, BlockStorageBlocks3.EnumMetadata.CACTUS));
-		GameRegistry.registerBlock(this, ItemStorageBlockMetadata3.class, "BlockStorageBlocks3");
+		GameRegistry.registerBlock(this, ItemStorageBlockMetadata3.class, "blockStorageBlocks3");
 	}
 
 	@Override
@@ -76,25 +76,24 @@ public class BlockStorageBlocks3 extends Block {
     }
 	
 	public enum EnumMetadata implements IStringSerializable {
-		CACTUS(0, "cactus", "cactus"),
-		BRICK(1, "brick", "brick"),
-		BOOKSHELF(2, "bookshelf", "bookshelf"),
-		GLOWSTONE(3, "glowstone", "glowstone"),
-		RED_SAND(4, "redSand", "redSand"),
-		SAND(5, "sand", "sand"),
-		SPONGE(6, "sponge", "sponge"),
-		SOUL_SAND(7, "soulSand", "soulSand"),
-		TNT(8, "tnt", "tnt"),
-		STONE(9, "stone", "stone"),
-		WATERLILLY(10, "waterlilly", "waterlilly");
+		CACTUS(0, "cactus"),
+		BRICK(1, "brick"),
+		BOOKSHELF(2, "bookshelf"),
+		GLOWSTONE(3, "glowstone"),
+		RED_SAND(4, "redsand"),
+		SAND(5, "sand"),
+		SPONGE(6, "sponge"),
+		SOUL_SAND(7, "soulsand"),
+		TNT(8, "tnt"),
+		STONE(9, "stone"),
+		WATERLILLY(10, "waterlilly");
 		private static final BlockStorageBlocks3.EnumMetadata[] TYPES_ARRAY = new BlockStorageBlocks3.EnumMetadata[values().length];
 		private final int meta;
-		private final String textureName, type;
+		private final String type;
 
-		private EnumMetadata(int m, String t, String ty) {
+		private EnumMetadata(int m, String t) {
 			this.meta = m;
-			this.textureName = "storage/" + t;
-			this.type = ty;
+			this.type = t;
 		}
 
 		public int getMetaFromState() {
@@ -103,7 +102,7 @@ public class BlockStorageBlocks3 extends Block {
 
 		@Override
 		public String toString() {
-			return this.textureName;
+			return this.type;
 		}
 
 		public static BlockStorageBlocks3.EnumMetadata getStateFromMeta(int m) {
@@ -113,7 +112,7 @@ public class BlockStorageBlocks3 extends Block {
 
 		@Override
 		public String getName() {
-			return this.textureName;
+			return this.type;
 		}
 
 		public String getTypeName() {

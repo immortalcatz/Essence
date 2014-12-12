@@ -332,6 +332,5 @@ public class EssenceItems {
 		itemNames.add("hotDoor");
 		itemNames.add("eucaMeat");
 		itemNames.add("flameArrow");
-		//itemNames.add("flameBow");
 	}
 }

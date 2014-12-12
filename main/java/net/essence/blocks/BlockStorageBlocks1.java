@@ -92,7 +92,7 @@ public class BlockStorageBlocks1 extends Block {
 		DIAMOND_ORE(8, "diamond"),
 		GOLD_ORE(9, "gold"),
 		QUARTZ_ORE(10, "quartz"),
-		SHADIUM_ORE(1, "shadium"),
+		SHADIUM_ORE(11, "shadium"),
 		LUNIUM_ORE(12, "lunium"),
 		SAPPHIRE_ORE(13, "sapphire"),
 		CELESTIUM_ORE(14, "celestium"),

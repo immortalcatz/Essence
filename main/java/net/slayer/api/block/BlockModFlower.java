@@ -11,6 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
@@ -27,14 +28,10 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		this.setCreativeTab(EssenceTabs.decoraton);
 	}
 	
-    public boolean canBlockStay(World w, BlockPos p, IBlockState s) {
-        return w.getBlockState(p.down()).getBlock().canSustainPlant(w, p, EnumFacing.UP, this);
+    @Override
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+        return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
     }
-	
-	@Override
-	public boolean canPlaceBlockAt(World w, BlockPos p) {
-		return super.canPlaceBlockAt(w, p) && this.canBlockStay(w, p, getDefaultState());
-	}
 	
 	@Override
 	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
@@ -43,19 +40,23 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 
 	@Override
-	public void updateTick(World w, BlockPos pos, IBlockState s, Random p_149674_5_) {
+	public void updateTick(World w, BlockPos pos, IBlockState s, Random r) {
 		this.checkAndDropBlock(w, pos, s);
 	}
 
 	protected void checkAndDropBlock(World w, BlockPos pos, IBlockState s) {
-		if (!this.canBlockStay(w, pos, s))  {
+		if(!this.canBlockStay(w, pos, s))  {
             this.dropBlockAsItem(w, pos, s, 0);
             w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
         }
 	}
 
+    public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+        return !(worldIn.getBlockState(pos.down()).getBlock() == Blocks.air);
+    }
+
 	@Override
-	public AxisAlignedBB getCollisionBoundingBox(World p_149668_1_, BlockPos pos, IBlockState s) {
+	public AxisAlignedBB getCollisionBoundingBox(World w, BlockPos pos, IBlockState s) {
 		return null;
 	}
 
@@ -70,8 +71,8 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 
 	@Override
-	public int getRenderType() {
-		return 1;
+	public EnumWorldBlockLayer getBlockLayer() {
+		return EnumWorldBlockLayer.CUTOUT;
 	}
 
 	@Override
@@ -81,6 +82,6 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	@Override
 	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
-		return world.getBlockState(pos);
+		return getDefaultState();
 	}
 }

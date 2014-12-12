@@ -30,6 +30,11 @@ public class ItemBackpack extends ItemMod {
 		hasSubtypes = true;
 		setCreativeTab(EssenceTabs.misc);
 	}
+	
+	@Override
+	public int getMaxItemUseDuration(ItemStack stack) {
+		return 1;
+	}
 
 	@Override
 	public void getSubItems(Item i, CreativeTabs t, List l) {
