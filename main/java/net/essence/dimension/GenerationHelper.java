@@ -24,7 +24,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 public class GenerationHelper {
 
 	private static Random r = new Random();
-	
+
 	public static void generateVanilla(int gen, World w, int chunkX, int chunkZ) {
 		int x, y, z;
 		switch(gen) {
@@ -68,14 +68,14 @@ public class GenerationHelper {
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
 			break;
-			
+
 		case 10:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 100 && y < 160) new WorldGenFloatingIsland().generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}
-	
+
 	public static void generateEssenceDimensions(int gen, World w, int chunkX, int chunkZ) {
 		int x, y, z;
 		switch(gen) {
@@ -118,7 +118,7 @@ public class GenerationHelper {
 			break;
 		}
 	}
-	
+
 	private static void worldMinableGenVanilla(Block spawn, int vein, World w, int x, int y, int z){
 		(new WorldGenMinable(spawn.getDefaultState(), vein)).generate(w, r, new BlockPos(x, y, z));
 	}

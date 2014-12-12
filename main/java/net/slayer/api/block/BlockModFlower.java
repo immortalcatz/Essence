@@ -6,6 +6,7 @@ import java.util.Random;
 
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
@@ -45,14 +46,14 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 
 	protected void checkAndDropBlock(World w, BlockPos pos, IBlockState s) {
-		if(!this.canBlockStay(w, pos, s))  {
+		if(!this.canBlockStay(w, pos, s)) {
             this.dropBlockAsItem(w, pos, s, 0);
             w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
         }
 	}
 
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-        return !(worldIn.getBlockState(pos.down()).getBlock() == Blocks.air);
+        return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass || worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.ground;
     }
 
 	@Override
