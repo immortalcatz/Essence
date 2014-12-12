@@ -183,7 +183,7 @@ public class EntityEucaHopper extends EntityModTameable {
 
 	@Override
 	protected boolean canDespawn() {
-		return !this.isTamed() && this.ticksExisted > 2400;
+		return !this.isTamed() && this.ticksExisted > 1200;
 	}
 
 	@Override

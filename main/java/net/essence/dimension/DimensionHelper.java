@@ -79,8 +79,8 @@ public class DimensionHelper {
 	}
 
 	private static void addEucaSpawns() {
-		int amount = 3;
-		EntityRegistry.addSpawn(EntityEucaHopper.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		int amount = 1;
+		EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
@@ -102,7 +102,7 @@ public class DimensionHelper {
 	}
 
 	private static void addDepthsSpawns() {
-		int amount = 3;
+		int amount = 2;
 		EntityRegistry.addSpawn(EntityDarknessCrawler.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityDepthsBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntitySpikedBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
@@ -110,7 +110,7 @@ public class DimensionHelper {
 	}
 
 	private static void addVanillaSpawns() {
-		int amount = 3;
+		int amount = 2;
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));

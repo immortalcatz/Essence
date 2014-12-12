@@ -24,8 +24,8 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	public BlockModFlower(String name) {
 		super(EnumMaterialTypes.PLANT, name, 0.0F);
 		this.setTickRandomly(true);
-		float f = 0.2F;
-		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
+		float f = 0.3F;
+		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
 		this.setCreativeTab(EssenceTabs.decoraton);
 	}
 	

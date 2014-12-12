@@ -1,6 +1,11 @@
 package net.essence.dimension.euca;
 
+import java.util.Random;
+
 import net.essence.EssenceBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenEuca extends BiomeGenBase {
