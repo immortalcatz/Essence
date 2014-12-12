@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/boilingPortal_ns",
+	"parent": "essence:block/boilingPortal",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

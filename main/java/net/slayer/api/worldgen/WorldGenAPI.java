@@ -21,14 +21,14 @@ public class WorldGenAPI {
 	public static boolean isValidLocationToSpawn(int x, int y, int z, World w, Block b){
 		for(int i = 0; i < x; i++) {
 			for(int l = 0; l < z; l++) {
-				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != b) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != b.getDefaultState()) {
 					return false;
 				}
 			}
 		}
 		return true;
 	}
-	
+
 	public static Block getEucaLeaves() {
 		Block leaves = null;
 		switch(r.nextInt(3)) {
@@ -50,7 +50,7 @@ public class WorldGenAPI {
 		for(int x1 = 0; x1 < size; x1++) {
 			for(int y1 = 0; y1 < size; y1++) {
 				for(int z1 = 0; z1 < size; z1++) {
-					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == Blocks.air) {
+					if(w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == Blocks.air.getDefaultState()) {
 						is = true;
 						break;
 					}
@@ -75,7 +75,7 @@ public class WorldGenAPI {
 			}
 		}
 	}
-	
+
 	public static void addMetadataCube(int size, World w, int x, int y, int z, Block b, int metadata){
 		for(int x1 = 0; x1 < size; x1++){
 			for(int z1 = 0; z1 < size; z1++){
@@ -193,7 +193,7 @@ public class WorldGenAPI {
 			}
 		}
 	}
-	
+
 	public static void addFilledHollowRectangle(int east, int south, int height, World w, int x, int y, int z, Block b, Block fill){
 		for(int x1 = 0; x1 < east; x1++){
 			for(int z1 = 0; z1 < south; z1++){

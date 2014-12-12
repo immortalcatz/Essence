@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.euca.gen.WorldGenEucaPlant;
+import net.essence.dimension.euca.gen.WorldGenEucaSphere;
 import net.essence.dimension.euca.gen.WorldGenEucaWater;
 import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenEucaPyramidTree;
@@ -59,7 +61,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		water1 = new WorldGenEucaWater(Blocks.flowing_water, true);
 		water2 = new WorldGenEucaWater(Blocks.flowing_water, false);
-		
+
 		trees = new ArrayList(7);
 		//trees.add(new WorldGenBigEucaTree());
 		trees.add(new WorldGenSmallEucaTree());
@@ -180,15 +182,15 @@ public class ChunkProviderEuca implements IChunkProvider {
 								c.setBlockState(i, l, j, iblockstate);
 							} else {
 								c.setBlockState(i, l, j, iblockstate1);
-								c.setBlockState(i, l - 1, j, iblockstate1);
-								c.setBlockState(i, l - 2, j, iblockstate1);
+								if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
+								if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 2, j, iblockstate1);
 							}
 						}
 						else if (k > 0) {
 							--k;
 							c.setBlockState(i, l, j, iblockstate1);
-							c.setBlockState(i, l - 1, j, iblockstate1);
-							c.setBlockState(i, l - 2, j, iblockstate1);
+							if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
+							if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 2, j, iblockstate1);
 						}
 					}
 				}
@@ -264,22 +266,13 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 
-		for(times = 0; times < 30; times++){
-			y = rand.nextInt(250);
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
-				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, y, z));
-			}
-		}
-		
 		for(times = 0; times < 16; times++){
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
 			water1.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
-		
+
 		for(times = 0; times < 16; times++){
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);
@@ -287,11 +280,20 @@ public class ChunkProviderEuca implements IChunkProvider {
 			water2.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		if(rand.nextInt(5) == 0) {
+		if(rand.nextInt(100) == 0) {
 			x = x1 + this.rand.nextInt(16);
-			y = rand.nextInt(250) + 6;
+			y = rand.nextInt(100) + 1;
 			z = z1 + this.rand.nextInt(16);
-			//new WorldGenEucaSphere().generate(worldObj, rand, x, y, z);
+			if(y > 20 && y < 90) new WorldGenEucaSphere().generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+
+		for(times = 0; times < 30; times++){
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
+				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
 		}
 	}
 

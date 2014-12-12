@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/frozenPortal_ns",
+	"parent": "essence:block/frozenPortal",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

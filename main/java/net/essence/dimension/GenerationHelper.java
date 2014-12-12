@@ -105,16 +105,15 @@ public class GenerationHelper {
 			(new WorldGenBoilingFire()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 6:
-			x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			y = w.getHorizon(new BlockPos(x, 0, z).add(x, 0, z)).getY() + 32;
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenEucaPlant(EssenceBlocks.eucaTallGrass)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 7:
-			y = (int)w.getHorizon(); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenEucaPlant(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 8:
-			y = (int)w.getHorizon(); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenEucaPlant(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		}

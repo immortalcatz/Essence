@@ -67,7 +67,7 @@ public class CommonProxy {
 	}
 	
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 10);
+		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		//EssenceAchievements.init();

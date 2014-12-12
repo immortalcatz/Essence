@@ -28,12 +28,12 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
 		this.setCreativeTab(EssenceTabs.decoraton);
 	}
-	
-    @Override
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-        return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
-    }
-	
+
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
+	}
+
 	@Override
 	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
 		super.onNeighborBlockChange(worldIn, pos, state, neighborBlock);
@@ -46,15 +46,16 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 
 	protected void checkAndDropBlock(World w, BlockPos pos, IBlockState s) {
-		if(!this.canBlockStay(w, pos, s)) {
-            this.dropBlockAsItem(w, pos, s, 0);
-            w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
-        }
+		if(!this.canBlockStay(w, pos, true)) {
+			this.dropBlockAsItem(w, pos, s, 0);
+			w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
+		}
 	}
 
-    public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-        return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass || worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.ground;
-    }
+	public boolean canBlockStay(World worldIn, BlockPos pos, boolean b) {
+		if(b) return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass || worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.ground;
+		else return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass;
+	}
 
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World w, BlockPos pos, IBlockState s) {
