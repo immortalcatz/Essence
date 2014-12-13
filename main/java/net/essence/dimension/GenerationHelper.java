@@ -68,10 +68,13 @@ public class GenerationHelper {
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
 			break;
-
 		case 10:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 100 && y < 160) new WorldGenFloatingIsland().generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 11:
+			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			worldMinableGenEnd(EssenceBlocks.enderilliumOre, 5, w, x, y, z);
 			break;
 		}
 	}

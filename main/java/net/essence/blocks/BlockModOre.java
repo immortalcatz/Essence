@@ -31,7 +31,7 @@ public class BlockModOre extends BlockMod {
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
 
-	@Override
+	/*@Override
 	public boolean addHitEffects(World w, MovingObjectPosition target, EffectRenderer effectRenderer) {
 		int x = target.getBlockPos().getX(), y = target.getBlockPos().getY(), z = target.getBlockPos().getZ();
 		renderParticle(w, x, y, z);
@@ -89,7 +89,7 @@ public class BlockModOre extends BlockMod {
 			}
 		}
 		return super.addDestroyEffects(w, target, effectRenderer);
-	}
+	}*/
 	
 	@Override
 	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
@@ -128,6 +128,11 @@ public class BlockModOre extends BlockMod {
 			g = 0.0F;
 			b = 1.0F;
 		}
+		if(this == EssenceBlocks.enderilliumOre || this == EssenceBlocks.enderilliumBlock) {
+			r = 1.0F;
+			g = 0.0F;
+			b = 1.0F;
+		}
 		Random random = w.rand;
 		double d0 = 0.0625D;
 		for(int l = 0; l < 6; ++l) {
@@ -161,6 +166,7 @@ public class BlockModOre extends BlockMod {
 	public Item getItemDropped(IBlockState par1, Random par2, int par3) {
 		if(this == EssenceBlocks.ashual) return EssenceItems.ash;
 		if(this == EssenceBlocks.sapphireOre) return EssenceItems.sapphire;
+		if(this == EssenceBlocks.enderilliumOre) return EssenceItems.enderilliumShard;
 		return Item.getItemFromBlock(this);
 	}
 

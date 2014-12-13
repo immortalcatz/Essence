@@ -36,7 +36,7 @@ public class PlayerStats {
 		GuiIngame gig = mc.ingameGUI;
 		FontRenderer font = mc.fontRendererObj;
 		EntityPlayer player = mc.thePlayer;
-		if(Config.reRenderPlayerStats && mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
+		if(mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			if(!player.capabilities.isCreativeMode) {
 				mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
 				float health = player.getHealth() * 5F;

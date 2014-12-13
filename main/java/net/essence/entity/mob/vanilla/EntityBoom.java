@@ -64,10 +64,8 @@ public class EntityBoom extends EntityModMob {
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		for(int i = 0; i < 1 + rand.nextInt(1); i++) {
-			this.dropItem(SlayerAPI.toItem(Blocks.tnt), 1);
-			this.dropItem(Items.gunpowder, 1);
-		}
+		for(int i = 0; i < 1 + rand.nextInt(1); i++) this.dropItem(Items.gunpowder, 1);
+		if(rand.nextInt(3) == 0) this.dropItem(SlayerAPI.toItem(Blocks.tnt), 1);
 	}
 
 	@Override

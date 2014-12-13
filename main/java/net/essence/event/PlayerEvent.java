@@ -87,7 +87,7 @@ public class PlayerEvent {
 		return getArmorEnchantment(en, e) > 0;
 	}
 
-	@SubscribeEvent
+	/*@SubscribeEvent
 	public void transferDims(PlayerChangedDimensionEvent e) {
 		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
 			e.fromDim == Config.euca ? " Euca " : e.fromDim == Config.frozen ? " Frozen Lands " : "§rUnknown";
@@ -101,5 +101,5 @@ public class PlayerEvent {
 				SlayerAPI.sendMessageToAll(e.player.getDisplayName() + " Has travelled from" + from + "to" + to, false);
 			}
 		}
-	}
+	}*/
 }

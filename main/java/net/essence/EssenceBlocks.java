@@ -22,6 +22,7 @@ public class EssenceBlocks {
 	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block ashual = new BlockModOre("ashual", 2.0F);
 	public static final Block sapphireOre = new BlockModOre("sapphireOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block enderilliumOre = new BlockModOre("enderilliumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
 
 	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
@@ -29,6 +30,7 @@ public class EssenceBlocks {
 	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block flairiumBlock = new BlockModOre("flairiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block enderilliumBlock = new BlockModOre("enderilliumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
 
 	/*public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
 	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
@@ -238,5 +240,7 @@ public class EssenceBlocks {
 		blockName.add("eucaGreenFlower");
 		blockName.add("eucaBlueFlower");
 		blockName.add("caveVine");
+		blockName.add("enderilliumOre");
+		blockName.add("enderilliumBlock");
 	}
 }

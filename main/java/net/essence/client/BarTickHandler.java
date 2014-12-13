@@ -33,7 +33,7 @@ public class BarTickHandler {
 	}
 
 	private void onTickRender() {
-		if(mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
+		if(mc.currentScreen == null) {
 			GL11.glPushMatrix();
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GuiIngame gig = mc.ingameGUI;

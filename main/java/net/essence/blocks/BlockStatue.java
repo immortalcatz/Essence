@@ -95,28 +95,7 @@ public class BlockStatue extends BlockContainer {
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 		EnumFacing enumfacing = EnumFacing.getHorizontal(MathHelper.floor_double((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3).getOpposite();
 		state = state.withProperty(FACING, enumfacing);
-		BlockPos blockpos1 = pos.north();
-		BlockPos blockpos2 = pos.south();
-		BlockPos blockpos3 = pos.west();
-		BlockPos blockpos4 = pos.east();
-		boolean flag = this == worldIn.getBlockState(blockpos1).getBlock();
-		boolean flag1 = this == worldIn.getBlockState(blockpos2).getBlock();
-		boolean flag2 = this == worldIn.getBlockState(blockpos3).getBlock();
-		boolean flag3 = this == worldIn.getBlockState(blockpos4).getBlock();
-
-		if(!flag && !flag1 && !flag2 && !flag3) worldIn.setBlockState(pos, state, 2);
-
-		else if(enumfacing.getAxis() == EnumFacing.Axis.X && (flag || flag1)) {
-			if(flag) worldIn.setBlockState(blockpos1, state, 2);
-			else worldIn.setBlockState(blockpos2, state, 2);
-			worldIn.setBlockState(pos, state, 2);
-		}
-		
-		else if(enumfacing.getAxis() == EnumFacing.Axis.Z && (flag2 || flag3)) {
-			if(flag2) worldIn.setBlockState(blockpos3, state, 2);
-			else worldIn.setBlockState(blockpos4, state, 2);
-			worldIn.setBlockState(pos, state, 2);
-		}
+		worldIn.setBlockState(pos, state, 2);
 	}
 
 	@Override

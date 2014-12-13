@@ -53,6 +53,7 @@ public class EssenceItems {
 	public static final Item flairiumIngot = new ItemMod("flairiumIngot");
 	public static final Item ash = new ItemMod("ash");
 	public static final Item sapphire = new ItemMod("sapphire");
+	public static final Item enderilliumShard = new ItemMod("enderilliumShard");
 	public static final Item hellstoneClump = new ItemMod("hellstoneClump");
 	public static final Item shadiumClump = new ItemMod("shadiumClump");
 	public static final Item luniumClump = new ItemMod("luniumClump");
@@ -332,5 +333,6 @@ public class EssenceItems {
 		itemNames.add("hotDoor");
 		itemNames.add("eucaMeat");
 		itemNames.add("flameArrow");
+		itemNames.add("enderilliumShard");
 	}
 }

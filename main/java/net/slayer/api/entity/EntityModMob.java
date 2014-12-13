@@ -54,7 +54,7 @@ public abstract class EntityModMob extends EntityMob {
 	}
 
 	public double setFollowRange(){return MobStats.follow;}
-	public double setMovementSpeed(){return 0.600000011920929D;}
+	public double setMovementSpeed(){return 0.200000011920929D;}
 	public double setKnockbackResistance() {return MobStats.knockBackResistance;}
 
 	public abstract double setAttackDamage(MobStats s);

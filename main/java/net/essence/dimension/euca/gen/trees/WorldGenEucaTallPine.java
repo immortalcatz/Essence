@@ -12,11 +12,11 @@ import net.slayer.api.worldgen.WorldGenAPI;
 public class WorldGenEucaTallPine extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
-		int i = p.getX(), j = p.getY(), k = p.getZ();
+		int i = p.getX() - 5, j = p.getY(), k = p.getZ() - 5;
 		Block leaves = WorldGenAPI.getEucaLeaves();
 		Block wood = EssenceBlocks.eucaLog;
-		world.setBlockState(new BlockPos(i + 0, j + 14, k + 5), leaves.getDefaultState());
-		world.setBlockState(new BlockPos(i + 0, j + 14, k + 6), leaves.getDefaultState());
+		world.setBlockState(new BlockPos(i, j + 14, k + 5), leaves.getDefaultState());
+		world.setBlockState(new BlockPos(i, j + 14, k + 6), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 14, k + 4), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 14, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 14, k + 6), leaves.getDefaultState());
@@ -85,8 +85,8 @@ public class WorldGenEucaTallPine extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 4, j + 20, k + 7), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 4, j + 22, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 4, j + 22, k + 6), leaves.getDefaultState());
-		world.setBlockState(new BlockPos(i + 5, j + 0, k + 5), wood.getDefaultState());
-		world.setBlockState(new BlockPos(i + 5, j + 0, k + 6), wood.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j, k + 5), wood.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 1, k + 5), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 1, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 2, k + 5), wood.getDefaultState());
@@ -113,7 +113,7 @@ public class WorldGenEucaTallPine extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 5, j + 12, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 13, k + 5), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 13, k + 6), wood.getDefaultState());
-		world.setBlockState(new BlockPos(i + 5, j + 14, k + 0), leaves.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j + 14, k), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 14, k + 1), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 14, k + 2), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 14, k + 3), leaves.getDefaultState());
@@ -163,8 +163,8 @@ public class WorldGenEucaTallPine extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 5, j + 22, k + 7), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 23, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 23, k + 6), leaves.getDefaultState());
-		world.setBlockState(new BlockPos(i + 6, j + 0, k + 5), wood.getDefaultState());
-		world.setBlockState(new BlockPos(i + 6, j + 0, k + 6), wood.getDefaultState());
+		world.setBlockState(new BlockPos(i + 6, j, k + 5), wood.getDefaultState());
+		world.setBlockState(new BlockPos(i + 6, j, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 1, k + 5), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 1, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 2, k + 5), wood.getDefaultState());
@@ -191,7 +191,7 @@ public class WorldGenEucaTallPine extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 6, j + 12, k + 6), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 13, k + 5), wood.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 13, k + 6), wood.getDefaultState());
-		world.setBlockState(new BlockPos(i + 6, j + 14, k + 0), leaves.getDefaultState());
+		world.setBlockState(new BlockPos(i + 6, j + 14, k), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 14, k + 1), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 14, k + 2), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 14, k + 3), leaves.getDefaultState());
