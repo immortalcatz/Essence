@@ -19,6 +19,7 @@ import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.vanilla.*;
+import net.essence.entity.mob.vanilla.water_tribe.EntityWaterTribeFisherman;
 import net.essence.entity.projectile.*;
 import net.essence.util.*;
 import net.minecraft.client.Minecraft;
@@ -74,6 +75,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntitySandCrawler.class, new RenderModMob(new ModelSandCrawler(), 0.5F, tex.sandCrawler));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new RenderModMob(new ModelTurtle(), 0.5F, tex.turtle));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFish.class, new RenderFish(new ModelFish()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityWaterTribeFisherman.class, new RenderModBiped(new ModelBiped(), tex.waterFisherman));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 

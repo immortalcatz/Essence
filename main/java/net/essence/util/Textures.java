@@ -50,6 +50,7 @@ public class Textures {
     public static final ResourceLocation bunny = addMob("bunny");
     public static final ResourceLocation sandCrawler = addMob("sandCrawler");
     public static final ResourceLocation turtle = addMob("turtle");
+    public static final ResourceLocation waterFisherman = addMob("waterFisherman");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
