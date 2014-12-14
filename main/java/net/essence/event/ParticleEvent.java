@@ -3,7 +3,7 @@ package net.essence.event;
 import java.util.Random;
 
 import net.essence.Essence;
-import net.essence.client.render.EnumParticlesClasses;
+import net.essence.enums.EnumParticlesClasses;
 import net.essence.items.ItemFireSword;
 import net.essence.items.ItemFreezeSword;
 import net.essence.util.Config;

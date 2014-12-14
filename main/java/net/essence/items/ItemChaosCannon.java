@@ -3,9 +3,9 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.client.EnumSounds;
 import net.essence.client.EssenceBar;
 import net.essence.entity.projectile.EntityChaosProjectile;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

@@ -3,6 +3,7 @@ package net.slayer.api.block;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
@@ -50,6 +51,7 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		this.name = name; 
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -62,6 +64,7 @@ public class BlockMod extends Block{
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(texture);
 		this.name = name; 
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -73,8 +76,14 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		setHardness(hardness);
-		this.name = name; 
+		this.name = name;
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
+	}
+	
+	public Block addName(String name) {
+		EssenceBlocks.blockName.add(name);
+		return this;
 	}
 	
 	public String getName() {

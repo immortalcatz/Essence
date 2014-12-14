@@ -9,7 +9,7 @@ import net.essence.client.EntityRendering;
 import net.essence.client.GuiHandler;
 import net.essence.client.MusicEvent;
 import net.essence.client.PlayerStats;
-import net.essence.client.render.EnumParticlesClasses;
+import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.UpdateCheckerEvent;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;

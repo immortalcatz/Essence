@@ -2,9 +2,9 @@ package net.essence.entity.mob.boss;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityDeathSkull;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;

@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.essence.Essence;
+import net.essence.client.ChatHandler;
 import net.essence.entity.EssenceEntityList;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
@@ -12,6 +13,7 @@ import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -24,6 +26,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -250,5 +253,42 @@ public class SlayerAPI {
 
 	public static Item toItem(Block block){
 		return Item.getItemFromBlock(block);
+	}
+	
+	public static boolean giveItemStackToPlayer(EntityPlayer player, Integer count, ItemStack itemstack) {
+		if (player.worldObj.isRemote) {
+			boolean boolAddedToInventory = true;
+			for (int i = 0; i < count; i++) {
+				boolAddedToInventory = player.inventory.addItemStackToInventory(itemstack);
+				if (!boolAddedToInventory && itemstack.getItemDamage() == 0) {
+					player.dropItem(itemstack.getItem(), 1);
+					String itemName = itemstack.getUnlocalizedName();
+					ChatHandler.sendFormattedChat(player, EnumChatFormatting.RED, "essence.fullinv", StatCollector.translateToLocal(itemName + ".name"));
+				}
+			}
+			return boolAddedToInventory;
+		} else {
+			return giveItemStackToPlayer((EntityPlayerMP)player, count, itemstack);
+		}
+	}
+	
+	public static void giveItemStackToPlayer(EntityPlayer player, ItemStack itemstack) {
+		giveItemStackToPlayer(player, itemstack);
+	}
+	
+	public static boolean giveItemStackToPlayer(EntityPlayerMP player, Integer count, ItemStack itemstack) {
+		boolean boolAddedToInventory = true;
+		for (int i = 0; i < count; i++) {
+			itemstack.stackSize = 1;
+			boolAddedToInventory = player.inventory.addItemStackToInventory(itemstack);
+			if (!boolAddedToInventory && itemstack.getItemDamage() == 0) {
+				player.dropItem(itemstack.getItem(), 1);
+				String itemName = itemstack.getUnlocalizedName();
+				ChatHandler.sendFormattedChat(player, EnumChatFormatting.RED, "essence.fullinv", StatCollector.translateToLocal(itemName + ".name"));
+			} else {
+				player.sendContainerToPlayer(player.inventoryContainer);
+			}
+		}
+		return boolAddedToInventory;
 	}
 }

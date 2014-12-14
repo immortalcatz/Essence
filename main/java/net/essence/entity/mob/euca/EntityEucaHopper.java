@@ -1,7 +1,7 @@
 package net.essence.entity.mob.euca;
 
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;

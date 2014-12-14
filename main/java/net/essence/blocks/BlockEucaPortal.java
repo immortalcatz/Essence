@@ -40,6 +40,7 @@ public class BlockEucaPortal extends BlockBreakable {
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
 		setBlockUnbreakable();
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 

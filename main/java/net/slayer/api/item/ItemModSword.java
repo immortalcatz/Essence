@@ -2,6 +2,7 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,6 +22,7 @@ public class ItemModSword extends ItemSword {
         setUnlocalizedName(name);
         mat = toolMaterial;
         setCreativeTab(EssenceTabs.weapons);
+        EssenceItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

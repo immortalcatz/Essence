@@ -5,9 +5,9 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.client.DarkEnergyBar;
-import net.essence.client.EnumSounds;
 import net.essence.client.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.enums.EnumSounds;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

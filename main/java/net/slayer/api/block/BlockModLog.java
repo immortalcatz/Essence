@@ -1,5 +1,6 @@
 package net.slayer.api.block;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
@@ -24,6 +25,7 @@ public class BlockModLog extends BlockRotatedPillar {
 		setHardness(3.0F);
 		setCreativeTab(EssenceTabs.blocks);
 		setStepSound(soundTypeWood);
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 

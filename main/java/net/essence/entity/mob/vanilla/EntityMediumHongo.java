@@ -1,7 +1,7 @@
 package net.essence.entity.mob.vanilla;
 
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;

@@ -2,6 +2,7 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +20,7 @@ public class ItemModHoe extends ItemHoe {
 		mat = tool;
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.tools);
+        EssenceItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

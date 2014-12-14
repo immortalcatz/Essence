@@ -1,7 +1,7 @@
 package net.essence.entity.mob.vanilla;
 
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;

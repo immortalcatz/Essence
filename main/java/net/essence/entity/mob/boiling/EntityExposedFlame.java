@@ -1,8 +1,8 @@
 package net.essence.entity.mob.boiling;
 
 import net.essence.EssenceItems;
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;

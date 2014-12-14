@@ -2,8 +2,9 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
-import net.essence.client.EnumSounds;
+import net.essence.enums.EnumSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -32,6 +33,7 @@ public class ItemMod extends Item {
 	public ItemMod(String name, String textureName, CreativeTabs tab){
 		setUnlocalizedName(name);
 		setCreativeTab(tab);
+		EssenceItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 

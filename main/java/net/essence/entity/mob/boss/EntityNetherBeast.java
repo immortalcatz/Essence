@@ -2,8 +2,8 @@ package net.essence.entity.mob.boss;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

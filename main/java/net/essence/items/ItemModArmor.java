@@ -2,6 +2,7 @@ package net.essence.items;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.client.ArmorDescription;
 import net.essence.util.EnumArmor;
@@ -41,6 +42,7 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		setCreativeTab(EssenceTabs.armor);
 		setArmorType(name, armorType);
 		setUnlocalizedName(this.name);
+		EssenceItems.itemNames.add(this.name);
 		GameRegistry.registerItem(this, this.name);
 	}
 

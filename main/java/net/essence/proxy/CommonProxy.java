@@ -4,15 +4,16 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityEnrichedTable;
+import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.essence.blocks.tileentity.TileEntityIncubator;
 import net.essence.blocks.tileentity.TileEntityStatue;
-import net.essence.client.render.EnumParticlesClasses;
 import net.essence.dimension.DimensionHelper;
 import net.essence.dimension.WorldGenEssence;
 import net.essence.dimension.boil.gen.fortress.MapGenBoilBridge;
 import net.essence.dimension.boil.gen.fortress.StructureBoilBridgePieces;
 import net.essence.dimension.boil.gen.village.MapGenBoilVillage;
 import net.essence.dimension.boil.gen.village.StructureBoilVillagePieces;
+import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.ArmorAbilityEvent;
 import net.essence.event.ParticleEvent;
 import net.essence.event.PlayerEvent;
@@ -42,8 +43,6 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
-		EssenceBlocks.addBlockNames();
-		EssenceItems.addItemNames();
 		EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();
@@ -60,6 +59,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
+		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
 		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		//StructureBoilBridgePieces.registerBoilFortressPieces();

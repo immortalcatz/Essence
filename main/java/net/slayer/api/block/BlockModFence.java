@@ -1,5 +1,6 @@
 package net.slayer.api.block;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
@@ -18,6 +19,7 @@ public class BlockModFence extends BlockFence {
 		setCreativeTab(EssenceTabs.blocks);
 		if(light) setLightLevel(0.5F);
 		setHardness(block.getBlockHardness(null, null));
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name + "Fence");
 	}
 	

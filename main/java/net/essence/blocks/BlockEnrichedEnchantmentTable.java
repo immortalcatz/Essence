@@ -3,6 +3,7 @@ package net.essence.blocks;
 import java.util.Random;
 
 import net.essence.Essence;
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityEnrichedTable;
 import net.essence.client.GuiHandler.GuiIDs;
@@ -27,6 +28,7 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName("enrichedEnchantmentTable");
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -52,18 +54,6 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 			}
 		}
 	}
-
-	/*@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		return side == 0 ? this.bottom : (side == 1 ? this.top : this.side);
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister icon) {
-		this.side = icon.registerIcon(this.getTextureName() + "_side");
-		this.top = icon.registerIcon(this.getTextureName() + "_top");
-		this.bottom = icon.registerIcon(this.getTextureName() + "_bottom");
-	}*/
 
 	@Override
 	public boolean isOpaqueCube() {

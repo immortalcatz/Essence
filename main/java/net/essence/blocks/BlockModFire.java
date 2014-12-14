@@ -13,6 +13,7 @@ public class BlockModFire extends BlockFire {
     public BlockModFire(String name) {
     	setLightLevel(1.0F);
         setUnlocalizedName(name);
+        EssenceBlocks.blockName.add(name);
         GameRegistry.registerBlock(this, name);
     }
 

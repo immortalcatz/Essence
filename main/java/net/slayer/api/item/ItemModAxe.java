@@ -2,6 +2,7 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.block.Block;
@@ -21,6 +22,7 @@ public class ItemModAxe extends ItemAxe {
 		mat = tool;
 		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.tools);
+		EssenceItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 

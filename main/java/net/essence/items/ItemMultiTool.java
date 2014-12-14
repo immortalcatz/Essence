@@ -3,6 +3,7 @@ package net.essence.items;
 import java.util.List;
 import java.util.Set;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.block.Block;
@@ -35,6 +36,7 @@ public class ItemMultiTool extends ItemTool {
         setCreativeTab(EssenceTabs.tools);
         setUnlocalizedName(name);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
+        EssenceItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

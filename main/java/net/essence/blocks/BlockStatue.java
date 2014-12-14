@@ -1,9 +1,10 @@
 package net.essence.blocks;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
-import net.essence.client.EnumSounds;
 import net.essence.client.render.mob.model.statue.ModelStatue;
+import net.essence.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.properties.IProperty;
@@ -42,6 +43,7 @@ public class BlockStatue extends BlockContainer {
 		this.texture = new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/" + name + ".png");
 		this.model = model;
 		this.sound = s;
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 

@@ -1,4 +1,4 @@
-package net.essence.client;
+package net.essence.enums;
 
 public enum EnumParticals {
 	

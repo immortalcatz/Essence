@@ -1,8 +1,8 @@
 package net.essence.entity.mob.euca;
 
 import net.essence.EssenceItems;
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;

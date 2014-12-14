@@ -42,7 +42,6 @@ public class EssenceItems {
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
-	public static ArrayList<String> bowNames = new ArrayList<String>();
 
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 
@@ -54,12 +53,22 @@ public class EssenceItems {
 	public static final Item ash = new ItemMod("ash");
 	public static final Item sapphire = new ItemMod("sapphire");
 	public static final Item enderilliumShard = new ItemMod("enderilliumShard");
+	
+	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
+	public static final Item shadiumDust = new ItemMod("shadiumDust");
+	public static final Item celestiumDust = new ItemMod("celestiumDust");
+	public static final Item luniumDust = new ItemMod("luniumDust");
+	public static final Item flairiumDust = new ItemMod("flairiumDust");
+	public static final Item ashDust = new ItemMod("ashDust");
+	public static final Item sapphireDust = new ItemMod("sapphireDust");
+	public static final Item enderilliumDust = new ItemMod("enderilliumDust");
+	
 	public static final Item hellstoneClump = new ItemMod("hellstoneClump");
 	public static final Item shadiumClump = new ItemMod("shadiumClump");
 	public static final Item luniumClump = new ItemMod("luniumClump");
 	public static final Item spawnerClump = new ItemMod("spawnerClump");
 	public static final Item spawnerBar = new ItemMod("spawnerBar");
-
+	
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
 	//public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
@@ -208,131 +217,9 @@ public class EssenceItems {
 	public static final Item spawners = new ItemSpawnEggs();
 	//public static final Item backpack = new ItemBackpack("backpack");
 
+	public static final Item woodenChisel = new ItemChisel(ToolMaterial.EMERALD, "woodenChisel");
+	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
-	}
-	
-	public static void bowNames() {
-		bowNames.add("flameBow");
-	}
-
-	public static void addItemNames() {
-		itemNames.add("hellstoneIngot");
-		itemNames.add("shadiumIngot");
-		itemNames.add("celestiumIngot");
-		itemNames.add("luniumIngot");
-		itemNames.add("flairiumIngot");
-		itemNames.add("ash");
-		itemNames.add("sapphire");
-		itemNames.add("hellstoneClump");
-		itemNames.add("shadiumClump");
-		itemNames.add("luniumClump");
-		itemNames.add("spawnerClump");
-		itemNames.add("spawnerBar");
-		itemNames.add("flameCoin");
-		itemNames.add("chaosCannon");
-		itemNames.add("hellstoneMultiTool");
-		itemNames.add("shadiumMultiTool");
-		itemNames.add("celestiumMultiTool");
-		itemNames.add("flairiumMultiTool");
-		itemNames.add("luniumMultiTool");
-		itemNames.add("sapphireMultiTool");
-		itemNames.add("hellstonePickaxe");
-		itemNames.add("shadiumPickaxe");
-		itemNames.add("celestiumPickaxe");
-		itemNames.add("luniumPickaxe");
-		itemNames.add("flairiumPickaxe");
-		itemNames.add("sapphirePickaxe");
-		itemNames.add("hellstoneShovel");
-		itemNames.add("shadiumShovel");
-		itemNames.add("celestiumShovel");
-		itemNames.add("flairiumShovel");
-		itemNames.add("sapphireShovel");
-		itemNames.add("hellstoneAxe");
-		itemNames.add("luniumShovel");
-		itemNames.add("luniumAxe");
-		itemNames.add("shadiumAxe");
-		itemNames.add("celestiumAxe");
-		itemNames.add("flairiumAxe");
-		itemNames.add("sapphireAxe");
-		itemNames.add("hellstoneHoe");
-		itemNames.add("shadiumHoe");
-		itemNames.add("celestiumHoe");
-		itemNames.add("flairiumHoe");
-		itemNames.add("sapphireHoe");
-		itemNames.add("luniumHoe");
-		itemNames.add("hellstoneSword");
-		itemNames.add("luniumSword");
-		itemNames.add("shadiumSword");
-		itemNames.add("celestiumSword");
-		itemNames.add("flairiumSword");
-		itemNames.add("sapphireSword");
-		itemNames.add("poisonSword");
-		itemNames.add("cloudSlicer");
-		itemNames.add("dragonsTooth");
-		itemNames.add("netherBeastSword");
-		itemNames.add("witheringBeastSword");
-		itemNames.add("calciaSword");
-		itemNames.add("championsSword");
-		itemNames.add("theWraith");
-		itemNames.add("eucaPortalGem");
-		itemNames.add("depthsPortalGem");
-		itemNames.add("calciaOrb");
-		itemNames.add("netherBeastOrb");
-		itemNames.add("witheringBeastOrb");
-		itemNames.add("eudorOrb");
-		itemNames.add("weakEssencePotion");
-		itemNames.add("strongEssencePotion");
-		itemNames.add("weakDarkEnergyPotion");
-		itemNames.add("strongDarkEnergyPotion");
-		itemNames.add("luniumHelmet");
-		itemNames.add("luniumBody");
-		itemNames.add("luniumLegs");
-		itemNames.add("luniumBoots");
-		itemNames.add("hellstoneHelmet");
-		itemNames.add("shadiumHelmet");
-		itemNames.add("celestiumHelmet");
-		itemNames.add("flairiumHelmet");
-		itemNames.add("sapphireHelmet");
-		itemNames.add("condensedDiamondHelmet");
-		itemNames.add("hellstoneBody");
-		itemNames.add("shadiumBody");
-		itemNames.add("celestiumBody");
-		itemNames.add("flairiumBody");
-		itemNames.add("sapphireBody");
-		itemNames.add("condensedDiamondBody");
-		itemNames.add("hellstoneLegs");
-		itemNames.add("shadiumLegs");
-		itemNames.add("essenceSpawner");
-		itemNames.add("celestiumLegs");
-		itemNames.add("flairiumLegs");
-		itemNames.add("sapphireLegs");
-		itemNames.add("condensedDiamondLegs");
-		itemNames.add("hellstoneBoots");
-		itemNames.add("shadiumBoots");
-		itemNames.add("celestiumBoots");
-		itemNames.add("flairiumBoots");
-		itemNames.add("sapphireBoots");
-		itemNames.add("condensedDiamondBoots");
-		itemNames.add("backBiter");
-		itemNames.add("dawnBreaker");
-		itemNames.add("tempestBattleaxe");
-		itemNames.add("staffOfHellstone");
-		itemNames.add("doomsBringer");
-		itemNames.add("conjuringStaff");
-		itemNames.add("staffOfEnlightment");
-		itemNames.add("staffOfGreenpace");
-		itemNames.add("wizardsStar");
-		itemNames.add("teleportationStaff");
-		itemNames.add("normalGoldenSteak");
-		itemNames.add("OPGoldenSteak");
-		itemNames.add("goldenPotato");
-		itemNames.add("OPGoldenPotato");
-		itemNames.add("goldenPork");
-		itemNames.add("OPGoldenPork");
-		itemNames.add("hotDoor");
-		itemNames.add("eucaMeat");
-		itemNames.add("flameArrow");
-		itemNames.add("enderilliumShard");
 	}
 }

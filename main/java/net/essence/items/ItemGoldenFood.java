@@ -1,5 +1,6 @@
 package net.essence.items;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -22,6 +23,7 @@ public class ItemGoldenFood extends ItemFood {
         op = isOP;
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
+        EssenceItems.itemNames.add(name);
         setCreativeTab(EssenceTabs.misc);
     }
 

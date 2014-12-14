@@ -1,4 +1,4 @@
-package net.essence.client.render;
+package net.essence.enums;
 
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.particle.EntityFlameFX;

@@ -1,8 +1,8 @@
 package net.essence.entity.mob.boiling;
 
-import net.essence.client.EnumSounds;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityMagmaFireball;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;

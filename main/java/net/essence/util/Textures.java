@@ -13,6 +13,7 @@ public class Textures {
     public static final ResourceLocation basic = addProjectile("grey");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
     public static final ResourceLocation magmaBall = addProjectile("magmaBall");
+    public static final ResourceLocation grindstone = addModel("blocks/grindstone");
 
     public static final ResourceLocation robot = addMob("robot");
     public static final ResourceLocation blank = addMob("blank");
