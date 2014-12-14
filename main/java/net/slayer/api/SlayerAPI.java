@@ -7,8 +7,11 @@ import java.util.logging.Logger;
 import net.essence.Essence;
 import net.essence.client.ChatHandler;
 import net.essence.entity.EssenceEntityList;
+import net.essence.util.GL11Helper;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
@@ -290,5 +293,14 @@ public class SlayerAPI {
 			}
 		}
 		return boolAddedToInventory;
+	}
+	
+	public static void renderItem(ItemStack stack, double x, double y, double z, float scale) {
+		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+		if(stack != null) {
+			GL11.glTranslated(x, y, z);
+			GL11Helper.scale(scale);
+			renderItem.renderItemModel(stack);
+		}
 	}
 }

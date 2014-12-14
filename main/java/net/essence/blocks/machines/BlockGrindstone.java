@@ -3,17 +3,15 @@ package net.essence.blocks.machines;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
@@ -96,17 +94,22 @@ public class BlockGrindstone extends BlockContainer {
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if(world.isRemote) return false;
+		TileEntityGrindstone stone = (TileEntityGrindstone) world.getTileEntity(pos);
 		if(((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind != null) {
 			Item item = ((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind;
 			if(item == null) {
 				((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = null;
 				return true;
 			}
-			SlayerAPI.giveItemStackToPlayer(player, new Random().nextInt(2) + 1, new ItemStack(item));
+			if(stone.getItem() instanceof ItemBlock) SlayerAPI.giveItemStackToPlayer(player, 1, new ItemStack(item));
+			else SlayerAPI.giveItemStackToPlayer(player, new Random().nextInt(3) + 1, new ItemStack(item));
 			((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = null;
 			((TileEntityGrindstone) world.getTileEntity(pos)).state = 0;
 		}
-		if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == SlayerAPI.toItem(EssenceBlocks.celestiumOre)) {
+		Item item = player.getCurrentEquippedItem().getItem();
+		if(player.getCurrentEquippedItem() != null && item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
+				|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
+				item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre) && stone.getItem() == null) {
 			((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
 			player.getCurrentEquippedItem().stackSize--;
 			world.playAuxSFX(1022, pos, 0);

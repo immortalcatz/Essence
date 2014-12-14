@@ -1,13 +1,10 @@
 package net.essence.blocks.tileentity;
 
-import java.util.Random;
-
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
-import net.essence.enums.EnumSounds;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -19,7 +16,7 @@ import net.slayer.api.SlayerAPI;
 public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerListBox {
 
 	public Item itemOnGrind = null;
-	public int state = 0;
+	public int state = 0, count = 0;
 	public float rotation = 0.0F;
 	public boolean isActive = false;
 
@@ -30,7 +27,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 		super.writeToNBT(nbt);
 		nbt.setInteger("ItemOnGrind", itemOnGrind.getIdFromItem(itemOnGrind));
 		nbt.setInteger("GrindItemState", state);
-		nbt.setBoolean("active", isActive);
+		nbt.setBoolean("Active", isActive);
 		nbt.setFloat("Rotation", rotation);
 	}
 
@@ -39,7 +36,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 		super.readFromNBT(nbt);
 		itemOnGrind = Item.getItemById(nbt.getInteger("ItemOnGrind"));
 		state = nbt.getInteger("GrindItemState");
-		isActive = nbt.getBoolean("active");
+		isActive = nbt.getBoolean("Active");
 		rotation = nbt.getFloat("Rotation");
 	}
 
@@ -54,58 +51,92 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
 		readFromNBT(pkt.getNbtCompound());
 	}
-	
+
+	public Item getItem() {
+		return itemOnGrind;
+	}
+
 	public boolean isActivated() {
 		return isActive;
 	}
-	
+
 	public float getRotaton() {
 		return rotation;
 	}
-	
+
 	public void setActivated(boolean a) {
 		isActive = a;
 	}
 
 	public boolean blockHit(int f, EntityPlayer player) {
 		boolean returnVal = false;
-		int count = 0;
-		if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.celestiumOre)) {
-			count += f;
-			if(count >= 15) {
+		if(isActivated()) {
+			if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.celestiumOre)) setItem(EssenceItems.celestiumDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.hellstoneOre)) setItem(EssenceItems.hellstoneDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.luniumOre)) setItem(EssenceItems.luniumDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.shadiumOre)) setItem(EssenceItems.shadiumDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.flairiumOre)) setItem(EssenceItems.flairiumDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.ashual)) setItem(EssenceItems.ashDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) setItem(EssenceItems.sapphireDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) setItem(EssenceItems.enderilliumDust, f, returnVal);
+			else {
+				state = 0;
 				count = 0;
-				state++;
-				returnVal = true;
-				EnumSounds.playSound("random.anvil_land", worldObj, this);
-				if(state == 3) {
-					state = 0;
-					count = 0;
-					itemOnGrind = EssenceItems.celestiumDust;
+			}
+			if(itemOnGrind != null) {
+				Item item = itemOnGrind;
+				if(item == EssenceItems.celestiumDust || item == EssenceItems.hellstoneDust || item == EssenceItems.shadiumDust || item == EssenceItems.luniumDust || item == EssenceItems.flairiumDust
+						|| item == EssenceItems.ashDust || item == EssenceItems.sapphireDust || item == EssenceItems.enderilliumDust) {
+					count += f;
+					if(count >= 50) {
+						count = 0;
+						state++;
+						returnVal = true;
+						worldObj.playAuxSFX(1022, pos, 0);
+						if(state == 3) {
+							count = 0;
+							state = 0;
+							if(item == SlayerAPI.toItem(EssenceBlocks.celestiumOre)) itemOnGrind = EssenceItems.celestiumDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre)) itemOnGrind = EssenceItems.hellstoneDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.shadiumOre)) itemOnGrind = EssenceItems.shadiumDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.luniumOre)) itemOnGrind = EssenceItems.luniumDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.flairiumOre)) itemOnGrind = EssenceItems.flairiumDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.ashual)) itemOnGrind = EssenceItems.ashDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) itemOnGrind = EssenceItems.sapphireDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) itemOnGrind = EssenceItems.enderilliumDust;
+							else itemOnGrind = null;
+						}
+					}
 				}
 			}
-			else if(itemOnGrind == EssenceItems.celestiumDust){
-				count += f;
-				if(count >= 5) {
-					SlayerAPI.giveItemStackToPlayer(player, 1, new ItemStack(itemOnGrind));
-				}
-			}
-		} else {
-			itemOnGrind = null;
-			state = 0;
-			count = 0;
 		}
 		return returnVal;
+	}
+
+	public void setItem(Item d, int f, boolean returnVal) {
+		count += f;
+		if(count >= 400) {
+			count = 0;
+			state++;
+			returnVal = true;
+			if(state == 3) {
+				state = 0;
+				count = 0;
+				itemOnGrind = d;
+			}
+		}
+		if(itemOnGrind == d) count += f;
 	}
 
 	@Override
 	public void update() {
 		if(worldObj.isBlockPowered(getPos())) {
 			setActivated(true);
+			blockHit(2, null);
 			rotation += 20.0F;
 		} else {
 			setActivated(false);
 		}
-		
 		if(rotation == 360F) rotation = 0.0F;
 	}
 }

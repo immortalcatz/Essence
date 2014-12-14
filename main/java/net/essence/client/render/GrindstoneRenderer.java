@@ -36,6 +36,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.MapData;
+import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 
@@ -66,17 +67,11 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 		Item toRender = ((TileEntityGrindstone)e).itemOnGrind;
 
 		GL11.glPushMatrix();
-		//renderItem(new ItemStack(toRender), x, y + 1, z);
 		if(toRender != null) {
-			GL11.glTranslated(x, y + 1.2, z + 0.4);
+			GL11.glTranslated(x + 0.08, y + 1.2, z + 0.5);
 			GL11Helper.scale(0.8F);
 			renderItem.renderItemModel(new ItemStack(toRender));
 		}
 		GL11.glPopMatrix();
-	}
-
-	public void renderItem(ItemStack stack, double x, double y, double z) {
-		GL11.glTranslated(x, y, z);
-		TileEntityItemStackRenderer.instance.renderByItem(stack);
 	}
 }
