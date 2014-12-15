@@ -19,9 +19,10 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemStaff extends ItemMod {
 
-	private int usage, damage;
-	private boolean essence, unBreakable;
-	private Class<? extends EntityBasicProjectile> projectile; 
+	protected int usage;
+	protected int damage;
+	protected boolean essence, unBreakable;
+	protected Class<? extends EntityBasicProjectile> projectile; 
 	
 	public ItemStaff(String name, int magic, int uses, int dam, boolean essence, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
 		super(name);

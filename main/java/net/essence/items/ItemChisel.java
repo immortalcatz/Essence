@@ -44,8 +44,9 @@ public class ItemChisel extends ItemTool {
 
 	@Override
 	public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, EntityPlayer player) {
+		if(player.worldObj.isRemote) return false;
 		if (player.worldObj.getBlockState(pos).getBlock() == EssenceBlocks.grindstone) {
-			if(((TileEntityGrindstone)player.worldObj.getTileEntity(pos)).blockHit((int)getStrVsBlock(new ItemStack(this), EssenceBlocks.grindstone), player)) {
+			if(((TileEntityGrindstone)player.worldObj.getTileEntity(pos)).work((int)getStrVsBlock(new ItemStack(this), EssenceBlocks.grindstone))) {
 				if (itemstack.getItemDamage() >= itemstack.getMaxDamage()) {
 					player.destroyCurrentEquippedItem();
 				} else {

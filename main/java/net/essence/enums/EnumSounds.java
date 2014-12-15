@@ -43,7 +43,8 @@ public enum EnumSounds {
 	WITHER("mob.wither.idle"),
 	WITHER_HURT("mob.wither.hurt"),
 	WITHER_DEATH("mob.wither.death"),
-	STAFF("essence:staff");
+	STAFF("essence:staff"),
+	SPARKLE("essence:magicSparkle");
 	
 	private String sound;
 
@@ -63,15 +64,23 @@ public enum EnumSounds {
 		w.playSoundAtEntity(e, sound, 1.0F, 1.0F);
 	}
 	
+	public static void playSound(String sound, World w, EntityLivingBase e, float volume, float pitch){
+		w.playSoundAtEntity(e, sound, volume, pitch);
+	}
+	
+	public static void playSound(EnumSounds sound, World w, EntityLivingBase e){
+		w.playSoundAtEntity(e, sound.getNonPrefixedName(), 1.0F, 1.0F);
+	}
+	
+	public static void playSound(EnumSounds sound, World w, EntityLivingBase e, float volume, float pitch){
+		w.playSoundAtEntity(e, sound.getNonPrefixedName(), volume, pitch);
+	}
+	
 	public static void playSound(String sound, World w, TileEntity e){
 		w.playSound((double)e.getPos().getX(), (double)e.getPos().getY(), (double)e.getPos().getZ(), sound, 1.0F, 1.0F, true);
 	}
 	
 	public static void playSound(String sound, World w, TileEntity e, float volume, float pitch){
 		w.playSound((double)e.getPos().getX(), (double)e.getPos().getY(), (double)e.getPos().getZ(), sound, volume, pitch, true);
-	}
-	
-	public static void playSound(String sound, World w, EntityLivingBase e, float volume, float pitch){
-		w.playSoundAtEntity(e, sound, volume, pitch);
 	}
 }

@@ -217,8 +217,11 @@ public class EssenceItems {
 	public static final Item spawners = new ItemSpawnEggs();
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	public static final Item woodenChisel = new ItemChisel(ToolMaterial.EMERALD, "woodenChisel");
+	public static final Item chisel = new ItemChisel(ToolMaterial.IRON, "chisel");
 	
+	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 10, false, false, EntityFireBall.class);
+	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 10, true, false, EntityFireBall.class);
+
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

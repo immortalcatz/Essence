@@ -19,7 +19,7 @@ import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.vanilla.*;
-import net.essence.entity.mob.vanilla.water_tribe.EntityWaterTribeFisherman;
+import net.essence.entity.mob.vanilla.water_tribe.*;
 import net.essence.entity.projectile.*;
 import net.essence.util.*;
 import net.minecraft.client.Minecraft;
@@ -46,6 +46,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityBouncingProjectile.class, new RenderProjectile(tex.bouncingProjectile));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMagmaFireball.class, new RenderProjectile(tex.magmaBall));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFlameArrow.class, new RenderModArrow());
+		RenderingRegistry.registerEntityRenderingHandler(EntityFireBall.class, new RenderStaffProjectile(tex.empty, 0F, 0F, 0F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityIceBall.class, new RenderStaffProjectile(tex.empty, 0F, 0F, 0F));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderModMob(new ModelRobot(), tex.robot));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpikedBeast.class, new RenderModMob(new ModelSpikedBeast(), tex.spikedBeast));
@@ -76,6 +78,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new RenderModMob(new ModelTurtle(), 0.5F, tex.turtle));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFish.class, new RenderFish(new ModelFish()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWaterTribeFisherman.class, new RenderModBiped(new ModelBiped(), tex.waterFisherman));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFireMage.class, new RenderModBiped(new ModelBiped(), tex.fireMage));
+		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 

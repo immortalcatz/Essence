@@ -72,6 +72,6 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateEnd(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 20; i++) GenerationHelper.generateVanilla(11, w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateVanilla(11, w, chunkX, chunkZ);
 	}
 }

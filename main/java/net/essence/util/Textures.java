@@ -10,10 +10,11 @@ public class Textures {
     public static final String modelPrefix = SlayerAPI.PREFIX + "textures/models/";
     public static final String slotPrefix = SlayerAPI.PREFIX + "textures/gui/slot";
 
-    public static final ResourceLocation basic = addProjectile("grey");
+    public static final ResourceLocation basic = addProjectile("gray");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
     public static final ResourceLocation magmaBall = addProjectile("magmaBall");
     public static final ResourceLocation grindstone = addModel("blocks/grindstone");
+    public static final ResourceLocation empty = addProjectile("empty");
 
     public static final ResourceLocation robot = addMob("robot");
     public static final ResourceLocation blank = addMob("blank");
@@ -52,6 +53,8 @@ public class Textures {
     public static final ResourceLocation sandCrawler = addMob("sandCrawler");
     public static final ResourceLocation turtle = addMob("turtle");
     public static final ResourceLocation waterFisherman = addMob("waterFisherman");
+    public static final ResourceLocation fireMage = addMob("fireMage");
+    public static final ResourceLocation iceMage = addMob("iceMage");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

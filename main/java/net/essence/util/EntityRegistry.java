@@ -22,6 +22,8 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityWizardsStar.class, "wizardsstar");
 		SlayerAPI.registerProjectile(EntityMagmaFireball.class, "magmaball");
 		SlayerAPI.registerProjectile(EntityFlameArrow.class, "flamearrow");
+		SlayerAPI.registerProjectile(EntityFireBall.class, "fireball");
+		SlayerAPI.registerProjectile(EntityIceBall.class, "iceball");
 
 		SlayerAPI.registerMob(EntityRobot.class, "robot", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntitySpyclops.class, "spyclops", SlayerAPI.mobID++);
@@ -52,7 +54,9 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityTurtle.class, "essenceTurtle", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityFish.class, "fish", SlayerAPI.mobID++);
 		SlayerAPI.registerMob(EntityWaterTribeFisherman.class, "waterTribeFisherman", SlayerAPI.mobID++);
-		
+		SlayerAPI.registerMob(EntityFireMage.class, "fireMage", SlayerAPI.mobID++);
+		SlayerAPI.registerMob(EntityIceMage.class, "iceMage", SlayerAPI.mobID++);
+
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg", SlayerAPI.mobID++);
 
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "Beast of the Nether", SlayerAPI.mobID++);

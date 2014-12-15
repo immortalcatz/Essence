@@ -109,12 +109,14 @@ public class BlockGrindstone extends BlockContainer {
 		Item item = player.getCurrentEquippedItem().getItem();
 		if(player.getCurrentEquippedItem() != null && item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
 				|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
-				item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre) && stone.getItem() == null) {
-			((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
-			player.getCurrentEquippedItem().stackSize--;
-			world.playAuxSFX(1022, pos, 0);
-			((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
-			return true;
+				item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) {
+			if(stone.getItem() == null) {
+				((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
+				player.getCurrentEquippedItem().stackSize--;
+				world.playAuxSFX(1022, pos, 0);
+				((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
+				return true;
+			}
 		}
 		((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
 		return false;

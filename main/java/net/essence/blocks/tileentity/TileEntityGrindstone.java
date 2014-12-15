@@ -68,7 +68,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 		isActive = a;
 	}
 
-	public boolean blockHit(int f, EntityPlayer player) {
+	public boolean work(int f) {
 		boolean returnVal = false;
 		if(isActivated()) {
 			if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.celestiumOre)) setItem(EssenceItems.celestiumDust, f, returnVal);
@@ -92,7 +92,6 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 						count = 0;
 						state++;
 						returnVal = true;
-						worldObj.playAuxSFX(1022, pos, 0);
 						if(state == 3) {
 							count = 0;
 							state = 0;
@@ -132,7 +131,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 	public void update() {
 		if(worldObj.isBlockPowered(getPos())) {
 			setActivated(true);
-			blockHit(2, null);
+			work(2);
 			rotation += 20.0F;
 		} else {
 			setActivated(false);

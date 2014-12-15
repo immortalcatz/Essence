@@ -13,7 +13,7 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class EntityBasicProjectile extends EntityThrowable {
 
-	private float damage;
+	public float damage;
 
 	public EntityBasicProjectile(World var1) {
 		super(var1);
@@ -22,6 +22,14 @@ public class EntityBasicProjectile extends EntityThrowable {
 	public EntityBasicProjectile(World var1, EntityLivingBase var3, float dam) {
 		super(var1, var3);
 		damage = dam;
+	}
+	
+	public float getDamage() {
+		return damage;
+	}
+	
+	public void setDamage(float damage) {
+		this.damage = damage;
 	}
 	
 	@Override
