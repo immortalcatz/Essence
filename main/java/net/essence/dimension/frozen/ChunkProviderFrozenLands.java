@@ -8,50 +8,52 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.frozen.gen.WorldGenCandyCane;
 import net.essence.dimension.frozen.gen.WorldGenPresent;
 import net.essence.dimension.frozen.gen.WorldGenSantasWorkshop;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
 
 public class ChunkProviderFrozenLands implements IChunkProvider {
 
 	private Random rand;
-	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, noiseGen5, noiseGen6;
+	private NoiseGeneratorOctaves noiseGen1;
+	private NoiseGeneratorOctaves noiseGen2;
+	private NoiseGeneratorOctaves noiseGen3;
 	private NoiseGeneratorPerlin noiseGen4;
+	public NoiseGeneratorOctaves noiseGen5;
+	public NoiseGeneratorOctaves noiseGen6;
 	private World worldObj;
-	private WorldType type;
 	private final double[] da;
 	private final float[] parabolicField;
-	private double[] stoneNoise = new double[256];
+	private double[] stoneNoise;
 	private BiomeGenBase[] biomesForGeneration;
-	private double[] gen1, gen2, gen3, gen4;
-	private int[][] ia = new int[32][32];
+	double[] gen1;
+	double[] gen2;
+	double[] gen3;
+	double[] gen4;
 	private ArrayList<WorldGenerator> gens, rare;
 
-	public ChunkProviderFrozenLands(World par1World, long par2) {
-		this.worldObj = par1World;
-		this.type = par1World.getWorldInfo().getTerrainType();
-		this.rand = new Random(par2);
-		gens = new ArrayList(0);
-		gens.add(new WorldGenCandyCane());
-		
-		rare = new ArrayList(2);
-		rare.add(new WorldGenSantasWorkshop());
-		rare.add(new WorldGenPresent());
-		
+	public ChunkProviderFrozenLands(World worldIn, long p_i45636_2_) {
+		this.stoneNoise = new double[256];
+		this.worldObj = worldIn;
+		this.rand = new Random(p_i45636_2_);
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
@@ -60,15 +62,22 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.da = new double[825];
 		this.parabolicField = new float[25];
-		for(int j = -2; j <= 2; ++j) {
-			for(int k = -2; k <= 2; ++k) {
+		gens = new ArrayList(0);
+		gens.add(new WorldGenCandyCane());
+
+		rare = new ArrayList(2);
+		rare.add(new WorldGenSantasWorkshop());
+		rare.add(new WorldGenPresent());
+
+		for (int j = -2; j <= 2; ++j) {
+			for (int k = -2; k <= 2; ++k) {
 				float f = 10.0F / MathHelper.sqrt_float((float)(j * j + k * k) + 0.2F);
 				this.parabolicField[j + 2 + (k + 2) * 5] = f;
 			}
 		}
 
 		NoiseGenerator[] noiseGens = {noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6};
-		noiseGens = TerrainGen.getModdedNoiseGenerators(par1World, this.rand, noiseGens);
+		noiseGens = TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, noiseGens);
 		this.noiseGen1 = (NoiseGeneratorOctaves)noiseGens[0];
 		this.noiseGen2 = (NoiseGeneratorOctaves)noiseGens[1];
 		this.noiseGen3 = (NoiseGeneratorOctaves)noiseGens[2];
@@ -77,22 +86,21 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		this.noiseGen6 = (NoiseGeneratorOctaves)noiseGens[5];
 	}
 
-	public void generate(int i, int j, Block[] b) {
-		byte b0 = 63;
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, i * 4 - 2, j * 4 - 2, 10, 10);
-		this.generate(i * 4, 0, j * 4);
+	public void setBlocksInChunk(int p_180518_1_, int p_180518_2_, ChunkPrimer p_180518_3_) {
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_180518_1_ * 4 - 2, p_180518_2_ * 4 - 2, 10, 10);
+		this.generate(p_180518_1_ * 4, 0, p_180518_2_ * 4);
 
-		for(int k = 0; k < 4; ++k) {
+		for (int k = 0; k < 4; ++k) {
 			int l = k * 5;
 			int i1 = (k + 1) * 5;
 
-			for(int j1 = 0; j1 < 4; ++j1) {
+			for (int j1 = 0; j1 < 4; ++j1) {
 				int k1 = (l + j1) * 33;
 				int l1 = (l + j1 + 1) * 33;
 				int i2 = (i1 + j1) * 33;
 				int j2 = (i1 + j1 + 1) * 33;
 
-				for(int k2 = 0; k2 < 32; ++k2) {
+				for (int k2 = 0; k2 < 32; ++k2) {
 					double d0 = 0.125D;
 					double d1 = this.da[k1 + k2];
 					double d2 = this.da[l1 + k2];
@@ -103,30 +111,28 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 					double d7 = (this.da[i2 + k2 + 1] - d3) * d0;
 					double d8 = (this.da[j2 + k2 + 1] - d4) * d0;
 
-					for(int l2 = 0; l2 < 8; ++l2) {
+					for (int l2 = 0; l2 < 8; ++l2) {
 						double d9 = 0.25D;
 						double d10 = d1;
 						double d11 = d2;
 						double d12 = (d3 - d1) * d9;
 						double d13 = (d4 - d2) * d9;
 
-						for(int i3 = 0; i3 < 4; ++i3) {
-							int j3 = i3 + k * 4 << 12 | 0 + j1 * 4 << 8 | k2 * 8 + l2;
-							short short1 = 256;
-							j3 -= short1;
+						for (int i3 = 0; i3 < 4; ++i3) {
 							double d14 = 0.25D;
 							double d16 = (d11 - d10) * d14;
 							double d15 = d10 - d16;
 
-							for(int k3 = 0; k3 < 4; ++k3) {
-								if((d15 += d16) > 0.0D) b[j3 += short1] = EssenceBlocks.frozenStone;
-								else if(k2 * 8 + l2 < 62) b[j3 += short1] = EssenceBlocks.frozenDirt;
-								else if(k2 * 8 + l2 < b0) b[j3 += short1] = EssenceBlocks.frozenGrass;
-								else b[j3 += short1] = null;
+							for (int j3 = 0; j3 < 4; ++j3) {
+								if ((d15 += d16) > 0.0D) {
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.frozenStone.getDefaultState());
+								}
 							}
+
 							d10 += d12;
 							d11 += d13;
 						}
+
 						d1 += d5;
 						d2 += d6;
 						d3 += d7;
@@ -137,90 +143,105 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		}
 	}
 
-	public void replaceBlocksForBiome(int i, int j, Block[] ba, byte[] by, BiomeGenBase[] b) {
-		double d0 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.func_151599_a(this.stoneNoise, (double)(i * 16), (double)(j * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+	public void func_180517_a(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_, BiomeGenBase[] p_180517_4_) {
+		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, p_180517_1_, p_180517_2_, p_180517_3_, this.worldObj);
+		MinecraftForge.EVENT_BUS.post(event);
+		if (event.getResult() == Result.DENY) return;
 
-		for(int k = 0; k < 16; ++k) {
-			for(int l = 0; l < 16; ++l) {
-				BiomeGenBase biomegenbase = b[l + k * 16];
-				genBiomeTerrain(this.worldObj, this.rand, ba, by, i * 16 + k, j * 16 + l, this.stoneNoise[l + k * 16], biomegenbase);
+		double d0 = 0.03125D;
+		this.stoneNoise = this.noiseGen4.func_151599_a(this.stoneNoise, (double)(p_180517_1_ * 16), (double)(p_180517_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+
+		for (int k = 0; k < 16; ++k) {
+			for (int l = 0; l < 16; ++l) {
+				BiomeGenBase biomegenbase = p_180517_4_[l + k * 16];
+				generateBiomeTerrain(rand, p_180517_3_, p_180517_1_ * 16 + k, p_180517_2_ * 16 + l, this.stoneNoise[l + k * 16]);
 			}
 		}
 	}
 
-	public final void genBiomeTerrain(World w, Random rand, Block[] blocks, byte[] bytes, int i, int j, double d, BiomeGenBase b) {
+	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double n) {
 		boolean flag = true;
-		Block block = b.topBlock.getBlock();
-		Block block1 = b.fillerBlock.getBlock();
+		IBlockState iblockstate = EssenceBlocks.frozenGrass.getDefaultState();
+		IBlockState iblockstate1 = EssenceBlocks.frozenDirt.getDefaultState();
 		int k = -1;
-		int l = (int)(d / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int i1 = i & 15;
-		int j1 = j & 15;
-		int k1 = blocks.length / 256;
+		int l = 63;
+		int i1 = x & 15;
+		int j1 = z & 15;
 
-		for(int l1 = 255; l1 >= 0; --l1) {
-			int i2 = (j1 * 16 + i1) * k1 + l1;
-			if(l1 <= 0 + rand.nextInt(5)) {
-				blocks[i2] = Blocks.bedrock;
-			} else {
-				Block block2 = blocks[i2];
-				if(block2 != null && block2.getMaterial() != Material.air) {
-					if(block2 == EssenceBlocks.frozenStone) {
-						if(k == -1) {
-							if(l <= 0) {
-								block = null;
-								block1 = EssenceBlocks.frozenStone;
-							}
-							else if(l1 >= 59 && l1 <= 64) {
-								block = b.topBlock.getBlock();
-								block1 = b.fillerBlock.getBlock();
-							}
+		for (int k1 = 255; k1 >= 0; --k1) {
+			IBlockState iblockstate2 = c.getBlockState(j1, k1, i1);
 
-							if(l1 < 63 && (block == null || block.getMaterial() == Material.air)) {
-									block = EssenceBlocks.frozenStone;
-							}
-							k = l;
-							if(l1 >= 62) {
-								blocks[i2] = block;
-							}
-							else if(l1 < 56 - l) {
-								block = null;
-								block1 = EssenceBlocks.frozenStone;
-								blocks[i2] = EssenceBlocks.frozenStone;
-							} else {
-								blocks[i2] = block1;
-							}
-						}
-						else if(k > 0) {
-							--k;
-							blocks[i2] = block1;
-							if(k == 0 && block1 == EssenceBlocks.frozenStone){
-								k = rand.nextInt(4) + Math.max(0, l1 - 63);
-								block1 = EssenceBlocks.frozenStone;
-							}
-						}
+			if (iblockstate2.getBlock().getMaterial() == Material.air) {
+				k = -1;
+			}
+
+			else if (iblockstate2.getBlock() == EssenceBlocks.frozenStone) {
+				if (k == -1) {
+					if (l <= 0) {
+						iblockstate = null;
+						iblockstate1 = EssenceBlocks.frozenStone.getDefaultState();
 					}
-				} else {
-					k = -1;
+					else if (k1 >= 63 && k1 <= 63) {
+						iblockstate = EssenceBlocks.frozenGrass.getDefaultState();
+						iblockstate1 = EssenceBlocks.frozenDirt.getDefaultState();
+					}
+					k = l;
+					if (k1 >= 63) {
+						c.setBlockState(j1, k1, i1, iblockstate);
+					}
+					else if (k1 < 63) {
+						iblockstate = null;
+						iblockstate1 = EssenceBlocks.frozenStone.getDefaultState();
+						c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
+						c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+					} else {
+						c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
+						c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
+						c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+					}
+				}
+				else if (k > 0) {
+					--k;
+					c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
+					c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+					c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
+					c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
+					c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
+					c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
+					c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+				}
+
+				if(c.getBlockState(j1, 10, i1) != Blocks.air.getDefaultState()) {
+					for(int i = 10; i < 100; i++) {
+						c.setBlockState(j1, i, i1, Blocks.air.getDefaultState());
+					}
 				}
 			}
 		}
 	}
 
 	@Override
-	public Chunk provideChunk(int par1, int par2) {
-		this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
-		Block[] ablock = new Block[65536];
-		byte[] abyte = new byte[65536];
-		this.generate(par1, par2, ablock);
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
-		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
-		Chunk chunk = new Chunk(this.worldObj, par1, par2);
-		byte[] abyte1 = chunk.getBiomeArray();
+	public Chunk provideChunk(int x, int z) {
+		this.rand.setSeed((long)x * 341873128712L + (long)z * 132897987541L);
+		ChunkPrimer chunkprimer = new ChunkPrimer();
+		this.setBlocksInChunk(x, z, chunkprimer);
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
+		this.func_180517_a(x, z, chunkprimer, this.biomesForGeneration);
+		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
+		byte[] abyte = chunk.getBiomeArray();
 
-		for(int k = 0; k < abyte1.length; ++k)
-			abyte1[k] = (byte)this.biomesForGeneration[k].biomeID;
+		for (int k = 0; k < abyte.length; ++k) {
+			abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
+		}
 
 		chunk.generateSkylightMap();
 		return chunk;
@@ -260,8 +281,8 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 						if(biomegenbase1.minHeight > biomegenbase.minHeight)
 							f5 /= 2.0F;
 
-						f += f4 * f5;
-						f1 += f3 * f5;
+						f += f4 / f5;
+						f1 += f3 / f5;
 						f2 += f5;
 					}
 				}
@@ -325,40 +346,45 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public boolean chunkExists(int par1, int par2) {
+	public boolean chunkExists(int x, int z) {
 		return true;
 	}
 
 	@Override
-	public void populate(IChunkProvider par1IChunkProvider, int chunkX, int chunkZ) {
-		int x1 = chunkX * 16;
-		int z1 = chunkZ * 16;
+	public void populate(IChunkProvider c, int cx, int cz) {
+		int x1 = cx * 16;
+		int z1 = cz * 16;
 		int x, y, z, times;
-		
-		if(rand.nextInt(100) == 0){
-			y = (int) this.worldObj.getHorizon();
+
+		if(rand.nextInt(10) == 0){
+			y = rand.nextInt(200);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
 				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
 		}
-		
-		for(times = 0; times < 2; times++){
-			y = (int) this.worldObj.getHorizon();
+
+		for(times = 0; times < 100; times++) {
+			y = rand.nextInt(200);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air)
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
 				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
 		}
 	}
 
 	@Override
-	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate) {
+	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) { 
+		return false; 
+	}
+
+	@Override
+	public boolean saveChunks(boolean p_73151_1_, IProgressUpdate p_73151_2_) {
 		return true;
 	}
 
 	@Override
-	public void saveExtraData() { }
+	public void saveExtraData() {}
 
 	@Override
 	public boolean unloadQueuedChunks() {
@@ -372,7 +398,18 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 
 	@Override
 	public String makeString() {
-		return "Frozen Lands";
+		return "RandomLevelSource";
+	}
+
+	@Override
+	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p_177458_2_);
+		return biomegenbase.getSpawnableList(p_177458_1_);
+	}
+
+	@Override
+	public BlockPos getStrongholdGen(World worldIn, String p_180513_2_, BlockPos p_180513_3_) { 
+		return null; 
 	}
 
 	@Override
@@ -381,26 +418,10 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 	}
 
 	@Override
-	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
-		return false;
-	}
+	public void recreateStructures(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
 
 	@Override
-	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
-		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
-		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	public Chunk provideChunk(BlockPos blockPosIn) {
+		return this.provideChunk(blockPosIn.getX() >> 4, blockPosIn.getZ() >> 4);
 	}
-
-	@Override
-	public Chunk provideChunk(BlockPos pos) {
-		return this.provideChunk(pos.getX() >> 4, pos.getZ() >> 4);
-	}
-
-	@Override
-	public BlockPos getStrongholdGen(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
-		return null;
-	}
-
-	@Override
-	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) { }
 }

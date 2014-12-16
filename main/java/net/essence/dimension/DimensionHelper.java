@@ -51,7 +51,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 public class DimensionHelper {
 
 	protected static final BiomeGenBase.Height boilHeight = new BiomeGenBase.Height(0.0F, 0.9F); 
-	protected static final BiomeGenBase.Height frozenHeight = new BiomeGenBase.Height(-1.0F, 0.0F); 
+	protected static final BiomeGenBase.Height frozenHeight = new BiomeGenBase.Height(-1.0F, -1.0F); 
 
 	public static BiomeGenBase euca = new BiomeGenEuca(Config.eucaBiome);
 	public static BiomeGenBase depths = new BiomeGenDepths(Config.depthsBiome);

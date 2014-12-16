@@ -27,8 +27,7 @@ public class LogHelper {
 
     private static void log(Level level, Object msg) {
         FMLLog.log(SlayerAPI.MOD_NAME, level, "[Essence of the gods] " + msg.toString());
-        System.err.println(msg);
-        writeFile(msg);
+        if(SlayerAPI.DEVMODE) writeFile(msg);
     }
 
     public static void debug(Object msg) {

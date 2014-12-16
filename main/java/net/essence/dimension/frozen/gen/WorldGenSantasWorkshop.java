@@ -3,6 +3,7 @@ package net.essence.dimension.frozen.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.util.Helper;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemDoor;
@@ -17,6 +18,7 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
 		int i = p.getX(), j = p.getY(), k = p.getZ();
+		Helper.printCoords(p);
 		Block carpet = EssenceBlocks.workshopCarpet;
 		Block glass = EssenceBlocks.frozenGlass;
 		Block slab = EssenceBlocks.workshopSlab;
@@ -2812,8 +2814,8 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 15), glass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 16), glass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 12, j + 21, k + 17), glass.getDefaultState());
-		ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 8), EnumFacing.NORTH, door);
-		ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 9), EnumFacing.NORTH, door);
+		//ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 8), EnumFacing.NORTH, door);
+		//ItemDoor.placeDoor(world, new BlockPos(i + 0, j + 1, k + 9), EnumFacing.NORTH, door);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 4), Blocks.trapdoor.getStateFromMeta(10), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 13), Blocks.trapdoor.getStateFromMeta(10), 2);
 		world.setBlockState(new BlockPos(i + 8, j + 9, k + 1), Blocks.trapdoor.getStateFromMeta(8), 2);
