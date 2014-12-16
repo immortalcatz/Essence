@@ -1,5 +1,5 @@
 {
     "variants": {
-        "all": { "model": "half_slab_depths" }
+        "all": { "model": "essence:depthsSlab" }
     }
 }

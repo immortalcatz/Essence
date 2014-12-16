@@ -1,5 +1,5 @@
 {
     "variants": {
-        "all": { "model": "half_slab_euca" }
+        "all": { "model": "essence:eucaSlab" }
     }
 }

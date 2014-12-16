@@ -14,19 +14,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.slayer.api.EnumMaterialTypes;
 
-public class BlockModLog extends BlockRotatedPillar {
-	protected String name;
+public class BlockModLog extends BlockMod {
 
 	public BlockModLog(String name) {
-		super(Material.wood);
-		this.name = name;
-		setUnlocalizedName(name);
-		setHardness(3.0F);
-		setCreativeTab(EssenceTabs.blocks);
-		setStepSound(soundTypeWood);
-		EssenceBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
+		super(EnumMaterialTypes.WOOD, name, 3.0F);
 	}
 
 	@Override
@@ -37,28 +30,5 @@ public class BlockModLog extends BlockRotatedPillar {
 	@Override
 	public boolean canSustainLeaves(IBlockAccess world, BlockPos pos) {
 		return true;
-	}
-	
-	@Override
-	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-		/*int var10 = meta & 3;
-		byte var11 = 0;
-		switch (side) {
-		case 1:
-			var11 = 0;
-			break;
-		case 2:
-			var11 = 1;
-		case 3:
-			var11 = 8;
-			break;
-		case 4: 
-			var11 = 4;
-			break;
-		case 5:
-			var11 = 4;
-			break;
-		}*/
-		return worldIn.getBlockState(pos).getBlock().getStateFromMeta(meta);
 	}
 }

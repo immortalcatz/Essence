@@ -7,7 +7,11 @@ import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -16,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -24,12 +29,15 @@ import net.slayer.api.SlayerAPI;
 
 public class BlockGrindstone extends BlockContainer {
 
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+	
 	public BlockGrindstone(String name) {
 		super(EnumMaterialTypes.STONE.getMaterial());
 		setUnlocalizedName(name);
 		setStepSound(soundTypeStone);
 		setHardness(3.0F);
 		setCreativeTab(EssenceTabs.decoraton);
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -120,5 +128,34 @@ public class BlockGrindstone extends BlockContainer {
 		}
 		((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
 		return false;
+	}
+	
+	@Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing());
+	}
+
+	@Override
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+		EnumFacing enumfacing = EnumFacing.getHorizontal(MathHelper.floor_double((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3).getOpposite();
+		state = state.withProperty(FACING, enumfacing);
+		worldIn.setBlockState(pos, state, 2);
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		EnumFacing enumfacing = EnumFacing.getFront(meta);
+		if(enumfacing.getAxis() == EnumFacing.Axis.Y) enumfacing = EnumFacing.NORTH;
+		return this.getDefaultState().withProperty(FACING, enumfacing);
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing)state.getValue(FACING)).getIndex();
+	}
+
+	@Override
+	protected BlockState createBlockState() {
+		return new BlockState(this, new IProperty[] {FACING});
 	}
 }

@@ -4,6 +4,7 @@ import net.essence.EssenceBlocks;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.essence.client.render.mob.model.block.ModelGrindstone;
 import net.essence.util.GL11Helper;
+import net.essence.util.Helper;
 import net.essence.util.Textures;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -48,11 +49,27 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 	@Override
 	public void renderTileEntityAt(TileEntity e, double x, double y, double z, float f, int i) {
 		ModelGrindstone stone = new ModelGrindstone();
+		int rotation = 0;
+		if(e.getWorld() != null) rotation = e.getBlockMetadata();    
 		GL11.glPushMatrix();
 		bindTexture(Textures.grindstone);
 		GL11.glTranslated(x + 0.55, y + 2.3, z + 0.5);
 		GL11.glRotatef(180F, 0.0F, 0F, 1.0F);
 		float scale = 1.5F;
+		switch(rotation) {
+		case 5:
+			GL11.glRotatef(90, 0.0F, 1.0F, 0.0F);
+			break;
+		case 2:
+			GL11.glRotatef(180, 0.0F, 1.0F, 0.0F);
+			break;
+		case 3:
+			GL11.glRotatef(0, 0.0F, 1.0F, 0.0F);
+			break;
+		case 4:
+			GL11.glRotatef(-90, 0.0F, 1.0F, 0.0F);
+			break;
+		}
 		GL11.glScalef(scale, scale, scale);
 		if(((TileEntityGrindstone)e).isActivated()) {
 			stone.render(0.0625F, false, ((TileEntityGrindstone)e).getRotaton());
@@ -62,13 +79,27 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 		} else {
 			stone.render(0.0625F, true, 0F);
 		}
+		Helper.print(rotation);
 		GL11.glPopMatrix();
-
 		Item toRender = ((TileEntityGrindstone)e).itemOnGrind;
-
 		GL11.glPushMatrix();
 		if(toRender != null) {
-			GL11.glTranslated(x + 0.08, y + 1.2, z + 0.5);
+			switch(rotation) {
+			case 5:
+				GL11.glTranslated(x + 0.5, y + 1.2, z + 0.9);
+				GL11.glRotatef(90F, 0.0F, 1.0F, 0.0F);
+				break;
+			case 2:
+				GL11.glTranslated(x + 0.08, y + 1.2, z + 0.5);
+				break;
+			case 3:
+				GL11.glTranslated(x + 0.9, y + 1.2, z + 0.5);
+				break;
+			case 4:
+				GL11.glTranslated(x + 0.55, y + 1.2, z + 1.0);
+				GL11.glRotatef(90F, 0.0F, 1.0F, 0.0F);
+				break;
+			}
 			GL11Helper.scale(0.8F);
 			renderItem.renderItemModel(new ItemStack(toRender));
 		}

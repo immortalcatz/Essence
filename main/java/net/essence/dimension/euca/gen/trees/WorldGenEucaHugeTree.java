@@ -11,7 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
+public class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 
 	protected final int baseHeight;
 	protected final int woodMetadata;
@@ -143,5 +143,10 @@ public abstract class WorldGenEucaHugeTree extends WorldGenAbstractTree {
 
 	private void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
 		world.getBlockState(new BlockPos(x, y, z)).getBlock().onPlantGrow(world, new BlockPos(x, y, z), new BlockPos(sourceX, sourceY, sourceZ));
+	}
+
+	@Override
+	public boolean generate(World worldIn, Random p_180709_2_, BlockPos p_180709_3_) {
+		return false;
 	}
 }
