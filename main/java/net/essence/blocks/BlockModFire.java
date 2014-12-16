@@ -19,26 +19,21 @@ public class BlockModFire extends BlockFire {
 
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState s) {
-		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.eucaPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+		if(!EssenceBlocks.eucaPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.depthsPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+		if(!EssenceBlocks.depthsPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.boilPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+		if(!EssenceBlocks.boilPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-		if(world.provider.getDimensionId() > 0 || !EssenceBlocks.frozenPortal.makePortal(world, pos)) {
-			if (!World.doesBlockHaveSolidTopSurface(world, pos.down()) && !this.canNeighborBurn(world, pos.getX(), pos.getY(), pos.getZ())) world.setBlockToAir(pos);
+		if(!EssenceBlocks.frozenPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
-	}
-	
-	protected boolean canNeighborBurn(World world, int x, int y, int z) {
-		return this.canCatchFire(world, new BlockPos(x + 1, y, z), EnumFacing.WEST) || this.canCatchFire(world, new BlockPos(x - 1, y, z), EnumFacing.EAST) || this.canCatchFire(world, new BlockPos(x, y - 1, z), EnumFacing.UP) ||
-				this.canCatchFire(world, new BlockPos(x, y + 1, z), EnumFacing.DOWN) || this.canCatchFire(world, new BlockPos(x, y, z - 1), EnumFacing.SOUTH) || this.canCatchFire(world, new BlockPos(x, y, z + 1), EnumFacing.NORTH);
 	}
 }

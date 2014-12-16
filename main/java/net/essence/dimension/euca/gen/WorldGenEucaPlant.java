@@ -20,7 +20,7 @@ public class WorldGenEucaPlant extends WorldGenerator {
 	public boolean generate(World w, Random r, BlockPos p) {
 		for(int i = 0; i < 64; i++) {
 			BlockPos blockpos1 = new BlockPos(p.getX() + r.nextInt(8) - r.nextInt(8), p.getY() + r.nextInt(4) - r.nextInt(4), p.getZ() + r.nextInt(8) - r.nextInt(8));
-			if(this.flower.canBlockStay(w, blockpos1, false)) {
+			if(flower.canBlockStay(w, blockpos1, false) && w.canBlockSeeSky(blockpos1)) {
 				w.setBlockState(blockpos1, flower.getDefaultState(), 2);
 			}
 		}

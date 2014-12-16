@@ -6,7 +6,6 @@ import net.essence.*;
 import net.essence.entity.projectile.*;
 import net.essence.items.*;
 import net.essence.items.ItemEgg;
-import net.essence.items.block.ItemBlockSlab;
 import net.essence.util.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;

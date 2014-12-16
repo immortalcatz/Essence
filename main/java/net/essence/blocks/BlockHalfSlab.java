@@ -4,28 +4,23 @@ import java.util.Random;
 
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.SlayerAPI;
+import net.slayer.api.block.BlockMod;
 
-public class BlockHalfSlab extends BlockSlab {
+public class BlockHalfSlab extends BlockMod {
 
-	private Block full;
-
-	public BlockHalfSlab(String name, Block full) {
-		super(full.getMaterial());
+	public BlockHalfSlab(String name) {
+		super(name, 1.0F);
 		setCreativeTab(EssenceTabs.blocks);
-		setUnlocalizedName(name);
-		this.full = full;
 		setLightOpacity(255);
-		setHardness(full.getBlockHardness(null, null));
-		GameRegistry.registerBlock(this, name);
 	}
 
 	@Override
@@ -33,10 +28,15 @@ public class BlockHalfSlab extends BlockSlab {
 		return false;
 	}
 
-	/*@Override
-	public IIcon getIcon(int s, int m) {
-		return full.getBlockTextureFromSide(s);
-	}*/
+	@Override
+	public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos) {
+		this.setBlockBounds(0.0F, 0.5F, 0.0F, 1.0F, 1.0F, 1.0F);
+	}
+
+	@Override
+	public void setBlockBoundsForItemRender() {
+		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+	}
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
@@ -46,25 +46,5 @@ public class BlockHalfSlab extends BlockSlab {
 	@Override
 	public Item getItem(World worldIn, BlockPos pos) {
 		return SlayerAPI.toItem(this);
-	}
-
-	@Override
-	public boolean isDouble() {
-		return false;
-	}
-
-	@Override
-	public String getUnlocalizedName(int meta) {
-		return null;
-	}
-
-	@Override
-	public IProperty getVariantProperty() {
-		return null;
-	}
-
-	@Override
-	public Object getVariant(ItemStack stack) {
-		return null;
 	}
 }

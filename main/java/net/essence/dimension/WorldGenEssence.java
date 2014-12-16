@@ -33,8 +33,8 @@ public class WorldGenEssence implements IWorldGenerator {
 	private void generateBoilingPoint(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
 		if(rand.nextInt(4) == 0) GenerationHelper.generateEssenceDimensions(4, w, chunkX, chunkZ);
-		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(5, w, chunkX , chunkZ);
-		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions(3, w, chunkX , chunkZ);
+		for(i = 0; i < 50; i++) GenerationHelper.generateEssenceDimensions(5, w, chunkX , chunkZ);
+		for(i = 0; i < 40; i++) GenerationHelper.generateEssenceDimensions(3, w, chunkX , chunkZ);
 	}
 
 	private void generateDepths(World w, Random r, int chunkX, int chunkZ) {

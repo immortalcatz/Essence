@@ -39,11 +39,15 @@ public class BlockBoilPortal extends BlockBreakable {
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
-		setBlockUnbreakable();
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return null;
+	}
+	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
@@ -162,27 +166,6 @@ public class BlockBoilPortal extends BlockBreakable {
 				return true;
 			} else {
 				return false;
-			}
-		}
-	}
-
-	@Override
-	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
-		EnumFacing.Axis axis = (EnumFacing.Axis)state.getValue(field_176550_a);
-		BlockBoilPortal.Size size;
-
-		if (axis == EnumFacing.Axis.X) {
-			size = new BlockBoilPortal.Size(worldIn, pos, EnumFacing.Axis.X);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-			}
-		}
-		else if (axis == EnumFacing.Axis.Z) {
-			size = new BlockBoilPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
 			}
 		}
 	}

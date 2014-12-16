@@ -30,9 +30,7 @@ public class MusicEvent {
 			MusicTicker.MusicType musictype = this.mc.getAmbientMusicType();
 			if(this.curMusic == null && this.ticks-- <= 0) {
 				ResourceLocation resource = musictype.getMusicLocation();
-				
 				String name = "";
-				
 				switch(rand.nextInt(6)) {
 				case 0:
 					name = "underwaterWorld";

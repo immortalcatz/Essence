@@ -40,9 +40,12 @@ public class EssenceBlocks {
 	public static final Block shadiumBlockOverlay = new BlockModOre("shadiumBlock_overlay", -1).setCreativeTab(null);
 	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);*/
 
-	public static final Block halfSlab = new BlockModSlab(false);
-	public static final Block fullSlab = new BlockModSlab(true);
-
+	public static final BlockModSlab eucaSlab = new BlockModSlab(false, "eucaSlab");
+	public static final BlockModDoubleSlab eucaFullSlab = new BlockModDoubleSlab(true, "eucaDoubleSlab");
+	
+	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab");
+	public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
+	
 	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", 2.0F);
 	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
@@ -82,7 +85,7 @@ public class EssenceBlocks {
 	public static final Block ashBlock = new BlockMod(EnumMaterialTypes.STONE, "ash", "ashBlock");
 
 	public static final Block fire = new BlockModFire("fire");
-	public static final Block boilingFire = new BlockBoilingFire("boilingFire");
+	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", 2.0F);
 
@@ -148,7 +151,7 @@ public class EssenceBlocks {
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStone");
 	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock");
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
-	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab", workshopStone);
+	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab");
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");

@@ -1,60 +1,41 @@
 package net.slayer.api.block;
 
-import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.items.block.ItemBlockSlab;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.world.IBlockAccess;
+import net.slayer.api.EnumMaterialTypes;
 
-public class BlockModSlab extends BlockSlab {
+public class BlockModSlab extends BlockMod {
 
-	public static final String[] types = new String[] {"euca", "depths"};
-	private boolean full;
+	public boolean isFull;
 
-	public BlockModSlab(boolean full) {
-		super(Material.wood);
-		if(!full) this.setCreativeTab(EssenceTabs.decoraton);
-		setHardness(2.0F);
-		setStepSound(soundTypeWood);
-		setLightOpacity(255);
-		this.full = full;
-		String s = "";
-		if(full) s = "double";
-		else s = "half";
-		GameRegistry.registerBlock(this, ItemBlockSlab.class, s + "EssenceSlab");
+	public BlockModSlab(boolean full, String name) {
+		super(name, 1.0F);
+		isFull = full;
+		setCreativeTab(EssenceTabs.decoraton);
+		setStepSound(EnumMaterialTypes.WOOD.getSound());
+		setHardness(1.0F);
+		this.useNeighborBrightness = true;
 	}
 
 	@Override
-	public void onBlockAdded(World w, BlockPos pos, IBlockState s) {
-
+	public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos) {
+		if(isFull) {
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		} else {
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+		}
 	}
 
 	@Override
-	public boolean isDouble() {
-		return false;
-	}
-
-	@Override
-	public String getUnlocalizedName(int meta) {
-		return null;
-	}
-
-	@Override
-	public IProperty getVariantProperty() {
-		return null;
-	}
-
-	@Override
-	public Object getVariant(ItemStack stack) {
-		return null;
+	public void setBlockBoundsForItemRender() {
+		if(isFull) {
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		} else {
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+		}
 	}
 }

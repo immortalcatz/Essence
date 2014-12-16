@@ -122,7 +122,7 @@ public class RecipeHelper {
 		GameRegistry.addShapelessRecipe(new ItemStack(plank, 4), new Object[] {log});
 		GameRegistry.addRecipe(new ItemStack(stair, 4), new Object[] {"i  ", "ii ", "iii", 'i', plank});
 		GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object[] {"i", "i", 'i', plank});
-		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.halfSlab, 6, slabMeta), new Object[] {"iii", 'i', plank});
+		//GameRegistry.addRecipe(new ItemStack(EssenceBlocks.halfSlab, 6, slabMeta), new Object[] {"iii", 'i', plank});
 		if(smelt) GameRegistry.addSmelting(log, new ItemStack(Items.coal), 0.5F);
 	}
 

@@ -39,9 +39,13 @@ public class BlockEucaPortal extends BlockBreakable {
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
-		setBlockUnbreakable();
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
+	}
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return null;
 	}
 
 	@Override

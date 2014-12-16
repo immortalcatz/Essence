@@ -100,11 +100,11 @@ public class GenerationHelper {
 			(new WorldGenMinable(EssenceBlocks.ashual.getDefaultState(), 7, BlockHelper.forBlock(EssenceBlocks.ashBlock))).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 4:
-			y = r.nextInt(128) + 1; x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(200) + 1; x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenBoilingLava(Blocks.lava)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 5:
-			y = (int)w.getHorizon(); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(200) + 1; x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenBoilingFire()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 6:

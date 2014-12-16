@@ -1,11 +1,10 @@
 package net.essence.dimension.depths;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.minecraft.block.Block;
+import net.essence.dimension.depths.gen.WorldGenDepthsWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -19,7 +18,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ChunkProviderDepths implements IChunkProvider {
 
@@ -32,7 +30,8 @@ public class ChunkProviderDepths implements IChunkProvider {
 	private NoiseGeneratorPerlin field_147430_m;
 	private int[][] field_914_i = new int[32][32];
 	private double[] generatedTemperatures;
-
+	private WorldGenDepthsWater water1, water2;
+	
 	public ChunkProviderDepths(World var1, long var2){
 		this.worldObj = var1;
 		this.rand = new Random(var2);
@@ -44,6 +43,9 @@ public class ChunkProviderDepths implements IChunkProvider {
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
+		
+		water1 = new WorldGenDepthsWater(Blocks.flowing_water, true);
+		water2 = new WorldGenDepthsWater(Blocks.flowing_water, false);
 	}
 
 	@Override
@@ -263,6 +265,20 @@ public class ChunkProviderDepths implements IChunkProvider {
 		int x1 = i * 16;
 		int z1 = j * 16;
 		int x, y, z, times;
+		
+		for(times = 0; times < 16; times++){
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			water1.generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+
+		for(times = 0; times < 16; times++){
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			water2.generate(worldObj, rand, new BlockPos(x, y, z));
+		}
 	}
 
 	@Override

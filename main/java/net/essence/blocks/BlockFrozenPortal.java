@@ -39,7 +39,6 @@ public class BlockFrozenPortal extends BlockBreakable {
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
-		setBlockUnbreakable();
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
@@ -167,26 +166,10 @@ public class BlockFrozenPortal extends BlockBreakable {
 	}
 
 	@Override
-	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
-		EnumFacing.Axis axis = (EnumFacing.Axis)state.getValue(field_176550_a);
-		BlockFrozenPortal.Size size;
-
-		if (axis == EnumFacing.Axis.X) {
-			size = new BlockFrozenPortal.Size(worldIn, pos, EnumFacing.Axis.X);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-			}
-		}
-		else if (axis == EnumFacing.Axis.Z) {
-			size = new BlockFrozenPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
-
-			if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g) {
-				worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-			}
-		}
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return null;
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World w, BlockPos pos) {

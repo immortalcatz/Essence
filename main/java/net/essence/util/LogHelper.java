@@ -31,23 +31,23 @@ public class LogHelper {
     }
 
     public static void debug(Object msg) {
-        if(SlayerAPI.DEVMODE) log(Level.DEBUG, "[Essence of the gods] " + "[DEBUG] " + msg);
+        if(SlayerAPI.DEVMODE) log(Level.DEBUG, "[DEBUG] " + msg);
     }
 
     public static void error(Object msg) {
-        log(Level.ERROR, "[Essence of the gods] " + msg);
+        log(Level.ERROR, msg);
     }
 
     public static void info(Object msg) {
-        log(Level.INFO, "[Essence of the gods] " + msg);
+        log(Level.INFO, msg);
     }
 
     public static void warn(Object msg) {
-        log(Level.WARN, "[Essence of the gods] " + msg);
+        log(Level.WARN, msg);
     }
 
     public static void dev(Object msg) {
-        log(Level.INFO, "[Essence of the gods] " + "[DEVELOPMENT] " + msg);
+        log(Level.INFO, msg);
     }
     
     public static void writeFile(Object msg){
