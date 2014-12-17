@@ -216,7 +216,7 @@ public class EssenceItems {
 	public static final Item spawners = new ItemSpawnEggs();
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	public static final Item chisel = new ItemChisel(ToolMaterial.IRON, "chisel");
+	//public static final Item chisel = new ItemChisel(ToolMaterial.IRON, "chisel");
 	
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 10, false, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 10, true, false, EntityFireBall.class);
