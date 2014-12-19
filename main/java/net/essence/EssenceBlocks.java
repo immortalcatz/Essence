@@ -41,10 +41,10 @@ public class EssenceBlocks {
 	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);*/
 
 	public static final BlockModSlab eucaSlab = new BlockModSlab(false, "eucaSlab");
-	public static final BlockModDoubleSlab eucaFullSlab = new BlockModDoubleSlab(true, "eucaDoubleSlab");
+	//public static final BlockModDoubleSlab eucaFullSlab = new BlockModDoubleSlab(true, "eucaDoubleSlab");
 	
 	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab");
-	public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
+	//public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
 	
 	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", 2.0F);
 	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
@@ -123,7 +123,7 @@ public class EssenceBlocks {
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
 
-	public static final Block enrichedEnchantmentTable = new BlockEnrichedEnchantmentTable("enrichedEnchantmentTable");
+	//public static final Block enrichedEnchantmentTable = new BlockEnrichedEnchantmentTable("enrichedEnchantmentTable");
 	
 	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);

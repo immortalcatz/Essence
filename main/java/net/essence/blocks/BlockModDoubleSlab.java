@@ -16,10 +16,10 @@ public class BlockModDoubleSlab extends BlockModSlab {
 		setCreativeTab(null);
 	}
 
-	@Override
+	/*@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World world, BlockPos pos){
 		Block b = this == EssenceBlocks.eucaFullSlab ? EssenceBlocks.eucaSlab : this == EssenceBlocks.depthsFullSlab ? EssenceBlocks.depthsSlab : null;
 		return Item.getItemFromBlock(b);
-	}
+	}*/
 }

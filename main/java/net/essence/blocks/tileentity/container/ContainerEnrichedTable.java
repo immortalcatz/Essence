@@ -246,7 +246,8 @@ public class ContainerEnrichedTable extends Container {
 
 	@Override
 	public boolean canInteractWith(EntityPlayer par1EntityPlayer) {
-		return this.worldPointer.getBlockState(pos) != EssenceBlocks.enrichedEnchantmentTable ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+		//return this.worldPointer.getBlockState(pos) != EssenceBlocks.enrichedEnchantmentTable ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+		return false;
 	}
  
 	@Override

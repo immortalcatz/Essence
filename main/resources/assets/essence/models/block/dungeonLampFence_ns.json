@@ -1,6 +1,6 @@
 {
     "parent": "block/fence_ns",
     "textures": {
-        "texture": "essence:blocks/dungeonLampFence"
+        "texture": "essence:blocks/dungeonLamp"
     }
 }
