@@ -1,0 +1,4 @@
+I started this update log at the 1.8 release, so sorry if it doesnt have anything before 1.8
+
+Version 1.8 Beta v1
+Updated the mod to version 1.8, Minecraft 1.8. Also changed the way that Euca generates started 
