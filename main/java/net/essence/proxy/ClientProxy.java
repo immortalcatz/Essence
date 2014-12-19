@@ -43,8 +43,6 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.storageBlocks2, names2);
 		registerModelBakery(EssenceBlocks.storageBlocks3, names3);
 		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
-		registerModelBakery(EssenceItems.spawners, new String[] {SlayerAPI.PREFIX + "spawnerRobot"});
-
 	}
 
 	@Override
@@ -91,8 +89,6 @@ public class ClientProxy extends CommonProxy {
 		registerItem(EssenceItems.flameBow, 1, "flameBow_0");
 		registerItem(EssenceItems.flameBow, 2, "flameBow_1");
 		registerItem(EssenceItems.flameBow, 3, "flameBow_2");
-
-		registerItem(EssenceItems.spawners, 0, "spawnerRobot");
 		
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");

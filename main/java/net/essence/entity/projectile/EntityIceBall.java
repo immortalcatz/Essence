@@ -5,6 +5,8 @@ import java.util.Random;
 import net.essence.client.render.particles.EntityIceballFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -34,6 +36,7 @@ public class EntityIceBall extends EntityBasicProjectile {
 	protected void onImpact(MovingObjectPosition var1) {
 		if(var1.entityHit != null) { 
 			var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), getDamage());
+			((EntityLivingBase)var1.entityHit).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 5));
 		}
 		if(!worldObj.isRemote) this.setDead();
 	}

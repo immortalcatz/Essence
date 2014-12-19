@@ -1,12 +1,14 @@
 package net.essence.client;
 
 import net.essence.util.Config;
+import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
@@ -28,6 +30,7 @@ public class PlayerStats {
 				event.setCanceled(true);
 			if(!Minecraft.getMinecraft().playerController.shouldDrawHUD() || !event.isCanceled()) return;
 			mc.mcProfiler.endSection();
+
 		}
 	}
 
@@ -37,6 +40,7 @@ public class PlayerStats {
 		FontRenderer font = mc.fontRendererObj;
 		EntityPlayer player = mc.thePlayer;
 		if(mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
+			if(!mc.gameSettings.showDebugInfo) mc.fontRendererObj.drawString(EnumChatFormatting.DARK_GREEN + "Essence of the Gods beta: " + EnumChatFormatting.DARK_RED + "1.8 b1", 5, 5, 0);
 			if(!player.capabilities.isCreativeMode) {
 				mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
 				float health = player.getHealth() * 5F;

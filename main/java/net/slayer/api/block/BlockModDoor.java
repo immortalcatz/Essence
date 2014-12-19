@@ -2,6 +2,8 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -39,36 +41,40 @@ public class BlockModDoor extends BlockMod {
 
     public BlockModDoor(EnumMaterialTypes t, float h, String name) {
         super(t, name, h);
+        setCreativeTab(null);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING_PROP, EnumFacing.NORTH).withProperty(OPEN_PROP, Boolean.valueOf(false)).withProperty(HINGEPOSITION_PROP, BlockModDoor.EnumHingePosition.LEFT).withProperty(POWERED_PROP, Boolean.valueOf(false)).withProperty(HALF_PROP, BlockModDoor.EnumDoorHalf.LOWER));
     }
 
+    @Override
     public boolean isOpaqueCube() {
         return false;
     }
 
+    @Override
     public boolean isPassable(IBlockAccess blockAccess, BlockPos pos) {
         return func_176516_g(func_176515_e(blockAccess, pos));
     }
 
+    @Override
     public boolean isFullCube() {
         return false;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public AxisAlignedBB getSelectedBoundingBox(World worldIn, BlockPos pos)
-    {
+    public AxisAlignedBB getSelectedBoundingBox(World worldIn, BlockPos pos) {
         this.setBlockBoundsBasedOnState(worldIn, pos);
         return super.getSelectedBoundingBox(worldIn, pos);
     }
 
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)
-    {
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
         this.setBlockBoundsBasedOnState(worldIn, pos);
         return super.getCollisionBoundingBox(worldIn, pos, state);
     }
 
-    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos)
-    {
+    @Override
+    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
         this.func_150011_b(func_176515_e(access, pos));
     }
 
@@ -145,23 +151,17 @@ public class BlockModDoor extends BlockMod {
         }
     }
 
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
-        if (this.blockMaterial == Material.iron)
-        {
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (this.blockMaterial == Material.iron) {
             return false; //Allow items to interact with the door
-        }
-        else
-        {
+        } else {
             BlockPos blockpos1 = state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? pos : pos.down();
             IBlockState iblockstate1 = pos.equals(blockpos1) ? state : worldIn.getBlockState(blockpos1);
 
-            if (iblockstate1.getBlock() != this)
-            {
+            if (iblockstate1.getBlock() != this) {
                 return false;
-            }
-            else
-            {
+            } else {
                 state = iblockstate1.cycleProperty(OPEN_PROP);
                 worldIn.setBlockState(blockpos1, state, 2);
                 worldIn.markBlockRangeForRenderUpdate(blockpos1, pos);
@@ -171,17 +171,14 @@ public class BlockModDoor extends BlockMod {
         }
     }
 
-    public void func_176512_a(World worldIn, BlockPos p_176512_2_, boolean p_176512_3_)
-    {
+    public void func_176512_a(World worldIn, BlockPos p_176512_2_, boolean p_176512_3_) {
         IBlockState iblockstate = worldIn.getBlockState(p_176512_2_);
 
-        if (iblockstate.getBlock() == this)
-        {
+        if (iblockstate.getBlock() == this) {
             BlockPos blockpos1 = iblockstate.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER ? p_176512_2_ : p_176512_2_.down();
             IBlockState iblockstate1 = p_176512_2_ == blockpos1 ? iblockstate : worldIn.getBlockState(blockpos1);
 
-            if (iblockstate1.getBlock() == this && ((Boolean)iblockstate1.getValue(OPEN_PROP)).booleanValue() != p_176512_3_)
-            {
+            if (iblockstate1.getBlock() == this && ((Boolean)iblockstate1.getValue(OPEN_PROP)).booleanValue() != p_176512_3_) {
                 worldIn.setBlockState(blockpos1, iblockstate1.withProperty(OPEN_PROP, Boolean.valueOf(p_176512_3_)), 2);
                 worldIn.markBlockRangeForRenderUpdate(blockpos1, p_176512_2_);
                 worldIn.playAuxSFXAtEntity((EntityPlayer)null, p_176512_3_ ? 1003 : 1006, p_176512_2_, 0);
@@ -189,62 +186,48 @@ public class BlockModDoor extends BlockMod {
         }
     }
 
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock)
-    {
-        if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER)
-        {
+    @Override
+    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
+        if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER) {
             BlockPos blockpos1 = pos.down();
             IBlockState iblockstate1 = worldIn.getBlockState(blockpos1);
 
-            if (iblockstate1.getBlock() != this)
-            {
+            if (iblockstate1.getBlock() != this) {
                 worldIn.setBlockToAir(pos);
             }
-            else if (neighborBlock != this)
-            {
+            else if (neighborBlock != this) {
                 this.onNeighborBlockChange(worldIn, blockpos1, iblockstate1, neighborBlock);
             }
-        }
-        else
-        {
+        } else {
             boolean flag1 = false;
             BlockPos blockpos2 = pos.up();
             IBlockState iblockstate2 = worldIn.getBlockState(blockpos2);
 
-            if (iblockstate2.getBlock() != this)
-            {
+            if (iblockstate2.getBlock() != this) {
                 worldIn.setBlockToAir(pos);
                 flag1 = true;
             }
 
-            if (!World.doesBlockHaveSolidTopSurface(worldIn, pos.down()))
-            {
+            if (!World.doesBlockHaveSolidTopSurface(worldIn, pos.down())) {
                 worldIn.setBlockToAir(pos);
                 flag1 = true;
 
-                if (iblockstate2.getBlock() == this)
-                {
+                if (iblockstate2.getBlock() == this) {
                     worldIn.setBlockToAir(blockpos2);
                 }
             }
 
-            if (flag1)
-            {
-                if (!worldIn.isRemote)
-                {
+            if (flag1) {
+                if (!worldIn.isRemote) {
                     this.dropBlockAsItem(worldIn, pos, state, 0);
                 }
-            }
-            else
-            {
+            } else {
                 boolean flag = worldIn.isBlockPowered(pos) || worldIn.isBlockPowered(blockpos2);
 
-                if ((flag || neighborBlock.canProvidePower()) && neighborBlock != this && flag != ((Boolean)iblockstate2.getValue(POWERED_PROP)).booleanValue())
-                {
+                if ((flag || neighborBlock.canProvidePower()) && neighborBlock != this && flag != ((Boolean)iblockstate2.getValue(POWERED_PROP)).booleanValue()) {
                     worldIn.setBlockState(blockpos2, iblockstate2.withProperty(POWERED_PROP, Boolean.valueOf(flag)), 2);
 
-                    if (flag != ((Boolean)state.getValue(OPEN_PROP)).booleanValue())
-                    {
+                    if (flag != ((Boolean)state.getValue(OPEN_PROP)).booleanValue()) {
                         worldIn.setBlockState(pos, state.withProperty(OPEN_PROP, Boolean.valueOf(flag)), 2);
                         worldIn.markBlockRangeForRenderUpdate(pos, pos);
                         worldIn.playAuxSFXAtEntity((EntityPlayer)null, flag ? 1003 : 1006, pos, 0);
@@ -254,29 +237,28 @@ public class BlockModDoor extends BlockMod {
         }
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER ? null : this.func_176509_j();
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER ? null : getItem();
     }
 
-    public MovingObjectPosition collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end)
-    {
+    @Override
+    public MovingObjectPosition collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end) {
         this.setBlockBoundsBasedOnState(worldIn, pos);
         return super.collisionRayTrace(worldIn, pos, start, end);
     }
 
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-    {
+    @Override
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
         return pos.getY() >= worldIn.getHeight() - 1 ? false : World.doesBlockHaveSolidTopSurface(worldIn, pos.down()) && super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up());
     }
 
-    public int getMobilityFlag()
-    {
+    @Override
+    public int getMobilityFlag() {
         return 1;
     }
 
-    public static int func_176515_e(IBlockAccess p_176515_0_, BlockPos p_176515_1_)
-    {
+    public static int func_176515_e(IBlockAccess p_176515_0_, BlockPos p_176515_1_) {
         IBlockState iblockstate = p_176515_0_.getBlockState(p_176515_1_);
         int i = iblockstate.getBlock().getMetaFromState(iblockstate);
         boolean flag = func_176518_i(i);
@@ -291,66 +273,54 @@ public class BlockModDoor extends BlockMod {
         return func_176510_b(k) | (flag ? 8 : 0) | (flag1 ? 16 : 0) | (flag2 ? 32 : 0);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public Item getItem(World worldIn, BlockPos pos)
-    {
-        return this.func_176509_j();
+    public Item getItem(World worldIn, BlockPos pos) {
+        return getItem();
     }
-
-    private Item func_176509_j()
-    {
-        return this == Blocks.iron_door ? Items.iron_door : (this == Blocks.spruce_door ? Items.spruce_door : (this == Blocks.birch_door ? Items.birch_door : (this == Blocks.jungle_door ? Items.jungle_door : (this == Blocks.acacia_door ? Items.acacia_door : (this == Blocks.dark_oak_door ? Items.dark_oak_door : Items.oak_door)))));
+    
+    private Item getItem() {
+    	return this == EssenceBlocks.hotDoor ? EssenceItems.hotDoorItem : null;
     }
-
-    public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn)
-    {
+    
+    @Override
+    public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn) {
         BlockPos blockpos1 = pos.down();
-
-        if (playerIn.capabilities.isCreativeMode && state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER && worldIn.getBlockState(blockpos1).getBlock() == this)
-        {
+        if (playerIn.capabilities.isCreativeMode && state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.UPPER && worldIn.getBlockState(blockpos1).getBlock() == this) {
             worldIn.setBlockToAir(blockpos1);
         }
     }
 
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
+    @Override
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         IBlockState iblockstate1;
-
-        if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER)
-        {
+        if (state.getValue(HALF_PROP) == BlockModDoor.EnumDoorHalf.LOWER) {
             iblockstate1 = worldIn.getBlockState(pos.up());
-
-            if (iblockstate1.getBlock() == this)
-            {
+            if (iblockstate1.getBlock() == this) {
                 state = state.withProperty(HINGEPOSITION_PROP, iblockstate1.getValue(HINGEPOSITION_PROP)).withProperty(POWERED_PROP, iblockstate1.getValue(POWERED_PROP));
             }
-        }
-        else
-        {
+        } else {
             iblockstate1 = worldIn.getBlockState(pos.down());
-
-            if (iblockstate1.getBlock() == this)
-            {
+            if (iblockstate1.getBlock() == this) {
                 state = state.withProperty(FACING_PROP, iblockstate1.getValue(FACING_PROP)).withProperty(OPEN_PROP, iblockstate1.getValue(OPEN_PROP));
             }
         }
-
         return state;
     }
 
-    public IBlockState getStateFromMeta(int meta)
-    {
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
         return (meta & 8) > 0 ? this.getDefaultState().withProperty(HALF_PROP, BlockModDoor.EnumDoorHalf.UPPER).withProperty(HINGEPOSITION_PROP, (meta & 1) > 0 ? BlockModDoor.EnumHingePosition.RIGHT : BlockModDoor.EnumHingePosition.LEFT).withProperty(POWERED_PROP, Boolean.valueOf((meta & 2) > 0)) : this.getDefaultState().withProperty(HALF_PROP, BlockModDoor.EnumDoorHalf.LOWER).withProperty(FACING_PROP, EnumFacing.getHorizontal(meta & 3).rotateYCCW()).withProperty(OPEN_PROP, Boolean.valueOf((meta & 4) > 0));
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer()
-    {
+    public EnumWorldBlockLayer getBlockLayer() {
         return EnumWorldBlockLayer.CUTOUT;
     }
 
-    public int getMetaFromState(IBlockState state)
-    {
+    @Override
+    public int getMetaFromState(IBlockState state) {
         byte b0 = 0;
         int i;
 
@@ -416,6 +386,7 @@ public class BlockModDoor extends BlockMod {
         return (p_176513_0_ & 16) != 0;
     }
 
+    @Override
     protected BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[] {HALF_PROP, FACING_PROP, OPEN_PROP, HINGEPOSITION_PROP, POWERED_PROP});
@@ -425,8 +396,6 @@ public class BlockModDoor extends BlockMod {
     {
         UPPER,
         LOWER;
-
-        private static final String __OBFID = "CL_00002124";
 
         public String toString()
         {
@@ -443,8 +412,6 @@ public class BlockModDoor extends BlockMod {
     {
         LEFT,
         RIGHT;
-
-        private static final String __OBFID = "CL_00002123";
 
         public String toString()
         {

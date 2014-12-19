@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "essence:boilingFire"}
-	}
+    "variants": {
+        "normal": { "model": "fire_floor_main" }
+    }
 }

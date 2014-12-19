@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
@@ -27,7 +28,6 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
@@ -50,7 +50,7 @@ import org.lwjgl.opengl.GL11;
 
 public class SlayerAPI {
 
-	public static int mobID = 400, projectileID = 230;
+	public static int mobID = 350, projectileID = 230, entityListID = 3000;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
 	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "1.7"; 
@@ -99,18 +99,18 @@ public class SlayerAPI {
 		FMLCommonHandler.instance().bus().register(o);
 	}
 
-	public static void registerMob(Class entityClass, String entityName, int ID) {
-		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
-		EssenceEntityList.addMapping(entityClass, entityName, ID, 0x123123, 0x321321);
+	public static void registerMob(Class entityClass, String entityName) {
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+        EntityList.addMapping(entityClass, entityName, entityListID++, 0x123123, 0x321321);
 	}
 	
 	public static void registerEntity(Class entityClass, String entityName, int ID) {
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
 	}
 
-	public static void registerBossMob(Class entityClass, String entityName, int ID) {
-		EssenceEntityList.addMapping(entityClass, entityName, ID, 0x000000, 0x9B0000);
-		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
+	public static void registerBossMob(Class entityClass, String entityName) {
+        EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+        EntityList.addMapping(entityClass, entityName, entityListID++, 0x000000, 0x9B0000);
 	}
 
 	public static void registerProjectile(Class entityClass, String entityName) {

@@ -22,7 +22,7 @@ public class ItemFreezeSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 5));
-		hit.setFire(0);
+		hit.extinguish();
 		return super.hitEntity(par1ItemStack, hit, player);
 	}
 

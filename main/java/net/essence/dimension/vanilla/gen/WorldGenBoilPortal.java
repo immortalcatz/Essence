@@ -68,7 +68,7 @@ public class WorldGenBoilPortal extends WorldGenerator {
 		for(int x1 = 0; x1 < 5; x1++) {
 			for(int z1 = 0; z1 < 6; z1++) {
 				for(int y1 = 0; y1 < 6; y1++) {
-					if(w.getBlockState(new BlockPos(x + x1, y, z + z1)) == Blocks.netherrack && w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == Blocks.air) {
+					if(w.getBlockState(new BlockPos(x + x1, y, z + z1)) == Blocks.netherrack.getDefaultState() && w.getBlockState(new BlockPos(x + x1, y + y1, z + z1)) == Blocks.air.getDefaultState()) {
 						canSpawn = true;
 						break;
 					}
