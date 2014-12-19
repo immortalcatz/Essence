@@ -23,7 +23,7 @@ import net.slayer.api.SlayerAPI;
 public class BlockMod extends Block{
 
 	protected EnumMaterialTypes blockType;
-	protected Item drop;
+	protected Item drop = null;
 	protected Random rand;
 	public int boostBrightnessLow;
 	public int boostBrightnessHigh;
@@ -32,6 +32,10 @@ public class BlockMod extends Block{
 
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
+	}
+	
+	public BlockMod(String name) {
+		this(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
 	}
 	
 	public BlockMod(EnumMaterialTypes type, String name, float hardness) {

@@ -4,6 +4,7 @@ import static net.minecraftforge.common.EnumPlantType.Plains;
 
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -47,7 +48,8 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	protected void checkAndDropBlock(World w, BlockPos pos, IBlockState s) {
 		if(!this.canBlockStay(w, pos, true)) {
-			this.dropBlockAsItem(w, pos, s, 0);
+			if(this != EssenceBlocks.eucaTallGrass)
+				this.dropBlockAsItem(w, pos, s, 0);
 			w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
 		}
 	}

@@ -1,6 +1,6 @@
 {
-	"parent": "block/cube_all",
+	"parent": "block/cross",
 	"textures": {
-		"all": "blocks/fire_0"
+		"cross": "blocks/fire_layer_0"
 	}
 }

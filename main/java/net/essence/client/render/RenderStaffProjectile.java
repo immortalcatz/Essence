@@ -42,7 +42,10 @@ public class RenderStaffProjectile extends Render {
         GL11.glPushMatrix();
         this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
+        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GL11.glPushMatrix();
         GL11.glColor4f(red, green, blue, 1.0F);
+        GL11.glPopMatrix();
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);
         Tessellator t = Tessellator.getInstance();

@@ -17,22 +17,27 @@ public class EssenceBlocks {
 
 	public static ArrayList<String> blockName = new ArrayList<String>();
 	
-	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", 3.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block celestiumOre = new BlockModOre("celestiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block luniumOre = new BlockModOre("luniumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block shadiumOre = new BlockModOre("shadiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block flairiumOre = new BlockModOre("flairiumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block ashual = new BlockModOre("ashual", 2.0F);
-	public static final Block sapphireOre = new BlockModOre("sapphireOre", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block enderilliumOre = new BlockModOre("enderilliumOre", 2.0F).setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block hellstoneOre = new BlockModOre("hellstoneOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block celestiumOre = new BlockModOre("celestiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block luniumOre = new BlockModOre("luniumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block shadiumOre = new BlockModOre("shadiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block ashual = new BlockModOre("ashual");
+	public static final Block sapphireOre = new BlockModOre("sapphireOre").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block enderilliumOre = new BlockModOre("enderilliumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 
-	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", 3.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block luniumBlock = new BlockModOre("luniumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block flairiumBlock = new BlockModOre("flairiumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block enderilliumBlock = new BlockModOre("enderilliumBlock", 2.0F).setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block celestiumBlock = new BlockModOre("celestiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block luniumBlock = new BlockModOre("luniumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block shadiumBlock = new BlockModOre("shadiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block flairiumBlock = new BlockModOre("flairiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block sapphireBlock = new BlockModOre("sapphireBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block enderilliumBlock = new BlockModOre("enderilliumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+
+	public static final Block greenGemBlock = new BlockMod("greenGemBlock");
+	public static final Block purpleGemBlock = new BlockMod("purpleGemBlock");
+	public static final Block blueGemBlock = new BlockMod("blueGemBlock");
+	public static final Block yellowGemBlock = new BlockMod("yellowGemBlock");
 
 	/*public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
 	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
@@ -132,7 +137,9 @@ public class EssenceBlocks {
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
-	public static final Block glowshroom = new BlockGlowshroom("glowshroom");
+	public static final Block glowshroomTop = new BlockGlowshroom("glowshroomTop", true);
+	public static final Block glowshroomBottom = new BlockGlowshroom("glowshroomBottom", false);
+
 	public static final Block caveVine = new BlockCaveVine("caveVine");
 	
 	public static final Block storageBlocks = new BlockStorageBlocks();
@@ -158,4 +165,6 @@ public class EssenceBlocks {
 	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
 	
 	public static final Block grindstone = new BlockGrindstone("grindstone");
+	
+	public static final Block gemBlock = new BlockGemBlock("gemBlock");
 }

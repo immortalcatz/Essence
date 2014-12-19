@@ -24,26 +24,19 @@ public class ItemModDoor extends ItemMod {
 	}
 
 	@Override
-    public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if (side != EnumFacing.UP) {
-            return false;
-        } else {
-            IBlockState iblockstate = worldIn.getBlockState(pos);
-            Block block = iblockstate.getBlock();
-
-            if(!block.isReplaceable(worldIn, pos)) {
-                pos = pos.offset(side);
-            }
-            if(!playerIn.canPlayerEdit(pos, side, stack)) {
-                return false;
-            }
-            else if(!this.door.canPlaceBlockAt(worldIn, pos)) {
-                return false;
-            } else {
-                ItemDoor.placeDoor(worldIn, pos, EnumFacing.fromAngle((double)playerIn.rotationYaw), this.door);
-                stack.stackSize--;
-                return true;
-            }
-        }
-    }
+	public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
+		if(side != EnumFacing.UP) return false;
+		else {
+			IBlockState iblockstate = worldIn.getBlockState(pos);
+			Block block = iblockstate.getBlock();
+			if(!block.isReplaceable(worldIn, pos)) pos = pos.offset(side);
+			if(!playerIn.canPlayerEdit(pos, side, stack)) return false;
+			else if(!this.door.canPlaceBlockAt(worldIn, pos)) return false;
+			else {
+				ItemDoor.placeDoor(worldIn, pos, EnumFacing.fromAngle((double)playerIn.rotationYaw), this.door);
+				stack.stackSize--;
+				return true;
+			}
+		}
+	}
 }

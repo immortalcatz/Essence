@@ -79,7 +79,6 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 		} else {
 			stone.render(0.0625F, true, 0F);
 		}
-		Helper.print(rotation);
 		GL11.glPopMatrix();
 		Item toRender = ((TileEntityGrindstone)e).itemOnGrind;
 		GL11.glPushMatrix();

@@ -23,8 +23,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockModOre extends BlockMod {
 
-	public BlockModOre(String name, float hardness) {
-		super(name, hardness);
+	public BlockModOre(String name) {
+		super(name);
 	}
 
 	public int boostBrightnessLow;

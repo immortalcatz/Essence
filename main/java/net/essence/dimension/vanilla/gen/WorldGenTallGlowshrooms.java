@@ -12,12 +12,10 @@ public class WorldGenTallGlowshrooms extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
-		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
 		for(int i = 0; i < 50; i++) {
-			if(w.getBlockState(new BlockPos(x, y, z)) == Blocks.stone && w.getBlockState(new BlockPos(x, y, z)) == Blocks.air && w.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air && y < 60) {
-				w.setBlockState(new BlockPos(x, y, z), Blocks.stone.getDefaultState(), 2);
-				w.setBlockState(new BlockPos(x, y + 1, z), EssenceBlocks.glowshroom.getStateFromMeta(0), 2);
-				w.setBlockState(new BlockPos(x, y + 2, z), EssenceBlocks.glowshroom.getStateFromMeta(1), 2);
+			if(w.getBlockState(pos.down()) == Blocks.stone.getDefaultState() && w.getBlockState(pos) == Blocks.air.getDefaultState() && w.getBlockState(pos.up()) == Blocks.air.getDefaultState() && pos.getY() < 60) {
+				w.setBlockState(pos, EssenceBlocks.glowshroomBottom.getDefaultState(), 2);
+				w.setBlockState(pos.up(), EssenceBlocks.glowshroomTop.getDefaultState(), 2);
 			}
 		}
 		return true;

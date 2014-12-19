@@ -197,6 +197,11 @@ public class EntityEucaHopper extends EntityModTameable {
 		}
 		else return false;
 	}
+	
+	@Override
+	public int getMaxSpawnedInChunk() {
+		return 2;
+	}
 
 	@Override
 	public String setLivingSound() {

@@ -220,6 +220,11 @@ public class EssenceItems {
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 8, true, false, EntityIceBall.class);
 
+	public static final Item greenGem = new ItemMod("greenGem");
+	public static final Item purpleGem = new ItemMod("purpleGem");
+	public static final Item blueGem = new ItemMod("blueGem");
+	public static final Item yellowGem = new ItemMod("yellowGem");
+
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

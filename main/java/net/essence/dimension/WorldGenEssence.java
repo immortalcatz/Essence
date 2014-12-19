@@ -62,11 +62,11 @@ public class WorldGenEssence implements IWorldGenerator {
 		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(3, w, chunkX, chunkZ);
 		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(2, w, chunkX, chunkZ);
 		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(4, w, chunkX, chunkZ);
-		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla(1, w, chunkX, chunkZ);
-		for(i = 0; i < 60; i++) GenerationHelper.generateVanilla(0, w, chunkX, chunkZ);
+		for(i = 0; i < 100; i++) GenerationHelper.generateVanilla(1, w, chunkX, chunkZ);
+		for(i = 0; i < 100; i++) GenerationHelper.generateVanilla(0, w, chunkX, chunkZ);
 		for(i = 0; i < 50; i++) GenerationHelper.generateVanilla(7, w, chunkX, chunkZ);
 		if(rand.nextInt(3) == 0) GenerationHelper.generateVanilla(8, w, chunkX, chunkZ);
-		for(i = 0; i < 15; i++) GenerationHelper.generateVanilla(9, w, chunkX, chunkZ);
+		for(i = 0; i < 50; i++) GenerationHelper.generateVanilla(9, w, chunkX, chunkZ);
 		//if(rand.nextInt(200) == 0) GenerationHelper.generateVanilla(10, w, chunkX, chunkZ);
 	}
 
