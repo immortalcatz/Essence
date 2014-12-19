@@ -20,6 +20,11 @@ public class BlockModSlab extends BlockMod {
 		setHardness(1.0F);
 		this.useNeighborBrightness = true;
 	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
 
 	@Override
 	public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos) {

@@ -18,6 +18,7 @@ public class ItemModFood extends ItemFood {
         super(food, sat, wolfFood);
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.misc);
+        EssenceItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

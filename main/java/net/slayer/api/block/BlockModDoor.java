@@ -37,7 +37,6 @@ public class BlockModDoor extends BlockMod {
     public static final PropertyEnum HINGEPOSITION_PROP = PropertyEnum.create("hinge", BlockModDoor.EnumHingePosition.class);
     public static final PropertyBool POWERED_PROP = PropertyBool.create("powered");
     public static final PropertyEnum HALF_PROP = PropertyEnum.create("half", BlockModDoor.EnumDoorHalf.class);
-    private static final String __OBFID = "CL_00000230";
 
     public BlockModDoor(EnumMaterialTypes t, float h, String name) {
         super(t, name, h);

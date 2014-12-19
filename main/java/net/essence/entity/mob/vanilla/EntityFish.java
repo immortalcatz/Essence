@@ -23,11 +23,6 @@ public class EntityFish extends EntityModWaterMob {
 		super.entityInit();
 		dataWatcher.addObject(ENTITY_TYPE, (int)0);
 	}
-	
-	@Override
-    public boolean getCanSpawnHere() {
-        return this.posY > 45.0D && this.posY < 63.0D && worldObj.getBlockState(this.getPosition()).getBlock().getMaterial() == Material.water;
-    }
 
 	@Override
 	public double setMaxHealth(MobStats s) {
