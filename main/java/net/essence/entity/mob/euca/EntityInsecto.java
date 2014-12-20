@@ -65,4 +65,10 @@ public class EntityInsecto extends EntityModMob{
 	public Item getItemDropped() {
 		return EssenceItems.eucaMeat;
 	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(70) == 0) dropItem(EssenceItems.eucaTablet, 1);
+		super.dropFewItems(b, j);
+	}
 }

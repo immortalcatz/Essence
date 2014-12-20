@@ -224,7 +224,9 @@ public class EssenceItems {
 	public static final Item purpleGem = new ItemMod("purpleGem");
 	public static final Item blueGem = new ItemMod("blueGem");
 	public static final Item yellowGem = new ItemMod("yellowGem");
-
+	
+	public static final Item eucaTablet = new ItemMod("eucaTablet");
+	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}
