@@ -120,7 +120,7 @@ public class SlayerAPI {
 
     public static ArmorMaterial addArmorMaterial(String name, int durability, int[] oldArmor, int enchantability) {
         int duraNew = (int) Math.round(durability / 13.75);
-        return EnumHelper.addEnum(ArmorMaterial.class, name, duraNew, oldArmor, enchantability);
+        return EnumHelper.addArmorMaterial(name, name, durability, oldArmor, enchantability);
     }
 
 	public static void addChatMessageWithColour(EntityPlayer p, EnumChatFormatting colour, String str) {

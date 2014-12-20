@@ -4,6 +4,8 @@ I started this update log at the 1.8 release, so sorry if it doesnt have anythin
 Added a dungeon tower boss
 Added a Mage NPC that trades gems for the staffs and stuff.
 Added a generation for the Mage to spawn in
+Added iron, gold and diamond grindstone compatibility.
+Re added custom armor materials.
 
 --Version 1.8 Beta v2--
 Fixed the rest of the blocks and/or items not rendering besides statue items (Block render fine).
