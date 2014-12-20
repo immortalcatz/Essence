@@ -3,6 +3,7 @@ package net.essence.dimension.vanilla.gen;
 import java.util.Random;
 
 import net.essence.entity.mob.vanilla.npc.EntityMage;
+import net.essence.util.Helper;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.util.BlockPos;
@@ -16,6 +17,7 @@ public class WorldGenMageHouse extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
 		int x = pos.getX(), y = pos.getY() - 2, z = pos.getZ();
+		Helper.printCoords(x, y, z);
 		WorldGenAPI.addRectangle(11, 11, 1, w, x - 1, y + 1, z - 1, Blocks.grass);
 		WorldGenAPI.addRectangle(11, 11, 4, w, x - 1, y - 3, z - 1, Blocks.dirt);
 		WorldGenAPI.addHollowCube(9, w, x, y, z, Blocks.end_stone);

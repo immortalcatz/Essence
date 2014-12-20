@@ -14,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -30,7 +31,7 @@ import net.slayer.api.SlayerAPI;
 public class BlockGrindstone extends BlockContainer {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	
+
 	public BlockGrindstone(String name) {
 		super(EnumMaterialTypes.STONE.getMaterial());
 		setUnlocalizedName(name);
@@ -115,21 +116,24 @@ public class BlockGrindstone extends BlockContainer {
 			((TileEntityGrindstone) world.getTileEntity(pos)).state = 0;
 		}
 		Item item = player.getCurrentEquippedItem().getItem();
-		if(player.getCurrentEquippedItem() != null && item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
-				|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
-				item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) {
-			if(stone.getItem() == null) {
-				((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
-				player.getCurrentEquippedItem().stackSize--;
-				world.playAuxSFX(1022, pos, 0);
-				((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
-				return true;
+		if(player.getCurrentEquippedItem() != null) {
+			if(item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
+					|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
+					item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre) || item == SlayerAPI.toItem(Blocks.gold_ore) || item == SlayerAPI.toItem(Blocks.diamond_ore)
+					|| item == SlayerAPI.toItem(Blocks.iron_ore)) {
+				if(stone.getItem() == null) {
+					((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
+					player.getCurrentEquippedItem().stackSize--;
+					world.playAuxSFX(1022, pos, 0);
+					((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
+					return true;
+				}
 			}
 		}
 		((WorldServer)world).getPlayerManager().markBlockForUpdate(pos);
 		return false;
 	}
-	
+
 	@Override
 	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing());

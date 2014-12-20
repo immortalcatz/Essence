@@ -61,7 +61,10 @@ public class EssenceItems {
 	public static final Item ashDust = new ItemMod("ashDust");
 	public static final Item sapphireDust = new ItemMod("sapphireDust");
 	public static final Item enderilliumDust = new ItemMod("enderilliumDust");
-	
+	public static final Item diamondDust = new ItemMod("diamondDust");
+	public static final Item goldDust = new ItemMod("goldDust");
+	public static final Item ironDust = new ItemMod("ironDust");
+
 	public static final Item hellstoneClump = new ItemMod("hellstoneClump");
 	public static final Item shadiumClump = new ItemMod("shadiumClump");
 	public static final Item luniumClump = new ItemMod("luniumClump");

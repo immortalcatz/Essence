@@ -4,6 +4,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -79,6 +80,9 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.ashual)) setItem(EssenceItems.ashDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) setItem(EssenceItems.sapphireDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) setItem(EssenceItems.enderilliumDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(Blocks.gold_ore)) setItem(EssenceItems.goldDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(Blocks.diamond_ore)) setItem(EssenceItems.diamondDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(Blocks.iron_ore)) setItem(EssenceItems.ironDust, f, returnVal);
 			else {
 				state = 0;
 				count = 0;
@@ -103,6 +107,9 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 							else if(item == SlayerAPI.toItem(EssenceBlocks.ashual)) itemOnGrind = EssenceItems.ashDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) itemOnGrind = EssenceItems.sapphireDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) itemOnGrind = EssenceItems.enderilliumDust;
+							else if(item == SlayerAPI.toItem(Blocks.diamond_ore)) itemOnGrind = EssenceItems.diamondDust;
+							else if(item == SlayerAPI.toItem(Blocks.gold_ore)) itemOnGrind = EssenceItems.goldDust;
+							else if(item == SlayerAPI.toItem(Blocks.iron_ore)) itemOnGrind = EssenceItems.ironDust;
 							else itemOnGrind = null;
 						}
 					}
