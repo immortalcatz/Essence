@@ -23,7 +23,7 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 		Block glass = EssenceBlocks.frozenGlass;
 		Block slab = EssenceBlocks.workshopSlab;
 		Block stair = EssenceBlocks.workshopStoneStair;
-		Block pane = EssenceBlocks.frozenPane;
+		Block pane = EssenceBlocks.frozenGlass;
 		Block stone = EssenceBlocks.workshopStone;
 		Block fence = EssenceBlocks.workshopStoneFence;
 		Block lamp = EssenceBlocks.workshopLamp;

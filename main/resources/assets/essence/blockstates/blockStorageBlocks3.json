@@ -10,6 +10,7 @@
 		"variant=soulsand": { "model": "essence:soulSand" },
 		"variant=tnt": { "model": "essence:tnt" },
 		"variant=stone": { "model": "essence:stone" },
-	    "variant=waterlilly": { "model": "essence:waterlilly" }
+	    "variant=waterlilly": { "model": "essence:waterlilly" },
+		"variant=enderillium": { "model": "essence:enderilliumOreStorage" }
     }
 }

@@ -40,7 +40,7 @@ public class PlayerStats {
 		EntityPlayer player = mc.thePlayer;
 		if(mc.currentScreen == null || mc.currentScreen instanceof GuiChat) {
 			if(!mc.gameSettings.showDebugInfo) {
-				mc.fontRendererObj.drawString(EnumChatFormatting.DARK_GREEN + "Essence of the Gods beta: " + EnumChatFormatting.DARK_RED + "1.8 b1", 5, 5, 0);
+				if(SlayerAPI.BETA) mc.fontRendererObj.drawString(EnumChatFormatting.DARK_GREEN + "Essence of the Gods: " + EnumChatFormatting.DARK_RED + SlayerAPI.MOD_VERSION, 5, 5, 0);
 				if(!player.capabilities.isCreativeMode) {
 					mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
 					float health = player.getHealth() * 5F;

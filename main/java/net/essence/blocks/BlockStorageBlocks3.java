@@ -2,6 +2,7 @@ package net.essence.blocks;
 
 import java.util.List;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.items.block.ItemStorageBlockMetadata3;
 import net.minecraft.block.Block;
@@ -24,16 +25,16 @@ public class BlockStorageBlocks3 extends Block {
 	
 	public static final PropertyEnum type = PropertyEnum.create("variant", BlockStorageBlocks3.EnumMetadata.class);
 
-	public static String[] names = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly"};
-	public static String[] allFinalNames = {"Cactus", "Brick", "Bookshelf", "Glowstone", "Red Sand", "Sand", "Sponge", "Soul Sand", "TNT", "Stone", "Waterlilly"};
+	public static String[] names = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly", "enderilliumOreStorage"};
+	public static String[] allFinalNames = {"Cactus", "Brick", "Bookshelf", "Glowstone", "Red Sand", "Sand", "Sponge", "Soul Sand", "TNT", "Stone", "Waterlilly", "Enderillium Ore Storage"};
 	
 	public static ItemStack[] crafting = new ItemStack[] {new ItemStack(Blocks.cactus), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.bookshelf), new ItemStack(Blocks.glowstone), new ItemStack(Blocks.sand, 1, 1)
 	, new ItemStack(Blocks.sand), new ItemStack(Blocks.sponge), new ItemStack(Blocks.soul_sand), new ItemStack(Blocks.tnt), new ItemStack(Blocks.stone)
-	, new ItemStack(Blocks.waterlily)};
+	, new ItemStack(Blocks.waterlily), new ItemStack(EssenceBlocks.enderilliumOre)};
 	
 	public static ItemStack[] getBack = new ItemStack[] {new ItemStack(Blocks.cactus, 9), new ItemStack(Blocks.brick_block, 9), new ItemStack(Blocks.bookshelf, 9), new ItemStack(Blocks.glowstone, 9), new ItemStack(Blocks.sand, 9, 1)
 	, new ItemStack(Blocks.sand, 9), new ItemStack(Blocks.sponge, 9), new ItemStack(Blocks.soul_sand, 9), new ItemStack(Blocks.tnt, 9), new ItemStack(Blocks.stone, 9)
-	, new ItemStack(Blocks.waterlily, 9)};
+	, new ItemStack(Blocks.waterlily, 9), new ItemStack(EssenceBlocks.enderilliumOre, 9)};
 	
 	public BlockStorageBlocks3() {
 		super(EnumMaterialTypes.STONE.getMaterial());
@@ -46,7 +47,7 @@ public class BlockStorageBlocks3 extends Block {
 
 	@Override
 	public void getSubBlocks(Item it, CreativeTabs c, List l) {
-		for(int i = 0; i < 11; i++)
+		for(int i = 0; i < 12; i++)
 			l.add(new ItemStack(it, 1, i));
 	}
 	
@@ -86,7 +87,8 @@ public class BlockStorageBlocks3 extends Block {
 		SOUL_SAND(7, "soulsand"),
 		TNT(8, "tnt"),
 		STONE(9, "stone"),
-		WATERLILLY(10, "waterlilly");
+		WATERLILLY(10, "waterlilly"),
+		ENDERILLIUM(11, "enderillium");
 		private static final BlockStorageBlocks3.EnumMetadata[] TYPES_ARRAY = new BlockStorageBlocks3.EnumMetadata[values().length];
 		private final int meta;
 		private final String type;

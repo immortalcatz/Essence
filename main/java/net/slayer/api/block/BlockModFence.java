@@ -15,12 +15,12 @@ public class BlockModFence extends BlockFence {
 
 	public BlockModFence(Block block, String name, boolean light) {
 		super(block.getMaterial());
-		setUnlocalizedName(name + "Fence");
+		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.blocks);
 		if(light) setLightLevel(0.5F);
 		setHardness(block.getBlockHardness(null, null));
 		EssenceBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name + "Fence");
+		GameRegistry.registerBlock(this, name);
 	}
 	
 	public BlockModFence(Block b, String n) {

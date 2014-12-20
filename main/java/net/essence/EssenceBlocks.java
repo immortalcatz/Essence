@@ -106,20 +106,20 @@ public class EssenceBlocks {
 	public static final Block dungeonBrickCarvedStairs = new BlockModStairs(dungeonBrickCarved, "dungeonBrickCarvedStairs");
 	public static final Block dungeonLampStairs = new BlockModStairs(dungeonLamp, "dungeonLampStairs", true);
 
-	public static final Block dungeonBrickFence = new BlockModFence(dungeonBrick, "dungeonBrick");
-	public static final Block dungeonCrackedBrickFence = new BlockModFence(dungeonCrackedBrick, "dungeonCrackedBrick");
-	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrick");
-	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarved");
-	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLamp", true);
+	public static final Block dungeonBrickFence = new BlockModFence(dungeonBrick, "dungeonBrickFence");
+	public static final Block dungeonCrackedBrickFence = new BlockModFence(dungeonCrackedBrick, "dungeonCrackedBrickFence");
+	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrickFence");
+	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarvedFence");
+	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", true);
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", 2.0F);
-	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrick");
+	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence");
 	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs");
 
 	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
 	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass");
-	public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
-	public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
+	//public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
+	//public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
 	
 	public static final Block witheringBeastStatue = new BlockStatue("witheringBeastStatue", new ModelWitheringBeastStatue(), EnumSounds.WITHER);
 	public static final Block netherBeastStatue = new BlockStatue("netherBeastStatue", new ModelNetherBeastStatue(), EnumSounds.NETHER_BEAST);
@@ -151,11 +151,11 @@ public class EssenceBlocks {
 	
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass");
-	public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
+	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
 	public static final Block workshopLamp = new BlockMod(EnumMaterialTypes.GLASS, "workshopLamp", 0.5F).setLightLevel(1.0F);
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", 0.5F);
 	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
-	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStone");
+	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence");
 	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock");
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
 	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab");
