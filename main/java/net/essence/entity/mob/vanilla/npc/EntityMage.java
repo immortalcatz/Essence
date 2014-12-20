@@ -2,6 +2,7 @@ package net.essence.entity.mob.vanilla.npc;
 
 import net.essence.EssenceItems;
 import net.essence.client.GuiHandler.GuiIDs;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -22,13 +23,13 @@ public class EntityMage extends EntityModVillager {
 	public void abstractInteract(EntityPlayer p) {
 		switch(rand.nextInt(3)) {
 		case 0:
-			SlayerAPI.addChatMessage(p, "<Mage> Here to check out my valuables?");
+			SlayerAPI.addChatMessage(p, I18n.format("mage.valuables", new Object[0]));
 			break;
 		case 1:
-			SlayerAPI.addChatMessage(p, "<Mage> Greetings, weary traveller!");
+			SlayerAPI.addChatMessage(p, I18n.format("mage.greetings", new Object[0]));
 			break;
 		case 2:
-			SlayerAPI.addChatMessage(p, "<Mage> I have some nice deals!");
+			SlayerAPI.addChatMessage(p, I18n.format("mage.deals", new Object[0]));
 			break;
 		}
 	}

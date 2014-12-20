@@ -2,6 +2,7 @@ package net.essence.items;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.entity.mob.boss.EntityEudor;
 import net.essence.util.Config;
@@ -28,11 +29,11 @@ public class ItemEssenceBossSpawner extends ItemMod {
 		if(!w.isRemote){
 			if(w.provider.getDimensionId() == Config.euca || w.provider.getDimensionId() == Config.depths || w.provider.getDimensionId() == Config.boil) {
 				EntityEudor eudor = new EntityEudor(w);
-				/*if(item == EssenceItems.eudorOrb){
+				if(item == EssenceItems.eudorOrb){
 					SlayerAPI.sendMessageToAll("Eudor has been summoned", true);
-					eudor.setPosition(x, y + 1, z);
+					eudor.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(eudor);
-				}*/
+				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
 				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in an Essence dimension.");
@@ -45,8 +46,8 @@ public class ItemEssenceBossSpawner extends ItemMod {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
 		String spawn = "";
-		//if(item == EssenceItems.eudorOrb)
-		//	spawn = "Eudor";
-		//list.add("Spawns the boss: " + spawn);
+		if(item == EssenceItems.eudorOrb)
+			spawn = "Eudor";
+		list.add("Spawns the boss: " + spawn);
 	}
 }
