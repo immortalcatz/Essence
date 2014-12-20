@@ -15,6 +15,7 @@ public class Textures {
     public static final ResourceLocation magmaBall = addProjectile("magmaBall");
     public static final ResourceLocation grindstone = addModel("blocks/grindstone");
     public static final ResourceLocation empty = addProjectile("empty");
+    public static final ResourceLocation templeBall = addProjectile("templeBall");
 
     public static final ResourceLocation robot = addMob("robot");
     public static final ResourceLocation blank = addMob("blank");
@@ -55,6 +56,7 @@ public class Textures {
     public static final ResourceLocation waterFisherman = addMob("waterFisherman");
     public static final ResourceLocation fireMage = addMob("fireMage");
     public static final ResourceLocation iceMage = addMob("iceMage");
+    public static final ResourceLocation templeGuardian = addMob("templeGuardian");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

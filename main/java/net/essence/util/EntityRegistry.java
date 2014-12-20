@@ -24,6 +24,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityFlameArrow.class, "flamearrow");
 		SlayerAPI.registerProjectile(EntityFireBall.class, "fireball");
 		SlayerAPI.registerProjectile(EntityIceBall.class, "iceball");
+		SlayerAPI.registerProjectile(EntityTempleBall.class, "templeball");
 
 		SlayerAPI.registerMob(EntityRobot.class, "robot");
 		SlayerAPI.registerMob(EntitySpyclops.class, "spyclops");
@@ -62,6 +63,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "beastOfTheNether");
 		SlayerAPI.registerBossMob(EntityWitheringBeast.class, "witheringBeast");
 		SlayerAPI.registerBossMob(EntityCalcia.class, "calcia");
+		SlayerAPI.registerBossMob(EntityTempleGuardian.class, "templeGuardian");
 		//SlayerAPI.registerBossMob(EntityEudor.class, "eudor");
 		//SlayerAPI.registerBossMob(EntityWraith.class, "wraith");
 	}

@@ -2,7 +2,7 @@ package net.essence.entity.projectile;
 
 import java.util.Random;
 
-import net.essence.client.render.particles.EntityIceballFX;
+import net.essence.client.render.particles.EntityGreenpaceFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
@@ -12,13 +12,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
-public class EntityIceBall extends EntityBasicProjectile {
+public class EntityTempleBall extends EntityBasicProjectile {
 
-	public EntityIceBall(World var1) {
+	public EntityTempleBall(World var1) {
 		super(var1);
 	}
 	
-	public EntityIceBall(World var1, EntityLivingBase var3, float dam) {
+	public EntityTempleBall(World var1, EntityLivingBase var3, float dam) {
 		super(var1, var3, dam);
 	}
 	
@@ -27,7 +27,7 @@ public class EntityIceBall extends EntityBasicProjectile {
 		Random rand = new Random();
 		super.onUpdate();
 		for(int i = 0; i < 20; ++i) {
-			EntityFX effect = new EntityIceballFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
+			EntityFX effect = new EntityGreenpaceFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
 		}
 	}
@@ -36,8 +36,9 @@ public class EntityIceBall extends EntityBasicProjectile {
 	protected void onImpact(MovingObjectPosition var1) {
 		if(var1.entityHit != null) { 
 			var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), getDamage());
-			((EntityLivingBase)var1.entityHit).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 5));
-			var1.entityHit.extinguish();
+			((EntityLivingBase)var1.entityHit).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2));
+			((EntityLivingBase)var1.entityHit).addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
+			((EntityLivingBase)var1.entityHit).addPotionEffect(new PotionEffect(Potion.digSlowdown.id, 100, 2));
 		}
 		if(!worldObj.isRemote) this.setDead();
 	}

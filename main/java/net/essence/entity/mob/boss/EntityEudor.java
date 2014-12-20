@@ -10,7 +10,6 @@ import net.slayer.api.entity.EntityEssenceBoss;
 
 public class EntityEudor extends EntityEssenceBoss {
 
-	@SuppressWarnings("Finish this")
 	public EntityEudor(World par1World) {
 		super(par1World);
 		addAttackingAI();
@@ -50,7 +49,6 @@ public class EntityEudor extends EntityEssenceBoss {
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		this.dropItem(getItemDropped(), 6 + rand.nextInt(4));
-		
 		if(rand.nextInt(1) == 0) this.dropItem(Item.getItemFromBlock(EssenceBlocks.eudorStatue), 1);
 	}
 }

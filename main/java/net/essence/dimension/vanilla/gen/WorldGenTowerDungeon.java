@@ -3,6 +3,7 @@ package net.essence.dimension.vanilla.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.util.Helper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -75,6 +76,12 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 2, y + height + 9, z + 8), EssenceBlocks.dungeonLampStairs.getStateFromMeta(1), 2);
 		
 		addDifferentBlocks(w, x, y, z);
+		
+		if(!w.isRemote) {
+			EntityTempleGuardian guard = new EntityTempleGuardian(w);
+			guard.setLocationAndAngles(x + 5, y + height + 10, z + 5, 0.0F, 0.0F);
+			w.spawnEntityInWorld(guard);
+		}
 		return true;
 	}
 

@@ -65,8 +65,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public void onUpdate() {
 		super.onUpdate();
 		if(isInv()) {
-			for(int i = 0; i < 5; i++)
-				this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + 0.5F + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + 0.5F + rand.nextFloat(), 0, 0, 0);
+			for(int i = 0; i < 5; i++) this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + 0.5F + rand.nextFloat(), posY + 1.0D + rand.nextFloat(), posZ + 0.5F + rand.nextFloat(), 0, 0, 0);
 			Entity entity = attackingPlayer;
 			if(entity != null)
 				((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 25, 2));
