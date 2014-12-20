@@ -1,7 +1,9 @@
 I started this update log at the 1.8 release, so sorry if it doesnt have anything before 1.8
 
---Version 1.8 Beta v3--
+--Version 1.8 Beta v3-- (Upcoming version)
 Added a dungeon tower boss
+Added a Mage NPC that trades gems for the staffs and stuff.
+Added a generation for the Mage to spawn in
 
 --Version 1.8 Beta v2--
 Fixed the rest of the blocks and/or items not rendering besides statue items (Block render fine).

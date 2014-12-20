@@ -1,7 +1,6 @@
 package net.essence.client;
 
-import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
+import net.essence.*;
 import net.essence.blocks.tileentity.*;
 import net.essence.client.render.*;
 import net.essence.client.render.mob.*;
@@ -19,17 +18,13 @@ import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.vanilla.*;
-import net.essence.entity.mob.vanilla.water_tribe.*;
+import net.essence.entity.mob.vanilla.npc.*;
+import net.essence.entity.mob.vanilla.npc.water_tribe.*;
 import net.essence.entity.projectile.*;
 import net.essence.util.*;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.AbstractClientPlayer;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.model.ModelBlaze;
-import net.minecraft.client.renderer.entity.RenderArrow;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.model.*;
 import net.minecraftforge.fml.client.registry.*;
-import net.slayer.api.SlayerAPI;
+import net.slayer.api.*;
 
 public class EntityRendering {
 
@@ -82,6 +77,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityFireMage.class, new RenderModBiped(new ModelBiped(), tex.fireMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMage.class, new RenderModBiped(new ModelBiped(), tex.mage));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 

@@ -1,5 +1,6 @@
-package net.essence.entity.mob.vanilla.water_tribe;
+package net.essence.entity.mob.vanilla.npc.water_tribe;
 
+import net.essence.client.GuiHandler.GuiIDs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -19,8 +20,8 @@ public class EntityWaterTribeFisherman extends EntityModVillager {
 	}
 
 	@Override
-	public int guiID() {
-		return 0;
+	public GuiIDs guiID() {
+		return null;
 	}
 
 	@Override

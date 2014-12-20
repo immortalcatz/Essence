@@ -7,9 +7,11 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.dimension.euca.gen.trees.*;
 import net.essence.dimension.vanilla.gen.WorldGenTowerDungeon;
+import net.essence.entity.mob.vanilla.npc.EntityMage;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -17,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
+import net.slayer.api.worldgen.WorldGenAPI;
 
 public class ItemFlameCoin extends ItemMod {
 

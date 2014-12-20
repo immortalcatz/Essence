@@ -41,7 +41,7 @@ public class BlockGemBlock extends BlockMod {
 			gem = EssenceItems.yellowGem;
 			break;
 		}
-		drops.add(new ItemStack(gem, rand.nextInt(4) + 1));
+		drops.add(new ItemStack(gem, rand.nextInt(1) + 1));
 		return drops;
 	}
 }

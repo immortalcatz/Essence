@@ -3,6 +3,7 @@ package net.slayer.api.entity;
 import java.util.Iterator;
 
 import net.essence.Essence;
+import net.essence.client.GuiHandler.GuiIDs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.INpc;
@@ -55,8 +56,8 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
             public boolean func_179958_a(Entity p_179958_1_) {
                 return p_179958_1_ instanceof EntityZombie;
             }
-            public boolean apply(Object p_apply_1_) {
-                return this.func_179958_a((Entity)p_apply_1_);
+            public boolean apply(Object o) {
+                return this.func_179958_a((Entity)o);
             }
         }, 6.0F, 1.0D, 1.2D));
 		this.tasks.addTask(1, new EntityAITradePlayer(this));
@@ -139,7 +140,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	public boolean interact(EntityPlayer var1) {
 		if(!this.worldObj.isRemote) {
 			abstractInteract(var1);
-			var1.openGui(Essence.instance, guiID(), this.worldObj, getEntityId(), 0, 0);
+			var1.openGui(Essence.instance, guiID().ordinal(), this.worldObj, getEntityId(), 0, 0);
 			return true;
 		} else {
 			return super.interact(var1);
@@ -148,7 +149,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 
 	public abstract void abstractInteract(EntityPlayer p);
 
-	public abstract int guiID();
+	public abstract GuiIDs guiID();
 
 	public abstract void addRecipies(MerchantRecipeList list);
 

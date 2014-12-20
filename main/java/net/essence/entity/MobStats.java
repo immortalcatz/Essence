@@ -44,10 +44,10 @@ public class MobStats {
 	public static double depthsHunterHealth = 75.0D, depthsHunterDamage = 13.0D, depthsHunterSpeed = normalSpeed, depthsHunterFollowRange = follow;
 
 	//Boss
-	public static double witheringBeastHealth = 250.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
-	public static double netherBeastHealth = 250.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
-	public static double calciaHealth = 250.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
-	public static double eudorHealth = 250.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
-	public static double templeGuardianHealth = 125.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
+	public static double witheringBeastHealth = 350.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
+	public static double netherBeastHealth = 350.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
+	public static double calciaHealth = 350.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
+	public static double eudorHealth = 450.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
+	public static double templeGuardianHealth = 200.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
 }

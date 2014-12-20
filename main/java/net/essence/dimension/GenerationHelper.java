@@ -11,6 +11,7 @@ import net.essence.dimension.vanilla.gen.WorldGenBoilPortal;
 import net.essence.dimension.vanilla.gen.WorldGenCaveVine;
 import net.essence.dimension.vanilla.gen.WorldGenChristmasLights;
 import net.essence.dimension.vanilla.gen.WorldGenFloatingIsland;
+import net.essence.dimension.vanilla.gen.WorldGenMageHouse;
 import net.essence.dimension.vanilla.gen.WorldGenSmallGlowshrooms;
 import net.essence.dimension.vanilla.gen.WorldGenTallGlowshrooms;
 import net.essence.dimension.vanilla.gen.WorldGenTowerDungeon;
@@ -66,7 +67,7 @@ public class GenerationHelper {
 			break;
 		case 9:
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
+			if(y > 55) new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 10:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
@@ -75,6 +76,12 @@ public class GenerationHelper {
 		case 11:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenEnd(EssenceBlocks.enderilliumOre, 5, w, x, y, z);
+			break;
+		case 12:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
+					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
+				new WorldGenMageHouse().generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

@@ -65,6 +65,10 @@ public class WorldGenTowerDungeon extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 1, y + height + 9, z + 8), EssenceBlocks.dungeonLamp.getDefaultState());
 		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 8), EssenceBlocks.dungeonLamp.getDefaultState());
 
+		w.setBlockState(new BlockPos(x + 13, y + height + 10, z + 1), EssenceBlocks.gemBlock.getDefaultState());
+		w.setBlockState(new BlockPos(x + 1, y + height + 10, z + 8), EssenceBlocks.gemBlock.getDefaultState());
+		w.setBlockState(new BlockPos(x + 13, y + height + 10, z + 8), EssenceBlocks.gemBlock.getDefaultState());
+		
 		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 8), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
 		w.setBlockState(new BlockPos(x + 12, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(0), 2);
 		w.setBlockState(new BlockPos(x + 13, y + height + 9, z + 7), EssenceBlocks.dungeonLampStairs.getStateFromMeta(2), 2);

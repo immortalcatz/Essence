@@ -1,23 +1,23 @@
 package net.essence.client;
 
-import net.essence.blocks.tileentity.TileEntityIncubator;
-import net.essence.blocks.tileentity.container.ContainerEnrichedTable;
-import net.essence.blocks.tileentity.container.ContainerIncubator;
-import net.essence.client.render.gui.GuiBackpack;
-import net.essence.client.render.gui.GuiEnrichedEnchantmentTable;
-import net.essence.client.render.gui.GuiIncubator;
-import net.essence.items.tileentity.TileEntityBackpack;
-import net.essence.items.tileentity.container.ContainerBackpack;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.essence.blocks.tileentity.*;
+import net.essence.blocks.tileentity.container.*;
+import net.essence.client.render.gui.*;
+import net.essence.items.tileentity.*;
+import net.essence.items.tileentity.container.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.IMerchant;
+import net.minecraft.entity.player.*;
+import net.minecraft.tileentity.*;
+import net.minecraft.util.*;
+import net.minecraft.world.*;
+import net.minecraftforge.fml.common.network.*;
+import net.slayer.api.entity.tileentity.container.*;
 
 public class GuiHandler implements IGuiHandler {
 	
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE;
 	}
 
 	@Override
@@ -26,6 +26,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new ContainerEnrichedTable(player.inventory, world, new BlockPos(x, y, z), player);
 		if(ID == GuiIDs.INCUBATOR.ordinal()) return new ContainerIncubator(player.inventory, (TileEntityIncubator)entity);
 		if(ID == GuiIDs.BACKPACK.ordinal()) return new ContainerBackpack(player.inventory, (TileEntityBackpack)entity);
+		if(ID == GuiIDs.MAGE.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -35,6 +36,16 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new GuiEnrichedEnchantmentTable(player.inventory, world, x, y, z, player);
 		if(ID == GuiIDs.INCUBATOR.ordinal()) return new GuiIncubator(player.inventory, (TileEntityIncubator)entity);
 		if(ID == GuiIDs.BACKPACK.ordinal()) return new GuiBackpack(player.inventory, (TileEntityBackpack)entity);
+		if(ID == GuiIDs.MAGE.ordinal()) return new GuiMage(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		return null;
+	}
+	
+	private Entity getEntityByID(int entityID, World world) {
+		for(int i = 0; i < world.getLoadedEntityList().size(); i++) {
+			if(((Entity)world.getLoadedEntityList().get(i)).getEntityId() == entityID) {
+				return ((Entity)world.getLoadedEntityList().get(i));
+			}
+		}
 		return null;
 	}
 }

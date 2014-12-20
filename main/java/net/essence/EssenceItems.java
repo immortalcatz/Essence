@@ -227,6 +227,9 @@ public class EssenceItems {
 	
 	public static final Item eucaTablet = new ItemMod("eucaTablet");
 	
+	public static final Item wandBase = new ItemMod("wandBase");
+	public static final Item staffBase = new ItemMod("staffBase");
+	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}
