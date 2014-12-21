@@ -6,6 +6,7 @@ import net.essence.misc.EnchantmentHotTouch;
 import net.essence.misc.EnchantmentWaterWalk;
 import net.essence.proxy.CommonProxy;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;

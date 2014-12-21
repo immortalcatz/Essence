@@ -177,12 +177,12 @@ public class EssenceItems {
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
 
-	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 10, false, false, EntityBasicProjectile.class);
-	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 10, false, false, EntityDoomsBringer.class);
-	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 10, true, false, EntityConjuring.class);
-	public static final Item staffOfEnlightment = new ItemStaff("staffOfEnlightment", 25, 1000, 10, true, false, EntityEnlightment.class);
+	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 7, false, false, EntityBasicProjectile.class);
+	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 12, false, false, EntityDoomsBringer.class);
+	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 18, true, false, EntityConjuring.class);
+	public static final Item staffOfEnlightment = new ItemStaff("staffOfEnlightment", 25, 1000, 14, true, false, EntityEnlightment.class);
 	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false, EntityGreenpace.class);
-	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 10, true, false, EntityWizardsStar.class);
+	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 5, true, false, EntityWizardsStar.class);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
 
 	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
@@ -222,6 +222,7 @@ public class EssenceItems {
 
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 8, true, false, EntityIceBall.class);
+	public static final Item lightningWand = new ItemWand("lightningWand", 100, 600, 8, false, false, EntityLightningBall.class);
 
 	public static final Item greenGem = new ItemMod("greenGem");
 	public static final Item purpleGem = new ItemMod("purpleGem");

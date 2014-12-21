@@ -48,6 +48,7 @@ public class EntityMage extends EntityModVillager {
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 1), new ItemStack(Items.gold_ingot, 5), new ItemStack(EssenceItems.wandBase)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 1), new ItemStack(Items.diamond, 2), new ItemStack(EssenceItems.staffBase)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(Items.diamond, 32), new ItemStack(EssenceItems.lightningWand)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.greenGem, 15), new ItemStack(EssenceItems.staffOfGreenpace)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.hellstoneIngot, 15), new ItemStack(EssenceItems.staffOfHellstone)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.purpleGem, 15), new ItemStack(EssenceItems.doomsBringer)));

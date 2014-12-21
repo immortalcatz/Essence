@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import net.essence.Essence;
 import net.essence.client.ChatHandler;
 import net.essence.entity.EssenceEntityList;
+import net.essence.util.Config;
 import net.essence.util.GL11Helper;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -51,7 +52,7 @@ import org.lwjgl.opengl.GL11;
 
 public class SlayerAPI {
 
-	public static int mobID = 350, projectileID = 230, entityListID = 3000;
+	public static int mobID = Config.baseMobID, projectileID = Config.baseProjectileID, entityListID = Config.baseEntityListID;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
 	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "Beta 1.8 v3"; 
@@ -103,6 +104,11 @@ public class SlayerAPI {
 	public static void registerMob(Class entityClass, String entityName) {
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, entityName, entityListID++, 0x123123, 0x321321);
+	}
+	
+	public static void registerNPC(Class entityClass, String entityName) {
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+        EntityList.addMapping(entityClass, entityName, entityListID++, 0x00FF8C, 0x00F6FF);
 	}
 	
 	public static void registerEntity(Class entityClass, String entityName, int ID) {

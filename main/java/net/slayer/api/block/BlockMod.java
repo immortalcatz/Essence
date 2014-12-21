@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.client.render.particles.OreParticleFX;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -15,6 +16,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
@@ -152,7 +154,8 @@ public class BlockMod extends Block{
 					float f = (float)pos.getX() + r.nextFloat();
 					float f1 = (float)pos.getY() + r.nextFloat() + 0.5F;
 					float f2 = (float)pos.getZ() + r.nextFloat();
-					worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, (double)f, (double)f1, (double)f2, 0.0D, 0.0D, 0.0D);
+					OreParticleFX var20 = new OreParticleFX(worldIn, f, f1, f2, 0, 0, 0);
+					FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 				}
 			}
 		}

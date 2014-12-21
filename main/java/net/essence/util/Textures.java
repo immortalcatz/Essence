@@ -57,6 +57,7 @@ public class Textures {
     public static final ResourceLocation fireMage = addMob("fireMage");
     public static final ResourceLocation iceMage = addMob("iceMage");
     public static final ResourceLocation mage = addMob("mage");
+    public static final ResourceLocation blacksmith = addMob("blacksmith");
     public static final ResourceLocation templeGuardian = addMob("templeGuardian");
 
     private static ResourceLocation addMob(String tex){

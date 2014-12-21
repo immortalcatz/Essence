@@ -11,6 +11,7 @@ public class EnchantmentWaterWalk extends Enchantment {
 	public EnchantmentWaterWalk(int id, int weight) {
 		super(id, new ResourceLocation("waterWalk"), weight, EnumEnchantmentType.ARMOR_FEET);
 		this.setName("Water Walker");
+		Enchantment.addToBookList(this);
 	}
 
 	@Override
@@ -34,6 +35,6 @@ public class EnchantmentWaterWalk extends Enchantment {
     
     @Override
     public boolean canApplyTogether(Enchantment e) {
-        return super.canApplyTogether(e) && e.effectId != this.effectId;
+        return super.canApplyTogether(e) && e.effectId != this.effectId || e.effectId != this.depthStrider.effectId;
     }
 }

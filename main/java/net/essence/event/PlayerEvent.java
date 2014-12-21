@@ -22,8 +22,6 @@ import net.slayer.api.SlayerAPI;
 
 public class PlayerEvent {
 
-	public static final String[] isImmuneToFire = new String[] {"ag", "field_70178_ae", "isImmuneToFire"};
-
 	@SubscribeEvent
 	public void onBlockHarvested(HarvestDropsEvent event) {
 		EntityPlayer p = event.harvester;
@@ -32,7 +30,7 @@ public class PlayerEvent {
 		if(isWorking){
 			if(event.harvester != null && event.harvester instanceof EntityPlayer && event.harvester.getHeldItem() != null) {
 				if(!event.isSilkTouching){
-					ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.state.getBlock(), 1, event.world.getBlockState(event.pos).getBlock().getMetaFromState(event.state)));
+					ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.state.getBlock()));
 					if(stack != null && event.state.getBlock() != Blocks.redstone_ore && event.state.getBlock() != Blocks.lapis_ore && event.state.getBlock() != Blocks.lapis_ore) {
 						event.drops.clear();
 						event.drops.add(stack.copy());
@@ -46,7 +44,7 @@ public class PlayerEvent {
 	public void onDeath(LivingDeathEvent event) {
 		if(event.entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)event.entity;
-			if(!player.worldObj.isRemote && Config.showDeathMessage) SlayerAPI.sendMessageToAll(player.getDisplayName() + " Died at X: " + (int)player.posX + ", Y: " + (int)player.posY + ", Z: " + (int)player.posZ, false);
+			//if(!player.worldObj.isRemote && Config.showDeathMessage) SlayerAPI.sendMessageToAll(player.getDisplayName() + " Died at X: " + (int)player.posX + ", Y: " + (int)player.posY + ", Z: " + (int)player.posZ, false);
 		}
 	}
 
@@ -63,8 +61,8 @@ public class PlayerEvent {
 		if(isWorking) {
 			if(mat && player.motionY < 0.0D) {
 				if(player.worldObj.getBlockState(new BlockPos(i, j - 1, k)).getBlock().getMaterial() == Material.water || player.worldObj.getBlockState(new BlockPos(i, j, k)).getBlock().getMaterial() == Material.water) player.motionY = 0.0D;
-				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.isPressed()) player.motionY = 0.0D; 
-				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.isPressed()) player.motionY = 0.5D;
+				if(!Minecraft.getMinecraft().gameSettings.keyBindJump.isKeyDown()) player.motionY = 0.0D; 
+				else if(Minecraft.getMinecraft().gameSettings.keyBindJump.isKeyDown()) player.motionY = 0.5D;
 			}
 		}
 	}

@@ -11,6 +11,7 @@ public class EnchantmentHotTouch extends Enchantment {
 	public EnchantmentHotTouch(int id, int weight) {
 		super(id, new ResourceLocation("hotTouch"), weight, EnumEnchantmentType.DIGGER);
 		this.setName("Hot Touch");
+		Enchantment.addToBookList(this);
 	}
 
 	@Override

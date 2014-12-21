@@ -26,7 +26,7 @@ public class Config {
     public static int euca, depths, boil, frozen;
     public static int eucaBiome, depthsBiome, boilBiome, frozenBiome;
     
-    
+    public static int baseMobID, baseProjectileID, baseEntityListID;    
 
     public static void dimensionInit() {
         eucaBiome = cfg.get("Dimension", "Euca biome ID", 60).getInt();
@@ -47,6 +47,10 @@ public class Config {
         showDimensionChange = cfg.get("Dimension", "Show the dimension change chat", true).getBoolean(true);
         reRenderPlayerStats = cfg.get("Gui", "Re-render the players stats in the top right corner", true).getBoolean(true);
         showDeathMessage = cfg.get("Gui", "Tell you where you died after death?", true).getBoolean(true);
+        baseMobID = cfg.get("Entity ID's", "The starting ID for the mobs (only gets greater the more mobs i have registered)", 350).getInt();
+        baseProjectileID = cfg.get("Entity ID's", "The starting ID for the projectiles (only gets greater the more projectiles i have registered)", 230).getInt();
+        baseEntityListID = cfg.get("Entity ID's", "The starting EntityListID", 3000).getInt();
+
     }
 
     public static void miscInit() {
