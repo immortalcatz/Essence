@@ -23,13 +23,13 @@ public class EntityMage extends EntityModVillager {
 	public void abstractInteract(EntityPlayer p) {
 		switch(rand.nextInt(3)) {
 		case 0:
-			SlayerAPI.addChatMessage(p, I18n.format("mage.valuables", new Object[0]));
+			SlayerAPI.addFormattedChatMessage(p, "mage.valuables");
 			break;
 		case 1:
-			SlayerAPI.addChatMessage(p, I18n.format("mage.greetings", new Object[0]));
+			SlayerAPI.addFormattedChatMessage(p, "mage.greetings");
 			break;
 		case 2:
-			SlayerAPI.addChatMessage(p, I18n.format("mage.deals", new Object[0]));
+			SlayerAPI.addFormattedChatMessage(p, "mage.deals");
 			break;
 		}
 	}

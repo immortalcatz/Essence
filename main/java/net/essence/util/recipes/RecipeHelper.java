@@ -66,6 +66,11 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(i.netherBeastOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.shadiumBlock});
 		GameRegistry.addRecipe(new ItemStack(i.eudorOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', i.eucaTablet});
 
+		GameRegistry.addSmelting(i.ironDust, new ItemStack(Items.iron_ingot), 0.5F);
+		GameRegistry.addSmelting(i.goldDust, new ItemStack(Items.gold_ingot), 0.5F);
+		GameRegistry.addSmelting(i.diamondDust, new ItemStack(Items.diamond), 0.5F);
+		GameRegistry.addSmelting(i.enderilliumDust, new ItemStack(EssenceItems.enderilliumShard), 0.5F);
+		
 		for(int j = 0; j < 13; j++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(EssenceBlocks.colouredBricks, 1, j), new Object[] {Blocks.stonebrick, BlockColouredBricks.crafting[j]});
 			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.colouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.stonebrick, 'd', BlockColouredBricks.crafting[j]});

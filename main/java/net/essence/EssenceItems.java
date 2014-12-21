@@ -52,7 +52,7 @@ public class EssenceItems {
 	public static final Item ash = new ItemMod("ash");
 	public static final Item sapphire = new ItemMod("sapphire");
 	public static final Item enderilliumShard = new ItemMod("enderilliumShard");
-	
+
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
 	public static final Item celestiumDust = new ItemMod("celestiumDust");
@@ -70,7 +70,7 @@ public class EssenceItems {
 	public static final Item luniumClump = new ItemMod("luniumClump");
 	public static final Item spawnerClump = new ItemMod("spawnerClump");
 	public static final Item spawnerBar = new ItemMod("spawnerBar");
-	
+
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
 	//public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
@@ -212,14 +212,14 @@ public class EssenceItems {
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
-	
+
 	public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
 	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, 72000, EntityFlameArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
 	//public static final Item chisel = new ItemChisel(ToolMaterial.IRON, "chisel");
-	
+
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 8, true, false, EntityIceBall.class);
 
@@ -227,12 +227,12 @@ public class EssenceItems {
 	public static final Item purpleGem = new ItemMod("purpleGem");
 	public static final Item blueGem = new ItemMod("blueGem");
 	public static final Item yellowGem = new ItemMod("yellowGem");
-	
+
 	public static final Item eucaTablet = new ItemMod("eucaTablet");
-	
+
 	public static final Item wandBase = new ItemMod("wandBase");
 	public static final Item staffBase = new ItemMod("staffBase");
-	
+
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

@@ -12,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
@@ -53,7 +54,7 @@ public class SlayerAPI {
 	public static int mobID = 350, projectileID = 230, entityListID = 3000;
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
-	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "Beta 1.8 v2"; 
+	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "Beta 1.8 v3"; 
 	public static final boolean DEVMODE = true, BETA = true;
 
 	public static void addRecipe(ItemStack i, Object... o) {
@@ -131,6 +132,11 @@ public class SlayerAPI {
 
 	public static void addChatMessage(EntityPlayer p, String str) {
 		ChatComponentText ret = new ChatComponentText(str);
+		p.addChatMessage(ret);
+	}
+	
+	public static void addFormattedChatMessage(EntityPlayer p, String str) {
+		ChatComponentText ret = new ChatComponentText(I18n.format(str, new Object[0]));
 		p.addChatMessage(ret);
 	}
 
