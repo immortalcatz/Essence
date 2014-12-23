@@ -18,7 +18,6 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
 		int i = p.getX(), j = p.getY(), k = p.getZ();
-		Helper.printCoords(p);
 		Block carpet = EssenceBlocks.workshopCarpet;
 		Block glass = EssenceBlocks.frozenGlass;
 		Block slab = EssenceBlocks.workshopSlab;

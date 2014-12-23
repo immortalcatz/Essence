@@ -14,5 +14,8 @@ public class BiomeGenFrozenLands extends BiomeGenBase {
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
+        rainfall = 0;
+        setEnableSnow();
+        enableRain = false;
 	}
 }

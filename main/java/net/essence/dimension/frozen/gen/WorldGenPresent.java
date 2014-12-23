@@ -1,9 +1,13 @@
 package net.essence.dimension.frozen.gen;
 
+import java.util.ArrayList;
 import java.util.Random;
 
+import net.essence.EssenceItems;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -13,7 +17,26 @@ public class WorldGenPresent extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
+		Random ra = new Random();
 		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
+		ArrayList<Item> presents = new ArrayList<Item>();
+		presents.add(EssenceItems.whitePresent);
+		presents.add(EssenceItems.orangePresent);
+		presents.add(EssenceItems.magentaPresent);
+		presents.add(EssenceItems.lightBluePresent);
+		presents.add(EssenceItems.yellowPresent);
+		presents.add(EssenceItems.limePresent);
+		presents.add(EssenceItems.pinkPresent);
+		presents.add(EssenceItems.grayPresent);
+		presents.add(EssenceItems.silverPresent);
+		presents.add(EssenceItems.cyanPresent);
+		presents.add(EssenceItems.purplePresent);
+		presents.add(EssenceItems.bluePresent);
+		presents.add(EssenceItems.brownPresent);
+		presents.add(EssenceItems.greenPresent);
+		presents.add(EssenceItems.redPresent);
+		presents.add(EssenceItems.blackPresent);
+		
 		y = y + 1;
 		int glass1 = r.nextInt(13), glass2 = r.nextInt(13);
 		if(glass2 == glass1) glass2 = r.nextInt(13);
@@ -24,11 +47,13 @@ public class WorldGenPresent extends WorldGenerator {
 		WorldGenAPI.addRectangleWithMetadata(1, 2, 1, w, x + 7, y + 9, z + 5, Blocks.stained_glass, glass1);
 		WorldGenAPI.addRectangleWithMetadata(1, 2, 1, w, x + 7, y + 11, z + 8, Blocks.stained_glass, glass1);
 		WorldGenAPI.addRectangleWithMetadata(1, 2, 1, w, x + 7, y + 11, z + 5, Blocks.stained_glass, glass1);
-		
 		WorldGenAPI.addRectangleWithMetadata(1, 1, 1, w, x + 7, y + 10, z + 4, Blocks.stained_glass, glass1);
 		WorldGenAPI.addRectangleWithMetadata(1, 1, 1, w, x + 7, y + 10, z + 7, Blocks.stained_glass, glass1);
 		WorldGenAPI.addRectangleWithMetadata(1, 1, 1, w, x + 7, y + 10, z + 10, Blocks.stained_glass, glass1);
-		WorldGenAPI.placeChestWithContents(w, x + 7, y, z + 7, 1, false, (ItemStack[])null);
+		w.setBlockState(new BlockPos(x + 7, y, z + 7), Blocks.chest.getStateFromMeta(1));
+		TileEntityChest chest = (TileEntityChest)w.getTileEntity(new BlockPos(x + 7, y, z + 7));
+		if(!w.isRemote && chest != null && presents != null)
+			chest.setInventorySlotContents(14, new ItemStack(presents.get(ra.nextInt(presents.size()))));
 		return true;
 	}
 }

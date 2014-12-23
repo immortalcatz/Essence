@@ -39,12 +39,12 @@ public class ItemNetherBossSpawner extends ItemMod {
 				}
 				if(item == EssenceItems.netherBeastOrb){
 					SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
-					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					nether.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(nether);
 				}
 				if(item == EssenceItems.witheringBeastOrb){
 					SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
-					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(wither);
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
@@ -59,12 +59,9 @@ public class ItemNetherBossSpawner extends ItemMod {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
 		String spawn = "";
-		if(item == EssenceItems.calciaOrb)
-			spawn = "Calcia";
-		if(item == EssenceItems.netherBeastOrb)
-			spawn = "Nether Beast";
-		if(item == EssenceItems.witheringBeastOrb)
-			spawn = "Withering Beast";
+		if(item == EssenceItems.calciaOrb) spawn = "Calcia";
+		if(item == EssenceItems.netherBeastOrb) spawn = "Nether Beast";
+		if(item == EssenceItems.witheringBeastOrb) spawn = "Withering Beast";
 		list.add("Spawns the boss: " + spawn);
 	}
 }

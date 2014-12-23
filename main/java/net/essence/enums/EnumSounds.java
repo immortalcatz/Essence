@@ -44,6 +44,7 @@ public enum EnumSounds {
 	WITHER_HURT("mob.wither.hurt"),
 	WITHER_DEATH("mob.wither.death"),
 	STAFF("essence:staff"),
+	WRAPPER("essence:wrapper"),
 	SPARKLE("essence:magicSparkle");
 	
 	private String sound;

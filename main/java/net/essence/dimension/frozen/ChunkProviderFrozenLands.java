@@ -5,10 +5,18 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.frozen.gen.WorldGenBigHouse;
 import net.essence.dimension.frozen.gen.WorldGenCandyCane;
+import net.essence.dimension.frozen.gen.WorldGenFrozenTree;
+import net.essence.dimension.frozen.gen.WorldGenLamp1;
+import net.essence.dimension.frozen.gen.WorldGenLamp2;
+import net.essence.dimension.frozen.gen.WorldGenLamp3;
+import net.essence.dimension.frozen.gen.WorldGenLamp4;
+import net.essence.dimension.frozen.gen.WorldGenLamp5;
 import net.essence.dimension.frozen.gen.WorldGenPresent;
 import net.essence.dimension.frozen.gen.WorldGenSantasWorkshop;
-import net.minecraft.block.BlockFalling;
+import net.essence.dimension.frozen.gen.WorldGenSmallHouse;
+import net.essence.dimension.frozen.gen.WorldGenTallHouse;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -24,6 +32,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
@@ -62,12 +71,20 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.da = new double[825];
 		this.parabolicField = new float[25];
-		gens = new ArrayList(0);
+		gens = new ArrayList(5);
 		gens.add(new WorldGenCandyCane());
-
-		rare = new ArrayList(2);
+		gens.add(new WorldGenLamp1());
+		gens.add(new WorldGenLamp2());
+		gens.add(new WorldGenLamp3());
+		gens.add(new WorldGenLamp4());
+		gens.add(new WorldGenLamp5());
+		
+		rare = new ArrayList(3);
 		rare.add(new WorldGenSantasWorkshop());
 		rare.add(new WorldGenPresent());
+		rare.add(new WorldGenBigHouse());
+		rare.add(new WorldGenSmallHouse());
+		rare.add(new WorldGenTallHouse());
 
 		for (int j = -2; j <= 2; ++j) {
 			for (int k = -2; k <= 2; ++k) {
@@ -191,22 +208,15 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 					}
 					else if (k1 < 63) {
 						iblockstate = null;
-						iblockstate1 = EssenceBlocks.frozenStone.getDefaultState();
 						c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 						c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
 						c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
-						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
-						c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
-						c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
-						c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenGrass.getDefaultState());
 					} else {
 						c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 						c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
 						c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
-						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
-						c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
-						c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
-						c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+						c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenGrass.getDefaultState());
 					}
 				}
 				else if (k > 0) {
@@ -214,14 +224,11 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 					c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 					c.setBlockState(j1, k1, i1, EssenceBlocks.frozenDirt.getDefaultState());
 					c.setBlockState(j1, k1 + 1, i1, EssenceBlocks.frozenDirt.getDefaultState());
-					c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenDirt.getDefaultState());
-					c.setBlockState(j1, k1 + 3, i1, EssenceBlocks.frozenGrass.getDefaultState());
-					c.setBlockState(j1, k1 + 4, i1, EssenceBlocks.frozenGrass.getDefaultState());
-					c.setBlockState(j1, k1 + 5, i1, EssenceBlocks.frozenGrass.getDefaultState());
+					c.setBlockState(j1, k1 + 2, i1, EssenceBlocks.frozenGrass.getDefaultState());
 				}
 
-				if(c.getBlockState(j1, 10, i1) != Blocks.air.getDefaultState()) {
-					for(int i = 10; i < 100; i++) {
+				if(c.getBlockState(j1, 4, i1) != Blocks.air.getDefaultState()) {
+					for(int i = 4; i < 100; i++) {
 						c.setBlockState(j1, i, i1, Blocks.air.getDefaultState());
 					}
 				}
@@ -356,20 +363,44 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int z1 = cz * 16;
 		int x, y, z, times;
 
-		if(rand.nextInt(10) == 0){
+		if(rand.nextInt(3) == 0){
 			y = rand.nextInt(200);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
 			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
-				rare.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
+				rare.get(rand.nextInt(rare.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
 		}
 
-		for(times = 0; times < 100; times++) {
+		for(times = 0; times < 300; times++) {
 			y = rand.nextInt(200);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);
 			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
 				gens.get(rand.nextInt(gens.size())).generate(worldObj, rand, new BlockPos(x, y - 1, z));
+		}
+		
+		for(times = 0; times < 200; times++) {
+			y = rand.nextInt(200);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
+				new WorldGenFrozenTree().generate(worldObj, rand, new BlockPos(x, y - 1, z));
+		}
+		
+		for(times = 0; times < 100; times++) {
+			y = rand.nextInt(200);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
+				new WorldGenCandyCane().generate(worldObj, rand, new BlockPos(x, y - 1, z));
+		}
+		
+		if(rand.nextInt(5) == 0) {
+			y = rand.nextInt(200);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.frozenGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
+				new WorldGenLakes(Blocks.ice).generate(worldObj, rand,  new BlockPos(x, y, z));
 		}
 	}
 

@@ -17,6 +17,8 @@ import net.essence.entity.mob.boiling.*;
 import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
+import net.essence.entity.mob.frozen.npc.EntityGreenElf;
+import net.essence.entity.mob.frozen.npc.EntityRedElf;
 import net.essence.entity.mob.vanilla.*;
 import net.essence.entity.mob.vanilla.npc.*;
 import net.essence.entity.mob.vanilla.npc.water_tribe.*;
@@ -80,6 +82,10 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMage.class, new RenderModBiped(new ModelBiped(), tex.mage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlacksmith.class, new RenderModBiped(new ModelBiped(), tex.blacksmith));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGreenElf.class, new RenderModBiped(new ModelBiped(), tex.greenElf));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedElf.class, new RenderModBiped(new ModelBiped(), tex.redElf));
+
+		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 

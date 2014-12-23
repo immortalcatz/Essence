@@ -234,6 +234,23 @@ public class EssenceItems {
 	public static final Item wandBase = new ItemMod("wandBase");
 	public static final Item staffBase = new ItemMod("staffBase");
 
+	public static final Item whitePresent = new ItemPresent("whitePresent");
+	public static final Item orangePresent = new ItemPresent("orangePresent");
+	public static final Item magentaPresent = new ItemPresent("magentaPresent");
+	public static final Item lightBluePresent = new ItemPresent("lightBluePresent");
+	public static final Item yellowPresent = new ItemPresent("yellowPresent");
+	public static final Item limePresent = new ItemPresent("limePresent");
+	public static final Item pinkPresent = new ItemPresent("pinkPresent");
+	public static final Item grayPresent = new ItemPresent("grayPresent");
+	public static final Item silverPresent = new ItemPresent("silverPresent");
+	public static final Item cyanPresent = new ItemPresent("cyanPresent");
+	public static final Item purplePresent = new ItemPresent("purplePresent");
+	public static final Item bluePresent = new ItemPresent("bluePresent");
+	public static final Item brownPresent = new ItemPresent("brownPresent");
+	public static final Item greenPresent = new ItemPresent("greenPresent");
+	public static final Item redPresent = new ItemPresent("redPresent");
+	public static final Item blackPresent = new ItemPresent("blackPresent");
+	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

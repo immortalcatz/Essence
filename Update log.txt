@@ -1,6 +1,8 @@
 I started this update log at the 1.8 release, so sorry if it doesn't have anything before 1.8
 
 --Version 1.8 Beta v4-- (Upcoming version)
+Added the Elf's and more generations to the Frozen Lands
+Fixed the boss Orbs spawning the boss's
 
 --Version 1.8 Beta v3-- 
 Added a dungeon tower boss

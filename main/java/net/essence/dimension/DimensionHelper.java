@@ -43,6 +43,7 @@ import net.essence.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -75,9 +76,15 @@ public class DimensionHelper {
 
 	public static void addSpawns() {
 		addEucaSpawns();
+		addFrozenSpawns();
 		addBoilSpawns();
 		addDepthsSpawns();
 		addVanillaSpawns();
+	}
+	
+	private static void addFrozenSpawns() {
+		int amount = 2;
+		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 	}
 
 	private static void addEucaSpawns() {

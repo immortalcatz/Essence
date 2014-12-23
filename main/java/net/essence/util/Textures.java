@@ -9,7 +9,8 @@ public class Textures {
     public static final String projectilePrefix = SlayerAPI.PREFIX + "textures/projectile/";
     public static final String modelPrefix = SlayerAPI.PREFIX + "textures/models/";
     public static final String slotPrefix = SlayerAPI.PREFIX + "textures/gui/slot";
-
+    public static final String dragonBase = "textures/entities/dragon/";
+    
     public static final ResourceLocation basic = addProjectile("gray");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
     public static final ResourceLocation magmaBall = addProjectile("magmaBall");
@@ -59,6 +60,8 @@ public class Textures {
     public static final ResourceLocation mage = addMob("mage");
     public static final ResourceLocation blacksmith = addMob("blacksmith");
     public static final ResourceLocation templeGuardian = addMob("templeGuardian");
+    public static final ResourceLocation greenElf = addMob("greenElf");
+    public static final ResourceLocation redElf = addMob("redElf");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

@@ -42,6 +42,7 @@ public class ItemWand extends ItemStaff {
 		list.add(SlayerAPI.Colour.DARK_AQUA + "Wand");
 		list.add(SlayerAPI.Colour.DARK_GREEN + "Does " + damage + " ranged damage.");
 		if(this == EssenceItems.fireWand) list.add("Sets the victim on fire for 5 seconds.");
+		if(this == EssenceItems.lightningWand) list.add("Spawns lightning on impact.");
 		if(essence) list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage * 2 + SlayerAPI.Colour.DARK_GREEN + " Essence.");
 		else list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage * 2 + SlayerAPI.Colour.DARK_GREEN + " Dark Energy.");
 		if(unBreakable) list.add("Unbreakable");

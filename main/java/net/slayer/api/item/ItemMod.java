@@ -23,14 +23,10 @@ public class ItemMod extends Item {
 	protected int healAmount = 0;
 
 	public ItemMod(String name){
-		this(name, name, EssenceTabs.items);
+		this(name, EssenceTabs.items);
 	}
 
 	public ItemMod(String name, CreativeTabs tab){
-		this(name, name, tab);
-	}
-
-	public ItemMod(String name, String textureName, CreativeTabs tab){
 		setUnlocalizedName(name);
 		setCreativeTab(tab);
 		EssenceItems.itemNames.add(name);

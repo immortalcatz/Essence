@@ -17,7 +17,7 @@ import net.slayer.api.entity.tileentity.container.*;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, GREEN_ELF, RED_ELF;
 	}
 
 	@Override
@@ -28,6 +28,8 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BACKPACK.ordinal()) return new ContainerBackpack(player.inventory, (TileEntityBackpack)entity);
 		if(ID == GuiIDs.MAGE.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.GREEN_ELF.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.RED_ELF.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -39,6 +41,8 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BACKPACK.ordinal()) return new GuiBackpack(player.inventory, (TileEntityBackpack)entity);
 		if(ID == GuiIDs.MAGE.ordinal()) return new GuiMage(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new GuiBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.GREEN_ELF.ordinal()) return new GuiGreenElf(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.RED_ELF.ordinal()) return new GuiRedElf(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		return null;
 	}
 

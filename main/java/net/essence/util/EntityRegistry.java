@@ -4,6 +4,8 @@ import net.essence.entity.mob.boiling.*;
 import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
+import net.essence.entity.mob.frozen.npc.EntityGreenElf;
+import net.essence.entity.mob.frozen.npc.EntityRedElf;
 import net.essence.entity.mob.vanilla.*;
 import net.essence.entity.mob.vanilla.npc.*;
 import net.essence.entity.mob.vanilla.npc.water_tribe.*;
@@ -59,10 +61,13 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityWaterTribeFisherman.class, "waterTribeFisherman");
 		SlayerAPI.registerMob(EntityFireMage.class, "fireMage");
 		SlayerAPI.registerMob(EntityIceMage.class, "iceMage");
+		SlayerAPI.registerMob(EntityDragon.class, "dragon");
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith");
-
+		SlayerAPI.registerNPC(EntityRedElf.class, "redElf");
+		SlayerAPI.registerNPC(EntityGreenElf.class, "greenElf");
+		
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg");
 
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "beastOfTheNether");
