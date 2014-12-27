@@ -43,6 +43,7 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.storageBlocks2, names2);
 		registerModelBakery(EssenceBlocks.storageBlocks3, names3);
 		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
+		registerModelBakery(EssenceBlocks.tomatoCrop, new String[] {});
 	}
 
 	@Override

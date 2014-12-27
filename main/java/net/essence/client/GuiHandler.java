@@ -5,6 +5,7 @@ import net.essence.blocks.tileentity.container.*;
 import net.essence.client.render.gui.*;
 import net.essence.items.tileentity.*;
 import net.essence.items.tileentity.container.*;
+import net.essence.util.ContainerEmpty;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.*;
@@ -17,7 +18,8 @@ import net.slayer.api.entity.tileentity.container.*;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, GREEN_ELF, RED_ELF;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, GREEN_ELF, RED_ELF,
+		ITEM_WIKI;
 	}
 
 	@Override
@@ -30,6 +32,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.GREEN_ELF.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.RED_ELF.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.ITEM_WIKI.ordinal()) return new ContainerEmpty();
 		return null;
 	}
 
@@ -43,6 +46,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new GuiBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.GREEN_ELF.ordinal()) return new GuiGreenElf(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.RED_ELF.ordinal()) return new GuiRedElf(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.ITEM_WIKI.ordinal()) return new GuiItemWiki();
 		return null;
 	}
 

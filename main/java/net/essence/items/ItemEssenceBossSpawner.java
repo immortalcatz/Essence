@@ -27,7 +27,7 @@ public class ItemEssenceBossSpawner extends ItemMod {
 	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float par8, float par9, float par10) {
 		Item item = i.getItem();
 		if(!w.isRemote){
-			if(w.provider.getDimensionId() == Config.euca || w.provider.getDimensionId() == Config.depths || w.provider.getDimensionId() == Config.boil) {
+			if(w.provider.getDimensionId() == Config.euca || w.provider.getDimensionId() == Config.depths || w.provider.getDimensionId() == Config.boil || w.provider.getDimensionId() == Config.frozen) {
 				EntityEudor eudor = new EntityEudor(w);
 				if(item == EssenceItems.eudorOrb){
 					SlayerAPI.sendMessageToAll("Eudor has been summoned", true);

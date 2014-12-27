@@ -2,6 +2,7 @@ package net.slayer.api.item;
 
 import java.util.List;
 
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,6 +18,7 @@ public class ItemModSeeds extends ItemSeeds {
 		super(block, Blocks.farmland);
 		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.util);
+		EssenceItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 	

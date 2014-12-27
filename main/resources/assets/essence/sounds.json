@@ -30,6 +30,7 @@
  "calciaHurt":{"category":"master","sounds": [{"name":"calciaHurt","stream": false}]},
  "staff":{"category":"neutral","sounds": ["staff"] },
  "wrapper":{"category":"neutral","sounds": ["wrapper"] },
+ "pageFlip":{"category":"neutral","sounds": ["pageFlip"] },
  "magicSparkle":{"category":"neutral","sounds": ["magicSparkle"] },
  "music.underwaterWorld":{"category": "music", "sounds": [{"name": "music/underwaterWorld", "stream": true}]},
  "music.blueWater":{"category": "music", "sounds": [{"name": "music/blueWater", "stream": true}]},

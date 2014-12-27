@@ -14,8 +14,11 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockGemBlock extends BlockMod {
 
-	public BlockGemBlock(String name) {
+	public boolean isRare;
+	
+	public BlockGemBlock(String name, boolean rare) {
 		super(EnumMaterialTypes.GLASS, name, 0.4F);
+		isRare = rare;
 	}
 
 	@Override
@@ -41,7 +44,8 @@ public class BlockGemBlock extends BlockMod {
 			gem = EssenceItems.yellowGem;
 			break;
 		}
-		drops.add(new ItemStack(gem, rand.nextInt(1) + 1));
+		if(isRare) drops.add(new ItemStack(gem, rand.nextInt(1) + 3));
+		else drops.add(new ItemStack(gem, rand.nextInt(1) + 1));
 		return drops;
 	}
 }

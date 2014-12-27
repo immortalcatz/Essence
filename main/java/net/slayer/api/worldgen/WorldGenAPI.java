@@ -121,9 +121,9 @@ public class WorldGenAPI {
 	public static void addCornerlessRectangle(int east, int south, int height, World w, int x, int y, int z, Block b){
 		addRectangle(east, south, height, w, x, y, z, b);
 		addRectangle(1, 1, height, w, x, y, z, Blocks.air);
-		addRectangle(1, 1, height, w, x+east-1 , y, z, Blocks.air);
-		addRectangle(1, 1, height, w, x, y, z+south-1, Blocks.air);
-		addRectangle(1, 1, height, w, x+east-1, y, z+south-1, Blocks.air);
+		addRectangle(1, 1, height, w, x + east - 1 , y, z, Blocks.air);
+		addRectangle(1, 1, height, w, x, y, z + south - 1, Blocks.air);
+		addRectangle(1, 1, height, w, x + east - 1, y, z + south - 1, Blocks.air);
 	}
 
 	public static void addRectangleWithMetadata(int east, int south, int height, World w, int x, int y, int z, Block b, int meta){

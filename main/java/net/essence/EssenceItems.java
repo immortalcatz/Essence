@@ -3,6 +3,7 @@ package net.essence;
 import java.util.ArrayList;
 
 import net.essence.*;
+import net.essence.client.GuiHandler.GuiIDs;
 import net.essence.entity.projectile.*;
 import net.essence.items.*;
 import net.essence.items.ItemEgg;
@@ -218,8 +219,6 @@ public class EssenceItems {
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	//public static final Item chisel = new ItemChisel(ToolMaterial.IRON, "chisel");
-
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 8, true, false, EntityIceBall.class);
 	public static final Item lightningWand = new ItemWand("lightningWand", 100, 600, 8, false, false, EntityLightningBall.class);
@@ -250,6 +249,11 @@ public class EssenceItems {
 	public static final Item greenPresent = new ItemPresent("greenPresent");
 	public static final Item redPresent = new ItemPresent("redPresent");
 	public static final Item blackPresent = new ItemPresent("blackPresent");
+	
+	public static final Item itemWiki = new ItemWikiBook("itemWiki", GuiIDs.ITEM_WIKI);
+	
+	public static final Item tomato = new ItemMod("tomato");
+	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
 	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);

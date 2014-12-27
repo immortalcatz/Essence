@@ -164,8 +164,10 @@ public class EssenceBlocks {
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
 	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
-	
+
 	public static final Block grindstone = new BlockGrindstone("grindstone");
+	public static final Block blueGems = new BlockGemBlock("blueGems", false);
+	public static final Block redGems = new BlockGemBlock("redGems", true);
 	
-	public static final Block gemBlock = new BlockGemBlock("gemBlock");
+	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
 }
