@@ -45,10 +45,10 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 
 	private Minecraft mc = Minecraft.getMinecraft();
 	private RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+	private ModelGrindstone stone = new ModelGrindstone();
 
 	@Override
 	public void renderTileEntityAt(TileEntity e, double x, double y, double z, float f, int i) {
-		ModelGrindstone stone = new ModelGrindstone();
 		int rotation = 0;
 		if(e.getWorld() != null) rotation = e.getBlockMetadata();    
 		GL11.glPushMatrix();
