@@ -7,15 +7,7 @@ import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.essence.dimension.euca.gen.WorldGenEucaPlant;
-import net.essence.dimension.vanilla.gen.WorldGenBlacksmithHouse;
-import net.essence.dimension.vanilla.gen.WorldGenBoilPortal;
-import net.essence.dimension.vanilla.gen.WorldGenCaveVine;
-import net.essence.dimension.vanilla.gen.WorldGenFloatingIsland;
-import net.essence.dimension.vanilla.gen.WorldGenMageHouse;
-import net.essence.dimension.vanilla.gen.WorldGenNetherTower;
-import net.essence.dimension.vanilla.gen.WorldGenSmallGlowshrooms;
-import net.essence.dimension.vanilla.gen.WorldGenTallGlowshrooms;
-import net.essence.dimension.vanilla.gen.WorldGenTowerDungeon;
+import net.essence.dimension.vanilla.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;
@@ -89,6 +81,12 @@ public class GenerationHelper {
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 				new WorldGenBlacksmithHouse().generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 14:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
+					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
+				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

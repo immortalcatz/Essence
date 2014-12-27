@@ -32,6 +32,11 @@ public class EntityBoilPotalFX extends EntityFX {
     }
     
     @Override
+    public int getFXLayer() {
+        return 0;
+    }
+    
+    @Override
     public void func_180434_a(WorldRenderer p_180434_1_, Entity p_180434_2_, float par2, float p_180434_4_, float p_180434_5_, float p_180434_6_, float p_180434_7_, float p_180434_8_) {
     	float var8 = (this.particleAge + par2) / this.particleMaxAge * 3;
         var8 = 1.0F - var8;

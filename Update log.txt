@@ -4,6 +4,8 @@ I started this update log at the 1.8 release, so sorry if it doesn't have anythi
 Fixed the multi tools usage as a hoe
 Added mob spawners into the Tower Dungeon
 Added a Nether Tower Dungeon
+Added Tomato crop
+Added Merchant generation
 
 --Version 1.8 Beta v4--
 Added the Elf's and more generations to the Frozen Lands

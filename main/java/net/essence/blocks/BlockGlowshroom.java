@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
@@ -65,7 +66,7 @@ public class BlockGlowshroom extends Block {
 
 	@Override
 	public boolean canPlaceBlockAt(World w, BlockPos pos) {
-		return w.getBlockState(pos.down()) == Blocks.stone.getDefaultState() || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomBottom.getDefaultState() || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomTop.getDefaultState();
+		return w.getBlockState(pos.down()).getBlock().getMaterial() == Material.rock || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomBottom.getDefaultState() || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomTop.getDefaultState();
 	}
 
 	@Override

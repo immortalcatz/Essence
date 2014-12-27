@@ -14,6 +14,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
+import net.slayer.api.worldgen.WorldGenAPI;
 
 public class ItemFlameCoin extends ItemMod {
 
@@ -26,6 +27,7 @@ public class ItemFlameCoin extends ItemMod {
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float par8, float par9, float par10) {
 		Random r = new Random();
+		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
 		if(fa != EnumFacing.UP && w.getBlockState(pos.up()).getBlock() != Blocks.air){
 			return false;
 		} else {
@@ -36,6 +38,8 @@ public class ItemFlameCoin extends ItemMod {
 			}
 			else return false;
 		}
+
+		//return true;
 	}
 
 	@Override
