@@ -338,9 +338,9 @@ public class WorldGenTallHouse extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 5, j + 0, k + 2), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 0, k + 3), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 0, k + 4), Blocks.air.getDefaultState());
-		world.setBlockState(new BlockPos(i + 5, j + 0, k + 5), Blocks.stone_slab.getStateFromMeta(11));
-		world.setBlockState(new BlockPos(i + 5, j + 0, k + 6), Blocks.stone_slab.getStateFromMeta(11));
-		world.setBlockState(new BlockPos(i + 5, j + 0, k + 7), Blocks.stone_slab.getStateFromMeta(11));
+		world.setBlockState(new BlockPos(i + 5, j + 0, k + 5), EssenceBlocks.workshopSlab.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j + 0, k + 6), EssenceBlocks.workshopSlab.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j + 0, k + 7), EssenceBlocks.workshopSlab.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 0, k + 8), EssenceBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 1, k + 0), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 1, k + 1), Blocks.air.getDefaultState());
@@ -401,7 +401,7 @@ public class WorldGenTallHouse extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 2), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 3), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 4), Blocks.air.getDefaultState());
-		world.setBlockState(new BlockPos(i + 6, j + 0, k + 5), Blocks.stone_slab.getStateFromMeta(11));
+		world.setBlockState(new BlockPos(i + 6, j + 0, k + 5), EssenceBlocks.workshopSlab.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 6), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 7), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 0, k + 8), EssenceBlocks.frozenBrick.getDefaultState());
@@ -464,7 +464,7 @@ public class WorldGenTallHouse extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 2), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 3), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 4), Blocks.air.getDefaultState());
-		world.setBlockState(new BlockPos(i + 7, j + 0, k + 5), Blocks.stone_slab.getStateFromMeta(11));
+		world.setBlockState(new BlockPos(i + 7, j + 0, k + 5), EssenceBlocks.workshopSlab.getDefaultState());
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 6), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 7), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 7, j + 0, k + 8), EssenceBlocks.frozenBrick.getDefaultState());
@@ -527,7 +527,7 @@ public class WorldGenTallHouse extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 2), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 3), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 4), Blocks.air.getDefaultState());
-		world.setBlockState(new BlockPos(i + 8, j + 0, k + 5), Blocks.stone_slab.getStateFromMeta(11));
+		world.setBlockState(new BlockPos(i + 8, j + 0, k + 5), EssenceBlocks.workshopSlab.getDefaultState());
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 6), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 7), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 8, j + 0, k + 8), EssenceBlocks.frozenBrick.getDefaultState());
@@ -590,7 +590,7 @@ public class WorldGenTallHouse extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 2), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 3), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 4), Blocks.air.getDefaultState());
-		world.setBlockState(new BlockPos(i + 9, j + 0, k + 5), Blocks.stone_slab.getStateFromMeta(11));
+		world.setBlockState(new BlockPos(i + 9, j + 0, k + 5), EssenceBlocks.workshopSlab.getDefaultState());
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 6), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 7), Blocks.air.getDefaultState());
 		world.setBlockState(new BlockPos(i + 9, j + 0, k + 8), EssenceBlocks.frozenBrick.getDefaultState());

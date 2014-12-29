@@ -250,7 +250,7 @@ public class EssenceItems {
 	public static final Item redPresent = new ItemPresent("redPresent");
 	public static final Item blackPresent = new ItemPresent("blackPresent");
 	
-	public static final Item itemWiki = new ItemWikiBook("itemWiki", GuiIDs.ITEM_WIKI);
+	//public static final Item itemWiki = new ItemWikiBook("itemWiki", GuiIDs.ITEM_WIKI);
 	
 	public static final Item tomato = new ItemMod("tomato");
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);

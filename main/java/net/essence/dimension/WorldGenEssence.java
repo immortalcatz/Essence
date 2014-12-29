@@ -28,6 +28,12 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(dim == Config.boil) generateBoilingPoint(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.depths) generateDepths(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.euca) generateEuca(w, r, chunkX * 16, chunkZ * 16);
+		if(dim == Config.frozen) generateFrozen(w, r, chunkX * 16, chunkZ * 16);
+	}
+
+	private void generateFrozen(World w, Random r, int chunkX, int chunkZ) {
+		int i = 0;
+		for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(9, w, chunkX, chunkZ);
 	}
 
 	private void generateBoilingPoint(World w, Random r, int chunkX, int chunkZ) {

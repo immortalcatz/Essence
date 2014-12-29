@@ -60,9 +60,9 @@ public enum EssenceToolMaterial {
 	SHADIUM_MULTI_TOOL(EssenceItems.shadiumMulti, EssenceItems.shadiumIngot, 3),
 	SAPPHIRE_MULTI_TOOL(EssenceItems.sapphireMulti, EssenceItems.sapphire, 2),
 
-	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 4, 25)),
-	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 4, 25)),
-	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 4, 25));
+	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
+	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
+	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25));
 
 	private ToolMaterial toolMaterial;
 	private Item repairItem;

@@ -31,7 +31,7 @@ public class UpdateCheckerEvent {
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.DARK_AQUA, "Unable to check for latest version, you may want to check your internet connection!");
 						}
 						if(UpdateChecker.isUpdateAvailable() && UpdateChecker.isOnline()) {
-							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://raw.github.com/TheSlayerMC/Essence/master/Version.txt").openStream()));
+							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://essence-of-the-gods.net/version.txt").openStream()));
 							String curVersion = versionFile.readLine();
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.RED, "An Essence Of The Gods update is avaliable.");

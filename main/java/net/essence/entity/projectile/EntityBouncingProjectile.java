@@ -1,8 +1,10 @@
 package net.essence.entity.projectile;
 
+import net.essence.util.Helper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -35,16 +37,14 @@ public class EntityBouncingProjectile extends EntityThrowable {
 			if(!this.worldObj.isRemote) this.setDead();
 			return;
 		}
-		/*if(par1.sideHit == 0 || par1.sideHit == 1) {
+		if(par1.sideHit == EnumFacing.UP || par1.sideHit == EnumFacing.DOWN) {
 			this.motionY *= -1.0D;
-		} else if(par1.sideHit == 2 || par1.sideHit == 3) {
+		} else if(par1.sideHit == EnumFacing.SOUTH || par1.sideHit == EnumFacing.NORTH) {
 			this.motionZ *= -1.0D;
-		} else if(par1.sideHit == 4 || par1.sideHit == 5) {
+		} else if(par1.sideHit == EnumFacing.EAST || par1.sideHit == EnumFacing.WEST) {
 			this.motionX *= -1.0D;
-		}*/
-		
+		}		
 		this.bounces++;
-		
 		if(this.bounces == maxBounces) this.setDead();
 	}
 }

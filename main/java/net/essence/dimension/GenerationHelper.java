@@ -6,7 +6,6 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
-import net.essence.dimension.euca.gen.WorldGenEucaPlant;
 import net.essence.dimension.vanilla.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
@@ -121,15 +120,19 @@ public class GenerationHelper {
 			break;
 		case 6:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenEucaPlant(EssenceBlocks.eucaTallGrass)).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenModFlower(EssenceBlocks.eucaTallGrass)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 7:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenEucaPlant(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenModFlower(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 8:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenEucaPlant(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenModFlower(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 9:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenModFlower(EssenceBlocks.frozenFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

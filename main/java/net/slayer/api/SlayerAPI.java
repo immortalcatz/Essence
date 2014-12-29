@@ -127,7 +127,7 @@ public class SlayerAPI {
 
     public static ArmorMaterial addArmorMaterial(String name, int durability, int[] oldArmor, int enchantability) {
         int duraNew = (int) Math.round(durability / 13.75);
-        return EnumHelper.addArmorMaterial(name, name, durability, oldArmor, enchantability);
+        return EnumHelper.addArmorMaterial(name, name, duraNew, oldArmor, enchantability);
     }
 
 	public static void addChatMessageWithColour(EntityPlayer p, EnumChatFormatting colour, String str) {
@@ -202,7 +202,7 @@ public class SlayerAPI {
     }
 
     public static ToolMaterial addAxeMaterial(int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
-        return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 4, enchantability);
+        return EnumHelper.addEnum(ToolMaterial.class, "", harvestLevel, maxUses, efficiency, damage - 3, enchantability);
     }
 
     public static ToolMaterial addAxeMaterial(int harvestLevel, float efficiency, float damage, int enchantability) {

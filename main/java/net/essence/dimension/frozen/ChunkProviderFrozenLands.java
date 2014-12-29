@@ -79,7 +79,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		gens.add(new WorldGenLamp4());
 		gens.add(new WorldGenLamp5());
 		
-		rare = new ArrayList(3);
+		rare = new ArrayList(4);
 		rare.add(new WorldGenSantasWorkshop());
 		rare.add(new WorldGenPresent());
 		rare.add(new WorldGenBigHouse());
@@ -363,7 +363,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 		int z1 = cz * 16;
 		int x, y, z, times;
 
-		if(rand.nextInt(3) == 0){
+		for(times = 0; times < 2; times++) {
 			y = rand.nextInt(200);
 			x = x1 + this.rand.nextInt(16);
 			z = z1 + this.rand.nextInt(16);

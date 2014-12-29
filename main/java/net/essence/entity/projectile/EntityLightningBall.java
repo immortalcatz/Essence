@@ -41,6 +41,7 @@ public class EntityLightningBall extends EntityBasicProjectile {
 		EntityLightningBolt bolt = new EntityLightningBolt(worldObj, posX, posY, posZ);
 		if(!worldObj.isRemote) {
 			worldObj.addWeatherEffect(bolt);
+			worldObj.createExplosion(this, posX, posY, posZ, 2.0F, true);
 			this.setDead();
 		}
 	}

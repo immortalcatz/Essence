@@ -8,8 +8,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityReaper extends EntityModMob{
+public class EntityReaper extends EntityModMob {
 
+	protected int animID = 1;
+	protected int animTick = 1;
+	
 	public EntityReaper(World par1World) {
 		super(par1World);
 		addAttackingAI();

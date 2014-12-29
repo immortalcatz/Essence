@@ -1,4 +1,4 @@
-package net.essence.dimension.euca.gen;
+package net.essence.dimension.vanilla.gen;
 
 import java.util.Random;
 
@@ -8,11 +8,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.block.BlockModFlower;
 
-public class WorldGenEucaPlant extends WorldGenerator {
+public class WorldGenModFlower extends WorldGenerator {
 
 	private BlockModFlower flower;
 
-	public WorldGenEucaPlant(BlockModFlower b) {
+	public WorldGenModFlower(BlockModFlower b) {
 		this.flower = b;
 	}
 
