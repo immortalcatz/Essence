@@ -85,9 +85,11 @@ public class EssenceBlocks {
 	public static final BlockBoilPortal boilPortal = (BlockBoilPortal)new BlockBoilPortal("boilingPortal");
 	public static final Block boilPortalFrame = new BlockMod("boilingPortalFrame", 3.0F);
 	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal");
-	
+	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
+	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
+
 	public static final Block hotBlock = new BlockMod("hotGround", 2.0F);
-	public static final Block ashBlock = new BlockMod(EnumMaterialTypes.STONE, "ash", "ashBlock");
+	public static final Block ashBlock = new BlockMod("ashBlock");
 
 	public static final Block fire = new BlockModFire("fire");
 	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");

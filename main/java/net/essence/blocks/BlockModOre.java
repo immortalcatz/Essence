@@ -153,6 +153,17 @@ public class BlockModOre extends BlockMod {
 	}
 	
 	@Override
+    public int quantityDroppedWithBonus(int fortune, Random random) {
+        if(fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped((IBlockState)this.getBlockState().getValidStates().iterator().next(), random, fortune)) {
+            int j = random.nextInt(fortune + 2) - 1;
+            if(j < 0) j = 0; 
+            return this.quantityDropped(random) * (j + 1);
+        } else {
+            return this.quantityDropped(random);
+        }
+    }
+	
+	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
 		/*if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
 				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 

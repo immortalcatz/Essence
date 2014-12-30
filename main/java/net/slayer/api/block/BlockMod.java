@@ -47,6 +47,10 @@ public class BlockMod extends Block{
 	public BlockMod(String name, boolean breakable, CreativeTabs tab) {
 		this(EnumMaterialTypes.STONE, name, tab);
 	}
+	
+	public BlockMod(String name, boolean breakable) {
+		this(name, breakable, EssenceTabs.blocks);
+	}
 
 	public BlockMod(EnumMaterialTypes blockType, String name, CreativeTabs tab) {
 		super(blockType.getMaterial());
@@ -56,19 +60,6 @@ public class BlockMod extends Block{
 		setStepSound(blockType.getSound());
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
-		this.name = name; 
-		EssenceBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
-	}
-
-	public BlockMod(EnumMaterialTypes t, String texture, String name) {
-		super(t.getMaterial());
-		this.blockType = t;
-		rand = new Random();
-		setHardness(2.0F);
-		setStepSound(blockType.getSound());
-		setCreativeTab(EssenceTabs.blocks);
-		setUnlocalizedName(texture);
 		this.name = name; 
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
@@ -86,7 +77,7 @@ public class BlockMod extends Block{
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
-	
+
 	public Block addName(String name) {
 		EssenceBlocks.blockName.add(name);
 		return this;

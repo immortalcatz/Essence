@@ -255,6 +255,8 @@ public class EssenceItems {
 	public static final Item tomato = new ItemMod("tomato");
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
 	
+	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
+	
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

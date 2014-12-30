@@ -14,16 +14,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockModSpawner extends BlockContainer {
 
-    protected String name;
     protected String mobName;
 
     public BlockModSpawner(String name, String mobName) {
-        this(name, mobName, "spawner");
-    }
-
-    public BlockModSpawner(String name, String mobName, String textureName) {
         super(Material.rock);
-        this.name = name;
         this.mobName = mobName;
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.blocks);
@@ -33,12 +27,8 @@ public class BlockModSpawner extends BlockContainer {
     @Override
     public TileEntity createNewTileEntity(World world, int par1) {
         TileEntityMobSpawner spawner = new TileEntityMobSpawner();
-        setEntityName(spawner);
-        return spawner;
-    }
-
-    protected void setEntityName(TileEntityMobSpawner spawner) {
         spawner.getSpawnerBaseLogic().setEntityName(mobName);
+        return spawner;
     }
 
     @Override

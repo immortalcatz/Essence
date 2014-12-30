@@ -3,6 +3,7 @@ package net.essence.proxy;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.blocks.tileentity.TileEntityCorbaPortal;
 import net.essence.blocks.tileentity.TileEntityEnrichedTable;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.essence.blocks.tileentity.TileEntityIncubator;
@@ -60,6 +61,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
+		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
 		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		//StructureBoilBridgePieces.registerBoilFortressPieces();
