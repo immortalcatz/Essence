@@ -17,7 +17,7 @@ public class EntityAshHoarder extends EntityModMob{
 	public EntityAshHoarder(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(0.7F, 2.0F);
+		setSize(0.7F, 2.3F);
 		isImmuneToFire = true;
 	}
 

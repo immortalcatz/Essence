@@ -24,7 +24,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 	public EntityCalcia(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		this.setSize(1.6F, 2.5F);
+		this.setSize(1.6F, 3.2F);
 	}
 
 	@Override

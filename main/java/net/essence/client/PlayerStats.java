@@ -53,38 +53,38 @@ public class PlayerStats {
 					GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 					GL11.glEnable(GL11.GL_BLEND);
 					int lengthOfBar = 151;
-					gig.drawTexturedModalRect(w, h, 0, 0, lengthOfBar, 108 - 18);
-					gig.drawTexturedModalRect(w, h + 108 - 18, 0, 90, lengthOfBar, 18);
-					gig.drawTexturedModalRect(w, h + 108, 0, 235, 182, 18);
+					gig.drawTexturedModalRect(w - 10, h, 0, 0, lengthOfBar, 108 - 18);
+					gig.drawTexturedModalRect(w - 10, h + 108 - 18, 0, 90, lengthOfBar, 18);
+					gig.drawTexturedModalRect(w - 10, h + 108, 0, 235, 182, 18);
 
-					gig.drawTexturedModalRect(w, h, 0, 109, (int)(health * 1.5F), 18);
-					gig.drawTexturedModalRect(w + 3, h + 3, 0, 199, 12, 11);
+					gig.drawTexturedModalRect(w - 10, h, 0, 109, (int)(health * 1.5F), 18);
+					gig.drawTexturedModalRect(w - 10 + 3, h + 3, 0, 199, 12, 11);
 
-					gig.drawTexturedModalRect(w, h + 18, 0, 127, (int)(hunger * 1.5F), 18);
-					gig.drawTexturedModalRect(w + 3, h + 21, 0, 210, 12, 11);
+					gig.drawTexturedModalRect(w - 10, h + 18, 0, 127, (int)(hunger * 1.5F), 18);
+					gig.drawTexturedModalRect(w - 10 + 3, h + 21, 0, 210, 12, 11);
 
-					gig.drawTexturedModalRect(w, h + 36 + 18 + 17, 0, 180, (int)(armor * 1.5F), 18);
-					gig.drawTexturedModalRect(w + 3, h + 36 + 40, 17, 210, 9, 9);
+					gig.drawTexturedModalRect(w - 10, h + 36 + 18 + 17, 0, 180, (int)(armor * 1.5F), 18);
+					gig.drawTexturedModalRect(w - 10 + 3, h + 36 + 40, 17, 210, 9, 9);
 
-					gig.drawTexturedModalRect(w, h + 36 + 36 - 18, 0, 163, (int)(air * 2), 18);
-					gig.drawTexturedModalRect(w + 3, h + 36 + 40 - 18, 17, 200, 9, 9);
+					gig.drawTexturedModalRect(w - 10, h + 36 + 36 - 18, 0, 163, (int)(air * 2), 18);
+					gig.drawTexturedModalRect(w - 10 + 3, h + 36 + 40 - 18, 17, 200, 9, 9);
 
-					gig.drawTexturedModalRect(w, h + 36, 0, 145, (int)experience, 18);
+					gig.drawTexturedModalRect(w - 10, h + 36, 0, 145, (int)experience, 18);
 					GL11.glPushMatrix();
 					GL11.glColor4f(0.4F, 1.0F, 0.3F, 1.0F);
-					gig.drawTexturedModalRect(w + 3, h + 38, 0, 221, 14, 14);
+					gig.drawTexturedModalRect(w - 10 + 3, h + 38, 0, 221, 14, 14);
 					GL11.glPopMatrix();
 					GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
-					font.drawString("Health: " + health + "%", w + 20, h + 5, 0xFFFFFF);
-					font.drawString("Hunger: " + hunger + "%" , w + 20, h + 23, 0xFFFFFF);
-					font.drawString("Armor: " + armor + "%", w + 20, h + 36 + 23 + 18, 0xFFFFFF);
-					if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w + 20, h + 36 - 18 + 42, 0xFFFFFF);
-					else font.drawString("Air: " + (int)air + "%" , w + 20, h + 36 - 18 + 42, 0xFFFFFF);
-					font.drawString("Level: " + mc.thePlayer.experienceLevel , w + 20, h + 41, 0xFFFFFF);
+					font.drawString("Health: " + health + "%", w - 10 + 20, h + 5, 0xFFFFFF);
+					font.drawString("Hunger: " + hunger + "%" , w - 10 + 20, h + 23, 0xFFFFFF);
+					font.drawString("Armor: " + armor + "%", w - 10 + 20, h + 36 + 23 + 18, 0xFFFFFF);
+					if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
+					else font.drawString("Air: " + (int)air + "%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
+					font.drawString("Level: " + mc.thePlayer.experienceLevel , w - 10 + 20, h + 41, 0xFFFFFF);
 					String st = "Time: " + formatTime(getWorldTime(mc));
-					font.drawString(st, w + 3, h + 41 + 36 + 18, 0xFFFFFF);
-					font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w + 5, h + 36 + 78, 0xFFFFFF);
+					font.drawString(st, w - 10 + 3, h + 41 + 36 + 18, 0xFFFFFF);
+					font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w - 10 + 5, h + 36 + 78, 0xFFFFFF);
 					GL11.glDisable(GL11.GL_BLEND);
 				}
 			}

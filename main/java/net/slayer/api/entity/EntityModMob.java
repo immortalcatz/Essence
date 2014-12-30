@@ -20,7 +20,7 @@ public abstract class EntityModMob extends EntityMob {
 	public EntityModMob(World par1World) {
 		super(par1World);
 		addBasicAI();
-		setSize(1.0F, 1.0F);
+		setSize(1.0F, 2.0F);
 	}
 
 	public double getHP(){return getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue();}

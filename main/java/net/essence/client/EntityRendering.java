@@ -79,7 +79,6 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityWaterTribeFisherman.class, new RenderModBiped(new ModelBiped(), tex.waterFisherman));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFireMage.class, new RenderModBiped(new ModelBiped(), tex.fireMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
-		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMage.class, new RenderModBiped(new ModelBiped(), tex.mage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlacksmith.class, new RenderModBiped(new ModelBiped(), tex.blacksmith));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGreenElf.class, new RenderModBiped(new ModelBiped(), tex.greenElf));
