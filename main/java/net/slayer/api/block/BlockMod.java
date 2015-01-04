@@ -18,6 +18,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.SlayerAPI;
@@ -138,15 +140,28 @@ public class BlockMod extends Block{
 	}
 
 	@Override
-	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
 		if(Config.boilBlockSpawnSmoke){
-			if(worldIn.getBlockState(pos) == EssenceBlocks.hotBlock){
-				for(int i = 0; i < 1; ++i) {
-					float f = (float)pos.getX() + r.nextFloat();
-					float f1 = (float)pos.getY() + r.nextFloat() + 0.5F;
-					float f2 = (float)pos.getZ() + r.nextFloat();
-					OreParticleFX var20 = new OreParticleFX(worldIn, f, f1, f2, 0, 0, 0);
-					FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+			if(w.getBlockState(pos) == EssenceBlocks.hotBlock){
+				int x = pos.getX();
+				int y = pos.getY();
+				int z = pos.getZ();
+				double d0 = 0.0625D;
+				for(int l = 0; l < 6; ++l) {
+					double d1 = (double)((float)x + random.nextFloat());
+					double d2 = (double)((float)y + random.nextFloat());
+					double d3 = (double)((float)z + random.nextFloat());
+					if(l == 0 && !w.getBlockState(new BlockPos(x, y + 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 1) + d0;
+					if(l == 1 && !w.getBlockState(new BlockPos(x, y - 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 0) - d0;
+					if(l == 2 && !w.getBlockState(new BlockPos(x, y, z + 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 1) + d0;    
+					if(l == 3 && !w.getBlockState(new BlockPos(x, y, z - 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 0) - d0;
+					if(l == 4 && !w.getBlockState(new BlockPos(x + 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 1) + d0;
+					if(l == 5 && !w.getBlockState(new BlockPos(x - 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 0) - d0;
+					if(d1 < (double)x || d1 > (double)(x + 1) || d2 < 0.0D || d2 > (double)(y + 1) || d3 < (double)z || d3 > (double)(z + 1)) {
+						OreParticleFX var20 = new OreParticleFX(w, d1, d2, d3, 0, 0, 0);
+						FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+					}
 				}
 			}
 		}

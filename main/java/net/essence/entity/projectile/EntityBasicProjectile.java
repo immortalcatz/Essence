@@ -36,10 +36,10 @@ public class EntityBasicProjectile extends EntityThrowable {
 	public void onUpdate() {
 		Random rand = new Random();
 		super.onUpdate();
-		for(int i = 0; i < 6; ++i) {
-			EntityFX effect = new EntityHellstoneFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
-			FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
-		}
+		//for(int i = 0; i < 6; ++i) {
+			//EntityFX effect = new EntityHellstoneFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
+			//FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
+		//}
 	}
 
 	@Override

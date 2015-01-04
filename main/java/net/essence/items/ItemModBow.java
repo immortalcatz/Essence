@@ -19,12 +19,20 @@ public class ItemModBow extends ItemMod {
 
 	private Class<? extends EntityArrow> arrowClass;
 	public Item arrowItem;
-	public int dur;
+	public int dur = 72000;
 
 	public ItemModBow(String name, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
 		super(name, EssenceTabs.ranged);
 		this.maxStackSize = 1;
 		this.dur = duration;
+		this.arrowClass = arrowEnt;
+		this.arrowItem = arrow;
+		this.setMaxDamage(uses);
+	}
+	
+	public ItemModBow(String name, int uses, Item arrow, Class<? extends EntityArrow> arrowEnt) {
+		super(name, EssenceTabs.ranged);
+		this.maxStackSize = 1;
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.setMaxDamage(uses);

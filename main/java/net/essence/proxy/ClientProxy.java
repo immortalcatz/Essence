@@ -10,6 +10,7 @@ import net.essence.client.GuiHandler;
 import net.essence.client.MusicEvent;
 import net.essence.client.PlayerStats;
 import net.essence.enums.EnumParticlesClasses;
+import net.essence.event.ParticleEvent;
 import net.essence.event.UpdateCheckerEvent;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -19,6 +20,7 @@ import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -44,6 +46,7 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.storageBlocks3, names3);
 		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
 		registerModelBakery(EssenceBlocks.tomatoCrop, new String[] {});
+		//SlayerAPI.addEventBus(new ParticleEvent());
 	}
 
 	@Override
@@ -157,7 +160,7 @@ public class ClientProxy extends CommonProxy {
 				} else {
 					fx = (EntityFX)particle.getParticle().getConstructor(World.class, double.class, double.class, double.class, double.class, double.class, double.class).newInstance(worldObj, posX, posY, posZ, 0D, 0D, 0D);
 				}
-				Minecraft.getMinecraft().effectRenderer.addEffect(fx);
+				FMLClientHandler.instance().getClient().effectRenderer.addEffect(fx);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

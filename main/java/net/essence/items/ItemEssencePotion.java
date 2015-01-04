@@ -50,7 +50,7 @@ public class ItemEssencePotion extends ItemMod {
     }
 	
 	public ItemStack onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
-		int amount = isStrong ? 300 : 100;
+		int amount = isStrong ? 400 : 200;
 		if(!world.isRemote){
 			if(essence) EssenceBar.addBarPoints(amount);
 			else DarkEnergyBar.addBarPoints(amount);

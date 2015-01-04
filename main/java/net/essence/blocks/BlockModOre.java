@@ -92,10 +92,12 @@ public class BlockModOre extends BlockMod {
 	}*/
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
 		renderParticle(worldIn, pos.getX(), pos.getY(), pos.getZ());
 	}
 
+	@SideOnly(Side.CLIENT)
 	private void renderParticle(World w, int x, int y, int z) {
 		float r = 0.0F, g = 0.0F, b = 0.0F;
 		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.celestiumBlock) {

@@ -20,17 +20,19 @@ public abstract class EntityPeacefullUntillAttacked extends EntityModMob {
 
 	private int angerLevel = 0;
 
+	@Override
 	public void writeEntityToNBT(NBTTagCompound var1) {
 		super.writeEntityToNBT(var1);
 		var1.setShort("Anger", (short)this.angerLevel);
 	}
 
+	@Override
 	public void readEntityFromNBT(NBTTagCompound var1) {
 		super.readEntityFromNBT(var1);
 		this.angerLevel = var1.getShort("Anger");
 	}
 	
-    public boolean func_175457_ck() {
+    public boolean canAttack() {
         return this.angerLevel > 0;
     }
 
@@ -43,47 +45,38 @@ public abstract class EntityPeacefullUntillAttacked extends EntityModMob {
 		return super.attackEntityFrom(par1DamageSource, par2);
 	}
 
-	private void becomeAngryAt(Entity p_70835_1_){
+	private void becomeAngryAt(Entity e){
 		this.angerLevel = 400 + this.rand.nextInt(400);
 
-		if (p_70835_1_ instanceof EntityLivingBase)
-		{
-			this.setRevengeTarget((EntityLivingBase)p_70835_1_);
+		if(e instanceof EntityLivingBase) {
+			this.setRevengeTarget((EntityLivingBase)e);
 		}
 	}
 
-	class AIHurtByAggressor extends EntityAIHurtByTarget
-	{
-		private static final String __OBFID = "CL_00002206";
+	private class AIHurtByAggressor extends EntityAIHurtByTarget {
 
-		public AIHurtByAggressor()
-		{
+		public AIHurtByAggressor() {
 			super(EntityPeacefullUntillAttacked.this, true, new Class[0]);
 		}
 
-		protected void func_179446_a(EntityCreature p_179446_1_, EntityLivingBase p_179446_2_)
-		{
+		@Override
+		protected void func_179446_a(EntityCreature p_179446_1_, EntityLivingBase p_179446_2_) {
 			super.func_179446_a(p_179446_1_, p_179446_2_);
-
-			if (p_179446_1_ instanceof EntityPeacefullUntillAttacked)
-			{
+			if (p_179446_1_ instanceof EntityPeacefullUntillAttacked) {
 				((EntityPeacefullUntillAttacked)p_179446_1_).becomeAngryAt(p_179446_2_);
 			}
 		}
 	}
 
-	class AITargetAggressor extends EntityAINearestAttackableTarget
-	{
-		private static final String __OBFID = "CL_00002207";
+	private class AITargetAggressor extends EntityAINearestAttackableTarget {
 
-		public AITargetAggressor()
-		{
+		public AITargetAggressor() {
 			super(EntityPeacefullUntillAttacked.this, EntityPlayer.class, true);
 		}
 
-		public boolean shouldExecute()
-		{
-			return ((EntityPeacefullUntillAttacked)this.taskOwner).func_175457_ck() && super.shouldExecute();
+		@Override
+		public boolean shouldExecute() {
+			return ((EntityPeacefullUntillAttacked)this.taskOwner).canAttack() && super.shouldExecute();
 		}
 	}
 }

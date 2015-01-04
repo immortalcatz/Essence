@@ -23,8 +23,8 @@ public class EntityIceballFX extends EntityFX {
         this.portalPosZ = this.posZ = var6;
         float var14 = this.rand.nextFloat() * 0.6F + 0.4F;
         this.portalParticleScale = this.particleScale = this.rand.nextFloat() * 0.2F;
-        this.particleBlue = 1.0F;
-        this.particleGreen = 1.0F;
+        this.particleBlue = 1.0F + rand.nextFloat() / 2;
+        this.particleGreen = 1.0F + rand.nextFloat() / 2;
         this.particleRed = 0.0F;
         this.particleMaxAge = (int)(Math.random() * 10.0D) + 40;
         this.noClip = true;

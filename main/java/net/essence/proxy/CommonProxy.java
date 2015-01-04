@@ -52,8 +52,6 @@ public class CommonProxy {
 		addOreDictionary();
 		SlayerAPI.addEventBus(new ArmorAbilityEvent());
 		SlayerAPI.addForgeEventBus(new ArmorAbilityEvent());
-		SlayerAPI.addEventBus(new ParticleEvent());
-		SlayerAPI.addForgeEventBus(new ParticleEvent());
 		SlayerAPI.addEventBus(new PlayerEvent());
 		SlayerAPI.addForgeEventBus(new PlayerEvent());
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");

@@ -1,5 +1,6 @@
 package net.essence.enums;
 
+import net.essence.client.render.particles.EntityFireballFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.particle.EntityFlameFX;
 import net.minecraft.client.particle.EntityLavaFX;
@@ -11,7 +12,8 @@ public enum EnumParticlesClasses {
 	LAVA(EntityLavaFX.class),
 	SMOKE(EntitySmokeFX.class),
 	FLAME(EntityFlameFX.class),
-	SNOWBALL_POOF(EntitySnowShovelFX.class);
+	SNOWBALL_POOF(EntitySnowShovelFX.class),
+	FIREBALL(EntityFireballFX.class);
 	
 	private Class particle;
 	

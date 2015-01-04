@@ -43,7 +43,7 @@ public class ItemTeleport extends ItemMod {
 		Vec3 var21 = var12.addVector((double)var17 * var19, (double)var16 * var19, (double)var18 * var19);
 		MovingObjectPosition var22 = par2.rayTraceBlocks(var12, var21);
 
-		if (var22 == null) {
+		if(var22 == null) {
 			return par1;
 		} else {
 			if (var22.typeOfHit == MovingObjectType.BLOCK) {
@@ -59,9 +59,9 @@ public class ItemTeleport extends ItemMod {
 				if (var26 == 4) --var23;                
 				if (var26 == 5) ++var23;                
 
-				if(EssenceBar.useBar(75)) {
+				if(EssenceBar.useBar(200)) {
 					par3.getLook(1);
-					this.teleportTo(par3, par2, (double)var23, (double)var24, (double)var25);
+					this.teleportTo(par3, par2, (double)var23, (double)var24 + 0.5D, (double)var25);
 				}
 			}
 		}

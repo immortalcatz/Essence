@@ -23,7 +23,7 @@ public class EntityDoomsBringer extends EntityBasicProjectile {
 		Random rand = new Random();
 		super.onUpdate();
 		for(int i = 0; i < 6; ++i) {
-			EntityFX effect = new EntityDoomFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
+			EntityFX effect = new EntityDoomFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, -this.motionX, -this.motionY + 0.2D, -this.motionZ);
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
 		}
 	}

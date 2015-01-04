@@ -215,7 +215,7 @@ public class EssenceItems {
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
 
 	public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
-	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, 72000, EntityFlameArrow.class);
+	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, EntityFlameArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
