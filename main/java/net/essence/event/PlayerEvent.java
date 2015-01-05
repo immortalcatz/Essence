@@ -101,7 +101,6 @@ public class PlayerEvent {
 		}*/
 		
 		if(e.toDim == Config.corba) {
-			SlayerAPI.addChatMessage(e.player, "In corba");
 			e.player.setLocationAndAngles(0, 63, 0, 0.0F, 0.0F);
 		}
 	}

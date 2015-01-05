@@ -153,7 +153,6 @@ public class ChunkProviderCorba implements IChunkProvider {
 	private int chunkX = 0, chunkZ = 0;
 
 	public Chunk provideChunk(int x, int z) {
-		chunkX = x; chunkZ = z;
 		this.corbaRNG.setSeed((long)x * 341873128712L + (long)z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		this.biomesForGeneration = this.corbaWorld.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
