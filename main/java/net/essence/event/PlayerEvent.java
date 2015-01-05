@@ -85,9 +85,9 @@ public class PlayerEvent {
 		return getArmorEnchantment(en, e) > 0;
 	}
 
-	/*@SubscribeEvent
+	@SubscribeEvent
 	public void transferDims(PlayerChangedDimensionEvent e) {
-		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
+		/*String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
 			e.fromDim == Config.euca ? " Euca " : e.fromDim == Config.frozen ? " Frozen Lands " : "§rUnknown";
 		
 		String to = e.toDim == -1 ? " Nether " : e.toDim == 0 ? " Overworld " : e.toDim == 1 ? " The End " : e.toDim == Config.boil ? " Boiling Point " : e.toDim == Config.depths ? " The Depths " :
@@ -98,6 +98,11 @@ public class PlayerEvent {
 			if(!e.player.worldObj.isRemote && !hasSeen) {
 				SlayerAPI.sendMessageToAll(e.player.getDisplayName() + " Has travelled from" + from + "to" + to, false);
 			}
+		}*/
+		
+		if(e.toDim == Config.corba) {
+			SlayerAPI.addChatMessage(e.player, "In corba");
+			e.player.setLocationAndAngles(0, 63, 0, 0.0F, 0.0F);
 		}
-	}*/
+	}
 }

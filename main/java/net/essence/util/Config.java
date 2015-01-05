@@ -20,10 +20,11 @@ public class Config {
 	}
 
 	public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, keepLoadingFrozen, reRenderPlayerStats, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
+	public static boolean keepLoadingCorba;
 	public static boolean spawnSwordParticles, showEntityHealth;
 
-	public static int euca, depths, boil, frozen;
-	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome;
+	public static int euca, depths, boil, frozen, corba;
+	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome, corbaBiome;
 
 	public static int baseMobID, baseProjectileID, baseEntityListID, entityHealthDistance;
 
@@ -38,8 +39,11 @@ public class Config {
 		boil = cfg.get("Dimension", "Boiling Point ID", 22).getInt();
 		frozenBiome = cfg.get("Dimension", "Frozen Lands biome ID", 63).getInt();
 		frozen = cfg.get("Dimension", "Frozen Lands ID", 23).getInt();
+		corba = cfg.get("Dimension", "Corba ID", 24).getInt();
+		frozenBiome = cfg.get("Dimension", "Corba biome ID", 64).getInt();
 		keepLoadingFrozen = cfg.get("Dimension", "Keep loading Frozen Lands", true).getBoolean(true);
 		keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Point", true).getBoolean(true);
+		keepLoadingCorba = cfg.get("Dimension", "Keep loading Corba", true).getBoolean(true);
 		boilBlockSpawnSmoke = cfg.get("Dimension", "Boiling point blocks spawn smoke (More lag)", true).getBoolean(true);
 		spawnSwordParticles = cfg.get("Items", "Swords spawn particles", true).getBoolean(true);
 		//spawnNetherBossesInNether = cfg.get("Dimension", "Spawn the Nether Bosses (with the orbs) only in the Nether", true).getBoolean(true);

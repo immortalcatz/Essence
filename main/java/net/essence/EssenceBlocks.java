@@ -52,7 +52,7 @@ public class EssenceBlocks {
 	//public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
 	
 	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", 2.0F);
-	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F, "eucaDirt");
+	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F);
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
 	public static final Block eucaLog = new BlockModLog("eucaLog");
 	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", 1.0F);
@@ -63,7 +63,7 @@ public class EssenceBlocks {
 	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling");
 	
 	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", 2.0F);
-	public static final Block depthsGrass = new BlockModGrass(depthsDirt, "depthsGrass", 2.0F, "depthsDirt");
+	public static final Block depthsGrass = new BlockModGrass(depthsDirt, "depthsGrass", 2.0F);
 	public static final Block depthsStone = new BlockMod("depthsStone", 2.0F);
 	public static final Block depthsLog = new BlockModLog("depthsLog");
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", 1.0F);
@@ -71,11 +71,11 @@ public class EssenceBlocks {
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
 
 	public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
-	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F, "godDirt");
+	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
 	public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
 	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
-	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F, "frozenDirt");
+	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);
 	public static final Block frozenStone = new BlockMod("frozenStone", 2.0F);
 	
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
@@ -91,6 +91,9 @@ public class EssenceBlocks {
 	public static final Block hotBlock = new BlockMod("hotGround", 2.0F);
 	public static final Block ashBlock = new BlockMod("ashBlock");
 
+	public static final BlockMod corbaStone = new BlockMod("corbaStone");
+	public static final Block corbaGrass = new BlockModGrass(corbaStone, "corbaGrass", 0.5F);
+	
 	public static final Block fire = new BlockModFire("fire");
 	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");
 	

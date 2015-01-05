@@ -2,6 +2,8 @@ package net.essence.dimension;
 
 import net.essence.dimension.boil.BiomeGenBoiling;
 import net.essence.dimension.boil.WorldProviderBoiling;
+import net.essence.dimension.corba.BiomeGenCorba;
+import net.essence.dimension.corba.WorldProviderCorba;
 import net.essence.dimension.depths.BiomeGenDepths;
 import net.essence.dimension.depths.WorldProviderDepths;
 import net.essence.dimension.euca.BiomeGenEuca;
@@ -43,7 +45,6 @@ import net.essence.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -60,12 +61,14 @@ public class DimensionHelper {
 	public static BiomeGenBase depths = new BiomeGenDepths(Config.depthsBiome);
 	public static BiomeGenBase boiling = new BiomeGenBoiling(Config.boilBiome).setHeight(boilHeight);
 	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome).setHeight(frozenHeight);
+	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome);
 
 	public static void init(){
 		addDimension(Config.euca, WorldProviderEuca.class, Config.keepLoadingEuca);
 		addDimension(Config.depths, WorldProviderDepths.class, Config.keepLoadingDepths);
 		addDimension(Config.boil, WorldProviderBoiling.class, Config.keepLoadingBoil);
 		addDimension(Config.frozen, WorldProviderFrozenLands.class, Config.keepLoadingFrozen);
+		addDimension(Config.corba, WorldProviderCorba.class, Config.keepLoadingCorba);
 	}
 
 	private static void addDimension(int id, Class<? extends WorldProvider> w, boolean keeploading) {

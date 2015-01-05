@@ -6,11 +6,15 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityCorbaPortal;
+import net.essence.dimension.ModTeleporter;
+import net.essence.util.Config;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -70,12 +74,24 @@ public class BlockCorbaPortal extends BlockContainer {
         return 0;
     }
 
-    @Override
-    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-        if (entityIn.ridingEntity == null && entityIn.riddenByEntity == null && !worldIn.isRemote) {
-            entityIn.travelToDimension(1);
-        }
-    }
+	@Override
+	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
+		if((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
+			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
+			int dimensionID = Config.corba;
+			Block blockFrame = EssenceBlocks.corbaStone;
+			if(thePlayer.timeUntilPortal > 0) 
+				thePlayer.timeUntilPortal = 10;
+			else if(thePlayer.dimension != dimensionID) {
+				thePlayer.timeUntilPortal = 10;
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionID, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(dimensionID), dimensionID, this, blockFrame));
+
+			} else {
+				thePlayer.timeUntilPortal = 10;
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(0), 0, this, blockFrame));
+			}
+		}
+	}
 
     @Override
     @SideOnly(Side.CLIENT)

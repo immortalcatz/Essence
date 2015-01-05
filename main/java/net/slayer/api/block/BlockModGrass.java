@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceTabs;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -12,17 +13,15 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.slayer.api.EnumMaterialTypes;
-import net.slayer.api.SlayerAPI;
 
 public class BlockModGrass extends BlockMod implements IGrowable {
 
     protected BlockMod dirt; 
     protected String tex;
 
-    public BlockModGrass(BlockMod dirt, String name, float hardness, String texture) {
+    public BlockModGrass(BlockMod dirt, String name, float hardness) {
         super(EnumMaterialTypes.GRASS, name, hardness);
         this.dirt = dirt;
-        this.tex = SlayerAPI.PREFIX + texture;
         setCreativeTab(EssenceTabs.blocks);
         setTickRandomly(true);
     }
@@ -38,7 +37,7 @@ public class BlockModGrass extends BlockMod implements IGrowable {
                     int j1 = y + random.nextInt(5) - 3;
                     int k1 = z + random.nextInt(3) - 1;
                     BlockPos blockpos1 = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
-                    if(world.getBlockState(new BlockPos(i1, j1, k1)) == dirt.getDefaultState() && world.getLightFromNeighbors(blockpos1.up()) >= 4 && world.getLightFromNeighbors(new BlockPos(i1, j1 + 1, k1)) <= 2)
+                    if(world.getBlockState(new BlockPos(i1, j1, k1)) == dirt.getDefaultState() && world.getBlockState(new BlockPos(i1, j1 + 1, k1)) == Blocks.air.getDefaultState() && world.getLightFromNeighbors(blockpos1.up()) >= 4 && world.getLightFromNeighbors(new BlockPos(i1, j1 + 1, k1)) <= 2)
                         world.setBlockState(new BlockPos(i1, j1, k1), getDefaultState());
                 }
             }
