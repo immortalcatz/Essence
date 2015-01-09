@@ -1,11 +1,18 @@
 package net.essence.items;
 
 import java.util.List;
+import java.util.Random;
 
+import net.essence.client.render.particles.EntityModFireFX;
+import net.essence.client.render.particles.EntityModLavaFX;
+import net.essence.client.render.particles.EntityModSnowFX;
+import net.essence.client.render.particles.EntityPoisionFX;
 import net.essence.util.EssenceToolMaterial;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
@@ -20,8 +27,19 @@ public class ItemFireSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.setFire(10);
+		addParticles(hit);
 		return super.hitEntity(par1ItemStack, hit, player);
 	}
+	
+	@SideOnly(Side.CLIENT)
+	public void addParticles(EntityLivingBase hit) {
+		Random r = new Random();
+		for(int i = 0; i < 50; i++){
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityModFireFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityModLavaFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F));
+		}
+	}
+
 
 	@Override
 	@SideOnly(Side.CLIENT)

@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.client.render.particles.EntityBoilPotalFX;
+import net.essence.client.render.particles.EntityModFireFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.block.Block;

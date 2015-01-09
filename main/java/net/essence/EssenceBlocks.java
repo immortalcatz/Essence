@@ -21,7 +21,7 @@ public class EssenceBlocks {
 	public static final Block celestiumOre = new BlockModOre("celestiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block luniumOre = new BlockModOre("luniumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
 	public static final Block ashual = new BlockModOre("ashual");
 	public static final Block sapphireOre = new BlockModOre("sapphireOre").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block enderilliumOre = new BlockModOre("enderilliumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
@@ -87,6 +87,7 @@ public class EssenceBlocks {
 	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal");
 	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
+	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
 	public static final Block hotBlock = new BlockMod("hotGround", 2.0F);
 	public static final Block ashBlock = new BlockMod("ashBlock");

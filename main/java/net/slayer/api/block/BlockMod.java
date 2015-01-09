@@ -88,15 +88,6 @@ public class BlockMod extends Block{
 	public String getName() {
 		return name;
 	}
-	
-	@Override
-	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-		/*if(this == EssenceBlocks.mossyEssenceStone || this == EssenceBlocks.christmasLights) {
-			return 900;
-		} else {*/
-			return super.getMixedBrightnessForBlock(worldIn, pos);
-		//}
-	}
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
@@ -113,11 +104,6 @@ public class BlockMod extends Block{
 	public boolean isOpaqueCube() {
 		return this != EssenceBlocks.christmasLights;
 	}
-
-	/*@Override
-	public int getRenderType() {
-		return this == EssenceBlocks.mossyEssenceStone ? 173 : 3;
-	}*/
 	
 	@Override
 	public int getRenderType() {
@@ -143,25 +129,12 @@ public class BlockMod extends Block{
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
 		if(Config.boilBlockSpawnSmoke){
-			if(w.getBlockState(pos) == EssenceBlocks.hotBlock){
-				int x = pos.getX();
-				int y = pos.getY();
-				int z = pos.getZ();
-				double d0 = 0.0625D;
-				for(int l = 0; l < 6; ++l) {
-					double d1 = (double)((float)x + random.nextFloat());
-					double d2 = (double)((float)y + random.nextFloat());
-					double d3 = (double)((float)z + random.nextFloat());
-					if(l == 0 && !w.getBlockState(new BlockPos(x, y + 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 1) + d0;
-					if(l == 1 && !w.getBlockState(new BlockPos(x, y - 1, z)).getBlock().isOpaqueCube()) d2 = (double)(y + 0) - d0;
-					if(l == 2 && !w.getBlockState(new BlockPos(x, y, z + 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 1) + d0;    
-					if(l == 3 && !w.getBlockState(new BlockPos(x, y, z - 1)).getBlock().isOpaqueCube()) d3 = (double)(z + 0) - d0;
-					if(l == 4 && !w.getBlockState(new BlockPos(x + 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 1) + d0;
-					if(l == 5 && !w.getBlockState(new BlockPos(x - 1, y, z)).getBlock().isOpaqueCube()) d1 = (double)(x + 0) - d0;
-					if(d1 < (double)x || d1 > (double)(x + 1) || d2 < 0.0D || d2 > (double)(y + 1) || d3 < (double)z || d3 > (double)(z + 1)) {
-						OreParticleFX var20 = new OreParticleFX(w, d1, d2, d3, 0, 0, 0);
-						FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
-					}
+			if(w.getBlockState(pos) == EssenceBlocks.hotBlock.getDefaultState()){
+				for(int i = 0; i < 3; ++i) {
+					double d0 = (double)pos.getX() + rand.nextDouble();
+					double d1 = (double)pos.getY() + rand.nextDouble() * 0.5D + 0.7D;
+					double d2 = (double)pos.getZ() + rand.nextDouble();
+					w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
 				}
 			}
 		}

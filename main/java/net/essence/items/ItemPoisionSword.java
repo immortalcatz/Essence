@@ -3,6 +3,8 @@ package net.essence.items;
 import java.util.List;
 import java.util.Random;
 
+import net.essence.client.render.particles.EntityModFireFX;
+import net.essence.client.render.particles.EntityModLavaFX;
 import net.essence.client.render.particles.EntityPoisionFX;
 import net.essence.util.EssenceToolMaterial;
 import net.minecraft.client.Minecraft;
@@ -26,11 +28,16 @@ public class ItemPoisionSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 2));
+		addParticles(hit);
+		return super.hitEntity(par1ItemStack, hit, player);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void addParticles(EntityLivingBase hit) {
 		Random r = new Random();
 		for(int i = 0; i < 50; i++){
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityPoisionFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
 		}
-		return super.hitEntity(par1ItemStack, hit, player);
 	}
 
 	@Override

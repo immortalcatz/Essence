@@ -45,8 +45,10 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateDepths(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(1, w, chunkX, chunkZ);
-		for(i = 0; i < 4; i++) GenerationHelper.generateEssenceDimensions(2, w, chunkX, chunkZ);
+		
+		//for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(2, w, chunkX, chunkZ);
+		//for(i = 0; i < 5; i++) GenerationHelper.generateEssenceDimensions(10, w, chunkX, chunkZ);
+		
 	}
 
 	private void generateEuca(World w, Random r, int chunkX, int chunkZ) {
@@ -74,9 +76,9 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(rand.nextInt(5) == 0) GenerationHelper.generateVanilla(8, w, chunkX, chunkZ);
 		for(i = 0; i < 50; i++) GenerationHelper.generateVanilla(9, w, chunkX, chunkZ);
 		//if(rand.nextInt(200) == 0) GenerationHelper.generateVanilla(10, w, chunkX, chunkZ);
-		if(rand.nextInt(4) == 0) GenerationHelper.generateVanilla(12, w, chunkX, chunkZ);
-		if(rand.nextInt(4) == 0) GenerationHelper.generateVanilla(13, w, chunkX, chunkZ);
-		if(rand.nextInt(4) == 0) GenerationHelper.generateVanilla(14, w, chunkX, chunkZ);
+		if(rand.nextInt(8) == 0) GenerationHelper.generateVanilla(12, w, chunkX, chunkZ);
+		if(rand.nextInt(8) == 0) GenerationHelper.generateVanilla(13, w, chunkX, chunkZ);
+		if(rand.nextInt(8) == 0) GenerationHelper.generateVanilla(14, w, chunkX, chunkZ);
 	}
 
 	private void generateEnd(World w, Random r, int chunkX, int chunkZ) {
