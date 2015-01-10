@@ -8,13 +8,13 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
-public class EntityEnlightment extends EntityBasicProjectile {
+public class EntityEnlightenment extends EntityBasicProjectile {
 
-	public EntityEnlightment(World var1) {
+	public EntityEnlightenment(World var1) {
 		super(var1);
 	}
 	
-	public EntityEnlightment(World var1, EntityLivingBase var3, float dam) {
+	public EntityEnlightenment(World var1, EntityLivingBase var3, float dam) {
 		super(var1, var3, dam);
 	}
 	

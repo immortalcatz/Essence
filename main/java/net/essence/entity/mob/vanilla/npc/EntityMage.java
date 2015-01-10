@@ -54,7 +54,7 @@ public class EntityMage extends EntityModVillager {
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.purpleGem, 15), new ItemStack(EssenceItems.doomsBringer)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.yellowGem, 5), new ItemStack(EssenceItems.wizardsStar)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.hellstoneIngot, 5), new ItemStack(EssenceItems.chaosCannon)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.blueGem, 15), new ItemStack(EssenceItems.staffOfEnlightment)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.blueGem, 15), new ItemStack(EssenceItems.staffOfEnlightenment)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.greenGem, 10), new ItemStack(EssenceItems.staffOfGreenpace, 1), new ItemStack(EssenceItems.conjuringStaff)));		
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.wandBase, 1), new ItemStack(Blocks.ice, 64), new ItemStack(EssenceItems.iceWand)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.wandBase, 1), new ItemStack(Items.fire_charge, 10), new ItemStack(EssenceItems.fireWand)));

@@ -24,7 +24,9 @@ import net.essence.misc.EssenceCommands;
 import net.essence.util.Config;
 import net.essence.util.EntityRegistry;
 import net.essence.util.recipes.RecipeHelper;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -64,6 +66,7 @@ public class CommonProxy {
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		//StructureBoilBridgePieces.registerBoilFortressPieces();
 		//StructureBoilVillagePieces.registerVillagePieces();
+		MinecraftForge.addGrassSeed(new ItemStack(EssenceItems.tomatoSeeds), 5);
 	}
 	
 	public void init(FMLInitializationEvent event) {

@@ -181,7 +181,7 @@ public class EssenceItems {
 	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 7, false, false, EntityBasicProjectile.class);
 	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 12, false, false, EntityDoomsBringer.class);
 	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 18, true, false, EntityConjuring.class);
-	public static final Item staffOfEnlightment = new ItemStaff("staffOfEnlightment", 25, 1000, 14, true, false, EntityEnlightment.class);
+	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", 25, 1000, 14, true, false, EntityEnlightenment.class);
 	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false, EntityGreenpace.class);
 	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 5, true, false, EntityWizardsStar.class);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
@@ -252,7 +252,7 @@ public class EssenceItems {
 	
 	//public static final Item itemWiki = new ItemWikiBook("itemWiki", GuiIDs.ITEM_WIKI);
 	
-	public static final Item tomato = new ItemMod("tomato");
+	public static final Item tomato = new ItemModFood("tomato", 3, 0.6F, false);
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
 	
 	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
