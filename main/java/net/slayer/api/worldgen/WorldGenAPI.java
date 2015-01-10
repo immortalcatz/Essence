@@ -317,4 +317,14 @@ public class WorldGenAPI {
 				par1World.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i)), block.getDefaultState());
 		}
 	}
+	
+	public static void placeCircle(World world, Block block, int x, int y, int z, int radius) {
+		for(float i = 0; i < radius; i += 0.5) {
+			for(float j = 0; j < 2 * Math.PI * i; j += 0.5) {
+				world.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i)), block.getDefaultState());
+				if(r.nextInt(6)==0) world.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i) + r.nextInt(2) - r.nextInt(2), y + 1, (int)Math.floor(z + Math.cos(j) * i) + r.nextInt(2) - r.nextInt(2)), block.getDefaultState());
+				if(r.nextInt(6)==0) world.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i) + r.nextInt(2) - r.nextInt(2), y - 1, (int)Math.floor(z + Math.cos(j) * i) + r.nextInt(2) - r.nextInt(2)), block.getDefaultState());
+			}
+		}
+	}
 }

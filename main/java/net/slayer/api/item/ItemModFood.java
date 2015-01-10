@@ -41,7 +41,7 @@ public class ItemModFood extends ItemFood {
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
         list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
         list.add(getSaturationModifier(stack) + " Saturation");
-        if(time >= 32) list.add("Faster eating");
+        if(time <= 32) list.add("Faster eating");
         list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }
 }

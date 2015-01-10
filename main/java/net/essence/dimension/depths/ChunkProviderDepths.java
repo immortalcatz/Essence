@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.GenerationHelper;
-import net.essence.dimension.boil.gen.MapGenBoilingCaves;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
+import net.essence.dimension.depths.gen.WorldGenSpike;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockHelper;
@@ -23,7 +21,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
@@ -315,6 +312,16 @@ public class ChunkProviderDepths implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
+		
+		for(i = 0; i < 10; i++) {
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16);
+			z = z1 + this.rand.nextInt(16);
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.depthsGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
+				new WorldGenSpike().generate(worldObj, rand, new BlockPos(x, y, z));
+			}
+		}
+		
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
 			(new WorldGenMinable(EssenceBlocks.flairiumOre.getDefaultState(), 8, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
