@@ -101,11 +101,6 @@ public class BlockMod extends Block{
 	}
 	
 	@Override
-	public boolean isOpaqueCube() {
-		return this != EssenceBlocks.christmasLights;
-	}
-	
-	@Override
 	public int getRenderType() {
 		return 3;
 	}

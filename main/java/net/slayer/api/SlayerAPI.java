@@ -56,7 +56,7 @@ public class SlayerAPI {
 	public static Logger logger = Logger.getLogger(SlayerAPI.MOD_ID);
 
 	public static final String MOD_NAME = "Essence of the Gods", MOD_ID = "essence", PREFIX = MOD_ID + ":", MOD_VERSION = "1.9"; 
-	public static final boolean DEVMODE = true, BETA = false;
+	public static final boolean DEVMODE = false, BETA = false;
 
 	public static void addRecipe(ItemStack i, Object... o) {
 		GameRegistry.addRecipe(i, o);

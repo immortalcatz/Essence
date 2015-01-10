@@ -45,7 +45,7 @@ public class EssenceTabs extends CreativeTabs {
 	
 	public static void init(){
 		decoraton.setIcon(new ItemStack(EssenceBlocks.colouredBricks, 1, 5));
-		spawners.setIcon(Blocks.mob_spawner);
+		spawners.setIcon(EssenceItems.calciaOrb);
 		blocks.setIcon(EssenceBlocks.celestiumBlock);
 		items.setIcon(EssenceItems.hellstoneIngot);
 		tools.setIcon(EssenceItems.hellstoneMultiTool);

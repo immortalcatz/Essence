@@ -23,8 +23,7 @@ public class BarTickHandler {
 
 	@SubscribeEvent
 	public void onTick(PlayerTickEvent event){
-		if(event.phase == Phase.END)
-			tickEnd();
+		if(event.phase == Phase.END) tickEnd();
 	}
 
 	@SubscribeEvent
@@ -64,11 +63,11 @@ public class BarTickHandler {
 	}
 
 	@SubscribeEvent
-	public void playerLogOut(PlayerLoggedOutEvent event){ 
+	public void playerLogOut(PlayerLoggedOutEvent event){
 		DarkEnergyBar.addBarPoints(0);
 		EssenceBar.addBarPoints(0);
 	}
-	
+
 	@SubscribeEvent
 	public void playerChangedDimension(PlayerChangedDimensionEvent event){
 		DarkEnergyBar.addBarPoints(200);

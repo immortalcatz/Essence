@@ -153,7 +153,7 @@ public class EssenceBlocks {
 	public static final Block storageBlocks2 = new BlockStorageBlocks2();
 	public static final Block storageBlocks3 = new BlockStorageBlocks3();
 
-	public static final Block christmasLights = new BlockChristmasLights("christmasLights");
+	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 	
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass");

@@ -18,11 +18,10 @@ public class WorldGenSpike extends WorldGenerator {
 		return true;
 	}
 	
-	public void placeCircle(World par1World, int x, int y, int z, int radius) {
-		if(radius >= 7) radius = 6;
-		if(y >= 256) y = 255;
-		for (float i = 0; i < radius; i += 0.5) {
-			for (float j = 0; j < 2 * Math.PI * i; j += 0.5) {
+	public void placeCircle(World par1World, int x, int y, int z, int r) {
+		if(r >= 7) r = 6;
+		for(float i = 0; i < r; i += 0.5) {
+			for(float j = 0; j < 2 * Math.PI * i; j += 0.5) {
 				par1World.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i)), EssenceBlocks.depthsStone.getDefaultState());
 			}
 		}

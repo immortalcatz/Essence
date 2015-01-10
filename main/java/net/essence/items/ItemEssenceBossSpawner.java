@@ -19,7 +19,7 @@ import net.slayer.api.item.ItemMod;
 public class ItemEssenceBossSpawner extends ItemMod {
 
 	public ItemEssenceBossSpawner(String name) {
-		super(name, EssenceTabs.util);
+		super(name, EssenceTabs.spawners);
 		setMaxStackSize(1);
 	}
 	
@@ -46,8 +46,7 @@ public class ItemEssenceBossSpawner extends ItemMod {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
 		String spawn = "";
-		if(item == EssenceItems.eudorOrb)
-			spawn = "Eudor";
+		if(item == EssenceItems.eudorOrb) spawn = "Eudor";
 		list.add("Spawns the boss: " + spawn);
 	}
 }

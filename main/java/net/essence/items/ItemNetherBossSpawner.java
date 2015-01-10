@@ -20,7 +20,7 @@ import net.slayer.api.item.ItemMod;
 public class ItemNetherBossSpawner extends ItemMod {
 
 	public ItemNetherBossSpawner(String name) {
-		super(name, EssenceTabs.util);
+		super(name, EssenceTabs.spawners);
 		setMaxStackSize(1);
 	}
 
