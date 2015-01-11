@@ -1,5 +1,6 @@
 package net.essence.dimension.boil;
 
+import java.awt.Color;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
@@ -47,7 +48,7 @@ public class BiomeGenBoiling extends BiomeGenBase {
     }*/
 	
 	@Override
-	public int getSkyColorByTemp(float par1) {
-		return 0xC40600;
+	public int getSkyColorByTemp(float f) {
+		return Color.getHSBColor(1.0F, 0.0F, 0.0F).getRGB();
 	}
 }

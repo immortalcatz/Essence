@@ -82,7 +82,7 @@ public class CommonProxy {
 		SlayerAPI.registerCommand(new EssenceCommands());
 	}
 	
-	private static void addOreDictionary() {
+	private void addOreDictionary() {
 		OreDictionary.registerOre("oreAshual", EssenceBlocks.ashual);
 		OreDictionary.registerOre("oreCelestium", EssenceBlocks.celestiumOre);
 		OreDictionary.registerOre("oreLunium", EssenceBlocks.luniumOre);

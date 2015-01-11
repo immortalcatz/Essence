@@ -1,5 +1,6 @@
 package net.essence.dimension.euca;
 
+import java.awt.Color;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
@@ -19,5 +20,11 @@ public class BiomeGenEuca extends BiomeGenBase {
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
+        setColor(0xE57272);
+	}
+	
+	@Override
+	public int getSkyColorByTemp(float f) {
+		return Color.getHSBColor(0.0F, 1.0F, 0.0F).getRGB();
 	}
 }

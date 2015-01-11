@@ -24,6 +24,16 @@ public class WorldProviderDepths extends WorldProvider {
     public float getCloudHeight() {
         return 128.0F;
     }
+    
+    @Override
+    public int getHeight() {
+        return 128;
+    }
+
+    @Override
+    public int getActualHeight() {
+        return 128;
+    }
 
     @Override
     public IChunkProvider createChunkGenerator() {
