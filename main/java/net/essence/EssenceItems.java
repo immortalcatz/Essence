@@ -257,6 +257,13 @@ public class EssenceItems {
 	
 	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
 	
+	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");
+	public static final Item blueWater = new ItemModRecord("blueWater");
+	public static final Item raceStar = new ItemModRecord("raceStar");
+	public static final Item compBegins = new ItemModRecord("compBegins");
+	public static final Item deepBlue = new ItemModRecord("deepBlue");
+	public static final Item raceShore = new ItemModRecord("raceShore");
+
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
 	}

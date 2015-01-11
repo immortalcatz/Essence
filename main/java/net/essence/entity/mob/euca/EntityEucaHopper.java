@@ -51,12 +51,8 @@ public class EntityEucaHopper extends EntityModTameable {
 	@Override
 	public void setAttackTarget(EntityLivingBase par1EntityLivingBase) {
 		super.setAttackTarget(par1EntityLivingBase);
-		if(par1EntityLivingBase == null)
-			this.setAngry(false);
-
-		else if(!this.isTamed())
-			this.setAngry(true);
-
+		if(par1EntityLivingBase == null) this.setAngry(false);
+		else if(!this.isTamed()) this.setAngry(true);
 	}
 
 	@Override
@@ -102,7 +98,7 @@ public class EntityEucaHopper extends EntityModTameable {
 	@Override
 	public boolean attackEntityAsMob(Entity par1Entity) {
 		int i = this.isTamed() ? 10 : 5;
-		return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float)i);
+		return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this),(float)i);
 	}
 
 	@Override
@@ -125,13 +121,13 @@ public class EntityEucaHopper extends EntityModTameable {
 							--itemstack.stackSize;            
 						this.heal((float)itemfood.getHealAmount(itemstack));
 						if(itemstack.stackSize <= 0)
-							par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
+							par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem,(ItemStack)null);
 						return true;
 					}
 				}
 			}
 
-			if (isOwner(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
+			if(isOwner(par1EntityPlayer) && !this.worldObj.isRemote && !this.isBreedingItem(itemstack)) {
 				this.aiSit.setSitting(!this.isSitting());
 				this.isJumping = false;
 				this.navigator.clearPathEntity();
@@ -139,12 +135,11 @@ public class EntityEucaHopper extends EntityModTameable {
 			}
 		}
 
-		else if (itemstack != null && itemstack.getItem() == Items.apple && !this.isAngry()) {
+		else if(itemstack != null && itemstack.getItem() == Items.apple && !this.isAngry()) {
 			if(!par1EntityPlayer.capabilities.isCreativeMode)    
 				--itemstack.stackSize;
 
-			if(itemstack.stackSize <= 0) 
-				par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
+			if(itemstack.stackSize <= 0) par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem,(ItemStack)null);
 
 			if(!this.worldObj.isRemote) {
 				if(this.rand.nextInt(3) == 0) {
@@ -155,10 +150,10 @@ public class EntityEucaHopper extends EntityModTameable {
 					this.setHealth(20.0F);
 					this.setOwnerId(par1EntityPlayer.getUniqueID().toString());
 					this.playTameEffect(true);
-					this.worldObj.setEntityState(this, (byte)7);
+					this.worldObj.setEntityState(this,(byte)7);
 				} else {
 					this.playTameEffect(false);
-					this.worldObj.setEntityState(this, (byte)6);
+					this.worldObj.setEntityState(this,(byte)6);
 				}
 			}
 			return true;
@@ -172,7 +167,7 @@ public class EntityEucaHopper extends EntityModTameable {
 	}
 
 	public boolean isAngry() {
-		return (this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
+		return(this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
 	}
 
 	private void setAngry(boolean b) {
@@ -188,8 +183,8 @@ public class EntityEucaHopper extends EntityModTameable {
 
 	@Override
 	public boolean func_142018_a(EntityLivingBase par1EntityLivingBase, EntityLivingBase par2EntityLivingBase) {
-		if (!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast)) {
-			if (par1EntityLivingBase instanceof EntityEucaHopper) {
+		if(!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast)) {
+			if(par1EntityLivingBase instanceof EntityEucaHopper) {
 				EntityEucaHopper pig = (EntityEucaHopper)par1EntityLivingBase;
 				if(pig.isTamed() && pig.getOwner() == par2EntityLivingBase) return false;
 			}

@@ -56,6 +56,14 @@ public class ItemMod extends Item {
 			if(damage) item.damageItem(dam, p);
 		}
 	}
+	
+	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, String sound, boolean damage, ItemStack item, int dam) {
+		if(!w.isRemote){
+			w.spawnEntityInWorld(entity);
+			EnumSounds.playSound(sound, w, p);
+			if(damage) item.damageItem(dam, p);
+		}
+	}
 
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound) {
 		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(Items.apple), 0);

@@ -32,10 +32,10 @@
  "wrapper":{"category":"neutral","sounds": ["wrapper"] },
  "pageFlip":{"category":"neutral","sounds": ["pageFlip"] },
  "magicSparkle":{"category":"neutral","sounds": ["magicSparkle"] },
- "music.underwaterWorld":{"category": "music", "sounds": [{"name": "music/underwaterWorld", "stream": true}]},
- "music.blueWater":{"category": "music", "sounds": [{"name": "music/blueWater", "stream": true}]},
- "music.raceStar":{"category": "music", "sounds": [{"name": "music/raceStar", "stream": true}]},
- "music.compBegins":{"category": "music", "sounds": [{"name": "music/compBegins", "stream": true}]},
- "music.deepBlue":{"category": "music", "sounds": [{"name": "music/deepBlue", "stream": true}]},
- "music.raceShore":{"category": "music", "sounds": [{"name": "music/raceShore", "stream": true}]}
+ "music.records.underwaterWorld":{"category": "music", "sounds": [{"name": "music/records/underwaterWorld", "stream": true}]},
+ "music.records.blueWater":{"category": "music", "sounds": [{"name": "music/records/blueWater", "stream": true}]},
+ "music.records.raceStar":{"category": "music", "sounds": [{"name": "music/records/raceStar", "stream": true}]},
+ "music.records.compBegins":{"category": "music", "sounds": [{"name": "music/records/compBegins", "stream": true}]},
+ "music.records.deepBlue":{"category": "music", "sounds": [{"name": "music/records/deepBlue", "stream": true}]},
+ "music.records.raceShore":{"category": "music", "sounds": [{"name": "music/records/raceShore", "stream": true}]}
 }

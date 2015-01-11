@@ -18,6 +18,7 @@ public class ItemChaosCannon extends ItemMod {
 		super(name, EssenceTabs.ranged);
 		setMaxStackSize(1);
 		setMaxDamage(500);
+		setFull3D();
 	}
 
 	@Override

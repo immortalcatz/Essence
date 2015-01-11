@@ -51,7 +51,7 @@ public class MusicEvent {
 					name = "raceStar";
 					break;
 				}
-				ResourceLocation musicLocation = new ResourceLocation(SlayerAPI.PREFIX + "music." + name);
+				ResourceLocation musicLocation = new ResourceLocation(SlayerAPI.PREFIX + "music.records." + name);
 				this.curMusic = PositionedSoundRecord.create(musicLocation);
 				this.mc.getSoundHandler().playSound(this.curMusic);
 				this.ticks = MathHelper.getRandomIntegerInRange(this.rand, 2000, 10000);

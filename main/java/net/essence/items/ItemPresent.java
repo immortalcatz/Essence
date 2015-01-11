@@ -23,7 +23,7 @@ import net.slayer.api.item.ItemMod;
 public class ItemPresent extends ItemMod {
 
 	public ItemPresent(String name) {
-		super(name, EssenceTabs.misc);
+		super(name, EssenceTabs.items);
 	}
 
 	@Override
