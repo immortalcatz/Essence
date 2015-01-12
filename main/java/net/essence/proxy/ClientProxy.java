@@ -45,8 +45,15 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.storageBlocks2, names2);
 		registerModelBakery(EssenceBlocks.storageBlocks3, names3);
 		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
-		registerModelBakery(EssenceBlocks.tomatoCrop, new String[] {});
+		addBow(EssenceItems.flameBow, "flameBow");
+		addBow(EssenceItems.poisonBow, "poisonBow");
+		addBow(EssenceItems.darknessBow, "darknessBow");
+		addBow(EssenceItems.frozenBow, "frozenBow");
 		//SlayerAPI.addEventBus(new ParticleEvent());
+	}
+	
+	public void addBow(Item bow, String name) {
+		registerModelBakery(bow, new String[] {SlayerAPI.PREFIX + name, SlayerAPI.PREFIX + name + "_0", SlayerAPI.PREFIX + name + "_1", SlayerAPI.PREFIX  + name + "_2"});
 	}
 
 	@Override
@@ -89,11 +96,11 @@ public class ClientProxy extends CommonProxy {
 			registerItem(i, s);
 		}
 
-		registerItem(EssenceItems.flameBow, 0, "flameBow");
-		registerItem(EssenceItems.flameBow, 1, "flameBow_0");
-		registerItem(EssenceItems.flameBow, 2, "flameBow_1");
-		registerItem(EssenceItems.flameBow, 3, "flameBow_2");
-		
+		addBowRegistry(EssenceItems.flameBow, "flameBow");
+		addBowRegistry(EssenceItems.poisonBow, "poisonBow");
+		addBowRegistry(EssenceItems.darknessBow, "darknessBow");
+		addBowRegistry(EssenceItems.frozenBow, "frozenBow");
+
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
 			registerItem(it, i, brickNames[i]);
@@ -123,6 +130,13 @@ public class ClientProxy extends CommonProxy {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockStorageBlocks3");
 			registerItem(it, i, names3N[i]);
 		}
+	}
+	
+	public void addBowRegistry(Item bow, String name) {
+		registerItem(bow, 0, name);
+		registerItem(bow, 1, name + "_0");
+		registerItem(bow, 2, name + "_1");
+		registerItem(bow, 3, name + "_2");
 	}
 
 	public static void registerModelBakery(Item i, String[] names) {

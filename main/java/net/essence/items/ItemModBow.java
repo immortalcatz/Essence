@@ -1,5 +1,8 @@
 package net.essence.items;
 
+import java.util.List;
+
+import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
@@ -10,16 +13,18 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
 public class ItemModBow extends ItemMod {
 
 	private Class<? extends EntityArrow> arrowClass;
 	public Item arrowItem;
-	public int dur = 72000;
+	public int dur = 18;
 
 	public ItemModBow(String name, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
 		super(name, EssenceTabs.ranged);
@@ -82,12 +87,22 @@ public class ItemModBow extends ItemMod {
 
 	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-		return dur;
+		return 72000;
 	}
 
 	@Override
 	public EnumAction getItemUseAction(ItemStack stack) {
 		return EnumAction.BOW;
+	}
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
+		list.add("Ammo: " + StatCollector.translateToLocal(arrowItem.getUnlocalizedName() + ".name"));
+		//if(dur < 72000) list.add("Faster drawback speed");
+		//else if (dur == 72000) list.add("Normal drawback speed");
+		//else list.add("Slower drawback speed");
+		if(stack.getMaxDamage() != -1) list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining");
+		else list.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
 	}
 
 	@Override

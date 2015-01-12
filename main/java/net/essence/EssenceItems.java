@@ -215,8 +215,13 @@ public class EssenceItems {
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
 
 	public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
+	public static final Item essenceArrow = new ItemMod("essenceArrow", EssenceTabs.ranged);
+	
 	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, EntityFlameArrow.class);
-
+	public static final Item poisonBow = new ItemModBow("poisonBow", 384, essenceArrow, 18, EntityPoisonArrow.class);
+	public static final Item darknessBow = new ItemModBow("darknessBow", 384, essenceArrow, 10, EntityDarknessArrow.class);
+	public static final Item frozenBow = new ItemModBow("frozenBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
+	
 	//public static final Item backpack = new ItemBackpack("backpack");
 
 	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);

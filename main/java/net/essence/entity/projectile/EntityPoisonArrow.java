@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -17,6 +18,8 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S2BPacketChangeGameState;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
@@ -30,7 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityFlameArrow extends EntityArrow implements IProjectile {
+public class EntityPoisonArrow extends EntityArrow implements IProjectile {
 
 	private int xTile = -1;
 	private int yTile = -1;
@@ -46,20 +49,20 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 	private double damage = 4.0D;
 	private int knockbackStrength;
 
-	public EntityFlameArrow(World worldIn) {
+	public EntityPoisonArrow(World worldIn) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.setSize(0.5F, 0.5F);
 	}
 
-	public EntityFlameArrow(World worldIn, double d, double d1, double d2) {
+	public EntityPoisonArrow(World worldIn, double d, double d1, double d2) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.setSize(0.5F, 0.5F);
 		this.setPosition(d, d1, d2);
 	}
 
-	public EntityFlameArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1) {
+	public EntityPoisonArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.shootingEntity = e;
@@ -85,7 +88,7 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 		}
 	}
 
-	public EntityFlameArrow(World worldIn, EntityLivingBase e, float f) {
+	public EntityPoisonArrow(World worldIn, EntityLivingBase e, float f) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.shootingEntity = e;
@@ -267,8 +270,9 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 						damagesource = new EntityDamageSourceIndirect("arrow", this, this.shootingEntity).setProjectile();
 					}
 
-					if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
-						movingobjectposition.entityHit.setFire(5);
+					if(movingobjectposition.entityHit instanceof EntityLivingBase && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
+						EntityLivingBase e = (EntityLivingBase)movingobjectposition.entityHit;
+						e.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
 					}
 
 					if (movingobjectposition.entityHit.attackEntityFrom(damagesource, (float)k)) {
@@ -336,12 +340,6 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 				}
 			}
 
-			for (i = 0; i < 20; ++i) {
-				this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + this.motionX * (double)i / 4.0D, this.posY + this.motionY * (double)i / 4.0D, this.posZ + this.motionZ * (double)i / 4.0D, -this.motionX, -this.motionY + 0.2D, -this.motionZ, new int[0]);
-				this.worldObj.spawnParticle(EnumParticleTypes.LAVA, this.posX + this.motionX * (double)i / 4.0D, this.posY + this.motionY * (double)i / 4.0D, this.posZ + this.motionZ * (double)i / 4.0D, -this.motionX, -this.motionY + 0.2D, -this.motionZ, new int[0]);
-			}
-
-
 			this.posX += this.motionX;
 			this.posY += this.motionY;
 			this.posZ += this.motionZ;
@@ -388,11 +386,6 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 			this.setPosition(this.posX, this.posY, this.posZ);
 			this.doBlockCollisions();
 		}
-	}
-
-	@Override
-	public boolean isBurning() {
-		return true;
 	}
 
 	@Override
@@ -444,7 +437,7 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 		if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0) {
 			boolean flag = this.canBePickedUp == 1 || this.canBePickedUp == 2 && entityIn.capabilities.isCreativeMode;
 
-			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(EssenceItems.flameArrow, 1))) {
+			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(EssenceItems.essenceArrow, 1))) {
 				flag = false;
 			}
 

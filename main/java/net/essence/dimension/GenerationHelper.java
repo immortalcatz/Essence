@@ -142,6 +142,10 @@ public class GenerationHelper {
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenMinable(EssenceBlocks.depthsLights.getDefaultState(), 25, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(w, r, new BlockPos(x, y, z));
 			break;
+		case 12:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenModFlower(EssenceBlocks.depthsFlower)).generate(w, r, new BlockPos(x, y, z));
+			break;
 		}
 	}
 

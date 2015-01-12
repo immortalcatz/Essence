@@ -45,10 +45,9 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateDepths(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		
+		//for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(12, w, chunkX, chunkZ);
 		//for(i = 0; i < 25; i++) GenerationHelper.generateEssenceDimensions(2, w, chunkX, chunkZ);
 		//for(i = 0; i < 5; i++) GenerationHelper.generateEssenceDimensions(10, w, chunkX, chunkZ);
-		
 	}
 
 	private void generateEuca(World w, Random r, int chunkX, int chunkZ) {
@@ -61,9 +60,9 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		if(r.nextInt(50) == 0) GenerationHelper.generateVanilla(6, w, chunkX, chunkZ);
+		if(r.nextInt(40) == 0) GenerationHelper.generateVanilla(6, w, chunkX, chunkZ);
 		for(i = 0; i < 15; i++) GenerationHelper.generateVanilla(5, w, chunkX, chunkZ);
-		if(rand.nextInt(8) == 0) GenerationHelper.generateVanilla(7, w, chunkX, chunkZ);
+		if(rand.nextInt(15) == 0) GenerationHelper.generateVanilla(7, w, chunkX, chunkZ);
 	}
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
