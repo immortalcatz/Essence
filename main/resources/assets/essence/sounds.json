@@ -33,6 +33,7 @@
  "pageFlip":{"category":"neutral","sounds": ["pageFlip"] },
  "magicSparkle":{"category":"neutral","sounds": ["magicSparkle"] },
  "cannon":{"category":"neutral","sounds": ["cannon"] },
+ "plasma":{"category":"neutral","sounds": ["plasma"] },
  "music.records.underwaterWorld":{"category": "music", "sounds": [{"name": "music/records/underwaterWorld", "stream": true}]},
  "music.records.blueWater":{"category": "music", "sounds": [{"name": "music/records/blueWater", "stream": true}]},
  "music.records.raceStar":{"category": "music", "sounds": [{"name": "music/records/raceStar", "stream": true}]},

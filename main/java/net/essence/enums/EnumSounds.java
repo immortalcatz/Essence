@@ -47,7 +47,8 @@ public enum EnumSounds {
 	WRAPPER("essence:wrapper"),
 	PAGE_FLIP("essence:pageFlip"),
 	SPARKLE("essence:magicSparkle"),
-	CANNON("essence:cannon");
+	CANNON("essence:cannon"),
+	PLASMA("essence:plasma");
 	
 	private String sound;
 

@@ -17,6 +17,7 @@ public class Textures {
     public static final ResourceLocation grindstone = addModel("blocks/grindstone");
     public static final ResourceLocation empty = addProjectile("empty");
     public static final ResourceLocation templeBall = addProjectile("templeBall");
+    public static final ResourceLocation rockChunk = new ResourceLocation(SlayerAPI.PREFIX + "textures/items/rockChunk.png");
 
     public static final ResourceLocation robot = addMob("robot");
     public static final ResourceLocation blank = addMob("blank");
