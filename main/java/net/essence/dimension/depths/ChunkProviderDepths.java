@@ -218,6 +218,12 @@ public class ChunkProviderDepths implements IChunkProvider {
 		this.setBlocksInChunk(x, z, chunkprimer);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
 		this.func_180517_a(x, z, chunkprimer, this.biomesForGeneration);
+		for(int i = 0; i < 10; i++) {
+			int ycoord = rand.nextInt(249)+1;
+			if(chunkprimer.getBlockState(8, ycoord, 8).getBlock() == Blocks.air && chunkprimer.getBlockState(8, ycoord - 1, 8).getBlock() == EssenceBlocks.depthsGrass && chunkprimer.getBlockState(8, ycoord + 1, 8).getBlock() == Blocks.air) {
+				new WorldGenSpike().generate(chunkprimer, rand, new BlockPos(8, ycoord, 8));
+			}
+		}
 		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
 		for(int k = 0; k < abyte.length; ++k) abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
@@ -313,14 +319,6 @@ public class ChunkProviderDepths implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 		
-		for(i = 0; i < 10; i++) {
-			y = rand.nextInt(250);
-			x = x1 + this.rand.nextInt(16);
-			z = z1 + this.rand.nextInt(16);
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.depthsGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
-				new WorldGenSpike().generate(worldObj, rand, new BlockPos(x, y, z));
-			}
-		}
 		
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
