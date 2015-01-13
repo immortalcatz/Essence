@@ -42,7 +42,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondChest), new Object[] {"d d", "iii", "iii", 'i', Items.diamond, 'd', Blocks.diamond_block});	
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-		
+
 		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
 
 		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
@@ -71,6 +71,14 @@ public class RecipeHelper {
 		GameRegistry.addSmelting(i.diamondDust, new ItemStack(Items.diamond), 0.5F);
 		GameRegistry.addSmelting(i.enderilliumDust, new ItemStack(EssenceItems.enderilliumShard), 0.5F);
 		
+		GameRegistry.addRecipe(new ItemStack(Blocks.web), new Object[] {"sss", "sss","sss", 's', Items.string});
+		GameRegistry.addSmelting(new ItemStack(Items.leather), new ItemStack(Items.rotten_flesh), 0.5F);
+		
+		ItemStack blackDye = new ItemStack(Items.dye, 1, 15);
+		
+		GameRegistry.addRecipe(new ItemStack(i.darknessBow), new Object[] {" is", "ibs"," is", 's', Items.string, 'i', blackDye.getItem(), 'b', Items.bow});
+		GameRegistry.addRecipe(new ItemStack(i.frozenBow), new Object[] {" ls", "ibs"," ls", 's', Items.string, 'l', Items.slime_ball, 'i', Blocks.ice, 'b', Items.bow});
+
 		for(int j = 0; j < 13; j++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(EssenceBlocks.colouredBricks, 1, j), new Object[] {Blocks.stonebrick, BlockColouredBricks.crafting[j]});
 			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.colouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.stonebrick, 'd', BlockColouredBricks.crafting[j]});
