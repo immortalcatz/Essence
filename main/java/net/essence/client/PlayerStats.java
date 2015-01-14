@@ -7,6 +7,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
@@ -76,15 +77,15 @@ public class PlayerStats {
 					GL11.glPopMatrix();
 					GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
-					font.drawString("Health: " + health + "%", w - 10 + 20, h + 5, 0xFFFFFF);
-					font.drawString("Hunger: " + hunger + "%" , w - 10 + 20, h + 23, 0xFFFFFF);
-					font.drawString("Armor: " + armor + "%", w - 10 + 20, h + 36 + 23 + 18, 0xFFFFFF);
-					if(player.getAir() <= 0) font.drawString("Air: " + "0%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
-					else font.drawString("Air: " + (int)air + "%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
-					font.drawString("Level: " + mc.thePlayer.experienceLevel , w - 10 + 20, h + 41, 0xFFFFFF);
-					String st = "Time: " + formatTime(getWorldTime(mc));
+					font.drawString(I18n.format("essence.healthbar", new Object[0]) + " " + health + "%", w - 10 + 20, h + 5, 0xFFFFFF);
+					font.drawString(I18n.format("essence.hungerbar", new Object[0]) + " " + hunger + "%" , w - 10 + 20, h + 23, 0xFFFFFF);
+					font.drawString(I18n.format("essence.armorbar", new Object[0]) + " " + armor + "%", w - 10 + 20, h + 36 + 23 + 18, 0xFFFFFF);
+					if(player.getAir() <= 0) font.drawString(I18n.format("essence.airbar", new Object[0]) + " " + "0%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
+					else font.drawString(I18n.format("essence.airbar", new Object[0]) + " " + (int)air + "%" , w - 10 + 20, h + 36 - 18 + 42, 0xFFFFFF);
+					font.drawString(I18n.format("essence.xpbar", new Object[0]) + " " + mc.thePlayer.experienceLevel , w - 10 + 20, h + 41, 0xFFFFFF);
+					String st = I18n.format("essence.time", new Object[0]) + " " + formatTime(getWorldTime(mc));
 					font.drawString(st, w - 10 + 3, h + 41 + 36 + 18, 0xFFFFFF);
-					font.drawString("Coords: X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w - 10 + 5, h + 36 + 78, 0xFFFFFF);
+					font.drawString(I18n.format("essence.coords", new Object[0]) + " X: " + (int)player.posX + ", Y: " + (int)(player.posY - 1) + ", Z: " + (int)player.posZ, w - 10 + 5, h + 36 + 78, 0xFFFFFF);
 					GL11.glDisable(GL11.GL_BLEND);
 				}
 			}
