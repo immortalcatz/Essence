@@ -179,5 +179,7 @@ public class EssenceBlocks {
 	
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
 	
+	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", null);
+	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");
 }
