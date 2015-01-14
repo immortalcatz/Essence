@@ -6,6 +6,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.essence.dimension.depths.gen.WorldGenSpike;
+import net.essence.dimension.vanilla.gen.WorldGenModFlower;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -319,6 +320,10 @@ public class ChunkProviderDepths implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 		
+		//for(i = 0; i < 25; i++) {
+		//	y = r.nextInt(10); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
+		//	new WorldGenModFlower(EssenceBlocks.depthsFlower).generate(worldObj, r, new BlockPos(x, y, z));
+		//}
 		
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
