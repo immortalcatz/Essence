@@ -24,6 +24,7 @@ public class BlockModFire extends BlockMod {
 		super(EnumMaterialTypes.FIRE, name, 0.0F);
 		setLightLevel(1.0F);
 		setUnlocalizedName(name);
+		setCreativeTab(null);
 	}
 
 	@Override
