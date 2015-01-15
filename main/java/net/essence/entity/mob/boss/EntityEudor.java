@@ -122,7 +122,7 @@ public class EntityEudor extends EntityEssenceBoss implements IRangedAttackMob {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.depthsPortalGem;
+		return EssenceItems.eucaPortalGem;
 	}
 
 	@Override

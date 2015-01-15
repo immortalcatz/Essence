@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "normal": { "model": "essence:eucaGreenFlower" }
-    }
+	"variants": {
+		"normal": { "model": "essence:eucaGreenFlower"}
+	}
 }
