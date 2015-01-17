@@ -54,9 +54,9 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		}
 	}
 
-	public boolean canBlockStay(World worldIn, BlockPos pos, boolean b) {
-		if(b) return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass || worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.ground;
-		else return worldIn.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass;
+	public boolean canBlockStay(World w, BlockPos pos, boolean b) {
+		if(b) return w.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass || w.getBlockState(pos.down()).getBlock().getMaterial() == Material.ground;
+		else return w.getBlockState(pos.down()).getBlock().getMaterial() == Material.grass;
 	}
 
 	@Override

@@ -320,10 +320,10 @@ public class ChunkProviderDepths implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 		
-		//for(i = 0; i < 25; i++) {
-		//	y = r.nextInt(10); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
-		//	new WorldGenModFlower(EssenceBlocks.depthsFlower).generate(worldObj, r, new BlockPos(x, y, z));
-		//}
+		for(i = 0; i < 25; i++) {
+			y = r.nextInt(250); x = x1 + this.rand.nextInt(16)+8; z = z1 + this.rand.nextInt(16)+8;
+			new WorldGenModFlower(EssenceBlocks.depthsFlower).generate(worldObj, r, new BlockPos(x, y, z));
+		}
 		
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
