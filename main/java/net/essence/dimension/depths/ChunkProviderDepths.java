@@ -154,62 +154,13 @@ public class ChunkProviderDepths implements IChunkProvider {
 		}
 	}
 
-	public final void generateBiomeTerrain(Random p_180628_2_, ChunkPrimer p_180628_3_, int p_180628_4_, int p_180628_5_, double p_180628_6_) {
-		boolean flag = true;
-		IBlockState iblockstate = EssenceBlocks.depthsGrass.getDefaultState();
-		IBlockState iblockstate1 = EssenceBlocks.depthsGrass.getDefaultState();
-		int k = -1;
-		int l = (int)(p_180628_6_ / 3.0D + 3.0D + p_180628_2_.nextDouble() * 0.25D);
-		int i1 = p_180628_4_ & 15;
-		int j1 = p_180628_5_ & 15;
+	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double d) {
+		int i1 = x & 15;
+		int j1 = z & 15;
+		for(int p = 0; p < 3; p++) c.setBlockState(j1, 1 + p, i1, EssenceBlocks.depthsDirt.getDefaultState());
+		c.setBlockState(j1, 1 + 3, i1, EssenceBlocks.depthsGrass.getDefaultState());
+		c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 
-		for(int k1 = 255; k1 >= 0; --k1) {
-			if (k1 <= 1) {
-				for(int p = 0; p < 4; p++)
-				p_180628_3_.setBlockState(j1, k1 + p, i1, EssenceBlocks.depthsDirt.getDefaultState());
-				p_180628_3_.setBlockState(j1, k1 + 5, i1, EssenceBlocks.depthsGrass.getDefaultState());
-				p_180628_3_.setBlockState(j1, k1, i1, Blocks.bedrock.getDefaultState());
-			} else {
-				IBlockState iblockstate2 = p_180628_3_.getBlockState(j1, k1, i1);
-
-				if (iblockstate2.getBlock().getMaterial() == Material.air) {
-					k = -1;
-				}
-				else if (iblockstate2.getBlock() == EssenceBlocks.depthsStone) {
-					if (k == -1) {
-						if (l <= 0) {
-							iblockstate = null;
-							iblockstate1 = EssenceBlocks.depthsStone.getDefaultState();
-						}
-						else if (k1 >= 59 && k1 <= 64) {
-							iblockstate = EssenceBlocks.depthsGrass.getDefaultState();
-							iblockstate1 = EssenceBlocks.depthsStone.getDefaultState();
-						}
-
-						if (k1 < 63 && (iblockstate == null || iblockstate.getBlock().getMaterial() == Material.air)) {
-							iblockstate = EssenceBlocks.depthsStone.getDefaultState();
-						}
-
-						k = l;
-
-						if (k1 >= 62) {
-							p_180628_3_.setBlockState(j1, k1, i1, iblockstate);
-						}
-						else if (k1 < 56 - l) {
-							iblockstate = null;
-							iblockstate1 = EssenceBlocks.depthsStone.getDefaultState();
-						}
-						else {
-							p_180628_3_.setBlockState(j1, k1, i1, iblockstate1);
-						}
-					}
-					else if (k > 0) {
-						--k;
-						p_180628_3_.setBlockState(j1, k1, i1, iblockstate1);
-					}
-				}
-			}
-		}
 	}
 
 	@Override
@@ -220,7 +171,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
 		this.func_180517_a(x, z, chunkprimer, this.biomesForGeneration);
 		for(int i = 0; i < 10; i++) {
-			int ycoord = rand.nextInt(249)+1;
+			int ycoord = rand.nextInt(249) + 1;
 			if(chunkprimer.getBlockState(8, ycoord, 8).getBlock() == Blocks.air && chunkprimer.getBlockState(8, ycoord - 1, 8).getBlock() == EssenceBlocks.depthsGrass && chunkprimer.getBlockState(8, ycoord + 1, 8).getBlock() == Blocks.air) {
 				new WorldGenSpike().generate(chunkprimer, rand, new BlockPos(8, ycoord, 8));
 			}
@@ -319,22 +270,22 @@ public class ChunkProviderDepths implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
-		
+
 		for(i = 0; i < 25; i++) {
-			y = r.nextInt(250); x = x1 + this.rand.nextInt(16)+8; z = z1 + this.rand.nextInt(16)+8;
+			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.depthsFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
 			(new WorldGenMinable(EssenceBlocks.flairiumOre.getDefaultState(), 8, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 16; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16); z = z1 + this.rand.nextInt(16);
 			(new WorldGenMinable(EssenceBlocks.depthsLights.getDefaultState(), 25, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 100; i++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16);

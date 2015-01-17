@@ -270,7 +270,7 @@ public class EntityFrozenArrow extends EntityArrow implements IProjectile {
 						damagesource = new EntityDamageSourceIndirect("arrow", this, this.shootingEntity).setProjectile();
 					}
 
-					if(movingobjectposition.entityHit instanceof EntityLivingBase && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
+					if(movingobjectposition.entityHit instanceof EntityLivingBase && !(movingobjectposition.entityHit instanceof EntityEnderman) && movingobjectposition.entityHit != shootingEntity) {
 						EntityLivingBase e = (EntityLivingBase)movingobjectposition.entityHit;
 						e.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2));
 					}

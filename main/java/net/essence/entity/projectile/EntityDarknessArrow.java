@@ -27,6 +27,7 @@ import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
@@ -270,9 +271,11 @@ public class EntityDarknessArrow extends EntityArrow implements IProjectile {
 						damagesource = new EntityDamageSourceIndirect("arrow", this, this.shootingEntity).setProjectile();
 					}
 
-					if(movingobjectposition.entityHit instanceof EntityLivingBase && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
-						EntityLivingBase e = (EntityLivingBase)movingobjectposition.entityHit;
-						e.addPotionEffect(new PotionEffect(Potion.blindness.id, 100, 1));
+					if(movingobjectposition.typeOfHit == MovingObjectType.ENTITY){
+						if(movingobjectposition.entityHit instanceof EntityLivingBase && !(movingobjectposition.entityHit instanceof EntityEnderman) && !(movingobjectposition.entityHit == shootingEntity)) {
+							EntityLivingBase e = (EntityLivingBase)movingobjectposition.entityHit;
+							e.addPotionEffect(new PotionEffect(Potion.blindness.id, 100, 1));
+						}
 					}
 
 					if (movingobjectposition.entityHit.attackEntityFrom(damagesource, (float)k)) {

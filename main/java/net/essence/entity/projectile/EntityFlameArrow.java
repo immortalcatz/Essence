@@ -267,7 +267,7 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 						damagesource = new EntityDamageSourceIndirect("arrow", this, this.shootingEntity).setProjectile();
 					}
 
-					if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
+					if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman) && movingobjectposition.entityHit != shootingEntity) {
 						movingobjectposition.entityHit.setFire(5);
 					}
 
