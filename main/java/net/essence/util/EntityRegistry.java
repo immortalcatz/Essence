@@ -33,6 +33,9 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityDarknessArrow.class, "darknessarrow");
 		SlayerAPI.registerProjectile(EntityFrozenArrow.class, "frozenarrow");
 		SlayerAPI.registerProjectile(EntityRockProjectile.class, "rockchunk");
+		SlayerAPI.registerProjectile(EntityNetherPlasma.class, "netherplasma");
+		SlayerAPI.registerProjectile(EntityOceanPlasma.class, "oceanplasma");
+		SlayerAPI.registerProjectile(EntityForestPlasma.class, "forestplasma");
 
 		SlayerAPI.registerMob(EntityRobot.class, "robot");
 		SlayerAPI.registerMob(EntitySpyclops.class, "spyclops");

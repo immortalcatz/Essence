@@ -51,6 +51,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTempleBall.class, new RenderStaffProjectile(tex.templeBall, 0F, 0F, 0F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLightningBall.class, new RenderStaffProjectile(tex.empty, 1F, 1F, 1F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRockProjectile.class, new RenderProjectile(tex.rockChunk));
+		RenderingRegistry.registerEntityRenderingHandler(EntityNetherPlasma.class, new RenderProjectile(tex.plasma));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOceanPlasma.class, new RenderProjectile(tex.plasma));
+		RenderingRegistry.registerEntityRenderingHandler(EntityForestPlasma.class, new RenderProjectile(tex.plasma));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderModMob(new ModelRobot(), tex.robot));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpikedBeast.class, new RenderModMob(new ModelSpikedBeast(), tex.spikedBeast));

@@ -63,11 +63,13 @@ public class SlayerAPI {
 	}
 
 	public static void scaleFont(FontRenderer f, String s, int x, int y, int color, double scale){
+		GL11.glPushMatrix();
 		GL11.glScaled(scale, scale, scale);
 		f.drawString(s, 0, 0, color);
 		GL11.glTranslatef(x, y, 0);
 		double fixScale = 1 / scale;
 		GL11.glScaled(fixScale, fixScale, fixScale);
+		GL11.glPopMatrix();
 	}
 
 	public static void addBucket(Fluid fluid, ItemStack modBucket) {

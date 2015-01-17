@@ -81,9 +81,9 @@ public class EssenceItems {
 	public static final Item plasmaBall = new ItemMod("plasmaBall");
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
 	public static final Item rockLauncher = new ItemGun("rockLauncher", rockChunk, 9, 650, EnumSounds.CANNON, EntityRockProjectile.class);
-	public static final Item netherPlasma = new ItemGun("netherPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityRockProjectile.class);
-	public static final Item oceanPlasma = new ItemGun("oceanPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityRockProjectile.class);
-	public static final Item forestPlasma = new ItemGun("forestPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityRockProjectile.class);
+	public static final Item netherPlasma = new ItemGun("netherPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityNetherPlasma.class);
+	public static final Item oceanPlasma = new ItemGun("oceanPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityOceanPlasma.class);
+	public static final Item forestPlasma = new ItemGun("forestPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityForestPlasma.class);
 
 	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
 	public static final Item shadiumMultiTool = new ItemMultiTool("shadiumMultiTool", EssenceToolMaterial.SHADIUM_MULTI_TOOL);
