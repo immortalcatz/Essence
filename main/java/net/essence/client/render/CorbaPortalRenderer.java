@@ -82,7 +82,6 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			GlStateManager.translate(0.0F, (float)(Minecraft.getSystemTime() % 700000L) / 700000.0F, 0.0F);
 			GlStateManager.scale(-f6, -f6, -f6);
 			GlStateManager.translate(0.5F, 0.5F, 0.0F);
-			//GlStateManager.rotate((float)(j * j * 4321 + j * 9) * 2.0F, 0.0F, 0.0F, 1.0F);
 			GlStateManager.translate(-0.5F, -0.5F, 0.0F);
 			GlStateManager.translate(-f1, -f3, -f2);
 			f9 = f8 + (float)ActiveRenderInfo.getPosition().yCoord;
