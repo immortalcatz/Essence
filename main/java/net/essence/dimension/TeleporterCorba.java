@@ -41,7 +41,7 @@ public class TeleporterCorba extends Teleporter {
 		int x = MathHelper.floor_double(entity.posX);
 		int y = MathHelper.floor_double(entity.posY) - 1;
 		int z = MathHelper.floor_double(entity.posZ);
-		WorldGenAPI.addRectangle(8, 8, 8, worldServerInstance, x, y + 1, z, Blocks.air);
+		WorldGenAPI.addRectangle(6, 6, 6, worldServerInstance, x, y + 1, z, Blocks.air);
 		WorldGenAPI.addCornerlessRectangle(5, 5, 1, worldServerInstance, x + 1, y + 1, z + 1, EssenceBlocks.corbaPortalFrame);
 		WorldGenAPI.addRectangle(3, 3, 1, worldServerInstance, x + 2, y + 1, z + 2, EssenceBlocks.corbaPortal);
 		entity.setLocationAndAngles((double)x, (double)y + 5, (double)z, entity.rotationYaw, 0.0F);

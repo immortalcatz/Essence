@@ -37,6 +37,7 @@ public class BlockGrindstone extends BlockContainer {
 		setUnlocalizedName(name);
 		setStepSound(soundTypeStone);
 		setHardness(3.0F);
+		setCreativeTab(EssenceTabs.blocks);
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
