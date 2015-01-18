@@ -80,6 +80,15 @@ public class EssenceBlocks {
 	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);
 	public static final Block frozenStone = new BlockMod("frozenStone", 2.0F);
 	
+	public static final Block greenCorbaLog = new BlockModLog("greenCorbaLog");
+	public static final Block brownCorbaLog = new BlockModLog("brownCorbaLog");
+	public static final Block greenCorbaLeaves = new BlockModLeaves("greenCorbaLeaves", 0.2F);
+	public static final Block purpleCorbaLeaves = new BlockModLeaves("purpleCorbaLeaves", 0.2F);
+	public static final Block cyanCorbaLeaves = new BlockModLeaves("cyanCorbaLeaves", 0.2F);
+	public static final Block blueCorbaLeaves = new BlockModLeaves("blueCorbaLeaves", 0.2F);
+	public static final Block redCorbaLeaves = new BlockModLeaves("redCorbaLeaves", 0.2F);
+	public static final Block corbaPillar = new BlockMod("corbaPillar");
+	
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");

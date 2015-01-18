@@ -6,6 +6,10 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.corba.gen.WorldGenCorbaSphere;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
+import net.essence.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +29,7 @@ import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -53,6 +58,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 	double[] gen3;
 	double[] gen4;
 	private ArrayList<BlockModFlower> flowers;
+	private ArrayList<WorldGenerator> trees;
 
 	public ChunkProviderCorba(World worldIn, long p_i45636_2_) {
 		this.stoneNoise = new double[256];
@@ -75,6 +81,13 @@ public class ChunkProviderCorba implements IChunkProvider {
 				this.parabolicField[j + 2 + (k + 2) * 5] = f;
 			}
 		}
+
+		trees = new ArrayList(4);
+		trees.add(new WorldGenCorbaHugeTree(true, 8, 30));
+		trees.add(new WorldGenHugeCorbaSpruceTree(true, true));
+		trees.add(new WorldGenCorbaSpruceTree1());
+		trees.add(new WorldGenCorbaSpruceTree());
+
 		flowers = new ArrayList(6);
 		flowers.add(EssenceBlocks.corbaFlower);
 		flowers.add(EssenceBlocks.corbaBlueFlower);
@@ -82,7 +95,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 		flowers.add(EssenceBlocks.corbaLightPurpleFlower);
 		flowers.add(EssenceBlocks.corbaRedFlower);
 		flowers.add(EssenceBlocks.corbaSpeckledFlower);
-		
+
 		NoiseGenerator[] noiseGens = {noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6, mobSpawnerNoise};
 		noiseGens = TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, noiseGens);
 		this.noiseGen1 = (NoiseGeneratorOctaves)noiseGens[0];
@@ -129,13 +142,13 @@ public class ChunkProviderCorba implements IChunkProvider {
 							double d15 = d10 - d16;
 
 							for (int j3 = 0; j3 < 4; ++j3) {
-                                if ((d15 += d16) > 0.0D) {
-                                    p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.corbaStone.getDefaultState());
-                                }
-                                else if (k2 * 8 + l2 < 69) {
-                                    p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.water.getDefaultState());
-                                }
-                            }
+								if ((d15 += d16) > 0.0D) {
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.corbaStone.getDefaultState());
+								}
+								else if (k2 * 8 + l2 < 69) {
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.water.getDefaultState());
+								}
+							}
 
 							d10 += d12;
 							d11 += d13;
@@ -340,17 +353,23 @@ public class ChunkProviderCorba implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
-		
+
+		for(i = 0; i < 200; i++) {
+			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.corbaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
+				((WorldGenerator)trees.get(r.nextInt(trees.size()))).generate(worldObj, r, new BlockPos(x, y, z));
+		}
+
 		for(i = 0; i < 17; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(flowers.get(r.nextInt(flowers.size()))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 75; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		if(rand.nextInt(130) == 0) {
 			x = x1 + this.rand.nextInt(16);
 			y = rand.nextInt(100) + 1;
