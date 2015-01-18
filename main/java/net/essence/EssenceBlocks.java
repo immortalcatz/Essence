@@ -173,6 +173,8 @@ public class EssenceBlocks {
 	public static final BlockModFlower frozenFlower = new BlockModFlower("frozenFlower");
 	public static final BlockModFlower depthsFlower = new BlockModFlower("depthsFlower");
 	public static final BlockModFlower depthsBlueFlower = new BlockModFlower("depthsBlueFlower").setLightLevel(0.625F);
+	public static final BlockModFlower corbaFlower = new BlockModFlower("corbaFlower");
+	public static final BlockModFlower corbaTallGrass = new BlockModFlower("corbaTallGrass");
 
 	public static final Block grindstone = new BlockGrindstone("grindstone");
 	public static final Block blueGems = new BlockGemBlock("blueGems", false);

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -154,7 +155,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double s) {
 		boolean flag = true;
 		IBlockState iblockstate = EssenceBlocks.corbaGrass.getDefaultState();
-		IBlockState iblockstate1 = EssenceBlocks.corbaGrass.getDefaultState();
+		IBlockState iblockstate1 = EssenceBlocks.corbaStone.getDefaultState();
 		int k = -1;
 		int l = (int)(s / 3.0D + 3.0D + r.nextDouble() * 0.25D);
 		int i1 = x & 15;
@@ -241,8 +242,8 @@ public class ChunkProviderCorba implements IChunkProvider {
 						float f3 = biomegenbase1.minHeight;
 						float f4 = biomegenbase1.maxHeight;
 
-						f3 = 1.0F + f3 * 0.5F;
-						f4 = 1.0F + f4 * 1.0F;
+						f3 = 1.0F + f3;
+						f4 = 1.0F + f4 * 0.25F;
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
@@ -319,9 +320,23 @@ public class ChunkProviderCorba implements IChunkProvider {
 	}
 
 	@Override
-	public void populate(IChunkProvider c, int x, int z) {
-		int x1 = x * 16;
-		int z1 = z * 16;
+	public void populate(IChunkProvider c, int cx, int cz) {
+		int x1 = cx * 16;
+		int z1 = cz * 16;
+		int x, y, z, i;
+		x = x1 + this.rand.nextInt(16);
+		z = z1 + this.rand.nextInt(16);
+		Random r = rand;
+		
+		for(i = 0; i < 17; i++) {
+			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.corbaFlower).generate(worldObj, r, new BlockPos(x, y, z));
+		}
+		
+		for(i = 0; i < 150; i++) {
+			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
+		}
 	}
 
 	@Override
