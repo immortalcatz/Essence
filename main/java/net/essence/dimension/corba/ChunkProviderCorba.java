@@ -1,11 +1,11 @@
 package net.essence.dimension.corba;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.corba.gen.WorldGenCorbaSphere;
-import net.essence.dimension.euca.gen.WorldGenEucaSphere;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,8 +19,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderGenerate;
-import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenRavine;
@@ -31,6 +29,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.slayer.api.block.BlockModFlower;
 
 public class ChunkProviderCorba implements IChunkProvider {
 
@@ -53,6 +52,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 	double[] gen2;
 	double[] gen3;
 	double[] gen4;
+	private ArrayList<BlockModFlower> flowers;
 
 	public ChunkProviderCorba(World worldIn, long p_i45636_2_) {
 		this.stoneNoise = new double[256];
@@ -75,6 +75,14 @@ public class ChunkProviderCorba implements IChunkProvider {
 				this.parabolicField[j + 2 + (k + 2) * 5] = f;
 			}
 		}
+		flowers = new ArrayList(6);
+		flowers.add(EssenceBlocks.corbaFlower);
+		flowers.add(EssenceBlocks.corbaBlueFlower);
+		flowers.add(EssenceBlocks.corbaDarkPurpleFlower);
+		flowers.add(EssenceBlocks.corbaLightPurpleFlower);
+		flowers.add(EssenceBlocks.corbaRedFlower);
+		flowers.add(EssenceBlocks.corbaSpeckledFlower);
+		
 		NoiseGenerator[] noiseGens = {noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6, mobSpawnerNoise};
 		noiseGens = TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, noiseGens);
 		this.noiseGen1 = (NoiseGeneratorOctaves)noiseGens[0];
@@ -335,10 +343,10 @@ public class ChunkProviderCorba implements IChunkProvider {
 		
 		for(i = 0; i < 17; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
-			new WorldGenModFlower(EssenceBlocks.corbaFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(flowers.get(r.nextInt(flowers.size()))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 		
-		for(i = 0; i < 150; i++) {
+		for(i = 0; i < 75; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
 		}
