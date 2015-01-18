@@ -70,9 +70,9 @@ public class EssenceBlocks {
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs");
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
 
-	public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
-	public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
-	public static final Block godStone = new BlockMod("godStone", 2.0F);
+	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
+	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
+	//public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
 	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
 	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);

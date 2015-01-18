@@ -158,7 +158,7 @@ public class EntityFrozenArrow extends EntityArrow implements IProjectile {
 
 	@Override
 	public void onUpdate() {
-		super.onUpdate();
+		super.onEntityUpdate();
 
 		if(this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
 			float f = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);

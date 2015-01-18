@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.corba.gen.WorldGenCorbaSphere;
+import net.essence.dimension.euca.gen.WorldGenEucaSphere;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -176,7 +178,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 							iblockstate = null;
 							iblockstate1 = EssenceBlocks.corbaStone.getDefaultState();
 						}
-						else if(k1 >= 59 && k1 <= 64) {
+						else if(k1 >= 63 && k1 <= 68) {
 							iblockstate = EssenceBlocks.corbaGrass.getDefaultState();
 							iblockstate1 = EssenceBlocks.corbaStone.getDefaultState();
 						}
@@ -339,6 +341,13 @@ public class ChunkProviderCorba implements IChunkProvider {
 		for(i = 0; i < 150; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
+		}
+		
+		if(rand.nextInt(130) == 0) {
+			x = x1 + this.rand.nextInt(16);
+			y = rand.nextInt(100) + 1;
+			z = z1 + this.rand.nextInt(16);
+			if(y > 63 && y < 150) new WorldGenCorbaSphere().generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 	}
 
