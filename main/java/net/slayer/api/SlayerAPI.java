@@ -47,6 +47,8 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import org.lwjgl.opengl.GL11;
 
@@ -62,6 +64,7 @@ public class SlayerAPI {
 		GameRegistry.addRecipe(i, o);
 	}
 
+	@SideOnly(Side.CLIENT)
 	public static void scaleFont(FontRenderer f, String s, int x, int y, int color, double scale){
 		GL11.glPushMatrix();
 		GL11.glScaled(scale, scale, scale);
@@ -132,17 +135,20 @@ public class SlayerAPI {
         return EnumHelper.addArmorMaterial(name, name, duraNew, oldArmor, enchantability);
     }
 
+    @SideOnly(Side.CLIENT)
 	public static void addChatMessageWithColour(EntityPlayer p, EnumChatFormatting colour, String str) {
 		ChatComponentText chat = new ChatComponentText(SlayerAPI.Colour.AQUA + "[" + SlayerAPI.Colour.BLUE + MOD_NAME + SlayerAPI.Colour.AQUA + "] " + str);
 		chat.getChatStyle().setColor(colour);
 		p.addChatMessage(chat);
 	}
 
+	@SideOnly(Side.CLIENT)
 	public static void addChatMessage(EntityPlayer p, String str) {
 		ChatComponentText ret = new ChatComponentText(str);
 		p.addChatMessage(ret);
 	}
 	
+	@SideOnly(Side.CLIENT)
 	public static void addFormattedChatMessage(EntityPlayer p, String str) {
 		ChatComponentText ret = new ChatComponentText(I18n.format(str, new Object[0]));
 		p.addChatMessage(ret);
