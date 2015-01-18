@@ -7,6 +7,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityCorbaPortal;
 import net.essence.dimension.ModTeleporter;
+import net.essence.dimension.TeleporterCorba;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -84,11 +85,11 @@ public class BlockCorbaPortal extends BlockContainer {
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionID, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(dimensionID), dimensionID, this, blockFrame));
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionID, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(dimensionID), dimensionID, this, blockFrame));
 
 			} else {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new ModTeleporter(thePlayer.mcServer.worldServerForDimension(0), 0, this, blockFrame));
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(0), 0, this, blockFrame));
 			}
 		}
 	}

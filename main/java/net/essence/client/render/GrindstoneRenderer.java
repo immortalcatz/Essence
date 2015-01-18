@@ -2,7 +2,7 @@ package net.essence.client.render;
 
 import net.essence.EssenceBlocks;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
-import net.essence.client.render.mob.model.block.ModelGrindstone;
+import net.essence.client.render.model.block.ModelGrindstone;
 import net.essence.util.GL11Helper;
 import net.essence.util.Helper;
 import net.essence.util.Textures;

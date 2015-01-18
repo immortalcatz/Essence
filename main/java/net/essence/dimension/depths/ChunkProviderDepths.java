@@ -6,7 +6,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.essence.dimension.depths.gen.WorldGenSpike;
-import net.essence.dimension.vanilla.gen.WorldGenModFlower;
+import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

@@ -1,7 +1,7 @@
 package net.essence.client.render.mob;
 
 import net.essence.client.render.RenderModMob;
-import net.essence.entity.mob.vanilla.EntitySpyclops;
+import net.essence.entity.mob.overworld.EntitySpyclops;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;

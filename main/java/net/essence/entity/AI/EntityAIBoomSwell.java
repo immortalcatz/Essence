@@ -1,6 +1,6 @@
 package net.essence.entity.AI;
 
-import net.essence.entity.mob.vanilla.EntityBoom;
+import net.essence.entity.mob.overworld.EntityBoom;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 

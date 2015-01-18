@@ -12,7 +12,7 @@ public class WorldProviderBoiling extends WorldProvider {
 
 	@Override
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.5F);
+		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.0F);
 		this.dimensionId = Config.boil;
 		isHellWorld = true;
 	}

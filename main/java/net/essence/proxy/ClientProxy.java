@@ -1,32 +1,23 @@
 package net.essence.proxy;
 
-import net.essence.Essence;
-import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
-import net.essence.client.BarTickHandler;
-import net.essence.client.BossTickHandler;
-import net.essence.client.EntityRendering;
-import net.essence.client.GuiHandler;
-import net.essence.client.MusicEvent;
-import net.essence.client.PlayerStats;
-import net.essence.enums.EnumParticlesClasses;
-import net.essence.event.ParticleEvent;
-import net.essence.event.UpdateCheckerEvent;
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.renderer.ItemModelMesher;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.slayer.api.SlayerAPI;
+import net.essence.*;
+import net.essence.client.*;
+import net.essence.enums.*;
+import net.essence.event.*;
+import net.essence.util.Config;
+import net.minecraft.block.*;
+import net.minecraft.client.*;
+import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.*;
+import net.minecraft.client.resources.model.*;
+import net.minecraft.item.*;
+import net.minecraft.world.*;
+import net.minecraftforge.fml.client.*;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.network.*;
+import net.minecraftforge.fml.common.registry.*;
+import net.slayer.api.*;
 
 public class ClientProxy extends CommonProxy {
 
@@ -49,7 +40,6 @@ public class ClientProxy extends CommonProxy {
 		addBow(EssenceItems.poisonBow, "poisonBow");
 		addBow(EssenceItems.darknessBow, "darknessBow");
 		addBow(EssenceItems.frozenBow, "frozenBow");
-		//SlayerAPI.addEventBus(new ParticleEvent());
 	}
 	
 	public void addBow(Item bow, String name) {
@@ -58,7 +48,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerSounds() {
-		//((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
+		//((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler()); //Only use if i want to remove every other music from vanilla or mods.
 		FMLCommonHandler.instance().bus().register(new MusicEvent());
 	}
 
@@ -67,8 +57,8 @@ public class ClientProxy extends CommonProxy {
 		EntityRendering.init();
 		SlayerAPI.addForgeEventBus(new BossTickHandler());
 		SlayerAPI.addForgeEventBus(new BarTickHandler());
-		SlayerAPI.addForgeEventBus(new PlayerStats());
-		SlayerAPI.addEventBus(new PlayerStats());
+		if(Config.reRenderPlayerStats) SlayerAPI.addForgeEventBus(new PlayerStats());
+		if(Config.reRenderPlayerStats) SlayerAPI.addEventBus(new PlayerStats());
 	}
 
 	public static String[] names = {SlayerAPI.PREFIX + "dirt", SlayerAPI.PREFIX + "birchPlanks", SlayerAPI.PREFIX + "oakPlanks", SlayerAPI.PREFIX + "junglePlanks", SlayerAPI.PREFIX + "sprucePlanks", SlayerAPI.PREFIX + "darkOakPlanks", SlayerAPI.PREFIX + "acaciaPlanks", SlayerAPI.PREFIX + "potatoes", SlayerAPI.PREFIX + "wheat", SlayerAPI.PREFIX + "carrots", SlayerAPI.PREFIX + "obsidian", SlayerAPI.PREFIX + "netherrack", SlayerAPI.PREFIX + "netherBrick", SlayerAPI.PREFIX + "redMushroom", SlayerAPI.PREFIX + "brownMushroom", SlayerAPI.PREFIX + "melon"};

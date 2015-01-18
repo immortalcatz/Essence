@@ -44,27 +44,18 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			float f5 = (float)(16 - j);
 			float f6 = 0.0625F;
 			float f7 = 1.0F / (f5 + 1.0F);
-
-			if(j == 0) {
-				this.bindTexture(sky);
-				f7 = 0.1F;
-				f5 = 65.0F;
-				f6 = 0.125F;
-				GlStateManager.enableBlend();
-				GlStateManager.blendFunc(770, 771);
-			}
-			if(j >= 1) this.bindTexture(portal);
+			this.bindTexture(portal);
 			if(j == 1) {
 				GlStateManager.enableBlend();
 				GlStateManager.blendFunc(1, 1);
-				f6 = 0.5F;
+				f6 = 3.5F;
 			}
 			float f8 = (float)(-(y + (double)f4));
 			float f9 = f8 + (float)ActiveRenderInfo.getPosition().yCoord;
 			float f10 = f8 + f5 + (float)ActiveRenderInfo.getPosition().yCoord;
 			float f11 = f9 / f10;
 			f11 += (float)(y + (double)f4);
-			GlStateManager.translate(f1, f11, f3);
+			GlStateManager.translate(f1, y, f3);
 			GlStateManager.texGen(GlStateManager.TexGen.S, 9217);
 			GlStateManager.texGen(GlStateManager.TexGen.T, 9217);
 			GlStateManager.texGen(GlStateManager.TexGen.R, 9217);
@@ -82,9 +73,9 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			GlStateManager.pushMatrix();
 			GlStateManager.loadIdentity();
 			GlStateManager.translate(0.0F, (float)(Minecraft.getSystemTime() % 700000L) / 700000.0F, 0.0F);
-			GlStateManager.scale(f6, f6, f6);
+			GlStateManager.scale(-f6, -f6, -f6);
 			GlStateManager.translate(0.5F, 0.5F, 0.0F);
-			GlStateManager.rotate((float)(j * j * 4321 + j * 9) * 2.0F, 0.0F, 0.0F, 1.0F);
+			//GlStateManager.rotate((float)(j * j * 4321 + j * 9) * 2.0F, 0.0F, 0.0F, 1.0F);
 			GlStateManager.translate(-0.5F, -0.5F, 0.0F);
 			GlStateManager.translate(-f1, -f3, -f2);
 			f9 = f8 + (float)ActiveRenderInfo.getPosition().yCoord;

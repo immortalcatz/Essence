@@ -1,8 +1,8 @@
 package net.essence.client.render.mob.layers;
 
 import net.essence.client.render.mob.RenderBoomBoom;
-import net.essence.client.render.mob.model.vanilla.ModelBoomBoom;
-import net.essence.entity.mob.vanilla.EntityBoom;
+import net.essence.client.render.model.mob.overworld.ModelBoomBoom;
+import net.essence.entity.mob.overworld.EntityBoom;
 import net.essence.util.Textures;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;

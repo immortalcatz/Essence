@@ -12,7 +12,7 @@ package net.essence.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.essence.entity.mob.vanilla.EntityDragon;
+import net.essence.entity.mob.overworld.EntityDragon;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.util.DamageSource;

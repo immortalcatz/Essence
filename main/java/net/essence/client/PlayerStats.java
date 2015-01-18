@@ -25,13 +25,11 @@ public class PlayerStats {
 
 	@SubscribeEvent
 	public void renderEvent(RenderGameOverlayEvent event) {
-		if(Config.reRenderPlayerStats){
-			mc.mcProfiler.startSection("Essence Stats");
-			if(event.type == ElementType.EXPERIENCE || event.type == ElementType.HEALTH || event.type == ElementType.FOOD || event.type == ElementType.AIR || event.type == ElementType.ARMOR)
-				event.setCanceled(true);
-			if(!Minecraft.getMinecraft().playerController.shouldDrawHUD() || !event.isCanceled()) return;
-			mc.mcProfiler.endSection();
-		}
+		mc.mcProfiler.startSection("Essence Stats");
+		if(event.type == ElementType.EXPERIENCE || event.type == ElementType.HEALTH || event.type == ElementType.FOOD || event.type == ElementType.AIR || event.type == ElementType.ARMOR)
+			event.setCanceled(true);
+		if(!Minecraft.getMinecraft().playerController.shouldDrawHUD() || !event.isCanceled()) return;
+		mc.mcProfiler.endSection();
 	}
 
 	@SubscribeEvent

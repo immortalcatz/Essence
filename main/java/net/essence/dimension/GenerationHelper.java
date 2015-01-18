@@ -6,7 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
-import net.essence.dimension.vanilla.gen.*;
+import net.essence.dimension.overworld.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;

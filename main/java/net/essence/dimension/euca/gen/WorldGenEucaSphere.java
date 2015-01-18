@@ -3,7 +3,7 @@ package net.essence.dimension.euca.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.vanilla.gen.WorldGenModFlower;
+import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;

@@ -6,9 +6,9 @@ import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
 import net.essence.entity.mob.frozen.npc.EntityGreenElf;
 import net.essence.entity.mob.frozen.npc.EntityRedElf;
-import net.essence.entity.mob.vanilla.*;
-import net.essence.entity.mob.vanilla.npc.*;
-import net.essence.entity.mob.vanilla.npc.water_tribe.*;
+import net.essence.entity.mob.overworld.*;
+import net.essence.entity.mob.overworld.npc.*;
+import net.essence.entity.mob.overworld.npc.water_tribe.*;
 import net.essence.entity.projectile.*;
 import net.slayer.api.*;
 

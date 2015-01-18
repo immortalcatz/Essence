@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.essence.blocks.*;
 import net.essence.blocks.machines.BlockGrindstone;
 import net.essence.client.*;
-import net.essence.client.render.mob.model.statue.*;
+import net.essence.client.render.model.statue.*;
 import net.essence.enums.EnumSounds;
 import net.essence.items.block.*;
 import net.minecraft.block.*;
@@ -93,7 +93,7 @@ public class EssenceBlocks {
 	public static final Block ashBlock = new BlockMod("ashBlock");
 
 	public static final BlockMod corbaStone = new BlockMod("corbaStone");
-	public static final Block corbaGrass = new BlockModGrass(corbaStone, "corbaGrass", 0.5F);
+	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", 0.5F);
 	
 	public static final Block fire = new BlockModFire("fire");
 	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");

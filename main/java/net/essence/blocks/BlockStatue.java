@@ -3,7 +3,7 @@ package net.essence.blocks;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityStatue;
-import net.essence.client.render.mob.model.statue.ModelStatue;
+import net.essence.client.render.model.statue.ModelStatue;
 import net.essence.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
