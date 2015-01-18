@@ -100,12 +100,12 @@ public class BlockModOre extends BlockMod {
 	@SideOnly(Side.CLIENT)
 	private void renderParticle(World w, int x, int y, int z) {
 		float r = 0.0F, g = 0.0F, b = 0.0F;
-		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.celestiumBlock) {
+		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.orbaditeOre) {
 			r = 0.0F;
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock) {
+		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre) {
 			r = 0.0F;
 			g = 0.0F;
 			b = 1.0F;

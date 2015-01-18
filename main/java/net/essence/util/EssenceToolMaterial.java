@@ -14,7 +14,9 @@ public enum EssenceToolMaterial {
 	CELESTIUM_SWORD(EssenceItems.celestiumSwordMat, EssenceItems.celestiumIngot),
 	SHADIUM_SWORD(EssenceItems.shadiumSwordMat, EssenceItems.shadiumIngot),
 	SAPPHIRE_SWORD(EssenceItems.sapphiretoolSwordMat, EssenceItems.sapphire),
-
+	ORBADITE_SWORD(EssenceItems.orbaditeSwordMat, EssenceItems.orbaditeIngot),
+	GORBITE_SWORD(EssenceItems.gorbiteSwordMat, EssenceItems.gorbiteGem),
+	
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
@@ -31,27 +33,35 @@ public enum EssenceToolMaterial {
 	CELESTIUM_PICKAXE(EssenceItems.celestium, EssenceItems.celestiumIngot, 3),
 	SHADIUM_PICKAXE(EssenceItems.shadium, EssenceItems.shadiumIngot, 3),
 	SAPPHIRE_PICKAXE(EssenceItems.sapphiretool, EssenceItems.sapphire, 2),
-
+	ORBADITE_PICKAXE(EssenceItems.orbadite, EssenceItems.orbaditeIngot, 3),
+	GORBITE_PICKAXE(EssenceItems.gorbite, EssenceItems.gorbiteGem, 3),
+	
 	HELLSTONE_AXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
 	FLAIRIUM_AXE(EssenceItems.flairium, EssenceItems.flairiumIngot),
 	LUNIUM_AXE(EssenceItems.lunium, EssenceItems.luniumIngot),
 	CELESTIUM_AXE(EssenceItems.celestium, EssenceItems.celestiumIngot),
 	SHADIUM_AXE(EssenceItems.shadium, EssenceItems.shadiumIngot),
 	SAPPHIRE_AXE(EssenceItems.sapphiretool, EssenceItems.sapphire),
-
+	ORBADITE_AXE(EssenceItems.orbadite, EssenceItems.orbaditeIngot),
+	GORBITE_AXE(EssenceItems.gorbite, EssenceItems.gorbiteGem),
+	
 	HELLSTONE_SHOVEL(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
 	FLAIRIUM_SHOVEL(EssenceItems.flairium, EssenceItems.flairiumIngot),
 	LUNIUM_SHOVEL(EssenceItems.lunium, EssenceItems.luniumIngot),
 	CELESTIUM_SHOVEL(EssenceItems.celestium, EssenceItems.celestiumIngot),
 	SHADIUM_SHOVEL(EssenceItems.shadium, EssenceItems.shadiumIngot),
 	SAPPHIRE_SHOVEL(EssenceItems.sapphiretool, EssenceItems.sapphire),
-
+	ORBADITE_SHOVEL(EssenceItems.orbadite, EssenceItems.orbaditeIngot),
+	GORBITE_SHOVEL(EssenceItems.gorbite, EssenceItems.gorbiteGem),
+	
 	HELLSTONE_HOE(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
 	FLAIRIUM_HOE(EssenceItems.flairium, EssenceItems.flairiumIngot),
 	LUNIUM_HOE(EssenceItems.lunium, EssenceItems.luniumIngot),
 	CELESTIUM_HOE(EssenceItems.celestium, EssenceItems.celestiumIngot),
 	SHADIUM_HOE(EssenceItems.shadium, EssenceItems.shadiumIngot),
 	SAPPHIRE_HOE(EssenceItems.sapphiretool, EssenceItems.sapphire),
+	ORBADITE_HOE(EssenceItems.orbadite, EssenceItems.orbaditeIngot),
+	GORBITE_HOE(EssenceItems.gorbite, EssenceItems.gorbiteGem),
 
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),
@@ -59,7 +69,9 @@ public enum EssenceToolMaterial {
 	CELESTIUM_MULTI_TOOL(EssenceItems.celestiumMulti, EssenceItems.celestiumIngot, 3),
 	SHADIUM_MULTI_TOOL(EssenceItems.shadiumMulti, EssenceItems.shadiumIngot, 3),
 	SAPPHIRE_MULTI_TOOL(EssenceItems.sapphireMulti, EssenceItems.sapphire, 2),
-
+	ORBADITE_MULTI_TOOL(EssenceItems.orbaditeMulti, EssenceItems.orbaditeIngot, 3),
+	GORBITE_MULTI_TOOL(EssenceItems.gorbiteMulti, EssenceItems.gorbiteGem, 3),
+	
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
 	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25));
