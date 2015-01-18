@@ -29,6 +29,13 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(dim == Config.depths) generateDepths(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.euca) generateEuca(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.frozen) generateFrozen(w, r, chunkX * 16, chunkZ * 16);
+		if(dim == Config.corba) generateCorba(w, r, chunkX * 16, chunkZ * 16);
+	}
+	
+	private void generateCorba(World w, Random r, int chunkX, int chunkZ) {
+		int i = 0;
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(13, w, chunkX, chunkZ);
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(14, w, chunkX, chunkZ);
 	}
 
 	private void generateFrozen(World w, Random r, int chunkX, int chunkZ) {

@@ -146,6 +146,14 @@ public class GenerationHelper {
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenModFlower(EssenceBlocks.depthsFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
+		case 13:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.gorbiteOre.getDefaultState(), 6, BlockHelper.forBlock(EssenceBlocks.corbaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 14:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.orbaditeOre.getDefaultState(), 6, BlockHelper.forBlock(EssenceBlocks.corbaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
 		}
 	}
 

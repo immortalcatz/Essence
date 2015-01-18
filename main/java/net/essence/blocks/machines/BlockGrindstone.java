@@ -120,7 +120,7 @@ public class BlockGrindstone extends BlockContainer {
 			if(item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
 					|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
 					item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre) || item == SlayerAPI.toItem(Blocks.gold_ore) || item == SlayerAPI.toItem(Blocks.diamond_ore)
-					|| item == SlayerAPI.toItem(Blocks.iron_ore)) {
+					|| item == SlayerAPI.toItem(Blocks.iron_ore) || item == SlayerAPI.toItem(EssenceBlocks.gorbiteOre) || item == SlayerAPI.toItem(EssenceBlocks.orbaditeOre)) {
 				if(stone.getItem() == null) {
 					((TileEntityGrindstone) world.getTileEntity(pos)).itemOnGrind = player.getCurrentEquippedItem().getItem();
 					player.getCurrentEquippedItem().stackSize--;

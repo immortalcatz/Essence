@@ -83,6 +83,9 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 			else if(itemOnGrind == SlayerAPI.toItem(Blocks.gold_ore)) setItem(EssenceItems.goldDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(Blocks.diamond_ore)) setItem(EssenceItems.diamondDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(Blocks.iron_ore)) setItem(EssenceItems.ironDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.gorbiteOre)) setItem(EssenceItems.gorbiteDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.orbaditeOre)) setItem(EssenceItems.orbaditeDust, f, returnVal);
+
 			else {
 				state = 0;
 				count = 0;
@@ -110,6 +113,8 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 							else if(item == SlayerAPI.toItem(Blocks.diamond_ore)) itemOnGrind = EssenceItems.diamondDust;
 							else if(item == SlayerAPI.toItem(Blocks.gold_ore)) itemOnGrind = EssenceItems.goldDust;
 							else if(item == SlayerAPI.toItem(Blocks.iron_ore)) itemOnGrind = EssenceItems.ironDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.gorbiteOre)) itemOnGrind = EssenceItems.gorbiteDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.orbaditeOre)) itemOnGrind = EssenceItems.orbaditeDust;
 							else itemOnGrind = null;
 						}
 					}

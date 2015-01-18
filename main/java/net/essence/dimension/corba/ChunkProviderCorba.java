@@ -365,7 +365,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 			new WorldGenModFlower(flowers.get(r.nextInt(flowers.size()))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 
-		for(i = 0; i < 75; i++) {
+		for(i = 0; i < 90; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
 		}

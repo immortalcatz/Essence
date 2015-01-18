@@ -16,7 +16,7 @@ public class ArmorAbilityEvent{
 
 	private Item boots = null, body = null, legs = null, helmet = null;
 	private EssenceItems item = new EssenceItems();
-	
+
 	@SubscribeEvent
 	public void playerTick(PlayerTickEvent event) {
 		ItemStack stackBoots = event.player.inventory.armorItemInSlot(0);
@@ -44,14 +44,20 @@ public class ArmorAbilityEvent{
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-				helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
-			event.player.capabilities.allowFlying = true;
+		if(!event.player.capabilities.isCreativeMode) {
+			if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
+					helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
+				event.player.capabilities.allowFlying = true;
+			} else {
+				event.player.capabilities.allowFlying = false;
+			}
 		}
 
 		if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
 			event.player.capabilities.setPlayerWalkSpeed(0.2F);
 			event.player.fallDistance = 0.0F;
+		} else {
+			event.player.capabilities.setPlayerWalkSpeed(0.1F);
 		}
 	}
 
