@@ -60,6 +60,12 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	}
 
 	@Override
+	public BlockModFlower setLightLevel(float value) {
+        this.lightValue = (int)(15.0F * value);
+        return this;
+    }
+	
+	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World w, BlockPos pos, IBlockState s) {
 		return null;
 	}
