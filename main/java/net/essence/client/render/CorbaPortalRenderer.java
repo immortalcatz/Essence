@@ -3,6 +3,7 @@ package net.essence.client.render;
 import java.nio.FloatBuffer;
 import java.util.Random;
 
+import net.essence.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GLAllocation;
@@ -20,7 +21,9 @@ import net.slayer.api.SlayerAPI;
 public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 
 	private static final ResourceLocation sky = new ResourceLocation(SlayerAPI.PREFIX + "textures/entity/corbaSky.png");
-	private static final ResourceLocation portal = new ResourceLocation(SlayerAPI.PREFIX + "textures/entity/corbaPortal.png");
+	private static final ResourceLocation portalCorba = new ResourceLocation(SlayerAPI.PREFIX + "textures/entity/corbaPortal.png");
+	private static final ResourceLocation portalOverworld = new ResourceLocation(SlayerAPI.PREFIX + "textures/entity/overworldPortal.png");
+
 	private static final Random random = new Random(31100L);
 	private FloatBuffer buffer = GLAllocation.createDirectFloatBuffer(16);
 
@@ -44,7 +47,11 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			float f5 = (float)(16 - j);
 			float f6 = 0.0625F;
 			float f7 = 1.0F / (f5 + 1.0F);
-			this.bindTexture(portal);
+			if(e.getWorld().provider.getDimensionId() == Config.corba) {
+				this.bindTexture(portalOverworld);
+			} else {
+				this.bindTexture(portalCorba);
+			}
 			if(j == 1) {
 				GlStateManager.enableBlend();
 				GlStateManager.blendFunc(1, 1);
