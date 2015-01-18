@@ -17,6 +17,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
@@ -42,7 +43,6 @@ public class ChunkProviderCorba implements IChunkProvider {
 	private World worldObj;
 	private final double[] da;
 	private final float[] parabolicField;
-	private ChunkProviderSettings settings;
 	private double[] stoneNoise;
 	private MapGenBase caveGenerator;
 	private MapGenBase ravineGenerator;
@@ -118,11 +118,14 @@ public class ChunkProviderCorba implements IChunkProvider {
 							double d16 = (d11 - d10) * d14;
 							double d15 = d10 - d16;
 
-							for(int j3 = 0; j3 < 4; ++j3) {
-								if((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.corbaStone.getDefaultState());
-								}
-							}
+							for (int j3 = 0; j3 < 4; ++j3) {
+                                if ((d15 += d16) > 0.0D) {
+                                    p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.corbaStone.getDefaultState());
+                                }
+                                else if (k2 * 8 + l2 < 69) {
+                                    p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.water.getDefaultState());
+                                }
+                            }
 
 							d10 += d12;
 							d11 += d13;
