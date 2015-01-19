@@ -205,6 +205,16 @@ public class EssenceItems {
 	public static final Item sapphireLegs = new ItemModArmor(EnumArmor.SAPPHIRE, LEGS);
 	public static final Item sapphireBoots = new ItemModArmor(EnumArmor.SAPPHIRE, BOOTS);
 
+	public static final Item gorbiteHelmet = new ItemModArmor(EnumArmor.GORBITE, HEAD);
+	public static final Item gorbiteChest = new ItemModArmor(EnumArmor.GORBITE, BODY);
+	public static final Item gorbiteLegs = new ItemModArmor(EnumArmor.GORBITE, LEGS);
+	public static final Item gorbiteBoots = new ItemModArmor(EnumArmor.GORBITE, BOOTS);
+	
+	public static final Item orbaditeHelmet = new ItemModArmor(EnumArmor.ORBADIRE, HEAD);
+	public static final Item orbaditeChest = new ItemModArmor(EnumArmor.ORBADIRE, BODY);
+	public static final Item orbaditeLegs = new ItemModArmor(EnumArmor.ORBADIRE, LEGS);
+	public static final Item orbaditeBoots = new ItemModArmor(EnumArmor.ORBADIRE, BOOTS);
+	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
