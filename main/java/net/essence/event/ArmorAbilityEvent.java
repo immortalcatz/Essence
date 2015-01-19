@@ -47,14 +47,12 @@ public class ArmorAbilityEvent{
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		if(!event.player.capabilities.isCreativeMode) {
-			if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-					helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
-				event.player.capabilities.allowFlying = true;
-			} else {
-				event.player.capabilities.allowFlying = false;
-				event.player.capabilities.isFlying = false;
-			}
+		if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
+				helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
+			event.player.capabilities.allowFlying = true;
+		} else {
+			event.player.capabilities.allowFlying = false;
+			event.player.capabilities.isFlying = false;
 		}
 
 		if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
