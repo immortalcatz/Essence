@@ -49,6 +49,6 @@ public class BiomeGenBoiling extends BiomeGenBase {
 	
 	@Override
 	public int getSkyColorByTemp(float f) {
-		return Color.getHSBColor(1.0F, 0.0F, 0.0F).getRGB();
+		return Color.getHSBColor(0.0F, 0.0F, 0.0F).getRGB();
 	}
 }

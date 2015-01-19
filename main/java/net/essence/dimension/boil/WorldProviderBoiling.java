@@ -3,10 +3,13 @@ package net.essence.dimension.boil;
 import net.essence.dimension.DimensionHelper;
 import net.essence.util.Config;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WorldProviderBoiling extends WorldProvider {
 
@@ -16,6 +19,13 @@ public class WorldProviderBoiling extends WorldProvider {
 		this.dimensionId = Config.boil;
 		isHellWorld = true;
 	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+    public Vec3 getFogColor(float p_76562_1_, float p_76562_2_)
+    {
+        return new Vec3(0.1, 0, 0);
+    }
 	
 	@Override
 	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
