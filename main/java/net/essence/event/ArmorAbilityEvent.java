@@ -11,6 +11,8 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ArmorAbilityEvent{
 
@@ -18,6 +20,7 @@ public class ArmorAbilityEvent{
 	private EssenceItems item = new EssenceItems();
 
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public void playerTick(PlayerTickEvent event) {
 		ItemStack stackBoots = event.player.inventory.armorItemInSlot(0);
 		ItemStack stackLegs = event.player.inventory.armorItemInSlot(1);

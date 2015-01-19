@@ -18,6 +18,8 @@ import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 public class PlayerEvent {
@@ -49,6 +51,7 @@ public class PlayerEvent {
 	}
 
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public void onTick(TickEvent.PlayerTickEvent event) {
 		EntityPlayer player = event.player;
 		int i = MathHelper.floor_double(player.posX);
