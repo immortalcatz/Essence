@@ -12,7 +12,7 @@ public class WorldGenMerchant extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
-		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
+		int x = pos.getX(), y = pos.getY() + 1, z = pos.getZ();
 		WorldGenAPI.addRectangle(6, 5, 5, w, x, y, z, Blocks.planks);
 		WorldGenAPI.addRectangle(4, 4, 3, w, x + 1, y + 1, z + 1, Blocks.air);
 		WorldGenAPI.addRectangle(4, 1, 3, w, x + 1, y + 1, z + 1, Blocks.bookshelf);
