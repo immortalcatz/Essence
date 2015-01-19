@@ -2,11 +2,13 @@ package net.essence.event;
 
 import net.essence.EssenceItems;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.WorldSettings.GameType;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -16,9 +18,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ArmorAbilityEvent{
 
-	private Item boots = null, body = null, legs = null, helmet = null;
+	
 	private EssenceItems item = new EssenceItems();
-
+	private Item boots = null, body = null, legs = null, helmet = null;
+	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void playerTick(PlayerTickEvent event) {
@@ -47,13 +50,16 @@ public class ArmorAbilityEvent{
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-				helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
-			event.player.capabilities.allowFlying = true;
-		} else {
-			event.player.capabilities.allowFlying = false;
-			event.player.capabilities.isFlying = false;
-		}
+		//EntityPlayerMP playerMP = (EntityPlayerMP)event.player;
+		//if(playerMP.theItemInWorldManager.getGameType() != GameType.CREATIVE || playerMP.theItemInWorldManager.getGameType() != GameType.SPECTATOR) {
+			if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
+					helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
+				event.player.capabilities.allowFlying = true;
+			} else {
+				event.player.capabilities.allowFlying = false;
+				event.player.capabilities.isFlying = false;
+			}
+		//}
 
 		if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
 			event.player.capabilities.setPlayerWalkSpeed(0.2F);
