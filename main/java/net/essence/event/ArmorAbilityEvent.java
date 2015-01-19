@@ -50,6 +50,7 @@ public class ArmorAbilityEvent{
 				event.player.capabilities.allowFlying = true;
 			} else {
 				event.player.capabilities.allowFlying = false;
+				event.player.capabilities.isFlying = false;
 			}
 		}
 
