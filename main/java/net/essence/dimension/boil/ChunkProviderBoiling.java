@@ -15,6 +15,7 @@ import net.essence.dimension.euca.gen.trees.WorldGenEucaTallPine;
 import net.essence.dimension.euca.gen.trees.WorldGenHugeEucaSpruceTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree2;
+import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -253,6 +254,22 @@ public class ChunkProviderBoiling implements IChunkProvider {
 		int x, y, z, times;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
+		
+		for(i = 0; i < 17; i++) {
+			y = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.infernoPlant).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(i = 0; i < 17; i++) {
+			y = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.flameFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(i = 0; i < 40; i++) {
+			y = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.burntGrass).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
 	}
 
 	@Override

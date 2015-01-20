@@ -100,7 +100,7 @@ public class EssenceBlocks {
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
-	public static final Block hotBlock = new BlockMod("hotGround", 2.0F);
+	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);
 	public static final Block ashBlock = new BlockMod("ashBlock");
 
 	public static final BlockMod corbaStone = new BlockMod("corbaStone");
@@ -191,7 +191,10 @@ public class EssenceBlocks {
 	public static final BlockModFlower corbaRedFlower = new BlockModFlower("corbaRedFlower");
 	public static final BlockModFlower corbaBlueFlower = new BlockModFlower("corbaBlueFlower");
 	public static final BlockModFlower corbaDarkPurpleFlower = new BlockModFlower("corbaDarkPurpleFlower");
-
+	public static final BlockModFlower flameFlower = new BlockModFlower("flameFlower");
+	public static final BlockModFlower infernoPlant = new BlockModFlower("infernoPlant");
+	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass");
+	
 	public static final Block grindstone = new BlockGrindstone("grindstone");
 	public static final Block blueGems = new BlockGemBlock("blueGems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", true);
