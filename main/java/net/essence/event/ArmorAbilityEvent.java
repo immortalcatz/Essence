@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S39PacketPlayerAbilities;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -18,12 +19,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ArmorAbilityEvent{
 
-	
+
 	private EssenceItems item = new EssenceItems();
 	private Item boots = null, body = null, legs = null, helmet = null;
-	
+
 	@SubscribeEvent
-	@SideOnly(Side.CLIENT)
 	public void playerTick(PlayerTickEvent event) {
 		ItemStack stackBoots = event.player.inventory.armorItemInSlot(0);
 		ItemStack stackLegs = event.player.inventory.armorItemInSlot(1);
@@ -50,15 +50,17 @@ public class ArmorAbilityEvent{
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		//EntityPlayerMP playerMP = (EntityPlayerMP)event.player;
-		//if(playerMP.theItemInWorldManager.getGameType() != GameType.CREATIVE || playerMP.theItemInWorldManager.getGameType() != GameType.SPECTATOR) {
-		if(!event.player.capabilities.isCreativeMode) {
-			if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-					helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
-				event.player.capabilities.allowFlying = true;
-			} else {
-				event.player.capabilities.allowFlying = false;
-				event.player.capabilities.isFlying = false;
+		if(event.player instanceof EntityPlayerMP) {
+			EntityPlayerMP playerMP = (EntityPlayerMP)event.player;
+			playerMP.playerNetServerHandler.sendPacket(new S39PacketPlayerAbilities(event.player.capabilities));
+			if(playerMP.theItemInWorldManager.getGameType() != GameType.CREATIVE || playerMP.theItemInWorldManager.getGameType() != GameType.SPECTATOR) {
+				if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
+						helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
+					event.player.capabilities.allowFlying = true;
+				} else {
+					event.player.capabilities.allowFlying = false;
+					event.player.capabilities.isFlying = false;
+				}
 			}
 		}
 
