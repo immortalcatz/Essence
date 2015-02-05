@@ -23,16 +23,22 @@ public class ItemChaosCannon extends ItemMod {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		spawnEntityIntoWorld(world, player, new EntityChaosProjectile(world, player), EssenceBar.useBar(10), EnumSounds.CANNON.getPrefixedName(), true, stack, 1);
+		if(!world.isRemote) {
+			if(EssenceBar.instance.useBar(1, world)) {
+				world.spawnEntityInWorld(new EntityChaosProjectile(world, player));
+				EnumSounds.playSound(EnumSounds.CANNON, world, player);
+				stack.damageItem(1, player);
+			}
+		}
 		return stack;
 	}
-	
+
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {
 		l.add("Spawns a weak bouncing projectile");
 		l.add("Rapid fire");
 		l.add("Infinite ammo");
-		l.add("Uses 10 Essence");
+		l.add("Uses 1 Essence");
 		l.add(i.getMaxDamage() - i.getItemDamage() + SlayerAPI.Colour.DARK_GREEN + " Uses remaining");
 	}
 }

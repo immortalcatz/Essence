@@ -45,7 +45,7 @@ public class BlockModOre extends BlockMod {
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre) {
+		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre || this == EssenceBlocks.desOre) {
 			r = 0.0F;
 			g = 0.0F;
 			b = 1.0F;
@@ -92,6 +92,17 @@ public class BlockModOre extends BlockMod {
 				FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 			}
 		}
+	}
+	
+	@Override
+	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
+		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
+				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
+				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre) {
+			return super.getMixedBrightnessForBlock(worldIn, pos);
+			//return 1000;
+		}
+		return super.getMixedBrightnessForBlock(worldIn, pos);
 	}
 	
 	@Override

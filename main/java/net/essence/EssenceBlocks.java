@@ -22,6 +22,7 @@ public class EssenceBlocks {
 	public static final Block luniumOre = new BlockModOre("luniumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
+	public static final Block desOre = new BlockModOre("desOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
 	public static final Block ashual = new BlockModOre("ashual");
 	public static final Block sapphireOre = new BlockModOre("sapphireOre").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block enderilliumOre = new BlockModOre("enderilliumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
@@ -88,7 +89,9 @@ public class EssenceBlocks {
 	public static final Block blueCorbaLeaves = new BlockModLeaves("blueCorbaLeaves", 0.2F);
 	public static final Block redCorbaLeaves = new BlockModLeaves("redCorbaLeaves", 0.2F);
 	public static final Block corbaPillar = new BlockMod("corbaPillar");
-	
+	public static final Block greenCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "greenCorbaPlank", 0.5F);
+	public static final Block brownCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "brownCorbaPlank", 0.5F);
+
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
@@ -99,6 +102,9 @@ public class EssenceBlocks {
 	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
+
+	public static final Block essenceWallSign = new BlockEssenceWallSign("essenceSign");
+	public static final Block essenceStandingSign = new BlockEssenceStandingSign("essenceStandingSign");
 
 	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);
 	public static final Block ashBlock = new BlockMod("ashBlock");
@@ -204,5 +210,9 @@ public class EssenceBlocks {
 	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", 0.5F);
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", 0.5F);
 
+	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin");
+	
+	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
+	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");
 }

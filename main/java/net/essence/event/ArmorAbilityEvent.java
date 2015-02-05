@@ -1,6 +1,7 @@
 package net.essence.event;
 
 import net.essence.EssenceItems;
+import net.essence.util.Helper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
@@ -42,29 +43,28 @@ public class ArmorAbilityEvent{
 			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 1));
 		}
 
-		if(helmet == item.shadiumHelmet && body == item.shadiumChest && legs == item.shadiumLegs && boots == item.shadiumBoots){
+		else if(helmet == item.shadiumHelmet && body == item.shadiumChest && legs == item.shadiumLegs && boots == item.shadiumBoots){
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		if(helmet == item.sapphireHelmet && body == item.sapphireChest && legs == item.sapphireLegs && boots == item.sapphireBoots){
+		else if(helmet == item.sapphireHelmet && body == item.sapphireChest && legs == item.sapphireLegs && boots == item.sapphireBoots){
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
 
-		if(event.player instanceof EntityPlayerMP) {
-			EntityPlayerMP playerMP = (EntityPlayerMP)event.player;
-			playerMP.playerNetServerHandler.sendPacket(new S39PacketPlayerAbilities(event.player.capabilities));
-			if(playerMP.theItemInWorldManager.getGameType() != GameType.CREATIVE || playerMP.theItemInWorldManager.getGameType() != GameType.SPECTATOR) {
+		else if(event.player instanceof EntityPlayerMP) { 
+			EntityPlayer player = (EntityPlayerMP)event.player;
+			if(!player.capabilities.isCreativeMode) {
 				if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
 						helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
-					event.player.capabilities.allowFlying = true;
+					player.capabilities.allowFlying = true;
 				} else {
-					event.player.capabilities.allowFlying = false;
-					event.player.capabilities.isFlying = false;
+					player.capabilities.allowFlying = false;
+					player.capabilities.isFlying = false;
 				}
 			}
 		}
-
-		if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
+		
+		else if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
 			event.player.capabilities.setPlayerWalkSpeed(0.2F);
 			event.player.fallDistance = 0.0F;
 		} else {
@@ -157,6 +157,8 @@ public class ArmorAbilityEvent{
 		if(!(e.entity instanceof EntityPlayer)) {
 			if(helmet == item.luniumHelmet && body == item.luniumChest && legs == item.luniumLegs && boots == item.luniumBoots)
 				e.ammount += 4;
+			else if(helmet == item.flameHelmet && body == item.flameChest && legs == item.flameLegs && boots == item.flameBoots)
+				e.entityLiving.setFire(5);
 		}
 	}
 }

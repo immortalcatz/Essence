@@ -41,19 +41,19 @@ public class ItemEssencePotion extends ItemMod {
 	}
 
 	@Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn) {
-        --stack.stackSize;
-        worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-        this.onFoodEaten(stack, worldIn, playerIn);
-        playerIn.triggerAchievement(StatList.objectUseStats[Item.getIdFromItem(this)]);
-        return stack;
-    }
-	
+	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn) {
+		if(!playerIn.capabilities.isCreativeMode) --stack.stackSize;
+		worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+		this.onFoodEaten(stack, worldIn, playerIn);
+		playerIn.triggerAchievement(StatList.objectUseStats[Item.getIdFromItem(this)]);
+		return stack;
+	}
+
 	public ItemStack onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
-		int amount = isStrong ? 400 : 200;
+		int amount = isStrong ? 10 : 5;
 		if(!world.isRemote){
-			if(essence) EssenceBar.addBarPoints(amount);
-			else DarkEnergyBar.addBarPoints(amount);
+			if(essence) EssenceBar.instance.addBarPoints(amount);
+			else DarkEnergyBar.instance.addBarPoints(amount);
 			if(!player.capabilities.isCreativeMode) stack.stackSize--;
 		}
 		return stack;
@@ -63,7 +63,7 @@ public class ItemEssencePotion extends ItemMod {
 	public EnumRarity getRarity(ItemStack par1ItemStack) {
 		return isStrong ? EnumRarity.EPIC : EnumRarity.RARE;
 	}
-	
+
 	@Override
 	public boolean hasEffect(ItemStack par1ItemStack) {
 		return isStrong;
@@ -74,7 +74,7 @@ public class ItemEssencePotion extends ItemMod {
 		String type = "";
 		if(essence) type = " Essence";
 		else type = " Dark Energy";
-		int amount = isStrong ? 300 : 100;
+		int amount = isStrong ? 10 : 5;
 		list.add("Replenishes " + amount + type);
 	}
 }

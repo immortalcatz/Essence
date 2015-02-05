@@ -130,27 +130,6 @@ public class ModelRobot extends ModelBiped {
 		float f6;
 		float f7;
 
-		/*if(this.onGround > -9990.0F) {
-			f6 = this.onGround;
-			this.body.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(f6) * (float)Math.PI * 2.0F) * 0.2F;
-			this.rightarm.rotationPointZ = MathHelper.sin(this.body.rotateAngleY) * 7.0F;
-			this.rightarm.rotationPointX = -MathHelper.cos(this.body.rotateAngleY) * 7.0F;
-			this.leftarm.rotationPointZ = -MathHelper.sin(this.body.rotateAngleY) * 7.0F;
-			this.leftarm.rotationPointX = MathHelper.cos(this.body.rotateAngleY) * 7.0F;
-			this.rightarm.rotateAngleY += this.body.rotateAngleY;
-			this.leftarm.rotateAngleY += this.body.rotateAngleY;
-			this.leftarm.rotateAngleX += this.body.rotateAngleY;
-			f6 = 1.0F - this.onGround;
-			f6 *= f6;
-			f6 *= f6;
-			f6 = 1.0F - f6;
-			f7 = MathHelper.sin(f6 * (float)Math.PI);
-			float f8 = MathHelper.sin(this.onGround * (float)Math.PI) * -(this.head.rotateAngleX - 0.7F) * 0.75F;
-			this.rightarm.rotateAngleX = (float)((double)this.rightarm.rotateAngleX - ((double)f7 * 1.2D + (double)f8));
-			this.rightarm.rotateAngleY += this.body.rotateAngleY * 2.0F;
-			this.rightarm.rotateAngleZ = MathHelper.sin(this.onGround * (float)Math.PI) * -0.4F;
-		}*/
-
 		this.body.rotateAngleX = 0.0F;
 		this.rightleg.rotationPointZ = 0.1F;
 		this.leftleg.rotationPointZ = 0.1F;

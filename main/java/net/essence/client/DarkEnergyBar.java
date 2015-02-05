@@ -7,52 +7,59 @@ import net.minecraftforge.common.IExtendedEntityProperties;
 
 public class DarkEnergyBar implements IExtendedEntityProperties {
 
-	private static int darkMagic, regenDelay;
+	private int darkEnergy, regenDelay;
 
+	public static DarkEnergyBar instance = new DarkEnergyBar();
+	
 	@Override
 	public void saveNBTData(NBTTagCompound n) {
-		n.setInteger("darkMagic", 400);
-		n.setInteger("Regen", 20);
+		n.setInteger("darkEnergy", 9);
+		n.setInteger("regen", 20);
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound n) {
-		this.darkMagic = n.getInteger("darkMagic");
-		this.regenDelay = n.getInteger("Regen");
+		this.darkEnergy = n.getInteger("darkEnergy");
+		this.regenDelay = n.getInteger("regen");
 	}
 
-	public static void updateAllBars() {
-		if(darkMagic != 400) regen(1);
-		else regen(0);
-		if(darkMagic >= 400) darkMagic = 400;
+	public void updateAllBars() {
+		darkEnergy += 1;
 	}                
 
-	public static boolean useBar(int amount) {
-		if(darkMagic < amount) {
-			regenDelay = 20;
-			return false;
+	public boolean useBar(int amount, World w) {
+		if(!w.isRemote) {
+			if(darkEnergy < amount) {
+				regenDelay = 10;
+				return false;
+			}
+			darkEnergy -= amount;
+			regenDelay = 10;
+			return true;
 		}
-		darkMagic -= amount;
-		regenDelay = 20;
 		return true;
 	}
 
-	public static void regen(int amount) {
-		if(regenDelay == 0) darkMagic += amount;
+	public void regen(int amount) {
+		if(regenDelay == 0) darkEnergy += amount;
 		else regenDelay -= 1;
 	}
-
-	public static float getBarValue() {
-		return darkMagic;
+	
+	public void mainUpdate() {
+		if(darkEnergy >= 10) darkEnergy = 10;
 	}
 
-	public static void addBarPoints(int i) {
-		darkMagic += i;
+	public float getBarValue() {
+		return darkEnergy;
+	}
+
+	public void addBarPoints(int i) {
+		darkEnergy += i;
 	}
 	
-	public static void removeBarPoints(int i) {
-		regenDelay = 20;
-		darkMagic -= i;
+	public void removeBarPoints(int i) {
+		regenDelay = 10;
+		darkEnergy -= i;
 	}
 
 	@Override

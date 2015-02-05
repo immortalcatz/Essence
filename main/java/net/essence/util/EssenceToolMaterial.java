@@ -22,7 +22,8 @@ public enum EssenceToolMaterial {
 	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	CHAMPIONS_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	THE_WRAITH(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
-	
+	BUBBLE_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+
 	POISON_SWORD(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	CLOUD_SLICER(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	DRAGONS_TOOTH(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
@@ -71,7 +72,8 @@ public enum EssenceToolMaterial {
 	SAPPHIRE_MULTI_TOOL(EssenceItems.sapphireMulti, EssenceItems.sapphire, 2),
 	ORBADITE_MULTI_TOOL(EssenceItems.orbaditeMulti, EssenceItems.orbaditeIngot, 3),
 	GORBITE_MULTI_TOOL(EssenceItems.gorbiteMulti, EssenceItems.gorbiteGem, 3),
-	
+	SMELTING_TOOL(EssenceItems.smeltingMulti, null, 3),
+
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
 	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25));

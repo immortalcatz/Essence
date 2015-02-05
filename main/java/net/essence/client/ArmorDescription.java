@@ -34,5 +34,8 @@ public class ArmorDescription {
 		
 		if(i == EssenceItems.sapphireHelmet || i == EssenceItems.sapphireChest || i == EssenceItems.sapphireLegs || i == EssenceItems.sapphireBoots)
 			list.add("Full set: Water breathing");
+		
+		if(i == EssenceItems.flameHelmet || i == EssenceItems.flameChest || i == EssenceItems.flameLegs || i == EssenceItems.flameBoots)
+			list.add("Full set: Sets foe on fire when hit");
 	}
 }

@@ -47,6 +47,7 @@ public class EssenceItems {
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 	public static ToolMaterial orbaditeMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial gorbiteMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial smeltingMulti = addToolMaterial(3000, 15F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
 
@@ -85,15 +86,22 @@ public class EssenceItems {
 
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
 	//public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
-	
+
 	public static final Item rockChunk = new ItemMod("rockChunk");
 	public static final Item rockShard = new ItemMod("rockShard");
 	public static final Item plasmaBall = new ItemMod("plasmaBall");
+	public static final Item fireBomb = new ItemMod("fireBomb");
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
 	public static final Item rockLauncher = new ItemGun("rockLauncher", rockChunk, 9, 650, EnumSounds.CANNON, EntityRockProjectile.class);
 	public static final Item netherPlasma = new ItemGun("netherPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityNetherPlasma.class);
 	public static final Item oceanPlasma = new ItemGun("oceanPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityOceanPlasma.class);
 	public static final Item forestPlasma = new ItemGun("forestPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityForestPlasma.class);
+	//TODO
+	public static final Item fireGun = new ItemGun("fireGun", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
+	public static final Item flameThrower = new ItemGun("flameThrower", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
+	public static final Item natureDuster = new ItemGun("natureDuster", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
+	public static final Item eyeBlaster = new ItemGun("eyeBlaster", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
+	public static final Item candyBlaster = new ItemGun("candyBlaster", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
 
 	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
 	public static final Item shadiumMultiTool = new ItemMultiTool("shadiumMultiTool", EssenceToolMaterial.SHADIUM_MULTI_TOOL);
@@ -101,36 +109,37 @@ public class EssenceItems {
 	public static final Item luniumMultiTool = new ItemMultiTool("luniumMultiTool", EssenceToolMaterial.LUNIUM_MULTI_TOOL);
 	public static final Item flairiumMultiTool = new ItemMultiTool("flairiumMultiTool", EssenceToolMaterial.FLAIRIUM_MULTI_TOOL);
 	public static final Item sapphireMultiTool = new ItemMultiTool("sapphireMultiTool", EssenceToolMaterial.SAPPHIRE_MULTI_TOOL);
-	public static final Item gorbiteMultiTool = new ItemModHoe("gorbiteMultiTool", EssenceToolMaterial.GORBITE_MULTI_TOOL);
-	public static final Item orbaditeMultiTool = new ItemModHoe("orbaditeMultiTool", EssenceToolMaterial.ORBADITE_MULTI_TOOL);
-	
+	public static final Item gorbiteMultiTool = new ItemMultiTool("gorbiteMultiTool", EssenceToolMaterial.GORBITE_MULTI_TOOL);
+	public static final Item orbaditeMultiTool = new ItemMultiTool("orbaditeMultiTool", EssenceToolMaterial.ORBADITE_MULTI_TOOL);
+	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", EssenceToolMaterial.SMELTING_TOOL);
+
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", EssenceToolMaterial.HELLSTONE_PICKAXE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", EssenceToolMaterial.SHADIUM_PICKAXE);
 	public static final Item celestiumPickaxe = new ItemModPickaxe("celestiumPickaxe", EssenceToolMaterial.CELESTIUM_PICKAXE);
 	public static final Item luniumPickaxe = new ItemModPickaxe("luniumPickaxe", EssenceToolMaterial.LUNIUM_PICKAXE);
 	public static final Item flairiumPickaxe = new ItemModPickaxe("flairiumPickaxe", EssenceToolMaterial.FLAIRIUM_PICKAXE);
 	public static final Item sapphirePickaxe = new ItemModPickaxe("sapphirePickaxe", EssenceToolMaterial.SAPPHIRE_PICKAXE);
-	public static final Item gorbitePickaxe = new ItemModHoe("gorbitePickaxe", EssenceToolMaterial.GORBITE_PICKAXE);
-	public static final Item orbaditePickaxe = new ItemModHoe("orbaditePickaxe", EssenceToolMaterial.ORBADITE_PICKAXE);
-	
+	public static final Item gorbitePickaxe = new ItemModPickaxe("gorbitePickaxe", EssenceToolMaterial.GORBITE_PICKAXE);
+	public static final Item orbaditePickaxe = new ItemModPickaxe("orbaditePickaxe", EssenceToolMaterial.ORBADITE_PICKAXE);
+
 	public static final Item hellstoneShovel = new ItemModShovel("hellstoneShovel", EssenceToolMaterial.HELLSTONE_SHOVEL);
 	public static final Item shadiumShovel = new ItemModShovel("shadiumShovel", EssenceToolMaterial.SHADIUM_SHOVEL);
 	public static final Item celestiumShovel = new ItemModShovel("celestiumShovel", EssenceToolMaterial.CELESTIUM_SHOVEL);
 	public static final Item luniumShovel = new ItemModShovel("luniumShovel", EssenceToolMaterial.LUNIUM_SHOVEL);
 	public static final Item flairiumShovel = new ItemModShovel("flairiumShovel", EssenceToolMaterial.FLAIRIUM_SHOVEL);
 	public static final Item sapphireShovel = new ItemModShovel("sapphireShovel", EssenceToolMaterial.SAPPHIRE_SHOVEL);
-	public static final Item gorbiteShovel = new ItemModHoe("gorbiteShovel", EssenceToolMaterial.GORBITE_SHOVEL);
-	public static final Item orbaditeShovel = new ItemModHoe("orbaditeShovel", EssenceToolMaterial.ORBADITE_SHOVEL);
-	
+	public static final Item gorbiteShovel = new ItemModShovel("gorbiteShovel", EssenceToolMaterial.GORBITE_SHOVEL);
+	public static final Item orbaditeShovel = new ItemModShovel("orbaditeShovel", EssenceToolMaterial.ORBADITE_SHOVEL);
+
 	public static final Item hellstoneAxe = new ItemModAxe("hellstoneAxe", EssenceToolMaterial.HELLSTONE_AXE);
 	public static final Item shadiumAxe = new ItemModAxe("shadiumAxe", EssenceToolMaterial.SHADIUM_AXE);
 	public static final Item celestiumAxe = new ItemModAxe("celestiumAxe", EssenceToolMaterial.CELESTIUM_AXE);
 	public static final Item luniumAxe = new ItemModAxe("luniumAxe", EssenceToolMaterial.LUNIUM_AXE);
 	public static final Item flairiumAxe = new ItemModAxe("flairiumAxe", EssenceToolMaterial.FLAIRIUM_AXE);
 	public static final Item sapphireAxe = new ItemModAxe("sapphireAxe", EssenceToolMaterial.SAPPHIRE_AXE);
-	public static final Item gorbiteAxe = new ItemModHoe("gorbiteAxe", EssenceToolMaterial.GORBITE_AXE);
-	public static final Item orbaditeAxe = new ItemModHoe("orbaditeAxe", EssenceToolMaterial.ORBADITE_AXE);
-	
+	public static final Item gorbiteAxe = new ItemModAxe("gorbiteAxe", EssenceToolMaterial.GORBITE_AXE);
+	public static final Item orbaditeAxe = new ItemModAxe("orbaditeAxe", EssenceToolMaterial.ORBADITE_AXE);
+
 	public static final Item hellstoneHoe = new ItemModHoe("hellstoneHoe", EssenceToolMaterial.HELLSTONE_HOE);
 	public static final Item shadiumHoe = new ItemModHoe("shadiumHoe", EssenceToolMaterial.SHADIUM_HOE);
 	public static final Item celestiumHoe = new ItemModHoe("celestiumHoe", EssenceToolMaterial.CELESTIUM_HOE);
@@ -156,14 +165,21 @@ public class EssenceItems {
 	public static final Item calciaSword = new ItemModSword("calciaSword", EssenceToolMaterial.CALCIA_SWORD);
 	public static final Item championsSword = new ItemModSword("championsSword", EssenceToolMaterial.CHAMPIONS_SWORD);
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
+	public static final Item bubbleSword = new ItemModSword("bubbleSword", EssenceToolMaterial.BUBBLE_SWORD);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
-
+	public static final Item corbaPortalGem = new ItemMod("corbaPortalGem");
+	public static final Item wastelandPortalGem = new ItemMod("wastelandPortalGem");
+	
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
 	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
+	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Boiling Point");
+	//TODO
+	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Depths");
+	public static final Item rocLeaderOrb = new ItemSpecificDimensionSpawner(Config.depths, "rocLeaderOrb", "Depths");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
@@ -209,23 +225,28 @@ public class EssenceItems {
 	public static final Item gorbiteChest = new ItemModArmor(EnumArmor.GORBITE, BODY);
 	public static final Item gorbiteLegs = new ItemModArmor(EnumArmor.GORBITE, LEGS);
 	public static final Item gorbiteBoots = new ItemModArmor(EnumArmor.GORBITE, BOOTS);
-	
-	public static final Item orbaditeHelmet = new ItemModArmor(EnumArmor.ORBADIRE, HEAD);
-	public static final Item orbaditeChest = new ItemModArmor(EnumArmor.ORBADIRE, BODY);
-	public static final Item orbaditeLegs = new ItemModArmor(EnumArmor.ORBADIRE, LEGS);
-	public static final Item orbaditeBoots = new ItemModArmor(EnumArmor.ORBADIRE, BOOTS);
-	
+
+	public static final Item orbaditeHelmet = new ItemModArmor(EnumArmor.ORBADITE, HEAD);
+	public static final Item orbaditeChest = new ItemModArmor(EnumArmor.ORBADITE, BODY);
+	public static final Item orbaditeLegs = new ItemModArmor(EnumArmor.ORBADITE, LEGS);
+	public static final Item orbaditeBoots = new ItemModArmor(EnumArmor.ORBADITE, BOOTS);
+
+	public static final Item flameHelmet = new ItemModArmor(EnumArmor.FLAME, HEAD);
+	public static final Item flameChest = new ItemModArmor(EnumArmor.FLAME, BODY);
+	public static final Item flameLegs = new ItemModArmor(EnumArmor.FLAME, LEGS);
+	public static final Item flameBoots = new ItemModArmor(EnumArmor.FLAME, BOOTS);
+
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
 
-	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 25, 1000, 7, false, false, EntityBasicProjectile.class);
-	public static final Item doomsBringer = new ItemStaff("doomsBringer", 25, 1000, 12, false, false, EntityDoomsBringer.class);
-	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 25, 1000, 18, true, false, EntityConjuring.class);
-	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", 25, 1000, 14, true, false, EntityEnlightenment.class);
-	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 25, 1000, 10, true, false, EntityGreenpace.class);
-	public static final Item wizardsStar = new ItemStaff("wizardsStar", 25, 1000, 5, true, false, EntityWizardsStar.class);
-	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", 20);
+	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", 3, 1000, 7, false, false, EntityBasicProjectile.class);
+	public static final Item doomsBringer = new ItemStaff("doomsBringer", 3, 1000, 12, false, false, EntityDoomsBringer.class);
+	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", 3, 1000, 18, true, false, EntityConjuring.class);
+	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", 3, 1000, 14, true, false, EntityEnlightenment.class);
+	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", 3, 1000, 10, true, false, EntityGreenpace.class);
+	public static final Item wizardsStar = new ItemStaff("wizardsStar", 3, 1000, 5, true, false, EntityWizardsStar.class);
+	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff");
 
 	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
 	public static final Item redEgg = new ItemMod("redEgg", EssenceTabs.misc);
@@ -257,17 +278,19 @@ public class EssenceItems {
 
 	public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
 	public static final Item essenceArrow = new ItemMod("essenceArrow", EssenceTabs.ranged);
-	
+
 	public static final Item flameBow = new ItemModBow("flameBow", 384, flameArrow, EntityFlameArrow.class);
 	public static final Item poisonBow = new ItemModBow("poisonBow", 384, essenceArrow, 18, EntityPoisonArrow.class);
 	public static final Item darknessBow = new ItemModBow("darknessBow", 384, essenceArrow, 10, EntityDarknessArrow.class);
 	public static final Item frozenBow = new ItemModBow("frozenBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
-	
+	//TODO
+	public static final Item staringBow = new ItemModBow("staringBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
+
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	public static final Item fireWand = new ItemWand("fireWand", 50, 600, 8, false, false, EntityFireBall.class);
-	public static final Item iceWand = new ItemWand("iceWand", 50, 600, 8, true, false, EntityIceBall.class);
-	public static final Item lightningWand = new ItemWand("lightningWand", 100, 600, 8, false, false, EntityLightningBall.class);
+	public static final Item fireWand = new ItemWand("fireWand", 5, 600, 8, false, false, EntityFireBall.class);
+	public static final Item iceWand = new ItemWand("iceWand", 5, 600, 8, true, false, EntityIceBall.class);
+	public static final Item lightningWand = new ItemWand("lightningWand", 10, 600, 8, false, false, EntityLightningBall.class);
 
 	public static final Item greenGem = new ItemMod("greenGem");
 	public static final Item purpleGem = new ItemMod("purpleGem");
@@ -295,18 +318,37 @@ public class EssenceItems {
 	public static final Item greenPresent = new ItemPresent("greenPresent");
 	public static final Item redPresent = new ItemPresent("redPresent");
 	public static final Item blackPresent = new ItemPresent("blackPresent");
-		
+
 	public static final Item tomato = new ItemModFood("tomato", 3, 0.6F, false);
+	//TODO
+	public static final Item mintCandyCane = new ItemModFood("mintCandyCane", 3, 0.6F, false);
+	public static final Item fruityCandyCane = new ItemModFood("fruityCandyCane", 3, 0.6F, false);
+	public static final Item cherryCandyCane = new ItemModFood("cherryCandyCane", 3, 0.6F, false);
+	public static final Item peppermint = new ItemModFood("peppermint", 3, 0.6F, false);
+	public static final Item jellyBeans = new ItemModFood("jellyBeans", 3, 0.6F, false);
+	public static final Item chocolate = new ItemModFood("chocolate", 3, 0.6F, false);
+	public static final Item vanillaWafer = new ItemModFood("vanillaWafer", 3, 0.6F, false);
+
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
-	
-	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
-	
+
 	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");
 	public static final Item blueWater = new ItemModRecord("blueWater");
 	public static final Item raceStar = new ItemModRecord("raceStar");
 	public static final Item compBegins = new ItemModRecord("compBegins");
 	public static final Item deepBlue = new ItemModRecord("deepBlue");
 	public static final Item raceShore = new ItemModRecord("raceShore");
+
+	public static final Item essenceSign = new ItemEssenceSign("essenceSignItem");
+
+	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
+
+	public static final Item baseEssence = new ItemMod("baseEssence");
+	public static final Item cloudPuff = new ItemMod("cloudPuff");
+	public static final Item collectorRock = new ItemMod("collectorRock");
+	public static final Item natureTablet = new ItemMod("natureTablet");
+	public static final Item eyeBall = new ItemMod("eyeBall");
+	public static final Item horn = new ItemMod("horn");
+	public static final Item scale = new ItemMod("scale");
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);

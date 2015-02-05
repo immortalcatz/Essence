@@ -44,7 +44,7 @@ public class PlayerStats {
 					mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/playerStats.png"));
 					float health = player.getHealth() * 5F;
 					float hunger = player.getFoodStats().getFoodLevel() * 5F;
-					float experience = (int)(mc.thePlayer.experience * (float)(200));
+					float experience = (int)(mc.thePlayer.experience * 150F);
 					float armor = player.getTotalArmorValue() * 5;
 					float air = (float)player.getAir() / 1.5F / 2F;
 					ScaledResolution res = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
@@ -90,9 +90,8 @@ public class PlayerStats {
 		}
 	}
 
-	public static Long getWorldTime(Minecraft mc){	
-		Long time = Long.valueOf(mc.theWorld.provider.getWorldTime());
-		return time;
+	public static Long getWorldTime(Minecraft mc) {
+		return Long.valueOf(mc.theWorld.provider.getWorldTime());
 	}
 
 	public static String formatTime(Long time) {

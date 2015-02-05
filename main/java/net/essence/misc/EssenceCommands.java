@@ -43,8 +43,8 @@ public class EssenceCommands extends CommandBase {
 			if(p.getFoodStats().needFood())
 				p.getFoodStats().addStats(20, 1);
 
-			EssenceBar.addBarPoints(400);
-			DarkEnergyBar.addBarPoints(400);
+			EssenceBar.instance.addBarPoints(1000);
+			DarkEnergyBar.instance.addBarPoints(1000);
 		}
 
 		EntityPlayerMP playerMP = (EntityPlayerMP)var1;

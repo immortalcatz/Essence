@@ -30,7 +30,7 @@ public class ItemAttractor extends ItemMod {
 	@Override 
 	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase hit) {
 		Random r = new Random();
-		if(essence ? EssenceBar.useBar(magic) : DarkEnergyBar.useBar(magic)){
+		if(essence ? EssenceBar.instance.useBar(magic, player.worldObj) : DarkEnergyBar.instance.useBar(magic, player.worldObj)){
 			if(!attracts){
 				hit.motionY = 1.0F;
 				hit.motionX = (hit.posX - player.posX) * 1.0F;

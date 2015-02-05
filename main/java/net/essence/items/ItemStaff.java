@@ -41,13 +41,25 @@ public class ItemStaff extends ItemMod {
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(essence) {
 			try {
-				spawnEntityIntoWorld(world, player, projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage), EssenceBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+				if(!world.isRemote) {
+					if(EssenceBar.instance.useBar(usage, world)) {
+						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+						EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+						stack.damageItem(1, player);
+					}
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else {
 			try {
-				spawnEntityIntoWorld(world, player, projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage), DarkEnergyBar.useBar(usage), EnumSounds.STAFF.getPrefixedName(), unBreakable, stack, 1);
+				if(!world.isRemote) {
+					if(DarkEnergyBar.instance.useBar(usage, world)) {
+						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+						EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+						stack.damageItem(1, player);
+					}
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -59,8 +71,8 @@ public class ItemStaff extends ItemMod {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		list.add(SlayerAPI.Colour.DARK_AQUA + "Staff");
 		list.add(SlayerAPI.Colour.DARK_GREEN + "Does " + damage + " ranged damage.");
-		if(essence) list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage * 2 + SlayerAPI.Colour.DARK_GREEN + " Essence.");
-		else list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage * 2 + SlayerAPI.Colour.DARK_GREEN + " Dark Energy.");
+		if(essence) list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage + SlayerAPI.Colour.DARK_GREEN + " Essence.");
+		else list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + SlayerAPI.Colour.DARK_BLUE + usage + SlayerAPI.Colour.DARK_GREEN + " Dark Energy.");
 		if(unBreakable) list.add("Unbreakable");
 		else list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining.");
 	}

@@ -18,6 +18,7 @@ public enum EnumMaterialTypes {
     SNOW(Material.snow, Block.soundTypeSnow),
     FIRE(Material.fire, Block.soundTypeWood),
     WOOL(Material.cloth, Block.soundTypeCloth),
+    GOURD(Material.gourd, Block.soundTypeWood),
     METAL_SOUND(Material.rock, Block.soundTypeMetal);
 
     private Material m;

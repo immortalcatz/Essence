@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.client.DarkEnergyBar;
 import net.essence.enums.EnumSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
@@ -50,13 +51,15 @@ public class ItemMod extends Item {
 	}
 
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound, boolean damage, ItemStack item, int dam) {
-		if(!w.isRemote && magic){
-			w.spawnEntityInWorld(entity);
+		if(!w.isRemote){
+			if(magic) w.spawnEntityInWorld(entity);
+		}
+		if(magic) {
 			EnumSounds.playSound(sound, w, p);
 			if(damage) item.damageItem(dam, p);
 		}
 	}
-	
+
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, String sound, boolean damage, ItemStack item, int dam) {
 		if(!w.isRemote){
 			w.spawnEntityInWorld(entity);

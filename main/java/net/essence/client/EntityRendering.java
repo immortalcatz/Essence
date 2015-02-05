@@ -99,6 +99,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCalcia.class, new RenderCalcia(new ModelClacia(), 0.5F, 2.0F, tex.calcia, stat.calciaBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEudor.class, new RenderEudor(new ModelEudor(), 0.5F, 2.0F, tex.eudor, stat.eudorBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTempleGuardian.class, new RenderModBiped(new ModelBiped(), 1.5F, tex.templeGuardian));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFourfa.class, new RenderFourfa());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlazier.class, new RenderBoss(new ModelBlazier(), 0.5F, 2.0F, tex.blazier, stat.blazierBossID));
 
 		//RenderingRegistry.registerEntityRenderingHandler(EntityWraith.class, new RenderBoss(new ModelWraith(), 0.5F, 1.0F, tex.wraith, stat.wraithBossID));
 		
@@ -112,6 +114,7 @@ public class EntityRendering {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityStatue.class, new StatueRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrindstone.class, new GrindstoneRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCorbaPortal.class, new CorbaPortalRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEssenceSign.class, new EssenceSignRenderer());
 
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.mossyEssenceStone.getRenderType(), new OtherBlockRenderer());

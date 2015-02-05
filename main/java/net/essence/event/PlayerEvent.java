@@ -1,6 +1,7 @@
 package net.essence.event;
 
 import net.essence.Essence;
+import net.essence.EssenceItems;
 import net.essence.util.Config;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -37,6 +38,15 @@ public class PlayerEvent {
 						event.drops.clear();
 						event.drops.add(stack.copy());
 					}
+				}
+			}
+		}
+		if(event.harvester != null && event.harvester instanceof EntityPlayer && event.harvester.getHeldItem() != null && event.harvester.getHeldItem().getItem() == EssenceItems.multiToolOfEternalSmelting) {
+			if(!event.isSilkTouching){
+				ItemStack stack = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(event.state.getBlock()));
+				if(stack != null && event.state.getBlock() != Blocks.redstone_ore && event.state.getBlock() != Blocks.lapis_ore && event.state.getBlock() != Blocks.lapis_ore) {
+					event.drops.clear();
+					event.drops.add(stack.copy());
 				}
 			}
 		}

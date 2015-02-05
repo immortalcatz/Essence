@@ -195,7 +195,7 @@ public class EntityEucaHopper extends EntityModTameable {
 	
 	@Override
 	public int getMaxSpawnedInChunk() {
-		return 2;
+		return 1;
 	}
 
 	@Override

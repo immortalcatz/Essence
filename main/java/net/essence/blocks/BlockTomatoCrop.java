@@ -8,7 +8,7 @@ import net.slayer.api.block.BlockModCrop;
 public class BlockTomatoCrop extends BlockModCrop {
 
 	public BlockTomatoCrop(String name) {
-		super(name, 7);
+		super(name);
 	}
 
 	@Override

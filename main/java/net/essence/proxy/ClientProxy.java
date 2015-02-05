@@ -40,6 +40,7 @@ public class ClientProxy extends CommonProxy {
 		addBow(EssenceItems.poisonBow, "poisonBow");
 		addBow(EssenceItems.darknessBow, "darknessBow");
 		addBow(EssenceItems.frozenBow, "frozenBow");
+		addBow(EssenceItems.staringBow, "staringBow");
 	}
 	
 	public void addBow(Item bow, String name) {
@@ -90,6 +91,7 @@ public class ClientProxy extends CommonProxy {
 		addBowRegistry(EssenceItems.poisonBow, "poisonBow");
 		addBowRegistry(EssenceItems.darknessBow, "darknessBow");
 		addBowRegistry(EssenceItems.frozenBow, "frozenBow");
+		addBowRegistry(EssenceItems.staringBow, "staringBow");
 
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");

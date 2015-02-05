@@ -9,6 +9,7 @@ import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.INpc;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
+import net.minecraft.entity.ai.EntityAIHarvestFarmland;
 import net.minecraft.entity.ai.EntityAILookAtTradePlayer;
 import net.minecraft.entity.ai.EntityAIMoveIndoors;
 import net.minecraft.entity.ai.EntityAIOpenDoor;
@@ -67,6 +68,8 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 		this.tasks.addTask(4, new EntityAIOpenDoor(this, true));
 		this.tasks.addTask(5, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
 		this.tasks.addTask(5, new EntityAIWander(this, 1.0F));
+		this.setCanPickUpLoot(false);
+		this.tasks.removeTask(new EntityAIHarvestFarmland(this, 0.6D));
 	}
 
 	@Override

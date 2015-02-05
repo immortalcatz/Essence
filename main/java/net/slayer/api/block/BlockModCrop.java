@@ -22,8 +22,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class BlockModCrop extends BlockBush implements IGrowable {
-	
-	public BlockModCrop(String name, int stages) {
+
+	public BlockModCrop(String name) {
 		this.setDefaultState(this.blockState.getBaseState().withProperty(getAge(), Integer.valueOf(0)));
 		this.setTickRandomly(true);
 		float f = 0.5F;
@@ -37,11 +37,11 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 	}
 
 	public abstract int getStages();
-	
+
 	public PropertyInteger getAge() {
-		 return PropertyInteger.create("age", 0, 7);
+		return PropertyInteger.create("age", 0, 7);
 	}
-	
+
 	@Override
 	protected boolean canPlaceBlockOn(Block ground) {
 		return ground == Blocks.farmland;
@@ -50,7 +50,6 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);
-
 		if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
 			int i = ((Integer)state.getValue(getAge())).intValue();
 			if (i < getStages()) {
@@ -64,11 +63,7 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 
 	public void grow(World worldIn, BlockPos pos, IBlockState state) {
 		int i = ((Integer)state.getValue(getAge())).intValue() + MathHelper.getRandomIntegerInRange(worldIn.rand, 2, 5);
-
-		if (i > getStages()) {
-			i = getStages();
-		}
-
+		if(i > getStages()) i = getStages();
 		worldIn.setBlockState(pos, state.withProperty(getAge(), Integer.valueOf(i)), 2);
 	}
 
@@ -85,10 +80,7 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 						f1 = 3.0F;
 					}
 				}
-
-				if (i != 0 || j != 0) {
-					f1 /= 4.0F;
-				}
+				if(i != 0 || j != 0) f1 /= 4.0F;
 				f += f1;
 			}
 		}
@@ -102,7 +94,6 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 			f /= 2.0F;
 		} else {
 			boolean flag2 = blockIn == worldIn.getBlockState(blockpos4.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos5.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos5.south()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.south()).getBlock();
-
 			if (flag2) {
 				f /= 2.0F;
 			}
@@ -172,7 +163,6 @@ public abstract class BlockModCrop extends BlockBush implements IGrowable {
 		Random rand = world instanceof World ? ((World)world).rand : new Random();
 		if (age >= getStages()) {
 			int k = 3 + fortune;
-
 			for (int i = 0; i < 3 + fortune; ++i) {
 				if (rand.nextInt(15) <= age) {
 					ret.add(new ItemStack(this.getSeed(), 1, 0));

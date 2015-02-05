@@ -16,13 +16,10 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemTeleport extends ItemMod {
 
-	private final int uses;
-
-	public ItemTeleport(String name, int uses) {
+	public ItemTeleport(String name) {
 		super(name, EssenceTabs.util);
 		setMaxStackSize(1);
 		setMaxDamage(100);
-		this.uses = uses;
 	}
 
 	@Override
@@ -58,7 +55,7 @@ public class ItemTeleport extends ItemMod {
 				if (var26 == 4) --var23;                
 				if (var26 == 5) ++var23;                
 
-				if(EssenceBar.useBar(200)) {
+				if(EssenceBar.instance.useBar(5, par2)) {
 					par3.getLook(1);
 					this.teleportTo(par3, par2, (double)var23, (double)var24, (double)var25);
 				}
@@ -74,7 +71,7 @@ public class ItemTeleport extends ItemMod {
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(SlayerAPI.Colour.DARK_GREEN + "Uses " + uses + " Essence");
+		list.add(SlayerAPI.Colour.DARK_GREEN + "Uses 5 Essence");
 		list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining");
 	}
 }

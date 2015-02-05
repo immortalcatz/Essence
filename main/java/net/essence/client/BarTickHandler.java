@@ -1,7 +1,9 @@
 package net.essence.client;
 
+import java.util.Random;
+
+import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.ResourceLocation;
@@ -20,6 +22,7 @@ import org.lwjgl.opengl.GL11;
 public class BarTickHandler {
 
 	private Minecraft mc = Minecraft.getMinecraft();
+	private int ticks = 100;
 
 	@SubscribeEvent
 	public void onTick(PlayerTickEvent event){
@@ -40,45 +43,36 @@ public class BarTickHandler {
 				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 				this.mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.MOD_ID, "textures/gui/misc.png"));
 				int sw = scaledresolution.getScaledWidth(), sh = scaledresolution.getScaledHeight();
-				int y = sh - 35, x = sw - 110;
-				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 108, 19);
-				gig.drawTexturedModalRect(x - 10, y - 15, 0, 177, 108, 19);
-				gig.drawTexturedModalRect(x - 6, y - 10, 0, 145, 100, 10);
-				gig.drawTexturedModalRect(x - 6, y - 10, 0, 135, (int)(EssenceBar.getBarValue() / 4), 10);
-				y += 15;
-				gig.drawTexturedModalRect(x - 6, y, 0, 165, 100, 10);
-				gig.drawTexturedModalRect(x - 6, y, 0, 155, (int)((DarkEnergyBar.getBarValue() / 4)), 10);
+				int y = sh - 35, x = sw - 110, x1 = sw - 110;
+				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
+				gig.drawTexturedModalRect(x - 10, y - 15, 0, 177, 117, 19);
+				y = y - 10;
+				gig.drawTexturedModalRect(x - 6, y - 2, 0, 39, 109, 13);
+				for(int i = 0; i < (int)EssenceBar.instance.getBarValue(); i++) {
+					if(!(i >= 10)) {
+						x += 11;
+						gig.drawTexturedModalRect(x - 17, y - 2, 0, 0, 10, 13);
+					}
+				}
+				y += 25;
+				gig.drawTexturedModalRect(x1 - 6, y - 2, 0, 26, 109, 13);
+				for(int i = 0; i < (int)DarkEnergyBar.instance.getBarValue(); i++) {
+					x1 += 11;
+					gig.drawTexturedModalRect(x1 - 17, y - 2, 0, 13, 10, 13);
+				}
 				GL11.glPopMatrix();
 			}
 		}
 	}
 
 	private void tickEnd() {
-		DarkEnergyBar.updateAllBars();
-		EssenceBar.updateAllBars();
-	}
-
-	@SubscribeEvent
-	public void playerLogIn(PlayerLoggedInEvent event){ 
-		DarkEnergyBar.addBarPoints(0);
-		EssenceBar.addBarPoints(0);
-	}
-
-	@SubscribeEvent
-	public void playerLogOut(PlayerLoggedOutEvent event){
-		DarkEnergyBar.addBarPoints(0);
-		EssenceBar.addBarPoints(0);
-	}
-
-	@SubscribeEvent
-	public void playerChangedDimension(PlayerChangedDimensionEvent event){
-		DarkEnergyBar.addBarPoints(200);
-		EssenceBar.addBarPoints(200);
-	}
-
-	@SubscribeEvent
-	public void playerSpawn(PlayerRespawnEvent event){ 
-		DarkEnergyBar.addBarPoints(200);
-		EssenceBar.addBarPoints(200);
+		ticks--;
+		if(ticks <= 0) ticks = 100;
+		if(ticks >= 100) {
+			DarkEnergyBar.instance.updateAllBars();
+			EssenceBar.instance.updateAllBars();
+		}
+		DarkEnergyBar.instance.mainUpdate();
+		EssenceBar.instance.mainUpdate();
 	}
 }
