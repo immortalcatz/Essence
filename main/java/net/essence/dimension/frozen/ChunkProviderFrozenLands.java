@@ -142,7 +142,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.frozenStone.getDefaultState());
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.stone.getDefaultState());
 								}
 							}
 
@@ -192,11 +192,11 @@ public class ChunkProviderFrozenLands implements IChunkProvider {
 				k = -1;
 			}
 
-			else if (iblockstate2.getBlock() == EssenceBlocks.frozenStone) {
+			else if (iblockstate2.getBlock() == Blocks.stone) {
 				if (k == -1) {
 					if (l <= 0) {
 						iblockstate = null;
-						iblockstate1 = EssenceBlocks.frozenStone.getDefaultState();
+						iblockstate1 = Blocks.stone.getDefaultState();
 					}
 					else if (k1 >= 63 && k1 <= 63) {
 						iblockstate = EssenceBlocks.frozenGrass.getDefaultState();

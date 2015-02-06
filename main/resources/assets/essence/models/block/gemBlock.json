@@ -1,6 +1,9 @@
 {
-	"parent": "block/cube_all",
+	"parent": "essence:block/grass",
 	"textures": {
-		"all": "essence:blocks/gemBlock"
+		"particle": "essence:blocks/gemBlock_top",
+		"bottom": "essence:blocks/gemBlock_top",
+		"top": "essence:blocks/gemBlock_top",
+		"side": "essence:blocks/gemBlock_side"
 	}
 }

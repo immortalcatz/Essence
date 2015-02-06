@@ -79,7 +79,9 @@ public class EssenceBlocks {
 	
 	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
 	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);
-	public static final Block frozenStone = new BlockMod("frozenStone", 2.0F);
+	public static final Block frozenLeaves = new BlockModLeaves("frozenLeaves", 0.5F);
+	public static final Block frozenBark = new BlockModLog("frozenBark");
+	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", 0.5F);
 	
 	public static final Block greenCorbaLog = new BlockModLog("greenCorbaLog");
 	public static final Block brownCorbaLog = new BlockModLog("brownCorbaLog");
@@ -211,6 +213,8 @@ public class EssenceBlocks {
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", 0.5F);
 
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin");
+	public static final Block gemBlock = new BlockMod("gemBlock", 1F);
+	public static final Block cloud = new BlockCloud("cloud");
 	
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	

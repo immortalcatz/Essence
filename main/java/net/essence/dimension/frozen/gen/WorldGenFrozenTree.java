@@ -15,8 +15,8 @@ public class WorldGenFrozenTree extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos p) {
 		int i = p.getX() - 5, j = p.getY(), k = p.getZ() - 5;
-		Block leaves = Blocks.ice;
-		Block wood = Blocks.log;
+		Block leaves = EssenceBlocks.frozenLeaves;
+		Block wood = EssenceBlocks.frozenBark;
 		world.setBlockState(new BlockPos(i, j + 14, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 14, k + 6), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 14, k + 4), leaves.getDefaultState());
