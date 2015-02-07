@@ -37,5 +37,8 @@ public class ArmorDescription {
 		
 		if(i == EssenceItems.flameHelmet || i == EssenceItems.flameChest || i == EssenceItems.flameLegs || i == EssenceItems.flameBoots)
 			list.add("Full set: Sets foe on fire when hit");
+		
+		if(i == EssenceItems.twilightHelmet || i == EssenceItems.twilightChest || i == EssenceItems.twilightLegs || i == EssenceItems.twilightBoots)
+			list.add("Full set: Grants the player Night Vision");
 	}
 }

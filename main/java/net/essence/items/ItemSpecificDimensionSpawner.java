@@ -5,6 +5,9 @@ import java.util.List;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.entity.mob.boss.EntityBlazier;
+import net.essence.entity.mob.boss.EntitySentryKing;
+import net.essence.entity.mob.boss.EntitySoulWatcher;
+import net.essence.entity.mob.depths.EntityTameRoc;
 import net.essence.util.Config;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -34,10 +37,27 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 		if(!w.isRemote) {
 			if(w.provider.getDimensionId() == dimID) {
 				EntityBlazier blaze = new EntityBlazier(w);
+				EntitySoulWatcher soul = new EntitySoulWatcher(w);
+				EntitySentryKing sentry = new EntitySentryKing(w);
+				EntityTameRoc roc = new EntityTameRoc(w, p);
 				if(item == EssenceItems.blazierOrb) {
 					SlayerAPI.sendMessageToAll("Blazier has been summoned", true);
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(blaze);
+				}
+				if(item == EssenceItems.rocSpawnEgg) {
+					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(roc);
+				}
+				if(item == EssenceItems.soulWatcherOrb) {
+					SlayerAPI.sendMessageToAll("Soul Watcher has been summoned", true);
+					soul.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(soul);
+				}
+				if(item == EssenceItems.sentryKingOrb) {
+					SlayerAPI.sendMessageToAll("Sentry King has been summoned", true);
+					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(sentry);
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
@@ -50,8 +70,8 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
-		String spawn = "";
-		if(item == EssenceItems.blazierOrb) spawn = "Blazier";
-		list.add("Spawns the boss: " + spawn);
+		if(item == EssenceItems.blazierOrb) list.add("Spawns the boss: Blazier");
+		if(item == EssenceItems.rocSpawnEgg) list.add("Spawns a pet: Roc");
+		
 	}
 }

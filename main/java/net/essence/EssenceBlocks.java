@@ -216,6 +216,8 @@ public class EssenceBlocks {
 	public static final Block gemBlock = new BlockMod("gemBlock", 1F);
 	public static final Block cloud = new BlockCloud("cloud");
 	
+	public static final Block brisonBlocks = new BlockBrison();
+	
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");

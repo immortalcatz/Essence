@@ -44,12 +44,12 @@ public class ItemEssencePotion extends ItemMod {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn) {
 		if(!playerIn.capabilities.isCreativeMode) --stack.stackSize;
 		worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-		this.onFoodEaten(stack, worldIn, playerIn);
+		this.drink(stack, worldIn, playerIn);
 		playerIn.triggerAchievement(StatList.objectUseStats[Item.getIdFromItem(this)]);
 		return stack;
 	}
 
-	public ItemStack onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
+	public ItemStack drink(ItemStack stack, World world, EntityPlayer player) {
 		int amount = isStrong ? 10 : 5;
 		if(!world.isRemote){
 			if(essence) EssenceBar.instance.addBarPoints(amount);

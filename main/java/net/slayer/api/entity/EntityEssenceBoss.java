@@ -12,6 +12,7 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 
 	public EntityEssenceBoss(World par1World) {
 		super(par1World);
+		isImmuneToFire = true;
 	}
 	
 	@Override

@@ -64,7 +64,17 @@ public class BossTickHandler {
 			r = set("fourfa");
 			break;
 		case MobStats.blazierBossID:
+			imageY = 101;
+			barX = -40;
 			r = set("blazier");
+		case MobStats.soulWatcherBossID:
+			imageY = 121;
+			barX = -20;
+			r = set("soulWatcher");
+		case MobStats.sentryKingBossID:
+			imageY = 141;
+			barX = -5;
+			r = set("sentryKing");
 		}
 
 		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {

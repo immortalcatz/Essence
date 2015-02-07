@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -22,13 +23,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.entity.EntityEssenceBoss;
-import net.slayer.api.entity.EntityModMob;
 
 public class EntityBlazier extends EntityEssenceBoss {
 
 	private float heightOffset = 0.5F;
 	private int heightOffsetUpdateTime;
-	private int attackTimer;
+	private int attackTimer, spawnTimer;
 
 	public EntityBlazier(World w) {
 		super(w);
@@ -42,6 +42,7 @@ public class EntityBlazier extends EntityEssenceBoss {
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.isImmuneToFire = true;
 		this.setSize(1.6F, 4.5F);
+		spawnTimer = 0;
 	}
 
 	@Override
@@ -78,6 +79,24 @@ public class EntityBlazier extends EntityEssenceBoss {
             }
         }
 
+        if(getHealth() <= 250) {
+        	if(spawnTimer == 0 && !worldObj.isRemote) {
+    			EntityBlaze z = new EntityBlaze(worldObj);
+                z.setLocationAndAngles(posX + 3, posY, posZ, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityBlaze z1 = new EntityBlaze(worldObj);
+                z1.setLocationAndAngles(posX - 3, posY, posZ, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityBlaze z2 = new EntityBlaze(worldObj);
+                z2.setLocationAndAngles(posX, posY, posZ + 3, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityBlaze z3 = new EntityBlaze(worldObj);
+                z3.setLocationAndAngles(posX, posY, posZ - 3, this.rand.nextFloat() * 360.0F, 0.0F);
+                this.worldObj.spawnEntityInWorld(z);
+                this.worldObj.spawnEntityInWorld(z1);
+                this.worldObj.spawnEntityInWorld(z2);
+                this.worldObj.spawnEntityInWorld(z3);
+                spawnTimer = 200;
+    		}
+        	spawnTimer--;
+        } 
 		super.onLivingUpdate();
 	}
 

@@ -50,6 +50,10 @@ public class ArmorAbilityEvent{
 		else if(helmet == item.sapphireHelmet && body == item.sapphireChest && legs == item.sapphireLegs && boots == item.sapphireBoots){
 			if(event.player.isInWater()) event.player.setAir(300);
 		}
+		
+		else if(helmet == item.twilightHelmet && body == item.twilightChest && legs == item.twilightLegs && boots == item.twilightBoots){
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 10, 1));
+		}
 
 		else if(event.player instanceof EntityPlayerMP) { 
 			EntityPlayer player = (EntityPlayerMP)event.player;

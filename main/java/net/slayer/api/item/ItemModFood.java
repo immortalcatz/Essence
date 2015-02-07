@@ -8,6 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 public class ItemModFood extends ItemFood {
@@ -38,6 +40,7 @@ public class ItemModFood extends ItemFood {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
         list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
         list.add(getSaturationModifier(stack) + " Saturation");

@@ -35,6 +35,7 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.storageBlocks1, names1);
 		registerModelBakery(EssenceBlocks.storageBlocks2, names2);
 		registerModelBakery(EssenceBlocks.storageBlocks3, names3);
+		registerModelBakery(EssenceBlocks.brisonBlocks, new String[] {SlayerAPI.PREFIX + "darkBrisonBrick", SlayerAPI.PREFIX + "redBrisonBrick", SlayerAPI.PREFIX + "smallBrisonBrick", SlayerAPI.PREFIX + "brisonStone"});
 		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
 		addBow(EssenceItems.flameBow, "flameBow");
 		addBow(EssenceItems.poisonBow, "poisonBow");
@@ -74,6 +75,7 @@ public class ClientProxy extends CommonProxy {
 	public static String[] names1N = {"pumpkin", "birchLog", "oakLog", "jungleLog", "spruceLog", "darkOakLog", "acaciaLog", "lapisOre", "diamondOre", "goldOre", "quartzOre", "shadiumOreStorage", "luniumOreStorage", "sapphireOreStorage", "celestiumOreStorage", "flairiumOreStorage"};
 	public static String[] names2N = {"hellstoneOreStorage", "ashualOreStorage", "ironOre", "coalOre", "redstoneOre", "emeraldOre", "hay", "gravel", "glass", "redFlower", "yellowFlower", "endStone", "bush", "cobblestone", "mossyCobblestone", "cake"};
 	public static String[] names3N = {"cactus", "brick", "bookshelf", "glowstone", "redSand", "sand", "sponge", "soulSand", "tnt", "stone", "waterlilly", "enderilliumOreStorage"};
+	public static String[] brison = {"dark", "red", "small", "bstone"};
 
 	@Override
 	public void registerModModels() {
@@ -121,6 +123,11 @@ public class ClientProxy extends CommonProxy {
 		for(int i = 0; i < names3N.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockStorageBlocks3");
 			registerItem(it, i, names3N[i]);
+		}
+		
+		for(int i = 0; i < 4; i++) {
+			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "brisonBlocks");
+			registerItem(it, i, brison[i]);
 		}
 	}
 	

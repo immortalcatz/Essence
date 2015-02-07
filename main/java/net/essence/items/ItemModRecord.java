@@ -80,6 +80,7 @@ public class ItemModRecord extends ItemRecord {
         return (ItemModRecord)RECORDS.get(name);
     }
 	
+    @Override
 	public ResourceLocation getRecordResource(String name) {
         return new ResourceLocation(SlayerAPI.PREFIX + "music." + name);
     }

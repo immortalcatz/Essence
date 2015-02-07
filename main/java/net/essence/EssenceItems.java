@@ -10,6 +10,7 @@ import net.essence.items.*;
 import net.essence.items.ItemEgg;
 import net.essence.util.*;
 import net.minecraft.block.Block;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
@@ -177,11 +178,13 @@ public class EssenceItems {
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
 	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb");
 	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Boiling Point");
+	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Overworld");
+	public static final Item soulWatcherOrb = new ItemSpecificDimensionSpawner(Config.boil, "soulWatcherOrb", "Boiling Point");
+	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Corba");
 	//TODO
 	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Depths");
 	public static final Item rocLeaderOrb = new ItemSpecificDimensionSpawner(Config.depths, "rocLeaderOrb", "Depths");
-	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Overworld");
-	
+
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
 	public static final Item weakEssencePotion = new ItemEssencePotion("weakEssencePotion", false, true);
@@ -237,6 +240,11 @@ public class EssenceItems {
 	public static final Item flameLegs = new ItemModArmor(EnumArmor.FLAME, LEGS);
 	public static final Item flameBoots = new ItemModArmor(EnumArmor.FLAME, BOOTS);
 
+	public static final Item twilightHelmet = new ItemModArmor(EnumArmor.TWILIGHT, HEAD);
+	public static final Item twilightChest = new ItemModArmor(EnumArmor.TWILIGHT, BODY);
+	public static final Item twilightLegs = new ItemModArmor(EnumArmor.TWILIGHT, LEGS);
+	public static final Item twilightBoots = new ItemModArmor(EnumArmor.TWILIGHT, BOOTS);
+	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
@@ -284,8 +292,7 @@ public class EssenceItems {
 	public static final Item poisonBow = new ItemModBow("poisonBow", 384, essenceArrow, 18, EntityPoisonArrow.class);
 	public static final Item darknessBow = new ItemModBow("darknessBow", 384, essenceArrow, 10, EntityDarknessArrow.class);
 	public static final Item frozenBow = new ItemModBow("frozenBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
-	//TODO
-	public static final Item staringBow = new ItemModBow("staringBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
+	public static final Item staringBow = new ItemModBow("staringBow", 384, essenceArrow, EntityEssenceArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
