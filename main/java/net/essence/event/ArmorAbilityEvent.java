@@ -68,8 +68,8 @@ public class ArmorAbilityEvent{
 			}
 		}
 		
-		else if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots){
-			event.player.capabilities.setPlayerWalkSpeed(0.2F);
+		else if(helmet == item.celestiumHelmet && body == item.celestiumChest && legs == item.celestiumLegs && boots == item.celestiumBoots) {
+			event.player.capabilities.setPlayerWalkSpeed(0.3F);
 			event.player.fallDistance = 0.0F;
 		} else {
 			event.player.capabilities.setPlayerWalkSpeed(0.1F);

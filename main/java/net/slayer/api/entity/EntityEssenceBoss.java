@@ -16,6 +16,11 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 	}
 	
 	@Override
+	protected boolean canDespawn() {
+		return false;
+	}
+	
+	@Override
 	public final float getModHealth() {
 		return super.getHealth();
 	}
