@@ -1,6 +1,7 @@
 package net.essence.util;
 
 import net.essence.entity.mob.boiling.*;
+import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
@@ -65,16 +66,17 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntitySandCrawler.class, "sandCrawler");
 		SlayerAPI.registerMob(EntityTurtle.class, "essenceTurtle");
 		SlayerAPI.registerMob(EntityFish.class, "fish");
-		SlayerAPI.registerMob(EntityWaterTribeFisherman.class, "waterTribeFisherman");
+		//SlayerAPI.registerMob(EntityWaterTribeFisherman.class, "waterTribeFisherman");
 		SlayerAPI.registerMob(EntityFireMage.class, "fireMage");
 		SlayerAPI.registerMob(EntityIceMage.class, "iceMage");
-		SlayerAPI.registerMob(EntityDragon.class, "dragon");
+		//SlayerAPI.registerMob(EntityDragon.class, "dragon");
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith");
 		SlayerAPI.registerNPC(EntityRedElf.class, "redElf");
 		SlayerAPI.registerNPC(EntityGreenElf.class, "greenElf");
-		
+		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
+
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg");
 
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "beastOfTheNether");

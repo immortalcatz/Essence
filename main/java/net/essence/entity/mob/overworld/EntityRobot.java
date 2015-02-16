@@ -44,10 +44,8 @@ public class EntityRobot extends EntityModMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		for(int i = 0; i < 1 + rand.nextInt(4); i++) {
-			this.dropItem(Items.iron_ingot, 1);
-			this.dropItem(Items.stick, 1);
-		}
+		if(rand.nextInt(2) == 0) this.dropItem(Items.iron_ingot, 1 + rand.nextInt(1));
+		if(rand.nextInt(2) == 0) this.dropItem(Items.stick, 1 + rand.nextInt(4));
 	}
 
 	@Override

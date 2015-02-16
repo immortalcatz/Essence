@@ -13,6 +13,7 @@ import net.essence.client.render.model.statue.*;
 import net.essence.entity.EntityDragonEgg;
 import net.essence.entity.MobStats;
 import net.essence.entity.mob.boiling.*;
+import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.euca.*;
@@ -89,7 +90,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlacksmith.class, new RenderModBiped(new ModelBiped(), tex.blacksmith));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGreenElf.class, new RenderModBiped(new ModelBiped(), tex.greenElf));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedElf.class, new RenderModBiped(new ModelBiped(), tex.redElf));
-
+		RenderingRegistry.registerEntityRenderingHandler(EntityEscapedConvict.class, new RenderModMob(new ModelEscapedConvict(), tex.escapedConvict));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
