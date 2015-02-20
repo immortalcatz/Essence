@@ -1,4 +1,4 @@
-package net.essence.dimension;
+package net.essence.dimension.corba;
 
 import java.util.ArrayList;
 import java.util.List;

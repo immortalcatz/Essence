@@ -264,14 +264,14 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16) + 8;
 		z = z1 + this.rand.nextInt(16) + 8;
 
-		for(times = 0; times < 16; times++) {
+		for(times = 0; times < 20; times++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			water1.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		for(times = 0; times < 16; times++) {
+		for(times = 0; times < 20; times++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
@@ -285,7 +285,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 			if(y > 20 && y < 90) new WorldGenEucaSphere().generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		for(times = 0; times < 30; times++) {
+		for(times = 0; times < 120; times++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
@@ -294,7 +294,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 			}
 		}
 
-		if(rand.nextInt(5) == 0) {
+		if(rand.nextInt(2) == 0) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;

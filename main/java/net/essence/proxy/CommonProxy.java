@@ -1,5 +1,6 @@
 package net.essence.proxy;
 
+import net.essence.Essence;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
@@ -47,6 +48,7 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.init(event);
+		//Essence.tropicalWater.setBlock(EssenceBlocks.tropicalWater);
 		EntityRegistry.init();
 		RecipeHelper.init();
 		DimensionHelper.init();

@@ -112,7 +112,7 @@ public class BlockModOre extends BlockMod {
             if(j < 0) j = 0; 
             return this.quantityDropped(random) * (j + 1);
         } else {
-            return this.quantityDropped(random);
+            return 1;
         }
     }
 

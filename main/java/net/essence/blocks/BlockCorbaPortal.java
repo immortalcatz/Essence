@@ -7,7 +7,7 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityCorbaPortal;
 import net.essence.dimension.ModTeleporter;
-import net.essence.dimension.TeleporterCorba;
+import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

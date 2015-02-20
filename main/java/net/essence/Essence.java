@@ -6,6 +6,8 @@ import net.essence.misc.EnchantmentHotTouch;
 import net.essence.misc.EnchantmentWaterWalk;
 import net.essence.misc.FluidTropical;
 import net.essence.proxy.CommonProxy;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.fluids.Fluid;
@@ -33,6 +35,7 @@ public class Essence {
 	public static final Enchantment waterWalk = new EnchantmentWaterWalk(164, 3);
 	
 	public static final Fluid tropicalWater = new FluidTropical("tropicalWaterFluid");
+	public static final Material tropicalMat = new Material(MapColor.waterColor);
 	
 	static {
 		FluidRegistry.registerFluid(Essence.tropicalWater);

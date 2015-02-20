@@ -6,7 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.client.DarkEnergyBar;
 import net.essence.client.EssenceBar;
 import net.essence.dimension.ModTeleporter;
-import net.essence.dimension.TeleporterCorba;
+import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
