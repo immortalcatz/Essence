@@ -94,4 +94,9 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
 		return getDefaultState();
 	}
+	
+	@Override
+	public boolean isReplaceable(World worldIn, BlockPos pos) {
+		return true;
+	}
 }

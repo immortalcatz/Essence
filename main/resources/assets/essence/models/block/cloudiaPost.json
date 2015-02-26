@@ -1,0 +1,16 @@
+{
+    "elements": [
+        {   "from": [ 4, 0, 4 ],
+            "to": [ 10, 16, 10 ],
+            "faces": {
+                "down":  { "texture": "essence:blocks/cloudiaPost", "cullface": "down" },
+                "up":    { "texture": "essence:blocks/cloudiaPost", "cullface": "up" },
+                "north": { "texture": "essence:blocks/cloudiaPost", "cullface": "north" },
+                "south": { "texture": "essence:blocks/cloudiaPost", "cullface": "south" },
+                "west":  { "texture": "essence:blocks/cloudiaPost", "cullface": "west" },
+                "east":  { "texture": "essence:blocks/cloudiaPost", "cullface": "east" }
+            }
+        }
+    ]
+}
+

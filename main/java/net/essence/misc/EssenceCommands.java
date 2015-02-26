@@ -94,7 +94,7 @@ public class EssenceCommands extends CommandBase {
 			
 			if(var2[0].equalsIgnoreCase("Corba")) {
 				if(playerMP.dimension != Config.corba) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.corba, new TeleporterCorba(playerMP.mcServer.worldServerForDimension(Config.corba), Config.corba, EssenceBlocks.corbaPortal, EssenceBlocks.corbaPortalFrame));
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.corba, new TeleporterCorba(playerMP.mcServer.worldServerForDimension(Config.corba)));
 				}
 			}
 		}

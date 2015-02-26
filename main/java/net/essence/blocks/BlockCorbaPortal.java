@@ -85,11 +85,11 @@ public class BlockCorbaPortal extends BlockContainer {
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionID, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(dimensionID), dimensionID, this, blockFrame));
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionID, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(dimensionID)));
 
 			} else {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(0), 0, this, blockFrame));
+				thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterCorba(thePlayer.mcServer.worldServerForDimension(0)));
 			}
 		}
 	}

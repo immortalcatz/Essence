@@ -93,6 +93,19 @@ public class EssenceBlocks {
 	public static final Block corbaPillar = new BlockMod("corbaPillar");
 	public static final Block greenCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "greenCorbaPlank", 0.5F);
 	public static final Block brownCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "brownCorbaPlank", 0.5F);
+	
+	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", 2.0F);
+	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", 2.0F);
+	public static final Block cloudiaLog = new BlockModLog("cloudiaLog"); 
+	public static final Block cloudiaRock = new BlockMod("cloudiaRock"); 
+	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick");
+	public static final Block cloudiaWall = new BlockMod("cloudiaWall"); 
+	public static final Block cloudiaTile = new BlockMod("cloudiaTile"); 
+	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp").setLightLevel(1.0F);
+	//public static final Block cloudiaPost = new BlockCloudiaPost("cloudiaPost");
+	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud");
+	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud");
+	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud");
 
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);

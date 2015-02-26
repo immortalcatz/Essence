@@ -199,7 +199,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 							iblockstate = null;
 							iblockstate1 = EssenceBlocks.corbaStone.getDefaultState();
 						}
-						else if(k1 >= 63 && k1 <= 68) {
+						else if(k1 >= 59 && k1 <= 64) {
 							iblockstate = EssenceBlocks.corbaGrass.getDefaultState();
 							iblockstate1 = EssenceBlocks.corbaStone.getDefaultState();
 						}
