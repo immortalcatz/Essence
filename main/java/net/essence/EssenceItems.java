@@ -16,7 +16,6 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
 import net.minecraft.world.gen.ChunkProviderFlat;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.*;
 import net.slayer.api.item.*;
 
