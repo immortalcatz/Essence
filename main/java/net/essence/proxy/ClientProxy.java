@@ -1,23 +1,31 @@
 package net.essence.proxy;
 
-import net.essence.*;
-import net.essence.client.*;
-import net.essence.enums.*;
-import net.essence.event.*;
+import net.essence.Essence;
+import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
+import net.essence.client.BarTickHandler;
+import net.essence.client.BossTickHandler;
+import net.essence.client.EntityRendering;
+import net.essence.client.GuiHandler;
+import net.essence.client.MusicEvent;
+import net.essence.client.PlayerStats;
+import net.essence.enums.EnumParticlesClasses;
+import net.essence.event.UpdateCheckerEvent;
 import net.essence.util.Config;
-import net.minecraft.block.*;
-import net.minecraft.client.*;
-import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.resources.model.*;
-import net.minecraft.item.*;
-import net.minecraft.world.*;
-import net.minecraftforge.fml.client.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.common.network.*;
-import net.minecraftforge.fml.common.registry.*;
-import net.slayer.api.*;
+import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.EntityFX;
+import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.slayer.api.SlayerAPI;
 
 public class ClientProxy extends CommonProxy {
 
