@@ -14,6 +14,7 @@ import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree;
 import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree1;
 import net.essence.dimension.euca.gen.trees.WorldGenEucaTallPine;
 import net.essence.dimension.euca.gen.trees.WorldGenHugeEucaSpruceTree;
+import net.essence.dimension.euca.gen.trees.WorldGenNormalEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
 import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree2;
 import net.essence.util.Helper;
@@ -291,6 +292,15 @@ public class ChunkProviderEuca implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16) + 8;
 			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
 				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
+		}
+		
+		for(times = 0; times < 250; times++) {
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
+				new WorldGenNormalEucaTree(true).generate(worldObj, rand, new BlockPos(x, y, z));
 			}
 		}
 
