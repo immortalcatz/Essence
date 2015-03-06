@@ -53,15 +53,6 @@ public class PlayerEvent {
 	}
 
 	@SubscribeEvent
-	public void onDeath(LivingDeathEvent event) {
-		if(event.entity instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer)event.entity;
-			if(!player.worldObj.isRemote && Config.showDeathMessage) SlayerAPI.sendMessageToAll(player.getName() + " Died at X: " + (int)player.posX + ", Y: " + (int)player.posY + ", Z: " + (int)player.posZ, false);
-		}
-	}
-
-	@SubscribeEvent
-	@SideOnly(Side.CLIENT)
 	public void onTick(TickEvent.PlayerTickEvent event) {
 		EntityPlayer player = event.player;
 		int i = MathHelper.floor_double(player.posX);
@@ -96,21 +87,5 @@ public class PlayerEvent {
 
 	public static boolean hasArmorEnchantment(Enchantment en, EntityLivingBase e) {
 		return getArmorEnchantment(en, e) > 0;
-	}
-
-	@SubscribeEvent
-	public void transferDims(PlayerChangedDimensionEvent e) {
-		String from = e.fromDim == -1 ? " Nether " : e.fromDim == 0 ? " Overworld " : e.fromDim == 1 ? " The End " : e.fromDim == Config.boil ? " Boiling Point " : e.fromDim == Config.depths ? " The Depths " :
-			e.fromDim == Config.euca ? " Euca " : e.fromDim == Config.frozen ? " Frozen Lands " : e.fromDim == Config.corba ? " Corba " : "§rUnknown";
-		
-		String to = e.toDim == -1 ? " Nether " : e.toDim == 0 ? " Overworld " : e.toDim == 1 ? " The End " : e.toDim == Config.boil ? " Boiling Point " : e.toDim == Config.depths ? " The Depths " :
-			e.toDim == Config.euca ? " Euca " : e.toDim == Config.frozen ? " Frozen Lands " : e.toDim == Config.corba ? " Corba " : " §rUnknown ";
-		
-		boolean hasSeen = false;
-		if(Config.showDimensionChange) {
-			if(!e.player.worldObj.isRemote && !hasSeen) {
-				SlayerAPI.sendMessageToAll(e.player.getName() + " Has travelled from" + from + "to" + to, false);
-			}
-		}
 	}
 }

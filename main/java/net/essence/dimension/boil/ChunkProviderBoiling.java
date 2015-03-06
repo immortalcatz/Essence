@@ -135,15 +135,15 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			}
 		}
 		for(int i = 0; i < 16; i++) {
-			for(int j = 1; j < 8; j++) {
-				for(int z = 0; z < 16; z++) {
-					primer.setBlockState(i, j, z, Blocks.lava.getDefaultState());
-					primer.setBlockState(i, 0, z, Blocks.bedrock.getDefaultState());
+			for(int z = 0; z < 16; z++) {
+				primer.setBlockState(i, 0, z, Blocks.bedrock.getDefaultState());
+				for(int j = 1; j < 55; j++) {
+					if(primer.getBlockState(i, j, z) == Blocks.air.getDefaultState()) primer.setBlockState(i, j, z, Blocks.lava.getDefaultState());
 				}
 			}
 		}
 	}
-
+	
 	public final void replaceBlocksForBiome(ChunkPrimer c) {
 		for (int i = 0; i < 16; ++i) {
 			for (int j = 0; j < 16; ++j) {
