@@ -77,8 +77,9 @@ public class EssenceBlocks {
 	//public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
 	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
+	public static final BlockMod frozenStone = new BlockMod(EnumMaterialTypes.STONE, "frozenStone", 5.0F);
 	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);
-	public static final Block frozenLeaves = new BlockModLeaves("frozenLeaves", 0.5F);
+	public static final Block frozenLeaves = new BlockModLeaves("frozenLeaves", 0.5F).setLightLevel(1);
 	public static final Block frozenBark = new BlockModLog("frozenBark");
 	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", 0.5F);
 	

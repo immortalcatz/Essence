@@ -18,15 +18,16 @@ public class WorldGenFrozenTree2 extends WorldGenerator {
 		int height = 11+rand.nextInt(5)*2;
 		
 		for(int y = height/4; y<height; y+=2) {
-			for(int x = (int)Math.round(-(height-y)/4)-1; x <= (int)Math.round((height-y)/4)+1; x++) {
-				for(int z = (int)Math.round(-(height-y)/4)-1; z <= (int)Math.round((height-y)/4)+1; z++) {
+			for(int x = -3; x <= 3; x++) {
+				for(int z = -3; z <= 3; z++) {
 					world.setBlockState(p.east(x).north(z).up(y), EssenceBlocks.frozenLeaves.getDefaultState());
 				}
 			}
-			world.setBlockState(p.east().up(y+1), EssenceBlocks.frozenLeaves.getDefaultState());
-			world.setBlockState(p.west().up(y+1), EssenceBlocks.frozenLeaves.getDefaultState());
-			world.setBlockState(p.north().up(y+1), EssenceBlocks.frozenLeaves.getDefaultState());
-			world.setBlockState(p.south().up(y+1), EssenceBlocks.frozenLeaves.getDefaultState());
+			for(int x = -1; x <= 1; x++) {
+				for(int z = -1; z <= 1; z++) {
+					world.setBlockState(p.east(x).north(z).up(y+1), EssenceBlocks.frozenLeaves.getDefaultState());
+				}
+			}
 		}
 		
 		for(int y = 0; y<height; y++) {

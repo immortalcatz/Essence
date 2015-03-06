@@ -237,6 +237,19 @@ public class ChunkProviderFrozenLands implements IChunkProvider
         				break;
         			}
         		}
+        		
+        		for(int j = 0; j<64; j++) {
+        			if(cp.getBlockState(i, j, k)==EssenceBlocks.frozenGrass.getDefaultState()) {
+        				top=j;
+        				break;
+        			}
+        		}
+        		
+        		for(int j = top-8; j>0; j--) {
+        			if(cp.getBlockState(i, j, k)==EssenceBlocks.frozenDirt.getDefaultState()) {
+        				cp.setBlockState(i, j, k, EssenceBlocks.frozenStone.getDefaultState());
+        			}
+        		}
         	}
         }
         
