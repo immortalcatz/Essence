@@ -25,7 +25,7 @@ public class WorldGenSantasWorkshop extends WorldGenerator {
 		Block pane = EssenceBlocks.frozenGlass;
 		Block stone = EssenceBlocks.workshopStone;
 		Block fence = EssenceBlocks.workshopStoneFence;
-		Block lamp = EssenceBlocks.workshopLamp;
+		Block lamp = EssenceBlocks.frozenLamp;
 		Block door = EssenceBlocks.frozenDoor;
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 0), carpet.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 1), carpet.getDefaultState());

@@ -29,13 +29,13 @@ public class WorldGenLamp5 extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 1, j + 0, k + 1), EssenceBlocks.workshopStone.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 0, k + 2), EssenceBlocks.workshopStone.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 0), EssenceBlocks.workshopStone.getDefaultState(), 2);
-		world.setBlockState(new BlockPos(i + 1, j + 1, k + 1), EssenceBlocks.workshopLamp.getDefaultState(), 2);
+		world.setBlockState(new BlockPos(i + 1, j + 1, k + 1), EssenceBlocks.frozenLamp.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 2), EssenceBlocks.workshopStone.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 0), Blocks.air.getDefaultState(), 2);
-		world.setBlockState(new BlockPos(i + 1, j + 2, k + 1), EssenceBlocks.workshopLamp.getDefaultState(), 2);
+		world.setBlockState(new BlockPos(i + 1, j + 2, k + 1), EssenceBlocks.frozenLamp.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 2), Blocks.air.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 3, k + 0), Blocks.air.getDefaultState(), 2);
-		world.setBlockState(new BlockPos(i + 1, j + 3, k + 1), EssenceBlocks.workshopLamp.getDefaultState(), 2);
+		world.setBlockState(new BlockPos(i + 1, j + 3, k + 1), EssenceBlocks.frozenLamp.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 1, j + 3, k + 2), Blocks.air.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 2, j + 0, k + 0), Blocks.air.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 2, j + 0, k + 1), EssenceBlocks.workshopStone.getDefaultState(), 2);

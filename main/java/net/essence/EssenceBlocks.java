@@ -189,7 +189,7 @@ public class EssenceBlocks {
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass");
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
-	public static final Block workshopLamp = new BlockMod(EnumMaterialTypes.GLASS, "workshopLamp", 0.5F).setLightLevel(1.0F);
+	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", 0.5F).setLightLevel(1.0F);
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", 0.5F);
 	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence");

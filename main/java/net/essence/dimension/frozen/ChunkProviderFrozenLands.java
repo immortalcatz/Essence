@@ -5,6 +5,8 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.dimension.frozen.gen.WorldGenFrozenTree;
+import net.essence.dimension.frozen.gen.WorldGenFrozenTree2;
+import net.essence.dimension.frozen.gen.WorldGenNewLamp;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
@@ -515,7 +517,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider
     }
     
     private static WorldGenFrozenTree tree = new WorldGenFrozenTree();
-
+    private static WorldGenFrozenTree2 tree2 = new WorldGenFrozenTree2();
+    private static WorldGenNewLamp lamp = new WorldGenNewLamp();
+    
     @Override
     public void populate(IChunkProvider provider, int chunkX, int chunkZ)
     {
@@ -543,6 +547,34 @@ public class ChunkProviderFrozenLands implements IChunkProvider
         	}
         
         	tree.generate(worldObj, rand, new BlockPos(x, y, z));
+        }
+        
+        for(int n = 0; n < 4; n++) {
+        	int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+        	int y = 0;
+        
+        	for(int j = 5; j < 100; j++) {
+        		if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.air) {
+        			y=j;
+                	break;
+        		}
+        	}
+        
+        	tree2.generate(worldObj, rand, new BlockPos(x, y, z));
+        }
+        
+        if(rand.nextInt(4)==0) {
+        	int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+        	int y = 0;
+        
+        	for(int j = 5; j < 100; j++) {
+        		if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.air) {
+        			y=j;
+                	break;
+        		}
+        	}
+        
+        	lamp.generate(worldObj, rand, new BlockPos(x, y, z));
         }
 
         biomegenbase.decorate(this.worldObj, this.rand, new BlockPos(k, 0, l));

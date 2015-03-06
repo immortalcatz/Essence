@@ -15,7 +15,7 @@ public class WorldGenLamp3 extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 0), EssenceBlocks.workshopStone.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 0, j + 1, k + 0), EssenceBlocks.workshopStone.getDefaultState(), 2);
 		world.setBlockState(new BlockPos(i + 0, j + 2, k + 0), EssenceBlocks.workshopStone.getDefaultState(), 2);
-		world.setBlockState(new BlockPos(i + 0, j + 3, k + 0), EssenceBlocks.workshopLamp.getDefaultState(), 2);
+		world.setBlockState(new BlockPos(i + 0, j + 3, k + 0), EssenceBlocks.frozenLamp.getDefaultState(), 2);
 		return true;
 	}
 }
