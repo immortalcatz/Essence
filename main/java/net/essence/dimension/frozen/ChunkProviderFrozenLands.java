@@ -545,7 +545,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			tree.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		for(int n = 0; n < 4; n++) {
+		for(int n = 0; n < 2; n++) {
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
 			for(int j = 5; j < 100; j++) {
@@ -582,7 +582,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 		}
 
 		for(int n = 0; n < 2; n++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16), z = chunkZ * 16 + rand.nextInt(16);
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
 				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
