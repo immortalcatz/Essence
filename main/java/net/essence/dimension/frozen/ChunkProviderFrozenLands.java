@@ -578,7 +578,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 					break;
 				}
 			}
-			dungeon.generate(worldObj, rand, new BlockPos(x, y, z));
+			//dungeon.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
 		for(int n = 0; n < 2; n++) {
