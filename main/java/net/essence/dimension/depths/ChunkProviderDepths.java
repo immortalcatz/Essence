@@ -124,7 +124,8 @@ public class ChunkProviderDepths implements IChunkProvider {
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
 									int y = k2 * 8 + l2;
-									if(y <= 120) p_180518_3_.setBlockState(k * 4 + i3, y, j1 * 4 + j3, EssenceBlocks.depthsStone.getDefaultState());
+									if(y <= 85) p_180518_3_.setBlockState(k * 4 + i3, y, j1 * 4 + j3, EssenceBlocks.depthsStone.getDefaultState());
+									p_180518_3_.setBlockState(k * 4 + i3, 86, j1 * 4 + j3, Blocks.bedrock.getDefaultState());
 								}
 							}
 
