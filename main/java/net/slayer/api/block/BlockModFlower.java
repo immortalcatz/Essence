@@ -53,7 +53,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
 		if(isFrozenPlant) {
-			if(random.nextInt(5) == 0) {
+			if(random.nextInt(15) == 0) {
 				for(int i = 0; i < 6; ++i) {
 					double d0 = (double)pos.getX() + rand.nextDouble();
 					double d1 = (double)pos.getY() + rand.nextDouble() * 0.5D + 0.7D;

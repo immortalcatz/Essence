@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -21,6 +22,7 @@ import net.slayer.api.EnumMaterialTypes;
 public class BlockModLeaves extends BlockMod implements IShearable {
 	
     protected int[] adjacentTreeBlocks;
+	private boolean isFrozenPlant = false;
 
     public BlockModLeaves(String name, float hardness) {
         super(EnumMaterialTypes.LEAVES, name, hardness);
@@ -28,6 +30,26 @@ public class BlockModLeaves extends BlockMod implements IShearable {
         this.setLightOpacity(1);
         this.setTickRandomly(true);
     }
+    
+    public BlockModLeaves setFrozenPlant() {
+		isFrozenPlant = true;
+		return this;
+	}
+    
+    @Override
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
+		if(isFrozenPlant) {
+			if(random.nextInt(2) == 0) {
+				for(int i = 0; i < 6; ++i) {
+					double d0 = (double)pos.getX() + rand.nextDouble();
+					double d1 = (double)pos.getY() + rand.nextDouble() * 0.5D + 0.7D;
+					double d2 = (double)pos.getZ() + rand.nextDouble();
+					w.spawnParticle(EnumParticleTypes.SNOW_SHOVEL, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
+				}
+			}
+		}
+	}
 
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState s) {

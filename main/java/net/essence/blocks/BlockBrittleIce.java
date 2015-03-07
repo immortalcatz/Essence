@@ -18,11 +18,10 @@ public class BlockBrittleIce extends BlockMod {
 		setTranslucent();
 	}
 	
-	@SideOnly(Side.CLIENT)
 	@Override
+	@SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess iba, BlockPos pos, EnumFacing side) {
 		Block block = iba.getBlockState(pos).getBlock();
         return block == this ? false : super.shouldSideBeRendered(iba, pos, side);
     }
-
 }
