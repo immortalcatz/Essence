@@ -207,10 +207,8 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 							double d16 = (d11 - d10) * d14;
 							double d15 = d10 - d16;
 
-							for (int j3 = 0; j3 < 4; ++j3)
-							{
-								if ((d15 += d16) > 0.0D)
-								{
+							for (int j3 = 0; j3 < 4; ++j3) {
+								if ((d15 += d16) > 0.0D) {
 									cp.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.frozenDirt.getDefaultState());
 								}
 							}
@@ -228,29 +226,27 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			}
 		}
 
-		for(int i = 0; i<16; i++) {
-			for(int k = 0; k<16; k++) {
+		for(int i = 0; i < 16; i++) {
+			for(int k = 0; k < 16; k++) {
 				for(int j = 48; j>0; j--) {
 					if(cp.getBlockState(i, j, k) == EssenceBlocks.brittleIce.getDefaultState()) {
 						cp.setBlockState(i, j, k, EssenceBlocks.frozenDirt.getDefaultState());
 					}
 				}
-				for(int j = 48; j>0; j--) {
-					if(cp.getBlockState(i, j, k)==EssenceBlocks.frozenDirt.getDefaultState()) {
+				for(int j = 48; j > 0; j--) {
+					if(cp.getBlockState(i, j, k) == EssenceBlocks.frozenDirt.getDefaultState()) {
 						cp.setBlockState(i, j, k, EssenceBlocks.frozenGrass.getDefaultState());
 						break;
 					}
 				}
-
-				for(int j = 0; j<64; j++) {
-					if(cp.getBlockState(i, j, k)==EssenceBlocks.frozenGrass.getDefaultState()) {
-						top=j;
+				for(int j = 0; j < 64; j++) {
+					if(cp.getBlockState(i, j, k) == EssenceBlocks.frozenGrass.getDefaultState()) {
+						top = j;
 						break;
 					}
 				}
-
-				for(int j = top-8; j>0; j--) {
-					if(cp.getBlockState(i, j, k)==EssenceBlocks.frozenDirt.getDefaultState()) {
+				for(int j = top - 8; j > 0; j--) {
+					if(cp.getBlockState(i, j, k) == EssenceBlocks.frozenDirt.getDefaultState()) {
 						cp.setBlockState(i, j, k, EssenceBlocks.frozenStone.getDefaultState());
 					}
 				}
@@ -325,12 +321,6 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
 						float f5 = this.settings.biomeDepthOffSet + biomegenbase1.minHeight * this.settings.biomeDepthWeight;
 						float f6 = this.settings.biomeScaleOffset + biomegenbase1.maxHeight * this.settings.biomeScaleWeight;
-
-						if (this.theWorldType == WorldType.AMPLIFIED && f5 > 0.0F)
-						{
-							f5 = 1.0F + f5 * 2.0F;
-							f6 = 1.0F + f6 * 4.0F;
-						}
 
 						float f7 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f5 + 2.0F);
 
