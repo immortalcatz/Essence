@@ -5,6 +5,8 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.dimension.depths.gen.WorldGenDepthsTree;
+import net.essence.dimension.depths.gen.WorldGenSpike;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 import net.slayer.api.worldgen.WorldGenAPI;
@@ -36,8 +39,11 @@ public class ItemFlameCoin extends ItemMod {
 				w.setBlockState(new BlockPos(pos.up()), EssenceBlocks.fire.getDefaultState(), 2);
 				return true;
 			}
-			else return false;
+			if(!w.isRemote)
+				new WorldGenSpike().generate(new ChunkPrimer(), r, pos);
+			//else return false;
 		}
+		return true;
 		//BARN
 		/*WorldGenAPI.addRectangle(7, 5, 1, w, x, y, z, EssenceBlocks.greenCorbaPlank);
 		WorldGenAPI.addRectangle(1, 5, 4, w, x, y + 1, z, EssenceBlocks.brownCorbaLog);

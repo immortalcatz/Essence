@@ -73,7 +73,7 @@ public class WorldGenDepthsTree extends WorldGenAbstractTree {
 					int i2;
 					int j2;
 					int i3;
-					for(k1 = par4 - b0 + l; k1 <= par4 + l; ++k1) {
+					for(k1 = par4 - b0 + l - 3; k1 <= par4 + l; ++k1) {
 						i3 = k1 - (par4 + l);
 						l1 = b1 + 1 - i3 / 2;
 
@@ -87,7 +87,7 @@ public class WorldGenDepthsTree extends WorldGenAbstractTree {
 									Block block1 = par1World.getBlockState(new BlockPos(i2, k1, k2)).getBlock();
 
 									if(block1.isAir(par1World, new BlockPos(i2, k1, k2)) || block1.isLeaves(par1World, new BlockPos(i2, k1, k2))) {
-										this.func_175905_a(par1World, new BlockPos(i2, k1, k2), EssenceBlocks.depthsLeaves, this.metaLeaves);
+										this.func_175905_a(par1World, new BlockPos(i2 - 1, k1, k2 - 1), EssenceBlocks.depthsLeaves, this.metaLeaves);
 									}
 								}
 							}
@@ -95,8 +95,12 @@ public class WorldGenDepthsTree extends WorldGenAbstractTree {
 					}
 					for(k1 = 0; k1 < l; ++k1) {
 						block = par1World.getBlockState(new BlockPos(par3, par4 + k1, par5)).getBlock();
-						if(block.isAir(par1World, new BlockPos(par3, par4 + k1, par5)) || block.isLeaves(par1World, new BlockPos(par3, par4 + k1, par5))) 
+						if(block.isAir(par1World, new BlockPos(par3, par4 + k1, par5)) || block.isLeaves(par1World, new BlockPos(par3, par4 + k1, par5))) {
+							this.func_175905_a(par1World, new BlockPos(par3, par4 + k1, par5 - 1), EssenceBlocks.depthsLog, this.metaWood);
 							this.func_175905_a(par1World, new BlockPos(par3, par4 + k1, par5), EssenceBlocks.depthsLog, this.metaWood);
+							this.func_175905_a(par1World, new BlockPos(par3 - 1, par4 + k1, par5 - 1), EssenceBlocks.depthsLog, this.metaWood);
+							this.func_175905_a(par1World, new BlockPos(par3 - 1, par4 + k1, par5), EssenceBlocks.depthsLog, this.metaWood);
+						}
 					}
 					par1World.setBlockState(new BlockPos(par3, par4 + l, par5), EssenceBlocks.depthsLights.getDefaultState());
 					return true;
