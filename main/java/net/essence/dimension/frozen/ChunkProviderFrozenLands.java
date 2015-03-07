@@ -6,6 +6,9 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.dimension.frozen.gen.WorldGenFrozenTree;
 import net.essence.dimension.frozen.gen.WorldGenFrozenTree2;
+import net.essence.dimension.frozen.gen.WorldGenIceCrystal1;
+import net.essence.dimension.frozen.gen.WorldGenIceCrystal2;
+import net.essence.dimension.frozen.gen.WorldGenIceDungeon;
 import net.essence.dimension.frozen.gen.WorldGenNewLamp;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -532,6 +535,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider
     private static WorldGenFrozenTree tree = new WorldGenFrozenTree();
     private static WorldGenFrozenTree2 tree2 = new WorldGenFrozenTree2();
     private static WorldGenNewLamp lamp = new WorldGenNewLamp();
+    private static WorldGenIceCrystal1 crystal1 = new WorldGenIceCrystal1();
+    private static WorldGenIceCrystal2 crystal2 = new WorldGenIceCrystal2();
+    private static WorldGenIceDungeon dungeon = new WorldGenIceDungeon();
     
     @Override
     public void populate(IChunkProvider provider, int chunkX, int chunkZ)
@@ -588,6 +594,48 @@ public class ChunkProviderFrozenLands implements IChunkProvider
         	}
         
         	lamp.generate(worldObj, rand, new BlockPos(x, y, z));
+        }
+        
+        for(int n = 0; n<2; n++) {
+        	int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+        	int y = 0;
+        
+        	for(int j = 150; j > 50; j--) {
+        		if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+        			y=j;
+                	break;
+        		}
+        	}
+        
+        	dungeon.generate(worldObj, rand, new BlockPos(x, y, z));
+        }
+        
+        for(int n = 0; n<2; n++) {
+        	int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+        	int y = 0;
+        
+        	for(int j = 150; j > 50; j--) {
+        		if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+        			y=j;
+                	break;
+        		}
+        	}
+        
+        	crystal1.generate(worldObj, rand, new BlockPos(x, y, z));
+        }
+        
+        if(rand.nextInt(4)==0) {
+        	int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+        	int y = 0;
+        
+        	for(int j = 150; j > 50; j--) {
+        		if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+        			y=j;
+                	break;
+        		}
+        	}
+        
+        	crystal2.generate(worldObj, rand, new BlockPos(x, y, z));
         }
 
         biomegenbase.decorate(this.worldObj, this.rand, new BlockPos(k, 0, l));

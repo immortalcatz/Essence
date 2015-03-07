@@ -198,6 +198,7 @@ public class EssenceBlocks {
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
 	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab");
 	public static final Block frozenBrick = new BlockMod("frozenBricks");
+	public static final Block icicle = new BlockIcicle("icicle");
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
