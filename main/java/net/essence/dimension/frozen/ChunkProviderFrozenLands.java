@@ -514,8 +514,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 					double d4 = (this.field_147427_d[l] / 10.0D + 1.0D) / 2.0D;
 					double d5 = MathHelper.denormalizeClamp(d2, d3, d4) - d1;
 
-					if (j2 > 29)
-					{
+					if (j2 > 29) {
 						double d6 = (double)((float)(j2 - 29) / 3.0F);
 						d5 = d5 * (1.0D - d6) + -10.0D * d6;
 					}
@@ -616,20 +615,20 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			crystal2.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
-		/*for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
-			new WorldGenModFlower(EssenceBlocks.iceBud).generate(worldObj, rand, blockpos);
+		for(int i = 0; i < 10; i++) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.iceBud).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
-			new WorldGenModFlower(EssenceBlocks.frostberryThorn).generate(worldObj, rand, blockpos);
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.frostberryThorn).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
-			new WorldGenModFlower(EssenceBlocks.frozenBlooms).generate(worldObj, rand, blockpos);
-		}*/
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			new WorldGenModFlower(EssenceBlocks.frozenBlooms).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
 	}
 
 	@Override
