@@ -199,7 +199,10 @@ public class EssenceBlocks {
 	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab");
 	public static final Block frozenBrick = new BlockMod("frozenBricks");
 	public static final Block icicle = new BlockIcicle("icicle");
-	
+	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn").setContactDamage().setFrozenPlant();
+	public static final BlockModFlower iceBud = new BlockModFlower("iceBud").setFrozenPlant();
+	public static final BlockModFlower frozenBlooms = new BlockModFlower("frozenBlooms").setFrozenPlant();
+
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
 	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
