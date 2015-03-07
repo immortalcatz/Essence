@@ -17,7 +17,7 @@ public class WorldGenFrozenTree2 extends WorldGenerator {
 		if(world.getBlockState(p.down()).getBlock() != EssenceBlocks.frozenGrass) return false;
 		int height = 11+rand.nextInt(5)*2;
 		
-		for(int y = height/4; y<height; y+=2) {
+		for(int y = height / 4; y < height; y+=2) {
 			for(int x = -3; x <= 3; x++) {
 				for(int z = -3; z <= 3; z++) {
 					world.setBlockState(p.east(x).north(z).up(y), EssenceBlocks.frozenLeaves.getDefaultState());
@@ -30,7 +30,7 @@ public class WorldGenFrozenTree2 extends WorldGenerator {
 			}
 		}
 		
-		for(int y = 0; y<height; y++) {
+		for(int y = 0; y < height; y++) {
 			world.setBlockState(p.up(y), EssenceBlocks.frozenBark.getDefaultState());
 		}
 		
