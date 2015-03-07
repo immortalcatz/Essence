@@ -56,7 +56,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 
 	public ChunkProviderFrozenLands(World worldIn, long p_i45636_2_, String p_i45636_5_)
 	{
-		this.field_177476_s = Blocks.ice;
+		this.field_177476_s = EssenceBlocks.brittleIce;
 		this.stoneNoise = new double[256];
 		this.worldObj = worldIn;
 		this.mapFeaturesEnabled = true;;
@@ -134,7 +134,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 							{
 								if ((d15 += d16) > 0.0D)
 								{
-									cp.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, Blocks.ice.getDefaultState());
+									cp.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.brittleIce.getDefaultState());
 								}
 							}
 
@@ -231,7 +231,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 		for(int i = 0; i<16; i++) {
 			for(int k = 0; k<16; k++) {
 				for(int j = 48; j>0; j--) {
-					if(cp.getBlockState(i, j, k)==Blocks.ice.getDefaultState()) {
+					if(cp.getBlockState(i, j, k) == EssenceBlocks.brittleIce.getDefaultState()) {
 						cp.setBlockState(i, j, k, EssenceBlocks.frozenDirt.getDefaultState());
 					}
 				}
@@ -583,7 +583,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
-				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
 					y = j;
 					break;
 				}
@@ -595,7 +595,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
-				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
 					y = j;
 					break;
 				}
@@ -607,7 +607,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
-				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == Blocks.ice) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
 					y = j;
 					break;
 				}

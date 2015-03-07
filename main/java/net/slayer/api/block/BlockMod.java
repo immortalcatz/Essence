@@ -33,15 +33,17 @@ public class BlockMod extends Block{
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
 	public String name;
-
+	private boolean isOpaque = true, isNormalCube = true;
+	private EnumWorldBlockLayer layerType = EnumWorldBlockLayer.SOLID;
+	
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
 	}
-	
+
 	public BlockMod(String name) {
 		this(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
 	}
-	
+
 	public BlockMod(EnumMaterialTypes type, String name, float hardness) {
 		this(type, name, hardness, EssenceTabs.blocks);
 	}
@@ -49,7 +51,7 @@ public class BlockMod extends Block{
 	public BlockMod(String name, boolean breakable, CreativeTabs tab) {
 		this(EnumMaterialTypes.STONE, name, tab);
 	}
-	
+
 	public BlockMod(String name, boolean breakable) {
 		this(name, breakable, EssenceTabs.blocks);
 	}
@@ -84,7 +86,7 @@ public class BlockMod extends Block{
 		EssenceBlocks.blockName.add(name);
 		return this;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -99,25 +101,44 @@ public class BlockMod extends Block{
 		setHarvestLevel(type.getType(), type.getLevel());
 		return this;
 	}
-	
+
 	@Override
 	public int getRenderType() {
 		return 3;
 	}
-
-    @Override
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.SOLID;
-    }
 	
+	public BlockMod setCutout() {
+		layerType = EnumWorldBlockLayer.CUTOUT;
+		isOpaque = false;
+		isNormalCube = false;
+		return this;
+	}
+	
+	public BlockMod setTranslucent() {
+		layerType = EnumWorldBlockLayer.TRANSLUCENT;
+		isOpaque = false;
+		isNormalCube = false;
+		return this;
+	}
+
+	@Override
+	public EnumWorldBlockLayer getBlockLayer() {
+		return layerType;
+	}
+
 	@Override
 	public int quantityDropped(Random rand) {
 		return 1;
 	}
 	
 	@Override
+	public boolean isOpaqueCube() {
+		return isOpaque;
+	}
+
+	@Override
 	public boolean isNormalCube() {
-		return true;
+		return isNormalCube;
 	}
 
 	@Override
