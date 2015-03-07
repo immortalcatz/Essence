@@ -111,7 +111,7 @@ public class BlockMod extends Block{
 		layerType = EnumWorldBlockLayer.CUTOUT;
 		isOpaque = false;
 		isNormalCube = false;
-		setLightOpacity(255);
+		setLightOpacity(3);
 		return this;
 	}
 	
@@ -119,7 +119,7 @@ public class BlockMod extends Block{
 		layerType = EnumWorldBlockLayer.TRANSLUCENT;
 		isOpaque = false;
 		isNormalCube = false;
-		setLightOpacity(255);
+		setLightOpacity(3);
 		return this;
 	}
 

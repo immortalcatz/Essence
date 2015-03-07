@@ -202,7 +202,7 @@ public class EssenceBlocks {
 	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn").setContactDamage().setFrozenPlant();
 	public static final BlockModFlower iceBud = new BlockModFlower("iceBud").setFrozenPlant();
 	public static final BlockModFlower frozenBlooms = new BlockModFlower("frozenBlooms").setFrozenPlant();
-	public static final BlockMod brittleIce = new BlockMod("brittleIce").setTranslucent();
+	public static final BlockMod brittleIce = new BlockMod(EnumMaterialTypes.ICE, "brittleIce", 0.3F).setTranslucent();
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
 	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
