@@ -123,7 +123,8 @@ public class ChunkProviderDepths implements IChunkProvider {
 
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, EssenceBlocks.depthsStone.getDefaultState());
+									int y = k2 * 8 + l2;
+									if(y >= 120) p_180518_3_.setBlockState(k * 4 + i3, y, j1 * 4 + j3, EssenceBlocks.depthsStone.getDefaultState());
 								}
 							}
 
@@ -160,7 +161,6 @@ public class ChunkProviderDepths implements IChunkProvider {
 		for(int p = 0; p < 3; p++) c.setBlockState(j1, 1 + p, i1, EssenceBlocks.depthsDirt.getDefaultState());
 		c.setBlockState(j1, 1 + 3, i1, EssenceBlocks.depthsGrass.getDefaultState());
 		c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
-
 	}
 
 	@Override
@@ -186,23 +186,23 @@ public class ChunkProviderDepths implements IChunkProvider {
 	private void generate(int x, int y, int z) {
 		this.gen4 = this.noiseGen6.generateNoiseOctaves(this.gen4, x, z, 5, 5, 200.0D, 200.0D, 0.5D);
 		this.gen1 = this.noiseGen3.generateNoiseOctaves(this.gen1, x, y, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
-		this.gen2 = this.noiseGen1.generateNoiseOctaves(this.gen2, x, y, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
-		this.gen3 = this.noiseGen2.generateNoiseOctaves(this.gen3, x, y, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
+		this.gen2 = this.noiseGen1.generateNoiseOctaves(this.gen2, x, y, z, 5, 33, 5, 684.41200000000003D, 684.41200000000003D, 684.41200000000003D);
+		this.gen3 = this.noiseGen2.generateNoiseOctaves(this.gen3, x, y, z, 5, 33, 5, 684.41200000000003D, 684.41200000000003D, 684.41200000000003D);
 		boolean flag1 = false;
 		boolean flag = false;
 		int l = 0;
 		int i1 = 0;
 		double d4 = 8.5D;
-		for(int j1 = 0; j1 < 5; ++j1) {
-			for(int k1 = 0; k1 < 5; ++k1) {
+		for (int j1 = 0; j1 < 5; j1++) {
+			for (int k1 = 0; k1 < 5; k1++) {
 				float f = 0.0F;
 				float f1 = 0.0F;
 				float f2 = 0.0F;
 				byte b0 = 2;
-				BiomeGenBase biomegenbase = this.biomesForGeneration[j1 + 2 + (k1 + 2) * 10];
-				for(int l1 = -b0; l1 <= b0; ++l1) {
-					for(int i2 = -b0; i2 <= b0; ++i2) {
-						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
+				BiomeGenBase biomegenbase = this.biomesForGeneration[(j1 + 2 + (k1 + 2) * 10)];
+				for (int l1 = -b0; l1 <= b0; l1++) {
+					for (int i2 = -b0; i2 <= b0; i2++) {
+						BiomeGenBase biomegenbase1 = this.biomesForGeneration[(j1 + l1 + 2 + (k1 + i2 + 2) * 10)];
 						float f3 = biomegenbase1.minHeight;
 						float f4 = biomegenbase1.maxHeight;
 						f3 = 0.0F;
@@ -219,39 +219,44 @@ public class ChunkProviderDepths implements IChunkProvider {
 				f = f * 0.9F + 0.1F;
 				f1 = (f1 * 4.0F - 1.0F) / 8.0F;
 				double d12 = this.gen4[i1] / 8000.0D;
-				if(d12 < 0.0D) d12 = -d12 * 0.3D;
+				if (d12 < 0.0D) {
+					d12 = -d12 * 0.3D;
+				}
 				d12 = d12 * 3.0D - 2.0D;
-				if(d12 < 0.0D) {
+				if (d12 < 0.0D) {
 					d12 /= 2.0D;
-					if(d12 < -1.0D) d12 = -1.0D;
+					if (d12 < -1.0D) {
+						d12 = -1.0D;
+					}
 					d12 /= 1.4D;
 					d12 /= 2.0D;
 				} else {
-					if(d12 > 1.0D) d12 = 1.0D;
+					if (d12 > 1.0D) {
+						d12 = 1.0D;
+					}
 					d12 /= 8.0D;
 				}
-
-				++i1;
-				double d13 = (double)f1;
-				double d14 = (double)f;
+				i1++;
+				double d13 = f1;
+				double d14 = f;
 				d13 += d12 * 0.2D;
 				d13 = d13 * 8.5D / 8.0D;
 				double d5 = 8.5D + d13 * 4.0D;
-
-				for(int j2 = 0; j2 < 33; ++j2) {
-					double d6 = ((double)j2 - d5) * 12.0D * 128.0D / 256.0D / d14;
-					if(d6 < 0.0D) d6 *= 4.0D;
+				for (int j2 = 0; j2 < 33; j2++) {
+					double d6 = (j2 - d5) * 12.0D * 128.0D / 256.0D / d14;
+					if (d6 < 0.0D) {
+						d6 *= 4.0D;
+					}
 					double d7 = this.gen2[l] / 512.0D;
 					double d8 = this.gen3[l] / 512.0D;
 					double d9 = (this.gen1[l] / 10.0D + 1.0D) / 2.0D;
 					double d10 = MathHelper.denormalizeClamp(d7, d8, d9) - d6;
-
-					if(j2 > 29) {
-						double d11 = (double)((float)(j2 - 29) / 3.0F);
+					if (j2 > 29) {
+						double d11 = (j2 - 29) / 3.0F;
 						d10 = d10 * (1.0D - d11) + -10.0D * d11;
 					}
 					this.da[l] = d10;
-					++l;
+					l++;
 				}
 			}
 		}
@@ -275,7 +280,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.depthsFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 17; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.depthsBlueFlower).generate(worldObj, r, new BlockPos(x, y, z));
@@ -285,7 +290,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			(new WorldGenMinable(EssenceBlocks.flairiumOre.getDefaultState(), 8, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
-		
+
 		for(i = 0; i < 25; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			(new WorldGenMinable(EssenceBlocks.desOre.getDefaultState(), 8, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
