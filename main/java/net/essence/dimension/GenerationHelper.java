@@ -131,7 +131,7 @@ public class GenerationHelper {
 			(new WorldGenModFlower(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 9:
-			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(60); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenModFlower(EssenceBlocks.frozenFlower)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 10:

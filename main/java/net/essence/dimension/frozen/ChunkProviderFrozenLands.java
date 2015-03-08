@@ -606,18 +606,33 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.iceBud).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.frostberryThorn).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(90), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.frozenBlooms).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(y > 63) new WorldGenModFlower(EssenceBlocks.permaFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(y > 63) new WorldGenModFlower(EssenceBlocks.shiverFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(y > 63) new WorldGenModFlower(EssenceBlocks.iceBush).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 	}
 

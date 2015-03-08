@@ -14,7 +14,7 @@ import net.slayer.api.block.BlockMod;
 public class BlockBrittleIce extends BlockMod {
 
 	public BlockBrittleIce() {
-		super(EnumMaterialTypes.ICE, "brittleIce", 0.3F);
+		super(EnumMaterialTypes.GLASS_SOUND, "brittleIce", 0.3F);
 		setTranslucent();
 	}
 	

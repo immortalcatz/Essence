@@ -34,7 +34,7 @@ public class BlockMod extends Block{
 	public boolean enhanceBrightness;
 	public String name;
 	private boolean isOpaque = true, isNormalCube = true;
-	private EnumWorldBlockLayer layerType = EnumWorldBlockLayer.SOLID;
+	protected EnumWorldBlockLayer layerType = EnumWorldBlockLayer.SOLID;
 	
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);

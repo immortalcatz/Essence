@@ -4,6 +4,8 @@ import static net.minecraftforge.common.EnumPlantType.Plains;
 
 import java.util.Random;
 
+import org.apache.http.conn.routing.RouteInfo.LayerType;
+
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.util.Config;
@@ -37,6 +39,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
 		this.setCreativeTab(EssenceTabs.decoraton);
+		layerType = EnumWorldBlockLayer.CUTOUT;
 	}
 
 	public BlockModFlower setContactDamage() {
@@ -121,7 +124,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	@Override
 	public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.CUTOUT;
+		return layerType;
 	}
 
 	@Override
