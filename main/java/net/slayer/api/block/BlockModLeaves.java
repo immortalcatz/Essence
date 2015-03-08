@@ -41,11 +41,11 @@ public class BlockModLeaves extends BlockMod implements IShearable {
 	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
 		if(isFrozenPlant) {
 			if(random.nextInt(2) == 0) {
-				for(int i = 0; i < 3; ++i) {
-					double d0 = (double)pos.getX() + rand.nextDouble();
+				for(int i = 0; i < 20; ++i) {
+					double d0 = (double)pos.getX() + rand.nextDouble() * 2;
 					double d1 = (double)pos.getY() + rand.nextDouble() * 0.5D + 0.7D;
-					double d2 = (double)pos.getZ() + rand.nextDouble();
-					w.spawnParticle(EnumParticleTypes.SNOW_SHOVEL, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
+					double d2 = (double)pos.getZ() + rand.nextDouble() * 2;
+					w.spawnParticle(EnumParticleTypes.SNOW_SHOVEL, d0 * rand.nextFloat(), d1, d2 * rand.nextFloat(), 0.1, 0.0D, 0.1, new int[0]);
 				}
 			}
 		}
