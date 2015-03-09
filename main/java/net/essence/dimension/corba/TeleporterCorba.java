@@ -2,6 +2,7 @@ package net.essence.dimension.corba;
 
 import net.essence.EssenceBlocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
@@ -196,10 +197,7 @@ public class TeleporterCorba extends Teleporter {
 	}
 
 	private void makePortalAt(World world, int x, int y, int z) {
-		if(y < 79) y = 80;
-		world.getClass();
-		if(y > 79) y = 80;
-		y--;
+		y = 90;
 		world.setBlockState(new BlockPos(x, y, z), EssenceBlocks.corbaPortalFrame.getDefaultState());
 		world.setBlockState(new BlockPos(x, y, z + 1), EssenceBlocks.corbaPortalFrame.getDefaultState());
 		world.setBlockState(new BlockPos(x, y, z + 2), EssenceBlocks.corbaPortalFrame.getDefaultState());
