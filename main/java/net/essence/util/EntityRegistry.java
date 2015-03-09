@@ -1,17 +1,72 @@
 package net.essence.util;
 
-import net.essence.entity.mob.boiling.*;
+import net.essence.entity.mob.boiling.EntityAshHoarder;
+import net.essence.entity.mob.boiling.EntityBurningLight;
+import net.essence.entity.mob.boiling.EntityBurntAsh;
+import net.essence.entity.mob.boiling.EntityBurntMiner;
+import net.essence.entity.mob.boiling.EntityCrisp;
+import net.essence.entity.mob.boiling.EntityExposedFlame;
+import net.essence.entity.mob.boiling.EntityMagmaBlaze;
+import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
-import net.essence.entity.mob.boss.*;
-import net.essence.entity.mob.depths.*;
-import net.essence.entity.mob.euca.*;
+import net.essence.entity.mob.boss.EntityBlazier;
+import net.essence.entity.mob.boss.EntityCalcia;
+import net.essence.entity.mob.boss.EntityEudor;
+import net.essence.entity.mob.boss.EntityFourfa;
+import net.essence.entity.mob.boss.EntityNetherBeast;
+import net.essence.entity.mob.boss.EntitySentryKing;
+import net.essence.entity.mob.boss.EntitySoulWatcher;
+import net.essence.entity.mob.boss.EntityTempleGuardian;
+import net.essence.entity.mob.boss.EntityWitheringBeast;
+import net.essence.entity.mob.depths.EntityDarknessCrawler;
+import net.essence.entity.mob.depths.EntityDepthsBeast;
+import net.essence.entity.mob.depths.EntityDepthsHunter;
+import net.essence.entity.mob.depths.EntitySpikedBeast;
+import net.essence.entity.mob.euca.EntityEucaCharger;
+import net.essence.entity.mob.euca.EntityEucaFighter;
+import net.essence.entity.mob.euca.EntityEucaHopper;
+import net.essence.entity.mob.euca.EntityInsecto;
+import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.npc.EntityGreenElf;
 import net.essence.entity.mob.frozen.npc.EntityRedElf;
-import net.essence.entity.mob.overworld.*;
-import net.essence.entity.mob.overworld.npc.*;
-import net.essence.entity.mob.overworld.npc.water_tribe.*;
-import net.essence.entity.projectile.*;
-import net.slayer.api.*;
+import net.essence.entity.mob.overworld.EntityBigHongo;
+import net.essence.entity.mob.overworld.EntityBoom;
+import net.essence.entity.mob.overworld.EntityBunny;
+import net.essence.entity.mob.overworld.EntityFireMage;
+import net.essence.entity.mob.overworld.EntityFish;
+import net.essence.entity.mob.overworld.EntityIceMage;
+import net.essence.entity.mob.overworld.EntityMediumHongo;
+import net.essence.entity.mob.overworld.EntityReaper;
+import net.essence.entity.mob.overworld.EntityRobot;
+import net.essence.entity.mob.overworld.EntitySandCrawler;
+import net.essence.entity.mob.overworld.EntitySmallHongo;
+import net.essence.entity.mob.overworld.EntitySpyclops;
+import net.essence.entity.mob.overworld.EntityTurtle;
+import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
+import net.essence.entity.mob.overworld.npc.EntityMage;
+import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.entity.projectile.EntityBouncingProjectile;
+import net.essence.entity.projectile.EntityChaosProjectile;
+import net.essence.entity.projectile.EntityConjuring;
+import net.essence.entity.projectile.EntityDarknessArrow;
+import net.essence.entity.projectile.EntityDoomsBringer;
+import net.essence.entity.projectile.EntityEnlightenment;
+import net.essence.entity.projectile.EntityFireBall;
+import net.essence.entity.projectile.EntityFlameArrow;
+import net.essence.entity.projectile.EntityForestPlasma;
+import net.essence.entity.projectile.EntityFrozenArrow;
+import net.essence.entity.projectile.EntityGreenpace;
+import net.essence.entity.projectile.EntityIceBall;
+import net.essence.entity.projectile.EntityLightningBall;
+import net.essence.entity.projectile.EntityMagmaFireball;
+import net.essence.entity.projectile.EntityNetherPlasma;
+import net.essence.entity.projectile.EntityOceanPlasma;
+import net.essence.entity.projectile.EntityPoisonArrow;
+import net.essence.entity.projectile.EntityRockProjectile;
+import net.essence.entity.projectile.EntityTempleBall;
+import net.essence.entity.projectile.EntityWizardsStar;
+import net.slayer.api.SlayerAPI;
 
 public class EntityRegistry {
 	
@@ -76,7 +131,9 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityRedElf.class, "redElf");
 		SlayerAPI.registerNPC(EntityGreenElf.class, "greenElf");
 		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
-
+		
+		SlayerAPI.registerMob(EntityShatterer.class, "shatterer");
+		
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg");
 
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "beastOfTheNether");
