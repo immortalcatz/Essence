@@ -29,6 +29,7 @@ public class UpdateCheckerEvent {
 						if(!UpdateChecker.isOnline()){
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.DARK_AQUA, "Unable to check for latest version, you may want to check your internet connection!");
+							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow The_SlayerMC on twitter for spoilers, when you're connected to internet :P");
 						}
 						if(UpdateChecker.isUpdateAvailable() && UpdateChecker.isOnline()) {
 							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://essence-of-the-gods.net/version.txt").openStream()));
@@ -36,10 +37,12 @@ public class UpdateCheckerEvent {
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.RED, "An Essence Of The Gods update is avaliable.");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[New Version: " + curVersion + "]"); 
+							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow The_SlayerMC on twitter for spoilers.");
 						}
 						if((!UpdateChecker.isUpdateAvailable()) && UpdateChecker.isOnline()) {
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Essence Of The Gods is up to date.");
+							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow The_SlayerMC on twitter for spoilers.");
 						}
 					} catch(MalformedURLException e1) {
 						e1.printStackTrace();
