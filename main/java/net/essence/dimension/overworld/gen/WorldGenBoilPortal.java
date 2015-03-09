@@ -28,7 +28,6 @@ public class WorldGenBoilPortal extends WorldGenerator {
 			}
 		}
 		if(!foundGround) return false;
-
 		WorldGenAPI.addRectangle(4, 8, 11, w, x, y - 5, z - 2, Blocks.nether_brick);
 		WorldGenAPI.addRectangle(2, 6, 3, w, x + 1, y + 2, z - 2, Blocks.air);
 		WorldGenAPI.addRectangle(2, 4, 3, w, x + 1, y, z + 1, Blocks.air);
@@ -64,7 +63,6 @@ public class WorldGenBoilPortal extends WorldGenerator {
 		}*/
 
 		boolean canSpawn = false;
-
 		for(int x1 = 0; x1 < 5; x1++) {
 			for(int z1 = 0; z1 < 6; z1++) {
 				for(int y1 = 0; y1 < 6; y1++) {
@@ -75,7 +73,6 @@ public class WorldGenBoilPortal extends WorldGenerator {
 				}
 			}
 		}
-
 		WorldGenAPI.addRectangle(5, 6, 5, w, x, y + 1, z, Blocks.air);
 		WorldGenAPI.addRectangle(5, 6, 1, w, x, y, z, Blocks.nether_brick);
 		WorldGenAPI.addRectangle(5, 6, 1, w, x, y + 6, z, Blocks.nether_brick);
@@ -86,11 +83,6 @@ public class WorldGenBoilPortal extends WorldGenerator {
 		WorldGenAPI.addRectangle(1, 4, 5, w, x + 2, y + 1, z + 1, EssenceBlocks.boilPortalFrame);
 		WorldGenAPI.addRectangle(1, 2, 3, w, x + 2, y + 2, z + 2, Blocks.air);
 		WorldGenAPI.addBlock(w, x + 2, y + 3, z + 2, EssenceBlocks.fire);
-		if(!w.isRemote && canSpawn) {
-			SlayerAPI.sendMessageToAll("A portal to Boiling Point has been", true);
-			SlayerAPI.sendContinuedMessageToAll("spawned. Find it randomly.");
-		}
-
 		return canSpawn;
 	}
 }
