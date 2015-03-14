@@ -184,10 +184,18 @@ public class SlayerAPI {
 		public static final String	RESET		= SECTION_SIGN + "r";
 	}
 
+	/**
+	 * Not used in 1.8
+	 */
+	@Deprecated
 	public static void registerItemRenderer(Item i, IItemRenderer ir) {
 		MinecraftForgeClient.registerItemRenderer(i, ir);
 	}
 
+	/**
+	 * Not used in 1.8
+	 */
+	@Deprecated
 	public static void registerItemRenderer(Block b, IItemRenderer ir) {
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(b), ir);
 	}
