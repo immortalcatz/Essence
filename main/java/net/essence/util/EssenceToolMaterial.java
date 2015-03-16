@@ -16,7 +16,8 @@ public enum EssenceToolMaterial {
 	SAPPHIRE_SWORD(EssenceItems.sapphiretoolSwordMat, EssenceItems.sapphire),
 	ORBADITE_SWORD(EssenceItems.orbaditeSwordMat, EssenceItems.orbaditeIngot),
 	GORBITE_SWORD(EssenceItems.gorbiteSwordMat, EssenceItems.gorbiteGem),
-	
+	DES_SWORD(EssenceItems.desSwordMat, EssenceItems.desIngot),
+
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
@@ -36,7 +37,8 @@ public enum EssenceToolMaterial {
 	SAPPHIRE_PICKAXE(EssenceItems.sapphiretool, EssenceItems.sapphire, 2),
 	ORBADITE_PICKAXE(EssenceItems.orbadite, EssenceItems.orbaditeIngot, 3),
 	GORBITE_PICKAXE(EssenceItems.gorbite, EssenceItems.gorbiteGem, 3),
-	
+	DES(EssenceItems.des, EssenceItems.desIngot, 3),
+
 	HELLSTONE_AXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot),
 	FLAIRIUM_AXE(EssenceItems.flairium, EssenceItems.flairiumIngot),
 	LUNIUM_AXE(EssenceItems.lunium, EssenceItems.luniumIngot),
@@ -72,6 +74,7 @@ public enum EssenceToolMaterial {
 	SAPPHIRE_MULTI_TOOL(EssenceItems.sapphireMulti, EssenceItems.sapphire, 2),
 	ORBADITE_MULTI_TOOL(EssenceItems.orbaditeMulti, EssenceItems.orbaditeIngot, 3),
 	GORBITE_MULTI_TOOL(EssenceItems.gorbiteMulti, EssenceItems.gorbiteGem, 3),
+	DES_MULTI_TOOL(EssenceItems.desMulti, EssenceItems.desIngot, 3),
 	SMELTING_TOOL(EssenceItems.smeltingMulti, null, 3),
 
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),

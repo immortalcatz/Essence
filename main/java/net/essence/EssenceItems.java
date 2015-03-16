@@ -29,6 +29,7 @@ public class EssenceItems {
 	public static ToolMaterial sapphiretoolSwordMat = addToolMaterial(1561, 13F, 7F, true);
 	public static ToolMaterial gorbiteSwordMat = addToolMaterial(3120, 13F, 25F, true);
 	public static ToolMaterial orbaditeSwordMat = addToolMaterial(3120, 13F, 25F, true);
+	public static ToolMaterial desSwordMat = addToolMaterial(3120, 13F, 25F, true);
 
 	public static ToolMaterial hellstone = addToolMaterial(1600, 10F, 5F, true);
 	public static ToolMaterial flairium = addToolMaterial(3000, 15F, 5F, true);
@@ -38,6 +39,7 @@ public class EssenceItems {
 	public static ToolMaterial sapphiretool = addToolMaterial(1561, 8F, 5F, true);
 	public static ToolMaterial orbadite = addToolMaterial(3000, 15F, 5F, true);
 	public static ToolMaterial gorbite = addToolMaterial(3000, 15F, 5F, true);
+	public static ToolMaterial des = addToolMaterial(3000, 15F, 5F, true);
 
 	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 12F, 5F, false);
 	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 15F, 5F, false);
@@ -47,6 +49,7 @@ public class EssenceItems {
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 	public static ToolMaterial orbaditeMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial gorbiteMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial desMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial smeltingMulti = addToolMaterial(3000, 15F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
@@ -63,6 +66,7 @@ public class EssenceItems {
 	public static final Item enderilliumShard = new ItemMod("enderilliumShard");
 	public static final Item orbaditeIngot = new ItemMod("orbaditeIngot");
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem");
+	public static final Item desIngot = new ItemMod("desIngot");
 
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
@@ -111,6 +115,7 @@ public class EssenceItems {
 	public static final Item sapphireMultiTool = new ItemMultiTool("sapphireMultiTool", EssenceToolMaterial.SAPPHIRE_MULTI_TOOL);
 	public static final Item gorbiteMultiTool = new ItemMultiTool("gorbiteMultiTool", EssenceToolMaterial.GORBITE_MULTI_TOOL);
 	public static final Item orbaditeMultiTool = new ItemMultiTool("orbaditeMultiTool", EssenceToolMaterial.ORBADITE_MULTI_TOOL);
+	public static final Item desMultiTool = new ItemMultiTool("desMultiTool", EssenceToolMaterial.DES_MULTI_TOOL);
 	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", EssenceToolMaterial.SMELTING_TOOL);
 
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", EssenceToolMaterial.HELLSTONE_PICKAXE);
@@ -121,6 +126,7 @@ public class EssenceItems {
 	public static final Item sapphirePickaxe = new ItemModPickaxe("sapphirePickaxe", EssenceToolMaterial.SAPPHIRE_PICKAXE);
 	public static final Item gorbitePickaxe = new ItemModPickaxe("gorbitePickaxe", EssenceToolMaterial.GORBITE_PICKAXE);
 	public static final Item orbaditePickaxe = new ItemModPickaxe("orbaditePickaxe", EssenceToolMaterial.ORBADITE_PICKAXE);
+	public static final Item desPickaxe = new ItemModPickaxe("desPickaxe", EssenceToolMaterial.DES);
 
 	public static final Item hellstoneShovel = new ItemModShovel("hellstoneShovel", EssenceToolMaterial.HELLSTONE_SHOVEL);
 	public static final Item shadiumShovel = new ItemModShovel("shadiumShovel", EssenceToolMaterial.SHADIUM_SHOVEL);
@@ -130,6 +136,7 @@ public class EssenceItems {
 	public static final Item sapphireShovel = new ItemModShovel("sapphireShovel", EssenceToolMaterial.SAPPHIRE_SHOVEL);
 	public static final Item gorbiteShovel = new ItemModShovel("gorbiteShovel", EssenceToolMaterial.GORBITE_SHOVEL);
 	public static final Item orbaditeShovel = new ItemModShovel("orbaditeShovel", EssenceToolMaterial.ORBADITE_SHOVEL);
+	public static final Item desShovel = new ItemModShovel("desShovel", EssenceToolMaterial.DES);
 
 	public static final Item hellstoneAxe = new ItemModAxe("hellstoneAxe", EssenceToolMaterial.HELLSTONE_AXE);
 	public static final Item shadiumAxe = new ItemModAxe("shadiumAxe", EssenceToolMaterial.SHADIUM_AXE);
@@ -139,6 +146,7 @@ public class EssenceItems {
 	public static final Item sapphireAxe = new ItemModAxe("sapphireAxe", EssenceToolMaterial.SAPPHIRE_AXE);
 	public static final Item gorbiteAxe = new ItemModAxe("gorbiteAxe", EssenceToolMaterial.GORBITE_AXE);
 	public static final Item orbaditeAxe = new ItemModAxe("orbaditeAxe", EssenceToolMaterial.ORBADITE_AXE);
+	public static final Item desAxe = new ItemModAxe("desAxe", EssenceToolMaterial.DES);
 
 	public static final Item hellstoneHoe = new ItemModHoe("hellstoneHoe", EssenceToolMaterial.HELLSTONE_HOE);
 	public static final Item shadiumHoe = new ItemModHoe("shadiumHoe", EssenceToolMaterial.SHADIUM_HOE);
@@ -148,12 +156,14 @@ public class EssenceItems {
 	public static final Item sapphireHoe = new ItemModHoe("sapphireHoe", EssenceToolMaterial.SAPPHIRE_HOE);
 	public static final Item gorbiteHoe = new ItemModHoe("gorbiteHoe", EssenceToolMaterial.GORBITE_HOE);
 	public static final Item orbaditeHoe = new ItemModHoe("orbaditeHoe", EssenceToolMaterial.ORBADITE_HOE);
+	public static final Item desHoe = new ItemModHoe("desHoe", EssenceToolMaterial.DES);
 
 	public static final Item hellstoneSword = new ItemFireSword("hellstoneSword", EssenceToolMaterial.HELLSTONE_SWORD);
 	public static final Item shadiumSword = new ItemFreezeSword("shadiumSword", EssenceToolMaterial.SHADIUM_SWORD);
 	public static final Item celestiumSword = new ItemModSword("celestiumSword", EssenceToolMaterial.CELESTIUM_SWORD);
 	public static final Item luniumSword = new ItemModSword("luniumSword", EssenceToolMaterial.LUNIUM_SWORD);
 	public static final Item flairiumSword = new ItemFireSword("flairiumSword", EssenceToolMaterial.FLAIRIUM_SWORD);
+	public static final Item desSword = new ItemModSword("desSword", EssenceToolMaterial.DES_SWORD);
 	public static final Item sapphireSword = new ItemModSword("sapphireSword", EssenceToolMaterial.SAPPHIRE_SWORD);
 	public static final Item gorbiteSword = new ItemModSword("gorbiteSword", EssenceToolMaterial.GORBITE_SWORD);
 	public static final Item orbaditeSword = new ItemModSword("orbaditeSword", EssenceToolMaterial.ORBADITE_SWORD);
@@ -356,6 +366,14 @@ public class EssenceItems {
 	public static final Item eyeBall = new ItemMod("eyeBall");
 	public static final Item horn = new ItemMod("horn");
 	public static final Item scale = new ItemMod("scale");
+	
+	//TODO
+	public static final Item boilingPiercer = new ItemMod("boilingPiercer");
+	public static final Item nethicPiercer = new ItemMod("nethicPiercer");
+	public static final Item frozenPiercer = new ItemMod("frozenPiercer");
+	public static final Item eucaPiercer = new ItemMod("eucaPiercer");
+	public static final Item depthsPiercer = new ItemMod("depthsPiercer");
+	public static final Item corbaPiercer = new ItemMod("corbaPiercer");
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
