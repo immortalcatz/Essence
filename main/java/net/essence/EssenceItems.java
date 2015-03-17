@@ -67,7 +67,9 @@ public class EssenceItems {
 	public static final Item orbaditeIngot = new ItemMod("orbaditeIngot");
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem");
 	public static final Item desIngot = new ItemMod("desIngot");
-
+	public static final Item boilingSkull = new ItemMod("boilingSkull");
+	public static final Item boilPowder = new ItemMod("boilPowder");
+	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
 	public static final Item celestiumDust = new ItemMod("celestiumDust");
@@ -368,12 +370,12 @@ public class EssenceItems {
 	public static final Item scale = new ItemMod("scale");
 	
 	//TODO
-	public static final Item boilingPiercer = new ItemMod("boilingPiercer");
-	public static final Item nethicPiercer = new ItemMod("nethicPiercer");
-	public static final Item frozenPiercer = new ItemMod("frozenPiercer");
-	public static final Item eucaPiercer = new ItemMod("eucaPiercer");
-	public static final Item depthsPiercer = new ItemMod("depthsPiercer");
-	public static final Item corbaPiercer = new ItemMod("corbaPiercer");
+	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", null);
+	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", null);
+	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", null);
+	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", null);
+	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", null);
+	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", null);
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);

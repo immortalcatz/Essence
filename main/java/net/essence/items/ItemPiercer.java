@@ -1,5 +1,6 @@
 package net.essence.items;
 
+import net.essence.EssenceTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -14,6 +15,7 @@ public class ItemPiercer extends ItemMod {
 	public ItemPiercer(String name, Class<? extends EntityThrowable> entity) {
 		super(name);
 		this.entity = entity;
+		setCreativeTab(EssenceTabs.ranged);
 	}
 
 	@Override
