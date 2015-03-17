@@ -20,6 +20,10 @@ public class MobStats {
 	public static double fishHealth = 2.0D, fishSpeed = normalSpeed, fishFollowRange = follow;
 	public static double mageHealth = 35.0D, mageSpeed = normalSpeed, mageFollowRange = follow;
 	
+	//Frozen
+	public static double shattererHealth = 35.0D, shattererSpeed = normalSpeed, shattererFollowRange = follow;
+
+	
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;
 	public static double magmaBlazeHealth = 35.0D, magmaBlazeDamage = 5.0D;
