@@ -10,6 +10,7 @@ import net.essence.client.GuiHandler;
 import net.essence.client.MusicEvent;
 import net.essence.client.PlayerStats;
 import net.essence.enums.EnumParticlesClasses;
+import net.essence.event.ClientTickEvent;
 import net.essence.event.UpdateCheckerEvent;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
@@ -32,7 +33,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerClient() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Essence.instance, new GuiHandler());
-		if(!SlayerAPI.DEVMODE) SlayerAPI.addEventBus(new UpdateCheckerEvent());
+		if(!SlayerAPI.DEVMODE) SlayerAPI.registerEvent(new UpdateCheckerEvent());
 	}
 
 	@Override
@@ -51,7 +52,7 @@ public class ClientProxy extends CommonProxy {
 		addBow(EssenceItems.frozenBow, "frozenBow");
 		addBow(EssenceItems.staringBow, "staringBow");
 	}
-	
+
 	public void addBow(Item bow, String name) {
 		registerModelBakery(bow, new String[] {SlayerAPI.PREFIX + name, SlayerAPI.PREFIX + name + "_0", SlayerAPI.PREFIX + name + "_1", SlayerAPI.PREFIX  + name + "_2"});
 	}
@@ -65,8 +66,9 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void clientInit(FMLInitializationEvent event) {
 		EntityRendering.init();
-		SlayerAPI.addForgeEventBus(new BossTickHandler());
-		SlayerAPI.addForgeEventBus(new BarTickHandler());
+		SlayerAPI.registerEvent(new BossTickHandler());
+		SlayerAPI.registerEvent(new BarTickHandler());
+		SlayerAPI.registerEvent(new ClientTickEvent());
 		//if(Config.reRenderPlayerStats) SlayerAPI.addForgeEventBus(new PlayerStats());
 		//if(Config.reRenderPlayerStats) SlayerAPI.addEventBus(new PlayerStats());
 	}
@@ -127,18 +129,18 @@ public class ClientProxy extends CommonProxy {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockStorageBlocks2");
 			registerItem(it, i, names2N[i]);
 		}
-		
+
 		for(int i = 0; i < names3N.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockStorageBlocks3");
 			registerItem(it, i, names3N[i]);
 		}
-		
+
 		for(int i = 0; i < 4; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "brisonBlocks");
 			registerItem(it, i, brison[i]);
 		}
 	}
-	
+
 	public void addBowRegistry(Item bow, String name) {
 		registerItem(bow, 0, name);
 		registerItem(bow, 1, name + "_0");
@@ -173,18 +175,16 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double posX, double posY, double posZ, boolean b) {
-		if(!worldObj.isRemote) {
-			try {
-				EntityFX fx = null;
-				if(b) {
-					fx = (EntityFX)particle.getParticle().getConstructor(World.class, double.class, double.class, double.class).newInstance(worldObj, posX, posY, posZ);
-				} else {
-					fx = (EntityFX)particle.getParticle().getConstructor(World.class, double.class, double.class, double.class, double.class, double.class, double.class).newInstance(worldObj, posX, posY, posZ, 0D, 0D, 0D);
-				}
-				FMLClientHandler.instance().getClient().effectRenderer.addEffect(fx);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			EntityFX fx = null;
+			if(b) {
+				fx = (EntityFX)particle.getParticle().getConstructor(World.class, double.class, double.class, double.class).newInstance(worldObj, posX, posY, posZ);
+			} else {
+				fx = (EntityFX)particle.getParticle().getConstructor(World.class, double.class, double.class, double.class, double.class, double.class, double.class).newInstance(worldObj, posX, posY, posZ, 0D, 0D, 0D);
 			}
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(fx);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

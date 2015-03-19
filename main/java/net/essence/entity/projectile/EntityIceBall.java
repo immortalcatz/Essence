@@ -11,6 +11,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityIceBall extends EntityBasicProjectile {
 
@@ -23,6 +25,7 @@ public class EntityIceBall extends EntityBasicProjectile {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void onUpdate() {
 		Random rand = new Random();
 		super.onUpdate();

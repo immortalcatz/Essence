@@ -7,6 +7,8 @@ import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityWizardsStar extends EntityBasicProjectile {
 
@@ -19,6 +21,7 @@ public class EntityWizardsStar extends EntityBasicProjectile {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void onUpdate() {
 		Random rand = new Random();
 		super.onUpdate();

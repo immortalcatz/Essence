@@ -6,6 +6,7 @@ import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
@@ -38,6 +39,9 @@ public class BarTickHandler {
 		if(mc.currentScreen == null) {
 			if(!mc.thePlayer.capabilities.isCreativeMode) {
 				GL11.glPushMatrix();
+				GlStateManager.enableBlend();
+				GlStateManager.enableAlpha();
+	            GlStateManager.enableDepth();
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				GuiIngame gig = mc.ingameGUI;
 				//ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
@@ -60,6 +64,9 @@ public class BarTickHandler {
 					x1 += 11;
 					gig.drawTexturedModalRect(x1 - 17, y - 2, 0, 13, 10, 13);
 				}
+	            GlStateManager.disableDepth();
+				GlStateManager.disableAlpha();
+				GlStateManager.disableBlend();
 				GL11.glPopMatrix();
 			}
 		}

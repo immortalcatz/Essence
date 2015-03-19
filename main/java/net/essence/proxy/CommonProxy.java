@@ -49,10 +49,8 @@ public class CommonProxy {
 		DimensionHelper.addSpawns();
 		EssenceTabs.init();
 		addOreDictionary();
-		SlayerAPI.addEventBus(new ArmorAbilityEvent());
-		SlayerAPI.addForgeEventBus(new ArmorAbilityEvent());
-		SlayerAPI.addEventBus(new PlayerEvent());
-		SlayerAPI.addForgeEventBus(new PlayerEvent());
+		SlayerAPI.registerEvent(new ArmorAbilityEvent());
+		SlayerAPI.registerEvent(new PlayerEvent());
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
@@ -69,8 +67,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
-		SlayerAPI.addForgeEventBus(new PlayerEvent());
-		SlayerAPI.addEventBus(new PlayerEvent());
+		SlayerAPI.registerEvent(new PlayerEvent());
 		//EssenceAchievements.init();
 	}
 	

@@ -98,11 +98,8 @@ public class SlayerAPI {
 		}
 	}
 
-	public static void addEventBus(Object o) {
+	public static void registerEvent(Object o) {
 		MinecraftForge.EVENT_BUS.register(o);
-	}
-
-	public static void addForgeEventBus(Object o) {
 		FMLCommonHandler.instance().bus().register(o);
 	}
 
@@ -200,11 +197,13 @@ public class SlayerAPI {
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(b), ir);
 	}
 
+	@SideOnly(Side.CLIENT)
 	public static void sendMessageToAll(String message, boolean showMod) {
 		if(showMod) FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.DARK_AQUA + "[" + SlayerAPI.Colour.DARK_GREEN + MOD_NAME + SlayerAPI.Colour.DARK_AQUA + "] " + SlayerAPI.Colour.GREEN + message));
 		else FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.GREEN + message));
 	}
 
+	@SideOnly(Side.CLIENT)
 	public static void sendContinuedMessageToAll(String message) {
 		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.GREEN + message));
 	}
