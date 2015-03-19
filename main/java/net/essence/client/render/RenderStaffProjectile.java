@@ -1,6 +1,7 @@
 package net.essence.client.render;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
@@ -43,9 +44,11 @@ public class RenderStaffProjectile extends Render {
         this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glPushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.disableDepth();
         GL11.glColor4f(red, green, blue, 1.0F);
-        GL11.glPopMatrix();
+        GlStateManager.enableDepth();
+		GlStateManager.disableBlend();
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);
         Tessellator t = Tessellator.getInstance();

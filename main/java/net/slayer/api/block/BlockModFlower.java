@@ -39,7 +39,6 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
 		this.setCreativeTab(EssenceTabs.decoraton);
-		layerType = EnumWorldBlockLayer.CUTOUT;
 	}
 
 	public BlockModFlower setContactDamage() {
@@ -124,7 +123,9 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	@Override
 	public EnumWorldBlockLayer getBlockLayer() {
-		return layerType;
+		if(this == EssenceBlocks.permaFlower || this == EssenceBlocks.shiverFlower || this == EssenceBlocks.iceBush)
+			return EnumWorldBlockLayer.TRANSLUCENT;
+		return EnumWorldBlockLayer.CUTOUT;
 	}
 
 	@Override

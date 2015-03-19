@@ -202,9 +202,9 @@ public class EssenceBlocks {
 	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn").setContactDamage().setFrozenPlant();
 	public static final BlockModFlower iceBud = new BlockModFlower("iceBud").setFrozenPlant();
 	public static final BlockModFlower frozenBlooms = new BlockModFlower("frozenBlooms").setFrozenPlant();
-	public static final BlockModFlower permaFlower = (BlockModFlower)new BlockModFlower("permaFlower").setFrozenPlant().setTranslucent();
-	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower").setFrozenPlant().setTranslucent();
-	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush").setFrozenPlant().setTranslucent();
+	public static final BlockModFlower permaFlower = (BlockModFlower)new BlockModFlower("permaFlower").setFrozenPlant();
+	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower").setFrozenPlant();
+	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush").setFrozenPlant();
 
 	public static final BlockMod brittleIce = new BlockBrittleIce();
 	

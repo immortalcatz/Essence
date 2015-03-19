@@ -33,8 +33,7 @@ public class BlockMod extends Block{
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
 	public String name;
-	private boolean isOpaque = true, isNormalCube = true;
-	protected EnumWorldBlockLayer layerType = EnumWorldBlockLayer.SOLID;
+	protected boolean isOpaque = true, isNormalCube = true;
 	
 	public BlockMod(String name, float hardness) {
 		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
@@ -107,6 +106,7 @@ public class BlockMod extends Block{
 		return 3;
 	}
 	
+	/*@SideOnly(Side.CLIENT)
 	public BlockMod setCutout() {
 		layerType = EnumWorldBlockLayer.CUTOUT;
 		isOpaque = false;
@@ -115,17 +115,19 @@ public class BlockMod extends Block{
 		return this;
 	}
 	
+	@SideOnly(Side.CLIENT)
 	public BlockMod setTranslucent() {
 		layerType = EnumWorldBlockLayer.TRANSLUCENT;
 		isOpaque = false;
 		isNormalCube = false;
 		setLightOpacity(3);
 		return this;
-	}
+	}*/
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer() {
-		return layerType;
+		return EnumWorldBlockLayer.SOLID;
 	}
 
 	@Override
