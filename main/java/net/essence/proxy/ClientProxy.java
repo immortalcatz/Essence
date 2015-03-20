@@ -69,8 +69,7 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.registerEvent(new BossTickHandler());
 		SlayerAPI.registerEvent(new BarTickHandler());
 		SlayerAPI.registerEvent(new ClientTickEvent());
-		//if(Config.reRenderPlayerStats) SlayerAPI.addForgeEventBus(new PlayerStats());
-		//if(Config.reRenderPlayerStats) SlayerAPI.addEventBus(new PlayerStats());
+		SlayerAPI.registerEvent(new PlayerStats());
 	}
 
 	public static String[] names = {SlayerAPI.PREFIX + "dirt", SlayerAPI.PREFIX + "birchPlanks", SlayerAPI.PREFIX + "oakPlanks", SlayerAPI.PREFIX + "junglePlanks", SlayerAPI.PREFIX + "sprucePlanks", SlayerAPI.PREFIX + "darkOakPlanks", SlayerAPI.PREFIX + "acaciaPlanks", SlayerAPI.PREFIX + "potatoes", SlayerAPI.PREFIX + "wheat", SlayerAPI.PREFIX + "carrots", SlayerAPI.PREFIX + "obsidian", SlayerAPI.PREFIX + "netherrack", SlayerAPI.PREFIX + "netherBrick", SlayerAPI.PREFIX + "redMushroom", SlayerAPI.PREFIX + "brownMushroom", SlayerAPI.PREFIX + "melon"};

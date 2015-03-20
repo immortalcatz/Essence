@@ -30,11 +30,12 @@ public class ClientTickEvent {
 		else helmet = null;
 		Random rand = new Random();
 		if(event.phase == Phase.END) {
-			for(int i = 0; i < 2; i++)
+			for(int i = 0; i < 2; i++) {
 				if(helmet == EssenceItems.flameHelmet && body == EssenceItems.flameChest && legs == EssenceItems.flameLegs && boots == EssenceItems.flameBoots) {
 					event.player.worldObj.spawnParticle(EnumParticleTypes.FLAME, event.player.posX + rand.nextFloat() - 0.5D, event.player.posY + 0.1D, event.player.posZ + rand.nextFloat() - 0.5D, -event.player.motionX, +event.player.motionY + 0.2D, -event.player.motionZ, new int[]{});
 					event.player.worldObj.spawnParticle(EnumParticleTypes.FLAME, event.player.posX + rand.nextFloat() - 0.5D, event.player.posY + 0.1D, event.player.posZ + rand.nextFloat() - 0.5D, 0, 0, 0, new int[]{});
 				}
+			}
 		}
 	}
 }

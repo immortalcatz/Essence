@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import net.essence.*;
 import net.essence.client.GuiHandler.GuiIDs;
 import net.essence.entity.projectile.*;
+import net.essence.enums.EnumKnowledge;
 import net.essence.enums.EnumSounds;
 import net.essence.items.*;
 import net.essence.items.ItemEgg;
@@ -69,6 +70,7 @@ public class EssenceItems {
 	public static final Item desIngot = new ItemMod("desIngot");
 	public static final Item boilingSkull = new ItemMod("boilingSkull");
 	public static final Item boilPowder = new ItemMod("boilPowder");
+	public static final Item blankKnowledge = new ItemMod("blankKnowledge");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
@@ -369,6 +371,21 @@ public class EssenceItems {
 	public static final Item horn = new ItemMod("horn");
 	public static final Item scale = new ItemMod("scale");
 	
+	public static final ItemKnowledge overworldKnowledge = new ItemKnowledge("overworldKnowledge", EnumKnowledge.OVERWORLD);
+	public static final ItemKnowledge netherKnowledge = new ItemKnowledge("netherKnowledge", EnumKnowledge.NETHER);
+	public static final ItemKnowledge endKnowledge = new ItemKnowledge("endKnowledge", EnumKnowledge.END);
+	public static final ItemKnowledge boilKnowledge = new ItemKnowledge("boilingKnowledge", EnumKnowledge.BOIL);
+	public static final ItemKnowledge frozenKnowledge = new ItemKnowledge("frozenKnowledge", EnumKnowledge.FROZEN);
+	public static final ItemKnowledge eucaKnowledge = new ItemKnowledge("eucaKnowledge", EnumKnowledge.EUCA);
+	public static final ItemKnowledge depthsKnowledge = new ItemKnowledge("depthsKnowledge", EnumKnowledge.DEPTHS);
+	public static final ItemKnowledge corbaKnowledge = new ItemKnowledge("corbaKnowledge", EnumKnowledge.CORBA);
+	public static final ItemKnowledge cloudiaKnowledge = new ItemKnowledge("cloudiaKnowledge", EnumKnowledge.CLOUDIA);
+	public static final ItemKnowledge wastelandsKnowledge = new ItemKnowledge("wastelandsKnowledge", EnumKnowledge.WASTELANDS);
+	public static final ItemKnowledge lithiumKnowledge = new ItemKnowledge("lithiumKnowledge", EnumKnowledge.LITHIUM);
+	public static final ItemKnowledge libraryKnowledge = new ItemKnowledge("libraryKnowledge", EnumKnowledge.LIBRARY);
+	public static final ItemKnowledge blazeKnowledge = new ItemKnowledge("blazeKnowledge", EnumKnowledge.BLAZE);
+	public static final ItemKnowledge witherKnowledge = new ItemKnowledge("witherKnowledge", EnumKnowledge.WITHER);
+
 	//TODO
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", null);
 	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", null);

@@ -31,11 +31,6 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
-
-	@Override
-	public boolean isFullCube() {
-		return false;
-	}
 	
 	@Override
 	public void randomDisplayTick(World par1World, BlockPos pos, IBlockState state, Random par5Random) {
@@ -55,6 +50,11 @@ public class BlockEnrichedEnchantmentTable extends BlockContainer {
 		}
 	}
 
+	@Override
+	public boolean isFullCube() {
+		return false;
+	}
+	
 	@Override
 	public boolean isOpaqueCube() {
 		return false;

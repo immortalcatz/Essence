@@ -240,6 +240,8 @@ public class EssenceBlocks {
 	
 	public static final Block brisonBlocks = new BlockBrison();
 	
+	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable");
+	
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");

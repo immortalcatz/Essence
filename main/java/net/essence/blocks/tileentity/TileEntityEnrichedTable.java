@@ -151,6 +151,6 @@ public class TileEntityEnrichedTable extends TileEntity implements IUpdatePlayer
 
     public String getGuiID()
     {
-        return "eotg:enriched_table";
+        return "essence:enriched_table";
     }
 }
