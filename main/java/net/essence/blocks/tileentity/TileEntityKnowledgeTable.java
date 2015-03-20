@@ -40,7 +40,7 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public int getSizeInventory() {
-		return 0;
+		return 1;
 	}
 
 	@Override
