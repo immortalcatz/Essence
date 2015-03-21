@@ -67,6 +67,7 @@ public class Textures {
     public static final ResourceLocation greenElf = addMob("greenElf");
     public static final ResourceLocation redElf = addMob("redElf");
     public static final ResourceLocation escapedConvict = addMob("escapedConvict");
+    public static final ResourceLocation frozenTroll = addMob("frozenTroll");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
