@@ -4,6 +4,8 @@ import javax.vecmath.Vector3f;
 
 import org.lwjgl.opengl.GL11;
 
+import com.google.common.primitives.SignedBytes;
+
 import net.essence.EssenceItems;
 import net.essence.blocks.tileentity.TileEntityKnowledgeTable;
 import net.minecraft.client.Minecraft;
@@ -12,6 +14,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.block.model.ItemTransformVec3f;
+import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.EntityLivingBase;
@@ -24,17 +27,40 @@ public class KnowledgeTableRenderer extends TileEntitySpecialRenderer {
 
 	private Minecraft mc = Minecraft.getMinecraft();
 	private RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-
+	private RenderEntityItem renderEntity;
+	
+	public KnowledgeTableRenderer() {
+		renderEntity = new RenderEntityItem(Minecraft.getMinecraft().getRenderManager(), Minecraft.getMinecraft().getRenderItem()){
+            @Override
+            public int func_177078_a(ItemStack stack) {
+                return SignedBytes.saturatedCast(Math.min(stack.stackSize / 32, 15) + 1);
+            }
+            @Override
+            public boolean shouldBob() {
+                return false;
+            }
+            @Override
+            public boolean shouldSpreadItems() {
+                return true;
+            }
+        };
+	}
+	
 	@Override
 	public void renderTileEntityAt(TileEntity t, double x, double y, double z, float f, int j) {
 		TileEntityKnowledgeTable tile = (TileEntityKnowledgeTable)t;
-		float scale = 0.5F;
+		float scale = 1.0F;
+		float timeD = (float) (360.0 * (double) (System.currentTimeMillis() & 0x3FFFL) / (double) 0x3FFFL) * 8;
 		GL11.glPushMatrix();
-		GL11.glTranslated(x + 0.5D, y + 1.0D, z + 0.5D);
+		GL11.glTranslated(x + 0.5D, y + 0.8D, z + 0.5D);
 		ItemStack i = new ItemStack(EssenceItems.blankKnowledge);
-		GL11.glRotatef(tile.getRotation(), 0.0F, 1.0F, 0.0F);
+		EntityItem item = new EntityItem(t.getWorld(), x, y, z, i);
+		GlStateManager.rotate(timeD, 0.0F, 1.0F, 0.0F);
 		GL11.glScalef(scale, scale, scale);
-		renderItem.renderItemModel(i);
+		item.setEntityItemStack(i);
+		item.hoverStart = 0F;
+		renderEntity.doRender(item, 0, 0, 0, 0, 0);
+		//renderItem.renderItemModel(item.getEntityItem());
 		GL11.glPopMatrix();
 		GL11.glPushMatrix();
 		renderText(StatCollector.translateToLocal(i.getItem().getUnlocalizedName() + ".name"), x + 0.5F, y + 1.5F, z + 0.5F);

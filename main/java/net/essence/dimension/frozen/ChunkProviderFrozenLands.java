@@ -46,7 +46,6 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 	private final double[] field_147434_q;
 	private final float[] parabolicField;
 	private ChunkProviderSettings settings;
-	private Block field_177476_s;
 	private double[] stoneNoise;
 	private BiomeGenBase[] biomesForGeneration;
 	double[] field_147427_d;
@@ -56,10 +55,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 
 	public ChunkProviderFrozenLands(World worldIn, long p_i45636_2_, String p_i45636_5_)
 	{
-		this.field_177476_s = EssenceBlocks.brittleIce;
 		this.stoneNoise = new double[256];
 		this.worldObj = worldIn;
-		this.mapFeaturesEnabled = true;;
+		this.mapFeaturesEnabled = true;
 		this.theWorldType = worldIn.getWorldInfo().getTerrainType();
 		this.rand = new Random(p_i45636_2_);
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -578,7 +576,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 					break;
 				}
 			}
-			//dungeon.generate(worldObj, rand, new BlockPos(x, y, z));
+			dungeon.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
 		for(int n = 0; n < 2; n++) {

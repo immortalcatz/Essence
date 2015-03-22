@@ -27,6 +27,7 @@ import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.npc.EntityGreenElf;
 import net.essence.entity.mob.frozen.npc.EntityRedElf;
@@ -133,6 +134,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
 		
 		SlayerAPI.registerMob(EntityShatterer.class, "shatterer");
+		SlayerAPI.registerMob(EntityFrozenTroll.class, "frozenTroll");
 		
 		//SlayerAPI.registerEntity(EntityDragonEgg.class, "Dragon Egg");
 
