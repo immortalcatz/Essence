@@ -19,29 +19,34 @@ public class BlockKnowledgeTable extends BlockModContainer {
 		super(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 	}
-	
+
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-		if(worldIn.isRemote) return false;
-		playerIn.openGui(Essence.instance, GuiIDs.KNOWLEDGE.ordinal(), worldIn, (int)playerIn.posX, (int)playerIn.posY, (int)playerIn.posZ);
-		return true;
+		TileEntityKnowledgeTable tile = (TileEntityKnowledgeTable)worldIn.getTileEntity(pos);
+		if(!worldIn.isRemote) {
+			if(tile != null) { 
+				playerIn.openGui(Essence.instance, GuiIDs.KNOWLEDGE.ordinal(), worldIn, 0, 0, 0);
+			}
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntityKnowledgeTable();
 	}
-	
+
 	@Override
 	public int getRenderType() {
 		return 3;
 	}
-	
+
 	@Override
 	public boolean isFullCube() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
