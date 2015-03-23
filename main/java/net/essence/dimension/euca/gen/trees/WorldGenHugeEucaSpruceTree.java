@@ -138,7 +138,7 @@ public class WorldGenHugeEucaSpruceTree extends WorldGenEucaHugeTree
 
 			if (block.canSustainPlant(p_150540_1_, new BlockPos(p_150540_2_, l, p_150540_4_), EnumFacing.UP, (BlockSapling)Blocks.sapling))
 			{
-				this.func_175905_a(p_150540_1_, new BlockPos(p_150540_2_, l, p_150540_4_), EssenceBlocks.eucaDirt, 2);
+				this.func_175905_a(p_150540_1_, new BlockPos(p_150540_2_, l, p_150540_4_), EssenceBlocks.eucaStone, 2);
 				break;
 			}
 

@@ -8,8 +8,8 @@ public class BiomeGenFrozenLands extends BiomeGenBase {
 	public BiomeGenFrozenLands(int par1) {
 		super(par1);
 		this.setBiomeName("Frozen Lands");
-		this.topBlock = EssenceBlocks.eucaGrass.getDefaultState();
-		this.fillerBlock = EssenceBlocks.eucaDirt.getDefaultState();
+		this.topBlock = EssenceBlocks.frozenGrass.getDefaultState();
+		this.fillerBlock = EssenceBlocks.frozenDirt.getDefaultState();
 		this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();

@@ -53,8 +53,7 @@ public class EssenceBlocks {
 	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab");
 	//public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
 	
-	public static final BlockMod eucaDirt = new BlockMod(EnumMaterialTypes.DIRT, "eucaDirt", 2.0F);
-	public static final Block eucaGrass = new BlockModGrass(eucaDirt, "eucaGrass", 2.0F);
+	public static final Block eucaGrass = new BlockModGrass(null, "eucaGrass", 2.0F);
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
 	public static final Block eucaLog = new BlockModLog("eucaLog");
 	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", 1.0F);

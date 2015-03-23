@@ -160,7 +160,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 				byte b0 = 1;
 				int k = -1;
 				IBlockState iblockstate = EssenceBlocks.eucaGrass.getDefaultState();
-				IBlockState iblockstate1 = EssenceBlocks.eucaDirt.getDefaultState();
+				IBlockState iblockstate1 = EssenceBlocks.eucaStone.getDefaultState();
 
 				for (int l = 127; l >= 0; --l) {
 					IBlockState iblockstate2 = c.getBlockState(i, l, j);

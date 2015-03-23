@@ -32,7 +32,7 @@ public class WorldGenSmallEucaTree extends WorldGenerator {
 		WorldGenAPI.addRectangle(5, 5, 1, w, x - 2, y + height, z - 2, leaf);
 		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height, z - 1, Blocks.air);
 		WorldGenAPI.addRectangle(1, 1, height, w, x, y, z, EssenceBlocks.eucaLog);
-		WorldGenAPI.addRectangle(1, 1, 1, w, x, y - 1, z, EssenceBlocks.eucaDirt);
+		WorldGenAPI.addRectangle(1, 1, 1, w, x, y - 1, z, EssenceBlocks.eucaStone);
 		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height, z - 1, EssenceBlocks.eucaLog);
 		return true;
 	}

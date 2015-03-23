@@ -13,7 +13,7 @@ public class WorldGenSmallEucaTree2 extends WorldGenerator {
 
 	public boolean generate(World world, Random rand, BlockPos p) {
 		int i = p.getX() - 1, j = p.getY() + 1, k = p.getZ() - 1;
-		WorldGenAPI.addRectangle(2, 2, 3, world, i + 1, j - 2, k + 1, EssenceBlocks.eucaDirt);
+		WorldGenAPI.addRectangle(2, 2, 3, world, i + 1, j - 2, k + 1, EssenceBlocks.eucaStone);
 		Block leaves = WorldGenAPI.getEucaLeaves();
 		Block wood = EssenceBlocks.eucaLog;
 		world.setBlockState(new BlockPos(i + 0, j + 13, k + 1), leaves.getDefaultState());
