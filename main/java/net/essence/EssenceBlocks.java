@@ -208,7 +208,7 @@ public class EssenceBlocks {
 	public static final BlockMod brittleIce = new BlockBrittleIce();
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
-	public static final BlockModFlower eucaGreenFlower = new BlockModFlower("eucaGreenFlower");
+	public static final BlockModFlower eucaTallFlowers = new BlockModFlower("eucaTallFlowers");
 	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
 	public static final BlockModFlower frozenFlower = new BlockModFlower("frozenFlower");
 	public static final BlockModFlower depthsFlower = new BlockModFlower("depthsFlower");

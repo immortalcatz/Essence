@@ -124,7 +124,7 @@ public class GenerationHelper {
 			break;
 		case 7:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenModFlower(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenModFlower(EssenceBlocks.eucaTallFlowers)).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 8:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;

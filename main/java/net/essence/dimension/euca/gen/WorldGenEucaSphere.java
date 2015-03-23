@@ -20,7 +20,7 @@ public class WorldGenEucaSphere extends WorldGenerator {
 		int y = r.nextInt(250); int x = p.getX() + r.nextInt(16) + 8; int z = p.getZ() + r.nextInt(16) + 8;
 		(new WorldGenModFlower(EssenceBlocks.eucaTallGrass)).generate(w, r, new BlockPos(x, y, z));
 		y = r.nextInt(250); x = p.getX() + r.nextInt(16) + 8; z = p.getZ() + r.nextInt(16) + 8;
-		(new WorldGenModFlower(EssenceBlocks.eucaGreenFlower)).generate(w, r, new BlockPos(x, y, z));
+		(new WorldGenModFlower(EssenceBlocks.eucaTallFlowers)).generate(w, r, new BlockPos(x, y, z));
 		y = r.nextInt(250); x = p.getX() + r.nextInt(16) + 8; z = p.getZ() + r.nextInt(16) + 8;
 		(new WorldGenModFlower(EssenceBlocks.eucaBlueFlower)).generate(w, r, new BlockPos(x, y, z));
 		return true;
