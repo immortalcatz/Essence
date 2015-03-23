@@ -56,7 +56,7 @@ public class DimensionHelper {
 
 	protected static final BiomeGenBase.Height boilHeight = new BiomeGenBase.Height(0.0F, 0.9F); 
 
-	public static BiomeGenBase euca = new BiomeGenEuca(Config.eucaBiome);
+	public static BiomeGenBase euca = new BiomeGenEuca(Config.eucaBiome).setHeight(new BiomeGenBase.Height(0.125F, 0.05F));
 	public static BiomeGenBase depths = new BiomeGenDepths(Config.depthsBiome);
 	public static BiomeGenBase boiling = new BiomeGenBoiling(Config.boilBiome).setHeight(boilHeight);
 	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome);
