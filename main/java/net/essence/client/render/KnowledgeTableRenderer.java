@@ -58,7 +58,7 @@ public class KnowledgeTableRenderer extends TileEntitySpecialRenderer {
 		GlStateManager.rotate(timeD, 0.0F, 1.0F, 0.0F);
 		GL11.glScalef(scale, scale, scale);
 		item.setEntityItemStack(i);
-		item.hoverStart = 0F;
+		item.hoverStart = 0.0F;
 		renderEntity.doRender(item, 0, 0, 0, 0, 0);
 		//renderItem.renderItemModel(item.getEntityItem());
 		GL11.glPopMatrix();

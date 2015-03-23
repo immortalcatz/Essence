@@ -13,29 +13,21 @@ import net.minecraft.util.IChatComponent;
 
 public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlayerListBox, IInventory {
 
-	private float rotate = 0.0F;
-	private ItemStack inventory = new ItemStack(EssenceItems.blankKnowledge);
+	private ItemStack inventory;
 
 	@Override
 	public void writeToNBT(NBTTagCompound nbt) {
 		super.writeToNBT(nbt);
-		nbt.setFloat("rotation", 0.0F);
 	}
 
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
 		super.readFromNBT(nbt);
-		rotate = nbt.getFloat("rotation");
-	}
-
-	public float getRotation() {
-		return rotate;
 	}
 
 	@Override
 	public void update() {
-		rotate += 5.0F;
-		if(rotate >= 360F) rotate = 0.0F;
+		//if(getStackInSlot(0) != null) inventory = null;
 	}
 
 	@Override
@@ -82,12 +74,12 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 	@Override
 	public ItemStack getStackInSlotOnClosing(int index) {
 		if(index == 0 && this.inventory != null)  {
-            ItemStack itemstack = this.inventory;
-            this.inventory = null;
-            return itemstack;
-        } else {
-            return null;
-        }
+			ItemStack itemstack = this.inventory;
+			this.inventory = null;
+			return itemstack;
+		} else {
+			return null;
+		}
 	}
 
 	@Override

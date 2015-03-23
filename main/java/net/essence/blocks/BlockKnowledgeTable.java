@@ -25,7 +25,7 @@ public class BlockKnowledgeTable extends BlockModContainer {
 		TileEntityKnowledgeTable tile = (TileEntityKnowledgeTable)worldIn.getTileEntity(pos);
 		if(!worldIn.isRemote) {
 			if(tile != null) { 
-				playerIn.openGui(Essence.instance, GuiIDs.KNOWLEDGE.ordinal(), worldIn, 0, 0, 0);
+				playerIn.openGui(Essence.instance, GuiIDs.KNOWLEDGE.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ());
 			}
 			return true;
 		}

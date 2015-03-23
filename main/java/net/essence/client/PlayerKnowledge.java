@@ -7,6 +7,8 @@ import net.minecraftforge.common.IExtendedEntityProperties;
 
 public class PlayerKnowledge implements IExtendedEntityProperties {
 
+	public int overworldKnowledge = 0, netherKnowledge = 0, endKnowledge = 0;
+	
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		
