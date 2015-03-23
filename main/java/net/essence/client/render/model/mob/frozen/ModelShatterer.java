@@ -1,4 +1,4 @@
-package net.essence.client.render.mob;
+package net.essence.client.render.model.mob.frozen;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

@@ -1,8 +1,9 @@
-package net.essence.client.render.mob;
+package net.essence.client.render.model.mob.frozen;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class ModelFrozenTroll extends ModelBase {
 	ModelRenderer head;
@@ -96,7 +97,13 @@ public class ModelFrozenTroll extends ModelBase {
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 2.0F * f1 * 0.5F;
+		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 2.0F * f1 * 0.5F;
+		this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+		this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+		this.head.rotateAngleY = f3 / (180F / (float)Math.PI);
+		this.head.rotateAngleX = f4 / (180F / (float)Math.PI);
+		this.ear1.rotateAngleY = f3 / (180F / (float)Math.PI);
+		this.ear1.rotateAngleX = f4 / (180F / (float)Math.PI);
 	}
-
 }

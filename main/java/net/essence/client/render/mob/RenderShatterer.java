@@ -1,5 +1,6 @@
 package net.essence.client.render.mob;
 
+import net.essence.client.render.model.mob.frozen.ModelShatterer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
