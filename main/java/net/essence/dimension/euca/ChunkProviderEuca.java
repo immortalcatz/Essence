@@ -80,7 +80,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 
 	@Override
 	public Chunk provideChunk(int par1, int par2) {
-		this.rand.setSeed((long)par1 * 391279128714L + (long)par2 * 132894987741L);
+		this.rand.setSeed((long)par1 * 391279512714L + (long)par2 * 132894987741L);
 		ChunkPrimer primer = new ChunkPrimer();
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.generateTerrain(par1, par2, primer);
@@ -200,9 +200,9 @@ public class ChunkProviderEuca implements IChunkProvider {
 		if(var1 == null) var1 = new double[var5 * var6 * var7];
 		double var8 = 684.412D;
 		double var10 = 684.412D;
-		this.noise5 = this.noiseGen5.generateNoiseOctaves(this.noise5, var2, var4, var5, var7, -3.121D, -3.121D, 5.5D);
-		this.noise6 = this.noiseGen6.generateNoiseOctaves(this.noise6, var2, var4, var5, var7, 210.0D, 210.0D, 5.5D);
-		var8 *= -4.0D;
+		this.noise5 = this.noiseGen5.generateNoiseOctaves(this.noise5, var2, var4, var5, var7, 1.121D, 1.121D, 0.5D);
+		this.noise6 = this.noiseGen6.generateNoiseOctaves(this.noise6, var2, var4, var5, var7, 1.0D, 1.0D, 0.5D);
+		var8 *= 2.0D;
 		this.noise3 = this.noiseGen3.generateNoiseOctaves(this.noise3, var2, var3, var4, var5, var6, var7, var8 / 80.0D, var8 / 160.0D, var8 / 80.0D);
 		this.noise1 = this.noiseGen1.generateNoiseOctaves(this.noise1, var2, var3, var4, var5, var6, var7, var8, var10, var8);
 		this.noise2 = this.noiseGen2.generateNoiseOctaves(this.noise2, var2, var3, var4, var5, var6, var7, var8, var10, var8);
@@ -210,11 +210,11 @@ public class ChunkProviderEuca implements IChunkProvider {
 		int var13 = 0;
 		int var14 = 16 / var5;
 
-		for(int var15 = 0; var15 < var5; ++var15) {
+		for(int var15 = 0; var15 < var5; var15++) {
 			int var16 = var15 * var14 + var14 / 2;
-			for(int var17 = 0; var17 < var7; ++var17) {
+			for(int var17 = 0; var17 < var7; var17++) {
 				int var18 = var17 * var14 + var14 / 2;
-				double var19 = (this.noise5[var13] + 256.0D) / 128.0D;
+				double var19 = (this.noise5[var13] + 256.0D) / 512.0D;
 				double var21 = this.noise6[var13] / 8000.0D;
 				if(var21 < 0.0D) var21 = -var21 * 0.3D;
 				var21 = var21 * 3.0D - 2.0D;
@@ -224,14 +224,14 @@ public class ChunkProviderEuca implements IChunkProvider {
 				if(var19 < 0.0D) var19 = 0.0D;
 				var19 += 0.5D;
 				var21 = var21 * var6 / 16.0D;
-				++var13;
+				var13++;
 				double var23 = var6 / 2.0D;
-				for(int var25 = 0; var25 < var6; ++var25) {
+				for(int var25 = 0; var25 < var6; var25++) {
 					double var26 = 0.0D;
 					double var28 = (var25 - var23) * 8.0D / var19;
 					if(var28 < 0.0D) var28 *= -1.0D;
-					double var30 = this.noise1[var12] / 128.0D;
-					double var32 = this.noise2[var12] / 128.0D;
+					double var30 = this.noise1[var12] / 512.0D;
+					double var32 = this.noise2[var12] / 512.0D;
 					double var34 = (this.noise3[var12] / 10.0D + 1.0D) / 2.0D;
 					if(var34 < 0.0D) var26 = var30;
 					else if(var34 > 1.0D) var26 = var32;
