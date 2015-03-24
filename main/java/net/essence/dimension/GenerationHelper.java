@@ -154,6 +154,18 @@ public class GenerationHelper {
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenMinable(EssenceBlocks.orbaditeOre.getDefaultState(), 6, BlockHelper.forBlock(EssenceBlocks.corbaStone))).generate(w, r, new BlockPos(x, y, z));
 			break;
+		case 15:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.storonOre.getDefaultState(), 10, BlockHelper.forBlock(EssenceBlocks.eucaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 16:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.koriteOre.getDefaultState(), 10, BlockHelper.forBlock(EssenceBlocks.eucaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 17:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.mekyumOre.getDefaultState(), 10, BlockHelper.forBlock(EssenceBlocks.eucaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
 		}
 	}
 

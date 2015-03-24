@@ -60,6 +60,9 @@ public class WorldGenEssence implements IWorldGenerator {
 	private void generateEuca(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
 		for(i = 0; i < 30; i++) GenerationHelper.generateEssenceDimensions(0, w, chunkX, chunkZ);
+		for(i = 0; i < 30; i++) GenerationHelper.generateEssenceDimensions(15, w, chunkX, chunkZ);
+		for(i = 0; i < 30; i++) GenerationHelper.generateEssenceDimensions(16, w, chunkX, chunkZ);
+		for(i = 0; i < 30; i++) GenerationHelper.generateEssenceDimensions(17, w, chunkX, chunkZ);
 		for(i = 0; i < 70; i++) GenerationHelper.generateEssenceDimensions(6, w, chunkX, chunkZ);
 		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(7, w, chunkX, chunkZ);
 		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(8, w, chunkX, chunkZ);

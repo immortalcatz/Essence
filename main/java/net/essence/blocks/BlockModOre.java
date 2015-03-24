@@ -45,7 +45,7 @@ public class BlockModOre extends BlockMod {
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre || this == EssenceBlocks.desOre) {
+		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre || this == EssenceBlocks.desOre || this == EssenceBlocks.koriteOre) {
 			r = 0.0F;
 			g = 0.0F;
 			b = 1.0F;
@@ -55,7 +55,7 @@ public class BlockModOre extends BlockMod {
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.flairiumOre || this == EssenceBlocks.flairiumBlock) {
+		if(this == EssenceBlocks.flairiumOre || this == EssenceBlocks.flairiumBlock || this == EssenceBlocks.storonOre) {
 			r = 1.0F;
 			g = 0.5F;
 			b = 0.0F;
@@ -70,7 +70,7 @@ public class BlockModOre extends BlockMod {
 			g = 0.0F;
 			b = 1.0F;
 		}
-		if(this == EssenceBlocks.enderilliumOre || this == EssenceBlocks.enderilliumBlock) {
+		if(this == EssenceBlocks.enderilliumOre || this == EssenceBlocks.enderilliumBlock || this == EssenceBlocks.mekyumOre) {
 			r = 1.0F;
 			g = 0.0F;
 			b = 1.0F;

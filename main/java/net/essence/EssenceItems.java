@@ -60,6 +60,9 @@ public class EssenceItems {
 	public static final Item hellstoneIngot = new ItemMod("hellstoneIngot");
 	public static final Item shadiumIngot = new ItemMod("shadiumIngot");
 	public static final Item celestiumIngot = new ItemMod("celestiumIngot");
+	public static final Item mekyumIngot = new ItemMod("mekyumIngot");
+	public static final Item koriteIngot = new ItemMod("koriteIngot");
+	public static final Item storonIngot = new ItemMod("storonIngot");
 	public static final Item luniumIngot = new ItemMod("luniumIngot");
 	public static final Item flairiumIngot = new ItemMod("flairiumIngot");
 	public static final Item ash = new ItemMod("ash");

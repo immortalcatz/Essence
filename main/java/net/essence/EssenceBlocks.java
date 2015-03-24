@@ -18,6 +18,10 @@ public class EssenceBlocks {
 	
 	public static final Block hellstoneOre = new BlockModOre("hellstoneOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block celestiumOre = new BlockModOre("celestiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block mekyumOre = new BlockModOre("mekyumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block koriteOre = new BlockModOre("koriteOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block storonOre = new BlockModOre("storonOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	
 	public static final Block luniumOre = new BlockModOre("luniumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
