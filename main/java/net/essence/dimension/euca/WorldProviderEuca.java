@@ -27,7 +27,7 @@ public class WorldProviderEuca extends WorldProvider {
 
     @Override
     public IChunkProvider createChunkGenerator() {
-        return new ChunkProviderEuca(worldObj, worldObj.getSeed(), worldObj.getWorldInfo().getGeneratorOptions());
+        return new ChunkProviderEuca(worldObj, worldObj.getSeed());
     }
 
     @Override
