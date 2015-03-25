@@ -198,7 +198,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 			int var16 = var15 * var14 + var14 / 2;
 			for(int var17 = 0; var17 < var7; var17++) {
 				int var18 = var17 * var14 + var14 / 2;
-				double var19 = (this.noise5[var13] + 256.0D) / 128.0D;
+				double var19 = (this.noise5[var13] + 64.0D) / 64.0D;
 				double var21 = this.noise6[var13] / 8000.0D;
 				if(var21 < 0.0D) var21 = -var21 * 0.3D;
 				var21 = var21 * 3.0D - 2.0D;
