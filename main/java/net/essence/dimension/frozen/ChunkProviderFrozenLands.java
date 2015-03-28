@@ -9,17 +9,15 @@ import net.essence.dimension.frozen.gen.WorldGenFrozenTree2;
 import net.essence.dimension.frozen.gen.WorldGenIceCrystal1;
 import net.essence.dimension.frozen.gen.WorldGenIceCrystal2;
 import net.essence.dimension.frozen.gen.WorldGenIceDungeon;
+import net.essence.dimension.frozen.gen.WorldGenIceTree;
+import net.essence.dimension.frozen.gen.WorldGenIceTree2;
 import net.essence.dimension.frozen.gen.WorldGenNewLamp;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.ChunkCoordIntPair;
-import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -525,6 +523,8 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 	private static WorldGenIceCrystal1 crystal1 = new WorldGenIceCrystal1();
 	private static WorldGenIceCrystal2 crystal2 = new WorldGenIceCrystal2();
 	private static WorldGenIceDungeon dungeon = new WorldGenIceDungeon();
+	private static WorldGenIceTree iceTree = new WorldGenIceTree();
+	private static WorldGenIceTree2 iceTree2 = new WorldGenIceTree2();
 
 	@Override
 	public void populate(IChunkProvider provider, int chunkX, int chunkZ) {
@@ -589,6 +589,30 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 				}
 			}
 			crystal1.generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(int n = 0; n < 2; n++) {
+			int x = k + rand.nextInt(16), z = l + rand.nextInt(16);
+			int y = 0;
+			for(int j = 150; j > 50; j--) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
+					y = j;
+					break;
+				}
+			}
+			iceTree.generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		for(int n = 0; n < 2; n++) {
+			int x = k + rand.nextInt(16), z = l + rand.nextInt(16);
+			int y = 0;
+			for(int j = 150; j > 50; j--) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
+					y = j;
+					break;
+				}
+			}
+			iceTree2.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
 		if(rand.nextInt(4) == 0) {
