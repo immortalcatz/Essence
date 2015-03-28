@@ -2,15 +2,57 @@ package net.essence;
 
 import java.util.ArrayList;
 
-import net.essence.blocks.*;
+import net.essence.blocks.BlockBoilPortal;
+import net.essence.blocks.BlockBoilingFire;
+import net.essence.blocks.BlockBrison;
+import net.essence.blocks.BlockBrittleIce;
+import net.essence.blocks.BlockCaveVine;
+import net.essence.blocks.BlockCloud;
+import net.essence.blocks.BlockColouredBricks;
+import net.essence.blocks.BlockCorbaPortal;
+import net.essence.blocks.BlockCorbaPortalFrame;
+import net.essence.blocks.BlockDepthsPortal;
+import net.essence.blocks.BlockDungeonBlock;
+import net.essence.blocks.BlockEssenceStandingSign;
+import net.essence.blocks.BlockEssenceWallSign;
+import net.essence.blocks.BlockEucaPortal;
+import net.essence.blocks.BlockEucaPumpkin;
+import net.essence.blocks.BlockEucaSapling;
+import net.essence.blocks.BlockFrozenPortal;
+import net.essence.blocks.BlockGemBlock;
+import net.essence.blocks.BlockGlowshroom;
+import net.essence.blocks.BlockHalfSlab;
+import net.essence.blocks.BlockIceLog;
+import net.essence.blocks.BlockIcicle;
+import net.essence.blocks.BlockJoinedGlass;
+import net.essence.blocks.BlockKnowledgeTable;
+import net.essence.blocks.BlockMiniColouredBricks;
+import net.essence.blocks.BlockModFire;
+import net.essence.blocks.BlockModOre;
+import net.essence.blocks.BlockStatue;
+import net.essence.blocks.BlockStorageBlocks;
+import net.essence.blocks.BlockStorageBlocks1;
+import net.essence.blocks.BlockStorageBlocks2;
+import net.essence.blocks.BlockStorageBlocks3;
+import net.essence.blocks.BlockTomatoCrop;
 import net.essence.blocks.machines.BlockGrindstone;
-import net.essence.client.*;
-import net.essence.client.render.model.statue.*;
+import net.essence.client.render.model.statue.ModelCalciaStatue;
+import net.essence.client.render.model.statue.ModelEudorStatue;
+import net.essence.client.render.model.statue.ModelNetherBeastStatue;
+import net.essence.client.render.model.statue.ModelWitheringBeastStatue;
 import net.essence.enums.EnumSounds;
-import net.essence.items.block.*;
-import net.minecraft.block.*;
-import net.slayer.api.*;
-import net.slayer.api.block.*;
+import net.minecraft.block.Block;
+import net.slayer.api.EnumMaterialTypes;
+import net.slayer.api.EnumToolType;
+import net.slayer.api.block.BlockMod;
+import net.slayer.api.block.BlockModDoor;
+import net.slayer.api.block.BlockModFence;
+import net.slayer.api.block.BlockModFlower;
+import net.slayer.api.block.BlockModGrass;
+import net.slayer.api.block.BlockModLeaves;
+import net.slayer.api.block.BlockModLog;
+import net.slayer.api.block.BlockModSlab;
+import net.slayer.api.block.BlockModStairs;
 
 public class EssenceBlocks {
 
@@ -208,7 +250,7 @@ public class EssenceBlocks {
 	public static final BlockModFlower permaFlower = (BlockModFlower)new BlockModFlower("permaFlower").setFrozenPlant();
 	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower").setFrozenPlant();
 	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush").setFrozenPlant();
-
+	public static final BlockMod iceLog = new BlockIceLog();
 	public static final BlockMod brittleIce = new BlockBrittleIce();
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");

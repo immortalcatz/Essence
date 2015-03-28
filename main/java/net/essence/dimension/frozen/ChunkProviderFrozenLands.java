@@ -530,7 +530,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 	public void populate(IChunkProvider provider, int chunkX, int chunkZ) {
 		int k = chunkX * 16;
 		int l = chunkZ * 16;
-		this.rand.setSeed(this.worldObj.getSeed());
+		this.rand.setSeed(chunkX * this.rand.nextInt() + chunkZ * this.rand.nextInt() ^ this.worldObj.getSeed());
 		for(int n = 0; n < 6; n++) {
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
@@ -580,7 +580,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 		}
 
 		for(int n = 0; n < 2; n++) {
-			int x = chunkX * 16 + rand.nextInt(16), z = chunkZ * 16 + rand.nextInt(16);
+			int x = k + rand.nextInt(16), z = l + rand.nextInt(16);
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
 				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == EssenceBlocks.brittleIce) {
