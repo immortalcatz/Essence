@@ -104,9 +104,8 @@ public class EssenceBlocks {
 	public static final Block eucaLog = new BlockModLog("eucaLog");
 	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", 1.0F);
 	public static final Block eucaStairs = new BlockModStairs(eucaPlank, "eucaStairs");
-	public static final Block redEucaLeaves = new BlockModLeaves("redEucaLeaves", 1.0F);
-	public static final Block greenEucaLeaves = new BlockModLeaves("greenEucaLeaves", 1.0F);
-	public static final Block blueEucaLeaves = new BlockModLeaves("blueEucaLeaves", 1.0F);
+	public static final Block eucaGoldLeaves = new BlockModLeaves("eucaGoldLeaves", 1.0F);
+	public static final Block eucaSilverLeaves = new BlockModLeaves("eucaSilverLeaves", 1.0F);
 	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling");
 	
 	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", 2.0F);

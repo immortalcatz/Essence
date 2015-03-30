@@ -17,15 +17,12 @@ public class WorldGenSmallEucaTree extends WorldGenerator {
 		int x = p.getX(), y = p.getY(), z = p.getZ();
 		int height = r.nextInt(3) + 5;
 		Block leaf = null;
-		switch(r.nextInt(3)) {
+		switch(r.nextInt(2)) {
 		case 0:
-			leaf = EssenceBlocks.greenEucaLeaves;
+			leaf = EssenceBlocks.eucaSilverLeaves;
 			break;
 		case 1:
-			leaf = EssenceBlocks.blueEucaLeaves;
-			break;
-		case 2:
-			leaf = EssenceBlocks.redEucaLeaves;
+			leaf = EssenceBlocks.eucaGoldLeaves;
 			break;
 		}
 		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height + 1, z - 1, leaf);

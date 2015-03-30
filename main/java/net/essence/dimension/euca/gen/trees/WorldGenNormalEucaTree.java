@@ -29,15 +29,12 @@ public class WorldGenNormalEucaTree extends WorldGenAbstractTree {
 		this.minTreeHeight = var2;
 		this.metaWood = var3;
 		this.metaLeaves = var4;
-		switch(rand.nextInt(3)) {
+		switch(rand.nextInt(2)) {
 		case 0:
-			leaves = EssenceBlocks.greenEucaLeaves;
+			leaves = EssenceBlocks.eucaSilverLeaves;
 			break;
 		case 1:
-			leaves = EssenceBlocks.blueEucaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redEucaLeaves;
+			leaves = EssenceBlocks.eucaGoldLeaves;
 			break;
 		}
 	}

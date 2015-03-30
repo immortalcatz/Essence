@@ -19,15 +19,12 @@ public class WorldGenEucaSpruceTree extends WorldGenAbstractTree {
     {
         super(false);
         Random r = new Random();
-        switch(r.nextInt(3)) {
+		switch(r.nextInt(2)) {
 		case 0:
-			leaves = EssenceBlocks.greenEucaLeaves;
+			leaves = EssenceBlocks.eucaSilverLeaves;
 			break;
 		case 1:
-			leaves = EssenceBlocks.blueEucaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redEucaLeaves;
+			leaves = EssenceBlocks.eucaGoldLeaves;
 			break;
 		}
     }
