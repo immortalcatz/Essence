@@ -27,8 +27,8 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public void update() {
-		Item i = getStackInSlot(0).getItem();
 		if(getStackInSlot(0) != null) {
+			Item i = getStackInSlot(0).getItem();
 			if(i == EssenceItems.overworldKnowledge) 
 				inventory.stackSize--;
 		}
