@@ -2,6 +2,7 @@ package net.essence.blocks.tileentity;
 
 import net.essence.EssenceItems;
 import net.essence.items.ItemKnowledge;
+import net.essence.util.Helper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -28,9 +29,11 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 	@Override
 	public void update() {
 		if(getStackInSlot(0) != null) {
-			Item i = getStackInSlot(0).getItem();
-			if(i == EssenceItems.overworldKnowledge) 
-				inventory.stackSize--;
+			Item i = inventory.getItem();
+			if(i == EssenceItems.overworldKnowledge) {
+				Helper.print("TADA");
+				clear();
+			}
 		}
 	}
 
@@ -46,7 +49,7 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public String getName() {
-		return "knowledge Table";
+		return "Knowledge Table";
 	}
 
 	@Override
