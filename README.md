@@ -8,14 +8,15 @@ Essence
 * The_SlayerMC
 
 ####Modelers:
+* Dizzlepop12
 * Jonas
 * eternalsun
 
 ####Assets:
+* Dizzlepop12 - Main texturer
 * Metallurgy - Influenced textures
 * Jonas - Some mob textures
 * Thaumatage - Some Item textures
-* Dizzlepop11 - Main texturer
 
 ####Other:
 * RadioactiveStud - Wiki admin
