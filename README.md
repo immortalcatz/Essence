@@ -10,12 +10,13 @@ Essence
 ####Modelers:
 * Jonas
 * eternalsun
+* Dizzlepop12
 
 ####Assets:
+* Dizzlepop12 - Main texturer
 * Metallurgy - Influenced textures
 * Jonas - Some mob textures
 * Thaumatage - Some Item textures
-* Dizzlepop11 - Main texturer
 
 ####Other:
 * RadioactiveStud - Wiki admin
