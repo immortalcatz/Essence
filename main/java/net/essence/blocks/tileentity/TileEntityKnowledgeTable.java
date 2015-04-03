@@ -2,9 +2,9 @@ package net.essence.blocks.tileentity;
 
 import net.essence.EssenceItems;
 import net.essence.items.ItemKnowledge;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
@@ -27,7 +27,11 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public void update() {
-		//if(getStackInSlot(0) != null) inventory = null;
+		Item i = getStackInSlot(0).getItem();
+		if(getStackInSlot(0) != null) {
+			if(i == EssenceItems.overworldKnowledge) 
+				inventory.stackSize--;
+		}
 	}
 
 	@Override

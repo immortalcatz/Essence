@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
@@ -46,6 +47,15 @@ public class KnowledgeTableRenderer extends TileEntitySpecialRenderer {
         };
 	}
 	
+	public Item getItemFromDimension(int dimID) {
+		switch(dimID) {
+		case -1: return EssenceItems.netherKnowledge;
+		case 0: return EssenceItems.overworldKnowledge;
+		case 1: return EssenceItems.endKnowledge;
+		}
+		return EssenceItems.blankKnowledge;
+	}
+	
 	@Override
 	public void renderTileEntityAt(TileEntity t, double x, double y, double z, float f, int j) {
 		TileEntityKnowledgeTable tile = (TileEntityKnowledgeTable)t;
@@ -53,7 +63,7 @@ public class KnowledgeTableRenderer extends TileEntitySpecialRenderer {
 		float timeD = (float) (360.0 * (double) (System.currentTimeMillis() & 0x3FFFL) / (double) 0x3FFFL) * 8;
 		GL11.glPushMatrix();
 		GL11.glTranslated(x + 0.5D, y + 0.8D, z + 0.5D);
-		ItemStack i = new ItemStack(EssenceItems.blankKnowledge);
+		ItemStack i = new ItemStack(getItemFromDimension(t.getWorld().provider.getDimensionId()));
 		EntityItem item = new EntityItem(t.getWorld(), x, y, z, i);
 		GlStateManager.rotate(timeD, 0.0F, 1.0F, 0.0F);
 		GL11.glScalef(scale, scale, scale);
