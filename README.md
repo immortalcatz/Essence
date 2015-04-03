@@ -8,9 +8,9 @@ Essence
 * The_SlayerMC
 
 ####Modelers:
+* Dizzlepop12
 * Jonas
 * eternalsun
-* Dizzlepop12
 
 ####Assets:
 * Dizzlepop12 - Main texturer
