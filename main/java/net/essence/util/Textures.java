@@ -64,8 +64,7 @@ public class Textures {
     public static final ResourceLocation mage = addMob("mage");
     public static final ResourceLocation blacksmith = addMob("blacksmith");
     public static final ResourceLocation templeGuardian = addMob("templeGuardian");
-    public static final ResourceLocation greenElf = addMob("greenElf");
-    public static final ResourceLocation redElf = addMob("redElf");
+    public static final ResourceLocation frozenMerchant = addMob("frozenMerchant");
     public static final ResourceLocation escapedConvict = addMob("escapedConvict");
     public static final ResourceLocation frozenTroll = addMob("frozenTroll");
     public static final ResourceLocation permafraust = addMob("permafraust");

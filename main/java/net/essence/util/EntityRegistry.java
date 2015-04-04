@@ -31,8 +31,7 @@ import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
-import net.essence.entity.mob.frozen.npc.EntityGreenElf;
-import net.essence.entity.mob.frozen.npc.EntityRedElf;
+import net.essence.entity.mob.frozen.npc.EntityFrozenMerchant;
 import net.essence.entity.mob.overworld.EntityBigHongo;
 import net.essence.entity.mob.overworld.EntityBoom;
 import net.essence.entity.mob.overworld.EntityBunny;
@@ -131,8 +130,7 @@ public class EntityRegistry {
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith");
-		SlayerAPI.registerNPC(EntityRedElf.class, "redElf");
-		SlayerAPI.registerNPC(EntityGreenElf.class, "greenElf");
+		SlayerAPI.registerNPC(EntityFrozenMerchant.class, "frozenMerchant");
 		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
 		
 		SlayerAPI.registerMob(EntityShatterer.class, "shatterer");

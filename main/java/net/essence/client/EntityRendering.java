@@ -46,6 +46,7 @@ import net.essence.client.render.model.mob.euca.ModelEucaFighter;
 import net.essence.client.render.model.mob.euca.ModelEucaHopper;
 import net.essence.client.render.model.mob.euca.ModelInsecto;
 import net.essence.client.render.model.mob.euca.ModelPsyollom;
+import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
 import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
 import net.essence.client.render.model.mob.frozen.ModelPermafraust;
 import net.essence.client.render.model.mob.frozen.ModelShiveringBushwalker;
@@ -95,8 +96,7 @@ import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
-import net.essence.entity.mob.frozen.npc.EntityGreenElf;
-import net.essence.entity.mob.frozen.npc.EntityRedElf;
+import net.essence.entity.mob.frozen.npc.EntityFrozenMerchant;
 import net.essence.entity.mob.overworld.EntityBigHongo;
 import net.essence.entity.mob.overworld.EntityBoom;
 import net.essence.entity.mob.overworld.EntityBunny;
@@ -199,8 +199,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceMage.class, new RenderModBiped(new ModelBiped(), tex.iceMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMage.class, new RenderModBiped(new ModelBiped(), tex.mage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlacksmith.class, new RenderModBiped(new ModelBiped(), tex.blacksmith));
-		RenderingRegistry.registerEntityRenderingHandler(EntityGreenElf.class, new RenderModBiped(new ModelBiped(), tex.greenElf));
-		RenderingRegistry.registerEntityRenderingHandler(EntityRedElf.class, new RenderModBiped(new ModelBiped(), tex.redElf));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenMerchant.class, new RenderModMob(new ModelFrozenMerchant(), tex.frozenMerchant));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEscapedConvict.class, new RenderModMob(new ModelEscapedConvict(), tex.escapedConvict));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
 
