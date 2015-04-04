@@ -57,23 +57,26 @@ public class ModelFrozenTroll extends ModelBase {
 		leftleg.mirror = true;
 		setRotation(leftleg, 0F, 0F, 0F);
 		ear1 = new ModelRenderer(this, 0, 0);
-		ear1.addBox(0F, 0F, 0F, 2, 2, 1);
+		ear1.addBox(0F, -11F, 0F, 2, 2, 1);
 		ear1.setRotationPoint(3F, 2F, -2F);
 		ear1.setTextureSize(64, 64);
 		ear1.mirror = true;
 		setRotation(ear1, 0F, 0F, 0F);
 		ear2 = new ModelRenderer(this, 0, 0);
-		ear2.addBox(0F, 0F, 0F, 2, 2, 1);
+		ear2.addBox(0F, -11F, 0F, 2, 2, 1);
 		ear2.setRotationPoint(-5F, 2F, -2F);
 		ear2.setTextureSize(64, 64);
 		ear2.mirror = true;
 		setRotation(ear2, 0F, 0F, 0F);
 		beard = new ModelRenderer(this, 40, 33);
 		beard.addBox(0F, 0F, 0F, 6, 6, 2);
-		beard.setRotationPoint(-3F, 11F, -4F);
+		beard.setRotationPoint(-3F, 0F, -4F);
 		beard.setTextureSize(64, 64);
 		beard.mirror = true;
 		setRotation(beard, 0F, 0F, 0F);
+		head.addChild(beard);
+		head.addChild(ear1);
+		head.addChild(ear2);
 	}
 
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
@@ -85,9 +88,6 @@ public class ModelFrozenTroll extends ModelBase {
 		leftarm.render(f5);
 		rightleg.render(f5);
 		leftleg.render(f5);
-		ear1.render(f5);
-		ear2.render(f5);
-		beard.render(f5);
 	}
 
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
@@ -103,7 +103,5 @@ public class ModelFrozenTroll extends ModelBase {
 		this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
 		this.head.rotateAngleY = f3 / (180F / (float)Math.PI);
 		this.head.rotateAngleX = f4 / (180F / (float)Math.PI);
-		this.ear1.rotateAngleY = f3 / (180F / (float)Math.PI);
-		this.ear1.rotateAngleX = f4 / (180F / (float)Math.PI);
 	}
 }

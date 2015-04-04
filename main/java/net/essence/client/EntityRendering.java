@@ -47,6 +47,8 @@ import net.essence.client.render.model.mob.euca.ModelEucaHopper;
 import net.essence.client.render.model.mob.euca.ModelInsecto;
 import net.essence.client.render.model.mob.euca.ModelPsyollom;
 import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
+import net.essence.client.render.model.mob.frozen.ModelPermafraust;
+import net.essence.client.render.model.mob.frozen.ModelShiveringBushwalker;
 import net.essence.client.render.model.mob.overworld.ModelBigHongo;
 import net.essence.client.render.model.mob.overworld.ModelBoomBoom;
 import net.essence.client.render.model.mob.overworld.ModelBunny;
@@ -90,7 +92,9 @@ import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
+import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
+import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
 import net.essence.entity.mob.frozen.npc.EntityGreenElf;
 import net.essence.entity.mob.frozen.npc.EntityRedElf;
 import net.essence.entity.mob.overworld.EntityBigHongo;
@@ -204,7 +208,9 @@ public class EntityRendering {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityShatterer.class, new RenderShatterer());
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenTroll.class, new RenderModMob(new ModelFrozenTroll(), tex.frozenTroll));
-
+		RenderingRegistry.registerEntityRenderingHandler(EntityPermafraust.class, new RenderModMob(new ModelPermafraust(), tex.permafraust));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShiveringBushwalker.class, new RenderModMob(new ModelShiveringBushwalker(), tex.shiveringBushwalker));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityNetherBeast.class, new RenderBoss(new ModelBeastOfTheNether(), 0.5F, 2.0F, tex.netherBeast, stat.netherBeastBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWitheringBeast.class, new RenderBoss(new ModelWitheringBeast(), 0.5F, 2.0F, tex.witheringBeast, stat.witheringBeastBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCalcia.class, new RenderCalcia(new ModelClacia(), 0.5F, 2.0F, tex.calcia, stat.calciaBossID));

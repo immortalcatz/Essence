@@ -1,5 +1,6 @@
 package net.essence.client.render;
 
+import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
 import net.essence.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
