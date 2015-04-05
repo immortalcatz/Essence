@@ -105,6 +105,10 @@ public class ModelFrozenMerchant extends ModelBase {
 		leftarm.render(f5);
 		rightleg.render(f5);
 		leftleg.render(f5);
+		//hatBottom.render(f5);
+		//hatMiddle.render(f5);
+		//hatTop.render(f5);
+		//puff.render(f5);
 		GlStateManager.popMatrix();
 	}
 
@@ -117,8 +121,8 @@ public class ModelFrozenMerchant extends ModelBase {
 	@Override
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-		this.head.rotateAngleY = f3 / 57.29578f;
-		this.head.rotateAngleX= f4 / 57.29578f;
+		this.head.rotateAngleY/* = this.hatBottom.rotateAngleY = this.hatMiddle.rotateAngleY = this.hatTop.rotateAngleY = this.puff.rotateAngleY */= f3 / 57.29578f;
+		this.head.rotateAngleX/* = this.hatBottom.rotateAngleX = this.hatMiddle.rotateAngleX = this.hatTop.rotateAngleX = this.puff.rotateAngleX */= f4 / 57.29578f;
 		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
 		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 	}
