@@ -1,17 +1,13 @@
 package net.essence.client.render.model.mob.overworld;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
-public class ModelMage extends ModelBase {
-	ModelRenderer head;
-	ModelRenderer body;
-	ModelRenderer rightarm;
-	ModelRenderer leftarm;
-	ModelRenderer rightleg;
-	ModelRenderer leftleg;
+public class ModelMage extends ModelBiped {
+	
 	ModelRenderer hatBottom;
 	ModelRenderer hatMiddle;
 	ModelRenderer hatTop;
@@ -21,42 +17,42 @@ public class ModelMage extends ModelBase {
 		textureWidth = 128;
 		textureHeight = 64;
 
-		head = new ModelRenderer(this, 0, 0);
-		head.addBox(-4F, -8F, -4F, 8, 8, 8);
-		head.setRotationPoint(0F, 0F, 0F);
-		head.setTextureSize(128, 64);
-		head.mirror = true;
-		setRotation(head, 0F, 0F, 0F);
-		body = new ModelRenderer(this, 16, 16);
-		body.addBox(-4F, 0F, -2F, 8, 12, 4);
-		body.setRotationPoint(0F, 0F, 0F);
-		body.setTextureSize(128, 64);
-		body.mirror = true;
-		setRotation(body, 0F, 0F, 0F);
-		rightarm = new ModelRenderer(this, 40, 16);
-		rightarm.addBox(-3F, -2F, -2F, 4, 12, 4);
-		rightarm.setRotationPoint(-5F, 2F, 0F);
-		rightarm.setTextureSize(128, 64);
-		rightarm.mirror = true;
-		setRotation(rightarm, 0F, 0F, 0F);
-		leftarm = new ModelRenderer(this, 40, 32);
-		leftarm.addBox(-1F, -2F, -2F, 4, 12, 4);
-		leftarm.setRotationPoint(5F, 2F, 0F);
-		leftarm.setTextureSize(128, 64);
-		leftarm.mirror = true;
-		setRotation(leftarm, 0F, 0F, 0F);
-		rightleg = new ModelRenderer(this, 0, 16);
-		rightleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-		rightleg.setRotationPoint(-2F, 12F, 0F);
-		rightleg.setTextureSize(128, 64);
-		rightleg.mirror = true;
-		setRotation(rightleg, 0F, 0F, 0F);
-		leftleg = new ModelRenderer(this, 0, 16);
-		leftleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-		leftleg.setRotationPoint(2F, 12F, 0F);
-		leftleg.setTextureSize(128, 64);
-		leftleg.mirror = true;
-		setRotation(leftleg, 0F, 0F, 0F);
+		bipedHead = new ModelRenderer(this, 0, 0);
+		bipedHead.addBox(-4F, -8F, -4F, 8, 8, 8);
+		bipedHead.setRotationPoint(0F, 0F, 0F);
+		bipedHead.setTextureSize(128, 64);
+		bipedHead.mirror = true;
+		setRotation(bipedHead, 0F, 0F, 0F);
+		bipedBody = new ModelRenderer(this, 16, 16);
+		bipedBody.addBox(-4F, 0F, -2F, 8, 12, 4);
+		bipedBody.setRotationPoint(0F, 0F, 0F);
+		bipedBody.setTextureSize(128, 64);
+		bipedBody.mirror = true;
+		setRotation(bipedBody, 0F, 0F, 0F);
+		bipedRightArm = new ModelRenderer(this, 40, 16);
+		bipedRightArm.addBox(-3F, -2F, -2F, 4, 12, 4);
+		bipedRightArm.setRotationPoint(-5F, 2F, 0F);
+		bipedRightArm.setTextureSize(128, 64);
+		bipedRightArm.mirror = true;
+		setRotation(bipedRightArm, 0F, 0F, 0F);
+		bipedLeftArm = new ModelRenderer(this, 40, 32);
+		bipedLeftArm.addBox(-1F, -2F, -2F, 4, 12, 4);
+		bipedLeftArm.setRotationPoint(5F, 2F, 0F);
+		bipedLeftArm.setTextureSize(128, 64);
+		bipedLeftArm.mirror = true;
+		setRotation(bipedLeftArm, 0F, 0F, 0F);
+		bipedRightLeg = new ModelRenderer(this, 0, 16);
+		bipedRightLeg.addBox(-2F, 0F, -2F, 4, 12, 4);
+		bipedRightLeg.setRotationPoint(-2F, 12F, 0F);
+		bipedRightLeg.setTextureSize(128, 64);
+		bipedRightLeg.mirror = true;
+		setRotation(bipedRightLeg, 0F, 0F, 0F);
+		bipedLeftLeg = new ModelRenderer(this, 0, 16);
+		bipedLeftLeg.addBox(-2F, 0F, -2F, 4, 12, 4);
+		bipedLeftLeg.setRotationPoint(2F, 12F, 0F);
+		bipedLeftLeg.setTextureSize(128, 64);
+		bipedLeftLeg.mirror = true;
+		setRotation(bipedLeftLeg, 0F, 0F, 0F);
 		hatBottom = new ModelRenderer(this, 56, 0);
 		hatBottom.addBox(0F, 0F, 0F, 10, 2, 10);
 		hatBottom.setRotationPoint(-5F, -9F, -4.8F);
@@ -81,22 +77,22 @@ public class ModelMage extends ModelBase {
 		puff.setTextureSize(128, 64);
 		puff.mirror = true;
 		setRotation(puff, -0.2268928F, 0F, 0F);
-		this.head.addChild(hatBottom);
-		this.head.addChild(hatMiddle);
-		this.head.addChild(hatTop);
-		this.head.addChild(puff);
+		this.bipedHead.addChild(hatBottom);
+		this.bipedHead.addChild(hatMiddle);
+		this.bipedHead.addChild(hatTop);
+		this.bipedHead.addChild(puff);
 	}
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		super.render(entity, f, f1, f2, f3, f4, f5);
 		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-		head.render(f5);
-		body.render(f5);
-		rightarm.render(f5);
-		leftarm.render(f5);
-		rightleg.render(f5);
-		leftleg.render(f5);
+		bipedHead.render(f5);
+		bipedBody.render(f5);
+		bipedRightArm.render(f5);
+		bipedLeftArm.render(f5);
+		bipedRightLeg.render(f5);
+		bipedLeftLeg.render(f5);
 	}
 
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
@@ -104,16 +100,4 @@ public class ModelMage extends ModelBase {
 		model.rotateAngleY = y;
 		model.rotateAngleZ = z;
 	}
-
-	@Override
-	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-		this.head.rotateAngleY = f3 / 57.29578f;
-		this.head.rotateAngleX= f4 / 57.29578f;
-		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
-		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
-		this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-	}
-
 }
