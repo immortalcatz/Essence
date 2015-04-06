@@ -14,7 +14,7 @@ public class WorldGenEucaTallPine extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos p) {
 		int i = p.getX() - 5, j = p.getY(), k = p.getZ() - 5;
 		Block leaves = WorldGenAPI.getEucaLeaves();
-		Block wood = EssenceBlocks.eucaLog;
+		Block wood = WorldGenAPI.getEucaLog();
 		world.setBlockState(new BlockPos(i, j + 14, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 14, k + 6), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 14, k + 4), leaves.getDefaultState());

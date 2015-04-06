@@ -43,6 +43,19 @@ public class WorldGenAPI {
 		}
 		return leaves;
 	}
+	
+	public static Block getEucaLog() {
+		Block log = null;
+		switch(r.nextInt(2)) {
+		case 0:
+			log = EssenceBlocks.eucaSilverLog;
+			break;
+		case 1:
+			log = EssenceBlocks.eucaGoldLog;
+			break;
+		}
+		return log;
+	}
 
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
 		boolean is = false;

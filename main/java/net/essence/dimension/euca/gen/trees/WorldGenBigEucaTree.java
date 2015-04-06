@@ -16,7 +16,7 @@ public class WorldGenBigEucaTree extends WorldGenerator {
 		int i = p.getX(), j = p.getY(), k = p.getZ();
 		WorldGenAPI.addRectangle(3, 3, 3, world, i, j - 2, k, EssenceBlocks.eucaStone);
 		Block leaves = WorldGenAPI.getEucaLeaves();
-		Block wood = EssenceBlocks.eucaLog;
+		Block wood = WorldGenAPI.getEucaLog();
 		WorldGenAPI.addSphere(world, 15, i + 1, j + 18, k + 1, leaves);
 		WorldGenAPI.addRectangle(3, 3, 44, world, i, j, k, wood);
 		return true;

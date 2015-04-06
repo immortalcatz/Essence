@@ -35,7 +35,8 @@ public class RecipeHelper {
 		addOre(b.luniumOre, i.luniumIngot, b.luniumBlock, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots, i.luniumDust);
 		addOre(b.sapphireOre, i.sapphire, b.sapphireBlock, i.sapphireAxe, i.sapphirePickaxe, i.sapphireShovel, i.sapphireHoe, i.sapphireSword, i.sapphireMultiTool, i.sapphireHelmet, i.sapphireChest, i.sapphireLegs, i.sapphireBoots, i.sapphireDust);
 
-		addWood(b.eucaLog, b.eucaPlank, b.eucaStairs, 0, true);
+		addWood(b.eucaSilverLog, b.silverEucaPlank, b.eucaSilverStairs, 0, true);
+		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);
 
 		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondHelmet), new Object[] {"iii", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});

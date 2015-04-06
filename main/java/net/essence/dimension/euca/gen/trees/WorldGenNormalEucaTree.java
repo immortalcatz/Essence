@@ -18,7 +18,7 @@ public class WorldGenNormalEucaTree extends WorldGenAbstractTree {
 	private final int metaWood;
 	private final int metaLeaves;
 	private static final Random rand = new Random();
-	private Block leaves = null;
+	private Block leaves = null, log;
 
 	public WorldGenNormalEucaTree(boolean var1) {
 		this(var1, rand.nextInt(3) + 4, 0, 0);
@@ -35,6 +35,14 @@ public class WorldGenNormalEucaTree extends WorldGenAbstractTree {
 			break;
 		case 1:
 			leaves = EssenceBlocks.eucaGoldLeaves;
+			break;
+		}
+		switch(rand.nextInt(2)) {
+		case 0:
+			log = EssenceBlocks.eucaSilverLog;
+			break;
+		case 1:
+			log = EssenceBlocks.eucaGoldLog;
 			break;
 		}
 	}
@@ -106,7 +114,7 @@ public class WorldGenNormalEucaTree extends WorldGenAbstractTree {
 					for(k1 = 0; k1 < l; ++k1) {
 						block = par1World.getBlockState(new BlockPos(par3, par4 + k1, par5)).getBlock();
 						if(block.isAir(par1World, new BlockPos(par3, par4 + k1, par5)) || block.isLeaves(par1World, new BlockPos(par3, par4 + k1, par5))) 
-							this.func_175905_a(par1World, new BlockPos(par3, par4 + k1, par5), EssenceBlocks.eucaLog, this.metaWood);
+							this.func_175905_a(par1World, new BlockPos(par3, par4 + k1, par5), log, this.metaWood);
 					}
 					return true;
 				} else {

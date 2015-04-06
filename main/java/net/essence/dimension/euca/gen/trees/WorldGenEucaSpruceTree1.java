@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class WorldGenEucaSpruceTree1 extends WorldGenAbstractTree {
 
-	protected Block leaves = null;
+	protected Block leaves = null, log;
 	
     public WorldGenEucaSpruceTree1() {
         super(false);
@@ -24,6 +24,14 @@ public class WorldGenEucaSpruceTree1 extends WorldGenAbstractTree {
 			break;
 		case 1:
 			leaves = EssenceBlocks.eucaGoldLeaves;
+			break;
+		}
+		switch(r.nextInt(2)) {
+		case 0:
+			log = EssenceBlocks.eucaSilverLog;
+			break;
+		case 1:
+			log = EssenceBlocks.eucaGoldLog;
 			break;
 		}
     }
@@ -137,7 +145,7 @@ public class WorldGenEucaSpruceTree1 extends WorldGenAbstractTree {
 
                         if (block2.isAir(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + k2, p_76484_5_)) || block2.isLeaves(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + k2, p_76484_5_)))
                         {
-                            this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + k2, p_76484_5_), EssenceBlocks.eucaLog, 1);
+                            this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + k2, p_76484_5_), log, 1);
                         }
                     }
 

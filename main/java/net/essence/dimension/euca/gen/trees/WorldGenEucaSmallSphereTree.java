@@ -15,7 +15,7 @@ public class WorldGenEucaSmallSphereTree extends WorldGenerator {
 		int i = p.getX() - 5, j = p.getY() + 1, k = p.getZ() - 5;
 		WorldGenAPI.addRectangle(3, 3, 2, world, i + 4, j - 3, k + 4, EssenceBlocks.eucaStone);
 		Block leaves = WorldGenAPI.getEucaLeaves();
-		Block wood = EssenceBlocks.eucaLog;
+		Block wood = WorldGenAPI.getEucaLog();
 		world.setBlockState(new BlockPos(i + 0, j + 15, k + 4), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 15, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 15, k + 6), leaves.getDefaultState());

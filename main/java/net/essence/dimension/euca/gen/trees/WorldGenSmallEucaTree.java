@@ -25,12 +25,21 @@ public class WorldGenSmallEucaTree extends WorldGenerator {
 			leaf = EssenceBlocks.eucaGoldLeaves;
 			break;
 		}
+		Block log = null;
+		switch(r.nextInt(2)) {
+		case 0:
+			log = EssenceBlocks.eucaSilverLog;
+			break;
+		case 1:
+			log = EssenceBlocks.eucaGoldLog;
+			break;
+		}
 		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height + 1, z - 1, leaf);
 		WorldGenAPI.addRectangle(5, 5, 1, w, x - 2, y + height, z - 2, leaf);
 		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height, z - 1, Blocks.air);
-		WorldGenAPI.addRectangle(1, 1, height, w, x, y, z, EssenceBlocks.eucaLog);
+		WorldGenAPI.addRectangle(1, 1, height, w, x, y, z, log);
 		WorldGenAPI.addRectangle(1, 1, 1, w, x, y - 1, z, EssenceBlocks.eucaStone);
-		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height, z - 1, EssenceBlocks.eucaLog);
+		WorldGenAPI.addRectangle(3, 3, 1, w, x - 1, y + height, z - 1, log);
 		return true;
 	}
 }

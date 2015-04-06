@@ -101,9 +101,12 @@ public class EssenceBlocks {
 	
 	public static final Block eucaGrass = new BlockModGrass(null, "eucaGrass", 2.0F);
 	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
-	public static final Block eucaLog = new BlockModLog("eucaLog");
-	public static final Block eucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "eucaPlank", 1.0F);
-	public static final Block eucaStairs = new BlockModStairs(eucaPlank, "eucaStairs");
+	public static final Block eucaGoldLog = new BlockModLog("eucaGoldLog");
+	public static final Block eucaSilverLog = new BlockModLog("eucaSilverLog");
+	public static final Block goldEucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "goldEucaPlank", 1.0F);
+	public static final Block silverEucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "silverEucaPlank", 1.0F);
+	public static final Block eucaGoldStairs = new BlockModStairs(eucaSilverLog, "eucaGoldStairs");
+	public static final Block eucaSilverStairs = new BlockModStairs(silverEucaPlank, "eucaSilverStairs");
 	public static final Block eucaGoldLeaves = new BlockModLeaves("eucaGoldLeaves", 1.0F);
 	public static final Block eucaSilverLeaves = new BlockModLeaves("eucaSilverLeaves", 1.0F);
 	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling");

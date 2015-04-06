@@ -14,11 +14,20 @@ import net.minecraft.world.World;
 public class WorldGenHugeEucaSpruceTree extends WorldGenEucaHugeTree
 {
 	private boolean field_150542_e;
+	private Block log;
 
 	public WorldGenHugeEucaSpruceTree(boolean p_i45457_1_, boolean p_i45457_2_)
 	{
 		super(p_i45457_1_, 8, 10, 1);
 		this.field_150542_e = p_i45457_2_;
+		switch(new Random().nextInt(2)) {
+		case 0:
+			log = EssenceBlocks.eucaSilverLog;
+			break;
+		case 1:
+			log = EssenceBlocks.eucaGoldLog;
+			break;
+		}
 	}
 
 	public boolean generate(World p_76484_1_, Random p_76484_2_, BlockPos pos) {
@@ -41,7 +50,7 @@ public class WorldGenHugeEucaSpruceTree extends WorldGenEucaHugeTree
 
 				if (block.isAir(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_)) || block.isLeaves(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_)))
 				{
-					this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_), EssenceBlocks.eucaLog, this.woodMetadata);
+					this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_), log, this.woodMetadata);
 				}
 
 				if (i1 < l - 1)
@@ -50,21 +59,21 @@ public class WorldGenHugeEucaSpruceTree extends WorldGenEucaHugeTree
 
 					if (block.isAir(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_)) || block.isLeaves(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_)))
 					{
-						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_), EssenceBlocks.eucaLog, this.woodMetadata);
+						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_), log, this.woodMetadata);
 					}
 
 					block = p_76484_1_.getBlockState(new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1)).getBlock();
 
 					if (block.isAir(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1)) || block.isLeaves(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1)))
 					{
-						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1), EssenceBlocks.eucaLog, this.woodMetadata);
+						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1), log, this.woodMetadata);
 					}
 
 					block = p_76484_1_.getBlockState(new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1)).getBlock();
 
 					if (block.isAir(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1)) || block.isLeaves(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1)))
 					{
-						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1), EssenceBlocks.eucaLog, this.woodMetadata);
+						this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1), log, this.woodMetadata);
 					}
 				}
 			}

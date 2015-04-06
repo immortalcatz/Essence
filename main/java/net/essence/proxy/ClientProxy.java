@@ -8,15 +8,16 @@ import net.essence.client.BossTickHandler;
 import net.essence.client.EntityRendering;
 import net.essence.client.GuiHandler;
 import net.essence.client.MusicEvent;
+import net.essence.client.MusicHandler;
 import net.essence.client.PlayerStats;
 import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.ClientTickEvent;
 import net.essence.event.UpdateCheckerEvent;
-import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.resources.IReloadableResourceManager;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -59,7 +60,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerSounds() {
-		//((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler()); //Only use if i want to remove every other music from vanilla or mods.
+		((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler()); //Only use if i want to remove every other music from vanilla or mods.
 		FMLCommonHandler.instance().bus().register(new MusicEvent());
 	}
 

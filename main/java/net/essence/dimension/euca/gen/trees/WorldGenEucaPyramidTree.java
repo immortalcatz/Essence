@@ -16,7 +16,7 @@ public class WorldGenEucaPyramidTree extends WorldGenerator {
 		int i = p.getX(), j = p.getY(), k = p.getZ();
 		WorldGenAPI.addRectangle(3, 3, 3, world, i, j - 2, k, EssenceBlocks.eucaStone);
 		Block leaves = WorldGenAPI.getEucaLeaves();
-		Block wood = EssenceBlocks.eucaLog;
+		Block wood = WorldGenAPI.getEucaLog();
 		int height = rand.nextInt(5) + 15;
 		WorldGenAPI.addRectangle(3, 3, height, world, i, j, k, wood);
 		WorldGenAPI.addRectangle(1, 1, 1, world, i + 1, j + height, k + 1, leaves);
