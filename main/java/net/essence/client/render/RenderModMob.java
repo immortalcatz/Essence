@@ -1,6 +1,6 @@
 package net.essence.client.render;
 
-import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
+import net.essence.client.render.model.mob.overworld.ModelMageTransparent;
 import net.essence.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -31,7 +31,6 @@ public class RenderModMob extends RenderLiving {
 
 	@Override
 	public void doRender(Entity entity, double x, double y, double z, float f, float partialTicks) {
-		this.mainModel = new ModelFrozenMerchant();
 		if(Config.showEntityHealth) {
 			EntityLivingBase e = (EntityLivingBase)entity;
 			renderHealth(e, EnumChatFormatting.GREEN + "Health: " + EnumChatFormatting.AQUA + (int)e.getHealth() + "/" + (int)e.getMaxHealth(), x, y, z, Config.entityHealthDistance);
