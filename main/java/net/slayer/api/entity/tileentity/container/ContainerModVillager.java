@@ -12,6 +12,7 @@ public class ContainerModVillager extends ContainerMerchant {
     	super(par1InventoryPlayer, par2IMerchant, par3World);
     }
 
+    @Override
     public boolean canInteractWith(EntityPlayer par1EntityPlayer) {
         return true;
     }

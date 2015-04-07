@@ -39,12 +39,21 @@ public class GuiModVillager extends GuiContainer {
 	private int currentRecipeIndex = 0;
     protected String name;
 	private String texture;
+	private boolean whiteName = false;
 
 	public GuiModVillager(ContainerModVillager container, IMerchant mer, String name, String tex) {
 		super(container);
 		this.theIMerchant = mer; 
 		this.texture = tex;
 		this.name = name;
+	}
+	
+	public GuiModVillager(ContainerModVillager container, IMerchant mer, String name, String tex, boolean white) {
+		super(container);
+		this.theIMerchant = mer; 
+		this.texture = tex;
+		this.name = name;
+		this.whiteName = white;
 	}
 
 	@Override
@@ -60,8 +69,8 @@ public class GuiModVillager extends GuiContainer {
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(int var1, int var2) {
-		this.fontRendererObj.drawString(name, 75, 6, 4210752);
-		this.fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString(name, 75, 6, whiteName ? 0xFFFFFF : 4210752);
+		this.fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, whiteName ? 0xFFFFFF : 4210752);
 	}
  
 	@Override
@@ -79,11 +88,11 @@ public class GuiModVillager extends GuiContainer {
 		boolean var2 = false;
 
 		if(var1 == this.nextRecipeButtonIndex) {
-			++this.currentRecipeIndex;
+			currentRecipeIndex++;
 			var2 = true;
 		}
 		else if(var1 == this.previousRecipeButtonIndex) {
-			--this.currentRecipeIndex;
+			currentRecipeIndex--;
 			var2 = true;
 		}
 
@@ -97,8 +106,7 @@ public class GuiModVillager extends GuiContainer {
 	            PacketBuffer packetbuffer = new PacketBuffer(Unpooled.buffer());
 	            packetbuffer.writeInt(this.currentRecipeIndex);
 				this.mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload("MC|TrSel", packetbuffer));
-			}
-			catch (Exception var6) {
+			} catch(Exception var6) {
 				logger.error("Couldn\'t send trade info", var6);
 			}
 		}
@@ -127,6 +135,7 @@ public class GuiModVillager extends GuiContainer {
         }
     }
  
+	@Override
     public void drawScreen(int mouseX, int mouseY, float par3) {
         super.drawScreen(mouseX, mouseY, par3);
         MerchantRecipeList merchantrecipelist = this.theIMerchant.getRecipes(this.mc.thePlayer);
@@ -178,7 +187,7 @@ public class GuiModVillager extends GuiContainer {
 	}
 
 	@SideOnly(Side.CLIENT)
-	static class ModMerchantButton extends GuiButton {
+	private static class ModMerchantButton extends GuiButton {
 		private final boolean rev;
 		private String texture;
 
@@ -188,6 +197,7 @@ public class GuiModVillager extends GuiContainer {
 			this.rev = par4;
 		}
 
+		@Override
 		public void drawButton(Minecraft mc, int x, int y) {
 			if(this.visible) {
 				mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/" + texture + ".png"));

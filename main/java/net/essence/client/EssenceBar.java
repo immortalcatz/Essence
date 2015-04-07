@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EssenceBar implements IExtendedEntityProperties {
 
@@ -32,19 +34,18 @@ public class EssenceBar implements IExtendedEntityProperties {
 		if(essence >= 10) essence = 10;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public boolean useBar(int amount, World w) {
-		if(!w.isRemote) {
-			if(essence < amount) {
-				regenDelay = 10;
-				return false;
-			}
-			essence -= amount;
+		if(essence < amount) {
 			regenDelay = 10;
-			return true;
+			return false;
 		}
+		essence -= amount;
+		regenDelay = 10;
 		return true;
 	}
 
+	@SideOnly(Side.CLIENT)
 	public void regen(int amount) {
 		if(regenDelay == 0) essence += amount;
 		else regenDelay -= 1;
