@@ -23,7 +23,7 @@ public class ItemStaff extends ItemMod {
 	protected int damage;
 	protected boolean essence, unBreakable;
 	protected Class<? extends EntityBasicProjectile> projectile; 
-	
+
 	public ItemStaff(String name, int magic, int uses, int dam, boolean essence, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
 		super(name);
 		this.projectile = projectile;
@@ -41,11 +41,11 @@ public class ItemStaff extends ItemMod {
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(essence) {
 			try {
-				if(!world.isRemote) {
-					if(EssenceBar.instance.useBar(usage, world)) {
+				if(EssenceBar.instance.useBar(usage, world)) {
+					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+					stack.damageItem(1, player);
+					if(!world.isRemote) {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-						EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
-						stack.damageItem(1, player);
 					}
 				}
 			} catch (Exception e) {
@@ -53,11 +53,12 @@ public class ItemStaff extends ItemMod {
 			}
 		} else {
 			try {
-				if(!world.isRemote) {
-					if(DarkEnergyBar.instance.useBar(usage, world)) {
+
+				if(DarkEnergyBar.instance.useBar(usage, world)) {
+					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+					stack.damageItem(1, player);
+					if(!world.isRemote) {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-						EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
-						stack.damageItem(1, player);
 					}
 				}
 			} catch (Exception e) {
