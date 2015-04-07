@@ -2,18 +2,12 @@ package net.essence.blocks;
 
 import java.util.Random;
 
-import net.essence.dimension.euca.gen.trees.WorldGenBigEucaTree;
-import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
+import net.essence.dimension.euca.gen.trees.WorldGenEucaTree;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.EnumPlantType;
-import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.block.BlockModFlower;
 
 public class BlockEucaSapling extends BlockModFlower implements IGrowable {
@@ -35,15 +29,15 @@ public class BlockEucaSapling extends BlockModFlower implements IGrowable {
 	}
 
 	private void generate(World w, BlockPos pos, Random r) {
-		Object tree = new WorldGenBigEucaTree();
-		switch(r.nextInt(2)) {
+		Object tree = new WorldGenEucaTree();
+		/*switch(r.nextInt(2)) {
 		case 0:
 			tree = new WorldGenBigEucaTree();
 			break;
 		case 1:
 			tree = new WorldGenSmallEucaTree();
 			break;
-		}
+		}*/
 		((WorldGenerator)tree).generate(w, r, pos);
 	}
 

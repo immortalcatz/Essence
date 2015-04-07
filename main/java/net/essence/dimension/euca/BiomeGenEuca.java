@@ -18,6 +18,6 @@ public class BiomeGenEuca extends BiomeGenBase {
 
 	@Override
 	public int getSkyColorByTemp(float f) {
-		return Color.getHSBColor(0.0F, 1.0F, 0.0F).getRGB();
+		return 0xDBFF00;
 	}
 }

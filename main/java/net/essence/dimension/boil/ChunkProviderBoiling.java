@@ -1,20 +1,9 @@
 package net.essence.dimension.boil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.euca.gen.WorldGenEucaSphere;
-import net.essence.dimension.euca.gen.WorldGenEucaWater;
-import net.essence.dimension.euca.gen.trees.WorldGenEucaPyramidTree;
-import net.essence.dimension.euca.gen.trees.WorldGenEucaSmallRectangleTree;
-import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree;
-import net.essence.dimension.euca.gen.trees.WorldGenEucaSpruceTree1;
-import net.essence.dimension.euca.gen.trees.WorldGenEucaTallPine;
-import net.essence.dimension.euca.gen.trees.WorldGenHugeEucaSpruceTree;
-import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree;
-import net.essence.dimension.euca.gen.trees.WorldGenSmallEucaTree2;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -29,7 +18,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ChunkProviderBoiling implements IChunkProvider {
 
