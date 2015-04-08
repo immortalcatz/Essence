@@ -17,7 +17,7 @@ public enum EssenceToolMaterial {
 	ORBADITE_SWORD(EssenceItems.orbaditeSwordMat, EssenceItems.orbaditeIngot),
 	GORBITE_SWORD(EssenceItems.gorbiteSwordMat, EssenceItems.gorbiteGem),
 	DES_SWORD(EssenceItems.desSwordMat, EssenceItems.desIngot),
-
+	
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
@@ -28,6 +28,9 @@ public enum EssenceToolMaterial {
 	POISON_SWORD(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	CLOUD_SLICER(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	DRAGONS_TOOTH(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
+	BOILING_BLADE(SlayerAPI.addMeleeMaterial(3000, 21, 25)),
+	MOLTEN_KNIFE(SlayerAPI.addMeleeMaterial(3000, 10, 25)),
+
 
 	HELLSTONE_PICKAXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_PICKAXE(EssenceItems.flairium, EssenceItems.flairiumIngot, 3),

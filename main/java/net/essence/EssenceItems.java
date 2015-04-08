@@ -73,6 +73,10 @@ public class EssenceItems {
 	public static final Item desIngot = new ItemMod("desIngot");
 	public static final Item boilingSkull = new ItemMod("boilingSkull");
 	public static final Item boilPowder = new ItemMod("boilPowder");
+	public static final Item blazingFireball = new ItemMod("blazingFireball");
+	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell");
+	public static final Item sizzlingEye = new ItemMod("sizzlingEye");
+	public static final Item snakeFlesh = new ItemMod("snakeFlesh");
 	public static final Item blankKnowledge = new ItemMod("blankKnowledge");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
@@ -183,6 +187,8 @@ public class EssenceItems {
 	public static final Item championsSword = new ItemModSword("championsSword", EssenceToolMaterial.CHAMPIONS_SWORD);
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
 	public static final Item bubbleSword = new ItemModSword("bubbleSword", EssenceToolMaterial.BUBBLE_SWORD);
+	public static final Item boilingBlade = new ItemModSword("boilingBlade", EssenceToolMaterial.BOILING_BLADE);
+	public static final Item moltenKnife = new ItemModSword("moltenKnife", EssenceToolMaterial.MOLTEN_KNIFE);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
