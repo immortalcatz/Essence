@@ -36,6 +36,7 @@ import net.essence.blocks.BlockStorageBlocks2;
 import net.essence.blocks.BlockStorageBlocks3;
 import net.essence.blocks.BlockTomatoCrop;
 import net.essence.blocks.machines.BlockGrindstone;
+import net.essence.blocks.machines.BlockSummoningTable;
 import net.essence.client.render.model.statue.ModelCalciaStatue;
 import net.essence.client.render.model.statue.ModelEudorStatue;
 import net.essence.client.render.model.statue.ModelNetherBeastStatue;
@@ -288,7 +289,8 @@ public class EssenceBlocks {
 	public static final Block brisonBlocks = new BlockBrison();
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable");
-	
+	public static final Block summoningTable = new BlockSummoningTable("summoningTable");
+
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");

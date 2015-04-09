@@ -18,7 +18,7 @@ import net.slayer.api.entity.tileentity.container.*;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING;
 	}
 
 	@Override
@@ -31,6 +31,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.KNOWLEDGE.ordinal()) return new ContainerKnowledgeTable(player.inventory, (TileEntityKnowledgeTable)entity, world);
+		if(ID == GuiIDs.SUMMONING.ordinal()) return new ContainerSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
 		return null;
 	}
 
@@ -44,6 +45,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new GuiBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new GuiFrozenMerchant(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.KNOWLEDGE.ordinal()) return new GuiKnowledgeTable(player.inventory, (TileEntityKnowledgeTable)entity, world);
+		if(ID == GuiIDs.SUMMONING.ordinal()) return new GuiSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
 		return null;
 	}
 
