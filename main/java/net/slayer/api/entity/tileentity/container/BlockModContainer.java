@@ -18,7 +18,7 @@ public abstract class BlockModContainer extends BlockMod implements ITileEntityP
 
 	@Override
     public int getRenderType() {
-        return -1;
+        return 3;
     }
 
     @Override

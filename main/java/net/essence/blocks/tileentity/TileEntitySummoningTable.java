@@ -1,6 +1,11 @@
 package net.essence.blocks.tileentity;
 
+import java.util.Random;
+
 import net.essence.EssenceItems;
+import net.essence.client.render.particles.EntityModFireFX;
+import net.essence.client.render.particles.EntityModSnowFX;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -10,6 +15,9 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TileEntitySummoningTable extends TileEntity implements IUpdatePlayerListBox, IInventory {
 
@@ -18,7 +26,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 	public TileEntitySummoningTable() {
 		this.inventory = new ItemStack[7];
 	}
-	
+
 	@Override
 	public void writeToNBT(NBTTagCompound nbt) {
 		super.writeToNBT(nbt);
@@ -51,19 +59,34 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		if(inventory[0] != null && inventory[1] != null && inventory[2] != null && inventory[3] != null && inventory[4] != null && inventory[5] != null && inventory[6] != null) {
 			if(areItemsInSlots(EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.blazingFireball, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder)) {
 				setAllSlotsToNull();
-				inventory[3].setItem(EssenceItems.blazierOrb);
+				inventory[3] = new ItemStack(EssenceItems.blazierOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(EssenceItems.snakeFlesh, EssenceItems.boilPowder, EssenceItems.snakeFlesh, EssenceItems.sizzlingEye, EssenceItems.snakeFlesh, EssenceItems.boilPowder, EssenceItems.snakeFlesh)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(EssenceItems.soulWatcherOrb);
+				addParticles();
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.CLIENT)
+	public void addParticles() {
+		Random r = new Random();
+		if(!worldObj.isRemote) {
+			for(int i = 0; i < 20; i++)
+				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityModFireFX(Minecraft.getMinecraft().theWorld, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat(), 0.0D, 0.0D, 0.0D));
+		}
+	}
+
 	public boolean areItemStacksInSlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
 		return inventory[0] == s && inventory[1] == s1 && inventory[2] == s2 && inventory[3] == s3 && inventory[4] == s4 && inventory[5] == s5 && inventory[6] == s6;
 	}
-	
+
 	public boolean areItemsInSlots(Item s, Item s1, Item s2, Item s3, Item s4, Item s5, Item s6) {
 		return inventory[0].getItem() == s && inventory[1].getItem() == s1 && inventory[2].getItem() == s2 && inventory[3].getItem() == s3 && inventory[4].getItem() == s4 && inventory[5].getItem() == s5 && inventory[6].getItem() == s6;
 	}
-	
+
 	public void setAllSlotsToNull() {
 		inventory[0] = null;
 		inventory[1] = null;
@@ -73,7 +96,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		inventory[5] = null;
 		inventory[6] = null;
 	}
-	
+
 	public void setInventorySlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
 		inventory[0] = s;
 		inventory[1] = s1;

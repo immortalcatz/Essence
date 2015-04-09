@@ -2,11 +2,11 @@ package net.essence.blocks.machines;
 
 import net.essence.Essence;
 import net.essence.EssenceTabs;
-import net.essence.blocks.tileentity.TileEntityKnowledgeTable;
 import net.essence.blocks.tileentity.TileEntitySummoningTable;
 import net.essence.client.GuiHandler.GuiIDs;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -18,7 +18,6 @@ public class BlockSummoningTable extends BlockModContainer {
 
 	public BlockSummoningTable(String name) {
 		super(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 	}
 
 	@Override
@@ -34,22 +33,15 @@ public class BlockSummoningTable extends BlockModContainer {
 	}
 
 	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		TileEntity tileentity = worldIn.getTileEntity(pos);
+		if(tileentity instanceof TileEntitySummoningTable)
+			InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntitySummoningTable)tileentity);
+		super.breakBlock(worldIn, pos, state);
+	}
+
+	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntitySummoningTable();
-	}
-
-	@Override
-	public int getRenderType() {
-		return 3;
-	}
-
-	@Override
-	public boolean isFullCube() {
-		return false;
-	}
-
-	@Override
-	public boolean isOpaqueCube() {
-		return false;
 	}
 }

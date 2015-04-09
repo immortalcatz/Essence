@@ -5,6 +5,7 @@ import net.essence.blocks.tileentity.TileEntityEssenceSign;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
 import net.essence.blocks.tileentity.TileEntityKnowledgeTable;
 import net.essence.blocks.tileentity.TileEntityStatue;
+import net.essence.blocks.tileentity.TileEntitySummoningTable;
 import net.essence.client.render.CorbaPortalRenderer;
 import net.essence.client.render.EssenceSignRenderer;
 import net.essence.client.render.GrindstoneRenderer;
@@ -15,6 +16,7 @@ import net.essence.client.render.RenderModMob;
 import net.essence.client.render.RenderProjectile;
 import net.essence.client.render.RenderSizeable;
 import net.essence.client.render.RenderStaffProjectile;
+import net.essence.client.render.SummoningTableRenderer;
 import net.essence.client.render.mob.RenderBoomBoom;
 import net.essence.client.render.mob.RenderCalcia;
 import net.essence.client.render.mob.RenderDragonEgg;
@@ -237,6 +239,7 @@ public class EntityRendering {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCorbaPortal.class, new CorbaPortalRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEssenceSign.class, new EssenceSignRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityKnowledgeTable.class, new KnowledgeTableRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySummoningTable.class, new SummoningTableRenderer());
 
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.mossyEssenceStone.getRenderType(), new OtherBlockRenderer());

@@ -33,9 +33,10 @@ public class ContainerSummoningTable extends Container {
 	public boolean canInteractWith(EntityPlayer playerIn) {
 		return true;
 	}
-	
+
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-		return super.transferStackInSlot(playerIn, index);
+	public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2) {
+		ItemStack itemstack = null;
+		return itemstack;
 	}
 }
