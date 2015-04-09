@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.dimension.corba.gen.WorldGenCorbaSphere;
 import net.essence.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaLargeTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaMediumTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSmallTree;
 import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
 import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
 import net.essence.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
@@ -82,11 +84,14 @@ public class ChunkProviderCorba implements IChunkProvider {
 			}
 		}
 
-		trees = new ArrayList(4);
+		trees = new ArrayList(7);
 		trees.add(new WorldGenCorbaHugeTree(true, 8, 30));
 		trees.add(new WorldGenHugeCorbaSpruceTree(true, true));
 		trees.add(new WorldGenCorbaSpruceTree1());
 		trees.add(new WorldGenCorbaSpruceTree());
+		trees.add(new WorldGenCorbaSmallTree());
+		trees.add(new WorldGenCorbaMediumTree());
+		trees.add(new WorldGenCorbaLargeTree());
 
 		flowers = new ArrayList(6);
 		flowers.add(EssenceBlocks.corbaFlower);
@@ -368,13 +373,6 @@ public class ChunkProviderCorba implements IChunkProvider {
 		for(i = 0; i < 90; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(EssenceBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
-		}
-
-		if(rand.nextInt(130) == 0) {
-			x = x1 + this.rand.nextInt(16);
-			y = rand.nextInt(100) + 1;
-			z = z1 + this.rand.nextInt(16);
-			if(y > 63 && y < 150) new WorldGenCorbaSphere().generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 	}
 

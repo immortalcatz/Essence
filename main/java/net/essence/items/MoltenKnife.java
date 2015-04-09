@@ -13,9 +13,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemModSword;
 
-public class moltenKnife extends ItemModSword {
+public class MoltenKnife extends ItemModSword {
 
-	public moltenKnife(String name, EssenceToolMaterial toolMaterial) {
+	public MoltenKnife(String name, EssenceToolMaterial toolMaterial) {
 		super(name, toolMaterial);
 	}
 
