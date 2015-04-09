@@ -30,18 +30,12 @@ public class ContainerSummoningTable extends Container {
 	}
 
 	@Override
-	public void onContainerClosed(EntityPlayer playerIn) {
-		super.onContainerClosed(playerIn);
-		/*if(!world.isRemote) {
-			ItemStack itemstack = this.tableInventory.getStackInSlotOnClosing(0);
-			if (itemstack != null) {
-				playerIn.dropPlayerItemWithRandomChoice(itemstack, false);
-			}
-		}*/
-	}
-
-	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
 		return true;
+	}
+	
+	@Override
+	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+		return super.transferStackInSlot(playerIn, index);
 	}
 }

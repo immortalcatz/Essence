@@ -48,12 +48,40 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public void update() {
-		/*if(inventory[0] != null && inventory[1] != null && inventory[2] != null && inventory[3] != null && inventory[4] != null && inventory[5] != null && inventory[6] != null) {
-			Item item1 = inventory[0].getItem(), item2 = inventory[1].getItem(), item3 = inventory[2].getItem(), item4 = inventory[3].getItem(), item5 = inventory[4].getItem(), item6 = inventory[5].getItem(), item7 = inventory[6].getItem();
-			if(item1 == EssenceItems.boilPowder && item2 == EssenceItems.boilPowder && item3 == EssenceItems.boilPowder && item4 == EssenceItems.blazingFireball && item5 == EssenceItems.boilPowder && item6 == EssenceItems.boilPowder && item7 == EssenceItems.boilPowder) {
+		if(inventory[0] != null && inventory[1] != null && inventory[2] != null && inventory[3] != null && inventory[4] != null && inventory[5] != null && inventory[6] != null) {
+			if(areItemsInSlots(EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.blazingFireball, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder)) {
+				setAllSlotsToNull();
 				inventory[3].setItem(EssenceItems.blazierOrb);
 			}
-		}*/
+		}
+	}
+	
+	public boolean areItemStacksInSlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
+		return inventory[0] == s && inventory[1] == s1 && inventory[2] == s2 && inventory[3] == s3 && inventory[4] == s4 && inventory[5] == s5 && inventory[6] == s6;
+	}
+	
+	public boolean areItemsInSlots(Item s, Item s1, Item s2, Item s3, Item s4, Item s5, Item s6) {
+		return inventory[0].getItem() == s && inventory[1].getItem() == s1 && inventory[2].getItem() == s2 && inventory[3].getItem() == s3 && inventory[4].getItem() == s4 && inventory[5].getItem() == s5 && inventory[6].getItem() == s6;
+	}
+	
+	public void setAllSlotsToNull() {
+		inventory[0] = null;
+		inventory[1] = null;
+		inventory[2] = null;
+		inventory[3] = null;
+		inventory[4] = null;
+		inventory[5] = null;
+		inventory[6] = null;
+	}
+	
+	public void setInventorySlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
+		inventory[0] = s;
+		inventory[1] = s1;
+		inventory[2] = s2;
+		inventory[3] = s3;
+		inventory[4] = s4;
+		inventory[5] = s5;
+		inventory[6] = s6;
 	}
 
 	@Override
@@ -86,7 +114,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		if(inventory[i] != null) {
 			if(inventory[i].stackSize <= j) {
 				ItemStack itemstack = inventory[i];
-				inventory = null;
+				inventory[i] = null;
 				return itemstack;
 			} else {
 				inventory[i].stackSize -= j;
