@@ -4,10 +4,6 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockMiniColouredBricks;
-import net.essence.blocks.BlockStorageBlocks;
-import net.essence.blocks.BlockStorageBlocks1;
-import net.essence.blocks.BlockStorageBlocks2;
-import net.essence.blocks.BlockStorageBlocks3;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -93,21 +89,6 @@ public class RecipeHelper {
 		
 		for(int j = 0; j < 13; j++) {
 			//GameRegistry.addRecipe(new ItemStack(EssenceItems.backpack, 1, j), new Object[] {"lll", "lil", "lll", 'i', ItemBackpack.crafting[j], 'l', Items.leather});
-		}
-		
-		for(int j = 0; j < 16; j++) {
-			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.storageBlocks, 1, j), new Object[] {"iii", "iii", "iii", 'i', BlockStorageBlocks.crafting[j]});
-			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.storageBlocks1, 1, j), new Object[] {"iii", "iii", "iii", 'i', BlockStorageBlocks1.crafting[j]});
-			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.storageBlocks2, 1, j), new Object[] {"iii", "iii", "iii", 'i', BlockStorageBlocks2.crafting[j]});
-			
-			GameRegistry.addShapelessRecipe(BlockStorageBlocks.getBack[j], new Object[] {new ItemStack(EssenceBlocks.storageBlocks, 1, j)});
-			GameRegistry.addShapelessRecipe(BlockStorageBlocks1.getBack[j], new Object[] {new ItemStack(EssenceBlocks.storageBlocks1, 1, j)});
-			GameRegistry.addShapelessRecipe(BlockStorageBlocks2.getBack[j], new Object[] {new ItemStack(EssenceBlocks.storageBlocks2, 1, j)});
-		}
-		
-		for(int j = 0; j < 11; j++) {
-			GameRegistry.addRecipe(new ItemStack(EssenceBlocks.storageBlocks3, 1, j), new Object[] {"iii", "iii", "iii", 'i', BlockStorageBlocks3.crafting[j]});
-			GameRegistry.addShapelessRecipe(BlockStorageBlocks3.getBack[j], new Object[] {new ItemStack(EssenceBlocks.storageBlocks3, 1, j)});
 		}
 	}
 	

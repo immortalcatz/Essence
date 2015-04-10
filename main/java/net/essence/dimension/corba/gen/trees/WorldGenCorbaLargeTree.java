@@ -15,35 +15,11 @@ public class WorldGenCorbaLargeTree extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random r, BlockPos pos) {
 		int i = pos.getX() - 6, j = pos.getY(), k = pos.getZ() - 6;
-		Block leaves = null, log = null;
+		Block log = EssenceBlocks.corbaLog;
+		Block leaves = EssenceBlocks.corbaLeaves;
 		int height = r.nextInt(3);
-		switch(r.nextInt(2)) {
-		case 0:
-			log = EssenceBlocks.brownCorbaLog;
-			break;
-		case 1:
-			log = EssenceBlocks.greenCorbaLog;
-			break;
-		}
 		WorldGenAPI.addRectangle(2, 2, 16 + height, world, i + 6, j + 1, k + 6, log);
 		j = j + height + 2;
-		switch(r.nextInt(5)) {
-		case 0:
-			leaves = EssenceBlocks.greenCorbaLeaves;
-			break;
-		case 1:
-			leaves = EssenceBlocks.blueCorbaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redCorbaLeaves;
-			break;
-		case 3:
-			leaves = EssenceBlocks.cyanCorbaLeaves;
-			break;
-		case 4:
-			leaves = EssenceBlocks.purpleCorbaLeaves;
-			break;
-		}
 		world.setBlockState(new BlockPos(i, j + 5, k + 5), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 5, k + 6), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 5, k + 7), leaves.getDefaultState());

@@ -13,38 +13,11 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class WorldGenCorbaSpruceTree1 extends WorldGenAbstractTree {
 
-	protected Block leaves = null;
-	private Block log = null;
+	private Block log = EssenceBlocks.corbaLog;
+	private Block leaves = EssenceBlocks.corbaLeaves;
 
     public WorldGenCorbaSpruceTree1() {
         super(false);
-        Random r = new Random();
-        switch(r.nextInt(5)) {
-		case 0:
-			leaves = EssenceBlocks.greenCorbaLeaves;
-			break;
-		case 1:
-			leaves = EssenceBlocks.blueCorbaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redCorbaLeaves;
-			break;
-		case 3:
-			leaves = EssenceBlocks.cyanCorbaLeaves;
-			break;
-		case 4:
-			leaves = EssenceBlocks.purpleCorbaLeaves;
-			break;
-		}
-        
-        switch(r.nextInt(2)) {
-		case 0:
-			log = EssenceBlocks.brownCorbaLog;
-			break;
-		case 1:
-			log = EssenceBlocks.greenCorbaLog;
-			break;
-		}
     }
 
     public boolean generate(World p_76484_1_, Random p_76484_2_, BlockPos pos) {

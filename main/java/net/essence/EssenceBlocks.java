@@ -30,10 +30,6 @@ import net.essence.blocks.BlockMiniColouredBricks;
 import net.essence.blocks.BlockModFire;
 import net.essence.blocks.BlockModOre;
 import net.essence.blocks.BlockStatue;
-import net.essence.blocks.BlockStorageBlocks;
-import net.essence.blocks.BlockStorageBlocks1;
-import net.essence.blocks.BlockStorageBlocks2;
-import net.essence.blocks.BlockStorageBlocks3;
 import net.essence.blocks.BlockTomatoCrop;
 import net.essence.blocks.machines.BlockGrindstone;
 import net.essence.blocks.machines.BlockSummoningTable;
@@ -131,16 +127,12 @@ public class EssenceBlocks {
 	public static final Block frozenBark = new BlockModLog("frozenBark");
 	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", 0.5F);
 	
-	public static final Block greenCorbaLog = new BlockModLog("greenCorbaLog");
-	public static final Block brownCorbaLog = new BlockModLog("brownCorbaLog");
-	public static final Block greenCorbaLeaves = new BlockModLeaves("greenCorbaLeaves", 0.2F);
-	public static final Block purpleCorbaLeaves = new BlockModLeaves("purpleCorbaLeaves", 0.2F);
-	public static final Block cyanCorbaLeaves = new BlockModLeaves("cyanCorbaLeaves", 0.2F);
-	public static final Block blueCorbaLeaves = new BlockModLeaves("blueCorbaLeaves", 0.2F);
-	public static final Block redCorbaLeaves = new BlockModLeaves("redCorbaLeaves", 0.2F);
+	public static final BlockMod corbaStone = new BlockMod("corbaStone");
+	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", 0.5F);
+	public static final Block corbaLog = new BlockModLog("corbaLog");
+	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", 0.2F);
 	public static final Block corbaPillar = new BlockMod("corbaPillar");
-	public static final Block greenCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "greenCorbaPlank", 0.5F);
-	public static final Block brownCorbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "brownCorbaPlank", 0.5F);
+	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", 0.5F);
 	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", 2.0F);
 	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", 2.0F);
@@ -166,14 +158,8 @@ public class EssenceBlocks {
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
-	public static final Block essenceWallSign = new BlockEssenceWallSign("essenceSign");
-	public static final Block essenceStandingSign = new BlockEssenceStandingSign("essenceStandingSign");
-
 	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);
 	public static final Block ashBlock = new BlockMod("ashBlock");
-
-	public static final BlockMod corbaStone = new BlockMod("corbaStone");
-	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", 0.5F);
 	
 	public static final Block fire = new BlockModFire("fire");
 	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");
@@ -221,17 +207,15 @@ public class EssenceBlocks {
 	
 	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "hotDoorBlock");
 	
+	public static final Block essenceWallSign = new BlockEssenceWallSign("essenceSign");
+	public static final Block essenceStandingSign = new BlockEssenceStandingSign("essenceStandingSign");
+	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block glowshroomTop = new BlockGlowshroom("glowshroomTop", true);
 	public static final Block glowshroomBottom = new BlockGlowshroom("glowshroomBottom", false);
 
 	public static final Block caveVine = new BlockCaveVine("caveVine");
-	
-	public static final Block storageBlocks = new BlockStorageBlocks();
-	public static final Block storageBlocks1 = new BlockStorageBlocks1();
-	public static final Block storageBlocks2 = new BlockStorageBlocks2();
-	public static final Block storageBlocks3 = new BlockStorageBlocks3();
 
 	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 	

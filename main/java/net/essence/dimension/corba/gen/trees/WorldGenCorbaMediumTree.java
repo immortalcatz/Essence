@@ -16,34 +16,10 @@ public class WorldGenCorbaMediumTree extends WorldGenerator {
 	public boolean generate(World world, Random r, BlockPos pos) {
 		int i = pos.getX() - 3, j = pos.getY(), k = pos.getZ() - 3;
 		int height = r.nextInt(4);
-		Block leaves = null, log = null;
-		switch(r.nextInt(2)) {
-		case 0:
-			log = EssenceBlocks.brownCorbaLog;
-			break;
-		case 1:
-			log = EssenceBlocks.greenCorbaLog;
-			break;
-		}
+		Block log = EssenceBlocks.corbaLog;
+		Block leaves = EssenceBlocks.corbaLeaves;
 		WorldGenAPI.addRectangle(1, 1, 9 + height, world, i + 3, j + 1, k + 3, log);
 		j = j + height + 2;
-		switch(r.nextInt(5)) {
-		case 0:
-			leaves = EssenceBlocks.greenCorbaLeaves;
-			break;
-		case 1:
-			leaves = EssenceBlocks.blueCorbaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redCorbaLeaves;
-			break;
-		case 3:
-			leaves = EssenceBlocks.cyanCorbaLeaves;
-			break;
-		case 4:
-			leaves = EssenceBlocks.purpleCorbaLeaves;
-			break;
-		}
 		world.setBlockState(new BlockPos(i, j + 1, k + 2), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 1, k + 3), leaves.getDefaultState());
 		world.setBlockState(new BlockPos(i, j + 1, k + 4), leaves.getDefaultState());

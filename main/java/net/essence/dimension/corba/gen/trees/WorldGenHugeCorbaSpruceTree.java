@@ -14,22 +14,13 @@ import net.minecraft.world.World;
 public class WorldGenHugeCorbaSpruceTree extends WorldGenCorbaHugeTree
 {
 	private boolean field_150542_e;
-	private Block log = null;
+	private Block log = EssenceBlocks.corbaLog;
+	Block leaves = EssenceBlocks.corbaLeaves;
 	
 	public WorldGenHugeCorbaSpruceTree(boolean p_i45457_1_, boolean p_i45457_2_)
 	{
 		super(p_i45457_1_, 8, 20);
 		this.field_150542_e = p_i45457_2_;
-		Random r = new Random();
-		
-		switch(r.nextInt(2)) {
-		case 0:
-			log = EssenceBlocks.brownCorbaLog;
-			break;
-		case 1:
-			log = EssenceBlocks.greenCorbaLog;
-			break;
-		}
 	}
 
 	public boolean generate(World p_76484_1_, Random p_76484_2_, BlockPos pos) {

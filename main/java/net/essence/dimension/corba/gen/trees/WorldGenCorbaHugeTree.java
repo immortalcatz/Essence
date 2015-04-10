@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class WorldGenCorbaHugeTree extends WorldGenAbstractTree {
 
 	protected final int baseHeight;
-	protected Block leaves = null;
+	protected Block leaves = EssenceBlocks.corbaLeaves;
 	protected int maxHeight;
 
 	public WorldGenCorbaHugeTree(boolean b, int h, int mh) {
@@ -22,23 +22,6 @@ public class WorldGenCorbaHugeTree extends WorldGenAbstractTree {
 		Random r = new Random();
 		this.baseHeight = h;
 		this.maxHeight = mh;
-		switch(r.nextInt(5)) {
-		case 0:
-			leaves = EssenceBlocks.greenCorbaLeaves;
-			break;
-		case 1:
-			leaves = EssenceBlocks.blueCorbaLeaves;
-			break;
-		case 2:
-			leaves = EssenceBlocks.redCorbaLeaves;
-			break;
-		case 3:
-			leaves = EssenceBlocks.cyanCorbaLeaves;
-			break;
-		case 4:
-			leaves = EssenceBlocks.purpleCorbaLeaves;
-			break;
-		}
 	}
 
 	protected int setHeight(Random r) {
