@@ -78,6 +78,14 @@ public class EssenceItems {
 	public static final Item sizzlingEye = new ItemMod("sizzlingEye");
 	public static final Item snakeFlesh = new ItemMod("snakeFlesh");
 	public static final Item blankKnowledge = new ItemMod("blankKnowledge");
+	public static final Item overgrownNatureBall = new ItemMod("overgrownNatureBall");
+	public static final Item overseeingTablet = new ItemMod("overseeingTablet");
+	public static final Item overseeingEye = new ItemMod("overseeingEye");
+	public static final Item darkCrystal = new ItemMod("darkCrystal");
+	public static final Item darkOrb = new ItemMod("darkOrb");
+	public static final Item depthsFlake = new ItemMod("depthsFlake");
+	public static final Item beastlyStomach = new ItemMod("beastlyStomach");
+	public static final Item rocFeather = new ItemMod("rocFeather");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
