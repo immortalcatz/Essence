@@ -323,6 +323,16 @@ public class EssenceItems {
 	public static final Item darknessBow = new ItemModBow("darknessBow", 384, essenceArrow, 10, EntityDarknessArrow.class);
 	public static final Item frozenBow = new ItemModBow("frozenBow", 384, essenceArrow, 33, EntityFrozenArrow.class);
 	public static final Item staringBow = new ItemModBow("staringBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item deathPiercerBow = new ItemModBow("deathPiercerBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item fusionBow = new ItemModBow("fusionBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item springBow = new ItemModBow("springBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item starlightBow = new ItemModBow("starlightBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item wastefulBow = new ItemModBow("wastefulBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item flamingBow = new ItemModBow("flamingBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item darkEnforcer = new ItemModBow("darkEnforcer", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item depthsBow = new ItemModBow("depthsBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item frostbittenBow = new ItemModBow("frostbittenBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item frostyBow = new ItemModBow("frostyBow", 384, essenceArrow, EntityEssenceArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 

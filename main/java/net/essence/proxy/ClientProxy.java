@@ -42,12 +42,21 @@ public class ClientProxy extends CommonProxy {
 		registerModelBakery(EssenceBlocks.miniColouredBricks, miniBricks);
 		registerModelBakery(EssenceBlocks.colouredBricks, brick);
 		registerModelBakery(EssenceBlocks.brisonBlocks, new String[] {SlayerAPI.PREFIX + "darkBrisonBrick", SlayerAPI.PREFIX + "redBrisonBrick", SlayerAPI.PREFIX + "smallBrisonBrick", SlayerAPI.PREFIX + "brisonStone"});
-		registerModelBakery(EssenceItems.flameBow, new String[] {SlayerAPI.PREFIX + "flameBow", SlayerAPI.PREFIX + "flameBow_0", SlayerAPI.PREFIX + "flameBow_1", SlayerAPI.PREFIX + "flameBow_2"});
 		addBow(EssenceItems.flameBow, "flameBow");
 		addBow(EssenceItems.poisonBow, "poisonBow");
 		addBow(EssenceItems.darknessBow, "darknessBow");
 		addBow(EssenceItems.frozenBow, "frozenBow");
 		addBow(EssenceItems.staringBow, "staringBow");
+		addBow(EssenceItems.deathPiercerBow, "deathPiercerBow");
+		addBow(EssenceItems.fusionBow, "fusionBow");
+		addBow(EssenceItems.springBow, "springBow");
+		addBow(EssenceItems.starlightBow, "starlightBow");
+		addBow(EssenceItems.wastefulBow, "wastefulBow");
+		addBow(EssenceItems.flamingBow, "flamingBow");
+		addBow(EssenceItems.darkEnforcer, "darkEnforcer");
+		addBow(EssenceItems.depthsBow, "depthsBow");
+		addBow(EssenceItems.frostbittenBow, "frostbittenBow");
+		addBow(EssenceItems.frostyBow, "frostyBow");
 	}
 
 	public void addBow(Item bow, String name) {
