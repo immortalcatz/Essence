@@ -86,6 +86,14 @@ public class EssenceItems {
 	public static final Item depthsFlake = new ItemMod("depthsFlake");
 	public static final Item beastlyStomach = new ItemMod("beastlyStomach");
 	public static final Item rocFeather = new ItemMod("rocFeather");
+	public static final Item coldClump = new ItemMod("coldClump");
+	public static final Item crystalEye = new ItemMod("crystalEye");
+	public static final Item crystalFlake = new ItemMod("crystalFlake");
+	public static final Item freezingTablet = new ItemMod("freezingTablet");
+	public static final Item frostFlake = new ItemMod("frostFlake");
+	public static final Item frostGem = new ItemMod("frostGem");
+	public static final Item frozenIceball = new ItemMod("frozenIceball");
+	public static final Item snowsheet = new ItemMod("snowsheet");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
