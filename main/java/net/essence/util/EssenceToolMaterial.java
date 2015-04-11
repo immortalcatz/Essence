@@ -30,6 +30,14 @@ public enum EssenceToolMaterial {
 	DRAGONS_TOOTH(SlayerAPI.addMeleeMaterial(1500, 8, 25)),
 	BOILING_BLADE(SlayerAPI.addMeleeMaterial(3000, 21, 25)),
 	MOLTEN_KNIFE(SlayerAPI.addMeleeMaterial(3000, 10, 25)),
+	LOGGERS_SWORD(SlayerAPI.addMeleeMaterial(3000, 30, 25)),
+	NATURES_BLADE(SlayerAPI.addMeleeMaterial(3000, 34, 25)),
+	DEPTHS_DARKSWORD(SlayerAPI.addMeleeMaterial(3000, 25, 25)),
+	DEPTHS_SLAYER(SlayerAPI.addMeleeMaterial(3000, 27, 25)),
+	SNOW_SHOVELER(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	FROSTBITTEN_SWORD(SlayerAPI.addMeleeMaterial(3000, 27, 25)),
+	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 27, 25)),
+
 
 
 	HELLSTONE_PICKAXE(EssenceItems.hellstone, EssenceItems.hellstoneIngot, 3),

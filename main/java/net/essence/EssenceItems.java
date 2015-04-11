@@ -197,6 +197,13 @@ public class EssenceItems {
 	public static final Item bubbleSword = new ItemModSword("bubbleSword", EssenceToolMaterial.BUBBLE_SWORD);
 	public static final Item boilingBlade = new ItemModSword("boilingBlade", EssenceToolMaterial.BOILING_BLADE);
 	public static final Item moltenKnife = new ItemModSword("moltenKnife", EssenceToolMaterial.MOLTEN_KNIFE);
+	public static final Item loggersSword = new ItemModSword("loggersSword", EssenceToolMaterial.LOGGERS_SWORD);
+	public static final Item naturesBlade = new ItemModSword("naturesBlade", EssenceToolMaterial.NATURES_BLADE);
+	public static final Item depthsDarksword = new ItemModSword("depthsDarksword", EssenceToolMaterial.DEPTHS_DARKSWORD);
+	public static final Item depthsSlayer = new ItemModSword("depthsSlayer", EssenceToolMaterial.DEPTHS_SLAYER);
+	public static final Item snowShoveler = new ItemModSword("snowShoveler", EssenceToolMaterial.SNOW_SHOVELER);
+	public static final Item frostySword = new ItemModSword("frostySword", EssenceToolMaterial.FROSTY_SWORD);
+	public static final Item frostbittenSword = new ItemModSword("frostbittenSword", EssenceToolMaterial.FROSTBITTEN_SWORD);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
