@@ -134,6 +134,8 @@ public class EssenceBlocks {
 	public static final Block corbaPillar = new BlockMod("corbaPillar");
 	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", 0.5F);
 	
+	public static final Block blazierBricks = new BlockMod("blazierBricks"); 
+	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", 2.0F);
 	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", 2.0F);
 	public static final Block cloudiaLog = new BlockModLog("cloudiaLog"); 
