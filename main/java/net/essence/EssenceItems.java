@@ -199,6 +199,7 @@ public class EssenceItems {
 	public static final Item dragonsTooth = new ItemModSword("dragonsTooth", EssenceToolMaterial.DRAGONS_TOOTH);
 	public static final Item netherBeastSword = new ItemModSword("netherBeastSword", EssenceToolMaterial.NETHER_BEAST_SWORD);
 	public static final Item witheringBeastSword = new ItemWitherSword("witheringBeastSword", EssenceToolMaterial.WITHERING_BEAST_SWORD);
+	
 	public static final Item calciaSword = new ItemModSword("calciaSword", EssenceToolMaterial.CALCIA_SWORD);
 	public static final Item championsSword = new ItemModSword("championsSword", EssenceToolMaterial.CHAMPIONS_SWORD);
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
@@ -435,6 +436,8 @@ public class EssenceItems {
 	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", null);
 	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", null);
 	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", null);
+	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", null);
+	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", null);
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);

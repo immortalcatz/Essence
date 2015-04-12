@@ -35,8 +35,8 @@ public enum EssenceToolMaterial {
 	DEPTHS_DARKSWORD(SlayerAPI.addMeleeMaterial(3000, 25, 25)),
 	DEPTHS_SLAYER(SlayerAPI.addMeleeMaterial(3000, 27, 25)),
 	SNOW_SHOVELER(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
-	FROSTBITTEN_SWORD(SlayerAPI.addMeleeMaterial(3000, 21, 25)),
-	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 24, 25)),
+	FROSTBITTEN_SWORD(SlayerAPI.addMeleeMaterial(3000, 25, 25)),
+	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 
 
 
