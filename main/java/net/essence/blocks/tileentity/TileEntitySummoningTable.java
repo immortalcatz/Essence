@@ -19,7 +19,7 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntitySummoningTable extends TileEntity implements IUpdatePlayerListBox, IInventory {
+public class TileEntitySummoningTable extends TileEntity implements  IInventory {
 
 	private ItemStack[] inventory;
 
@@ -54,7 +54,6 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		} 
 	}
 
-	@Override
 	public void update() {
 		if(inventory[0] != null && inventory[1] != null && inventory[2] != null && inventory[3] != null && inventory[4] != null && inventory[5] != null && inventory[6] != null) {
 			if(areItemsInSlots(EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.blazingFireball, EssenceItems.boilPowder, EssenceItems.boilPowder, EssenceItems.boilPowder)) {
@@ -170,7 +169,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 
 	@Override
 	public int getInventoryStackLimit() {
-		return 64;
+		return 1;
 	}
 
 	@Override
