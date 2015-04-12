@@ -23,7 +23,7 @@ public class ItemPiercer extends ItemMod {
 		try {
 			if(!world.isRemote) {
 				world.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-				world.spawnEntityInWorld(Entity.class.getConstructor(World.class, EntityPlayer.class, float.class).newInstance(World.class, EntityPlayer.class, float.class));
+				world.spawnEntityInWorld(entity.getConstructor(World.class, EntityPlayer.class, float.class).newInstance(World.class, EntityPlayer.class, float.class));
 				if(!player.capabilities.isCreativeMode) stack.stackSize--;
 			}
 		} catch(Exception e) {

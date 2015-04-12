@@ -93,6 +93,7 @@ public class ModelMage extends ModelBiped {
 		bipedLeftArm.render(f5);
 		bipedRightLeg.render(f5);
 		bipedLeftLeg.render(f5);
+		bipedHeadwear.isHidden = true;
 	}
 
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
