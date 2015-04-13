@@ -15,7 +15,7 @@ Essence of the Gods
 * eternalsun
 
 ####Assets:
-* Dizzlepop12 - Main texturer/Some Models
+* Dizzlepop12 - Main texturer/Modeler
 * Jonas - Some mob textures
 
 ####Other:
