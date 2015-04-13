@@ -7,6 +7,7 @@ Essence of the Gods
 ####Developers:
 * The_SlayerMC
 * Eternaldoom
+* Dizzlepop12
 
 ####Modelers:
 * Dizzlepop12
