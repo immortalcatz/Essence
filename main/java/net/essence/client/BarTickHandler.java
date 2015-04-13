@@ -46,10 +46,10 @@ public class BarTickHandler {
 				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 				this.mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.MOD_ID, "textures/gui/misc.png"));
 				//int sw = scaledresolution.getScaledWidth(), sh = scaledresolution.getScaledHeight();
-				int y = scaledresolution.getScaledHeight() - 32, x = 10, x1 = 10;
+				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10;
 				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
-				gig.drawTexturedModalRect(x - 10, y - 15, 0, 177, 117, 19);
-				y = y - 10;
+				gig.drawTexturedModalRect(x - 10, y - 5, 0, 177, 117, 19);
+				y = y - 0;
 				gig.drawTexturedModalRect(x - 6, y - 2, 0, 39, 109, 13);
 				for(int i = 0; i < (int)EssenceBar.instance.getBarValue(); i++) {
 					if(!(i >= 10)) {
@@ -57,7 +57,7 @@ public class BarTickHandler {
 						gig.drawTexturedModalRect(x - 17, y - 2, 0, 0, 10, 13);
 					}
 				}
-				y += 25;
+				y += 15;
 				gig.drawTexturedModalRect(x1 - 6, y - 2, 0, 26, 109, 13);
 				for(int i = 0; i < (int)DarkEnergyBar.instance.getBarValue(); i++) {
 					x1 += 11;

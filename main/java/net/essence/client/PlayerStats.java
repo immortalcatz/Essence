@@ -28,12 +28,14 @@ public class PlayerStats {
 		GuiIngame gig = mc.ingameGUI;
 		FontRenderer font = mc.fontRendererObj;
 		EntityPlayer player = mc.thePlayer;
-		if(!mc.gameSettings.showDebugInfo) 
-			if(SlayerAPI.BETA) mc.fontRendererObj.drawString(EnumChatFormatting.DARK_GREEN + "Essence of the Gods: " + EnumChatFormatting.DARK_RED + SlayerAPI.MOD_VERSION, 5, 5, 0);
+		if(mc.currentScreen == null) {
+			if(!mc.gameSettings.showDebugInfo) 
+				if(SlayerAPI.BETA) mc.fontRendererObj.drawString(EnumChatFormatting.DARK_GREEN + "Essence of the Gods: " + EnumChatFormatting.DARK_RED + SlayerAPI.MOD_VERSION, 5, 5, 0);
 
-		if(mc.gameSettings.showDebugInfo) {
-			String st = I18n.format("essence.time", new Object[0]) + " " + formatTime(getWorldTime(mc));
-			font.drawString(st, 2, 138, 0xFFFFFF);
+			if(mc.gameSettings.showDebugInfo) {
+				String st = I18n.format("essence.time", new Object[0]) + " " + formatTime(getWorldTime(mc));
+				font.drawString(st, 2, 138, 0xFFFFFF);
+			}
 		}
 	}
 
