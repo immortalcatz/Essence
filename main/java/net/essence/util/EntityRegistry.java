@@ -18,6 +18,8 @@ import net.essence.entity.mob.boss.EntitySentryKing;
 import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
+import net.essence.entity.mob.corba.EntityOverseer;
+import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntityDepthsHunter;
@@ -127,6 +129,8 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityFireMage.class, "fireMage");
 		SlayerAPI.registerMob(EntityIceMage.class, "iceMage");
 		//SlayerAPI.registerMob(EntityDragon.class, "dragon");
+		SlayerAPI.registerMob(EntityOverseer.class, "overseer");
+		SlayerAPI.registerMob(EntityOverseerElder.class, "overseerElder");
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith");

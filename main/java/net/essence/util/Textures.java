@@ -69,6 +69,8 @@ public class Textures {
     public static final ResourceLocation frozenTroll = addMob("frozenTroll");
     public static final ResourceLocation permafraust = addMob("permafraust");
     public static final ResourceLocation shiveringBushwalker = addMob("shiveringBushwalker");
+    public static final ResourceLocation overseer = addMob("overseer");
+    public static final ResourceLocation overseerElder = addMob("overseerElder");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
@@ -85,4 +87,5 @@ public class Textures {
     private static ResourceLocation addSlot(String tex){
     	return new ResourceLocation(slotPrefix + tex + ".png");
     }
+
 }

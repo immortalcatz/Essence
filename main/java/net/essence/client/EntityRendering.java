@@ -40,6 +40,7 @@ import net.essence.client.render.model.mob.boss.ModelClacia;
 import net.essence.client.render.model.mob.boss.ModelEudor;
 import net.essence.client.render.model.mob.boss.ModelSentryKing;
 import net.essence.client.render.model.mob.boss.ModelWitheringBeast;
+import net.essence.client.render.model.mob.corba.ModelOverseer;
 import net.essence.client.render.model.mob.depths.ModelDarknessCrawler;
 import net.essence.client.render.model.mob.depths.ModelDepthsBeast;
 import net.essence.client.render.model.mob.depths.ModelDepthsHunter;
@@ -88,6 +89,8 @@ import net.essence.entity.mob.boss.EntitySentryKing;
 import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
+import net.essence.entity.mob.corba.EntityOverseer;
+import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntityDepthsHunter;
@@ -207,6 +210,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenMerchant.class, new RenderModMob(new ModelFrozenMerchant(), tex.frozenMerchant));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEscapedConvict.class, new RenderModMob(new ModelEscapedConvict(), tex.escapedConvict));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
+		RenderingRegistry.registerEntityRenderingHandler(EntityOverseer.class, new RenderModMob(new ModelOverseer(), tex.overseer));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOverseerElder.class, new RenderModMob(new ModelOverseer(), tex.overseerElder));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
