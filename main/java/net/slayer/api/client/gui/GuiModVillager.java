@@ -7,6 +7,7 @@ import java.io.DataOutputStream;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiMerchant;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -69,7 +70,7 @@ public class GuiModVillager extends GuiContainer {
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(int var1, int var2) {
-		this.fontRendererObj.drawString(name, 75, 6, whiteName ? 0xFFFFFF : 4210752);
+		this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6, whiteName ? 0xFFFFFF : 4210752);
 		this.fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, whiteName ? 0xFFFFFF : 4210752);
 	}
  
