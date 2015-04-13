@@ -32,29 +32,12 @@ public class WorldGenAPI {
 	}
 
 	public static Block getEucaLeaves() {
-		Block leaves = null;
-		switch(r.nextInt(2)) {
-		case 0:
-			leaves = EssenceBlocks.eucaSilverLeaves;
-			break;
-		case 1:
-			leaves = EssenceBlocks.eucaGoldLeaves;
-			break;
-		}
-		return leaves;
+		int i = r.nextInt(2);
+		return i == 0 ? EssenceBlocks.eucaSilverLeaves : EssenceBlocks.eucaGoldLeaves;
 	}
 	
 	public static Block getEucaLog() {
-		Block log = null;
-		switch(r.nextInt(2)) {
-		case 0:
-			log = EssenceBlocks.eucaSilverLog;
-			break;
-		case 1:
-			log = EssenceBlocks.eucaGoldLog;
-			break;
-		}
-		return log;
+		return EssenceBlocks.eucaGoldLog;
 	}
 
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
