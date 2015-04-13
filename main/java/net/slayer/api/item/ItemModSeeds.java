@@ -21,9 +21,4 @@ public class ItemModSeeds extends ItemSeeds {
 		EssenceItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
-	
-	@Override
-	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-		par3List.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
-	}
 }

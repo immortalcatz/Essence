@@ -68,7 +68,6 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		list.add(damageReduction == 0.0 ? (EnumChatFormatting.DARK_AQUA + "No Protection") : EnumChatFormatting.AQUA + "Damage Reduction: " + roundedDamage);
 		list.add(!unbreakable ? (item.getMaxDamage() - item.getItemDamage() + " Uses Remaining") : "Unlimited Uses");
 		ArmorDescription.add(item, player, list);
-		list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
 	}
 
 	@Override

@@ -36,7 +36,7 @@ public class ItemPoisionSword extends ItemModSword {
 	public void addParticles(EntityLivingBase hit) {
 		Random r = new Random();
 		for(int i = 0; i < 50; i++){
-			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityPoisionFX(Minecraft.getMinecraft().theWorld, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityPoisionFX(hit.worldObj, hit.posX + r.nextFloat() - 0.5F, hit.posY + 0.5D + r.nextFloat(), hit.posZ + r.nextFloat() - 0.5F, 0.0D, 0.0D, 0.0D));
 		}
 	}
 
@@ -46,6 +46,5 @@ public class ItemPoisionSword extends ItemModSword {
 		infoList.add(SlayerAPI.Colour.DARK_GREEN + "On hit: Poisions for 6 seconds");
 		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
 		else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-		infoList.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
 	}
 }

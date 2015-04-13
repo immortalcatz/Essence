@@ -114,6 +114,5 @@ public class ItemMultiTool extends ItemTool {
 		list.add(SlayerAPI.Colour.BLUE + "Efficiency: " + toolMaterial.getEfficiencyOnProperMaterial());
 		if (stack.getMaxDamage() != -1) list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses");
 		else list.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-		list.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
 	}
 }

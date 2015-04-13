@@ -40,6 +40,5 @@ public class ItemModHoe extends ItemHoe {
     public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
         if (item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
         else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-        infoList.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }
 }

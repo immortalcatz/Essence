@@ -13,9 +13,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemModSword;
 
-public class MoltenKnife extends ItemModSword {
+public class ItemMoltenKnife extends ItemModSword {
 
-	public MoltenKnife(String name, EssenceToolMaterial toolMaterial) {
+	public ItemMoltenKnife(String name, EssenceToolMaterial toolMaterial) {
 		super(name, toolMaterial);
 	}
 
@@ -31,6 +31,5 @@ public class MoltenKnife extends ItemModSword {
 		infoList.add(SlayerAPI.Colour.DARK_GRAY + "On hit: Burns Enimies");
 		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
 		else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-		infoList.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
 	}
 }

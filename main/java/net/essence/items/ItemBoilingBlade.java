@@ -31,6 +31,5 @@ public class ItemBoilingBlade extends ItemModSword {
 		infoList.add(SlayerAPI.Colour.DARK_GRAY + "On hit: Burns Enimies");
 		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
 		else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-		infoList.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
 	}
 }

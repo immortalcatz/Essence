@@ -41,6 +41,5 @@ public class ItemModShovel extends ItemSpade {
         infoList.add(SlayerAPI.Colour.BLUE + "Efficiency: " + toolMaterial.getEfficiencyOnProperMaterial());
         if (item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
         else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-        infoList.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }
 }
