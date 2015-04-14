@@ -72,6 +72,7 @@ public class EssenceItems {
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem");
 	public static final Item desIngot = new ItemMod("desIngot");
 	public static final Item boilingSkull = new ItemMod("boilingSkull");
+	
 	public static final Item boilPowder = new ItemMod("boilPowder");
 	public static final Item blazingFireball = new ItemMod("blazingFireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell");
@@ -82,6 +83,7 @@ public class EssenceItems {
 	public static final Item overseeingTablet = new ItemMod("overseeingTablet");
 	public static final Item overseeingEye = new ItemMod("overseeingEye");
 	public static final Item darkCrystal = new ItemMod("darkCrystal");
+	
 	public static final Item darkOrb = new ItemMod("darkOrb");
 	public static final Item depthsFlake = new ItemMod("depthsFlake");
 	public static final Item beastlyStomach = new ItemMod("beastlyStomach");
@@ -213,6 +215,8 @@ public class EssenceItems {
 	public static final Item snowShoveler = new ItemModSword("snowShoveler", EssenceToolMaterial.SNOW_SHOVELER);
 	public static final Item frostySword = new ItemModSword("frostySword", EssenceToolMaterial.FROSTY_SWORD);
 	public static final Item frostbittenSword = new ItemModSword("frostbittenSword", EssenceToolMaterial.FROSTBITTEN_SWORD);
+	public static final Item treeHugger = new ItemModSword("treeHugger", EssenceToolMaterial.TREE_HUGGER);
+	public static final Item healersBlade = new ItemModSword("healersBlade", EssenceToolMaterial.HEALERS_BLADE);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");

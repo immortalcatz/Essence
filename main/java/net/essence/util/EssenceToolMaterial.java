@@ -37,6 +37,8 @@ public enum EssenceToolMaterial {
 	SNOW_SHOVELER(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	FROSTBITTEN_SWORD(SlayerAPI.addMeleeMaterial(3000, 25, 25)),
 	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	TREE_HUGGER(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
+	HEALERS_BLADE(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 
 
 
