@@ -68,7 +68,7 @@ public class GuiSummoningTable extends GuiContainer {
 	}
 
 	@SideOnly(Side.CLIENT)
-	static class CraftButton extends GuiButton {
+	private class CraftButton extends GuiButton {
 
 		public CraftButton(int x, int y) {
 			super(1, x, y, 18, 12, "");
@@ -80,7 +80,13 @@ public class GuiSummoningTable extends GuiContainer {
 			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 			boolean flag = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
 			int k = 0, l = 176;
-			if(flag) k += 12;
+			if(flag) {
+				//mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/summoning.png"));
+				//GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+				//this.drawTexturedModalRect(this.xPosition, this.yPosition, l, 12, 18, 12);
+				//drawCreativeTabHoveringText("TADAAAAA", mouseX, mouseY);
+				k += 12;
+			}
 			this.drawTexturedModalRect(this.xPosition, this.yPosition, l, k, 18, 12);
 		}
 	}

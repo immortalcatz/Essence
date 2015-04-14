@@ -87,13 +87,7 @@ public class TileEntitySummoningTable extends TileEntity implements  IInventory 
 	}
 
 	public void setAllSlotsToNull() {
-		inventory[0] = null;
-		inventory[1] = null;
-		inventory[2] = null;
-		inventory[3] = null;
-		inventory[4] = null;
-		inventory[5] = null;
-		inventory[6] = null;
+		clear();
 	}
 
 	public void setInventorySlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
@@ -151,7 +145,7 @@ public class TileEntitySummoningTable extends TileEntity implements  IInventory 
 	public ItemStack getStackInSlotOnClosing(int index) {
 		if(this.inventory[index] != null)  {
 			ItemStack itemstack = inventory[index];
-			this.inventory = null;
+			this.inventory[index] = null;
 			return itemstack;
 		} else {
 			return null;
