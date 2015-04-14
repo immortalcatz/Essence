@@ -303,7 +303,7 @@ public class SlayerAPI {
 	}
 	
 	public static void giveItemStackToPlayer(EntityPlayer player, ItemStack itemstack) {
-		giveItemStackToPlayer(player, itemstack);
+		giveItemStackToPlayer(player, 1, itemstack);
 	}
 	
 	public static boolean giveItemStackToPlayer(EntityPlayerMP player, Integer count, ItemStack itemstack) {
@@ -322,6 +322,7 @@ public class SlayerAPI {
 		return boolAddedToInventory;
 	}
 	
+	@SideOnly(Side.CLIENT)
 	public static void renderItem(ItemStack stack, double x, double y, double z, float scale) {
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		if(stack != null) {
