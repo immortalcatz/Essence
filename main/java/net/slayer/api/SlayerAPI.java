@@ -26,6 +26,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.server.MinecraftServer;
@@ -279,6 +280,10 @@ public class SlayerAPI {
 				recipes.remove(i);
 			}
 		}
+	}
+	
+	public static void removeSmeltingRecipe(ItemStack removed) {
+		FurnaceRecipes.instance().getSmeltingList().remove(removed);
 	}
 
 	public static Item toItem(Block block){
