@@ -13,6 +13,9 @@ public class BiomeGenEuca extends BiomeGenBase {
 		this.topBlock = EssenceBlocks.eucaGrass.getDefaultState();
 		this.fillerBlock = EssenceBlocks.eucaStone.getDefaultState();
 		this.spawnableCreatureList.clear();
+		this.spawnableMonsterList.clear();
+		this.spawnableWaterCreatureList.clear();
+		this.spawnableCaveCreatureList.clear();
 		setColor(0xE57272);
 	}
 
