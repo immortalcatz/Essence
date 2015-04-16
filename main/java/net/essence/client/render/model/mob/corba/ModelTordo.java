@@ -13,7 +13,7 @@ public class ModelTordo extends ModelBase {
     private ModelRenderer RightArm;
     private ModelRenderer LeftArm;
     private ModelRenderer RightLeg;
-    ModelRenderer LeftLeg;
+    private ModelRenderer LeftLeg;
 
 
 	public ModelTordo() {
