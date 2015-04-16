@@ -8,9 +8,9 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-public class RenderOverseer extends RenderModMob {
+public class RenderOverseerElder extends RenderModMob {
 
-	public RenderOverseer(ModelBase model, ResourceLocation tex) {
+	public RenderOverseerElder(ModelBase model, ResourceLocation tex) {
 		super(model, tex);
 	}
 }

@@ -71,6 +71,7 @@ public class Textures {
     public static final ResourceLocation shiveringBushwalker = addMob("shiveringBushwalker");
     public static final ResourceLocation overseer = addMob("overseer");
     public static final ResourceLocation overseerElder = addMob("overseerElder");
+    public static final ResourceLocation blueTordo = addMob("blueTordo");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
