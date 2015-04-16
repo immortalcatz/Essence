@@ -44,13 +44,11 @@ public class ModelTordo extends ModelBase {
 	      RightLeg.setRotationPoint(-2F, 1F, 0F);
 	      RightLeg.setTextureSize(96, 32);
 	      setRotation(RightLeg, 0F, 0F, 0F);
-	      LeftLeg.mirror = true;
 	      LeftLeg = new ModelRenderer(this, 84, 0);
 	      LeftLeg.addBox(-1F, 0F, -1F, 2, 23, 2);
 	      LeftLeg.setRotationPoint(2F, 1F, 0F);
 	      LeftLeg.setTextureSize(96, 32);
 	      setRotation(LeftLeg, 0F, 0F, 0F);
-	      LeftLeg.mirror = false;
 
 	}
 
