@@ -406,12 +406,13 @@ public class EssenceItems {
 	//public static final Item vanillaWafer = new ItemModFood("vanillaWafer", 3, 0.6F, false);
 
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
-	//public static final Item corveggieSeeds = new ItemModSeeds("corveggieSeeds", EssenceBlocks.);
-	//public static final Item crackenCaneSeeds = new ItemModSeeds("crackenCaneSeeds", EssenceBlocks.);
-	//public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", EssenceBlocks.);
-	//public static final Item spineberrySeeds = new ItemModSeeds("spineberrySeeds", EssenceBlocks.);
-	//public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.);
-	//public static final Item zatSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.);
+	
+	public static final Item corveggieSeeds = new ItemModSeeds("corveggieSeeds", EssenceBlocks.corveggieCrop);
+	public static final Item crackenCaneSeeds = new ItemModSeeds("crackenCaneSeeds", EssenceBlocks.crackenCaneCrop);
+	public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", EssenceBlocks.crakeBulbCrop);
+	public static final Item spineberrySeeds = new ItemModSeeds("spineberrySeeds", EssenceBlocks.spineberryCrop);
+	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.glowaCrop);
+	public static final Item zatSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.zatPedalsCrop);
 
 
 	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");

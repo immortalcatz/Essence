@@ -11,6 +11,9 @@ import net.essence.blocks.BlockCloud;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockCorbaPortal;
 import net.essence.blocks.BlockCorbaPortalFrame;
+import net.essence.blocks.BlockCorveggieCrop;
+import net.essence.blocks.BlockCrackenCaneCrop;
+import net.essence.blocks.BlockCrakeBulbCrop;
 import net.essence.blocks.BlockDepthsPortal;
 import net.essence.blocks.BlockDungeonBlock;
 import net.essence.blocks.BlockEssenceStandingSign;
@@ -20,6 +23,7 @@ import net.essence.blocks.BlockEucaPumpkin;
 import net.essence.blocks.BlockEucaSapling;
 import net.essence.blocks.BlockFrozenPortal;
 import net.essence.blocks.BlockGemBlock;
+import net.essence.blocks.BlockGlowaCrop;
 import net.essence.blocks.BlockGlowshroom;
 import net.essence.blocks.BlockHalfSlab;
 import net.essence.blocks.BlockIceLog;
@@ -29,10 +33,12 @@ import net.essence.blocks.BlockKnowledgeTable;
 import net.essence.blocks.BlockMiniColouredBricks;
 import net.essence.blocks.BlockModFire;
 import net.essence.blocks.BlockModOre;
+import net.essence.blocks.BlockSpineberryCrop;
 import net.essence.blocks.BlockStatue;
 import net.essence.blocks.BlockTomatoCrop;
 import net.essence.blocks.BlockWastelandsPortal;
 import net.essence.blocks.BlockWastelandsStone;
+import net.essence.blocks.BlockZatPedalsCrop;
 import net.essence.blocks.machines.BlockGrindstone;
 import net.essence.blocks.machines.BlockSummoningTable;
 import net.essence.client.render.model.statue.ModelCalciaStatue;
@@ -269,6 +275,13 @@ public class EssenceBlocks {
 	
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
 	
+	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggieCrop");
+	public static final Block crackenCaneCrop = new BlockCrackenCaneCrop("crackenCaneCrop");
+	public static final Block crakeBulbCrop = new BlockCrakeBulbCrop("crakeBulbCrop");
+	public static final Block spineberryCrop = new BlockSpineberryCrop("spineberryCrop");
+	public static final Block glowaCrop = new BlockGlowaCrop("glowaCrop");
+	public static final Block zatPedalsCrop = new BlockZatPedalsCrop("zatPedalsCrop");
+
 	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", 0.5F);
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", 0.5F);
 
