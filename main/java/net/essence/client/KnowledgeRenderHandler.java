@@ -18,23 +18,10 @@ import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 
-public class KnowledgeTickHandler {
+public class KnowledgeRenderHandler {
 
 	private Minecraft mc = Minecraft.getMinecraft();
 	private PlayerKnowledge knowledge = PlayerKnowledge.instance;
-	private Random rand = new Random();
-	private int randomDeath = (int)((float)rand.nextInt(5) / 2);
-	
-	@SubscribeEvent
-	public void entityKilled(LivingDeathEvent event) {
-		EntityLivingBase killed = event.entityLiving;
-		if(event.source != null && event.source.getSourceOfDamage() instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer)event.source.getSourceOfDamage();
-			if(killed instanceof EntitySkeleton) {
-				knowledge.addExperience(randomDeath, EnumKnowledge.OVERWORLD, player);
-			}
-		}
-	}
 
 	@SubscribeEvent
 	public void onRender(RenderTickEvent event){
@@ -56,11 +43,12 @@ public class KnowledgeTickHandler {
 				int xpCap = knowledge.xpBarCap(knowledge.getKnowledgeFromDimension(dimID));
 
 				if(xpCap > 0) {
-					int xp = (int)knowledge.xp[knowledge.getKnowledge(knowledge.getKnowledgeFromDimension(dimID))];
+					int xp = (int)knowledge.xp[knowledge.getKnowledgeID(knowledge.getKnowledgeFromDimension(dimID))];
 					gig.drawTexturedModalRect(x, 40, 0, 5, 50, 5);
-					if(xp > 0) gig.drawTexturedModalRect(x, 40, 0, 0, xp, 5);
+					if(xp > 0) gig.drawTexturedModalRect(x, 40, 0, 0, xp * 2, 5);
 				}
 				gig.drawTexturedModalRect(19, 5, getXFromKnowledge(knowledge.getKnowledgeFromDimension(dimID)), getYFromKnowledge(knowledge.getKnowledgeFromDimension(dimID)), 32, 32);
+				mc.fontRendererObj.drawString(knowledge.knowledge[knowledge.getKnowledgeID(knowledge.getKnowledgeFromDimension(dimID))] + "%", x + 20, 50, 0x000000);
 				GlStateManager.disableAlpha();
 				GlStateManager.disableBlend();
 				GL11.glPopMatrix();

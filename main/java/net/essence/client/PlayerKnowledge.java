@@ -50,7 +50,7 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 		else return EnumKnowledge.OVERWORLD;
 	}
 	
-	public int getKnowledge(EnumKnowledge knowledge) {
+	public int getKnowledgeID(EnumKnowledge knowledge) {
 		switch(knowledge) {
 		case OVERWORLD: return 0;
 		case NETHER: return 1;
@@ -71,7 +71,7 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 	}
 
 	public void addExperience(int amount, EnumKnowledge type, EntityPlayer player) {
-		int kind = getKnowledge(type);
+		int kind = getKnowledgeID(type);
 		int j = Integer.MAX_VALUE - xpTotal[kind];
 		if(amount > j) amount = j;
 		xp[kind] += (float)amount / (float)xpBarCap(type);
@@ -82,21 +82,26 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 	}
 
 	public void addLevel(int amount, EnumKnowledge type) {
-		int kind = getKnowledge(type);
+		int kind = getKnowledgeID(type);
 		if(knowledge[kind] < 0) {
 			knowledge[kind] = 0;
 			xp[kind] = 0.0F;
 			xpTotal[kind] = 0;
 		}
 	}
+	
+	public int getKnowledgeAmount(EnumKnowledge k) {
+		return knowledge[getKnowledgeID(k)];
+	}
+	
 
 	public int xpBarCap(EnumKnowledge type) {
-		int kind = getKnowledge(type);
+		int kind = getKnowledgeID(type);
 		return knowledge[kind] >= 10 ? 2 : knowledge[kind] >= 40 ? 5 : knowledge[kind] >= 90 ? 8 : knowledge[kind] >= 150 ? 10 : knowledge[kind] >= 200 ? 15 : 17;
 	}
 	
 	public boolean hasEnoughKnowledge(int amount, EnumKnowledge type) {
-		int kind = getKnowledge(type);
+		int kind = getKnowledgeID(type);
 		return knowledge[kind] >= amount;
 	}
 

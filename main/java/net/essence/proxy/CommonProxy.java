@@ -15,6 +15,7 @@ import net.essence.dimension.DimensionHelper;
 import net.essence.dimension.WorldGenEssence;
 import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.ArmorAbilityEvent;
+import net.essence.event.KnowledgeEvent;
 import net.essence.event.PlayerEvent;
 import net.essence.items.tileentity.TileEntityBackpack;
 import net.essence.misc.DimensionCommand;
@@ -53,6 +54,7 @@ public class CommonProxy {
 		addOreDictionary();
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
 		SlayerAPI.registerEvent(new PlayerEvent());
+		SlayerAPI.registerEvent(new KnowledgeEvent());
 		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
@@ -72,6 +74,7 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
 		SlayerAPI.registerEvent(new PlayerEvent());
+		SlayerAPI.registerEvent(new KnowledgeEvent());
 		//EssenceAchievements.init();
 	}
 	
