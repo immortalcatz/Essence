@@ -72,6 +72,8 @@ public class Textures {
     public static final ResourceLocation overseer = addMob("overseer");
     public static final ResourceLocation overseerElder = addMob("overseerElder");
     public static final ResourceLocation blueTordo = addMob("blueTordo");
+    public static final ResourceLocation redTordo = addMob("redTordo");
+    public static final ResourceLocation greenTordo = addMob("greenTordo");
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
     public static final ResourceLocation staringGuardian = addMob("staringGuardian");
 

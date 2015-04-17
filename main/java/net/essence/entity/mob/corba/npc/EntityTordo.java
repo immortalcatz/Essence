@@ -29,8 +29,8 @@ public class EntityTordo extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.depthsSlayer, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.depthsBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.cloudPuff, 15), new ItemStack(EssenceItems.healersBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.treeHugger, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.multiToolOfEternalSmelting, 1)));
 		
 	}

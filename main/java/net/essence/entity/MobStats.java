@@ -71,4 +71,6 @@ public class MobStats {
 	public static double sentryKingHealth = 1000.0D, sentryKingDamage = 20.0D;
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
+	public static double greenTordoHealth = 50.0D, greenTordoDamage = 10.0D, greenTordoSpeed = normalSpeed;
+	
 }
