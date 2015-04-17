@@ -1,6 +1,7 @@
 package net.essence.client;
 
 import net.essence.enums.EnumKnowledge;
+import net.essence.util.Config;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -14,27 +15,43 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 	public float[] xp = new float[] {0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F};
 	public String[] knowledgeNames = {"overworld", "nether", "end", "boil", "frozen", "euca", "depths", "corba", "cloudia", "wasteland", "lithium", "library", "blaze", "wither"};
 
+	public static PlayerKnowledge instance = new PlayerKnowledge();
+	
 	@Override
 	public void saveNBTData(NBTTagCompound nbt) {
 		for(int i = 0; i < knowledgeNames.length; i++) {
-			nbt.setInteger(knowledgeNames + "Knowledge", knowledge[i]);
-			nbt.setInteger(knowledgeNames + "XPTotal", xpTotal[i]);
-			nbt.setFloat(knowledgeNames + "XP", xp[i]);
+			nbt.setInteger(knowledgeNames[i] + "Knowledge", knowledge[i]);
+			nbt.setInteger(knowledgeNames[i] + "XPTotal", xpTotal[i]);
+			nbt.setFloat(knowledgeNames[i] + "XP", xp[i]);
 		}
-
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound nbt) {
 		for(int i = 0; i < knowledgeNames.length; i++) {
-			knowledge[i] = nbt.getInteger(knowledgeNames + "Knowledge");
-			xpTotal[i] = nbt.getInteger(knowledgeNames + "XPTotal");
-			xp[i] = nbt.getFloat(knowledgeNames + "XP");
+			knowledge[i] = nbt.getInteger(knowledgeNames[i] + "Knowledge");
+			xpTotal[i] = nbt.getInteger(knowledgeNames[i] + "XPTotal");
+			xp[i] = nbt.getFloat(knowledgeNames[i] + "XP");
 		}
 	}
 
+	public EnumKnowledge getKnowledgeFromDimension(int dim) {
+		switch(dim) {
+		case -1: return EnumKnowledge.NETHER;
+		case 0: return EnumKnowledge.OVERWORLD;
+		case 1: return EnumKnowledge.END;
+		}
+		if(dim == Config.frozen) return EnumKnowledge.FROZEN;
+		else if(dim == Config.boil) return EnumKnowledge.BOIL;
+		else if(dim == Config.euca) return EnumKnowledge.EUCA;
+		else if(dim == Config.depths) return EnumKnowledge.DEPTHS;
+		else if(dim == Config.corba) return EnumKnowledge.CORBA;
+		else if(dim == Config.wastelands) return EnumKnowledge.WASTELANDS;
+		else return EnumKnowledge.OVERWORLD;
+	}
+	
 	public int getKnowledge(EnumKnowledge knowledge) {
-		switch(knowledge){
+		switch(knowledge) {
 		case OVERWORLD: return 0;
 		case NETHER: return 1;
 		case END: return 2;
@@ -57,9 +74,9 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 		int kind = getKnowledge(type);
 		int j = Integer.MAX_VALUE - xpTotal[kind];
 		if(amount > j) amount = j;
-		xp[kind] += (float)amount / (float)xpBarCap();
-		for(xpTotal[kind] += amount; xp[kind] >= 1.0F; xp[kind] /= (float)xpBarCap()) {
-			xp[kind] = (xp[kind] - 1.0F) * (float)xpBarCap();
+		xp[kind] += (float)amount / (float)xpBarCap(type);
+		for(xpTotal[kind] += amount; xp[kind] >= 1.0F; xp[kind] /= (float)xpBarCap(type)) {
+			xp[kind] = (xp[kind] - 1.0F) * (float)xpBarCap(type);
 			addLevel(1, type);
 		}
 	}
@@ -73,9 +90,14 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 		}
 	}
 
-	public int xpBarCap() {
-		// return experienceLevel >= 10 ? 2 : experienceLevel >= 40 ? 5 : experienceLevel >= 90 ? 8 : experienceLevel >= 150 ? 10 : experienceLevel >= 200 ? 15 : 17;
-		return 0;
+	public int xpBarCap(EnumKnowledge type) {
+		int kind = getKnowledge(type);
+		return knowledge[kind] >= 10 ? 2 : knowledge[kind] >= 40 ? 5 : knowledge[kind] >= 90 ? 8 : knowledge[kind] >= 150 ? 10 : knowledge[kind] >= 200 ? 15 : 17;
+	}
+	
+	public boolean hasEnoughKnowledge(int amount, EnumKnowledge type) {
+		int kind = getKnowledge(type);
+		return knowledge[kind] >= amount;
 	}
 
 	@Override

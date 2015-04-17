@@ -7,6 +7,7 @@ import net.essence.client.BarTickHandler;
 import net.essence.client.BossTickHandler;
 import net.essence.client.EntityRendering;
 import net.essence.client.GuiHandler;
+import net.essence.client.KnowledgeTickHandler;
 import net.essence.client.MusicEvent;
 import net.essence.client.MusicHandler;
 import net.essence.client.PlayerStats;
@@ -74,6 +75,7 @@ public class ClientProxy extends CommonProxy {
 		EntityRendering.init();
 		SlayerAPI.registerEvent(new BossTickHandler());
 		SlayerAPI.registerEvent(new BarTickHandler());
+		SlayerAPI.registerEvent(new KnowledgeTickHandler());
 		SlayerAPI.registerEvent(new ClientTickEvent());
 		SlayerAPI.registerEvent(new PlayerStats());
 	}
