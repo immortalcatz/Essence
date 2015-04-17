@@ -4,7 +4,9 @@ import net.essence.blocks.tileentity.*;
 import net.essence.blocks.tileentity.container.*;
 import net.essence.client.render.gui.*;
 import net.essence.items.tileentity.*;
+import net.essence.items.tileentity.TileEntityBackpack;
 import net.essence.items.tileentity.container.*;
+import net.essence.items.tileentity.container.ContainerBackpack;
 import net.essence.util.ContainerEmpty;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
@@ -26,7 +28,7 @@ public class GuiHandler implements IGuiHandler {
 		TileEntity entity = world.getTileEntity(new BlockPos(x, y, z));
 		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new ContainerEnrichedTable(player.inventory, world, new BlockPos(x, y, z), player);
 		if(ID == GuiIDs.INCUBATOR.ordinal()) return new ContainerIncubator(player.inventory, (TileEntityIncubator)entity);
-		if(ID == GuiIDs.BACKPACK.ordinal()) return new ContainerBackpack(player.inventory, (TileEntityBackpack)entity);
+		if(ID == GuiIDs.BACKPACK.ordinal()) return new ContainerBackpack(player.inventory, (TileEntityBackpack)entity, world);
 		if(ID == GuiIDs.MAGE.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
@@ -42,7 +44,7 @@ public class GuiHandler implements IGuiHandler {
 		TileEntity entity = world.getTileEntity(new BlockPos(x, y, z));
 		if(ID == GuiIDs.ENRICHMENT_TABLE.ordinal()) return new GuiEnrichedEnchantmentTable(player.inventory, world, x, y, z, player);
 		if(ID == GuiIDs.INCUBATOR.ordinal()) return new GuiIncubator(player.inventory, (TileEntityIncubator)entity);
-		if(ID == GuiIDs.BACKPACK.ordinal()) return new GuiBackpack(player.inventory, (TileEntityBackpack)entity);
+		if(ID == GuiIDs.BACKPACK.ordinal()) return new GuiBackpack(player.inventory, (TileEntityBackpack)entity, world);
 		if(ID == GuiIDs.MAGE.ordinal()) return new GuiMage(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.BLACKSMITH.ordinal()) return new GuiBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new GuiFrozenMerchant(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));

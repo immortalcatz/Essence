@@ -6,6 +6,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
@@ -15,8 +16,8 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class GuiBackpack extends GuiContainer {
 	
-    public GuiBackpack(IInventory i, TileEntityBackpack i1) {
-        super(new ContainerBackpack(i, i1));
+    public GuiBackpack(IInventory i, TileEntityBackpack i1, World w) {
+        super(new ContainerBackpack(i, i1, w));
     } 
 
     @Override

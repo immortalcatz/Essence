@@ -1,4 +1,4 @@
-package net.essence.items.tileentity;
+package net.essence.blocks.tileentity;
 
 import java.util.Random;
 
