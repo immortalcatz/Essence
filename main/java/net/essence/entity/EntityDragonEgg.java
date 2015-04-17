@@ -7,7 +7,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.entity.EntityModMob;
 
-
 public class EntityDragonEgg extends EntityModMob {
 
 	private int colour = 0;

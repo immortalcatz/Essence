@@ -22,12 +22,12 @@ public class EntityOverseerElder extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.darknessCrawlerDamage;
+		return s.elderOverseerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.darknessCrawlerHealth;
+		return s.elderOverseerHealth;
 	}
 
 	@Override
@@ -43,11 +43,6 @@ public class EntityOverseerElder extends EntityModMob{
 	@Override
 	public String setDeathSound() {
 		return EnumSounds.SPIKED_BEAST_HURT.getPrefixedName();
-	}
-	
-	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		return super.attackEntityFrom(e, a);
 	}
 	
 	@Override

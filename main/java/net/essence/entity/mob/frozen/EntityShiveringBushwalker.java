@@ -20,16 +20,15 @@ public class EntityShiveringBushwalker extends EntityModMob {
 		addAttackingAI();
 		this.setSize(0.65F, 1F);
 	}
-	
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.smallHongoDamage;
+		return s.shiveringBushwalkerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.smallHongoHealth;
+		return s.shiveringBushwalkerHealth;
 	}
 
 	@Override
@@ -51,5 +50,4 @@ public class EntityShiveringBushwalker extends EntityModMob {
 	public Item getItemDropped() {
 		return null;
 	}
-
 }

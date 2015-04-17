@@ -20,8 +20,12 @@ public class MobStats {
 	public static double fishHealth = 2.0D, fishSpeed = normalSpeed, fishFollowRange = follow;
 	public static double mageHealth = 35.0D, mageSpeed = normalSpeed, mageFollowRange = follow;
 	
-	//Frozen
+	//Frozen 
+	@SuppressWarnings("fix these")
 	public static double shattererHealth = 35.0D, shattererSpeed = normalSpeed, shattererFollowRange = follow;
+	public static double frozenTrollHealth = 20.0D, frozenTrollDamage = 5.0D, frozenTrollSpeed = normalSpeed, frozenTrollFollowRange = follow;
+	public static double permafraustHealth = 20.0D, permafraustDamage = 5.0D, permafraustSpeed = normalSpeed, permafraustFollowRange = follow;
+	public static double shiveringBushwalkerHealth = 20.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
 
 	
 	//Boil
@@ -47,6 +51,15 @@ public class MobStats {
 	public static double darknessCrawlerHealth = 80.0D, darknessCrawlerDamage = 10.0D, darknessCrawlerSpeed = normalSpeed, darknessCrawlerFollowRange = follow;
 	public static double depthsHunterHealth = 75.0D, depthsHunterDamage = 13.0D, depthsHunterSpeed = normalSpeed, depthsHunterFollowRange = follow;
 	public static double rocHealth = 75.0D, rocHealthTamed = 75.0D, rocDamage = 13.0D, rocDamageTamed = 13.0D, rocSpeed = normalSpeed, rocFollowRange = follow;
+
+	//Corba
+	@SuppressWarnings("fix these too")
+	public static double overseerHealth = 75.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
+	public static double elderOverseerHealth = 75.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
+	
+	//Cloudia
+	@SuppressWarnings("and these")
+	public static double cloudGhostHealth = 75.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;
 
 	//Boss
 	public static double witheringBeastHealth = 400.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;

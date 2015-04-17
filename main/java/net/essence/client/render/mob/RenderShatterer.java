@@ -27,6 +27,7 @@ public class RenderShatterer extends RenderLiving {
 		time++;
 		GlStateManager.scale(1.5, 1.5, 1.5);
 		GlStateManager.translate(0, -1.5, 0);
+		//GlStateManager.rotate(System.currentTimeMillis(), 0, 0, 1);
 		GlStateManager.rotate(time, 0, 0, 1);
 		GlStateManager.translate(0, 1.5, 0);
 	}

@@ -106,7 +106,7 @@ public class SlayerAPI {
 
 	public static void registerMob(Class entityClass, String entityName) {
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
-        EntityList.addMapping(entityClass, entityName, entityListID++, 0x123123, 0x321321);
+        EntityList.addMapping(entityClass, entityName, entityListID++, 0x00A4DB, 0x8200D8);
 	}
 	
 	public static void registerNPC(Class entityClass, String entityName) {

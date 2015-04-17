@@ -23,12 +23,12 @@ public class EntityPermafraust extends EntityModMob {
 	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.smallHongoDamage;
+		return s.permafraustDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.smallHongoHealth;
+		return s.permafraustHealth;
 	}
 
 	@Override
@@ -55,5 +55,4 @@ public class EntityPermafraust extends EntityModMob {
 	public Item getItemDropped() {
 		return null;
 	}
-
 }

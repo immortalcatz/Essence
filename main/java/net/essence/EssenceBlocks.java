@@ -31,6 +31,8 @@ import net.essence.blocks.BlockModFire;
 import net.essence.blocks.BlockModOre;
 import net.essence.blocks.BlockStatue;
 import net.essence.blocks.BlockTomatoCrop;
+import net.essence.blocks.BlockWastelandsPortal;
+import net.essence.blocks.BlockWastelandsStone;
 import net.essence.blocks.machines.BlockGrindstone;
 import net.essence.blocks.machines.BlockSummoningTable;
 import net.essence.client.render.model.statue.ModelCalciaStatue;
@@ -145,6 +147,9 @@ public class EssenceBlocks {
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud");
 	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud");
 	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud");
+	
+	public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
+	public static final Block wastelandsGrass = new BlockModGrass((BlockMod)null, "wastelandsGrass", 2.0F);
 
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
@@ -155,6 +160,9 @@ public class EssenceBlocks {
 	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal");
 	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
+	public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
+	public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
+	
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
 	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);

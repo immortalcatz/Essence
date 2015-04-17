@@ -33,6 +33,7 @@ public class ItemModBow extends ItemMod {
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.setMaxDamage(uses);
+		this.setFull3D();
 	}
 	
 	public ItemModBow(String name, int uses, Item arrow, Class<? extends EntityArrow> arrowEnt) {
@@ -41,6 +42,7 @@ public class ItemModBow extends ItemMod {
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.setMaxDamage(uses);
+		this.setFull3D();
 	}
 
 	@Override
