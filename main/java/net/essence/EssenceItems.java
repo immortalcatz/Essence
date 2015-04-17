@@ -412,7 +412,7 @@ public class EssenceItems {
 	public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", EssenceBlocks.crakeBulbCrop);
 	public static final Item spineberrySeeds = new ItemModSeeds("spineberrySeeds", EssenceBlocks.spineberryCrop);
 	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.glowaCrop);
-	public static final Item zatSeeds = new ItemModSeeds("glowaSeeds", EssenceBlocks.zatPedalsCrop);
+	public static final Item zatSeeds = new ItemModSeeds("zatSeeds", EssenceBlocks.zatPedalsCrop);
 
 
 	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");

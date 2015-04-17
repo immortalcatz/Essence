@@ -24,7 +24,7 @@ public class WorldProviderWastelands extends WorldProvider {
 	
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.9F;
+		return 0.0F;
 	}
     
 	@Override

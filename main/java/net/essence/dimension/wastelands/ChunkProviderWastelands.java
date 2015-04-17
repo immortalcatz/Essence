@@ -244,6 +244,9 @@ public class ChunkProviderWastelands implements IChunkProvider {
 						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
 						float f3 = biomegenbase1.minHeight;
 						float f4 = biomegenbase1.maxHeight;
+						
+						f3 = 0.2F + f3;
+						f4 = 0.2F + f4;
 
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
