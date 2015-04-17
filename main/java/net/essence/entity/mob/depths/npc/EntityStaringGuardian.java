@@ -17,12 +17,9 @@ import net.slayer.api.entity.EntityModVillager;
 
 public class EntityStaringGuardian extends EntityModVillager {
 
+	@SuppressWarnings("do this")
 	public EntityStaringGuardian(World var1) {
 		super(var1);
-		// TODO Auto-generated constructor stub
-	}
-
-	public void EntityFrozenMerchant(World var1) {
 	}
 
 	@Override
@@ -46,7 +43,6 @@ public class EntityStaringGuardian extends EntityModVillager {
 
 	@Override
 	public void abstractInteract(EntityPlayer p) {
-		// TODO Auto-generated method stub
 		
 	}
 }
