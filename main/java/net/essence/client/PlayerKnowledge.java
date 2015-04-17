@@ -14,9 +14,21 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 	public int[] xpTotal = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	public float[] xp = new float[] {0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F};
 	public String[] knowledgeNames = {"overworld", "nether", "end", "boil", "frozen", "euca", "depths", "corba", "cloudia", "wasteland", "lithium", "library", "blaze", "wither"};
-
-	public static PlayerKnowledge instance = new PlayerKnowledge();
+	public static final String KNOWLEDGE_TAG = "extendedKnowledge";
+	private EntityPlayer player;
 	
+	public PlayerKnowledge(EntityPlayer player) {
+		this.player = player;
+	}
+	
+	public static void register(EntityPlayer player) {
+		player.registerExtendedProperties(KNOWLEDGE_TAG, new PlayerKnowledge(player));
+	}
+	
+	public static final PlayerKnowledge get(EntityPlayer player) {
+		return (PlayerKnowledge)player.getExtendedProperties(KNOWLEDGE_TAG);
+	}
+		
 	@Override
 	public void saveNBTData(NBTTagCompound nbt) {
 		for(int i = 0; i < knowledgeNames.length; i++) {

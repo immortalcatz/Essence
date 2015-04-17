@@ -21,7 +21,7 @@ import org.lwjgl.opengl.GL11;
 public class KnowledgeRenderHandler {
 
 	private Minecraft mc = Minecraft.getMinecraft();
-	private PlayerKnowledge knowledge = PlayerKnowledge.instance;
+	private PlayerKnowledge knowledge = new PlayerKnowledge(mc.thePlayer);
 
 	@SubscribeEvent
 	public void onRender(RenderTickEvent event){
