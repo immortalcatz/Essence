@@ -14,13 +14,13 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityPermafraust extends EntityModMob {
 
+	@SuppressWarnings("do this")
 	public EntityPermafraust(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		this.setSize(0.5F, 2F);
 	}
 	
-
 	@Override
 	public double setAttackDamage(MobStats s) {
 		return s.smallHongoDamage;

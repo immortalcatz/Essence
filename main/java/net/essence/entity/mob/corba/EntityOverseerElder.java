@@ -13,6 +13,7 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityOverseerElder extends EntityModMob{
 
+	@SuppressWarnings("do this")
 	public EntityOverseerElder(World par1World) {
 		super(par1World);
 		addAttackingAI();

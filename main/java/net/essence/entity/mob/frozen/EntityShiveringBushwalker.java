@@ -14,6 +14,7 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityShiveringBushwalker extends EntityModMob {
 
+	@SuppressWarnings("do this")
 	public EntityShiveringBushwalker(World par1World) {
 		super(par1World);
 		addAttackingAI();

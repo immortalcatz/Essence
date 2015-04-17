@@ -32,6 +32,8 @@ import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.google.common.base.Predicate;
 
@@ -140,6 +142,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public boolean interact(EntityPlayer var1) {
 		if(!this.worldObj.isRemote) {
 			abstractInteract(var1);

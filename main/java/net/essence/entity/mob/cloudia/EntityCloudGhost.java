@@ -13,6 +13,7 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityCloudGhost extends EntityModMob{
 
+	@SuppressWarnings("do this")
 	public EntityCloudGhost(World par1World) {
 		super(par1World);
 		addAttackingAI();

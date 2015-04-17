@@ -16,6 +16,7 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityShatterer extends EntityModFlying {
 
+	@SuppressWarnings("do this")
 	public EntityShatterer(World par1World) {
 		super(par1World);
 		this.moveHelper = new EntityShatterer.ShattererMoveHelper();
