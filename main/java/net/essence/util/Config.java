@@ -20,11 +20,11 @@ public class Config {
 	}
 
 	public static boolean keepLoadingEuca, keepLoadingDepths, keepLoadingBoil, keepLoadingFrozen, reRenderPlayerStats, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
-	public static boolean keepLoadingCorba, keepLoadingWastelands;
+	public static boolean keepLoadingCorba, keepLoadingWastelands, keepLoadingCloudia;
 	public static boolean spawnSwordParticles, showEntityHealth;
 
-	public static int euca, depths, boil, frozen, corba, wastelands;
-	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome, corbaBiome, wastelandsBiome;
+	public static int euca, depths, boil, frozen, corba, wastelands, cloudia;
+	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome, corbaBiome, wastelandsBiome, cloudiaBiome;
 
 	public static int baseMobID, baseProjectileID, baseEntityListID, entityHealthDistance;
 
@@ -43,10 +43,13 @@ public class Config {
 		corbaBiome = cfg.get("Dimension", "Corba biome ID", 64).getInt();
 		wastelands = cfg.get("Dimension", "Wastelands ID", 25).getInt();
 		wastelandsBiome = cfg.get("Dimension", "Wastelands biome ID", 65).getInt();
+		cloudia = cfg.get("Dimension", "Cloudia ID", 26).getInt();
+		cloudiaBiome = cfg.get("Dimension", "Cloudia biome ID", 66).getInt();
 		keepLoadingFrozen = cfg.get("Dimension", "Keep loading Frozen Lands", true).getBoolean(true);
 		keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Point", true).getBoolean(true);
 		keepLoadingCorba = cfg.get("Dimension", "Keep loading Corba", true).getBoolean(true);
 		keepLoadingWastelands = cfg.get("Dimension", "Keep loading Wastelands", true).getBoolean(true);
+		keepLoadingCloudia = cfg.get("Dimension", "Keep loading Cloudia", true).getBoolean(true);
 		boilBlockSpawnSmoke = cfg.get("Dimension", "Boiling point blocks spawn smoke (More lag)", true).getBoolean(true);
 		spawnSwordParticles = cfg.get("Items", "Swords spawn particles", true).getBoolean(true);
 		//spawnNetherBossesInNether = cfg.get("Dimension", "Spawn the Nether Bosses (with the orbs) only in the Nether", true).getBoolean(true);

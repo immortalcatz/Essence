@@ -16,7 +16,7 @@ public class ContainerBackpack extends Container {
 
 	public ContainerBackpack(IInventory inventory, TileEntityBackpack entity, World w) {
 		world = w;
-		this.numRows = 27;
+		this.numRows = 3;
 		for(int i = 0; i < 3; ++i) for(int j = 0; j < 9; ++j) this.addSlotToContainer(new Slot(entity, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 		for(int i = 0; i < 3; ++i) for(int j = 0; j < 9; ++j) this.addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 		for(int i = 0; i < 9; ++i) this.addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));

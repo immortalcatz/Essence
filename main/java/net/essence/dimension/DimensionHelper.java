@@ -2,6 +2,7 @@ package net.essence.dimension;
 
 import net.essence.dimension.boil.BiomeGenBoiling;
 import net.essence.dimension.boil.WorldProviderBoiling;
+import net.essence.dimension.cloudia.BiomeGenCloudia;
 import net.essence.dimension.corba.BiomeGenCorba;
 import net.essence.dimension.corba.WorldProviderCorba;
 import net.essence.dimension.depths.BiomeGenDepths;
@@ -64,6 +65,7 @@ public class DimensionHelper {
 	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome);
 	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome);
 	public static BiomeGenBase wastelands = new BiomeGenWastelands(Config.wastelandsBiome);
+	public static BiomeGenBase cloudia = new BiomeGenCloudia(Config.cloudiaBiome);
 
 	public static void init(){
 		addDimension(Config.euca, WorldProviderEuca.class, Config.keepLoadingEuca);
