@@ -82,6 +82,9 @@ public class ModelEscapedConvict extends ModelBase {
 		rHorn.setTextureSize(128, 64);
 		rHorn.mirror = true;
 		setRotation(rHorn, 0F, 0F, 0F);
+		head.addChild(lHorn);
+		head.addChild(rHorn);
+		head.addChild(muzzle);
 	}
 
 	@Override
@@ -95,9 +98,6 @@ public class ModelEscapedConvict extends ModelBase {
 		rightleg.render(f5);
 		leftleg.render(f5);
 		neck.render(f5);
-		muzzle.render(f5);
-		lHorn.render(f5);
-		rHorn.render(f5);
 	}
 
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
@@ -114,11 +114,5 @@ public class ModelEscapedConvict extends ModelBase {
 		this.leftarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 		this.head.rotateAngleY = par4 / (180F / (float)Math.PI);
 		this.head.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.muzzle.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.muzzle.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.rHorn.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.rHorn.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.lHorn.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.lHorn.rotateAngleX = par5 / (180F / (float)Math.PI);
 	}
 }
