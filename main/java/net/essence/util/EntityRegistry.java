@@ -134,7 +134,6 @@ public class EntityRegistry {
 		//SlayerAPI.registerMob(EntityDragon.class, "dragon");
 		SlayerAPI.registerMob(EntityOverseer.class, "overseer");
 		SlayerAPI.registerMob(EntityOverseerElder.class, "overseerElder");
-		SlayerAPI.registerMob(EntityTordo.class, "tordo");
 		SlayerAPI.registerMob(EntityCloudGhost.class, "cloudGhost");
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
@@ -142,6 +141,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityFrozenMerchant.class, "frozenMerchant");
 		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
 		SlayerAPI.registerNPC(EntityStaringGuardian.class, "staringGuardian");
+		SlayerAPI.registerNPC(EntityTordo.class, "tordo");
 		
 		SlayerAPI.registerMob(EntityShatterer.class, "shatterer");
 		SlayerAPI.registerMob(EntityFrozenTroll.class, "frozenTroll");
