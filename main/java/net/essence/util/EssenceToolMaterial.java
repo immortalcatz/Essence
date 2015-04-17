@@ -18,6 +18,16 @@ public enum EssenceToolMaterial {
 	GORBITE_SWORD(EssenceItems.gorbiteSwordMat, EssenceItems.gorbiteGem),
 	DES_SWORD(EssenceItems.desSwordMat, EssenceItems.desIngot),
 	
+	HELLSTONE(EssenceItems.hellstone, EssenceItems.hellstoneIngot, 3),
+	FLAIRIUM(EssenceItems.flairium, EssenceItems.flairiumIngot, 3),
+	LUNIUM(EssenceItems.lunium, EssenceItems.luniumIngot, 3),
+	CELESTIUM(EssenceItems.celestium, EssenceItems.celestiumIngot, 3),
+	SHADIUM(EssenceItems.shadium, EssenceItems.shadiumIngot, 3),
+	SAPPHIRE(EssenceItems.sapphiretool, EssenceItems.sapphire, 2),
+	ORBADITE(EssenceItems.orbadite, EssenceItems.orbaditeIngot, 3),
+	GORBITE(EssenceItems.gorbite, EssenceItems.gorbiteGem, 3),
+	DES(EssenceItems.des, EssenceItems.desIngot, 3),
+	
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	CALCIA_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
@@ -39,16 +49,6 @@ public enum EssenceToolMaterial {
 	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	TREE_HUGGER(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
 	HEALERS_BLADE(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
-
-	HELLSTONE(EssenceItems.hellstone, EssenceItems.hellstoneIngot, 3),
-	FLAIRIUM(EssenceItems.flairium, EssenceItems.flairiumIngot, 3),
-	LUNIUM(EssenceItems.lunium, EssenceItems.luniumIngot, 3),
-	CELESTIUM(EssenceItems.celestium, EssenceItems.celestiumIngot, 3),
-	SHADIUM(EssenceItems.shadium, EssenceItems.shadiumIngot, 3),
-	SAPPHIRE(EssenceItems.sapphiretool, EssenceItems.sapphire, 2),
-	ORBADITE(EssenceItems.orbadite, EssenceItems.orbaditeIngot, 3),
-	GORBITE(EssenceItems.gorbite, EssenceItems.gorbiteGem, 3),
-	DES(EssenceItems.des, EssenceItems.desIngot, 3),
 
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),

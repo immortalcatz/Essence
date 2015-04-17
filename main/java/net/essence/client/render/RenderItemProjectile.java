@@ -1,5 +1,6 @@
 package net.essence.client.render;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderItem;
@@ -18,9 +19,9 @@ public class RenderItemProjectile extends Render {
     private RenderItem item;
     private Item damage;
 
-    public RenderItemProjectile(RenderManager rm, RenderItem par1Item, Item par2) {
-    	super(rm);
-        this.item = par1Item;
+    public RenderItemProjectile(Item par2) {
+    	super(Minecraft.getMinecraft().getRenderManager());
+        this.item = Minecraft.getMinecraft().getRenderItem();
         this.damage = par2;
     }
 
@@ -33,12 +34,12 @@ public class RenderItemProjectile extends Render {
         GlStateManager.rotate(-this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
         this.bindTexture(TextureMap.locationBlocksTexture);
-        this.item.renderItemModel(this.getMeta(par1Entity));
+        this.item.renderItemModel(this.getItem(par1Entity));
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }
     
-    public ItemStack getMeta(Entity p_177082_1_) {
+    public ItemStack getItem(Entity e) {
         return new ItemStack(this.damage, 1, 0);
     }
 

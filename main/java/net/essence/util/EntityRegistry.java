@@ -53,21 +53,29 @@ import net.essence.entity.mob.overworld.EntityTurtle;
 import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
 import net.essence.entity.mob.overworld.npc.EntityMage;
 import net.essence.entity.projectile.EntityBasicProjectile;
+import net.essence.entity.projectile.EntityBoilingPiercer;
 import net.essence.entity.projectile.EntityBouncingProjectile;
 import net.essence.entity.projectile.EntityChaosProjectile;
 import net.essence.entity.projectile.EntityConjuring;
+import net.essence.entity.projectile.EntityCorbaPiercer;
 import net.essence.entity.projectile.EntityDarknessArrow;
+import net.essence.entity.projectile.EntityDepthsPiercer;
 import net.essence.entity.projectile.EntityDoomsBringer;
 import net.essence.entity.projectile.EntityEnlightenment;
+import net.essence.entity.projectile.EntityEucaPiercer;
 import net.essence.entity.projectile.EntityFireBall;
 import net.essence.entity.projectile.EntityFlameArrow;
 import net.essence.entity.projectile.EntityForestPlasma;
+import net.essence.entity.projectile.EntityFrostbittenPiercer;
+import net.essence.entity.projectile.EntityFrostyPiercer;
 import net.essence.entity.projectile.EntityFrozenArrow;
+import net.essence.entity.projectile.EntityFrozenPiercer;
 import net.essence.entity.projectile.EntityGreenpace;
 import net.essence.entity.projectile.EntityIceBall;
 import net.essence.entity.projectile.EntityLightningBall;
 import net.essence.entity.projectile.EntityMagmaFireball;
 import net.essence.entity.projectile.EntityNetherPlasma;
+import net.essence.entity.projectile.EntityNethicPiercer;
 import net.essence.entity.projectile.EntityOceanPlasma;
 import net.essence.entity.projectile.EntityPoisonArrow;
 import net.essence.entity.projectile.EntityRockProjectile;
@@ -107,6 +115,14 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityNetherPlasma.class, "netherplasma");
 		SlayerAPI.registerProjectile(EntityOceanPlasma.class, "oceanplasma");
 		SlayerAPI.registerProjectile(EntityForestPlasma.class, "forestplasma");
+		SlayerAPI.registerProjectile(EntityBoilingPiercer.class, "boilingpiercer");
+		SlayerAPI.registerProjectile(EntityNethicPiercer.class, "nethicpiercer");
+		SlayerAPI.registerProjectile(EntityFrozenPiercer.class, "frozenpiercer");
+		SlayerAPI.registerProjectile(EntityEucaPiercer.class, "eucapiercer");
+		SlayerAPI.registerProjectile(EntityDepthsPiercer.class, "depthspiercer");
+		SlayerAPI.registerProjectile(EntityCorbaPiercer.class, "corbapiercer");
+		SlayerAPI.registerProjectile(EntityFrostbittenPiercer.class, "frostbittenpiercer");
+		SlayerAPI.registerProjectile(EntityFrostyPiercer.class, "frostypiercer");
 	}
 	
 	public static void registerMobs() {

@@ -74,7 +74,7 @@ public class EssenceItems {
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem");
 	public static final Item desIngot = new ItemMod("desIngot");
 	public static final Item boilingSkull = new ItemMod("boilingSkull");
-	
+
 	public static final Item boilPowder = new ItemMod("boilPowder");
 	public static final Item blazingFireball = new ItemMod("blazingFireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell");
@@ -85,7 +85,7 @@ public class EssenceItems {
 	public static final Item overseeingTablet = new ItemMod("overseeingTablet");
 	public static final Item overseeingEye = new ItemMod("overseeingEye");
 	public static final Item darkCrystal = new ItemMod("darkCrystal");
-	
+
 	public static final Item darkOrb = new ItemMod("darkOrb");
 	public static final Item depthsFlake = new ItemMod("depthsFlake");
 	public static final Item beastlyStomach = new ItemMod("beastlyStomach");
@@ -98,7 +98,7 @@ public class EssenceItems {
 	public static final Item frostGem = new ItemMod("frostGem");
 	public static final Item frozenIceball = new ItemMod("frozenIceball");
 	public static final Item snowsheet = new ItemMod("snowsheet");
-	
+
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
 	public static final Item celestiumDust = new ItemMod("celestiumDust");
@@ -203,7 +203,7 @@ public class EssenceItems {
 	public static final Item dragonsTooth = new ItemModSword("dragonsTooth", EssenceToolMaterial.DRAGONS_TOOTH);
 	public static final Item netherBeastSword = new ItemModSword("netherBeastSword", EssenceToolMaterial.NETHER_BEAST_SWORD);
 	public static final Item witheringBeastSword = new ItemWitherSword("witheringBeastSword", EssenceToolMaterial.WITHERING_BEAST_SWORD);
-	
+
 	public static final Item calciaSword = new ItemModSword("calciaSword", EssenceToolMaterial.CALCIA_SWORD);
 	public static final Item championsSword = new ItemModSword("championsSword", EssenceToolMaterial.CHAMPIONS_SWORD);
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
@@ -224,7 +224,7 @@ public class EssenceItems {
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
 	public static final Item corbaPortalGem = new ItemMod("corbaPortalGem");
 	public static final Item wastelandPortalGem = new ItemMod("wastelandPortalGem");
-	
+
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb");
@@ -296,7 +296,7 @@ public class EssenceItems {
 	public static final Item twilightChest = new ItemModArmor(EnumArmor.TWILIGHT, BODY);
 	public static final Item twilightLegs = new ItemModArmor(EnumArmor.TWILIGHT, LEGS);
 	public static final Item twilightBoots = new ItemModArmor(EnumArmor.TWILIGHT, BOOTS);
-	
+
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
@@ -432,7 +432,7 @@ public class EssenceItems {
 	public static final Item eyeBall = new ItemMod("eyeBall");
 	public static final Item horn = new ItemMod("horn");
 	public static final Item scale = new ItemMod("scale");
-	
+
 	public static final ItemKnowledge overworldKnowledge = new ItemKnowledge("overworldKnowledge", EnumKnowledge.OVERWORLD);
 	public static final ItemKnowledge netherKnowledge = new ItemKnowledge("netherKnowledge", EnumKnowledge.NETHER);
 	public static final ItemKnowledge endKnowledge = new ItemKnowledge("endKnowledge", EnumKnowledge.END);
@@ -449,14 +449,14 @@ public class EssenceItems {
 	public static final ItemKnowledge witherKnowledge = new ItemKnowledge("witherKnowledge", EnumKnowledge.WITHER);
 
 	//TODO
-	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", null);
-	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", null);
-	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", null);
-	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", null);
-	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", null);
-	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", null);
-	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", null);
-	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", null);
+	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", 1F, EntityBoilingPiercer.class);
+	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", 1F, EntityNethicPiercer.class);
+	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", 1F, EntityFrozenPiercer.class);
+	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", 1F, EntityEucaPiercer.class);
+	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", 1F, EntityDepthsPiercer.class);
+	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", 1F, EntityCorbaPiercer.class);
+	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", 1F, EntityFrostbittenPiercer.class);
+	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", 1F, EntityFrostyPiercer.class);
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
