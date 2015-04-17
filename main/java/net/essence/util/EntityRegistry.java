@@ -18,6 +18,7 @@ import net.essence.entity.mob.boss.EntitySentryKing;
 import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
+import net.essence.entity.mob.cloudia.EntityCloudGhost;
 import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.corba.EntityTordo;
@@ -25,6 +26,7 @@ import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
+import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
@@ -133,11 +135,13 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityOverseer.class, "overseer");
 		SlayerAPI.registerMob(EntityOverseerElder.class, "overseerElder");
 		SlayerAPI.registerMob(EntityTordo.class, "tordo");
+		SlayerAPI.registerMob(EntityCloudGhost.class, "cloudGhost");
 
 		SlayerAPI.registerNPC(EntityMage.class, "mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith");
 		SlayerAPI.registerNPC(EntityFrozenMerchant.class, "frozenMerchant");
 		SlayerAPI.registerNPC(EntityEscapedConvict.class, "escapedConvict");
+		SlayerAPI.registerNPC(EntityStaringGuardian.class, "staringGuardian");
 		
 		SlayerAPI.registerMob(EntityShatterer.class, "shatterer");
 		SlayerAPI.registerMob(EntityFrozenTroll.class, "frozenTroll");
