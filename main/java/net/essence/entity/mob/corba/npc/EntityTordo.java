@@ -11,7 +11,7 @@ public class EntityTordo extends EntityModVillager {
 	@SuppressWarnings("do this")
 	public EntityTordo(World par1World) {
 		super(par1World);
-		setSize(0.7F, 1.0F);
+		setSize(0.7F, 2.0F);
 	}
 
 	@Override
