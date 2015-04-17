@@ -24,7 +24,7 @@ public class ItemChaosCannon extends ItemMod {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(!world.isRemote) {
-			if(EssenceBar.instance.useBar(1, world)) {
+			if(EssenceBar.instance.useBar(1)) {
 				world.spawnEntityInWorld(new EntityChaosProjectile(world, player));
 				EnumSounds.playSound(EnumSounds.CANNON, world, player);
 				stack.damageItem(1, player);

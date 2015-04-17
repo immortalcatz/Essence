@@ -35,7 +35,7 @@ public class EssenceBar implements IExtendedEntityProperties {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public boolean useBar(int amount, World w) {
+	public boolean useBar(int amount) {
 		if(essence < amount) {
 			regenDelay = 10;
 			return false;

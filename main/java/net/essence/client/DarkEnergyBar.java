@@ -31,7 +31,7 @@ public class DarkEnergyBar implements IExtendedEntityProperties {
 	}                
 
 	@SideOnly(Side.CLIENT)
-	public boolean useBar(int amount, World w) {
+	public boolean useBar(int amount) {
 		if(darkEnergy < amount) {
 			regenDelay = 10;
 			return false;

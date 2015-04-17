@@ -55,7 +55,7 @@ public class ItemTeleport extends ItemMod {
 				if (var26 == 4) --var23;                
 				if (var26 == 5) ++var23;                
 
-				if(EssenceBar.instance.useBar(5, par2)) {
+				if(EssenceBar.instance.useBar(5)) {
 					par3.getLook(1);
 					this.teleportTo(par3, par2, (double)var23, (double)var24, (double)var25);
 				}
