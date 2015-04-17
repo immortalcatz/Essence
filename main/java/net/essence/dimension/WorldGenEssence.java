@@ -30,6 +30,10 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(dim == Config.euca) generateEuca(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.frozen) generateFrozen(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.corba) generateCorba(w, r, chunkX * 16, chunkZ * 16);
+		int i;
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(3, w, chunkX * 16, chunkZ * 16);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(2, w, chunkX * 16, chunkZ * 16);
+		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(4, w, chunkX * 16, chunkZ * 16);
 	}
 	
 	private void generateCorba(World w, Random r, int chunkX, int chunkZ) {
@@ -77,9 +81,6 @@ public class WorldGenEssence implements IWorldGenerator {
 
 	private void generateOverworld(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(3, w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(2, w, chunkX, chunkZ);
-		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(4, w, chunkX, chunkZ);
 		for(i = 0; i < 100; i++) GenerationHelper.generateVanilla(1, w, chunkX, chunkZ);
 		for(i = 0; i < 100; i++) GenerationHelper.generateVanilla(0, w, chunkX, chunkZ);
 		if(rand.nextInt(5) == 0) GenerationHelper.generateVanilla(8, w, chunkX, chunkZ);

@@ -389,6 +389,7 @@ public class EssenceItems {
 	public static final Item redPresent = new ItemPresent("redPresent");
 	public static final Item blackPresent = new ItemPresent("blackPresent");
 
+	//TODO
 	public static final Item tomato = new ItemModFood("tomato", 3, 0.6F, false);
 	public static final Item corveggies = new ItemModFood("corveggies", 3, 0.6F, false);
 	public static final Item crackenCanes = new ItemModFood("crackenCanes", 3, 0.6F, false);
@@ -396,17 +397,15 @@ public class EssenceItems {
 	public static final Item spineberries = new ItemModFood("spineberries", 3, 0.6F, false);
 	public static final Item zatPedal = new ItemModFood("zatPedal", 3, 0.6F, false);
 	public static final Item glowa = new ItemModFood("glowa", 3, 0.6F, false);
-	//TODO
-	//public static final Item mintCandyCane = new ItemModFood("mintCandyCane", 3, 0.6F, false);
-	//public static final Item fruityCandyCane = new ItemModFood("fruityCandyCane", 3, 0.6F, false);
-	//public static final Item cherryCandyCane = new ItemModFood("cherryCandyCane", 3, 0.6F, false);
-	//public static final Item peppermint = new ItemModFood("peppermint", 3, 0.6F, false);
-	//public static final Item jellyBeans = new ItemModFood("jellyBeans", 3, 0.6F, false);
-	//public static final Item chocolate = new ItemModFood("chocolate", 3, 0.6F, false);
-	//public static final Item vanillaWafer = new ItemModFood("vanillaWafer", 3, 0.6F, false);
+	public static final Item mintCandyCane = new ItemModFood("mintCandyCane", 3, 0.6F, false);
+	public static final Item fruityCandyCane = new ItemModFood("fruityCandyCane", 3, 0.6F, false);
+	public static final Item cherryCandyCane = new ItemModFood("cherryCandyCane", 3, 0.6F, false);
+	public static final Item peppermint = new ItemModFood("peppermint", 3, 0.6F, false);
+	public static final Item jellyBeans = new ItemModFood("jellyBeans", 3, 0.6F, false);
+	public static final Item chocolate = new ItemModFood("chocolate", 3, 0.6F, false);
+	public static final Item vanillaWafer = new ItemModFood("vanillaWafer", 3, 0.6F, false);
 
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", EssenceBlocks.tomatoCrop);
-	
 	public static final Item corveggieSeeds = new ItemModSeeds("corveggieSeeds", EssenceBlocks.corveggieCrop);
 	public static final Item crackenCaneSeeds = new ItemModSeeds("crackenCaneSeeds", EssenceBlocks.crackenCaneCrop);
 	public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", EssenceBlocks.crakeBulbCrop);
