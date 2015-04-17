@@ -162,7 +162,6 @@ public class EssenceBlocks {
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
 	public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
 	public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
-	
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
 	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);

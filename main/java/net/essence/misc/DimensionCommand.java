@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.client.DarkEnergyBar;
 import net.essence.client.EssenceBar;
 import net.essence.dimension.ModTeleporter;
+import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -73,7 +74,20 @@ public class DimensionCommand extends CommandBase {
 					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.frozen, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.frozen), Config.frozen, EssenceBlocks.frozenPortal, Blocks.snow));
 				}
 			}
+			
+			if(var2[0].equalsIgnoreCase("Corba")) {
+				if(playerMP.dimension != Config.corba) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.corba, new TeleporterCorba(playerMP.mcServer.worldServerForDimension(Config.corba)));
+				}
+			}
+			
+			if(var2[0].equalsIgnoreCase("Wastelands")) {
+				if(playerMP.dimension != Config.wastelands) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.wastelands, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.wastelands), Config.frozen, EssenceBlocks.wastelandsPortal, EssenceBlocks.wastelandsPortalFrame));
+				}
+			}
 		}
+		
 	}
 	
 	@Override
@@ -83,6 +97,6 @@ public class DimensionCommand extends CommandBase {
 
 	@Override
 	public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2, BlockPos pos) {
-		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"overworld", "nether", "end", "euca", "boilingpoint", "depths", "frozenlands"}) : null;
+		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"overworld", "nether", "end", "euca", "boilingpoint", "depths", "frozenlands", "corba", "wastelands"}) : null;
 	}
 }

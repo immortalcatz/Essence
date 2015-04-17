@@ -46,22 +46,29 @@ public class BarTickHandler {
 				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 				this.mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.MOD_ID, "textures/gui/misc.png"));
 				//int sw = scaledresolution.getScaledWidth(), sh = scaledresolution.getScaledHeight();
-				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10;
+				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10, x2 = 10;
 				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 5, 0, 177, 117, 19);
-				y = y - 0;
-				gig.drawTexturedModalRect(x - 6, y - 2, 0, 39, 109, 13);
+				gig.drawTexturedModalRect(x - 10, y - 20, 0, 177, 117, 19);
+				
+				gig.drawTexturedModalRect(x - 6, y - 13, 0, 23, 109, 5);
 				for(int i = 0; i < (int)EssenceBar.instance.getBarValue(); i++) {
 					if(!(i >= 10)) {
 						x += 11;
-						gig.drawTexturedModalRect(x - 17, y - 2, 0, 0, 10, 13);
+						gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
 					}
 				}
 				y += 15;
-				gig.drawTexturedModalRect(x1 - 6, y - 2, 0, 26, 109, 13);
+				gig.drawTexturedModalRect(x1 - 6, y - 13, 0, 36, 109, 5);
 				for(int i = 0; i < (int)DarkEnergyBar.instance.getBarValue(); i++) {
 					x1 += 11;
-					gig.drawTexturedModalRect(x1 - 17, y - 2, 0, 13, 10, 13);
+					gig.drawTexturedModalRect(x1 - 17, y - 13, 0, 5, 10, 5);
+				}
+				
+				gig.drawTexturedModalRect(x2 - 6, y + 2, 0, 49, 109, 5);
+				for(int i = 0; i < (int)PowerBar.instance.getBarValue(); i++) {
+					x2 += 11;
+					gig.drawTexturedModalRect(x2 - 17, y + 2, 0, 10, 10, 5);
 				}
 				GlStateManager.disableAlpha();
 				GlStateManager.disableBlend();
@@ -76,8 +83,9 @@ public class BarTickHandler {
 		if(ticks >= 100) {
 			DarkEnergyBar.instance.updateAllBars();
 			EssenceBar.instance.updateAllBars();
+			PowerBar.instance.updateAllBars();
 		}
 		DarkEnergyBar.instance.mainUpdate();
-		EssenceBar.instance.mainUpdate();
+		PowerBar.instance.mainUpdate();
 	}
 }
