@@ -36,7 +36,7 @@ public class EntityStaringGuardian extends EntityModVillager {
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.depthsFlake, 15), new ItemStack(EssenceItems.darkCrystal, 15), new ItemStack(EssenceItems.depthsSlayer, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.depthsFlake, 15), new ItemStack(EssenceItems.beastlyStomach, 15), new ItemStack(EssenceItems.depthsBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.depthsFlake, 15), new ItemStack(EssenceItems.depthsSlayer, 1), new ItemStack(EssenceItems.depthsDarksword, 32)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.depthsFlake, 15), new ItemStack(EssenceItems.depthsSlayer, 1), new ItemStack(EssenceItems.depthsDarksword, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.depthsFlake, 15), new ItemStack(EssenceItems.depthsBow, 1), new ItemStack(EssenceItems.darkEnforcer, 1)));
 		
 	}
