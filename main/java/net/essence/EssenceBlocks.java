@@ -8,6 +8,7 @@ import net.essence.blocks.BlockBrison;
 import net.essence.blocks.BlockBrittleIce;
 import net.essence.blocks.BlockCaveVine;
 import net.essence.blocks.BlockCloud;
+import net.essence.blocks.BlockCloudiaPortal;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockCorbaPortal;
 import net.essence.blocks.BlockCorbaPortalFrame;
@@ -168,6 +169,9 @@ public class EssenceBlocks {
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
 	public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
 	public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
+	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal");
+	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", 3.0F);
+	
 	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
 
 	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);

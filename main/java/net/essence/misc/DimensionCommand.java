@@ -83,7 +83,13 @@ public class DimensionCommand extends CommandBase {
 			
 			if(var2[0].equalsIgnoreCase("Wastelands")) {
 				if(playerMP.dimension != Config.wastelands) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.wastelands, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.wastelands), Config.frozen, EssenceBlocks.wastelandsPortal, EssenceBlocks.wastelandsPortalFrame));
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.wastelands, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.wastelands), Config.wastelands, EssenceBlocks.wastelandsPortal, EssenceBlocks.wastelandsPortalFrame));
+				}
+			}
+			
+			if(var2[0].equalsIgnoreCase("Cloudia")) {
+				if(playerMP.dimension != Config.wastelands) {
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.cloudia, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.cloudia), Config.cloudia, EssenceBlocks.cloudiaPortal, EssenceBlocks.cloudiaPortalFrame));
 				}
 			}
 		}
@@ -97,6 +103,6 @@ public class DimensionCommand extends CommandBase {
 
 	@Override
 	public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2, BlockPos pos) {
-		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"overworld", "nether", "end", "euca", "boilingpoint", "depths", "frozenlands", "corba", "wastelands"}) : null;
+		return par2.length == 1 ? getListOfStringsMatchingLastWord(par2, new String[] {"overworld", "nether", "end", "euca", "boilingpoint", "depths", "frozenlands", "corba", "wastelands", "cloudia"}) : null;
 	}
 }
