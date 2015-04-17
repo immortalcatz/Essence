@@ -6,6 +6,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -30,6 +31,12 @@ public class WorldProviderEuca extends WorldProvider {
     
     @Override
     @SideOnly(Side.CLIENT)
+    public void setSkyRenderer(IRenderHandler skyRenderer) {
+    	super.setSkyRenderer(new EucaSkyRenderer());
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
     	return new Vec3(1.1, 1.1, 1);
     }
@@ -45,6 +52,13 @@ public class WorldProviderEuca extends WorldProvider {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
+    public boolean doesXZShowFog(int x, int z) {
+        return true;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
     public float calculateCelestialAngle(long var1, float var3) {
         return 0.1F;
     }
