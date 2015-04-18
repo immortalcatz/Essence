@@ -56,13 +56,11 @@ public class MobStats {
 	public static double rocHealth = 75.0D, rocHealthTamed = 75.0D, rocDamage = 13.0D, rocDamageTamed = 13.0D, rocSpeed = normalSpeed, rocFollowRange = follow;
 
 	//Corba
-	@SuppressWarnings("fix these too")
-	public static double overseerHealth = 75.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
-	public static double elderOverseerHealth = 75.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
+	public static double overseerHealth = 90.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
+	public static double elderOverseerHealth = 90.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
 	
 	//Cloudia
-	@SuppressWarnings("and these")
-	public static double cloudGhostHealth = 75.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;
+	public static double cloudGhostHealth = 150.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;
 
 	//Boss
 	public static double witheringBeastHealth = 400.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
