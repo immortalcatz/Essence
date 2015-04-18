@@ -76,6 +76,9 @@ public class Textures {
     public static final ResourceLocation greenTordo = addMob("greenTordo");
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
     public static final ResourceLocation staringGuardian = addMob("staringGuardian");
+    public static final ResourceLocation leafBlower = addMob("leafBlower");
+    public static final ResourceLocation surfaceSeer = addMob("surfaceSeer");
+    public static final ResourceLocation treeGolem = addMob("treeGolem");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

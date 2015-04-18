@@ -43,9 +43,11 @@ import net.essence.client.render.model.mob.boss.ModelEudor;
 import net.essence.client.render.model.mob.boss.ModelSentryKing;
 import net.essence.client.render.model.mob.boss.ModelWitheringBeast;
 import net.essence.client.render.model.mob.cloudia.ModelCloudGhost;
+import net.essence.client.render.model.mob.corba.ModelLeafBlower;
 import net.essence.client.render.model.mob.corba.ModelOverseer;
 import net.essence.client.render.model.mob.corba.ModelOverseerElder;
 import net.essence.client.render.model.mob.corba.ModelTordo;
+import net.essence.client.render.model.mob.corba.ModelTreeGolem;
 import net.essence.client.render.model.mob.depths.ModelDarknessCrawler;
 import net.essence.client.render.model.mob.depths.ModelDepthsBeast;
 import net.essence.client.render.model.mob.depths.ModelDepthsHunter;
@@ -96,8 +98,11 @@ import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
+import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
+import net.essence.entity.mob.corba.EntitySurfaceSeer;
+import net.essence.entity.mob.corba.EntityTreeGolem;
 import net.essence.entity.mob.corba.npc.EntityRedTordo;
 import net.essence.entity.mob.corba.npc.EntityTordo;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
@@ -237,11 +242,13 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEscapedConvict.class, new RenderModMob(new ModelEscapedConvict(), tex.escapedConvict));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
 		RenderingRegistry.registerEntityRenderingHandler(EntityOverseer.class, new RenderModMob(new ModelOverseer(), tex.overseer));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySurfaceSeer.class, new RenderModMob(new ModelOverseer(), tex.surfaceSeer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityOverseerElder.class, new RenderModMob(new ModelOverseerElder(), tex.overseerElder));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTordo.class, new RenderModMob(new ModelTordo(), tex.blueTordo));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedTordo.class, new RenderModMob(new ModelTordo(), tex.redTordo));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCloudGhost.class, new RenderModMob(new ModelCloudGhost(), tex.cloudGhost));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStaringGuardian.class, new RenderModMob(new ModelStaringGuardian(), tex.staringGuardian));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTreeGolem.class, new RenderModMob(new ModelTreeGolem(), tex.treeGolem));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
@@ -249,6 +256,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenTroll.class, new RenderModMob(new ModelFrozenTroll(), tex.frozenTroll));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPermafraust.class, new RenderModMob(new ModelPermafraust(), tex.permafraust));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShiveringBushwalker.class, new RenderModMob(new ModelShiveringBushwalker(), tex.shiveringBushwalker));
+		RenderingRegistry.registerEntityRenderingHandler(EntityLeafBlower.class, new RenderModMob(new ModelLeafBlower(), tex.leafBlower));
+		
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityNetherBeast.class, new RenderBoss(new ModelBeastOfTheNether(), 0.5F, 2.0F, tex.netherBeast, stat.netherBeastBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWitheringBeast.class, new RenderBoss(new ModelWitheringBeast(), 0.5F, 2.0F, tex.witheringBeast, stat.witheringBeastBossID));
