@@ -79,6 +79,7 @@ public class Textures {
     public static final ResourceLocation leafBlower = addMob("leafBlower");
     public static final ResourceLocation surfaceSeer = addMob("surfaceSeer");
     public static final ResourceLocation treeGolem = addMob("treeGolem");
+    public static final ResourceLocation woodCreature = addMob("woodCreature");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

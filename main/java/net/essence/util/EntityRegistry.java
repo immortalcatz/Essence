@@ -24,6 +24,7 @@ import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
 import net.essence.entity.mob.corba.EntityTreeGolem;
+import net.essence.entity.mob.corba.EntityWoodCreature;
 import net.essence.entity.mob.corba.npc.EntityRedTordo;
 import net.essence.entity.mob.corba.npc.EntityTordo;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
@@ -172,6 +173,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityLeafBlower.class, "leafBlower");
 		SlayerAPI.registerMob(EntitySurfaceSeer.class, "surfaceSeer");
 		SlayerAPI.registerMob(EntityTreeGolem.class, "treeGolem");
+		SlayerAPI.registerMob(EntityWoodCreature.class, "woodCreature");
 	}
 	
 	public static void registerNPCs() {

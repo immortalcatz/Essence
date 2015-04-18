@@ -48,6 +48,7 @@ import net.essence.client.render.model.mob.corba.ModelOverseer;
 import net.essence.client.render.model.mob.corba.ModelOverseerElder;
 import net.essence.client.render.model.mob.corba.ModelTordo;
 import net.essence.client.render.model.mob.corba.ModelTreeGolem;
+import net.essence.client.render.model.mob.corba.ModelWoodCreature;
 import net.essence.client.render.model.mob.depths.ModelDarknessCrawler;
 import net.essence.client.render.model.mob.depths.ModelDepthsBeast;
 import net.essence.client.render.model.mob.depths.ModelDepthsHunter;
@@ -103,6 +104,7 @@ import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
 import net.essence.entity.mob.corba.EntityTreeGolem;
+import net.essence.entity.mob.corba.EntityWoodCreature;
 import net.essence.entity.mob.corba.npc.EntityRedTordo;
 import net.essence.entity.mob.corba.npc.EntityTordo;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
@@ -249,6 +251,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCloudGhost.class, new RenderModMob(new ModelCloudGhost(), tex.cloudGhost));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStaringGuardian.class, new RenderModMob(new ModelStaringGuardian(), tex.staringGuardian));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTreeGolem.class, new RenderModMob(new ModelTreeGolem(), tex.treeGolem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityWoodCreature.class, new RenderModMob(new ModelWoodCreature(), tex.woodCreature));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
