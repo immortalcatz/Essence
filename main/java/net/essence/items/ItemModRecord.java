@@ -62,7 +62,6 @@ public class ItemModRecord extends ItemRecord {
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
         tooltip.add(this.getRecordNameLocal());
-        tooltip.add(SlayerAPI.Colour.DARK_AQUA + SlayerAPI.MOD_NAME);
     }
 
     @SideOnly(Side.CLIENT)
