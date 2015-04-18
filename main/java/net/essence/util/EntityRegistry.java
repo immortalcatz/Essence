@@ -19,8 +19,11 @@ import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
+import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
+import net.essence.entity.mob.corba.EntitySurfaceSeer;
+import net.essence.entity.mob.corba.EntityTreeGolem;
 import net.essence.entity.mob.corba.npc.EntityRedTordo;
 import net.essence.entity.mob.corba.npc.EntityTordo;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
@@ -166,6 +169,9 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityFrozenTroll.class, "frozenTroll");
 		SlayerAPI.registerMob(EntityPermafraust.class, "permafraust");
 		SlayerAPI.registerMob(EntityShiveringBushwalker.class, "shiveringBushwalker");
+		SlayerAPI.registerMob(EntityLeafBlower.class, "leafBlower");
+		SlayerAPI.registerMob(EntitySurfaceSeer.class, "surfaceSeer");
+		SlayerAPI.registerMob(EntityTreeGolem.class, "treeGolem");
 	}
 	
 	public static void registerNPCs() {
