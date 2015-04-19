@@ -3,6 +3,7 @@ package net.essence.dimension;
 import net.essence.dimension.boil.BiomeGenBoiling;
 import net.essence.dimension.boil.WorldProviderBoiling;
 import net.essence.dimension.cloudia.BiomeGenCloudia;
+import net.essence.dimension.cloudia.WorldProviderCloudia;
 import net.essence.dimension.corba.BiomeGenCorba;
 import net.essence.dimension.corba.WorldProviderCorba;
 import net.essence.dimension.depths.BiomeGenDepths;
@@ -74,6 +75,7 @@ public class DimensionHelper {
 		addDimension(Config.frozen, WorldProviderFrozenLands.class, Config.keepLoadingFrozen);
 		addDimension(Config.corba, WorldProviderCorba.class, Config.keepLoadingCorba);
 		addDimension(Config.wastelands, WorldProviderWastelands.class, Config.keepLoadingWastelands);
+		addDimension(Config.cloudia, WorldProviderCloudia.class, Config.keepLoadingCloudia);
 	}
 
 	private static void addDimension(int id, Class<? extends WorldProvider> w, boolean keeploading) {

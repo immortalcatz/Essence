@@ -16,12 +16,12 @@ public class BiomeGenCloudia extends BiomeGenBase {
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        setColor(0xAE9000);
+        setColor(0x00FFD0);
 	}
 	
 	@Override
     @SideOnly(Side.CLIENT)
     public int getSkyColorByTemp(float f) {
-        return 0xAE9000;
+        return 0x00FFD0;
     }
 }

@@ -30,7 +30,7 @@ public class WorldProviderCloudia extends WorldProvider {
 	@Override
     @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
-    	return new Vec3(1.5, 1.15, 1.0);
+    	return new Vec3(1.0, 1.5, 1.35);
     }
 
 	@Override
@@ -57,7 +57,7 @@ public class WorldProviderCloudia extends WorldProvider {
 	@Override
     @SideOnly(Side.CLIENT)
     public boolean doesXZShowFog(int x, int z) {
-        return false;
+        return true;
     }
 
 	@Override
