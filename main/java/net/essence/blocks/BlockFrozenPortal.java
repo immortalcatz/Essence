@@ -103,7 +103,7 @@ public class BlockFrozenPortal extends BlockBreakable {
 		if ((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
 			int dimensionID = Config.frozen;
-			Block blockFrame = Blocks.snow;
+			Block blockFrame = EssenceBlocks.frozenPortalFrame;
 			if(thePlayer.timeUntilPortal > 0) 
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
@@ -249,14 +249,14 @@ public class BlockFrozenPortal extends BlockBreakable {
 			{
 				BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
 
-				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != Blocks.snow)
+				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.frozenPortalFrame)
 				{
 					break;
 				}
 			}
 
 			Block block = this.field_150867_a.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-			return block == Blocks.snow ? i : 0;
+			return block == EssenceBlocks.frozenPortalFrame ? i : 0;
 		}
 
 		protected int func_150858_a()
@@ -285,7 +285,7 @@ public class BlockFrozenPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150863_d)).getBlock();
 
-							if (block != Blocks.snow)
+							if (block != EssenceBlocks.frozenPortalFrame)
 							{
 								break label56;
 							}
@@ -294,7 +294,7 @@ public class BlockFrozenPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150866_c)).getBlock();
 
-							if (block != Blocks.snow)
+							if (block != EssenceBlocks.frozenPortalFrame)
 							{
 								break label56;
 							}
@@ -304,7 +304,7 @@ public class BlockFrozenPortal extends BlockBreakable {
 
 			for (i = 0; i < this.field_150868_h; ++i)
 			{
-				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != Blocks.snow)
+				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.frozenPortalFrame)
 				{
 					this.field_150862_g = 0;
 					break;

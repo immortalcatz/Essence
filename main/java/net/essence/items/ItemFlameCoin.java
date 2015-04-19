@@ -32,7 +32,8 @@ public class ItemFlameCoin extends ItemMod {
 			return false;
 		} else {
 			Block block = w.getBlockState(pos).getBlock();
-			if(block == Blocks.snow ||block == EssenceBlocks.eucaPortalFrame || block == EssenceBlocks.depthsPortalFrame || block == EssenceBlocks.boilPortalFrame) {
+			if(block == EssenceBlocks.frozenPortalFrame ||block == EssenceBlocks.eucaPortalFrame || block == EssenceBlocks.depthsPortalFrame || block == EssenceBlocks.boilPortalFrame
+					 || block == EssenceBlocks.cloudiaPortalFrame || block == EssenceBlocks.wastelandsPortalFrame) {
 				w.setBlockState(new BlockPos(pos.up()), EssenceBlocks.fire.getDefaultState(), 2);
 				return true;
 			}
