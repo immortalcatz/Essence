@@ -83,6 +83,7 @@ import net.essence.entity.projectile.EntityNetherPlasma;
 import net.essence.entity.projectile.EntityNethicPiercer;
 import net.essence.entity.projectile.EntityOceanPlasma;
 import net.essence.entity.projectile.EntityPoisonArrow;
+import net.essence.entity.projectile.EntityPower;
 import net.essence.entity.projectile.EntityRockProjectile;
 import net.essence.entity.projectile.EntityTempleBall;
 import net.essence.entity.projectile.EntityWizardsStar;
@@ -128,6 +129,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityCorbaPiercer.class, "corbapiercer");
 		SlayerAPI.registerProjectile(EntityFrostbittenPiercer.class, "frostbittenpiercer");
 		SlayerAPI.registerProjectile(EntityFrostyPiercer.class, "frostypiercer");
+		SlayerAPI.registerProjectile(EntityPower.class, "power");
 	}
 	
 	public static void registerMobs() {

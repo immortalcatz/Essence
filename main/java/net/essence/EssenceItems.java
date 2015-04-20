@@ -457,6 +457,8 @@ public class EssenceItems {
 	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", 1F, EntityCorbaPiercer.class);
 	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", 1F, EntityFrostbittenPiercer.class);
 	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", 1F, EntityFrostyPiercer.class);
+	
+	public static final Item weakPower = new ItemPower("weakPower", 10F);
 
 	public static ToolMaterial addToolMaterial(int uses, float efficiency, float dam, boolean breakable) {
 		return EnumHelper.addToolMaterial("tool", 3, breakable ? uses : -1, efficiency, dam, 30);
