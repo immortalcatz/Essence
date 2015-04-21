@@ -166,4 +166,19 @@ public class ClientProxy extends CommonProxy {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+	public void updateDarkEnergy() {
+	
+	}
+	
+	@Override
+	public void updateEssence() {
+		
+	}
+	
+	@Override
+	public void updatePower() {
+		
+	}
 }

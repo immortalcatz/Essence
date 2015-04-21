@@ -36,6 +36,9 @@ import net.slayer.api.SlayerAPI;
 
 public class CommonProxy {
 
+	public void updateDarkEnergy() { }
+	public void updateEssence() { }
+	public void updatePower() { }
 	public void registerClient() { }
 	public void clientInit(FMLInitializationEvent event) { }
 	public void clientPreInit() { }

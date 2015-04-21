@@ -25,6 +25,10 @@ public class BarTickHandler {
 	private Minecraft mc = Minecraft.getMinecraft();
 	private int ticks = 100;
 
+	public static int darkAmount, essenceAmount, powerAmount;
+	public static boolean regenDark, regenEssence, regenPower;
+	
+	
 	@SubscribeEvent
 	public void onTick(PlayerTickEvent event){
 		if(event.phase == Phase.END) tickEnd();
