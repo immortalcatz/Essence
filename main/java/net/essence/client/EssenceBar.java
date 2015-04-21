@@ -18,7 +18,6 @@ public class EssenceBar implements IExtendedEntityProperties {
 	private int essence, regenDelay;
 	private final EntityPlayer player;
 	private final static String PROP = "EssenceProperties";
-	public static EssenceBar instance = new EssenceBar();
 
 	public EssenceBar(EntityPlayer player) {
 		this.player = player;

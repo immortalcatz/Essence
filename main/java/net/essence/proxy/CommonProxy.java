@@ -1,38 +1,23 @@
 package net.essence.proxy;
 
-import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.blocks.tileentity.TileEntityCorbaPortal;
-import net.essence.blocks.tileentity.TileEntityEnrichedTable;
-import net.essence.blocks.tileentity.TileEntityEssenceSign;
-import net.essence.blocks.tileentity.TileEntityGrindstone;
-import net.essence.blocks.tileentity.TileEntityIncubator;
-import net.essence.blocks.tileentity.TileEntityKnowledgeTable;
-import net.essence.blocks.tileentity.TileEntityStatue;
-import net.essence.blocks.tileentity.TileEntitySummoningTable;
-import net.essence.dimension.DimensionHelper;
-import net.essence.dimension.WorldGenEssence;
-import net.essence.enums.EnumParticlesClasses;
-import net.essence.event.ArmorAbilityEvent;
-import net.essence.event.KnowledgeEvent;
-import net.essence.event.PlayerEvent;
-import net.essence.items.tileentity.TileEntityBackpack;
-import net.essence.misc.DimensionCommand;
-import net.essence.misc.EssenceCommands;
-import net.essence.util.Config;
+import net.essence.*;
+import net.essence.blocks.tileentity.*;
+import net.essence.dimension.*;
+import net.essence.enums.*;
+import net.essence.event.*;
+import net.essence.items.tileentity.*;
+import net.essence.misc.*;
+import net.essence.util.*;
 import net.essence.util.EntityRegistry;
-import net.essence.util.recipes.RecipeHelper;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-import net.slayer.api.SlayerAPI;
+import net.essence.util.recipes.*;
+import net.minecraft.item.*;
+import net.minecraft.world.*;
+import net.minecraftforge.common.*;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.registry.*;
+import net.minecraftforge.oredict.*;
+import net.slayer.api.*;
 
 public class CommonProxy {
 
@@ -81,7 +66,9 @@ public class CommonProxy {
 		//EssenceAchievements.init();
 	}
 	
-	public void postInit(FMLPostInitializationEvent event) { }
+	public void postInit(FMLPostInitializationEvent event) {
+
+	}
 	
 	public void serverStarting(FMLServerStartingEvent event) {
 		SlayerAPI.registerCommand(new EssenceCommands());

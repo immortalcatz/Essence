@@ -301,12 +301,12 @@ public class EssenceItems {
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
 
-	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", DarkEnergyBar.instance.useBar(3), 1000, 7, false, EntityBasicProjectile.class);
-	public static final Item doomsBringer = new ItemStaff("doomsBringer", DarkEnergyBar.instance.useBar(3), 1000, 12, false, EntityDoomsBringer.class);
-	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", EssenceBar.instance.useBar(3), 1000, 18, false, EntityConjuring.class);
-	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", EssenceBar.instance.useBar(3), 1000, 14, false, EntityEnlightenment.class);
-	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", EssenceBar.instance.useBar(3), 1000, 10, false, EntityGreenpace.class);
-	public static final Item wizardsStar = new ItemStaff("wizardsStar", EssenceBar.instance.useBar(3), 1000, 5, false, EntityWizardsStar.class);
+	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", false, 3, 1000, 7, false, EntityBasicProjectile.class);
+	public static final Item doomsBringer = new ItemStaff("doomsBringer", false, 3, 1000, 12, false, EntityDoomsBringer.class);
+	public static final Item conjuringStaff = new ItemStaff("conjuringStaff", false, 3, 1000, 18, false, EntityConjuring.class);
+	public static final Item staffOfEnlightenment = new ItemStaff("staffOfEnlightenment", true, 3, 1000, 14, false, EntityEnlightenment.class);
+	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", true, 3, 1000, 10, false, EntityGreenpace.class);
+	public static final Item wizardsStar = new ItemStaff("wizardsStar", true, 3, 1000, 5, false, EntityWizardsStar.class);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff");
 
 	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
@@ -358,9 +358,9 @@ public class EssenceItems {
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
-	public static final Item fireWand = new ItemWand("fireWand", DarkEnergyBar.instance.useBar(5), 600, 8, false, EntityFireBall.class);
-	public static final Item iceWand = new ItemWand("iceWand", EssenceBar.instance.useBar(5), 600, 8, false, EntityIceBall.class);
-	public static final Item lightningWand = new ItemWand("lightningWand", DarkEnergyBar.instance.useBar(10), 600, 8, false, EntityLightningBall.class);
+	public static final Item fireWand = new ItemWand("fireWand", false, 5, 600, 8, false, EntityFireBall.class);
+	public static final Item iceWand = new ItemWand("iceWand", true, 5, 600, 8, false, EntityIceBall.class);
+	public static final Item lightningWand = new ItemWand("lightningWand", false, 10, 600, 8, false, EntityLightningBall.class);
 
 	public static final Item greenGem = new ItemMod("greenGem");
 	public static final Item purpleGem = new ItemMod("purpleGem");

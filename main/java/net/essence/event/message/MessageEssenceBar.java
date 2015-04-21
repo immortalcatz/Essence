@@ -12,6 +12,8 @@ public class MessageEssenceBar implements IMessage {
 	public int amount;
 	public boolean shouldRegen;
 
+	public MessageEssenceBar() { }
+	
 	public MessageEssenceBar(int amount, boolean shouldRegen) {
 		this.amount = amount;
 		this.shouldRegen = shouldRegen;

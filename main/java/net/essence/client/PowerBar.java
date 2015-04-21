@@ -15,7 +15,6 @@ public class PowerBar implements IExtendedEntityProperties {
 	private int power, regenDelay;
 	private final EntityPlayer player;
 	private final static String PROP = "PowerProperties";
-	public static PowerBar instance = new PowerBar();
 
 	public PowerBar(EntityPlayer player) {
 		this.player = player;

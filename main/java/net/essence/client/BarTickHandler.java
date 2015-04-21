@@ -7,7 +7,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
@@ -23,25 +25,39 @@ import org.lwjgl.opengl.GL11;
 public class BarTickHandler {
 
 	private Minecraft mc = Minecraft.getMinecraft();
+	private EntityPlayer player;
 	private int ticks = 100;
 
 	public static int darkAmount, essenceAmount, powerAmount;
 	public static boolean regenDark, regenEssence, regenPower;
-	
-	
+
 	@SubscribeEvent
-	public void onTick(PlayerTickEvent event){
-		if(event.phase == Phase.END) tickEnd();
+	public void onEntityConstructing(EntityConstructing event) {
+		if(event.entity != null) {
+			if(event.entity instanceof EntityPlayer && DarkEnergyBar.getProperties((EntityPlayer)event.entity) == null)
+				DarkEnergyBar.addProperties((EntityPlayer)event.entity);
+
+			if(event.entity instanceof EntityPlayer && EssenceBar.getProperties((EntityPlayer)event.entity) == null)
+				EssenceBar.addProperties((EntityPlayer)event.entity);
+
+			if(event.entity instanceof EntityPlayer && PowerBar.getProperties((EntityPlayer)event.entity) == null)
+				PowerBar.addProperties((EntityPlayer)event.entity);
+		}
 	}
 
 	@SubscribeEvent
-	public void onRender(RenderTickEvent event){
-		onTickRender();
+	public void onTick(PlayerTickEvent event) {
+		if(event.phase == Phase.END) tickEnd(event.player);
+	}
+	
+	@SubscribeEvent
+	public void renderEvent(RenderTickEvent event) {
+		onTickRender(Minecraft.getMinecraft().thePlayer);
 	}
 
-	private void onTickRender() {
+	private void onTickRender(EntityPlayer player) {
 		if(mc.currentScreen == null) {
-			if(!mc.thePlayer.capabilities.isCreativeMode) {
+			if(!player.capabilities.isCreativeMode) {
 				GL11.glPushMatrix();
 				GlStateManager.enableBlend();
 				GlStateManager.enableAlpha();
@@ -54,9 +70,9 @@ public class BarTickHandler {
 				gig.drawTexturedModalRect(x - 10, y + 10, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 5, 0, 177, 117, 19);
 				gig.drawTexturedModalRect(x - 10, y - 20, 0, 177, 117, 19);
-				
+
 				gig.drawTexturedModalRect(x - 6, y - 13, 0, 23, 109, 5);
-				for(int i = 0; i < (int)EssenceBar.instance.getBarValue(); i++) {
+				for(int i = 0; i < EssenceBar.getProperties(player).getBarValue(); i++) {
 					if(!(i >= 10)) {
 						x += 11;
 						gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
@@ -64,13 +80,12 @@ public class BarTickHandler {
 				}
 				y += 15;
 				gig.drawTexturedModalRect(x1 - 6, y - 13, 0, 36, 109, 5);
-				for(int i = 0; i < (int)DarkEnergyBar.instance.getBarValue(); i++) {
+				for(int i = 0; i < DarkEnergyBar.getProperties(player).getBarValue(); i++) {
 					x1 += 11;
 					gig.drawTexturedModalRect(x1 - 17, y - 13, 0, 5, 10, 5);
 				}
-				
 				gig.drawTexturedModalRect(x2 - 6, y + 2, 0, 49, 109, 5);
-				for(int i = 0; i < (int)PowerBar.instance.getBarValue(); i++) {
+				for(int i = 0; i < PowerBar.getProperties(player).getBarValue(); i++) {
 					x2 += 11;
 					gig.drawTexturedModalRect(x2 - 17, y + 2, 0, 10, 10, 5);
 				}
@@ -81,16 +96,15 @@ public class BarTickHandler {
 		}
 	}
 
-	private void tickEnd() {
-		ticks--;
-		if(ticks <= 0) ticks = 100;
+	private void tickEnd(EntityPlayer player) {
+		if(ticks-- <= 0) ticks = 100;
 		if(ticks >= 100) {
-			DarkEnergyBar.instance.updateAllBars();
-			EssenceBar.instance.updateAllBars();
-			PowerBar.instance.updateAllBars();
+			DarkEnergyBar.getProperties(player).updateAllBars();
+			EssenceBar.getProperties(player).updateAllBars();
+			PowerBar.getProperties(player).updateAllBars();
 		}
-		DarkEnergyBar.instance.mainUpdate();
-		EssenceBar.instance.mainUpdate();
-		PowerBar.instance.mainUpdate();
+		DarkEnergyBar.getProperties(player).mainUpdate();
+		EssenceBar.getProperties(player).mainUpdate();
+		PowerBar.getProperties(player).mainUpdate();
 	}
 }

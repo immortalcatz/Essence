@@ -12,6 +12,8 @@ public class MessagePowerBar implements IMessage {
 	public int amount;
 	public boolean shouldRegen;
 
+	public MessagePowerBar() { }
+	
 	public MessagePowerBar(int amount, boolean shouldRegen) {
 		this.amount = amount;
 		this.shouldRegen = shouldRegen;

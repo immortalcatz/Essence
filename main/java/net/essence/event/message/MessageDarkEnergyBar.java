@@ -12,6 +12,8 @@ public class MessageDarkEnergyBar implements IMessage {
 	public int amount;
 	public boolean shouldRegen;
 
+	public MessageDarkEnergyBar() { }
+	
 	public MessageDarkEnergyBar(int amount, boolean shouldRegen) {
 		this.amount = amount;
 		this.shouldRegen = shouldRegen;

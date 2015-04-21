@@ -19,16 +19,17 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemStaff extends ItemMod {
 
-	protected boolean usage;
+	protected int usage;
 	protected int damage;
 	protected boolean essence, unBreakable;
 	protected Class<? extends EntityBasicProjectile> projectile; 
 
-	public ItemStaff(String name, boolean magic, int uses, int dam, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
+	public ItemStaff(String name, boolean essence, int magic, int uses, int dam, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
 		super(name);
 		this.projectile = projectile;
 		damage = dam;
 		usage = magic;
+		this.essence = essence;
 		this.unBreakable = unbreakable;
 		setMaxDamage(uses);
 		setMaxStackSize(1);
@@ -38,14 +39,26 @@ public class ItemStaff extends ItemMod {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		try {
-			if(usage) {
+		if(essence) {
+			if(!world.isRemote && EssenceBar.getProperties(player).useBar(usage)) {
 				EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
 				if(!unBreakable) stack.damageItem(1, player);
-				if(!world.isRemote) world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+				try {
+					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
+					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+					if(!unBreakable) stack.damageItem(1, player);
+					try {
+						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		return stack;
 	}

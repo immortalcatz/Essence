@@ -5,6 +5,7 @@ import java.util.List;
 import net.essence.EssenceBlocks;
 import net.essence.client.DarkEnergyBar;
 import net.essence.client.EssenceBar;
+import net.essence.client.PowerBar;
 import net.essence.dimension.ModTeleporter;
 import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;
@@ -40,12 +41,11 @@ public class EssenceCommands extends CommandBase {
 		if(var2[0].equalsIgnoreCase("Heal")){
 			if(p.getHealth() < p.getMaxHealth()) 
 				p.heal(20);
-
 			if(p.getFoodStats().needFood())
 				p.getFoodStats().addStats(20, 1);
-
-			EssenceBar.instance.addBarPoints(1000);
-			DarkEnergyBar.instance.addBarPoints(1000);
+			EssenceBar.getProperties(p).addBarPoints(10);
+			DarkEnergyBar.getProperties(p).addBarPoints(10);
+			PowerBar.getProperties(p).addBarPoints(10);
 		}
 
 		EntityPlayerMP playerMP = (EntityPlayerMP)var1;

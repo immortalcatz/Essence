@@ -52,8 +52,8 @@ public class ItemEssencePotion extends ItemMod {
 	public ItemStack drink(ItemStack stack, World world, EntityPlayer player) {
 		int amount = isStrong ? 10 : 5;
 		if(!world.isRemote){
-			if(essence) EssenceBar.instance.addBarPoints(amount);
-			else DarkEnergyBar.instance.addBarPoints(amount);
+			if(essence) EssenceBar.getProperties(player).addBarPoints(amount);
+			else DarkEnergyBar.getProperties(player).addBarPoints(amount);
 			if(!player.capabilities.isCreativeMode) stack.stackSize--;
 		}
 		return stack;
