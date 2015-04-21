@@ -29,7 +29,7 @@ public class MessageEssenceBar implements IMessage {
 		buf.writeBoolean(shouldRegen);
 	}
 	
-	public class EssenceHandler implements IMessageHandler<MessageEssenceBar, IMessage> {
+	public static class EssenceHandler implements IMessageHandler<MessageEssenceBar, IMessage> {
 
 		@Override
 		public IMessage onMessage(MessageEssenceBar message, MessageContext ctx) {

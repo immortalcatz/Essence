@@ -29,7 +29,7 @@ public class MessageDarkEnergyBar implements IMessage {
 		buf.writeBoolean(shouldRegen);
 	}
 	
-	public class DarkEnergyHandler implements IMessageHandler<MessageDarkEnergyBar, IMessage> {
+	public static class DarkEnergyHandler implements IMessageHandler<MessageDarkEnergyBar, IMessage> {
 
 		@Override
 		public IMessage onMessage(MessageDarkEnergyBar message, MessageContext ctx) {

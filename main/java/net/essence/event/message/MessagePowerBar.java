@@ -29,7 +29,7 @@ public class MessagePowerBar implements IMessage {
 		buf.writeBoolean(shouldRegen);
 	}
 	
-	public class PowerHandler implements IMessageHandler<MessagePowerBar, IMessage> {
+	public static class PowerHandler implements IMessageHandler<MessagePowerBar, IMessage> {
 
 		@Override
 		public IMessage onMessage(MessagePowerBar message, MessageContext ctx) {
