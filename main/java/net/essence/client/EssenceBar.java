@@ -1,40 +1,63 @@
 package net.essence.client;
 
-import net.essence.util.Helper;
+import net.essence.Essence;
+import net.essence.event.message.MessageEssenceBar;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class EssenceBar implements IExtendedEntityProperties {
 
 	private int essence, regenDelay;
-
+	private final EntityPlayer player;
+	private final static String PROP = "EssenceProperties";
 	public static EssenceBar instance = new EssenceBar();
+
+	public EssenceBar(EntityPlayer player) {
+		this.player = player;
+	}
+	
+	public EssenceBar() {
+		this.player = Minecraft.getMinecraft().thePlayer;
+	}
 
 	@Override
 	public void saveNBTData(NBTTagCompound n) {
+		NBTTagCompound tag = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
 		n.setInteger("essence", 9);
 		n.setInteger("regen", 20);
+		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound n) {
+		NBTTagCompound tag = (NBTTagCompound) player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
+		if(!tag.hasKey("essence")) return;
 		this.essence = n.getInteger("essence");
 		this.regenDelay = n.getInteger("regen");
+		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
+	}
+	
+	public static void addProperties(EntityPlayer player) {
+		player.registerExtendedProperties(PROP, new EssenceBar(player));
+	}
+	
+	public static EssenceBar getProperties(EntityPlayer player) {
+		return (EssenceBar)player.getExtendedProperties(PROP);
 	}
 
 	public void updateAllBars() {
 		essence += 1;
-	}        
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
+	}                
 
-	public void mainUpdate() {
-		if(essence >= 10) essence = 10;
-	}
-
-	@SideOnly(Side.CLIENT)
 	public boolean useBar(int amount) {
 		if(essence < amount) {
 			regenDelay = 10;
@@ -42,26 +65,37 @@ public class EssenceBar implements IExtendedEntityProperties {
 		}
 		essence -= amount;
 		regenDelay = 10;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 		return true;
 	}
 
-	@SideOnly(Side.CLIENT)
 	public void regen(int amount) {
 		if(regenDelay == 0) essence += amount;
-		else regenDelay -= 1;
+		else regenDelay--;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
-	public float getBarValue() {
+	public void mainUpdate() {
+		if(essence >= 10) essence = 10;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
+	}
+
+	public int getBarValue() {
 		return essence;
 	}
 
 	public void addBarPoints(int i) {
 		essence += i;
 	}
+	
+	public void setBarValue(int val) {
+		essence = val;
+	}
 
 	public void removeBarPoints(int i) {
 		regenDelay = 10;
 		essence -= i;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 package net.essence.event.message;
 
 import io.netty.buffer.ByteBuf;
+import net.essence.Essence;
+import net.essence.client.BarTickHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -31,6 +33,9 @@ public class MessageDarkEnergyBar implements IMessage {
 
 		@Override
 		public IMessage onMessage(MessageDarkEnergyBar message, MessageContext ctx) {
+			BarTickHandler.darkAmount = message.amount;
+			BarTickHandler.regenDark = message.shouldRegen;
+			Essence.proxy.updateDarkEnergy(message.amount);
 			return null;
 		}
 	}

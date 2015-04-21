@@ -5,12 +5,15 @@ import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.client.BarTickHandler;
 import net.essence.client.BossTickHandler;
+import net.essence.client.DarkEnergyBar;
 import net.essence.client.EntityRendering;
+import net.essence.client.EssenceBar;
 import net.essence.client.GuiHandler;
 import net.essence.client.KnowledgeRenderHandler;
 import net.essence.client.MusicEvent;
 import net.essence.client.MusicHandler;
 import net.essence.client.PlayerStats;
+import net.essence.client.PowerBar;
 import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.ClientTickEvent;
 import net.essence.event.UpdateCheckerEvent;
@@ -168,17 +171,17 @@ public class ClientProxy extends CommonProxy {
 	}
 	
 	@Override
-	public void updateDarkEnergy() {
-	
+	public void updateDarkEnergy(int amount) {
+		DarkEnergyBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
 	}
 	
 	@Override
-	public void updateEssence() {
-		
+	public void updateEssence(int amount) {
+		EssenceBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
 	}
 	
 	@Override
-	public void updatePower() {
-		
+	public void updatePower(int amount) {
+		PowerBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
 	}
 }

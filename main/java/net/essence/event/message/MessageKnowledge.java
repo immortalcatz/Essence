@@ -6,28 +6,16 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class MessageKnowledge implements IMessage {
-	
-	public int amount;
-	public boolean shouldRegen;
 
-	public MessageKnowledge(int amount, boolean shouldRegen) {
-		this.amount = amount;
-		this.shouldRegen = shouldRegen;
-	}
+	public MessageKnowledge() { }
 	
 	@Override
-	public void fromBytes(ByteBuf buf) {
-		amount = buf.readInt();
-		shouldRegen = buf.readBoolean();
-	}
+	public void fromBytes(ByteBuf buf) { }
 
 	@Override
-	public void toBytes(ByteBuf buf) {
-		buf.writeInt(amount);
-		buf.writeBoolean(shouldRegen);
-	}
+	public void toBytes(ByteBuf buf) { }
 	
-	public class DarkEnergyHandler implements IMessageHandler<MessageKnowledge, IMessage> {
+	public class KnowledgeHandler implements IMessageHandler<MessageKnowledge, IMessage> {
 
 		@Override
 		public IMessage onMessage(MessageKnowledge message, MessageContext ctx) {

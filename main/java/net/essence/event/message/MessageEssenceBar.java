@@ -1,6 +1,8 @@
 package net.essence.event.message;
 
 import io.netty.buffer.ByteBuf;
+import net.essence.Essence;
+import net.essence.client.BarTickHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -27,10 +29,13 @@ public class MessageEssenceBar implements IMessage {
 		buf.writeBoolean(shouldRegen);
 	}
 	
-	public class DarkEnergyHandler implements IMessageHandler<MessageEssenceBar, IMessage> {
+	public class EssenceHandler implements IMessageHandler<MessageEssenceBar, IMessage> {
 
 		@Override
 		public IMessage onMessage(MessageEssenceBar message, MessageContext ctx) {
+			BarTickHandler.essenceAmount = message.amount;
+			BarTickHandler.regenEssence = message.shouldRegen;
+			Essence.proxy.updateEssence(message.amount);
 			return null;
 		}
 	}

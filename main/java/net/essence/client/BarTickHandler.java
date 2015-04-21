@@ -90,6 +90,7 @@ public class BarTickHandler {
 			PowerBar.instance.updateAllBars();
 		}
 		DarkEnergyBar.instance.mainUpdate();
+		EssenceBar.instance.mainUpdate();
 		PowerBar.instance.mainUpdate();
 	}
 }

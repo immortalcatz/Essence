@@ -1,67 +1,98 @@
 package net.essence.client;
 
+import net.essence.Essence;
+import net.essence.event.message.MessagePowerBar;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.fml.relauncher.Side;
 
 public class PowerBar implements IExtendedEntityProperties {
 
 	private int power, regenDelay;
-
+	private final EntityPlayer player;
+	private final static String PROP = "PowerProperties";
 	public static PowerBar instance = new PowerBar();
+
+	public PowerBar(EntityPlayer player) {
+		this.player = player;
+	}
+	
+	public PowerBar() {
+		this.player = Minecraft.getMinecraft().thePlayer;
+	}
 
 	@Override
 	public void saveNBTData(NBTTagCompound n) {
+		NBTTagCompound tag = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
 		n.setInteger("power", 9);
 		n.setInteger("regen", 20);
+		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound n) {
+		NBTTagCompound tag = (NBTTagCompound) player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
+		if(!tag.hasKey("power")) return;
 		this.power = n.getInteger("power");
 		this.regenDelay = n.getInteger("regen");
+		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
+	}
+	
+	public static void addProperties(EntityPlayer player) {
+		player.registerExtendedProperties(PROP, new PowerBar(player));
+	}
+	
+	public static PowerBar getProperties(EntityPlayer player) {
+		return (PowerBar)player.getExtendedProperties(PROP);
 	}
 
 	public void updateAllBars() {
 		power += 1;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessagePowerBar(power, regenDelay == 0), (EntityPlayerMP)player);
 	}                
 
-	@SideOnly(Side.CLIENT)
-	public boolean useBar(int amount, World w) {
+	public boolean useBar(int amount) {
 		if(power < amount) {
 			regenDelay = 10;
 			return false;
 		}
 		power -= amount;
 		regenDelay = 10;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessagePowerBar(power, regenDelay == 0), (EntityPlayerMP)player);
 		return true;
 	}
 
-	@SideOnly(Side.CLIENT)
 	public void regen(int amount) {
 		if(regenDelay == 0) power += amount;
-		else regenDelay -= 1;
+		else regenDelay--;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessagePowerBar(power, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	public void mainUpdate() {
 		if(power >= 10) power = 10;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessagePowerBar(power, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
-	public float getBarValue() {
+	public int getBarValue() {
 		return power;
 	}
 
 	public void addBarPoints(int i) {
 		power += i;
 	}
+	
+	public void setBarValue(int val) {
+		power = val;
+	}
 
 	public void removeBarPoints(int i) {
 		regenDelay = 10;
 		power -= i;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessagePowerBar(power, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	@Override
