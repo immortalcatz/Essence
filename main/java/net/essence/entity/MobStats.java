@@ -28,8 +28,8 @@ public class MobStats {
 	public static double shiveringBushwalkerHealth = 20.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
 	public static double greenTordoHealth = 50.0D, greenTordoDamage = 10.0D, greenTordoSpeed = normalSpeed;
 	public static double leafBlowerHealth = 50.0D, leafBlowerDamage = 10.0D, leafBlowerSpeed = normalSpeed, leafBlowerFollowRange = follow;
-	public static double treeGolemHealth = 100.0D, treeGolemDamage = 100.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
-	public static double woodCreatureHealth = 20.0D, woodCreatureDamage = 20.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
+	public static double treeGolemHealth = 100.0D, treeGolemDamage = 10.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
+	public static double woodCreatureHealth = 20.0D, woodCreatureDamage = 5.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
 	
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;
