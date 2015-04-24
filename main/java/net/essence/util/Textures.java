@@ -80,6 +80,8 @@ public class Textures {
     public static final ResourceLocation surfaceSeer = addMob("surfaceSeer");
     public static final ResourceLocation treeGolem = addMob("treeGolem");
     public static final ResourceLocation woodCreature = addMob("woodCreature");
+    public static final ResourceLocation roc = addMob("roc");
+
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
