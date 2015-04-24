@@ -1,5 +1,6 @@
 package net.essence.client;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.blocks.tileentity.TileEntityCorbaPortal;
 import net.essence.blocks.tileentity.TileEntityEssenceSign;
@@ -11,6 +12,7 @@ import net.essence.client.render.CorbaPortalRenderer;
 import net.essence.client.render.EssenceSignRenderer;
 import net.essence.client.render.GrindstoneRenderer;
 import net.essence.client.render.KnowledgeTableRenderer;
+import net.essence.client.render.ModeledBlockInventoryRenderer;
 import net.essence.client.render.RenderBoss;
 import net.essence.client.render.RenderItemProjectile;
 import net.essence.client.render.RenderModArrow;
@@ -167,8 +169,10 @@ import net.essence.entity.projectile.EntityRockProjectile;
 import net.essence.entity.projectile.EntityTempleBall;
 import net.essence.entity.projectile.EntityWizardsStar;
 import net.essence.util.Textures;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBlaze;
+import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
@@ -280,7 +284,10 @@ public class EntityRendering {
 		//SlayerAPI.registerItemRenderer(EssenceBlocks.wraithStatue, new ItemRendererStatue("wraithStatue"));
 		//SlayerAPI.registerItemRenderer(EssenceBlocks.calciaStatue, new ItemRendererStatue("calciaStatue"));
 		//SlayerAPI.registerItemRenderer(EssenceBlocks.eudorStatue, new ItemRendererStatue("eudorStatue"));
-
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getModelManager().getBlockModelShapes().registerBuiltInBlocks(EssenceBlocks.calciaStatue);
+		TileEntityItemStackRenderer.instance = new ModeledBlockInventoryRenderer(TileEntityItemStackRenderer.instance);
+		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityStatue.class, new StatueRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrindstone.class, new GrindstoneRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCorbaPortal.class, new CorbaPortalRenderer());
