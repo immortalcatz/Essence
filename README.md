@@ -12,11 +12,11 @@ Essence of the Gods
 ####Modelers:
 * Dizzlepop12
 * Jonas
-* eternalsun
 
 ####Assets:
 * Dizzlepop12 - Main texturer/Modeler
-* Jonas - Some mob textures
+* The_SlayerMC
+* Eternaldoom
 
 ####Other:
 * RadioactiveStud - Wiki admin
