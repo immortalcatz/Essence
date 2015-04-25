@@ -233,6 +233,8 @@ public class EssenceItems {
 	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Overworld");
 	public static final Item soulWatcherOrb = new ItemSpecificDimensionSpawner(Config.boil, "soulWatcherOrb", "Boiling Point");
 	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Corba");
+	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Depths");
+	
 	//TODO
 	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Depths");
 	public static final Item rocLeaderOrb = new ItemSpecificDimensionSpawner(Config.depths, "rocLeaderOrb", "Depths");

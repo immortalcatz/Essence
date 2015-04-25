@@ -43,6 +43,7 @@ import net.essence.client.render.model.mob.boss.ModelBeastOfTheNether;
 import net.essence.client.render.model.mob.boss.ModelClacia;
 import net.essence.client.render.model.mob.boss.ModelEudor;
 import net.essence.client.render.model.mob.boss.ModelSentryKing;
+import net.essence.client.render.model.mob.boss.ModelThunderbird;
 import net.essence.client.render.model.mob.boss.ModelWitheringBeast;
 import net.essence.client.render.model.mob.cloudia.ModelCloudGhost;
 import net.essence.client.render.model.mob.corba.ModelLeafBlower;
@@ -100,6 +101,7 @@ import net.essence.entity.mob.boss.EntityNetherBeast;
 import net.essence.entity.mob.boss.EntitySentryKing;
 import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
+import net.essence.entity.mob.boss.EntityThunderbird;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
 import net.essence.entity.mob.corba.EntityLeafBlower;
@@ -278,6 +280,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlazier.class, new RenderBoss(new ModelBlazier(), 0.5F, 2.0F, tex.blazier, stat.blazierBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySoulWatcher.class, new RenderBoss(new ModelBeastOfTheNether(), 0.5F, 2.0F, tex.netherBeast, stat.soulWatcherBossID));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySentryKing.class, new RenderBoss(new ModelSentryKing(), 0.5F, 2.0F, tex.sentryKing, stat.sentryKingBossID));
+		RenderingRegistry.registerEntityRenderingHandler(EntityThunderbird.class, new RenderBoss(new ModelThunderbird(), 0.5F, 2.0F, tex.thunderbird, stat.thunderbirdBossID));
 
 		//RenderingRegistry.registerEntityRenderingHandler(EntityWraith.class, new RenderBoss(new ModelWraith(), 0.5F, 1.0F, tex.wraith, stat.wraithBossID));
 		
