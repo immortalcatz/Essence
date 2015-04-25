@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.depths.gen.WorldGenDepthsLights;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
 import net.essence.dimension.depths.gen.WorldGenSpike;
 import net.essence.dimension.overworld.gen.WorldGenModFlower;
@@ -297,16 +298,19 @@ public class ChunkProviderDepths implements IChunkProvider {
 			(new WorldGenMinable(EssenceBlocks.desOre.getDefaultState(), 8, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 
-		for(i = 0; i < 16; i++) {
-			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
-			(new WorldGenMinable(EssenceBlocks.depthsLights.getDefaultState(), 25, BlockHelper.forBlock(EssenceBlocks.depthsStone))).generate(worldObj, r, new BlockPos(x, y, z));
+		for(i = 0; i < 11; i++) {
+			new WorldGenDepthsLights().generate(this.worldObj, rand, new BlockPos(x1 + rand.nextInt(16) + 8, rand.nextInt(120) + 4, z1 + rand.nextInt(16) + 8));
+		}
+
+		for(i = 0; i < 11; i++) {
+			new WorldGenDepthsLights.WorldGendepthsLights2().generate(this.worldObj, rand, new BlockPos(x1 + rand.nextInt(16) + 8, rand.nextInt(120) + 4, z1 + rand.nextInt(16) + 8));
 		}
 
 		for(i = 0; i < 100; i++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.depthsGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()) {
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.depthsGrass.getDefaultState()) {
 				new WorldGenDepthsTree(true).generate(worldObj, rand, new BlockPos(x, y, z));
 			}
 		}
