@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaLargeTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaMediumTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSmallTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
+import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
+import net.essence.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
+import net.essence.dimension.wastelands.gen.trees.WorldGenWastelandsDeadTree;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -76,6 +84,8 @@ public class ChunkProviderWastelands implements IChunkProvider {
 			}
 		}
 
+		trees = new ArrayList(1);
+		trees.add(new WorldGenWastelandsDeadTree());
 		NoiseGenerator[] noiseGens = {noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6, mobSpawnerNoise};
 		noiseGens = TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, noiseGens);
 		this.noiseGen1 = (NoiseGeneratorOctaves)noiseGens[0];

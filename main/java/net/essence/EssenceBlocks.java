@@ -157,6 +157,8 @@ public class EssenceBlocks {
 	
 	public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
 	public static final Block wastelandsGrass = new BlockModGrass((BlockMod)null, "wastelandsGrass", 2.0F);
+	public static final Block wastelandsLog = new BlockModLog("wastelandsLog");
+	public static final Block wastelandsBranches = new BlockModLog("wastelandsBranches");
 
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);

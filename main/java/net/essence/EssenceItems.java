@@ -336,6 +336,8 @@ public class EssenceItems {
 	public static final Item goldenPork = new ItemGoldenFood("normalGoldenPork", "Golden Porkchop", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item goldenPorkOP = new ItemGoldenFood("OPGoldenPork", "Golden Porkchop", 4, 1.2F, false, true).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();	
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
+	public static final Item rocMeat = new ItemModFood("rocMeat", 6, 0.6F, 10, false);
+	public static final Item cookedRocMeat = new ItemModFood("cookedRocMeat", 6, 0.6F, 10, false);
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
 

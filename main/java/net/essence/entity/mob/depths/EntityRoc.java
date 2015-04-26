@@ -1,5 +1,6 @@
 package net.essence.entity.mob.depths;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -39,7 +40,13 @@ public class EntityRoc extends EntityPeacefullUntillAttacked {
 
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return EssenceItems.rocMeat;
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.rocFeather, 4);
+		super.dropFewItems(b, j);
 	}
 
 }
