@@ -13,6 +13,7 @@ import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
 import net.essence.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
 import net.essence.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
 import net.essence.dimension.wastelands.gen.trees.WorldGenWastelandsDeadTree;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -254,7 +255,7 @@ public class ChunkProviderWastelands implements IChunkProvider {
 						BiomeGenBase biomegenbase1 = this.biomesForGeneration[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
 						float f3 = biomegenbase1.minHeight;
 						float f4 = biomegenbase1.maxHeight;
-						
+
 						f3 = 0.2F + f3;
 						f4 = 0.2F + f4;
 
@@ -340,6 +341,20 @@ public class ChunkProviderWastelands implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
+
+		for(i = 0; i < 100; i++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			y = r.nextInt(250);
+			if(isBlockTop(x, y, x, EssenceBlocks.wastelandsGrass))
+				trees.get(r.nextInt(trees.size())).generate(worldObj, r, new BlockPos(x, y, z));
+		}
+	}
+
+	public boolean isBlockTop(int x, int y, int z, Block grass) {
+		return worldObj.getBlockState(new BlockPos(x, y, z)) == grass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 2, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 3, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 4, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 5, z)) == Blocks.air.getDefaultState();
 	}
 
 	@Override
