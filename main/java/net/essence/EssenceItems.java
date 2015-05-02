@@ -447,11 +447,24 @@ public class EssenceItems {
 	public static final ItemKnowledge corbaKnowledge = new ItemKnowledge("corbaKnowledge", EnumKnowledge.CORBA);
 	public static final ItemKnowledge cloudiaKnowledge = new ItemKnowledge("cloudiaKnowledge", EnumKnowledge.CLOUDIA);
 	public static final ItemKnowledge wastelandsKnowledge = new ItemKnowledge("wastelandsKnowledge", EnumKnowledge.WASTELANDS);
-	public static final ItemKnowledge lithiumKnowledge = new ItemKnowledge("lithiumKnowledge", EnumKnowledge.LITHIUM);
-	public static final ItemKnowledge libraryKnowledge = new ItemKnowledge("libraryKnowledge", EnumKnowledge.LIBRARY);
-	public static final ItemKnowledge blazeKnowledge = new ItemKnowledge("blazeKnowledge", EnumKnowledge.BLAZE);
-	public static final ItemKnowledge witherKnowledge = new ItemKnowledge("witherKnowledge", EnumKnowledge.WITHER);
+	//public static final ItemKnowledge lithiumKnowledge = new ItemKnowledge("lithiumKnowledge", EnumKnowledge.LITHIUM);
+	//public static final ItemKnowledge libraryKnowledge = new ItemKnowledge("libraryKnowledge", EnumKnowledge.LIBRARY);
+	//public static final ItemKnowledge blazeKnowledge = new ItemKnowledge("blazeKnowledge", EnumKnowledge.BLAZE);
+	//public static final ItemKnowledge witherKnowledge = new ItemKnowledge("witherKnowledge", EnumKnowledge.WITHER);
 
+	public static final ItemMod blazesEssence = new ItemMod("blazesEssence");
+	public static final ItemMod boilingPointEssence = new ItemMod("boilingPointEssence");
+	public static final ItemMod cloudiaEssence = new ItemMod("cloudiaEssence");
+	public static final ItemMod corbaEssence = new ItemMod("corbaEssence");
+	public static final ItemMod depthsEssence = new ItemMod("depthsEssence");
+	public static final ItemMod eucaEssence = new ItemMod("eucaEssence");
+	public static final ItemMod frozenLandsEssence = new ItemMod("frozenLandsEssence");
+	public static final ItemMod wastelandsEssence = new ItemMod("wastelandsEssence");
+	//public static final ItemMod lithiumEssence = new ItemMod("lithiumEssence");
+	//public static final ItemMod nethicEssence = new ItemMod("nethicEssence");
+	//public static final ItemMod subterrianEssence = new ItemMod("subterrianEssence");
+	//public static final ItemMod withicEssence = new ItemMod("withicEssence");
+	
 	//TODO
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", 1F, EntityBoilingPiercer.class);
 	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", 1F, EntityNethicPiercer.class);
