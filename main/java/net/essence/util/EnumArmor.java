@@ -19,7 +19,10 @@ public enum EnumArmor {
 	ORBADITE(SlayerAPI.addArmorMaterial("orbadite", 3000, new int[] {3, 4, 3, 2}, 10), "orbadite", false, 76, EssenceItems.orbaditeIngot),
 	FLAME(SlayerAPI.addArmorMaterial("flame", 3000, new int[] {3, 4, 3, 2}, 10), "flame", false, 76, (Item)null),
 	TWILIGHT(SlayerAPI.addArmorMaterial("twilight", 3000, new int[] {3, 4, 3, 2}, 10), "twilight", false, 76, (Item)null),
-	GORBITE(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2}, 10), "gorbite", false, 76, EssenceItems.gorbiteGem);
+	SNAKESKIN(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2,}, 10), "snakeskin", false, 76, EssenceItems.snakeFlesh),
+	LEAPERS(SlayerAPI.addArmorMaterial("leapers", 3000, new int[] {3, 4, 3, 2}, 10), "leapers", false, 76, (Item)null),
+	TREEHUGGERS(SlayerAPI.addArmorMaterial("treehuggers", 3000, new int[] {3, 4, 3, 2}, 10), "treehuggers", false, 76, (Item)null),
+	GORBITE(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2,}, 10), "gorbite", false, 76, EssenceItems.gorbiteGem);
 	
 	private ArmorMaterial armorMaterial;
 	private String type;

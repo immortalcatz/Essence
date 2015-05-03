@@ -40,5 +40,14 @@ public class ArmorDescription {
 		
 		if(i == EssenceItems.twilightHelmet || i == EssenceItems.twilightChest || i == EssenceItems.twilightLegs || i == EssenceItems.twilightBoots)
 			list.add("Full set: Grants the player Night Vision");
+		
+		if(i == EssenceItems.snakeskinHelmet || i == EssenceItems.snakeskinChest || i == EssenceItems.snakeskinLegs || i == EssenceItems.snakeskinBoots)
+			list.add("Full set: Grants buffs while in lava");
+		
+		if(i == EssenceItems.leapersHelmet || i == EssenceItems.leapersChest || i == EssenceItems.leapersLegs || i == EssenceItems.leapersBoots)
+			list.add("Full set: Grants fast regeneration underground");
+		
+		if(i == EssenceItems.treehuggersHelmet || i == EssenceItems.treehuggersChest || i == EssenceItems.treehuggersLegs || i == EssenceItems.treehuggersBoots)
+			list.add("Full set: Grants increased farming drops");
 	}
 }

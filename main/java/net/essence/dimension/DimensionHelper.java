@@ -22,15 +22,24 @@ import net.essence.entity.mob.boiling.EntityCrisp;
 import net.essence.entity.mob.boiling.EntityExposedFlame;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
+import net.essence.entity.mob.corba.EntityLeafBlower;
+import net.essence.entity.mob.corba.EntitySurfaceSeer;
+import net.essence.entity.mob.corba.EntityTreeGolem;
+import net.essence.entity.mob.corba.EntityWoodCreature;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntityDepthsHunter;
+import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.frozen.EntityFrozenTroll;
+import net.essence.entity.mob.frozen.EntityPermafraust;
+import net.essence.entity.mob.frozen.EntityShatterer;
+import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
 import net.essence.entity.mob.overworld.EntityBigHongo;
 import net.essence.entity.mob.overworld.EntityBoom;
 import net.essence.entity.mob.overworld.EntityBunny;
@@ -90,20 +99,33 @@ public class DimensionHelper {
 		addBoilSpawns();
 		addDepthsSpawns();
 		addVanillaSpawns();
+		addCorbaSpawns();
 	}
 	
+	private static void addCorbaSpawns() {
+		int amount = 2;
+		EntityRegistry.addSpawn(EntityTreeGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityLeafBlower.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+	}
+
 	private static void addFrozenSpawns() {
 		int amount = 2;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityFrozenTroll.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityShatterer.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 	}
 
 	private static void addEucaSpawns() {
 		int amount = 2;
 		EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntitySurfaceSeer.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityWoodCreature.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 	}
 
 	private static void addBoilSpawns() {
@@ -126,6 +148,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityDepthsBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntitySpikedBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityDepthsHunter.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityRoc.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 	}
 
 	private static void addVanillaSpawns() {
