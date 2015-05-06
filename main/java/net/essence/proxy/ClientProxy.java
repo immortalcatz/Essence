@@ -43,33 +43,29 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void clientPreInit() {
-		registerModelBakery(EssenceBlocks.miniColouredBricks, miniBricks);
-		registerModelBakery(EssenceBlocks.colouredBricks, brick);
-		registerModelBakery(EssenceBlocks.brisonBlocks, new String[] {SlayerAPI.PREFIX + "darkBrisonBrick", SlayerAPI.PREFIX + "redBrisonBrick", SlayerAPI.PREFIX + "smallBrisonBrick", SlayerAPI.PREFIX + "brisonStone"});
-		addBow(EssenceItems.flameBow, "flameBow");
-		addBow(EssenceItems.poisonBow, "poisonBow");
-		addBow(EssenceItems.darknessBow, "darknessBow");
-		addBow(EssenceItems.frozenBow, "frozenBow");
-		addBow(EssenceItems.staringBow, "staringBow");
-		addBow(EssenceItems.deathPiercerBow, "deathPiercerBow");
-		addBow(EssenceItems.fusionBow, "fusionBow");
-		addBow(EssenceItems.springBow, "springBow");
-		addBow(EssenceItems.starlightBow, "starlightBow");
-		addBow(EssenceItems.wastefulBow, "wastefulBow");
-		addBow(EssenceItems.flamingBow, "flamingBow");
-		addBow(EssenceItems.darkEnforcer, "darkEnforcer");
-		addBow(EssenceItems.depthsBow, "depthsBow");
-		addBow(EssenceItems.frostbittenBow, "frostbittenBow");
-		addBow(EssenceItems.frostyBow, "frostyBow");
-	}
-
-	public void addBow(Item bow, String name) {
-		registerModelBakery(bow, new String[] {SlayerAPI.PREFIX + name, SlayerAPI.PREFIX + name + "_0", SlayerAPI.PREFIX + name + "_1", SlayerAPI.PREFIX  + name + "_2"});
+		SlayerAPI.registerModelBakery(EssenceBlocks.miniColouredBricks, miniBricks);
+		SlayerAPI.registerModelBakery(EssenceBlocks.colouredBricks, brick);
+		SlayerAPI.registerModelBakery(EssenceBlocks.brisonBlocks, new String[] {SlayerAPI.PREFIX + "darkBrisonBrick", SlayerAPI.PREFIX + "redBrisonBrick", SlayerAPI.PREFIX + "smallBrisonBrick", SlayerAPI.PREFIX + "brisonStone"});
+		SlayerAPI.addBow(EssenceItems.flameBow, "flameBow");
+		SlayerAPI.addBow(EssenceItems.poisonBow, "poisonBow");
+		SlayerAPI.addBow(EssenceItems.darknessBow, "darknessBow");
+		SlayerAPI.addBow(EssenceItems.frozenBow, "frozenBow");
+		SlayerAPI.addBow(EssenceItems.staringBow, "staringBow");
+		SlayerAPI.addBow(EssenceItems.deathPiercerBow, "deathPiercerBow");
+		SlayerAPI.addBow(EssenceItems.fusionBow, "fusionBow");
+		SlayerAPI.addBow(EssenceItems.springBow, "springBow");
+		SlayerAPI.addBow(EssenceItems.starlightBow, "starlightBow");
+		SlayerAPI.addBow(EssenceItems.wastefulBow, "wastefulBow");
+		SlayerAPI.addBow(EssenceItems.flamingBow, "flamingBow");
+		SlayerAPI.addBow(EssenceItems.darkEnforcer, "darkEnforcer");
+		SlayerAPI.addBow(EssenceItems.depthsBow, "depthsBow");
+		SlayerAPI.addBow(EssenceItems.frostbittenBow, "frostbittenBow");
+		SlayerAPI.addBow(EssenceItems.frostyBow, "frostyBow");
 	}
 
 	@Override
 	public void registerSounds() {
-		((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler()); //Only use if i want to remove every other music from vanilla or mods.
+		((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
 		FMLCommonHandler.instance().bus().register(new MusicEvent());
 	}
 
@@ -93,66 +89,34 @@ public class ClientProxy extends CommonProxy {
 	public void registerModModels() {
 		for(String s : EssenceBlocks.blockName) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
-			registerItem(i, s);
+			SlayerAPI.registerItemRender(i, s);
 		}
 
 		for(String s : EssenceItems.itemNames) {
 			Item i = GameRegistry.findItem(SlayerAPI.MOD_ID, s);
-			registerItem(i, s);
+			SlayerAPI.registerItemRender(i, s);
 		}
 
-		addBowRegistry(EssenceItems.flameBow, "flameBow");
-		addBowRegistry(EssenceItems.poisonBow, "poisonBow");
-		addBowRegistry(EssenceItems.darknessBow, "darknessBow");
-		addBowRegistry(EssenceItems.frozenBow, "frozenBow");
-		addBowRegistry(EssenceItems.staringBow, "staringBow");
+		SlayerAPI.addBowRender(EssenceItems.flameBow, "flameBow");
+		SlayerAPI.addBowRender(EssenceItems.poisonBow, "poisonBow");
+		SlayerAPI.addBowRender(EssenceItems.darknessBow, "darknessBow");
+		SlayerAPI.addBowRender(EssenceItems.frozenBow, "frozenBow");
+		SlayerAPI.addBowRender(EssenceItems.staringBow, "staringBow");
 
 		for(int i = 0; i < brickNames.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockColouredBricks");
-			registerItem(it, i, brickNames[i]);
+			SlayerAPI.registerItemRender(it, i, brickNames[i]);
 		}
 
 		for(int i = 0; i < miniBricksName.length; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "blockMiniColouredBricks");
-			registerItem(it, i, miniBricksName[i]);
+			SlayerAPI.registerItemRender(it, i, miniBricksName[i]);
 		}
 
 		for(int i = 0; i < 4; i++) {
 			Item it = GameRegistry.findItem(SlayerAPI.MOD_ID, "brisonBlocks");
-			registerItem(it, i, brison[i]);
+			SlayerAPI.registerItemRender(it, i, brison[i]);
 		}
-	}
-
-	public void addBowRegistry(Item bow, String name) {
-		registerItem(bow, 0, name);
-		registerItem(bow, 1, name + "_0");
-		registerItem(bow, 2, name + "_1");
-		registerItem(bow, 3, name + "_2");
-	}
-
-	public static void registerModelBakery(Item i, String[] names) {
-		ModelBakery.addVariantName(i, names);
-	}
-
-	public static void registerModelBakery(Block b, String[] names) {
-		ModelBakery.addVariantName(SlayerAPI.toItem(b), names);
-	}
-
-	public static void registerItem(Item item, int metadata, String itemName) {
-		ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
-		mesher.register(item, metadata, new ModelResourceLocation(SlayerAPI.PREFIX + itemName, "inventory"));
-	}
-
-	public static void registerBlock(Block block, int metadata, String blockName) {
-		registerItem(Item.getItemFromBlock(block), metadata, blockName);
-	}
-
-	public static void registerBlock(Block block, String blockName) {
-		registerBlock(block, 0, blockName);
-	}
-
-	public static void registerItem(Item item, String itemName) {
-		registerItem(item, 0, itemName);
 	}
 
 	@Override

@@ -39,7 +39,7 @@ public class GuiModVillager extends GuiContainer {
 	private GuiModVillager.ModMerchantButton previousRecipeButtonIndex;
 	private int currentRecipeIndex = 0;
     protected String name;
-	private String texture;
+	private final String texture;
 	private boolean whiteName = false;
 
 	public GuiModVillager(ContainerModVillager container, IMerchant mer, String name, String tex) {
