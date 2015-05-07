@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.portal;
 
 import java.util.List;
 import java.util.Random;

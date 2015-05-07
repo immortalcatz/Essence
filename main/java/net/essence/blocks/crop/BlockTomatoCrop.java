@@ -1,13 +1,13 @@
-package net.essence.blocks;
+package net.essence.blocks.crop;
 
 import net.essence.EssenceItems;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.item.Item;
 import net.slayer.api.block.BlockModCrop;
 
-public class BlockCrackenCaneCrop extends BlockModCrop {
+public class BlockTomatoCrop extends BlockModCrop {
 
-	public BlockCrackenCaneCrop(String name) {
+	public BlockTomatoCrop(String name) {
 		super(name);
 	}
 
@@ -18,12 +18,12 @@ public class BlockCrackenCaneCrop extends BlockModCrop {
 	
 	@Override
 	public Item getSeed() {
-		return EssenceItems.crackenCaneSeeds;
+		return EssenceItems.tomatoSeeds;
 	}
 
 	@Override
 	public Item getCrop() {
-		return EssenceItems.crackenCanes;
+		return EssenceItems.tomato;
 	}
 
 	@Override

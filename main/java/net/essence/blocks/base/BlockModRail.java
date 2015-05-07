@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.base;
 
 import net.essence.EssenceTabs;
 import net.minecraft.block.BlockRail;

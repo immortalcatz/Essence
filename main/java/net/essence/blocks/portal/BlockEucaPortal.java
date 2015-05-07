@@ -1,13 +1,15 @@
-package net.essence.blocks;
+package net.essence.blocks.portal;
 
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.client.render.particles.EntityEucaPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
+import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -15,6 +17,7 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -27,11 +30,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCloudiaPortal extends BlockBreakable {
+public class BlockEucaPortal extends BlockBreakable {
 
 	public static final PropertyEnum field_176550_a = PropertyEnum.create("axis", EnumFacing.Axis.class, new EnumFacing.Axis[] {EnumFacing.Axis.X, EnumFacing.Axis.Z});
 
-	public BlockCloudiaPortal(String name) {
+	public BlockEucaPortal(String name) {
 		super(Material.portal, false);
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
@@ -104,8 +107,8 @@ public class BlockCloudiaPortal extends BlockBreakable {
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
 		if ((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
-			int dimensionID = Config.cloudia;
-			Block blockFrame = EssenceBlocks.cloudiaPortalFrame;
+			int dimensionID = Config.euca;
+			Block blockFrame = EssenceBlocks.eucaPortalFrame;
 			if(thePlayer.timeUntilPortal > 0) 
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
@@ -146,18 +149,18 @@ public class BlockCloudiaPortal extends BlockBreakable {
 				d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
 				d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			}
-			//EntitycloudiaPotalFX var20 = new EntitycloudiaPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
-			//FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+			EntityEucaPotalFX var20 = new EntityEucaPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 		}
 	}
 
 	public boolean makePortal(World worldIn, BlockPos p_176548_2_) {
-		BlockCloudiaPortal.Size size = new BlockCloudiaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
+		BlockEucaPortal.Size size = new BlockEucaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
 		if (size.func_150860_b() && size.field_150864_e == 0) {
 			size.func_150859_c();
 			return true;
 		} else {
-			BlockCloudiaPortal.Size size1 = new BlockCloudiaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
+			BlockEucaPortal.Size size1 = new BlockEucaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
 			if (size1.func_150860_b() && size1.field_150864_e == 0) {
 				size1.func_150859_c();
 				return true;
@@ -246,14 +249,14 @@ public class BlockCloudiaPortal extends BlockBreakable {
 			{
 				BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
 
-				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.cloudiaPortalFrame)
+				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.eucaPortalFrame)
 				{
 					break;
 				}
 			}
 
 			Block block = this.field_150867_a.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-			return block == EssenceBlocks.cloudiaPortalFrame ? i : 0;
+			return block == EssenceBlocks.eucaPortalFrame ? i : 0;
 		}
 
 		protected int func_150858_a()
@@ -273,7 +276,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 							break label56;
 						}
 
-						if (block == EssenceBlocks.cloudiaPortal)
+						if (block == EssenceBlocks.eucaPortal)
 						{
 							++this.field_150864_e;
 						}
@@ -282,7 +285,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150863_d)).getBlock();
 
-							if (block != EssenceBlocks.cloudiaPortalFrame)
+							if (block != EssenceBlocks.eucaPortalFrame)
 							{
 								break label56;
 							}
@@ -291,7 +294,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150866_c)).getBlock();
 
-							if (block != EssenceBlocks.cloudiaPortalFrame)
+							if (block != EssenceBlocks.eucaPortalFrame)
 							{
 								break label56;
 							}
@@ -301,7 +304,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 
 			for (i = 0; i < this.field_150868_h; ++i)
 			{
-				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.cloudiaPortalFrame)
+				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.eucaPortalFrame)
 				{
 					this.field_150862_g = 0;
 					break;
@@ -323,7 +326,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 
 		protected boolean func_150857_a(Block p_150857_1_)
 		{
-			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.cloudiaPortal;
+			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.eucaPortal;
 		}
 
 		public boolean func_150860_b()
@@ -339,7 +342,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 
 				for (int j = 0; j < this.field_150862_g; ++j)
 				{
-					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.cloudiaPortal.getDefaultState().withProperty(BlockCloudiaPortal.field_176550_a, this.field_150865_b), 2);
+					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.eucaPortal.getDefaultState().withProperty(BlockEucaPortal.field_176550_a, this.field_150865_b), 2);
 				}
 			}
 		}

@@ -24,21 +24,12 @@ public class EntityKnowledgeTableFX extends EntityFX{
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glAlphaFunc(GL_GREATER, 0.003921569F);
-		startDrawingQuads();
+		//startDrawingQuads();
 		getBrightness(getBrightnessForRender(partialTicks));
 		float scale = 0.1F*particleScale;
 		float x = (float)(prevPosX + (posX - prevPosX) * partialTicks - interpPosX);
 		float y = (float)(prevPosX + (posY - prevPosY) * partialTicks - interpPosY);
 		float z = (float)(prevPosX + (posZ - prevPosZ) * partialTicks - interpPosZ);
-		addVertexWithUV(x - par3 * scale - par6 * scale, y - par4 * scale, z - par5 * scale - par7 * scale, 0, 0);
+		//addVertexWithUV(x - par3 * scale - par6 * scale, y - par4 * scale, z - par5 * scale - par7 * scale, 0, 0);
 	}
-
-	private void addVertexWithUV(float f, float g, float h, int i, int j) {
-		
-	}
-
-	private void startDrawingQuads() {
-		
-	}
-
 }

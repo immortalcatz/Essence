@@ -9,7 +9,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class OreParticleFX extends EntityFX {
-    private float reddustParticleScale;
+    private float oreParticleScale;
 
     public OreParticleFX(World w, double x, double y, double z, float r, float g, float b) {
         this(w, x, y, z, 1.0F, r, g, b);
@@ -24,7 +24,7 @@ public class OreParticleFX extends EntityFX {
         setRBGColorF(r, g, b);
         this.particleScale *= 0.75F;
         this.particleScale *= scale;
-        this.reddustParticleScale = this.particleScale;
+        this.oreParticleScale = this.particleScale;
         this.particleMaxAge = (int)(8.0D / (Math.random() * 0.8D + 0.2D));
         this.noClip = false;
     }
@@ -40,7 +40,7 @@ public class OreParticleFX extends EntityFX {
         var8 = 1.0F - var8;
         var8 *= var8;
         var8 = 1.0F - var8;
-        this.particleScale = this.reddustParticleScale * var8;
+        this.particleScale = this.oreParticleScale * var8;
         super.func_180434_a(p_180434_1_, p_180434_2_, par2, p_180434_4_, p_180434_5_, p_180434_6_, p_180434_7_, p_180434_8_);
     }
 

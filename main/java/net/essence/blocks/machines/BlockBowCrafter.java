@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.machines;
 
 import net.essence.EssenceBlocks;
 import net.essence.blocks.tileentity.container.ContainerBowCrafter;

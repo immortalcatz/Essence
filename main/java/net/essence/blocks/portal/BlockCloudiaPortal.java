@@ -1,15 +1,13 @@
-package net.essence.blocks;
+package net.essence.blocks.portal;
 
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.client.render.particles.EntityDepthsPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
-import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -17,7 +15,6 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -30,11 +27,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockDepthsPortal extends BlockBreakable {
+public class BlockCloudiaPortal extends BlockBreakable {
 
 	public static final PropertyEnum field_176550_a = PropertyEnum.create("axis", EnumFacing.Axis.class, new EnumFacing.Axis[] {EnumFacing.Axis.X, EnumFacing.Axis.Z});
 
-	public BlockDepthsPortal(String name) {
+	public BlockCloudiaPortal(String name) {
 		super(Material.portal, false);
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
@@ -42,12 +39,12 @@ public class BlockDepthsPortal extends BlockBreakable {
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
-
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return null;
 	}
-	
+
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
@@ -107,8 +104,8 @@ public class BlockDepthsPortal extends BlockBreakable {
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
 		if ((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
-			int dimensionID = Config.depths;
-			Block blockFrame = EssenceBlocks.depthsPortalFrame;
+			int dimensionID = Config.cloudia;
+			Block blockFrame = EssenceBlocks.cloudiaPortalFrame;
 			if(thePlayer.timeUntilPortal > 0) 
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
@@ -149,18 +146,18 @@ public class BlockDepthsPortal extends BlockBreakable {
 				d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
 				d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			}
-			EntityDepthsPotalFX var20 = new EntityDepthsPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
-			FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+			//EntitycloudiaPotalFX var20 = new EntitycloudiaPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
+			//FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 		}
 	}
 
 	public boolean makePortal(World worldIn, BlockPos p_176548_2_) {
-		BlockDepthsPortal.Size size = new BlockDepthsPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
+		BlockCloudiaPortal.Size size = new BlockCloudiaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
 		if (size.func_150860_b() && size.field_150864_e == 0) {
 			size.func_150859_c();
 			return true;
 		} else {
-			BlockDepthsPortal.Size size1 = new BlockDepthsPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
+			BlockCloudiaPortal.Size size1 = new BlockCloudiaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
 			if (size1.func_150860_b() && size1.field_150864_e == 0) {
 				size1.func_150859_c();
 				return true;
@@ -249,14 +246,14 @@ public class BlockDepthsPortal extends BlockBreakable {
 			{
 				BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
 
-				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.depthsPortalFrame)
+				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.cloudiaPortalFrame)
 				{
 					break;
 				}
 			}
 
 			Block block = this.field_150867_a.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-			return block == EssenceBlocks.depthsPortalFrame ? i : 0;
+			return block == EssenceBlocks.cloudiaPortalFrame ? i : 0;
 		}
 
 		protected int func_150858_a()
@@ -276,7 +273,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 							break label56;
 						}
 
-						if (block == EssenceBlocks.depthsPortal)
+						if (block == EssenceBlocks.cloudiaPortal)
 						{
 							++this.field_150864_e;
 						}
@@ -285,7 +282,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150863_d)).getBlock();
 
-							if (block != EssenceBlocks.depthsPortalFrame)
+							if (block != EssenceBlocks.cloudiaPortalFrame)
 							{
 								break label56;
 							}
@@ -294,7 +291,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150866_c)).getBlock();
 
-							if (block != EssenceBlocks.depthsPortalFrame)
+							if (block != EssenceBlocks.cloudiaPortalFrame)
 							{
 								break label56;
 							}
@@ -304,7 +301,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 
 			for (i = 0; i < this.field_150868_h; ++i)
 			{
-				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.depthsPortalFrame)
+				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.cloudiaPortalFrame)
 				{
 					this.field_150862_g = 0;
 					break;
@@ -326,7 +323,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 
 		protected boolean func_150857_a(Block p_150857_1_)
 		{
-			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.depthsPortal;
+			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.cloudiaPortal;
 		}
 
 		public boolean func_150860_b()
@@ -342,7 +339,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 
 				for (int j = 0; j < this.field_150862_g; ++j)
 				{
-					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.depthsPortal.getDefaultState().withProperty(BlockDepthsPortal.field_176550_a, this.field_150865_b), 2);
+					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.cloudiaPortal.getDefaultState().withProperty(BlockCloudiaPortal.field_176550_a, this.field_150865_b), 2);
 				}
 			}
 		}

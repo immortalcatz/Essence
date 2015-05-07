@@ -1,6 +1,6 @@
 package net.essence.blocks.tileentity;
 
-import net.essence.blocks.BlockIncubator;
+import net.essence.blocks.machines.BlockIncubator;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;

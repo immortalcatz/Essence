@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.crop;
 
 import net.essence.EssenceItems;
 import net.minecraft.block.properties.PropertyInteger;

@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.machines;
 
 import java.util.Random;
 

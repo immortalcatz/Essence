@@ -1,4 +1,4 @@
-package net.essence.blocks;
+package net.essence.blocks.machines;
 
 import java.util.Random;
 
@@ -39,21 +39,6 @@ public class BlockKnowledgeTable extends BlockModContainer {
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntityKnowledgeTable();
-	}
-	
-	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
-	
-	{
-	
-	}
-
-	@Override
-		public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random r) {
-			renderParticle(worldIn, pos.getX(), pos.getY(), pos.getZ());
-    }
-
-	public void renderParticle(World worldIn, int x, int y, int z) {
-		
 	}
 
 	@Override

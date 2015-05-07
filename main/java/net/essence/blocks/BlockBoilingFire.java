@@ -3,6 +3,7 @@ package net.essence.blocks;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.blocks.base.BlockModFire;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;

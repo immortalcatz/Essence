@@ -1,40 +1,41 @@
-package net.essence.blocks;
+package net.essence.blocks.portal;
 
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.client.render.particles.EntityEucaPotalFX;
+import net.essence.client.render.particles.EntityBoilPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
-import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockEucaPortal extends BlockBreakable {
+public class BlockBoilPortal extends BlockBreakable {
 
 	public static final PropertyEnum field_176550_a = PropertyEnum.create("axis", EnumFacing.Axis.class, new EnumFacing.Axis[] {EnumFacing.Axis.X, EnumFacing.Axis.Z});
 
-	public BlockEucaPortal(String name) {
+	public BlockBoilPortal(String name) {
 		super(Material.portal, false);
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
@@ -42,12 +43,12 @@ public class BlockEucaPortal extends BlockBreakable {
 		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return null;
 	}
-
+	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
@@ -107,8 +108,8 @@ public class BlockEucaPortal extends BlockBreakable {
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
 		if ((entity.ridingEntity == null) && (entity.riddenByEntity == null) && ((entity instanceof EntityPlayerMP))) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
-			int dimensionID = Config.euca;
-			Block blockFrame = EssenceBlocks.eucaPortalFrame;
+			int dimensionID = Config.boil;
+			Block blockFrame = EssenceBlocks.boilPortalFrame;
 			if(thePlayer.timeUntilPortal > 0) 
 				thePlayer.timeUntilPortal = 10;
 			else if(thePlayer.dimension != dimensionID) {
@@ -149,18 +150,18 @@ public class BlockEucaPortal extends BlockBreakable {
 				d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
 				d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			}
-			EntityEucaPotalFX var20 = new EntityEucaPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
+			EntityBoilPotalFX var20 = new EntityBoilPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 		}
 	}
 
 	public boolean makePortal(World worldIn, BlockPos p_176548_2_) {
-		BlockEucaPortal.Size size = new BlockEucaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
+		BlockBoilPortal.Size size = new BlockBoilPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
 		if (size.func_150860_b() && size.field_150864_e == 0) {
 			size.func_150859_c();
 			return true;
 		} else {
-			BlockEucaPortal.Size size1 = new BlockEucaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
+			BlockBoilPortal.Size size1 = new BlockBoilPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
 			if (size1.func_150860_b() && size1.field_150864_e == 0) {
 				size1.func_150859_c();
 				return true;
@@ -249,14 +250,14 @@ public class BlockEucaPortal extends BlockBreakable {
 			{
 				BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
 
-				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.eucaPortalFrame)
+				if (!this.func_150857_a(this.field_150867_a.getBlockState(blockpos1).getBlock()) || this.field_150867_a.getBlockState(blockpos1.down()).getBlock() != EssenceBlocks.boilPortalFrame)
 				{
 					break;
 				}
 			}
 
 			Block block = this.field_150867_a.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-			return block == EssenceBlocks.eucaPortalFrame ? i : 0;
+			return block == EssenceBlocks.boilPortalFrame ? i : 0;
 		}
 
 		protected int func_150858_a()
@@ -276,7 +277,7 @@ public class BlockEucaPortal extends BlockBreakable {
 							break label56;
 						}
 
-						if (block == EssenceBlocks.eucaPortal)
+						if (block == EssenceBlocks.boilPortal)
 						{
 							++this.field_150864_e;
 						}
@@ -285,7 +286,7 @@ public class BlockEucaPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150863_d)).getBlock();
 
-							if (block != EssenceBlocks.eucaPortalFrame)
+							if (block != EssenceBlocks.boilPortalFrame)
 							{
 								break label56;
 							}
@@ -294,7 +295,7 @@ public class BlockEucaPortal extends BlockBreakable {
 						{
 							block = this.field_150867_a.getBlockState(blockpos.offset(this.field_150866_c)).getBlock();
 
-							if (block != EssenceBlocks.eucaPortalFrame)
+							if (block != EssenceBlocks.boilPortalFrame)
 							{
 								break label56;
 							}
@@ -304,7 +305,7 @@ public class BlockEucaPortal extends BlockBreakable {
 
 			for (i = 0; i < this.field_150868_h; ++i)
 			{
-				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.eucaPortalFrame)
+				if (this.field_150867_a.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != EssenceBlocks.boilPortalFrame)
 				{
 					this.field_150862_g = 0;
 					break;
@@ -326,7 +327,7 @@ public class BlockEucaPortal extends BlockBreakable {
 
 		protected boolean func_150857_a(Block p_150857_1_)
 		{
-			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.eucaPortal;
+			return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == EssenceBlocks.fire || p_150857_1_ == EssenceBlocks.boilPortal;
 		}
 
 		public boolean func_150860_b()
@@ -342,7 +343,7 @@ public class BlockEucaPortal extends BlockBreakable {
 
 				for (int j = 0; j < this.field_150862_g; ++j)
 				{
-					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.eucaPortal.getDefaultState().withProperty(BlockEucaPortal.field_176550_a, this.field_150865_b), 2);
+					this.field_150867_a.setBlockState(blockpos.up(j), EssenceBlocks.boilPortal.getDefaultState().withProperty(BlockBoilPortal.field_176550_a, this.field_150865_b), 2);
 				}
 			}
 		}

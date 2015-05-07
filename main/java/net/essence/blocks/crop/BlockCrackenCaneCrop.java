@@ -1,33 +1,33 @@
-package net.essence.blocks;
+package net.essence.blocks.crop;
 
 import net.essence.EssenceItems;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.item.Item;
 import net.slayer.api.block.BlockModCrop;
 
-public class BlockGlowaCrop extends BlockModCrop {
+public class BlockCrackenCaneCrop extends BlockModCrop {
 
-	public BlockGlowaCrop(String name) {
+	public BlockCrackenCaneCrop(String name) {
 		super(name);
 	}
 
 	@Override
 	public PropertyInteger getAge() {
-		return PropertyInteger.create("age", 0, 4);
+		return PropertyInteger.create("age", 0, 7);
 	}
 	
 	@Override
 	public Item getSeed() {
-		return EssenceItems.glowaSeeds;
+		return EssenceItems.crackenCaneSeeds;
 	}
 
 	@Override
 	public Item getCrop() {
-		return EssenceItems.glowa;
+		return EssenceItems.crackenCanes;
 	}
 
 	@Override
 	public int getStages() {
-		return 4;
+		return 7;
 	}
 }
