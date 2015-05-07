@@ -1,9 +1,9 @@
 package net.essence.blocks;
 
 import net.essence.Essence;
+import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockTropicalWater extends BlockLiquid {
@@ -12,7 +12,7 @@ public class BlockTropicalWater extends BlockLiquid {
 		super(Essence.tropicalMat);
 		setCreativeTab(EssenceTabs.tabBlock);
 		setUnlocalizedName(name);
-		//EssenceBlocks.blockName.add(name);
+		EssenceBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 	

@@ -44,16 +44,13 @@ public class Essence {
 	
 	public static SimpleNetworkWrapper wrapper;
 	
-	static {
-		FluidRegistry.registerFluid(Essence.tropicalWater);
-	}
-	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
 		wrapper = NetworkRegistry.INSTANCE.newSimpleChannel("EssenceNetwork");
 		wrapper.registerMessage(MessageDarkEnergyBar.DarkEnergyHandler.class, MessageDarkEnergyBar.class, 0, Side.CLIENT);
 		wrapper.registerMessage(MessageEssenceBar.EssenceHandler.class, MessageEssenceBar.class, 0, Side.CLIENT);
 		wrapper.registerMessage(MessagePowerBar.PowerHandler.class, MessagePowerBar.class, 0, Side.CLIENT);
+		FluidRegistry.registerFluid(Essence.tropicalWater);
 		proxy.preInit(event);
 		proxy.registerClient();
 		proxy.clientPreInit();

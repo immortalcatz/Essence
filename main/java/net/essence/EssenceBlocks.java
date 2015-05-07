@@ -37,6 +37,7 @@ import net.essence.blocks.BlockModOre;
 import net.essence.blocks.BlockSpineberryCrop;
 import net.essence.blocks.BlockStatue;
 import net.essence.blocks.BlockTomatoCrop;
+import net.essence.blocks.BlockTropicalWater;
 import net.essence.blocks.BlockWastelandsPortal;
 import net.essence.blocks.BlockWastelandsStone;
 import net.essence.blocks.BlockZatPedalsCrop;
