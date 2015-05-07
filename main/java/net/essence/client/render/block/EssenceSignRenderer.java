@@ -1,4 +1,4 @@
-package net.essence.client.render;
+package net.essence.client.render.block;
 
 import java.util.List;
 

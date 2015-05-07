@@ -12,8 +12,11 @@ import net.essence.util.GL11Helper;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
@@ -335,5 +338,37 @@ public class SlayerAPI {
 			GL11Helper.scale(scale);
 			renderItem.renderItemModel(stack);
 		}
+	}
+	
+	public static void addBow(Item bow, String name) {
+		SlayerAPI.registerModelBakery(bow, new String[] {SlayerAPI.PREFIX + name, SlayerAPI.PREFIX + name + "_0", SlayerAPI.PREFIX + name + "_1", SlayerAPI.PREFIX  + name + "_2"});
+	}
+	
+	public static void addBowRender(Item bow, String name) {
+		registerItemRender(bow, 0, name);
+		registerItemRender(bow, 1, name + "_0");
+		registerItemRender(bow, 2, name + "_1");
+		registerItemRender(bow, 3, name + "_2");
+	}
+
+	public static void registerModelBakery(Item i, String[] names) {
+		ModelBakery.addVariantName(i, names);
+	}
+
+	public static void registerModelBakery(Block b, String[] names) {
+		ModelBakery.addVariantName(SlayerAPI.toItem(b), names);
+	}
+
+	public static void registerItemRender(Item item, int metadata, String itemName) {
+		ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+		mesher.register(item, metadata, new ModelResourceLocation(SlayerAPI.PREFIX + itemName, "inventory"));
+	}
+
+	public static void registerBlockRender(Block block, int metadata, String blockName) {
+		registerItemRender(Item.getItemFromBlock(block), metadata, blockName);
+	}
+
+	public static void registerItemRender(Item item, String itemName) {
+		registerItemRender(item, 0, itemName);
 	}
 }

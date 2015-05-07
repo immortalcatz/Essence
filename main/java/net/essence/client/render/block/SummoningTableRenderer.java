@@ -1,4 +1,4 @@
-package net.essence.client.render;
+package net.essence.client.render.block;
 
 import net.essence.blocks.tileentity.TileEntityKnowledgeTable;
 import net.essence.blocks.tileentity.TileEntitySummoningTable;
