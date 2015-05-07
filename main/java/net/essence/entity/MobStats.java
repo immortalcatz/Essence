@@ -26,10 +26,6 @@ public class MobStats {
 	public static double frozenTrollHealth = 20.0D, frozenTrollDamage = 5.0D, frozenTrollSpeed = normalSpeed, frozenTrollFollowRange = follow;
 	public static double permafraustHealth = 20.0D, permafraustDamage = 5.0D, permafraustSpeed = normalSpeed, permafraustFollowRange = follow;
 	public static double shiveringBushwalkerHealth = 20.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
-	public static double greenTordoHealth = 50.0D, greenTordoDamage = 10.0D, greenTordoSpeed = normalSpeed;
-	public static double leafBlowerHealth = 50.0D, leafBlowerDamage = 10.0D, leafBlowerSpeed = normalSpeed, leafBlowerFollowRange = follow;
-	public static double treeGolemHealth = 100.0D, treeGolemDamage = 10.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
-	public static double woodCreatureHealth = 20.0D, woodCreatureDamage = 5.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
 	
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;
@@ -47,6 +43,7 @@ public class MobStats {
 	public static double eucaHopperHealth = 30.0D, eucaHopperHealthTamed = 50.0D, eucaHopperDamage = 8.0D, eucaHopperSpeed = normalSpeed, eucaHopperFollowRange = follow;
 	public static double eucaFighterHealth = 50.0D, eucaFighterDamage = 7.0D, eucaFighterSpeed = normalSpeed, eucaFighterFollowRange = follow;
 	public static double eucaChargerHealth = 50.0D, eucaChargerDamage = 7.0D, eucaChargerSpeed = normalSpeed, eucaChargerFollowRange = follow;
+	public static double boilTraderHealth = 50.0D, boilTraderDamage = 10.0D, boilTraderSpeed = normalSpeed;
 
 	//Depths
 	public static double depthsBeastHealth = 80.0D, depthsBeastDamage = 10.0D, depthsBeastSpeed = normalSpeed, depthsBeastFollowRange = follow;
@@ -58,6 +55,10 @@ public class MobStats {
 	//Corba
 	public static double overseerHealth = 90.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
 	public static double elderOverseerHealth = 90.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
+	public static double greenTordoHealth = 50.0D, greenTordoDamage = 10.0D, greenTordoSpeed = normalSpeed;
+	public static double leafBlowerHealth = 50.0D, leafBlowerDamage = 10.0D, leafBlowerSpeed = normalSpeed, leafBlowerFollowRange = follow;
+	public static double treeGolemHealth = 100.0D, treeGolemDamage = 10.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
+	public static double woodCreatureHealth = 20.0D, woodCreatureDamage = 5.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
 	
 	//Cloudia
 	public static double cloudGhostHealth = 150.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;

@@ -8,6 +8,7 @@ import net.essence.entity.mob.boiling.EntityCrisp;
 import net.essence.entity.mob.boiling.EntityExposedFlame;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
+import net.essence.entity.mob.boiling.npc.EntityBoilTrader;
 import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.essence.entity.mob.boss.EntityBlazier;
 import net.essence.entity.mob.boss.EntityCalcia;
@@ -188,6 +189,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityStaringGuardian.class, "staringGuardian");
 		SlayerAPI.registerNPC(EntityTordo.class, "tordo");
 		SlayerAPI.registerNPC(EntityRedTordo.class, "redTordo");
+		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader");
 	}
 	
 	public static void registerBosses() {

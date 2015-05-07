@@ -17,12 +17,13 @@ public enum EnumArmor {
 	CONDENSED_DIAMOND(SlayerAPI.addArmorMaterial("condensedDiamond", 3000, new int[] {3, 4, 3, 2}, 10), "condensedDiamond", false, 60, Blocks.diamond_block),
 	SAPPHIRE(SlayerAPI.addArmorMaterial("sapphire", 3000, new int[] {3, 4, 3, 2}, 10), "sapphire", false, 40, EssenceItems.sapphire),
 	ORBADITE(SlayerAPI.addArmorMaterial("orbadite", 3000, new int[] {3, 4, 3, 2}, 10), "orbadite", false, 76, EssenceItems.orbaditeIngot),
+	GORBITE(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2,}, 10), "gorbite", false, 76, EssenceItems.gorbiteGem),
 	FLAME(SlayerAPI.addArmorMaterial("flame", 3000, new int[] {3, 4, 3, 2}, 10), "flame", false, 76, (Item)null),
 	TWILIGHT(SlayerAPI.addArmorMaterial("twilight", 3000, new int[] {3, 4, 3, 2}, 10), "twilight", false, 76, (Item)null),
-	SNAKESKIN(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2,}, 10), "snakeskin", false, 76, EssenceItems.snakeFlesh),
+	SNAKESKIN(SlayerAPI.addArmorMaterial("snakeskin", 3000, new int[] {3, 4, 3, 2,}, 10), "snakeskin", false, 76, (Item)null),
+	CHAR_SKULL(SlayerAPI.addArmorMaterial("charSkull", 3000, new int[] {3, 4, 3, 2}, 10), "charSkull", false, 76, (Item)null),
 	LEAPERS(SlayerAPI.addArmorMaterial("leapers", 3000, new int[] {3, 4, 3, 2}, 10), "leapers", false, 76, (Item)null),
-	TREEHUGGERS(SlayerAPI.addArmorMaterial("treehuggers", 3000, new int[] {3, 4, 3, 2}, 10), "treehuggers", false, 76, (Item)null),
-	GORBITE(SlayerAPI.addArmorMaterial("gorbite", 3000, new int[] {3, 4, 3, 2,}, 10), "gorbite", false, 76, EssenceItems.gorbiteGem);
+	TREEHUGGERS(SlayerAPI.addArmorMaterial("treehuggers", 3000, new int[] {3, 4, 3, 2}, 10), "treehuggers", false, 76, (Item)null);
 	
 	private ArmorMaterial armorMaterial;
 	private String type;

@@ -82,6 +82,7 @@ public class Textures {
     public static final ResourceLocation treeGolem = addMob("treeGolem");
     public static final ResourceLocation woodCreature = addMob("woodCreature");
     public static final ResourceLocation roc = addMob("roc");
+    public static final ResourceLocation boilTrader = addMob("boilTrader");
 
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
