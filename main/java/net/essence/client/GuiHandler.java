@@ -20,7 +20,7 @@ import net.slayer.api.entity.tileentity.container.*;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER;
 	}
 
 	@Override
@@ -36,6 +36,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.SUMMONING.ordinal()) return new ContainerSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
 		if(ID == GuiIDs.STARING_GUARDIAN.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.TORDO.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -52,6 +53,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.SUMMONING.ordinal()) return new GuiSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
 		if(ID == GuiIDs.STARING_GUARDIAN.ordinal()) return new GuiStaringGuardian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.TORDO.ordinal()) return new GuiTordo(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new GuiBoilTrader(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		return null;
 	}
 
