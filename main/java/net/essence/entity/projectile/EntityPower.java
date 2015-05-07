@@ -47,16 +47,18 @@ public class EntityPower extends EntityThrowable {
 		super.onUpdate();
 		lifeTicks--;
 		if(lifeTicks >= 0) this.setDead();
-		List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getBoundingBox().expand(10.0D, 10.0D, 10.0D));
-		for(int i = 0; i < list.size(); i++) {
-			Entity entity1 = (Entity)list.get(i);
-			if(entity1 instanceof EntityLivingBase && entity1 != getThrower()) {
-				EntityLivingBase hit = (EntityLivingBase)entity1;
-				for(int i1 = 0; i1 < 6; i1++) {
-					EntityFX effect = new EntityHellstoneFX(this.worldObj, hit.posX + rand.nextFloat(), hit.posY + 1D + rand.nextFloat(), hit.posZ + rand.nextFloat(), 0.0D, 0.0D, 0.0D);
-					FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
+		List<EntityLivingBase> list = this.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, this.getBoundingBox().expand(10.0D, 10.0D, 10.0D));
+		if(list != null) {
+			for(int i = 0; i < list.size(); i++) {
+				Entity entity1 = (Entity)list.get(i);
+				if(entity1 instanceof EntityLivingBase && entity1 != getThrower()) {
+					EntityLivingBase hit = (EntityLivingBase)entity1;
+					for(int i1 = 0; i1 < 6; i1++) {
+						EntityFX effect = new EntityHellstoneFX(this.worldObj, hit.posX + rand.nextFloat(), hit.posY + 1D + rand.nextFloat(), hit.posZ + rand.nextFloat(), 0.0D, 0.0D, 0.0D);
+						FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
+					}
+					hit.attackEntityFrom(new DamageSource("power"), 10F);
 				}
-				hit.attackEntityFrom(new DamageSource("power"), 10F);
 			}
 		}
 	}
