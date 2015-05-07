@@ -40,6 +40,5 @@ public class UpdateChecker {
 			}
 		}
 		return false;
-	}	
-	
+	}
 }

@@ -10,6 +10,8 @@ import net.essence.misc.*;
 import net.essence.util.*;
 import net.essence.util.EntityRegistry;
 import net.essence.util.recipes.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.world.*;
 import net.minecraftforge.common.*;
@@ -88,5 +90,9 @@ public class CommonProxy {
 		OreDictionary.registerOre("ingotShadium", EssenceItems.shadiumIngot);
 		OreDictionary.registerOre("ingotFlairium", EssenceItems.flairiumIngot);
 		OreDictionary.registerOre("gemSapphire", EssenceItems.sapphire);
+	}
+	
+	public EntityPlayer getClientPlayer() { 
+		return Minecraft.getMinecraft().thePlayer;
 	}
 }
