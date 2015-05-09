@@ -27,8 +27,9 @@ public class EntityBoilTrader extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.flamingBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.boilingBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.flamingBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.boilingBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 10), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.moltenKnife, 15)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullHelmet, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullChest, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullLegs, 1)));

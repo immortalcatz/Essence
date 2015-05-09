@@ -25,13 +25,13 @@ public class EntityAlloyMender extends EntityModVillager {
 	public void abstractInteract(EntityPlayer p) {
 		switch(rand.nextInt(3)) {
 		case 0:
-			SlayerAPI.addFormattedChatMessage(p, "elf.welcome");
+			SlayerAPI.addFormattedChatMessage(p, "mender.welcome");
 			break;
 		case 1:
-			SlayerAPI.addFormattedChatMessage(p, "elf.hello");
+			SlayerAPI.addFormattedChatMessage(p, "mender.hello");
 			break;
 		case 2:
-			SlayerAPI.addFormattedChatMessage(p, "elf.good");
+			SlayerAPI.addFormattedChatMessage(p, "mender.good");
 			break;
 		}
 	}
@@ -39,6 +39,7 @@ public class EntityAlloyMender extends EntityModVillager {
 	@Override
 	public GuiIDs guiID() {
 		return GuiIDs.ALLOY_MENDER;
+		
 	}
 	
 	@Override
@@ -48,6 +49,11 @@ public class EntityAlloyMender extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 15), new ItemStack(EssenceItems.goldClump, 15), new ItemStack(EssenceItems.royalBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 10), new ItemStack(EssenceItems.goldClump, 10), new ItemStack(EssenceItems.royalKnife, 15)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.celestiumIngot, 15), new ItemStack(EssenceItems.mekyumIngot, 10), new ItemStack(EssenceItems.celekiumBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.celestiumIngot, 15), new ItemStack(EssenceItems.koriteIngot, 10), new ItemStack(EssenceItems.celestiteBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.storonIngot, 15), new ItemStack(EssenceItems.mekyumIngot, 10), new ItemStack(EssenceItems.storumBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.storonIngot, 15), new ItemStack(EssenceItems.koriteIngot, 10), new ItemStack(EssenceItems.bronzedBattleaxe, 1)));
 	}
 }

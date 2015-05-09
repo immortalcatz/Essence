@@ -73,13 +73,13 @@ public class EssenceItems {
 	public static final Item orbaditeIngot = new ItemMod("orbaditeIngot");
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem");
 	public static final Item desIngot = new ItemMod("desIngot");
-	public static final Item boilingSkull = new ItemMod("boilingSkull");
 
 	public static final Item boilPowder = new ItemMod("boilPowder");
 	public static final Item blazingFireball = new ItemMod("blazingFireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell");
 	public static final Item sizzlingEye = new ItemMod("sizzlingEye");
 	public static final Item snakeFlesh = new ItemMod("snakeFlesh");
+	public static final Item boilingSkull = new ItemMod("boilingSkull");
 	public static final Item blankKnowledge = new ItemMod("blankKnowledge");
 	public static final Item overgrownNatureBall = new ItemMod("overgrownNatureBall");
 	public static final Item overseeingTablet = new ItemMod("overseeingTablet");
@@ -98,6 +98,10 @@ public class EssenceItems {
 	public static final Item frostGem = new ItemMod("frostGem");
 	public static final Item frozenIceball = new ItemMod("frozenIceball");
 	public static final Item snowsheet = new ItemMod("snowsheet");
+	public static final Item gateKeys = new ItemMod("gateKeys");
+	public static final Item goldClump = new ItemMod("goldClump");
+	public static final Item golderDust = new ItemMod("golderDust");
+	public static final Item royalDisk = new ItemMod("royalDisk");
 
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
@@ -209,7 +213,6 @@ public class EssenceItems {
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
 	public static final Item bubbleSword = new ItemModSword("bubbleSword", EssenceToolMaterial.BUBBLE_SWORD);
 	public static final Item boilingBlade = new ItemModSword("boilingBlade", EssenceToolMaterial.BOILING_BLADE);
-	public static final Item moltenKnife = new ItemPiercer("moltenKnife", 10F, EntityMoltenKnife.class);
 	public static final Item loggersSword = new ItemModSword("loggersSword", EssenceToolMaterial.LOGGERS_SWORD);
 	public static final Item naturesBlade = new ItemModSword("naturesBlade", EssenceToolMaterial.NATURES_BLADE);
 	public static final Item depthsDarksword = new ItemModSword("depthsDarksword", EssenceToolMaterial.DEPTHS_DARKSWORD);
@@ -219,6 +222,9 @@ public class EssenceItems {
 	public static final Item frostbittenSword = new ItemModSword("frostbittenSword", EssenceToolMaterial.FROSTBITTEN_SWORD);
 	public static final Item treeHugger = new ItemModSword("treeHugger", EssenceToolMaterial.TREE_HUGGER);
 	public static final Item healersBlade = new ItemModSword("healersBlade", EssenceToolMaterial.HEALERS_BLADE);
+	public static final Item coreMender = new ItemModSword("coreMender", EssenceToolMaterial.CORE_MENDER);
+	public static final Item royalBlade = new ItemModSword("royalBlade", EssenceToolMaterial.ROYAL_BLADE);
+	public static final Item royalStabber = new ItemModSword("royalStabber", EssenceToolMaterial.ROYAL_STABBER);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
@@ -322,6 +328,10 @@ public class EssenceItems {
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
+	public static final Item bronzedBattleaxe = new ItemBattleAxe("bronzedBattleaxe", EssenceToolMaterial.BRONZED_BATTLEAXE);
+	public static final Item celestiteBattleaxe = new ItemBattleAxe("celestiteBattleaxe", EssenceToolMaterial.CELESTITE_BATTLEAXE);
+	public static final Item storumBattleaxe = new ItemBattleAxe("storumBattleaxe", EssenceToolMaterial.STORUM_BATTLEAXE);
+	public static final Item celekiumBattleaxe = new ItemBattleAxe("celekiumBattleaxe", EssenceToolMaterial.CELEKIUM_BATTLEAXE);
 
 	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", false, 3, 1000, 7, false, EntityBasicProjectile.class);
 	public static final Item doomsBringer = new ItemStaff("doomsBringer", false, 3, 1000, 12, false, EntityDoomsBringer.class);
@@ -486,14 +496,16 @@ public class EssenceItems {
 	//public static final ItemMod withicEssence = new ItemMod("withicEssence");
 	
 	//TODO
-	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", 1F, EntityBoilingPiercer.class);
-	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", 1F, EntityNethicPiercer.class);
-	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", 1F, EntityFrozenPiercer.class);
-	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", 1F, EntityEucaPiercer.class);
-	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", 1F, EntityDepthsPiercer.class);
-	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", 1F, EntityCorbaPiercer.class);
-	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", 1F, EntityFrostbittenPiercer.class);
-	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", 1F, EntityFrostyPiercer.class);
+	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", 11F, EntityBoilingPiercer.class);
+	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", 8F, EntityNethicPiercer.class);
+	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", 9F, EntityFrozenPiercer.class);
+	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", 12F, EntityEucaPiercer.class);
+	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", 17F, EntityDepthsPiercer.class);
+	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", 22F, EntityCorbaPiercer.class);
+	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", 10F, EntityFrostbittenPiercer.class);
+	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", 9F, EntityFrostyPiercer.class);
+	public static final Item moltenKnife = new ItemPiercer("moltenKnife", 10F, EntityMoltenKnife.class);
+	public static final Item royalKnife = new ItemPiercer("royalKnife", 14F, EntityRoyalKnife.class);
 	
 	public static final Item weakPower = new ItemPower("weakPower", 10F);
 

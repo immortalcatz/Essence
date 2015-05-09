@@ -50,10 +50,10 @@ public class EntityFrozenMerchant extends EntityModVillager {
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.crystalFlake, 15), new ItemStack(EssenceItems.frostGem, 15), new ItemStack(EssenceItems.frostySword, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.crystalFlake, 15), new ItemStack(EssenceItems.frostGem, 15), new ItemStack(EssenceItems.frostyBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.crystalFlake, 15), new ItemStack(EssenceItems.frostGem, 15), new ItemStack(EssenceItems.frostyPiercer, 32)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.crystalFlake, 10), new ItemStack(EssenceItems.frostGem, 10), new ItemStack(EssenceItems.frostyPiercer, 15)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.frostFlake, 15), new ItemStack(EssenceItems.frostySword, 1), new ItemStack(EssenceItems.frostbittenSword, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.frostFlake, 15), new ItemStack(EssenceItems.frostyBow, 1), new ItemStack(EssenceItems.frostbittenBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.frostFlake, 15), new ItemStack(EssenceItems.frostyPiercer, 1), new ItemStack(EssenceItems.frostbittenPiercer, 32)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.frostFlake, 10), new ItemStack(EssenceItems.frostyPiercer, 10), new ItemStack(EssenceItems.frostbittenPiercer, 15)));
 		
 	}
 }

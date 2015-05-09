@@ -49,6 +49,9 @@ public enum EssenceToolMaterial {
 	FROSTY_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	TREE_HUGGER(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
 	HEALERS_BLADE(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	CORE_MENDER(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	ROYAL_BLADE(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
+	ROYAL_STABBER(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),
@@ -63,7 +66,12 @@ public enum EssenceToolMaterial {
 
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
-	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25));
+	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25)),
+	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 21, 25)),
+	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 25, 25)),
+	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 22, 25)),
+	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 24, 25));
+
 
 	private ToolMaterial toolMaterial;
 	private Item repairItem;
