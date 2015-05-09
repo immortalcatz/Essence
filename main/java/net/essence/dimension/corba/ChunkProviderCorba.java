@@ -359,8 +359,8 @@ public class ChunkProviderCorba implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 
-		for(i = 0; i < 200; i++) {
-			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+		for(i = 0; i < 300; i++) {
+			y = r.nextInt(350); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.corbaGrass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState())
 				((WorldGenerator)trees.get(r.nextInt(trees.size()))).generate(worldObj, r, new BlockPos(x, y, z));
 		}

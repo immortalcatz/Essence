@@ -39,6 +39,7 @@ import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
@@ -190,6 +191,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityTordo.class, "tordo");
 		SlayerAPI.registerNPC(EntityRedTordo.class, "redTordo");
 		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader");
+		SlayerAPI.registerNPC(EntityAlloyMender.class, "alloyMender");
 	}
 	
 	public static void registerBosses() {

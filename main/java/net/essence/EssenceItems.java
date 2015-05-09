@@ -209,7 +209,7 @@ public class EssenceItems {
 	public static final Item theWraith = new ItemModSword("theWraith", EssenceToolMaterial.THE_WRAITH);
 	public static final Item bubbleSword = new ItemModSword("bubbleSword", EssenceToolMaterial.BUBBLE_SWORD);
 	public static final Item boilingBlade = new ItemModSword("boilingBlade", EssenceToolMaterial.BOILING_BLADE);
-	public static final Item moltenKnife = new ItemModSword("moltenKnife", EssenceToolMaterial.MOLTEN_KNIFE);
+	public static final Item moltenKnife = new ItemPiercer("moltenKnife", 10F, EntityMoltenKnife.class);
 	public static final Item loggersSword = new ItemModSword("loggersSword", EssenceToolMaterial.LOGGERS_SWORD);
 	public static final Item naturesBlade = new ItemModSword("naturesBlade", EssenceToolMaterial.NATURES_BLADE);
 	public static final Item depthsDarksword = new ItemModSword("depthsDarksword", EssenceToolMaterial.DEPTHS_DARKSWORD);
