@@ -225,6 +225,8 @@ public class EssenceItems {
 	public static final Item coreMender = new ItemModSword("coreMender", EssenceToolMaterial.CORE_MENDER);
 	public static final Item royalBlade = new ItemModSword("royalBlade", EssenceToolMaterial.ROYAL_BLADE);
 	public static final Item royalStabber = new ItemModSword("royalStabber", EssenceToolMaterial.ROYAL_STABBER);
+	public static final Item rocSword = new ItemModSword("rocSword", EssenceToolMaterial.ROC_SWORD);
+	public static final Item swordOfTheThunderbird = new ItemModSword("swordOfTheThunderbird", EssenceToolMaterial.SWORD_THUNDERBIRD);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
