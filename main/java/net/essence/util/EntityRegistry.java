@@ -34,9 +34,11 @@ import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
+import net.essence.entity.mob.euca.EntityDynaster;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
+import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
@@ -180,6 +182,8 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityTreeGolem.class, "treeGolem");
 		SlayerAPI.registerMob(EntityWoodCreature.class, "woodCreature");
 		SlayerAPI.registerMob(EntityRoc.class, "roc");
+		SlayerAPI.registerMob(EntityDynaster.class, "dynaster");
+		SlayerAPI.registerMob(EntityGolder.class, "golder");
 	}
 	
 	public static void registerNPCs() {

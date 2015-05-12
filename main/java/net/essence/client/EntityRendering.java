@@ -60,9 +60,11 @@ import net.essence.client.render.model.mob.depths.ModelRoc;
 import net.essence.client.render.model.mob.depths.ModelSpikedBeast;
 import net.essence.client.render.model.mob.depths.ModelStaringGuardian;
 import net.essence.client.render.model.mob.euca.ModelAlloyMender;
+import net.essence.client.render.model.mob.euca.ModelDynaster;
 import net.essence.client.render.model.mob.euca.ModelEucaCharger;
 import net.essence.client.render.model.mob.euca.ModelEucaFighter;
 import net.essence.client.render.model.mob.euca.ModelEucaHopper;
+import net.essence.client.render.model.mob.euca.ModelGolder;
 import net.essence.client.render.model.mob.euca.ModelInsecto;
 import net.essence.client.render.model.mob.euca.ModelPsyollom;
 import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
@@ -121,9 +123,11 @@ import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
+import net.essence.entity.mob.euca.EntityDynaster;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
+import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
@@ -267,6 +271,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTreeGolem.class, new RenderModMob(new ModelTreeGolem(), tex.treeGolem));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWoodCreature.class, new RenderModMob(new ModelWoodCreature(), tex.woodCreature));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRoc.class, new RenderModMob(new ModelRoc(), tex.roc));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDynaster.class, new RenderModMob(new ModelDynaster(), tex.dynaster));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGolder.class, new RenderModMob(new ModelGolder(), tex.golder));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
