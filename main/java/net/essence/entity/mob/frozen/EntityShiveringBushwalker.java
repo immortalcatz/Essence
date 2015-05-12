@@ -32,18 +32,18 @@ public class EntityShiveringBushwalker extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.SMALL_HONGO.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.SMALL_HONGO;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SMALL_HONGO_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SMALL_HONGO_HURT;
 	}
 	
 	@Override

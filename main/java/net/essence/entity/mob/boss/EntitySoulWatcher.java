@@ -30,7 +30,7 @@ public class EntitySoulWatcher extends EntityEssenceBoss {
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if(this.attackTimer > 0) --this.attackTimer;
+		if(this.attackTimer > 0) attackTimer--;
 		if (this.motionX * this.motionX + this.motionZ * this.motionZ > 2.500000277905201E-7D && this.rand.nextInt(5) == 0) {
 			int i = MathHelper.floor_double(this.posX);
 			int j = MathHelper.floor_double(this.posY - 0.20000000298023224D);
@@ -66,18 +66,18 @@ public class EntitySoulWatcher extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.NETHER_BEAST.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.NETHER_BEAST;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.NETHER_BEAST_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.NETHER_BEAST_HURT;
 	}
 
 	@Override

@@ -146,18 +146,18 @@ public class EntityMagmaBlaze extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.BLAZE.getNonPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.BLAZE;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.BLAZE_HURT.getNonPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.BLAZE_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.BLAZE_DEATH.getNonPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.BLAZE_DEATH;
 	}
 
 	@Override

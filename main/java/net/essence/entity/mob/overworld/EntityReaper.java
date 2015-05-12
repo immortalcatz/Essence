@@ -35,18 +35,18 @@ public class EntityReaper extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.REAPER.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.REAPER;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.REAPER_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.REAPER_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.REAPER_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.REAPER_HURT;
 	}
 	
 	@Override

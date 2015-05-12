@@ -31,40 +31,40 @@ public class EntityFrozenTroll extends EntityModMob {
 	public boolean attackEntityAsMob(Entity e) {
 		boolean attacked = super.attackEntityAsMob(e);
 		if(attacked) {
-			if(e instanceof EntityLivingBase)((EntityLivingBase)e).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2, true, false));
-			e.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F))*2, 0.1D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F))*2);
+			if(e instanceof EntityLivingBase) 
+				((EntityLivingBase)e).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2, true, false));
+			e.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F)) * 2, 0.1D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F)) * 2);
 		}
 		return attacked;
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.smallHongoDamage;
+		return s.frozenTrollDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.smallHongoHealth;
+		return s.frozenTrollHealth;
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.SMALL_HONGO.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.SMALL_HONGO;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SMALL_HONGO_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SMALL_HONGO_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SMALL_HONGO_HURT;
 	}
 
 	@Override
 	public Item getItemDropped() {
 		return null;
 	}
-
 }

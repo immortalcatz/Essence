@@ -32,18 +32,18 @@ public class EntityMagmaGiant extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.MAGMA_GIANT.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.MAGMA_GIANT;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 	
 	@Override

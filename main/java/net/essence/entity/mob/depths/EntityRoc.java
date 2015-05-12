@@ -2,6 +2,7 @@ package net.essence.entity.mob.depths;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
@@ -24,18 +25,18 @@ public class EntityRoc extends EntityPeacefullUntillAttacked {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return null;
+	public EnumSounds setLivingSound() {
+		return EnumSounds.EMPTY;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return null;
+	public EnumSounds setHurtSound() {
+		return EnumSounds.EMPTY;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return null;
+	public EnumSounds setDeathSound() {
+		return EnumSounds.EMPTY;
 	}
 
 	@Override

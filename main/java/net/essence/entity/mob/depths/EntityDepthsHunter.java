@@ -30,18 +30,18 @@ public class EntityDepthsHunter extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.DEPTHS_HUNTER.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.DEPTHS_HUNTER;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.DEPTHS_HUNTER_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.DEPTHS_HUNTER_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.DEPTHS_HUNTER_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.DEPTHS_HUNTER_HURT;
 	}
 	
 	@Override

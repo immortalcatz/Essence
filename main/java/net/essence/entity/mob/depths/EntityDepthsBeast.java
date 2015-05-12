@@ -32,18 +32,18 @@ public class EntityDepthsBeast extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.MAGMA_GIANT.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.MAGMA_GIANT;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SPYCLOPS_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SPYCLOPS_HURT;
 	}
 	
 	@Override

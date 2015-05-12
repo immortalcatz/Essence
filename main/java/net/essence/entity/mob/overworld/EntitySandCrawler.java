@@ -27,18 +27,18 @@ public class EntitySandCrawler extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.SAND_CRAWLER.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.SAND_CRAWLER;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.MAGMA_GIANT_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 
 	@Override

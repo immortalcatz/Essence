@@ -11,7 +11,6 @@ import net.slayer.api.entity.EntityModVillager;
 
 public class EntityTordo extends EntityModVillager {
 
-	@SuppressWarnings("do this")
 	public EntityTordo(World par1World) {
 		super(par1World);
 		setSize(0.7F, 2.5F);

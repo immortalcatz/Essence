@@ -26,18 +26,18 @@ public class EntityEucaCharger extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.HONGO.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.HONGO;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SAND_CRAWLER.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SAND_CRAWLER;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SAND_CRAWLER.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SAND_CRAWLER;
 	}
 	
 	@Override

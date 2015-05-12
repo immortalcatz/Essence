@@ -19,19 +19,9 @@ public class EntityOverseerElder extends EntityModFlying {
 	@SuppressWarnings("do this")
 	public EntityOverseerElder(World par1World) {
 		super(par1World);
-		addAttackingAI();
-		this.moveHelper = new EntityOverseerElder.ShattererMoveHelper();
+		this.moveHelper = new EntityOverseerElder.OverseerElderMoveHelper();
         this.tasks.addTask(5, new EntityOverseerElder.AIRandomFly());
 		setSize(4F, 4F);
-	}
-
-	private void addAttackingAI() {
-		
-	}
-
-	public double setAttackDamage(MobStats s) {
-		return s.permafraustDamage;
-		
 	}
 
 	@Override
@@ -106,11 +96,11 @@ public class EntityOverseerElder extends EntityModFlying {
         }
     }
 
-    private class ShattererMoveHelper extends EntityMoveHelper {
+    private class OverseerElderMoveHelper extends EntityMoveHelper {
         private EntityOverseerElder e = EntityOverseerElder.this;
         private int height;
 
-        public ShattererMoveHelper() {
+        public OverseerElderMoveHelper() {
             super(EntityOverseerElder.this);
         }
 

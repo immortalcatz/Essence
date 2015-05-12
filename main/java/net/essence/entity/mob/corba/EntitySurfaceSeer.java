@@ -19,19 +19,9 @@ public class EntitySurfaceSeer extends EntityModFlying {
 	@SuppressWarnings("do this")
 	public EntitySurfaceSeer(World par1World) {
 		super(par1World);
-		addAttackingAI();
-		this.moveHelper = new EntitySurfaceSeer.ShattererMoveHelper();
+		this.moveHelper = new EntitySurfaceSeer.SurfaceSeerMoveHelper();
         this.tasks.addTask(5, new EntitySurfaceSeer.AIRandomFly());
 		setSize(1F, 1F);
-	}
-
-	private void addAttackingAI() {
-		
-	}
-
-	public double setAttackDamage(MobStats s) {
-		return s.permafraustDamage;
-		
 	}
 
 	@Override
@@ -63,11 +53,6 @@ public class EntitySurfaceSeer extends EntityModFlying {
 	@Override
 	public Item getItemDropped() {
 		return null;
-	}
-	
-	@Override
-	public boolean shouldRenderInPass(int pass) {
-		return pass == 1;
 	}
 	
 	private class AIRandomFly extends EntityAIBase {
@@ -106,11 +91,11 @@ public class EntitySurfaceSeer extends EntityModFlying {
         }
     }
 
-    private class ShattererMoveHelper extends EntityMoveHelper {
+    private class SurfaceSeerMoveHelper extends EntityMoveHelper {
         private EntitySurfaceSeer e = EntitySurfaceSeer.this;
         private int height;
 
-        public ShattererMoveHelper() {
+        public SurfaceSeerMoveHelper() {
             super(EntitySurfaceSeer.this);
         }
 

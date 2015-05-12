@@ -44,18 +44,18 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.WITHER.getNonPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.WITHER;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.WITHER_HURT.getNonPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.WITHER_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.WITHER_DEATH.getNonPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.WITHER_DEATH;
 	}
 
 	@Override

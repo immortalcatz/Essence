@@ -1,5 +1,6 @@
 package net.essence.entity;
 
+import net.essence.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
@@ -92,17 +93,17 @@ public class EntityDragonEgg extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return null;
+	public EnumSounds setLivingSound() {
+		return EnumSounds.EMPTY;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return null;
+	public EnumSounds setHurtSound() {
+		return EnumSounds.EMPTY;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return null;
+	public EnumSounds setDeathSound() {
+		return EnumSounds.EMPTY;
 	}
 }

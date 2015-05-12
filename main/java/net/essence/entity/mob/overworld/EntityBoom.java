@@ -2,6 +2,7 @@ package net.essence.entity.mob.overworld;
 
 import net.essence.entity.MobStats;
 import net.essence.entity.AI.EntityAIBoomSwell;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
@@ -43,18 +44,18 @@ public class EntityBoom extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return "mob.creeper.say";
+	public EnumSounds setLivingSound() {
+		return EnumSounds.CREEPER;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return "mob.creeper.death";
+	public EnumSounds setHurtSound() {
+		return EnumSounds.CREEPER_DEATH;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return "mob.creeper.death";
+	public EnumSounds setDeathSound() {
+		return EnumSounds.CREEPER_DEATH;
 	}
 
 	@Override

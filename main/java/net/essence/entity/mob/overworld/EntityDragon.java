@@ -1,6 +1,7 @@
 package net.essence.entity.mob.overworld;
 
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -22,17 +23,17 @@ public class EntityDragon extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
+	public EnumSounds setLivingSound() {
 		return null;
 	}
 
 	@Override
-	public String setHurtSound() {
+	public EnumSounds setHurtSound() {
 		return null;
 	}
 
 	@Override
-	public String setDeathSound() {
+	public EnumSounds setDeathSound() {
 		return null;
 	}
 

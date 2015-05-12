@@ -163,18 +163,18 @@ public class EntityBlazier extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.BLAZE.getNonPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.BLAZE;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.BLAZE_HURT.getNonPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.BLAZE_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.BLAZE_DEATH.getNonPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.BLAZE_DEATH;
 	}
 
 	@Override
@@ -187,7 +187,6 @@ public class EntityBlazier extends EntityEssenceBoss {
         private EntityBlazier field_179469_a = EntityBlazier.this;
         private int field_179467_b;
         private int field_179468_c;
-        private static final String __OBFID = "CL_00002225";
 
         public AIFireballAttack()
         {

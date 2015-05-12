@@ -33,18 +33,18 @@ public class EntityBunny extends EntityPeacefullUntillAttacked {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.BUNNY.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.BUNNY;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.BUNNY_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.BUNNY_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.BUNNY_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.BUNNY_HURT;
 	}
 
 	@Override

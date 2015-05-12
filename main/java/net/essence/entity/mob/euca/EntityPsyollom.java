@@ -35,18 +35,18 @@ public class EntityPsyollom extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.PSYOLLOM.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.PSYOLLOM;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.PSYOLLOM_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.PSYOLLOM_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.PSYOLLOM_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.PSYOLLOM_HURT;
 	}
 	
 	@Override

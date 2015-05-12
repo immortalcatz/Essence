@@ -32,18 +32,18 @@ public class EntityBurningLight extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.SPIKED_BEAST.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.SPIKED_BEAST;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SPIKED_BEAST_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SPIKED_BEAST_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SPIKED_BEAST_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SPIKED_BEAST_HURT;
 	}
 	
 	@Override

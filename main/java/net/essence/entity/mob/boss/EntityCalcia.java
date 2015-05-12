@@ -43,18 +43,18 @@ public class EntityCalcia extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.CALCIA.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.CALCIA;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.CALCIA_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.CALCIA_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.CALCIA_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.CALCIA_HURT;
 	}
 
 	public boolean isInv() {

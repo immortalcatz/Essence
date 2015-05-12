@@ -26,18 +26,18 @@ public class EntityMediumHongo extends EntityModMob {
 		return s.mediumHongoHealth;
 	}
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.HONGO.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.HONGO;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.HONGO_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.HONGO_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.HONGO_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.HONGO_HURT;
 	}
 
 	@Override

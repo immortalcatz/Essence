@@ -68,17 +68,17 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 	}
 
 	@Override
-	public String setLivingSound() {
+	public EnumSounds setLivingSound() {
 		return null;
 	}
 
 	@Override
-	public String setHurtSound() {
+	public EnumSounds setHurtSound() {
 		return null;
 	}
 
 	@Override
-	public String setDeathSound() {
+	public EnumSounds setDeathSound() {
 		return null;
 	}
 

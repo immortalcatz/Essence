@@ -25,18 +25,18 @@ public class EntityTurtle extends EntityPeacefullUntillAttacked {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.TURTLE.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.TURTLE;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.TURTLE_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.TURTLE_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.TURTLE_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.TURTLE_HURT;
 	}
 
 	@Override

@@ -35,18 +35,18 @@ public class EntitySpyclops extends EntityModMob {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.SPYCLOPS.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.SPYCLOPS;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.SPYCLOPS.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.SPYCLOPS;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.SPYCLOPS_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.SPYCLOPS_HURT;
 	}
 
 	@Override

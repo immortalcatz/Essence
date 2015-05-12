@@ -66,18 +66,18 @@ public class EntityThunderbird extends EntityEssenceBoss {
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.NETHER_BEAST.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.NETHER_BEAST;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.NETHER_BEAST_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.NETHER_BEAST_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.NETHER_BEAST_HURT;
 	}
 
 	@Override

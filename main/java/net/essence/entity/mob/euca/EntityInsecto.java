@@ -40,18 +40,18 @@ public class EntityInsecto extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.INSECTO.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.INSECTO;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.INSECTO_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.INSECTO_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.INSECTO_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.INSECTO_HURT;
 	}
 	
 	@Override

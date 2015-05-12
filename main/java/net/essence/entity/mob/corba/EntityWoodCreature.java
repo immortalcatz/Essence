@@ -30,18 +30,18 @@ public class EntityWoodCreature extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.BLAZE.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.BLAZE;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.WITHER.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.WITHER;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.WITHER.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.WITHER;
 	}
 	
 	@Override

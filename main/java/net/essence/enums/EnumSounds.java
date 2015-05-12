@@ -43,12 +43,15 @@ public enum EnumSounds {
 	WITHER("mob.wither.idle"),
 	WITHER_HURT("mob.wither.hurt"),
 	WITHER_DEATH("mob.wither.death"),
+	CREEPER("mob.creeper.say"),
+	CREEPER_DEATH("mob.creeper.death"),
 	STAFF("essence:staff"),
 	WRAPPER("essence:wrapper"),
 	PAGE_FLIP("essence:pageFlip"),
 	SPARKLE("essence:magicSparkle"),
 	CANNON("essence:cannon"),
-	PLASMA("essence:plasma");
+	PLASMA("essence:plasma"),
+	EMPTY("");
 	
 	private String sound;
 
