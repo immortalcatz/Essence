@@ -40,18 +40,18 @@ public class EntityDynaster extends EntityModMob{
 	}
 
 	@Override
-	public String setLivingSound() {
-		return EnumSounds.ROBOT.getPrefixedName();
+	public EnumSounds setLivingSound() {
+		return EnumSounds.ROBOT;
 	}
 
 	@Override
-	public String setHurtSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+	public EnumSounds setHurtSound() {
+		return EnumSounds.ROBOT_HURT;
 	}
 
 	@Override
-	public String setDeathSound() {
-		return EnumSounds.ROBOT_HURT.getPrefixedName();
+	public EnumSounds setDeathSound() {
+		return EnumSounds.ROBOT_HURT;
 	}
 	
 	@Override
