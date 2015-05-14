@@ -145,19 +145,19 @@ public class ChunkProviderEuca implements IChunkProvider {
 								iblockstate1 = EssenceBlocks.eucaGrass.getDefaultState();
 							}
 							k = b0;
-							if (l >= 0) {
+							if(l >= 0) {
 								c.setBlockState(i, l, j, iblockstate);
 							} else {
 								c.setBlockState(i, l, j, iblockstate1);
 								if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
-								if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
+								//if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
 							}
 						}
 						else if (k > 0) {
 							--k;
 							c.setBlockState(i, l, j, iblockstate1);
 							if(c.getBlockState(i, l - 1, j) == EssenceBlocks.eucaStone.getDefaultState()) c.setBlockState(i, l - 1, j, iblockstate1);
-							if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
+							//if(c.getBlockState(i, l - 2, j) == EssenceBlocks.eucaStone.getDefaultState() && rand.nextInt(2) == 0) c.setBlockState(i, l - 2, j, iblockstate1);
 						}
 					}
 				}
