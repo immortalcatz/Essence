@@ -26,6 +26,7 @@ public class MobStats {
 	public static double frozenTrollHealth = 20.0D, frozenTrollDamage = 5.0D, frozenTrollSpeed = normalSpeed, frozenTrollFollowRange = follow;
 	public static double permafraustHealth = 20.0D, permafraustDamage = 5.0D, permafraustSpeed = normalSpeed, permafraustFollowRange = follow;
 	public static double shiveringBushwalkerHealth = 20.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
+	public static double crystalClusterHealth = 20.0D, crystalClusterDamage = 5.0D, crystalClusterSpeed = normalSpeed, crystalClusterRange = follow;
 	
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;

@@ -67,6 +67,7 @@ import net.essence.client.render.model.mob.euca.ModelEucaHopper;
 import net.essence.client.render.model.mob.euca.ModelGolder;
 import net.essence.client.render.model.mob.euca.ModelInsecto;
 import net.essence.client.render.model.mob.euca.ModelPsyollom;
+import net.essence.client.render.model.mob.frozen.ModelCrystalCluster;
 import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
 import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
 import net.essence.client.render.model.mob.frozen.ModelPermafraust;
@@ -131,6 +132,7 @@ import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
+import net.essence.entity.mob.frozen.EntityCrystalCluster;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
@@ -273,6 +275,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityRoc.class, new RenderModMob(new ModelRoc(), tex.roc));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDynaster.class, new RenderModMob(new ModelDynaster(), tex.dynaster));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGolder.class, new RenderModMob(new ModelGolder(), tex.golder));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCrystalCluster.class, new RenderModMob(new ModelCrystalCluster(), tex.crystalCluster));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
