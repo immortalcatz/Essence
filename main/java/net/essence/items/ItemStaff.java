@@ -8,6 +8,7 @@ import net.essence.client.server.DarkEnergyBar;
 import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.enums.EnumSounds;
+import net.essence.util.Helper;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

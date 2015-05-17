@@ -2,6 +2,7 @@ package net.essence.client.server;
 
 import net.essence.Essence;
 import net.essence.event.message.MessageDarkEnergyBar;
+import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -54,6 +55,7 @@ public class DarkEnergyBar implements IExtendedEntityProperties {
 
 	public void updateAllBars() {
 		darkEnergy += 1;
+		Helper.print(darkEnergy);
 		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
 	}                
 

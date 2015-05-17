@@ -17,6 +17,7 @@ import net.essence.client.server.EssenceBar;
 import net.essence.enums.EnumParticlesClasses;
 import net.essence.event.ClientTickEvent;
 import net.essence.event.UpdateCheckerEvent;
+import net.essence.util.Helper;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
