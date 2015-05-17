@@ -33,16 +33,20 @@ public class BarTickHandler {
 
 	@SubscribeEvent
 	public void onEntityConstructing(EntityConstructing event) {
-		if(event.entity != null) {
-			if(event.entity instanceof EntityPlayer && DarkEnergyBar.getProperties((EntityPlayer)event.entity) == null)
-				DarkEnergyBar.addProperties((EntityPlayer)event.entity);
-
-			if(event.entity instanceof EntityPlayer && EssenceBar.getProperties((EntityPlayer)event.entity) == null)
-				EssenceBar.addProperties((EntityPlayer)event.entity);
-
-			if(event.entity instanceof EntityPlayer && PowerBar.getProperties((EntityPlayer)event.entity) == null)
-				PowerBar.addProperties((EntityPlayer)event.entity);
-		}
+		if(event.entity instanceof EntityPlayer && DarkEnergyBar.getProperties((EntityPlayer)event.entity) == null)
+			DarkEnergyBar.addProperties((EntityPlayer)event.entity);
+		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(DarkEnergyBar.PROP) == null)
+			event.entity.registerExtendedProperties(DarkEnergyBar.PROP, new DarkEnergyBar((EntityPlayer)event.entity));
+		
+		if(event.entity instanceof EntityPlayer && EssenceBar.getProperties((EntityPlayer)event.entity) == null)
+			EssenceBar.addProperties((EntityPlayer)event.entity);
+		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(EssenceBar.PROP) == null)
+			event.entity.registerExtendedProperties(EssenceBar.PROP, new EssenceBar((EntityPlayer)event.entity));
+		
+		if(event.entity instanceof EntityPlayer && PowerBar.getProperties((EntityPlayer) event.entity) == null)
+			PowerBar.addProperties((EntityPlayer)event.entity);
+		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(PowerBar.PROP) == null)
+			event.entity.registerExtendedProperties(PowerBar.PROP, new PowerBar((EntityPlayer)event.entity));
 	}
 
 	@SubscribeEvent

@@ -63,23 +63,7 @@ public class PlayerKnowledge implements IExtendedEntityProperties {
 	}
 	
 	public int getKnowledgeID(EnumKnowledge knowledge) {
-		switch(knowledge) {
-		case OVERWORLD: return 0;
-		case NETHER: return 1;
-		case END: return 2;
-		case BOIL: return 3;
-		case FROZEN: return 4;
-		case EUCA: return 5;
-		case DEPTHS: return 6;
-		case CORBA: return 7;
-		case CLOUDIA: return 8;
-		case WASTELANDS: return 9;
-		case LITHIUM: return 10;
-		case LIBRARY: return 11;
-		case BLAZE:	return 12;
-		case WITHER: return 13;
-		default: return 0;
-		}
+		return knowledge.ordinal();
 	}
 
 	public void addExperience(int amount, EnumKnowledge type, EntityPlayer player) {

@@ -22,7 +22,7 @@ public class KnowledgeEvent {
 	@SubscribeEvent
 	public void onEntityConstructing(EntityConstructing event) {
 		if(event.entity instanceof EntityPlayer && PlayerKnowledge.get((EntityPlayer) event.entity) == null)
-			PlayerKnowledge.register((EntityPlayer) event.entity);
+			PlayerKnowledge.register((EntityPlayer)event.entity);
 		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(PlayerKnowledge.KNOWLEDGE_TAG) == null)
 			event.entity.registerExtendedProperties(PlayerKnowledge.KNOWLEDGE_TAG, new PlayerKnowledge((EntityPlayer) event.entity));
 	}

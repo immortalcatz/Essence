@@ -18,7 +18,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityPower extends EntityThrowable {
 
-	public float damage;
 	public float lifeTicks;
 
 	public EntityPower(World var1) {
@@ -28,16 +27,7 @@ public class EntityPower extends EntityThrowable {
 
 	public EntityPower(World var1, EntityLivingBase var3, float dam) {
 		super(var1, var3);
-		damage = dam;
 		lifeTicks = 20;
-	}
-
-	public float getDamage() {
-		return damage;
-	}
-
-	public void setDamage(float damage) {
-		this.damage = damage;
 	}
 
 	@Override

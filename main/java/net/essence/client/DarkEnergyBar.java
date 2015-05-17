@@ -17,7 +17,7 @@ public class DarkEnergyBar implements IExtendedEntityProperties {
 
 	private int darkEnergy, regenDelay;
 	private final EntityPlayer player;
-	private final static String PROP = "DarkEnergyProperties";
+	public final static String PROP = "DarkEnergyProperties";
 
 	public DarkEnergyBar(EntityPlayer player) {
 		this.player = player;
