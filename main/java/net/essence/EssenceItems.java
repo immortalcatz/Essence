@@ -151,7 +151,6 @@ public class EssenceItems {
 	public static final Item gorbiteMultiTool = new ItemMultiTool("gorbiteMultiTool", EssenceToolMaterial.GORBITE_MULTI_TOOL);
 	public static final Item orbaditeMultiTool = new ItemMultiTool("orbaditeMultiTool", EssenceToolMaterial.ORBADITE_MULTI_TOOL);
 	public static final Item desMultiTool = new ItemMultiTool("desMultiTool", EssenceToolMaterial.DES_MULTI_TOOL);
-	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", EssenceToolMaterial.SMELTING_TOOL);
 
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", EssenceToolMaterial.SHADIUM);
@@ -192,6 +191,8 @@ public class EssenceItems {
 	public static final Item gorbiteHoe = new ItemModHoe("gorbiteHoe", EssenceToolMaterial.GORBITE);
 	public static final Item orbaditeHoe = new ItemModHoe("orbaditeHoe", EssenceToolMaterial.ORBADITE);
 	public static final Item desHoe = new ItemModHoe("desHoe", EssenceToolMaterial.DES);
+	
+	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", EssenceToolMaterial.SMELTING_TOOL);
 
 	public static final Item hellstoneSword = new ItemFireSword("hellstoneSword", EssenceToolMaterial.HELLSTONE_SWORD);
 	public static final Item shadiumSword = new ItemFreezeSword("shadiumSword", EssenceToolMaterial.SHADIUM_SWORD);

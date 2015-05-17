@@ -21,7 +21,8 @@ public class ProgressBar {
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);
 		GL11.glPushMatrix();
-		WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
+		Tessellator t = Tessellator.getInstance();
+		WorldRenderer tessellator = t.getWorldRenderer();
 		GL11.glDisable(3553);
 		tessellator.startDrawingQuads();
 		tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 1.0F);
@@ -36,7 +37,7 @@ public class ProgressBar {
 		tessellator.addVertex(x - width/2+3, y+height-3, 0.0);
 		tessellator.addVertex(x - width/2+3+barWidth, y+height-3, 0.0);
 		tessellator.addVertex(x - width/2+3+barWidth, y+3, 0.0);
-		Tessellator.getInstance().draw();
+		t.draw();
 		GL11.glPopMatrix();
 		GL11.glEnable(3553);
 		GL11.glDisable(GL12.GL_RESCALE_NORMAL);

@@ -3,9 +3,9 @@ package net.essence.misc;
 import java.util.List;
 
 import net.essence.EssenceBlocks;
-import net.essence.client.PowerBar;
 import net.essence.client.server.DarkEnergyBar;
 import net.essence.client.server.EssenceBar;
+import net.essence.client.server.PowerBar;
 import net.essence.dimension.ModTeleporter;
 import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;

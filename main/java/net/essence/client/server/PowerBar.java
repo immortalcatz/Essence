@@ -1,4 +1,4 @@
-package net.essence.client;
+package net.essence.client.server;
 
 import net.essence.Essence;
 import net.essence.event.message.MessagePowerBar;
