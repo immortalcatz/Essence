@@ -13,7 +13,7 @@ public class BlockGlowaCrop extends BlockModCrop {
 
 	@Override
 	public PropertyInteger getAge() {
-		return PropertyInteger.create("age", 0, 4);
+		return PropertyInteger.create("age", 0, 3);
 	}
 	
 	@Override
@@ -28,6 +28,6 @@ public class BlockGlowaCrop extends BlockModCrop {
 
 	@Override
 	public int getStages() {
-		return 4;
+		return 3;
 	}
 }

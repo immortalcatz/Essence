@@ -13,7 +13,7 @@ public class BlockZatPedalsCrop extends BlockModCrop {
 
 	@Override
 	public PropertyInteger getAge() {
-		return PropertyInteger.create("age", 0, 7);
+		return PropertyInteger.create("age", 0, 6);
 	}
 	
 	@Override
@@ -28,6 +28,6 @@ public class BlockZatPedalsCrop extends BlockModCrop {
 
 	@Override
 	public int getStages() {
-		return 7;
+		return 6;
 	}
 }

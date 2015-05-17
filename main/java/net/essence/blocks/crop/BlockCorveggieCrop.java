@@ -13,7 +13,7 @@ public class BlockCorveggieCrop extends BlockModCrop {
 
 	@Override
 	public PropertyInteger getAge() {
-		return PropertyInteger.create("age", 0, 3);
+		return PropertyInteger.create("age", 0, 2);
 	}
 	
 	@Override
@@ -28,6 +28,6 @@ public class BlockCorveggieCrop extends BlockModCrop {
 
 	@Override
 	public int getStages() {
-		return 3;
+		return 2;
 	}
 }

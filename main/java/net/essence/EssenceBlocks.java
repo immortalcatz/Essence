@@ -282,9 +282,8 @@ public class EssenceBlocks {
 	public static final Block redGems = new BlockGemBlock("redGems", true);
 	
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
-	
-	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggieCrop");
-	public static final Block crackenCaneCrop = new BlockCrackenCaneCrop("crackenCaneCrop");
+	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggiesCrop");
+	public static final Block crackenCaneCrop = new BlockCrackenCaneCrop("crackenCanesCrop");
 	public static final Block crakeBulbCrop = new BlockCrakeBulbCrop("crakeBulbCrop");
 	public static final Block spineberryCrop = new BlockSpineberryCrop("spineberryCrop");
 	public static final Block glowaCrop = new BlockGlowaCrop("glowaCrop");
