@@ -55,7 +55,6 @@ public class DarkEnergyBar implements IExtendedEntityProperties {
 
 	public void updateAllBars() {
 		darkEnergy += 1;
-		Helper.print(darkEnergy);
 		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
 	}                
 

@@ -49,15 +49,15 @@ public class ItemStaff extends ItemMod {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else {
-				if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
-					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
-					if(!unBreakable) stack.damageItem(1, player);
-					try {
-						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
+			}
+		} else {
+			if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
+				EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+				if(!unBreakable) stack.damageItem(1, player);
+				try {
+					world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 			}
 		}

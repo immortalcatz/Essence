@@ -2,9 +2,6 @@ package net.essence.proxy;
 
 import net.essence.*;
 import net.essence.blocks.tileentity.*;
-import net.essence.client.PowerBar;
-import net.essence.client.server.DarkEnergyBar;
-import net.essence.client.server.EssenceBar;
 import net.essence.dimension.*;
 import net.essence.enums.*;
 import net.essence.event.*;
@@ -26,6 +23,9 @@ import net.slayer.api.*;
 
 public class CommonProxy {
 
+	public void updateDarkEnergy(int amount) { }
+	public void updateEssence(int amount) { }
+	public void updatePower(int amount) { }
 	public void registerClient() { }
 	public void clientInit(FMLInitializationEvent event) { }
 	public void clientPreInit() { }
@@ -92,19 +92,7 @@ public class CommonProxy {
 		OreDictionary.registerOre("gemSapphire", EssenceItems.sapphire);
 	}
 	
-	public EntityPlayer getClientPlayer() {
+	public EntityPlayer getClientPlayer() { 
 		return Minecraft.getMinecraft().thePlayer;
-	}
-	
-	public void updateDarkEnergy(int amount) {
-		DarkEnergyBar.getProperties(getClientPlayer()).setBarValue(amount);
-	}
-	
-	public void updateEssence(int amount) {
-		EssenceBar.getProperties(getClientPlayer()).setBarValue(amount);
-	}
-	
-	public void updatePower(int amount) {
-		PowerBar.getProperties(getClientPlayer()).setBarValue(amount);
 	}
 }
