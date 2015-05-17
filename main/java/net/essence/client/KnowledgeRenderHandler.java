@@ -2,6 +2,7 @@ package net.essence.client;
 
 import java.util.Random;
 
+import net.essence.client.server.PlayerKnowledge;
 import net.essence.enums.EnumKnowledge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;

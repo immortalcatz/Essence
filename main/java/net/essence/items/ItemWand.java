@@ -3,8 +3,8 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.EssenceItems;
-import net.essence.client.DarkEnergyBar;
-import net.essence.client.EssenceBar;
+import net.essence.client.server.DarkEnergyBar;
+import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.entity.projectile.EntityChaosProjectile;
 import net.essence.enums.EnumSounds;

@@ -1,7 +1,7 @@
-package net.essence.client;
+package net.essence.client.server;
 
 import net.essence.Essence;
-import net.essence.event.message.MessageDarkEnergyBar;
+import net.essence.event.message.MessageEssenceBar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,24 +13,24 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class DarkEnergyBar implements IExtendedEntityProperties {
+public class EssenceBar implements IExtendedEntityProperties {
 
-	private int darkEnergy, regenDelay;
+	private int essence, regenDelay;
 	private final EntityPlayer player;
-	public final static String PROP = "DarkEnergyProperties";
+	public final static String PROP = "EssenceProperties";
 
-	public DarkEnergyBar(EntityPlayer player) {
+	public EssenceBar(EntityPlayer player) {
 		this.player = player;
 	}
 	
-	public DarkEnergyBar() {
+	public EssenceBar() {
 		this.player = Minecraft.getMinecraft().thePlayer;
 	}
 
 	@Override
 	public void saveNBTData(NBTTagCompound n) {
 		NBTTagCompound tag = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
-		n.setInteger("darkEnergy", 9);
+		n.setInteger("essence", 9);
 		n.setInteger("regen", 20);
 		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
 	}
@@ -38,63 +38,63 @@ public class DarkEnergyBar implements IExtendedEntityProperties {
 	@Override
 	public void loadNBTData(NBTTagCompound n) {
 		NBTTagCompound tag = (NBTTagCompound) player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
-		if(!tag.hasKey("darkEnergy")) return;
-		this.darkEnergy = n.getInteger("darkEnergy");
+		if(!tag.hasKey("essence")) return;
+		this.essence = n.getInteger("essence");
 		this.regenDelay = n.getInteger("regen");
 		player.getEntityData().setTag(player.PERSISTED_NBT_TAG, tag);
 	}
 	
 	public static void addProperties(EntityPlayer player) {
-		player.registerExtendedProperties(PROP, new DarkEnergyBar(player));
+		player.registerExtendedProperties(PROP, new EssenceBar(player));
 	}
 	
-	public static DarkEnergyBar getProperties(EntityPlayer player) {
-		return (DarkEnergyBar)player.getExtendedProperties(PROP);
+	public static EssenceBar getProperties(EntityPlayer player) {
+		return (EssenceBar)player.getExtendedProperties(PROP);
 	}
 
 	public void updateAllBars() {
-		darkEnergy += 1;
-		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
+		essence += 1;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}                
 
 	public boolean useBar(int amount) {
-		if(darkEnergy < amount) {
+		if(essence < amount) {
 			regenDelay = 10;
 			return false;
 		}
-		darkEnergy -= amount;
+		essence -= amount;
 		regenDelay = 10;
-		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 		return true;
 	}
 
 	public void regen(int amount) {
-		if(regenDelay == 0) darkEnergy += amount;
+		if(regenDelay == 0) essence += amount;
 		else regenDelay--;
-		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	public void mainUpdate() {
-		if(darkEnergy >= 10) darkEnergy = 10;
-		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
+		if(essence >= 10) essence = 10;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	public int getBarValue() {
-		return darkEnergy;
-	}
-	
-	public void setBarValue(int val) {
-		darkEnergy = val;
+		return essence;
 	}
 
 	public void addBarPoints(int i) {
-		darkEnergy += i;
+		essence += i;
+	}
+	
+	public void setBarValue(int val) {
+		essence = val;
 	}
 
 	public void removeBarPoints(int i) {
 		regenDelay = 10;
-		darkEnergy -= i;
-		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageDarkEnergyBar(darkEnergy, regenDelay == 0), (EntityPlayerMP)player);
+		essence -= i;
+		if(player instanceof EntityPlayerMP) Essence.wrapper.sendTo(new MessageEssenceBar(essence, regenDelay == 0), (EntityPlayerMP)player);
 	}
 
 	@Override

@@ -3,7 +3,7 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.client.EssenceBar;
+import net.essence.client.server.EssenceBar;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;

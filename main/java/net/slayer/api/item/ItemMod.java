@@ -4,7 +4,7 @@ import java.util.List;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
-import net.essence.client.DarkEnergyBar;
+import net.essence.client.server.DarkEnergyBar;
 import net.essence.enums.EnumSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;

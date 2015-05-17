@@ -4,8 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import net.essence.EssenceTabs;
-import net.essence.client.DarkEnergyBar;
-import net.essence.client.EssenceBar;
+import net.essence.client.server.DarkEnergyBar;
+import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.enums.EnumSounds;
 import net.minecraft.client.particle.EntityFX;

@@ -3,9 +3,9 @@ package net.essence;
 import java.util.ArrayList;
 
 import net.essence.*;
-import net.essence.client.DarkEnergyBar;
-import net.essence.client.EssenceBar;
 import net.essence.client.GuiHandler.GuiIDs;
+import net.essence.client.server.DarkEnergyBar;
+import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.*;
 import net.essence.enums.EnumKnowledge;
 import net.essence.enums.EnumSounds;

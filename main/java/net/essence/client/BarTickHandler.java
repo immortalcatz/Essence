@@ -2,6 +2,8 @@ package net.essence.client;
 
 import java.util.Random;
 
+import net.essence.client.server.DarkEnergyBar;
+import net.essence.client.server.EssenceBar;
 import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;

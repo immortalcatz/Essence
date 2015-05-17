@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.EssenceTabs;
-import net.essence.client.DarkEnergyBar;
-import net.essence.client.EssenceBar;
+import net.essence.client.server.DarkEnergyBar;
+import net.essence.client.server.EssenceBar;
 import net.minecraft.client.particle.EntityCritFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
