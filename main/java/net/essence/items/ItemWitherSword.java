@@ -3,6 +3,7 @@ package net.essence.items;
 import java.util.List;
 
 import net.essence.util.EssenceToolMaterial;
+import net.essence.util.LangHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -28,8 +29,8 @@ public class ItemWitherSword extends ItemModSword {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
-		infoList.add(SlayerAPI.Colour.DARK_GRAY + "On hit: Withers the target for 6 seconds");
-		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
-		else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
+		infoList.add(SlayerAPI.Colour.DARK_GRAY + LangHelper.setWitherSword(6));
+		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
+		else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
 	}
 }

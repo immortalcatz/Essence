@@ -1,6 +1,5 @@
 package net.essence.items;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import net.essence.EssenceTabs;
@@ -8,13 +7,13 @@ import net.essence.client.server.DarkEnergyBar;
 import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.enums.EnumSounds;
-import net.essence.util.Helper;
-import net.minecraft.client.particle.EntityFX;
+import net.essence.util.LangHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
@@ -65,11 +64,12 @@ public class ItemStaff extends ItemMod {
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(SlayerAPI.Colour.DARK_GREEN + "Does " + damage + " ranged damage.");
-		if(essence) list.add("Uses " + usage + " Essence.");
-		else list.add("Uses " + usage + " Dark Energy.");
-		if(unBreakable) list.add("Unbreakable");
-		else list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining.");
+		list.add(SlayerAPI.Colour.DARK_GREEN + LangHelper.rangedDamage(damage));
+		if(essence) LangHelper.useDarkEnergy(usage);
+		else LangHelper.useDarkEnergy(usage);
+		if(unBreakable) LangHelper.getInfiniteUses();
+		else list.add(stack.getMaxDamage() - stack.getItemDamage() + " " + LangHelper.getUsesRemaining());
 	}
 }

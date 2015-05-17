@@ -9,6 +9,7 @@ import net.essence.entity.mob.boss.EntitySentryKing;
 import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.depths.EntityTameRoc;
 import net.essence.util.Config;
+import net.essence.util.LangHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -70,8 +71,8 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
-		if(item == EssenceItems.blazierOrb) list.add("Spawns the boss: Blazier");
-		if(item == EssenceItems.rocSpawnEgg) list.add("Spawns a pet: Roc");
+		if(item == EssenceItems.blazierOrb) list.add(LangHelper.setBossSpawner("Blazier"));
+		if(item == EssenceItems.rocSpawnEgg) list.add(LangHelper.setPetSpawner("Roc"));
 		
 	}
 }

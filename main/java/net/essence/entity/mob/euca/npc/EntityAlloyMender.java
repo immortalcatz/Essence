@@ -41,11 +41,6 @@ public class EntityAlloyMender extends EntityModVillager {
 		return GuiIDs.ALLOY_MENDER;
 		
 	}
-	
-	@Override
-	public boolean shouldRenderInPass(int pass) {
-		return pass == 1;
-	}
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {

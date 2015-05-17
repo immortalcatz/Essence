@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.essence.EssenceTabs;
 import net.essence.client.server.EssenceBar;
+import net.essence.util.LangHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
@@ -11,6 +12,8 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
@@ -70,8 +73,9 @@ public class ItemTeleport extends ItemMod {
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(SlayerAPI.Colour.DARK_GREEN + "Uses 5 Essence");
-		list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses Remaining");
+		list.add(SlayerAPI.Colour.DARK_GREEN + LangHelper.useEssence(5));
+		list.add(stack.getMaxDamage() - stack.getItemDamage() + " " + LangHelper.getUsesRemaining());
 	}
 }

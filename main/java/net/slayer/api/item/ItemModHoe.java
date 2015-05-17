@@ -5,10 +5,13 @@ import java.util.List;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
+import net.essence.util.LangHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 public class ItemModHoe extends ItemHoe {
@@ -36,9 +39,10 @@ public class ItemModHoe extends ItemHoe {
 		return super.getIsRepairable(i, i1);
 	}
 
-    @Override
-    public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
-        if (item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " Uses Remaining");
-        else infoList.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
+		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
+		else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
+	}
 }
