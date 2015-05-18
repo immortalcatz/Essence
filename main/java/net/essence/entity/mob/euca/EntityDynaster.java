@@ -41,17 +41,17 @@ public class EntityDynaster extends EntityModMob{
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.ROBOT;
+		return EnumSounds.DYNASTER;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.ROBOT_HURT;
+		return EnumSounds.DYNASTER_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.ROBOT_HURT;
+		return EnumSounds.DYNASTER_DEATH;
 	}
 	
 	@Override
