@@ -41,6 +41,7 @@ import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.euca.EntitySilverbot;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.essence.entity.mob.frozen.EntityCrystalCluster;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
@@ -186,6 +187,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityDynaster.class, "dynaster");
 		SlayerAPI.registerMob(EntityGolder.class, "golder");
 		SlayerAPI.registerMob(EntityCrystalCluster.class, "crystalCluster");
+		SlayerAPI.registerMob(EntitySilverbot.class, "silverbot");
 	}
 	
 	public static void registerNPCs() {

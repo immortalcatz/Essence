@@ -47,6 +47,7 @@ public class MobStats {
 	public static double eucaChargerHealth = 50.0D, eucaChargerDamage = 7.0D, eucaChargerSpeed = normalSpeed, eucaChargerFollowRange = follow;
 	public static double dynasterHealth = 50.0D, dynasterDamage = 7.0D, dynasterSpeed = normalSpeed, dynasterFollowRange = follow;
 	public static double golderHealth = 50.0D, golderDamage = 7.0D, golderSpeed = normalSpeed, golderFollowRange = follow;
+	public static double silverbotHealth = 50.0D, silverbotDamage = 7.0D, silverbotSpeed = normalSpeed, silverbotFollowRange = follow;
 
 	//Depths
 	public static double depthsBeastHealth = 80.0D, depthsBeastDamage = 10.0D, depthsBeastSpeed = normalSpeed, depthsBeastFollowRange = follow;

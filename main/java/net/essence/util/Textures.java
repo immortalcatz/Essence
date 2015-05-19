@@ -60,6 +60,7 @@ public class Textures {
     public static final ResourceLocation eucaCharger = addMob("eucaCharger");
     public static final ResourceLocation dynaster = addMob("dynaster");
     public static final ResourceLocation golder = addMob("golder");
+    public static final ResourceLocation silverbot = addMob("silverbot");
     
     //Depths
     public static final ResourceLocation depthsBeast = addMob("depthsBeast");
