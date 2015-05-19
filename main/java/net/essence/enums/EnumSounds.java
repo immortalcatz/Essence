@@ -51,9 +51,15 @@ public enum EnumSounds {
 	SPARKLE("essence:magicSparkle"),
 	CANNON("essence:cannon"),
 	PLASMA("essence:plasma"),
+<<<<<<< HEAD
 	DYNASTER("essence.dynaster"),
 	DYNASTER_HURT("essence.dynasterHurt"),
 	DYNASTER_DEATH("essence.dynasterDeath"),
+=======
+	DYNASTER("essence:dynaster"),
+	DYNASTER_HURT("essence:dynasterHurt"),
+	DYNASTER_DEATH("essence:dynasterDeath"),
+>>>>>>> origin/master
 	EMPTY("");
 	
 	private String sound;
