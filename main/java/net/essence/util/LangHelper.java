@@ -3,7 +3,9 @@ package net.essence.util;
 import net.minecraft.client.resources.I18n;
 
 public class LangHelper {
-
+	
+	public String[] updateAvaliable = new String[]{	};
+	
 	public static String getFormattedText(String format) {
 		return I18n.format(format, new Object[0]);
 	}

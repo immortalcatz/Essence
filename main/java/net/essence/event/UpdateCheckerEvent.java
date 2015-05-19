@@ -16,7 +16,7 @@ import net.slayer.api.SlayerAPI;
 
 public class UpdateCheckerEvent {
 
-	public boolean hasSeen = false;
+	private boolean hasSeen = false;
 
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
