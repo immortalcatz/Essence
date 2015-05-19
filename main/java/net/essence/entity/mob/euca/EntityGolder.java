@@ -63,12 +63,14 @@ public class EntityGolder extends EntityModMob{
 	
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.eucaMeat;
+		return null;
 	}
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(70) == 0) dropItem(EssenceItems.eucaTablet, 1);
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.golderDust, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(10) == 0) dropItem(EssenceItems.golderDust, 4);
 		super.dropFewItems(b, j);
 	}
 }
