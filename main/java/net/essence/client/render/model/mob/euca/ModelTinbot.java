@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
-public class ModelSilverbot extends ModelBase {
+public class ModelTinbot extends ModelBase {
 
     ModelRenderer head;
     ModelRenderer body;
@@ -17,15 +17,13 @@ public class ModelSilverbot extends ModelBase {
     ModelRenderer rightleg;
     ModelRenderer leftleg;
 
-	public ModelSilverbot() {
-	      textureWidth = 64;
-	      textureHeight = 64;
-	    
+	public ModelTinbot() {
+
 	      head = new ModelRenderer(this, 0, 0);
-	      head.addBox(-4F, -8F, -4F, 8, 8, 8);
-	      head.setRotationPoint(0F, 8F, 0F);
+	      head.addBox(-4F, -8F, -4F, 8, 4, 8);
+	      head.setRotationPoint(0F, 12F, 0F);
 	      head.setTextureSize(64, 64);
-	      setRotation(head, 0F, 0.8726646F, 0F);
+	      setRotation(head, 0F, 0F, 0F);
 	      body = new ModelRenderer(this, 16, 16);
 	      body.addBox(-4F, 0F, -2F, 8, 8, 4);
 	      body.setRotationPoint(0F, 8F, 0F);
@@ -33,12 +31,12 @@ public class ModelSilverbot extends ModelBase {
 	      setRotation(body, 0F, 0F, 0F);
 	      rightarm = new ModelRenderer(this, 40, 16);
 	      rightarm.addBox(-3F, -2F, -2F, 3, 10, 4);
-	      rightarm.setRotationPoint(-4F, 12F, 0F);
+	      rightarm.setRotationPoint(-4F, 10F, 0F);
 	      rightarm.setTextureSize(64, 64);
 	      setRotation(rightarm, 0F, 0F, 0F);
 	      leftarm = new ModelRenderer(this, 40, 16);
 	      leftarm.addBox(-1F, -2F, -2F, 3, 10, 4);
-	      leftarm.setRotationPoint(5F, 12F, 0F);
+	      leftarm.setRotationPoint(5F, 10F, 0F);
 	      leftarm.setTextureSize(64, 64);
 	      setRotation(leftarm, 0F, 0F, 0F);
 	      rightleg = new ModelRenderer(this, 0, 16);
@@ -73,10 +71,9 @@ public class ModelSilverbot extends ModelBase {
 
 	}
 
-
     public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, Entity par6Entity) {
 	
-    	this.head.rotateAngleY = par4 / (180F / (float)Math.PI);
+		this.head.rotateAngleY = par4 / (180F / (float)Math.PI);
 		this.head.rotateAngleX = par5 / (180F / (float)Math.PI);
 		this.rightarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
 		this.leftarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
@@ -102,6 +99,6 @@ public class ModelSilverbot extends ModelBase {
 		this.leftarm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
 		this.rightarm.rotateAngleX += MathHelper.sin(par3 * 0.067F) * 0.05F;
 		this.leftarm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
-
+		
 	}
 }

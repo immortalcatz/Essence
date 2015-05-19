@@ -67,7 +67,9 @@ import net.essence.client.render.model.mob.euca.ModelEucaHopper;
 import net.essence.client.render.model.mob.euca.ModelGolder;
 import net.essence.client.render.model.mob.euca.ModelInsecto;
 import net.essence.client.render.model.mob.euca.ModelPsyollom;
+import net.essence.client.render.model.mob.euca.ModelShimmerer;
 import net.essence.client.render.model.mob.euca.ModelSilverbot;
+import net.essence.client.render.model.mob.euca.ModelTinbot;
 import net.essence.client.render.model.mob.frozen.ModelCrystalCluster;
 import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
 import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
@@ -130,9 +132,12 @@ import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
 import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityGolder;
+import net.essence.entity.mob.euca.EntityGolditeMage;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.euca.EntityShimmerer;
 import net.essence.entity.mob.euca.EntitySilverbot;
+import net.essence.entity.mob.euca.EntityTinbot;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.essence.entity.mob.frozen.EntityCrystalCluster;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
@@ -279,6 +284,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGolder.class, new RenderModMob(new ModelGolder(), tex.golder));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCrystalCluster.class, new RenderModMob(new ModelCrystalCluster(), tex.crystalCluster));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySilverbot.class, new RenderModMob(new ModelSilverbot(), tex.silverbot));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGolditeMage.class, new RenderModMob(new ModelMage(), tex.golditeMage));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTinbot.class, new RenderModMob(new ModelTinbot(), tex.tinbot));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShimmerer.class, new RenderModMob(new ModelShimmerer(), tex.shimmerer));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

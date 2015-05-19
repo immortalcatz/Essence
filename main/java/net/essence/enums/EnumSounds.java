@@ -8,6 +8,7 @@ public enum EnumSounds {
 
 	ROBOT("essence:robot"),
 	ROBOT_HURT("essence:robotHurt"),
+	ROBOT_DEATH("essence:robotDeath"),
 	PSYOLLOM("essence:psyollom"),
 	PSYOLLOM_HURT("essence:psyollomHurt"),
 	INSECTO("essence:insecto"),
@@ -54,6 +55,9 @@ public enum EnumSounds {
 	DYNASTER("essence:dynaster"),
 	DYNASTER_HURT("essence:dynasterHurt"),
 	DYNASTER_DEATH("essence:dynasterDeath"),
+	SHIMMERER("essence:shimmerer"),
+	SHIMMERER_HURT("essence:shimmererHurt"),
+	SHIMMERER_DEATH("essence:shimmererDeath"),
 	EMPTY("");
 	
 	private String sound;

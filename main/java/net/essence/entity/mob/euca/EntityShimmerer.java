@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntitySilverbot extends EntityModMob {
+public class EntityShimmerer extends EntityModMob {
 
-	public EntitySilverbot(World par1World) {
+	public EntityShimmerer(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.7F, 1.2F);
@@ -27,26 +27,28 @@ public class EntitySilverbot extends EntityModMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.ROBOT;
+		return EnumSounds.SHIMMERER;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.ROBOT_HURT;
+		return EnumSounds.SHIMMERER_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.ROBOT_DEATH;
+		return EnumSounds.SHIMMERER_DEATH;
 	}
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(32) == 0) dropItem(EssenceItems.silverClump, 1);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.shimmerdust, 2);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(37) == 0) dropItem(EssenceItems.silverClump, 4);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.shimmerdust, 4);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(60) == 0) dropItem(EssenceItems.metalDisk, 1);
+		if(rand.nextInt(30) == 0) dropItem(EssenceItems.gateKeys, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(60) == 0) dropItem(EssenceItems.gateKeys, 4);
 		super.dropFewItems(b, j);
 	}
 

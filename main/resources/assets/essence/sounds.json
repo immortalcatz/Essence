@@ -1,6 +1,7 @@
 {
  "robot":{"category":"master","sounds": [{"name":"robot","stream": false}]},
  "robotHurt":{"category":"master","sounds": [{"name":"robotHurt","stream": false}]},
+ "robotDeath":{"category":"master","sounds": [{"name":"robotDeath","stream": false}]},
  "psyollom":{"category":"master","sounds": [{"name":"psyollom","stream": false}]},
  "psyollomHurt":{"category":"master","sounds": [{"name":"psyollomHurt","stream": false}]},
  "insecto":{"category":"master","sounds": [{"name":"insecto","stream": false}]},
@@ -31,6 +32,9 @@
  "dynaster":{"category":"master","sounds": [{"name":"dynaster","stream": false}]},
  "dynasterHurt":{"category":"master","sounds": [{"name":"dynasterHurt","stream": false}]},
  "dynasterDeath":{"category":"master","sounds": [{"name":"dynasterDeath","stream": false}]},
+ "shimmerer":{"category":"master","sounds": [{"name":"shimmerer","stream": false}]},
+ "shimmererHurt":{"category":"master","sounds": [{"name":"shimmererHurt","stream": false}]},
+ "shimmererDeath":{"category":"master","sounds": [{"name":"shimmererDeath","stream": false}]},
  "staff":{"category":"neutral","sounds": ["staff"] },
  "wrapper":{"category":"neutral","sounds": ["wrapper"] },
  "pageFlip":{"category":"neutral","sounds": ["pageFlip"] },

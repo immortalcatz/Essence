@@ -69,17 +69,17 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return null;
+		return EnumSounds.INSECTO;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return null;
+		return EnumSounds.INSECTO_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return null;
+		return EnumSounds.INSECTO_HURT;
 	}
 
 	@Override
