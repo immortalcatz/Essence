@@ -11,6 +11,9 @@ public class Textures {
     public static final String slotPrefix = SlayerAPI.PREFIX + "textures/gui/slot";
     public static final String dragonBase = "textures/entities/dragon/";
 
+    //End
+    public static final ResourceLocation enderLeaper = addMob("enderLeaper");
+    
     //Misc.
     public static final ResourceLocation basic = addProjectile("gray");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");

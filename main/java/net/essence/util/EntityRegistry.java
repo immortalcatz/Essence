@@ -34,6 +34,7 @@ import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
+import net.essence.entity.mob.end.EntityEnderLeaper;
 import net.essence.entity.mob.euca.EntityDynaster;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
@@ -194,6 +195,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityGolditeMage.class, "golditeMage");
 		SlayerAPI.registerMob(EntityTinbot.class, "tinbot");
 		SlayerAPI.registerMob(EntityShimmerer.class, "shimmerer");
+		SlayerAPI.registerMob(EntityEnderLeaper.class, "enderLeaper");
 	}
 	
 	public static void registerNPCs() {

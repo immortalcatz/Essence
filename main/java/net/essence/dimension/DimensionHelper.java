@@ -38,6 +38,9 @@ import net.essence.entity.mob.euca.EntityEucaHopper;
 import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
+import net.essence.entity.mob.euca.EntityShimmerer;
+import net.essence.entity.mob.euca.EntitySilverbot;
+import net.essence.entity.mob.euca.EntityTinbot;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
@@ -123,13 +126,16 @@ public class DimensionHelper {
 
 	private static void addEucaSpawns() {
 		int amount = 2;
-		EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		//EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
+		//EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		//EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		//EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityDynaster.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityGolder.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntitySilverbot.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityTinbot.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityShimmerer.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 	}
 
 	private static void addBoilSpawns() {

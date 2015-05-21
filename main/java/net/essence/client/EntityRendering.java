@@ -59,6 +59,7 @@ import net.essence.client.render.model.mob.depths.ModelDepthsHunter;
 import net.essence.client.render.model.mob.depths.ModelRoc;
 import net.essence.client.render.model.mob.depths.ModelSpikedBeast;
 import net.essence.client.render.model.mob.depths.ModelStaringGuardian;
+import net.essence.client.render.model.mob.end.ModelEnderLeaper;
 import net.essence.client.render.model.mob.euca.ModelAlloyMender;
 import net.essence.client.render.model.mob.euca.ModelDynaster;
 import net.essence.client.render.model.mob.euca.ModelEucaCharger;
@@ -127,6 +128,7 @@ import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
+import net.essence.entity.mob.end.EntityEnderLeaper;
 import net.essence.entity.mob.euca.EntityDynaster;
 import net.essence.entity.mob.euca.EntityEucaCharger;
 import net.essence.entity.mob.euca.EntityEucaFighter;
@@ -287,6 +289,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGolditeMage.class, new RenderModMob(new ModelMage(), tex.golditeMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTinbot.class, new RenderModMob(new ModelTinbot(), tex.tinbot));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShimmerer.class, new RenderModMob(new ModelShimmerer(), tex.shimmerer));
+		RenderingRegistry.registerEntityRenderingHandler(EntityEnderLeaper.class, new RenderModMob(new ModelEnderLeaper(), tex.enderLeaper));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
