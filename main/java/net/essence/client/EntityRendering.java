@@ -39,6 +39,7 @@ import net.essence.client.render.mob.RenderSpyclops;
 import net.essence.client.render.model.mob.boil.ModelBlazier;
 import net.essence.client.render.model.mob.boil.ModelBoilTrader;
 import net.essence.client.render.model.mob.boil.ModelEscapedConvict;
+import net.essence.client.render.model.mob.boil.ModelFrightener;
 import net.essence.client.render.model.mob.boil.ModelMagmaGiant;
 import net.essence.client.render.model.mob.boss.ModelBeastOfTheNether;
 import net.essence.client.render.model.mob.boss.ModelClacia;
@@ -99,6 +100,7 @@ import net.essence.entity.mob.boiling.EntityBurntAsh;
 import net.essence.entity.mob.boiling.EntityBurntMiner;
 import net.essence.entity.mob.boiling.EntityCrisp;
 import net.essence.entity.mob.boiling.EntityExposedFlame;
+import net.essence.entity.mob.boiling.EntityFrightener;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
 import net.essence.entity.mob.boiling.npc.EntityBoilTrader;
@@ -290,6 +292,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTinbot.class, new RenderModMob(new ModelTinbot(), tex.tinbot));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShimmerer.class, new RenderModMob(new ModelShimmerer(), tex.shimmerer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderLeaper.class, new RenderModMob(new ModelEnderLeaper(), tex.enderLeaper));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFrightener.class, new RenderModMob(new ModelFrightener(), tex.frightener));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

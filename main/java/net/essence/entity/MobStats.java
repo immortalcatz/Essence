@@ -41,6 +41,7 @@ public class MobStats {
 	public static double ashHoarderHealth = 40.0D, ashHoarderDamage = 8.0D, ashHoarderSpeed = normalSpeed, ashHoarderFollowRange = follow;
 	public static double burntAshHealth = 40.0D, burntAshDamage = 8.0D, burntAshSpeed = normalSpeed, burntAshFollowRange = follow;
 	public static double boilTraderHealth = 50.0D, boilTraderDamage = 10.0D, boilTraderSpeed = normalSpeed;
+	public static double frightenerHealth = 50.0D, frightenerDamage = 10.0D, frightenerSpeed = normalSpeed, frightenerFollowRange = follow;
 
 	//Euca
 	public static double insectoHealth = 25.0D, insectoDamage = 10.0D, insectoSpeed = normalSpeed, insectoFollowRange = follow;
@@ -83,6 +84,5 @@ public class MobStats {
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
 	public static double thunderbirdHealth = 850.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
-
 
 }
