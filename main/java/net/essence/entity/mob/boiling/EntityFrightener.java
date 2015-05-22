@@ -23,12 +23,12 @@ public class EntityFrightener extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.exposedFlameDamage;
+		return s.frightenerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.exposedFlameHealth;
+		return s.frightenerHealth;
 	}
 
 	@Override
@@ -38,12 +38,12 @@ public class EntityFrightener extends EntityModMob{
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.SPIKED_BEAST_HURT;
+		return EnumSounds.HONGO_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.SPIKED_BEAST_HURT;
+		return EnumSounds.HONGO_HURT;
 	}
 	
 	@Override
