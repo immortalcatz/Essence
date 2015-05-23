@@ -8,6 +8,7 @@ public class MobStats {
 	
 	//End
 	public static double enderLeaperHealth = 20.0D, enderLeaperDamage = 5.0D, enderLeaperSpeed = normalSpeed, enderLeaperFollowRange = follow;
+	public static double enderCrawlerHealth = 20.0D, enderCrawlerDamage = 5.0D, enderCrawlerSpeed = normalSpeed, enderCrawlerFollowRange = follow;
 	
 	//Overworld 
 	public static double spyclopsHealth = 20.0D, spyclopsDamage = 5.0D, spyclopsSpeed = normalSpeed, spyclopsFollowRange = follow;

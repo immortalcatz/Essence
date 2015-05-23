@@ -13,6 +13,7 @@ public class Textures {
 
     //End
     public static final ResourceLocation enderLeaper = addMob("enderLeaper");
+    public static final ResourceLocation enderCrawler = addMob("enderCrawler");
     
     //Misc.
     public static final ResourceLocation basic = addProjectile("gray");

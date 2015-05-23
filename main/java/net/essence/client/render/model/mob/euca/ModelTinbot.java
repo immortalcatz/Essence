@@ -75,6 +75,6 @@ public class ModelTinbot extends ModelBase {
 	}
 
     public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, Entity par6Entity) {
-		
+    	
 	}
 }

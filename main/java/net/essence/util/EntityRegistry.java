@@ -38,6 +38,7 @@ import net.essence.entity.mob.depths.EntityDepthsHunter;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.depths.npc.EntityStaringGuardian;
+import net.essence.entity.mob.end.EntityEnderCrawler;
 import net.essence.entity.mob.end.EntityEnderLeaper;
 import net.essence.entity.mob.euca.EntityDynaster;
 import net.essence.entity.mob.euca.EntityEucaCharger;
@@ -204,6 +205,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityHellwing.class, "hellwing");
 		SlayerAPI.registerMob(EntityObserver.class, "observer");
 		SlayerAPI.registerMob(EntityScreamer.class, "screamer");
+		SlayerAPI.registerMob(EntityEnderCrawler.class, "enderCrawler");
 	}
 	
 	public static void registerNPCs() {

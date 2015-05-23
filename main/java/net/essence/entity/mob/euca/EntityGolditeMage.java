@@ -89,9 +89,9 @@ public class EntityGolditeMage extends EntityModMob implements IRangedAttackMob 
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(32) == 0) dropItem(EssenceItems.goldClump, 1);
+		if(rand.nextInt(24) == 0) dropItem(EssenceItems.goldClump, 1);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(37) == 0) dropItem(EssenceItems.goldClump, 4);
+		if(rand.nextInt(14) == 0) dropItem(EssenceItems.goldClump, 4);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(60) == 0) dropItem(EssenceItems.silverClump, 1);
 		super.dropFewItems(b, j);
