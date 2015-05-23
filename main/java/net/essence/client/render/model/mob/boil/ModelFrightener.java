@@ -16,23 +16,23 @@ public class ModelFrightener extends ModelBiped {
 
 	public ModelFrightener() {
 		textureWidth = 64;
-	    textureHeight = 32;
-	    
-	      head1 = new ModelRenderer(this, 0, 0);
-	      head1.addBox(0F, 0F, 0F, 8, 8, 8);
-	      head1.setRotationPoint(4F, 0F, -4F);
-	      head1.setTextureSize(64, 32);
-	      setRotation(head1, 0F, 0F, 0F);
+	    textureHeight = 32;  
+
 	      head = new ModelRenderer(this, 0, 0);
-	      head.addBox(-4F, -8F, -4F, 8, 8, 8);
-	      head.setRotationPoint(0F, 0F, 0F);
+	      head.addBox(-4F, -7F, -4F, 8, 8, 8);
+	      head.setRotationPoint(0F, -1F, 0F);
 	      head.setTextureSize(64, 32);
 	      setRotation(head, 0F, 0F, 0F);
-	      head2 = new ModelRenderer(this, 0, 0);
-	      head2.addBox(0F, 0F, 0F, 8, 8, 8);
-	      head2.setRotationPoint(-12F, 0F, -4F);
-	      head2.setTextureSize(64, 32);
+	      head1 = new ModelRenderer(this, 0, 0);
+	      head1.addBox(-8F, -1F, -4F, 8, 8, 8);
+	      head1.setRotationPoint(-4F, 1F, 0F);
+	      head1.setTextureSize(64, 32);
 	      setRotation(head1, 0F, 0F, 0F);
+	      head2 = new ModelRenderer(this, 0, 0);
+	      head2.addBox(0F, -1F, -4F, 8, 8, 8);
+	      head2.setRotationPoint(4F, 1F, 0F);
+	      head2.setTextureSize(64, 32);
+	      setRotation(head2, 0F, 0F, 0F);
 	      body = new ModelRenderer(this, 16, 16);
 	      body.addBox(-4F, 0F, -2F, 8, 12, 4);
 	      body.setRotationPoint(0F, 0F, 0F);
