@@ -33,17 +33,17 @@ public class EntityExposedFlame extends EntityModMob{
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.SPIKED_BEAST;
+		return EnumSounds.BLAZE;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.SPIKED_BEAST_HURT;
+		return EnumSounds.BLAZE_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.SPIKED_BEAST_HURT;
+		return EnumSounds.BLAZE_DEATH;
 	}
 	
 	@Override
@@ -55,32 +55,23 @@ public class EntityExposedFlame extends EntityModMob{
 	
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.ash;
+		return null;
 	}
 	
 	@Override
 	public ItemStack getHeldItem() {
-		return new ItemStack(Items.diamond_axe);
+		return new ItemStack(EssenceItems.boilingBlade);
 	}
 	
 	@Override
-	protected void dropFewItems(boolean b, int i) {
+	protected void dropFewItems(boolean b, int j) {
 		Item it = getItemDropped();
 		this.dropItem(it, 1);
-		Item axe = Items.wooden_axe;
-		switch(rand.nextInt(3)) {
-		case 0:
-			axe = Items.golden_axe;
-			break;
-		case 1:
-			axe = Items.iron_axe;
-			break;
-		case 2:
-			axe = Items.diamond_axe;
-			break;
-		}
-		if(rand.nextInt(3) == 0) {
-			this.dropItem(axe, 1);
+		if(rand.nextInt(14) == 0) dropItem(EssenceItems.boilPowder, 2);
+		super.dropFewItems(b, j);
+	    if(rand.nextInt(20) == 0) dropItem(EssenceItems.boilPowder, 4);
+		super.dropFewItems(b, j); 
+		if(rand.nextInt(40) == 0) dropItem(EssenceItems.blazingFireball, 1);
+
 		}
 	}
-}

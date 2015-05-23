@@ -42,6 +42,9 @@ public class MobStats {
 	public static double burntAshHealth = 40.0D, burntAshDamage = 8.0D, burntAshSpeed = normalSpeed, burntAshFollowRange = follow;
 	public static double boilTraderHealth = 50.0D, boilTraderDamage = 10.0D, boilTraderSpeed = normalSpeed;
 	public static double frightenerHealth = 50.0D, frightenerDamage = 10.0D, frightenerSpeed = normalSpeed, frightenerFollowRange = follow;
+	public static double hellwingHealth = 50.0D, hellwingDamage = 10.0D, hellwingSpeed = normalSpeed, hellwingFollowRange = follow;
+	public static double observerHealth = 50.0D, observerDamage = 10.0D, observerSpeed = normalSpeed, observerFollowRange = follow;
+	public static double screamerHealth = 50.0D, screamerDamage = 10.0D, screamerSpeed = normalSpeed, screamerFollowRange = follow;
 
 	//Euca
 	public static double insectoHealth = 25.0D, insectoDamage = 10.0D, insectoSpeed = normalSpeed, insectoFollowRange = follow;

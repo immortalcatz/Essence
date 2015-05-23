@@ -12,9 +12,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityFrightener extends EntityModMob{
+public class EntityObserver extends EntityModMob{
 
-	public EntityFrightener(World par1World) {
+	public EntityObserver(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.7F, 2.0F);
@@ -23,27 +23,27 @@ public class EntityFrightener extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.frightenerDamage;
+		return s.observerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.frightenerHealth;
+		return s.observerHealth;
 	}
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.SPIKED_BEAST;
+		return EnumSounds.BLAZE;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.BLAZE_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.BLAZE_DEATH;
 	}
 	
 	@Override
@@ -51,11 +51,6 @@ public class EntityFrightener extends EntityModMob{
 		if(e.getSourceOfDamage() instanceof EntityPlayer)
 			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
 		return super.attackEntityFrom(e, a);
-	}
-
-	@Override
-	public ItemStack getHeldItem() {
-		return new ItemStack(Items.diamond_axe);
 	}
 	
 	@Override
@@ -72,9 +67,7 @@ public class EntityFrightener extends EntityModMob{
 		super.dropFewItems(b, j);
 	    if(rand.nextInt(20) == 0) dropItem(EssenceItems.boilPowder, 4);
 		super.dropFewItems(b, j); 
-		if(rand.nextInt(50) == 0) dropItem(EssenceItems.sizzlingEye, 2);
-		super.dropFewItems(b, j); 
-		if(rand.nextInt(65) == 0) dropItem(EssenceItems.sizzlingEye, 4);
+		if(rand.nextInt(30) == 0) dropItem(EssenceItems.sizzlingEye, 1);
 		super.dropFewItems(b, j); 
 		}
 	}

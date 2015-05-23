@@ -40,7 +40,10 @@ import net.essence.client.render.model.mob.boil.ModelBlazier;
 import net.essence.client.render.model.mob.boil.ModelBoilTrader;
 import net.essence.client.render.model.mob.boil.ModelEscapedConvict;
 import net.essence.client.render.model.mob.boil.ModelFrightener;
+import net.essence.client.render.model.mob.boil.ModelHellwing;
 import net.essence.client.render.model.mob.boil.ModelMagmaGiant;
+import net.essence.client.render.model.mob.boil.ModelObserver;
+import net.essence.client.render.model.mob.boil.ModelScreamer;
 import net.essence.client.render.model.mob.boss.ModelBeastOfTheNether;
 import net.essence.client.render.model.mob.boss.ModelClacia;
 import net.essence.client.render.model.mob.boss.ModelEudor;
@@ -101,8 +104,11 @@ import net.essence.entity.mob.boiling.EntityBurntMiner;
 import net.essence.entity.mob.boiling.EntityCrisp;
 import net.essence.entity.mob.boiling.EntityExposedFlame;
 import net.essence.entity.mob.boiling.EntityFrightener;
+import net.essence.entity.mob.boiling.EntityHellwing;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
+import net.essence.entity.mob.boiling.EntityObserver;
+import net.essence.entity.mob.boiling.EntityScreamer;
 import net.essence.entity.mob.boiling.npc.EntityBoilTrader;
 import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.essence.entity.mob.boss.EntityBlazier;
@@ -293,6 +299,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityShimmerer.class, new RenderModMob(new ModelShimmerer(), tex.shimmerer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderLeaper.class, new RenderModMob(new ModelEnderLeaper(), tex.enderLeaper));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrightener.class, new RenderModMob(new ModelFrightener(), tex.frightener));
+		RenderingRegistry.registerEntityRenderingHandler(EntityHellwing.class, new RenderModMob(new ModelHellwing(), tex.hellwing));
+		RenderingRegistry.registerEntityRenderingHandler(EntityObserver.class, new RenderModMob(new ModelObserver(), tex.observer));
+		RenderingRegistry.registerEntityRenderingHandler(EntityScreamer.class, new RenderModMob(new ModelScreamer(), tex.screamer));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

@@ -12,23 +12,23 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityFrightener extends EntityModMob{
+public class EntityHellwing extends EntityModMob{
 
-	public EntityFrightener(World par1World) {
+	public EntityHellwing(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(0.7F, 2.0F);
+		setSize(0.2F, 2.0F);
 		isImmuneToFire = true;
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.frightenerDamage;
+		return s.hellwingDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.frightenerHealth;
+		return s.hellwingHealth;
 	}
 
 	@Override
@@ -52,29 +52,25 @@ public class EntityFrightener extends EntityModMob{
 			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
 		return super.attackEntityFrom(e, a);
 	}
-
+	
+	@Override
+	public Item getItemDropped() {
+		return EssenceItems.ash;
+	}
+	
 	@Override
 	public ItemStack getHeldItem() {
 		return new ItemStack(Items.diamond_axe);
 	}
 	
 	@Override
-	public Item getItemDropped() {
-		return null;
-
-	}
-	
-	@Override
 	protected void dropFewItems(boolean b, int j) {
-		Item it = getItemDropped();
-		this.dropItem(it, 1);
-		if(rand.nextInt(14) == 0) dropItem(EssenceItems.boilPowder, 2);
+		if(rand.nextInt(10) == 0) dropItem(EssenceItems.boilingSkull, 1);
 		super.dropFewItems(b, j);
-	    if(rand.nextInt(20) == 0) dropItem(EssenceItems.boilPowder, 4);
+	    if(rand.nextInt(30) == 0) dropItem(EssenceItems.blazingFireball, 1);
 		super.dropFewItems(b, j); 
-		if(rand.nextInt(50) == 0) dropItem(EssenceItems.sizzlingEye, 2);
-		super.dropFewItems(b, j); 
-		if(rand.nextInt(65) == 0) dropItem(EssenceItems.sizzlingEye, 4);
-		super.dropFewItems(b, j); 
+		
+		{
 		}
 	}
+}

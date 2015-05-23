@@ -99,6 +99,9 @@ public class Textures {
     public static final ResourceLocation burntAsh = addMob("burntAsh");
     public static final ResourceLocation magmaGiant = addMob("magmaGiant");
     public static final ResourceLocation frightener = addMob("frightener");
+    public static final ResourceLocation hellwing = addMob("hellwing");
+    public static final ResourceLocation observer = addMob("observer");
+    public static final ResourceLocation screamer = addMob("screamer");
     
     //Cloudia
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");

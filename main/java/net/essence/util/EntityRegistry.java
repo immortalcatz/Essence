@@ -7,8 +7,11 @@ import net.essence.entity.mob.boiling.EntityBurntMiner;
 import net.essence.entity.mob.boiling.EntityCrisp;
 import net.essence.entity.mob.boiling.EntityExposedFlame;
 import net.essence.entity.mob.boiling.EntityFrightener;
+import net.essence.entity.mob.boiling.EntityHellwing;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityMagmaGiant;
+import net.essence.entity.mob.boiling.EntityObserver;
+import net.essence.entity.mob.boiling.EntityScreamer;
 import net.essence.entity.mob.boiling.npc.EntityBoilTrader;
 import net.essence.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.essence.entity.mob.boss.EntityBlazier;
@@ -198,6 +201,9 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityShimmerer.class, "shimmerer");
 		SlayerAPI.registerMob(EntityEnderLeaper.class, "enderLeaper");
 		SlayerAPI.registerMob(EntityFrightener.class, "frightener");
+		SlayerAPI.registerMob(EntityHellwing.class, "hellwing");
+		SlayerAPI.registerMob(EntityObserver.class, "observer");
+		SlayerAPI.registerMob(EntityScreamer.class, "screamer");
 	}
 	
 	public static void registerNPCs() {

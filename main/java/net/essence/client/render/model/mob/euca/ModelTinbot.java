@@ -19,6 +19,9 @@ public class ModelTinbot extends ModelBase {
 
 	public ModelTinbot() {
 
+		textureWidth = 64;
+	    textureHeight = 64;
+
 	      head = new ModelRenderer(this, 0, 0);
 	      head.addBox(-4F, -8F, -4F, 8, 4, 8);
 	      head.setRotationPoint(0F, 12F, 0F);
@@ -72,33 +75,6 @@ public class ModelTinbot extends ModelBase {
 	}
 
     public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, Entity par6Entity) {
-	
-		this.head.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.head.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.rightarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
-		this.leftarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
-		this.rightarm.rotateAngleZ = 0.0F;
-		this.leftarm.rotateAngleZ = 0.0F;
-		this.rightleg.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
-		this.leftleg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
-		this.rightleg.rotateAngleY = 0.0F;
-		this.leftleg.rotateAngleY = 0.0F;
-		this.rightarm.rotateAngleY = 0.0F;
-		this.leftarm.rotateAngleY = 0.0F;
-		float f6;
-		float f7;
-
-		this.body.rotateAngleX = 0.0F;
-		this.rightleg.rotationPointZ = 0.1F;
-		this.leftleg.rotationPointZ = 0.1F;
-		this.rightleg.rotationPointY = 12.0F;
-		this.leftleg.rotationPointY = 12.0F;
-		this.head.rotationPointY = - 1.0F;
-
-		this.rightarm.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-		this.leftarm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-		this.rightarm.rotateAngleX += MathHelper.sin(par3 * 0.067F) * 0.05F;
-		this.leftarm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
 		
 	}
 }
