@@ -330,7 +330,6 @@ public class EssenceItems {
 	public static final Item charSkullChest = new ItemModArmor(EnumArmor.CHAR_SKULL, BODY);
 	public static final Item charSkullLegs = new ItemModArmor(EnumArmor.CHAR_SKULL, LEGS);
 	public static final Item charSkullBoots = new ItemModArmor(EnumArmor.CHAR_SKULL, BOOTS);
-
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
@@ -338,6 +337,7 @@ public class EssenceItems {
 	public static final Item celestiteBattleaxe = new ItemBattleAxe("celestiteBattleaxe", EssenceToolMaterial.CELESTITE_BATTLEAXE);
 	public static final Item storumBattleaxe = new ItemBattleAxe("storumBattleaxe", EssenceToolMaterial.STORUM_BATTLEAXE);
 	public static final Item celekiumBattleaxe = new ItemBattleAxe("celekiumBattleaxe", EssenceToolMaterial.CELEKIUM_BATTLEAXE);
+	public static final Item thunderbirdBattleaxe = new ItemBattleAxe("thunderbirdBattleaxe", EssenceToolMaterial.THUNDERBIRD_BATTLEAXE);
 
 	public static final Item staffOfHellstone = new ItemStaff("staffOfHellstone", false, 3, 1000, 7, false, EntityBasicProjectile.class);
 	public static final Item doomsBringer = new ItemStaff("doomsBringer", false, 3, 1000, 12, false, EntityDoomsBringer.class);

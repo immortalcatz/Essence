@@ -300,6 +300,7 @@ public class EssenceBlocks {
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable");
+	public static final Block bossAltar = new BlockMod("bossAltar");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	

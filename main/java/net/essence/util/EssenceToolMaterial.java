@@ -70,10 +70,10 @@ public enum EssenceToolMaterial {
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
 	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25)),
 	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 21, 25)),
-	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 25, 25)),
+	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 24, 25)),
 	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 22, 25)),
-	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 24, 25));
-
+	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 25, 25)),
+	THUNDERBIRD_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 27, 25));
 
 	private ToolMaterial toolMaterial;
 	private Item repairItem;
