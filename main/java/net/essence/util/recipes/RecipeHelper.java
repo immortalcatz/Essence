@@ -70,8 +70,8 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(Blocks.web), new Object[] {"sss", "sss","sss", 's', Items.string});
 		GameRegistry.addSmelting(new ItemStack(Items.leather), new ItemStack(Items.rotten_flesh), 0.5F);
 		
-		GameRegistry.addRecipe(new ItemStack(i.rockShard), new Object[] {" c ", "ccc"," c ", 'c', Blocks.cobblestone});
-		GameRegistry.addRecipe(new ItemStack(i.rockChunk, 4), new Object[] {" c ", "ccc"," c ", 'c', i.rockShard});
+		//GameRegistry.addRecipe(new ItemStack(i.rockShard), new Object[] {" c ", "ccc"," c ", 'c', Blocks.cobblestone});
+		//GameRegistry.addRecipe(new ItemStack(i.rockChunk, 4), new Object[] {" c ", "ccc"," c ", 'c', i.rockShard});
 
 		
 		ItemStack blackDye = new ItemStack(Items.dye, 1, 15);

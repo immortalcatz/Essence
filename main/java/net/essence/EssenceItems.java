@@ -129,15 +129,18 @@ public class EssenceItems {
 	public static final Item flameCoin = new ItemFlameCoin("flameCoin");
 	//public static final Item essenceDetractor = new ItemAttractor("essenceDetractor", false, true, 100);
 
-	public static final Item rockChunk = new ItemMod("rockChunk");
-	public static final Item rockShard = new ItemMod("rockShard");
-	public static final Item plasmaBall = new ItemMod("plasmaBall");
+	//public static final Item rockChunk = new ItemMod("rockChunk");
+	//public static final Item rockShard = new ItemMod("rockShard");
+	//public static final Item plasmaBall = new ItemMod("plasmaBall");
+	
+	//**Firebombs are throwing items that explode**
 	public static final Item fireBomb = new ItemMod("fireBomb");
+	
 	//public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
 	//public static final Item rockLauncher = new ItemGun("rockLauncher", rockChunk, 9, 650, EnumSounds.CANNON, EntityRockProjectile.class);
-	public static final Item netherPlasma = new ItemGun("netherPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityNetherPlasma.class);
-	public static final Item oceanPlasma = new ItemGun("oceanPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityOceanPlasma.class);
-	public static final Item forestPlasma = new ItemGun("forestPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityForestPlasma.class);
+	//public static final Item netherPlasma = new ItemGun("netherPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityNetherPlasma.class);
+	//public static final Item oceanPlasma = new ItemGun("oceanPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityOceanPlasma.class);
+	//public static final Item forestPlasma = new ItemGun("forestPlasma", plasmaBall, 9, 650, EnumSounds.PLASMA, EntityForestPlasma.class);
 	//TODO
 	//public static final Item fireGun = new ItemGun("fireGun", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
 	//public static final Item flameThrower = new ItemGun("flameThrower", fireBomb, 10, 650, EnumSounds.CANNON, EntityForestPlasma.class);
