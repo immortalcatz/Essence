@@ -122,6 +122,8 @@ public class EssenceBlocks {
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", 1.0F);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs");
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
+	public static final Block darkBrick = new BlockMod("darkBrick", 2.0F);
+	public static final Block darkFloor = new BlockMod("darkFloor", 2.0F);
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
