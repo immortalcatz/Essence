@@ -217,6 +217,7 @@ item.light_bluePresent.name=Cadeau bleu clair
 item.magentaPresent.name=Cadeau magenta
 item.orangePresent.name=Cadeau orange
 item.whitePresent.name=Cadeau blanc
+item.lightbluePresent.name=Cadeau bleu clair
 
 tile.workshopSlab.name=Dalle d'atelier
 tile.workshopStone.name=Pierre d'atelier
@@ -451,6 +452,19 @@ essence.airbar=Air :
 essence.xpbar=Niveau :
 essence.time=Temps :
 essence.coords=Coords :
+essence.usesRemaining=Utilisations restantes
+essence.essenceEfficiency=Efficacité
+essence.rangedDamage=Domages de portée
+essence.uses=utilisations
+essence.essence=Essence
+essence.dark=Dark Energie
+essence.unbreakable=Incassable
+essence.hit=Au touché :
+essence.wither=Dépérie la cible pour
+essence.seconds=secondes
+essence.bossSpawn=Invoque le boss :
+essence.petSpawn=Invoque le familier :
+essence.summon=A été invoqué !
 
 item.record.underwaterWorld.desc=Chris Geddes - Monde sous-marin
 item.record.blueWater.desc=Chris Geddes - Eau bleue
