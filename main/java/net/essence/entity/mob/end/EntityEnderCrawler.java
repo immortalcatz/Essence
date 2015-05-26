@@ -14,19 +14,11 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityEnderCrawler extends EntityModMob{
 
-	public static final int ENTITY_TYPE = 23;
 	
 	public EntityEnderCrawler(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.2F, 1.7F);
-		dataWatcher.updateObject(ENTITY_TYPE, rand.nextInt(4));
-	}
-	
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		dataWatcher.addObject(ENTITY_TYPE, (int)0);
 	}
 
 	@Override
