@@ -2,7 +2,7 @@ package net.essence.entity.mob.overworld;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
-import net.essence.entity.projectile.EntityIceBall;
+import net.essence.entity.projectile.EntityFireBall;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
@@ -22,7 +22,7 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 
 	public EntityIceMage(World par1World) {
 		super(par1World);
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		if(par1World != null && !par1World.isRemote) {
 			this.setCombatTask();
@@ -47,12 +47,12 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public ItemStack getHeldItem() {
-		return new ItemStack(EssenceItems.iceWand);
+		return new ItemStack(EssenceItems.fireWand);
 	}
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-		EntityIceBall b = new EntityIceBall(this.worldObj, this, 10F);
+        EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
 	}
@@ -69,17 +69,17 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return null;
+		return EnumSounds.INSECTO;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return null;
+		return EnumSounds.INSECTO_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return null;
+		return EnumSounds.INSECTO_HURT;
 	}
 
 	@Override

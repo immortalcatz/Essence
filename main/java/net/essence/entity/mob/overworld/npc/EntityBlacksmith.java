@@ -52,7 +52,10 @@ public class EntityBlacksmith extends EntityModVillager {
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.greenGem, 10), new ItemStack(EssenceItems.poisonSword)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.blueGem, 64), new ItemStack(EssenceItems.cloudSlicer)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.backBiter)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.sunsetPiercer, 15)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.aquaticKnife, 15)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.sunsetPiercer, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.aquaticKnife, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.purpleGem, 10), new ItemStack(EssenceItems.greenGem, 10), new ItemStack(EssenceItems.poisonBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.purpleGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.darknessBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.purpleGem, 10), new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.frozenBow, 1)));
 	}
 }
