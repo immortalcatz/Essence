@@ -47,7 +47,7 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public ItemStack getHeldItem() {
-		return new ItemStack(EssenceItems.fireWand);
+		return new ItemStack(EssenceItems.iceWand);
 	}
 
 	@Override

@@ -444,7 +444,7 @@ public class EntityFlameArrow extends EntityArrow implements IProjectile {
 		if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0) {
 			boolean flag = this.canBePickedUp == 1 || this.canBePickedUp == 2 && entityIn.capabilities.isCreativeMode;
 
-			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(EssenceItems.flameArrow, 1))) {
+			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(EssenceItems.essenceArrow, 1))) {
 				flag = false;
 			}
 
