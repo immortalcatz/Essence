@@ -42,7 +42,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
 
 		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
-		GameRegistry.addRecipe(new ItemStack(i.flameArrow, 8), new Object[] {"l", "s", "f", 'f', Items.feather, 's', Items.stick, 'l', Items.flint_and_steel});
+		//GameRegistry.addRecipe(new ItemStack(i.flameArrow, 8), new Object[] {"l", "s", "f", 'f', Items.feather, 's', Items.stick, 'l', Items.flint_and_steel});
 
 		//GameRegistry.addRecipe(new ItemStack(b.hotGlassPane, 16), new Object[] {"iii", "iii", 'i', b.hotGlass});
 		//GameRegistry.addRecipe(new ItemStack(b.smoothGlassPane, 16), new Object[] {"iii", "iii", 'i', b.smoothGlass});
