@@ -46,11 +46,13 @@ public class EntityBlacksmith extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.backBiter)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.purpleGem, 10), new ItemStack(EssenceItems.dawnBreaker)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.purpleGem, 10), new ItemStack(EssenceItems.tempestBattleaxe)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.greenGem, 10), new ItemStack(EssenceItems.dragonsTooth)));
-		list.add(new MerchantRecipe(new ItemStack(Items.potionitem, 1, 8228), new ItemStack(Items.potionitem, 1, 8228), new ItemStack(EssenceItems.poisonSword)));
-		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(Blocks.wool, 64), new ItemStack(EssenceItems.cloudSlicer)));
+		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.greenGem, 10), new ItemStack(EssenceItems.poisonSword)));
+		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.blueGem, 64), new ItemStack(EssenceItems.cloudSlicer)));
+		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.backBiter)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.sunsetPiercer, 15)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.blueGem, 10), new ItemStack(EssenceItems.yellowGem, 10), new ItemStack(EssenceItems.aquaticKnife, 15)));
 	}
 }

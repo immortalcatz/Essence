@@ -54,7 +54,10 @@ public enum EssenceToolMaterial {
 	ROYAL_STABBER(SlayerAPI.addMeleeMaterial(3000, 21, 25)),
 	ROC_SWORD(SlayerAPI.addMeleeMaterial(3000, 29, 25)),
 	SWORD_THUNDERBIRD(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
-
+	BLOODWIELD_SWORD(SlayerAPI.addMeleeMaterial(3000, 14, 25)),
+	CHARRED_BLADE(SlayerAPI.addMeleeMaterial(3000, 18, 25)),
+	SIZZLER_SWORD(SlayerAPI.addMeleeMaterial(3000, 16, 25)),
+	
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),
 	LUNIUM_MULTI_TOOL(EssenceItems.luniumMulti, EssenceItems.luniumIngot, 3),
