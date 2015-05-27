@@ -9,6 +9,7 @@ public class ItemKnowledge extends ItemMod {
 	
 	public ItemKnowledge(String name, EnumKnowledge...knowledge) {
 		super(name);
+		setCreativeTab(null);
 		this.knowledge = knowledge;
 	}
 	

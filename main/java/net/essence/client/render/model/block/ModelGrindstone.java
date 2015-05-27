@@ -125,7 +125,7 @@ public class ModelGrindstone extends ModelBase {
 		stone.rotateAngleZ += r;
 	}
 	
-	public void setGrindstoneRotation(float rotation) {
+	public void setGrindstoneRotation() {
 		stone.render(0.0625F);
 	}
 

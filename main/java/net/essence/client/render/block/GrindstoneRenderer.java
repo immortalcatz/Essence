@@ -74,7 +74,7 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 		if(((TileEntityGrindstone)e).isActivated()) {
 			stone.render(0.0625F, false, ((TileEntityGrindstone)e).getRotaton());
 			GL11.glPushMatrix();
-			stone.setGrindstoneRotation(((TileEntityGrindstone)e).getRotaton());
+			stone.setGrindstoneRotation();
 			GL11.glPopMatrix();
 		} else {
 			stone.render(0.0625F, true, 0F);
