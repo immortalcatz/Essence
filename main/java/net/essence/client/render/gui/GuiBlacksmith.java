@@ -7,6 +7,6 @@ import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 public class GuiBlacksmith extends GuiModVillager {
 
 	public GuiBlacksmith(ContainerModVillager container, IMerchant mer) {
-		super(container, mer, "Blacksmith", "basicVillager");
+		super(container, mer, "Blacksmith", "blacksmith");
 	}
 }

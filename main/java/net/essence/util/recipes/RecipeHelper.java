@@ -76,8 +76,8 @@ public class RecipeHelper {
 		
 		ItemStack blackDye = new ItemStack(Items.dye, 1, 15);
 		
-		GameRegistry.addRecipe(new ItemStack(i.darknessBow), new Object[] {" is", "ibs"," is", 's', Items.string, 'i', blackDye.getItem(), 'b', Items.bow});
-		GameRegistry.addRecipe(new ItemStack(i.frozenBow), new Object[] {" ls", "ibs"," ls", 's', Items.string, 'l', Items.slime_ball, 'i', Blocks.ice, 'b', Items.bow});
+		//GameRegistry.addRecipe(new ItemStack(i.darknessBow), new Object[] {" is", "ibs"," is", 's', Items.string, 'i', blackDye.getItem(), 'b', Items.bow});
+		//GameRegistry.addRecipe(new ItemStack(i.frozenBow), new Object[] {" ls", "ibs"," ls", 's', Items.string, 'l', Items.slime_ball, 'i', Blocks.ice, 'b', Items.bow});
 
 		for(int j = 0; j < 13; j++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(EssenceBlocks.colouredBricks, 1, j), new Object[] {Blocks.stonebrick, BlockColouredBricks.crafting[j]});
