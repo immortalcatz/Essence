@@ -257,7 +257,6 @@ public class EssenceItems {
 	
 	//TODO
 	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Depths");
-	public static final Item rocLeaderOrb = new ItemSpecificDimensionSpawner(Config.depths, "rocLeaderOrb", "Depths");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", true, false);
@@ -338,6 +337,7 @@ public class EssenceItems {
 	public static final Item charSkullChest = new ItemModArmor(EnumArmor.CHAR_SKULL, BODY);
 	public static final Item charSkullLegs = new ItemModArmor(EnumArmor.CHAR_SKULL, LEGS);
 	public static final Item charSkullBoots = new ItemModArmor(EnumArmor.CHAR_SKULL, BOOTS);
+	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
