@@ -6,6 +6,7 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.boil.gen.WorldGenBoilingFire;
 import net.essence.dimension.boil.gen.WorldGenBoilingLava;
 import net.essence.dimension.depths.gen.WorldGenDepthsTree;
+import net.essence.dimension.euca.gen.WorldGenSmeltery;
 import net.essence.dimension.overworld.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
@@ -165,6 +166,10 @@ public class GenerationHelper {
 		case 17:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenMinable(EssenceBlocks.mekyumOre.getDefaultState(), 10, BlockHelper.forBlock(EssenceBlocks.eucaStone))).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 18:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState()) new WorldGenSmeltery().generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}
