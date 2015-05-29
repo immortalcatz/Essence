@@ -1,6 +1,7 @@
 package net.slayer.api.entity;
 
 import net.essence.entity.MobStats;
+import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.Item;
@@ -33,9 +34,9 @@ public abstract class EntityModFlying extends EntityFlying {
 	public double setKnockbackResistance() {return MobStats.knockBackResistance;}
 
 	public abstract double setMaxHealth(MobStats s);
-	public abstract String setLivingSound();
-	public abstract String setHurtSound();
-	public abstract String setDeathSound();
+	public abstract EnumSounds setLivingSound();
+	public abstract EnumSounds setHurtSound();
+	public abstract EnumSounds setDeathSound();
 	public abstract Item getItemDropped();
 
 	@Override
@@ -52,18 +53,18 @@ public abstract class EntityModFlying extends EntityFlying {
 	@Override
 	protected String getLivingSound() {
 		super.getLivingSound();
-		return setLivingSound();
+		return setLivingSound().getNonPrefixedName();
 	}
 
 	@Override
 	protected String getHurtSound() {
 		super.getHurtSound();
-		return setHurtSound();
+		return setHurtSound().getNonPrefixedName();
 	}
 
 	@Override
 	protected String getDeathSound() {
 		super.getDeathSound();
-		return setDeathSound();
+		return setDeathSound().getNonPrefixedName();
 	}
 }
