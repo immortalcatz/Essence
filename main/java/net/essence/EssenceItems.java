@@ -133,7 +133,9 @@ public class EssenceItems {
 	//public static final Item rockShard = new ItemMod("rockShard");
 	//public static final Item plasmaBall = new ItemMod("plasmaBall");
 	
-	//**Firebombs are throwing items that explode**
+	/**
+	Firebombs are throwing items that explode
+	**/
 	public static final Item fireBomb = new ItemMod("fireBomb");
 	
 	//public static final Item chaosCannon = new ItemChaosCannon("chaosCannon");
