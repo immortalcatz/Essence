@@ -58,15 +58,21 @@ public class BlockGlowshroom extends Block {
 
 	@Override
 	public void onBlockDestroyedByPlayer(World w, BlockPos pos, IBlockState state) {
-		if(w.getBlockState(pos.up()) == EssenceBlocks.glowshroomBottom.getDefaultState() || w.getBlockState(pos.up()) == EssenceBlocks.glowshroomTop.getDefaultState()) 
+		checkDestroyed(w, pos, EssenceBlocks.greenGlowshroomTop, EssenceBlocks.greenGlowshroomBottom);
+		checkDestroyed(w, pos, EssenceBlocks.redGlowshroomTop, EssenceBlocks.redGlowshroomBottom);
+		checkDestroyed(w, pos, EssenceBlocks.blueGlowshroomTop, EssenceBlocks.blueGlowshroomBottom);
+	}
+	
+	public void checkDestroyed(World w, BlockPos pos, Block top, Block bottom) {
+		if(w.getBlockState(pos.up()) == bottom.getDefaultState() || w.getBlockState(pos.up()) == top.getDefaultState()) 
 			w.setBlockState(pos.up(), Blocks.air.getDefaultState());
-		if(w.getBlockState(pos.down()) == EssenceBlocks.glowshroomBottom.getDefaultState() || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomTop.getDefaultState()) 
+		if(w.getBlockState(pos.down()) == bottom.getDefaultState() || w.getBlockState(pos.down()) == top.getDefaultState()) 
 			w.setBlockState(pos.down(), Blocks.air.getDefaultState());
 	}
 
 	@Override
 	public boolean canPlaceBlockAt(World w, BlockPos pos) {
-		return w.getBlockState(pos.down()).getBlock().getMaterial() == Material.rock || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomBottom.getDefaultState() || w.getBlockState(pos.down()) == EssenceBlocks.glowshroomTop.getDefaultState();
+		return w.getBlockState(pos.down()).getBlock().getMaterial() == Material.rock || w.getBlockState(pos.down()).getBlock().getMaterial() == Material.plants;
 	}
 
 	@Override

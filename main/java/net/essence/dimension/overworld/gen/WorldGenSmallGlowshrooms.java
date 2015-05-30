@@ -3,6 +3,8 @@ package net.essence.dimension.overworld.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -12,9 +14,15 @@ public class WorldGenSmallGlowshrooms extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
+		Block top = EssenceBlocks.greenGlowshroomTop;
+		switch(r.nextInt(3)){
+		case 0: top = EssenceBlocks.greenGlowshroomTop; break;
+		case 1: top = EssenceBlocks.redGlowshroomTop; break;
+		case 2: top = EssenceBlocks.blueGlowshroomTop; break;
+		}
 		for(int i = 0; i < 50; i++) {
-			if(w.getBlockState(pos.down()) == Blocks.stone.getDefaultState() && w.getBlockState(pos) == Blocks.air.getDefaultState() && pos.getY() < 60) {
-				w.setBlockState(pos, EssenceBlocks.glowshroomTop.getDefaultState(), 2);
+			if(w.getBlockState(pos.down()).getBlock().getMaterial() == Material.rock && w.getBlockState(pos) == Blocks.air.getDefaultState() && pos.getY() < 60) {
+				w.setBlockState(pos, top.getDefaultState(), 2);
 			}
 		}
 		return true;

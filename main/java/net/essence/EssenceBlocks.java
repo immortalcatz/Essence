@@ -234,9 +234,14 @@ public class EssenceBlocks {
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
-	public static final Block glowshroomTop = new BlockGlowshroom("glowshroomTop", true);
-	public static final Block glowshroomBottom = new BlockGlowshroom("glowshroomBottom", false);
-
+	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", true);
+	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", false);
+	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", true);
+	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", false);
+	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", true);
+	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", false);
+	
+	
 	public static final Block caveVine = new BlockCaveVine("caveVine");
 
 	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
