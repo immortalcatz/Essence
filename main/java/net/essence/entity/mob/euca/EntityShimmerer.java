@@ -16,6 +16,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModFlying;
 
@@ -54,6 +55,16 @@ public class EntityShimmerer extends EntityModFlying {
 	@Override
 	protected float getSoundVolume() {
         return 10.0F;
+    }
+	
+	@Override
+	public boolean getCanSpawnHere() {
+        return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+    }
+
+    @Override
+    public int getMaxSpawnedInChunk() {
+        return 1;
     }
 
 	@Override
