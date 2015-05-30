@@ -124,6 +124,7 @@ import net.essence.entity.mob.boss.EntityThunderbird;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
 import net.essence.entity.mob.corba.EntityLeafBlower;
+import net.essence.entity.mob.corba.EntityNatureMage;
 import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
@@ -173,6 +174,7 @@ import net.essence.entity.mob.overworld.EntityTurtle;
 import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
 import net.essence.entity.mob.overworld.npc.EntityMage;
 import net.essence.entity.mob.overworld.npc.water_tribe.EntityWaterTribeFisherman;
+import net.essence.entity.mob.overworld.underground.EntityCaveMage;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.entity.projectile.EntityBoilingPiercer;
 import net.essence.entity.projectile.EntityBouncingProjectile;
@@ -307,6 +309,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityObserver.class, new RenderModMob(new ModelObserver(), tex.observer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityScreamer.class, new RenderModMob(new ModelScreamer(), tex.screamer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderCrawler.class, new RenderModMob(new ModelEnderCrawler(), tex.enderCrawler));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCaveMage.class, new RenderModMob(new ModelMage(), tex.caveMage));
+		RenderingRegistry.registerEntityRenderingHandler(EntityNatureMage.class, new RenderModMob(new ModelMage(), tex.natureMage));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

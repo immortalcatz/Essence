@@ -25,6 +25,7 @@ import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
 import net.essence.entity.mob.corba.EntityLeafBlower;
+import net.essence.entity.mob.corba.EntityNatureMage;
 import net.essence.entity.mob.corba.EntityOverseer;
 import net.essence.entity.mob.corba.EntityOverseerElder;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
@@ -73,6 +74,7 @@ import net.essence.entity.mob.overworld.EntitySpyclops;
 import net.essence.entity.mob.overworld.EntityTurtle;
 import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
 import net.essence.entity.mob.overworld.npc.EntityMage;
+import net.essence.entity.mob.overworld.underground.EntityCaveMage;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.entity.projectile.EntityBoilingPiercer;
 import net.essence.entity.projectile.EntityBouncingProjectile;
@@ -208,6 +210,8 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityObserver.class, "observer");
 		SlayerAPI.registerMob(EntityScreamer.class, "screamer");
 		SlayerAPI.registerMob(EntityEnderCrawler.class, "enderCrawler");
+		SlayerAPI.registerMob(EntityCaveMage.class, "caveMage");
+		SlayerAPI.registerMob(EntityNatureMage.class, "natureMage");
 	}
 	
 	public static void registerNPCs() {

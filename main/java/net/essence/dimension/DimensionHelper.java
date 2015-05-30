@@ -121,9 +121,9 @@ public class DimensionHelper {
 	private static void addFrozenSpawns() {
 		int amount = 2;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityFrozenTroll.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityPermafraust.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityShatterer.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityFrozenTroll.class, 4, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, 5, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityShatterer.class, 5, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 	}
 
@@ -133,12 +133,10 @@ public class DimensionHelper {
 		//EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityDynaster.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityGolder.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntitySilverbot.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityTinbot.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityShimmerer.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 4, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityDynaster.class, amount, 5, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityGolder.class, amount, 6, 1, EnumCreatureType.MONSTER, euca);
+		EntityRegistry.addSpawn(EntityShimmerer.class, amount, 4, 1, EnumCreatureType.MONSTER, euca);
 	}
 
 	private static void addBoilSpawns() {

@@ -54,6 +54,7 @@ public class Textures {
     public static final ResourceLocation waterFisherman = addMob("waterFisherman");
     public static final ResourceLocation fireMage = addMob("fireMage");
     public static final ResourceLocation iceMage = addMob("iceMage");
+    public static final ResourceLocation caveMage = addMob("caveMage");
     
     //Euca
     public static final ResourceLocation insecto = addMob("insecto");
@@ -84,6 +85,7 @@ public class Textures {
     public static final ResourceLocation woodCreature = addMob("woodCreature");
     public static final ResourceLocation overseer = addMob("overseer");
     public static final ResourceLocation overseerElder = addMob("overseerElder");
+    public static final ResourceLocation natureMage = addMob("natureMage");
     
     //Frozen
     public static final ResourceLocation frozenTroll = addMob("frozenTroll");
