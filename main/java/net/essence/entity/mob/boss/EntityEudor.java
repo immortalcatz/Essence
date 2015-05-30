@@ -128,7 +128,7 @@ public class EntityEudor extends EntityEssenceBoss implements IRangedAttackMob {
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		this.dropItem(getItemDropped(), 6 + rand.nextInt(4));
-		if(rand.nextInt(1) == 0) this.dropItem(Item.getItemFromBlock(EssenceBlocks.eudorStatue), 1);
+		//if(rand.nextInt(1) == 0) this.dropItem(Item.getItemFromBlock(EssenceBlocks.eudorStatue), 1);
 	}
 
 	@Override

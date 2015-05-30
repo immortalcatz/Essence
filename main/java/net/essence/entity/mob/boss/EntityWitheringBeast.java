@@ -76,8 +76,8 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 		}
 		this.dropItem(EssenceItems.witheringBeastSword, 1);
 
-		if(rand.nextInt(1) == 0)
-			this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
+		//if(rand.nextInt(1) == 0)
+		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
 	}
 
 	@Override

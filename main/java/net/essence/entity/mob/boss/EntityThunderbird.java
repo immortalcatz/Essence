@@ -88,7 +88,7 @@ public class EntityThunderbird extends EntityEssenceBoss {
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
-		if(rand.nextInt(1) == 0)
-			this.dropItem(Item.getItemFromBlock(EssenceBlocks.netherBeastStatue), 1);
+		//if(rand.nextInt(1) == 0)
+			//this.dropItem(Item.getItemFromBlock(EssenceBlocks.netherBeastStatue), 1);
 	}
 }

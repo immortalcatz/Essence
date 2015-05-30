@@ -100,7 +100,7 @@ public class EntityCalcia extends EntityEssenceBoss {
 		this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
 		this.dropItem(EssenceItems.calciaSword, 1);
 
-		if(rand.nextInt(1) == 0)
-			this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
+		//if(rand.nextInt(1) == 0)
+		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
 	}
 }

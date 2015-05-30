@@ -35,7 +35,7 @@ public class ItemRendererStatue implements IItemRenderer {
 		float scale = 1.0F;
 		GL11.glPushMatrix();
 		GL11.glRotatef(180F, 0.0F, 0.0F, 4.0F);
-		if(item == SlayerAPI.toItem(EssenceBlocks.witheringBeastStatue)){
+		/*if(item == SlayerAPI.toItem(EssenceBlocks.witheringBeastStatue)){
 			switch(type){
 			case EQUIPPED:
 				scale = 1.5F;
@@ -147,7 +147,7 @@ public class ItemRendererStatue implements IItemRenderer {
 			default: break;
 			}
 			new ModelWraithStatue().render(0.0625F);
-		}*/
+		}
 		
 		if(item == SlayerAPI.toItem(EssenceBlocks.calciaStatue)){
 			switch(type){
@@ -207,7 +207,7 @@ public class ItemRendererStatue implements IItemRenderer {
 			default: break;
 			}
 			new ModelEudorStatue().render(0.0625F);
-		}
+		}*/
 		GL11.glPopMatrix();
 	}
 }

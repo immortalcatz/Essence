@@ -18,7 +18,8 @@ public class ModeledBlockInventoryRenderer extends TileEntityItemStackRenderer {
 		this.te = te;
 	}
 
-	@Override public void renderByItem(ItemStack itemStack) {
+	/*@Override 
+	public void renderByItem(ItemStack itemStack) {
 		Block block = Block.getBlockFromItem(itemStack.getItem());
 		if (block == EssenceBlocks.calciaStatue) {
 			//TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityStatue(new ResourceLocation(SlayerAPI.PREFIX + "textures/models/statues/eudorStatue.png"), new ModelEudorStatue()), 0, 0, 0, 0F);
@@ -26,5 +27,5 @@ public class ModeledBlockInventoryRenderer extends TileEntityItemStackRenderer {
 		} else {
 			te.renderByItem(itemStack);
 		}
-	}
+	}*/
 }
