@@ -149,11 +149,11 @@ public class DimensionHelper {
 		//EntityRegistry.addSpawn(EntityExposedFlame.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityAshHoarder.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityBurntMiner.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityFrightener.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityBurningLight.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityMagmaBlaze.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityHellwing.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityObserver.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityFrightener.class, amount, 10, 10, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityBurningLight.class, amount, 10, 10, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityMagmaBlaze.class, amount, 10, 10, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityHellwing.class, amount, 10, 10, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityObserver.class, amount, 10, 10, EnumCreatureType.MONSTER, boiling);
 	}
 
 	private static void addDepthsSpawns() {

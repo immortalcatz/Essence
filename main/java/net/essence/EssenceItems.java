@@ -477,7 +477,6 @@ public class EssenceItems {
 	public static final Item cloudPuff = new ItemMod("cloudPuff");
 	public static final Item collectorRock = new ItemMod("collectorRock");
 	public static final Item natureTablet = new ItemMod("natureTablet");
-	public static final Item eyeBall = new ItemMod("eyeBall");
 	public static final Item horn = new ItemMod("horn");
 	public static final Item scale = new ItemMod("scale");
 
