@@ -199,6 +199,7 @@ import net.essence.entity.projectile.EntityNethicPiercer;
 import net.essence.entity.projectile.EntityOceanPlasma;
 import net.essence.entity.projectile.EntityPoisonArrow;
 import net.essence.entity.projectile.EntityRockProjectile;
+import net.essence.entity.projectile.EntityShimmererProjectile;
 import net.essence.entity.projectile.EntityTempleBall;
 import net.essence.entity.projectile.EntityWizardsStar;
 import net.essence.util.Textures;
@@ -243,6 +244,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCorbaPiercer.class, new RenderItemProjectile(EssenceItems.corbaPiercer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrostbittenPiercer.class, new RenderItemProjectile(EssenceItems.frostbittenPiercer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrostyPiercer.class, new RenderItemProjectile(EssenceItems.frostyPiercer));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShimmererProjectile.class, new RenderProjectile(tex.shimmererProjectile));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityRobot.class, new RenderModMob(new ModelRobot(), tex.robot));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpikedBeast.class, new RenderModMob(new ModelSpikedBeast(), tex.spikedBeast));

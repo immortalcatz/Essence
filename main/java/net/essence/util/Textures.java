@@ -68,7 +68,8 @@ public class Textures {
     public static final ResourceLocation golditeMage = addMob("golditeMage");
     public static final ResourceLocation tinbot = addMob("tinbot");
     public static final ResourceLocation shimmerer = addMob("shimmerer");
-    
+    public static final ResourceLocation shimmererProjectile = addProjectile("shimmerer");
+
     //Depths
     public static final ResourceLocation depthsBeast = addMob("depthsBeast");
     public static final ResourceLocation darknessCrawler = addMob("darknessCrawler");

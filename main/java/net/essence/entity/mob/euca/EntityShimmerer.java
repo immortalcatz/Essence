@@ -4,13 +4,13 @@ import java.util.Random;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
+import net.essence.entity.projectile.EntityShimmererProjectile;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -231,9 +231,6 @@ public class EntityShimmerer extends EntityModFlying {
 				World world = this.entity.worldObj;
 				counter++;
 
-				if(this.counter == 10) 
-					world.playAuxSFXAtEntity((EntityPlayer)null, 1007, new BlockPos(this.entity), 0);
-
 				if(this.counter == 20) {
 					double d1 = 4.0D;
 					Vec3 vec3 = this.entity.getLook(1.0F);
@@ -241,12 +238,11 @@ public class EntityShimmerer extends EntityModFlying {
 					double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.entity.posY + (double)(this.entity.height / 2.0F));
 					double d4 = entitylivingbase.posZ - (this.entity.posZ + vec3.zCoord * d1);
 					world.playAuxSFXAtEntity((EntityPlayer)null, 1008, new BlockPos(this.entity), 0);
-					EntityLargeFireball entitylargefireball = new EntityLargeFireball(world, this.entity, d2, d3, d4);
-					entitylargefireball.explosionPower = 1;
-					entitylargefireball.posX = this.entity.posX + vec3.xCoord * d1;
-					entitylargefireball.posY = this.entity.posY + (double)(this.entity.height / 2.0F) + 0.5D;
-					entitylargefireball.posZ = this.entity.posZ + vec3.zCoord * d1;
-					world.spawnEntityInWorld(entitylargefireball);
+					EntityShimmererProjectile projectile = new EntityShimmererProjectile(world, this.entity, d2, d3, d4);
+					projectile.posX = this.entity.posX + vec3.xCoord * d1;
+					projectile.posY = this.entity.posY + (double)(this.entity.height / 2.0F) + 0.5D;
+					projectile.posZ = this.entity.posZ + vec3.zCoord * d1;
+					world.spawnEntityInWorld(projectile);
 					this.counter = -40;
 				}
 			}
