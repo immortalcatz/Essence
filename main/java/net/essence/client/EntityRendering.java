@@ -95,6 +95,8 @@ import net.essence.client.render.model.mob.overworld.ModelSandCrawler;
 import net.essence.client.render.model.mob.overworld.ModelSmallHongo;
 import net.essence.client.render.model.mob.overworld.ModelSpyclops;
 import net.essence.client.render.model.mob.overworld.ModelTurtle;
+import net.essence.client.render.model.mob.overworld.underground.ModelCaveling;
+import net.essence.client.render.model.mob.overworld.underground.ModelCavurn;
 import net.essence.client.render.model.statue.StatueRenderer;
 import net.essence.entity.EntityDragonEgg;
 import net.essence.entity.MobStats;
@@ -175,6 +177,8 @@ import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
 import net.essence.entity.mob.overworld.npc.EntityMage;
 import net.essence.entity.mob.overworld.npc.water_tribe.EntityWaterTribeFisherman;
 import net.essence.entity.mob.overworld.underground.EntityCaveMage;
+import net.essence.entity.mob.overworld.underground.EntityCaveling;
+import net.essence.entity.mob.overworld.underground.EntityCavurn;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.entity.projectile.EntityBoilingPiercer;
 import net.essence.entity.projectile.EntityBouncingProjectile;
@@ -311,6 +315,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderCrawler.class, new RenderModMob(new ModelEnderCrawler(), tex.enderCrawler));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCaveMage.class, new RenderModMob(new ModelMage(), tex.caveMage));
 		RenderingRegistry.registerEntityRenderingHandler(EntityNatureMage.class, new RenderModMob(new ModelMage(), tex.natureMage));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCavurn.class, new RenderModMob(new ModelCavurn(), tex.cavurn));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCaveling.class, new RenderModMob(new ModelCaveling(), tex.caveling));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

@@ -45,14 +45,14 @@ public class EssenceTabs extends CreativeTabs {
 	
 	public static void init(){
 		decoraton.setIcon(new ItemStack(EssenceBlocks.colouredBricks, 1, 5));
-		spawners.setIcon(EssenceItems.calciaOrb);
+		spawners.setIcon(EssenceItems.sentryKingOrb);
 		blocks.setIcon(EssenceBlocks.celestiumBlock);
-		items.setIcon(EssenceItems.hellstoneIngot);
-		tools.setIcon(EssenceItems.hellstoneMultiTool);
-		weapons.setIcon(EssenceItems.flairiumSword);
-		ranged.setIcon(EssenceItems.staffOfHellstone);
+		items.setIcon(EssenceItems.koriteIngot);
+		tools.setIcon(EssenceItems.multiToolOfEternalSmelting);
+		weapons.setIcon(EssenceItems.boilingBlade);
+		ranged.setIcon(EssenceItems.doomsBringer);
 		util.setIcon(EssenceItems.flameCoin);
 		misc.setIcon(EssenceItems.weakDarkEnergyPotion);
-		armor.setIcon(EssenceItems.hellstoneHelmet);
+		armor.setIcon(EssenceItems.twilightHelmet);
 	}
 }
