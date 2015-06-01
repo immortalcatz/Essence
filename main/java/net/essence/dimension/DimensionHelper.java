@@ -113,6 +113,7 @@ public class DimensionHelper {
 		addVanillaSpawns();
 		addCaveSpawns();
 		addCorbaSpawns();
+		addRareVanillaSpawns();
 	}
 	
 	private static void addCorbaSpawns() {
@@ -171,7 +172,7 @@ public class DimensionHelper {
 	}
 	
 	private static void addCaveSpawns() {
-		int amount = 70;
+		int amount = 78;
 		
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
@@ -247,6 +248,11 @@ public class DimensionHelper {
 		
 	}
 
+	private static void addRareVanillaSpawns() {
+		int amount = 4;
+		
+	}
+	
 	private static void addVanillaSpawns() {
 		int amount = 4;
 		
