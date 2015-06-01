@@ -110,6 +110,7 @@ public class DimensionHelper {
 		addBoilSpawns();
 		addDepthsSpawns();
 		addVanillaSpawns();
+		addCaveSpawns();
 		addCorbaSpawns();
 	}
 	
