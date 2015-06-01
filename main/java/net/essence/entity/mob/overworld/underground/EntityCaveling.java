@@ -46,7 +46,7 @@ public class EntityCaveling extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.brown_mushroom);
+		return SlayerAPI.toItem(Blocks.stone);
 
 	}
 
