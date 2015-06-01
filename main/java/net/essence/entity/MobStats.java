@@ -25,6 +25,7 @@ public class MobStats {
 	public static double mageHealth = 35.0D, mageSpeed = normalSpeed, mageFollowRange = follow;
 	public static double cavurnHealth = 35.0D, cavurnSpeed = normalSpeed, cavurnFollowRange = follow;
 	public static double cavelingHealth = 35.0D, cavelingDamage = 8.0D, cavelingSpeed = normalSpeed, cavelingFollowRange = follow;
+	public static double stonewalkerHealth = 35.0D, stonewalkerDamage = 8.0D, stonewalkerSpeed = normalSpeed, stonewalkerFollowRange = follow;
 	
 	//Frozen 
 	@SuppressWarnings("fix these")

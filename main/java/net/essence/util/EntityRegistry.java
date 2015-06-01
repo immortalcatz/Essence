@@ -77,6 +77,7 @@ import net.essence.entity.mob.overworld.npc.EntityMage;
 import net.essence.entity.mob.overworld.underground.EntityCaveMage;
 import net.essence.entity.mob.overworld.underground.EntityCaveling;
 import net.essence.entity.mob.overworld.underground.EntityCavurn;
+import net.essence.entity.mob.overworld.underground.EntityStonewalker;
 import net.essence.entity.projectile.EntityBasicProjectile;
 import net.essence.entity.projectile.EntityBoilingPiercer;
 import net.essence.entity.projectile.EntityBouncingProjectile;
@@ -216,6 +217,7 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityNatureMage.class, "natureMage");
 		SlayerAPI.registerMob(EntityCavurn.class, "cavurn");
 		SlayerAPI.registerMob(EntityCaveling.class, "caveling");
+		SlayerAPI.registerMob(EntityStonewalker.class, "stonewalker");
 	}
 	
 	public static void registerNPCs() {

@@ -57,6 +57,7 @@ public class Textures {
     public static final ResourceLocation caveMage = addMob("caveMage");
     public static final ResourceLocation cavurn = addMob("cavurn");
     public static final ResourceLocation caveling = addMob("caveling");
+    public static final ResourceLocation stonewalker = addMob("stonewalker");
     
     //Euca
     public static final ResourceLocation insecto = addMob("insecto");

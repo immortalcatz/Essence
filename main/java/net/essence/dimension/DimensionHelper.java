@@ -64,6 +64,7 @@ import net.essence.entity.mob.overworld.EntityTurtle;
 import net.essence.entity.mob.overworld.underground.EntityCaveMage;
 import net.essence.entity.mob.overworld.underground.EntityCaveling;
 import net.essence.entity.mob.overworld.underground.EntityCavurn;
+import net.essence.entity.mob.overworld.underground.EntityStonewalker;
 import net.essence.util.Config;
 import net.essence.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
@@ -225,6 +226,24 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
 		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
 		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
 		
 	}
 

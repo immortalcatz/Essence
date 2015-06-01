@@ -10,24 +10,23 @@ import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityCaveling extends EntityModMob {
+public class EntityStonewalker extends EntityModMob {
 
-	public EntityCaveling(World par1World) {
+	public EntityStonewalker(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		this.setSize(1.0F, 2.0F);
+		setSize(1.0F, 1.0F);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.bigHongoDamage;
+		return s.stonewalkerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.bigHongoHealth;
+		return s.stonewalkerHealth;
 	}
-
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.HONGO;
@@ -45,14 +44,8 @@ public class EntityCaveling extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.brown_mushroom);
+		return SlayerAPI.toItem(Blocks.stone);
 		
-	}
-	
-    @Override
-    public boolean getCanSpawnHere() {
-        return this.posY < 40.0D && super.getCanSpawnHere() && this.worldObj.getBlockState
-        		(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.stone;
     }
 	
 	@Override
@@ -64,5 +57,12 @@ public class EntityCaveling extends EntityModMob {
 			super.dropFewItems(b, j);
 		if(rand.nextInt(20) == 0) dropItem(EssenceItems.luniumIngot, 4);
 			super.dropFewItems(b, j);
+	}
+	
+    @Override
+    public boolean getCanSpawnHere() {
+        return this.posY < 40.0D && super.getCanSpawnHere() && this.worldObj.getBlockState
+        		(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.stone;
+        
 	}
 }
