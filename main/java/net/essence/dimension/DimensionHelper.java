@@ -171,7 +171,7 @@ public class DimensionHelper {
 	}
 	
 	private static void addCaveSpawns() {
-		int amount = 85;
+		int amount = 70;
 		
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
