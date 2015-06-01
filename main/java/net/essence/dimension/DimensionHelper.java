@@ -61,6 +61,9 @@ import net.essence.entity.mob.overworld.EntitySandCrawler;
 import net.essence.entity.mob.overworld.EntitySmallHongo;
 import net.essence.entity.mob.overworld.EntitySpyclops;
 import net.essence.entity.mob.overworld.EntityTurtle;
+import net.essence.entity.mob.overworld.underground.EntityCaveMage;
+import net.essence.entity.mob.overworld.underground.EntityCaveling;
+import net.essence.entity.mob.overworld.underground.EntityCavurn;
 import net.essence.util.Config;
 import net.essence.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
@@ -111,7 +114,7 @@ public class DimensionHelper {
 	}
 	
 	private static void addCorbaSpawns() {
-		int amount = 2;
+		int amount = 4;
 		EntityRegistry.addSpawn(EntityTreeGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, corba);
 		EntityRegistry.addSpawn(EntityLeafBlower.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 		EntityRegistry.addSpawn(EntitySurfaceSeer.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
@@ -119,7 +122,7 @@ public class DimensionHelper {
 	}
 
 	private static void addFrozenSpawns() {
-		int amount = 2;
+		int amount = 4;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityFrozenTroll.class, 4, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityPermafraust.class, 5, 1, 6, EnumCreatureType.CREATURE, frozen);
@@ -128,7 +131,7 @@ public class DimensionHelper {
 	}
 
 	private static void addEucaSpawns() {
-		int amount = 2;
+		int amount = 3;
 		//EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
@@ -140,7 +143,7 @@ public class DimensionHelper {
 	}
 
 	private static void addBoilSpawns() {
-		int amount = 3;
+		int amount = 6;
 		//EntityRegistry.addSpawn(EntityMagmaGiant.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityMagmaCube.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityBlaze.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
@@ -164,9 +167,69 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityDepthsHunter.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityRoc.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
 	}
+	
+	private static void addCaveSpawns() {
+		int amount = 65;
+		
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityCaveling.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityCavurn.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+	}
 
 	private static void addVanillaSpawns() {
 		int amount = 4;
+		
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));

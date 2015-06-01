@@ -11,8 +11,10 @@ import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -76,6 +78,13 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 	public EnumSounds setDeathSound() {
 		return EnumSounds.INSECTO_HURT;
 	}
+	
+    @Override
+    public boolean getCanSpawnHere() {
+        return this.posY < 40.0D && super.getCanSpawnHere() && this.worldObj.getBlockState
+        		(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.stone;
+        
+    }
 
 	@Override
 	public Item getItemDropped() {
