@@ -2,12 +2,14 @@ package net.essence.entity.mob.frozen;
 
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -49,6 +51,11 @@ public class EntityPermafraust extends EntityModMob {
 	@Override
 	public boolean shouldRenderInPass(int pass) {
 		return pass == 1;
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY < 40.0D && super.getCanSpawnHere();
 	}
 
 	@Override
