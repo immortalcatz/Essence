@@ -4,6 +4,7 @@ import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityFireBall;
 import net.essence.enums.EnumSounds;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -25,12 +26,12 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 	public EntityCavurn(World par1World) {
 		super(par1World);
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		if(par1World != null && !par1World.isRemote) {
 			this.setCombatTask();
 		}
 	}
-	
+
 	public void setCombatTask() {
 		this.tasks.removeTask(this.aiArrowAttack);
 		ItemStack itemstack = this.getHeldItem();
@@ -38,7 +39,7 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 			this.tasks.addTask(4, this.aiArrowAttack);
 		}
 	}
-	
+
 	@Override
 	public void setCurrentItemOrArmor(int par1, ItemStack par2ItemStack) {
 		super.setCurrentItemOrArmor(par1, par2ItemStack);
@@ -49,9 +50,9 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-        EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
-        EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
-        this.worldObj.spawnEntityInWorld(b);
+		EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
+		EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
+		this.worldObj.spawnEntityInWorld(b);
 	}
 
 	@Override
@@ -78,13 +79,12 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 	public EnumSounds setDeathSound() {
 		return EnumSounds.INSECTO_HURT;
 	}
-	
-    @Override
-    public boolean getCanSpawnHere() {
-        return this.posY < 40.0D && super.getCanSpawnHere() && this.worldObj.getBlockState
-        		(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.stone;
-        
-    }
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY < 40.0D && super.getCanSpawnHere() && 
+				this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock().getMaterial() == Material.rock; 
+	}
 
 	@Override
 	public Item getItemDropped() {
