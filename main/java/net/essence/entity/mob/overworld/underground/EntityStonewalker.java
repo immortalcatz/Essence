@@ -16,7 +16,7 @@ public class EntityStonewalker extends EntityModMob {
 	public EntityStonewalker(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(1.0F, 1.0F);
+		setSize(0.8F, 1.5F);
 	}
 
 	@Override

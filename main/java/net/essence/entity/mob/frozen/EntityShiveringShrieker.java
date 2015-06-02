@@ -15,23 +15,23 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityPermafraust extends EntityModMob {
+public class EntityShiveringShrieker extends EntityModMob {
 
 	@SuppressWarnings("do this")
-	public EntityPermafraust(World par1World) {
+	public EntityShiveringShrieker(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		this.setSize(0.5F, 2F);
+		this.setSize(0.65F, 1F);
 	}
-	
+
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.permafraustDamage;
+		return s.shiveringShriekerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.permafraustHealth;
+		return s.shiveringShriekerHealth;
 	}
 
 	@Override
@@ -50,16 +50,11 @@ public class EntityPermafraust extends EntityModMob {
 	}
 	
 	@Override
-	public boolean shouldRenderInPass(int pass) {
-		return pass == 1;
-	}
-	
-	@Override
 	public boolean getCanSpawnHere() {
 		return this.posY < 45.0D && super.getCanSpawnHere() &&
 				(this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.frozenGrass);
 	}
-
+	
 	@Override
 	public Item getItemDropped() {
 		return null;

@@ -21,8 +21,8 @@ public class ModelStaringGuardian extends ModelBase {
 	    textureHeight = 64;
 	    
 	      head = new ModelRenderer(this, 0, 0);
-	      head.addBox(-4F, -8F, -4F, 12, 12, 12);
-	      head.setRotationPoint(-2F, -8F, -2F);
+	      head.addBox(-6F, -12F, -6F, 12, 12, 12);
+	      head.setRotationPoint(0F, -4F, 0F);
 	      head.setTextureSize(128, 64);
 	      setRotation(head, 0F, 0F, 0F);
 	      body = new ModelRenderer(this, 16, 24);

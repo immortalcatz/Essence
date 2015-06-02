@@ -1,5 +1,6 @@
 package net.essence.entity.mob.boiling;
 
+import net.essence.EssenceBlocks;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityMagmaFireball;
 import net.essence.enums.EnumSounds;
@@ -58,7 +59,12 @@ public class EntityMagmaBlaze extends EntityModMob {
 	public float getBrightness(float p_70013_1_) {
 		return 1.0F;
 	}
-
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.hotBlock;
+	}
+	
 	@Override
 	public void onLivingUpdate() {
 

@@ -1,5 +1,6 @@
 package net.essence.entity.mob.boiling;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
@@ -8,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -44,6 +46,11 @@ public class EntityObserver extends EntityModMob{
 	@Override
 	public EnumSounds setDeathSound() {
 		return EnumSounds.BLAZE_DEATH;
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.hotBlock;
 	}
 	
 	@Override

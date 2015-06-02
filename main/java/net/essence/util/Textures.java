@@ -95,6 +95,9 @@ public class Textures {
     public static final ResourceLocation permafraust = addMob("permafraust");
     public static final ResourceLocation shiveringBushwalker = addMob("shiveringBushwalker");
     public static final ResourceLocation crystalCluster = addMob("crystalCluster");
+    public static final ResourceLocation shiverwolf = addMob("shiverwolf");
+    public static final ResourceLocation shiveringShrieker = addMob("shiveringShrieker");
+    public static final ResourceLocation frozenFrostbiter = addMob("frozenFrostbiter");
     
     //Boil
     public static final ResourceLocation magmaBlaze = addMob("magmaBlaze");
