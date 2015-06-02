@@ -106,7 +106,6 @@ public class BarTickHandler {
 	private void tickEnd(EntityPlayer player) {
 		if(ticks-- <= 0) ticks = 100;
 		if(ticks >= 100) {
-			Helper.print(DarkEnergyBar.getProperties(player).getBarValue());
 			DarkEnergyBar.getProperties(player).updateAllBars();
 			EssenceBar.getProperties(player).updateAllBars();
 			PowerBar.getProperties(player).updateAllBars();

@@ -306,7 +306,7 @@ public class WorldGenAPI {
 		for(int i = 0; i < height1; i++) placeFlatCircle(w, x, y + i, z, height1 - i, b);
 	}
 
-	private static void placeFlatCircle(World par1World, int x, int y, int z, int radius, Block block) {
+	public static void placeFlatCircle(World par1World, int x, int y, int z, int radius, Block block) {
 		for(float i = 0; i < radius; i += 0.5) {
 			for(float j = 0; j < 2 * Math.PI * i; j += 0.5)
 				par1World.setBlockState(new BlockPos((int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i)), block.getDefaultState());

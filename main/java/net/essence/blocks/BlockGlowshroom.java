@@ -38,7 +38,7 @@ public class BlockGlowshroom extends Block {
 
 	@Override
 	public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.TRANSLUCENT;
+		return EnumWorldBlockLayer.CUTOUT;
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class BlockGlowshroom extends Block {
 
 	@Override
 	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-		return 900;
+		return 220;
 	}
 
 	@Override

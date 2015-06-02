@@ -59,6 +59,7 @@ import net.slayer.api.block.BlockModGrass;
 import net.slayer.api.block.BlockModLeaves;
 import net.slayer.api.block.BlockModLog;
 import net.slayer.api.block.BlockModSlab;
+import net.slayer.api.block.BlockModSpawner;
 import net.slayer.api.block.BlockModStairs;
 
 public class EssenceBlocks {
@@ -311,6 +312,9 @@ public class EssenceBlocks {
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable");
 	public static final Block bossAltar = new BlockMod("bossAltar");
+	
+	public static final Block tinbotSpawner = new BlockModSpawner("tinbotSpawner", "tinbot");
+	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "silverbot");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	

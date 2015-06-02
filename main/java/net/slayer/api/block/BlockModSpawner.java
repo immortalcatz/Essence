@@ -3,25 +3,23 @@ package net.slayer.api.block;
 import java.util.Random;
 
 import net.essence.EssenceTabs;
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.slayer.api.EnumMaterialTypes;
+import net.slayer.api.entity.tileentity.container.BlockModContainer;
 
-public class BlockModSpawner extends BlockContainer {
+public class BlockModSpawner extends BlockModContainer {
 
     protected String mobName;
 
     public BlockModSpawner(String name, String mobName) {
-        super(Material.rock);
+        super(EnumMaterialTypes.STONE, name, -1, EssenceTabs.spawners);
         this.mobName = mobName;
-        setUnlocalizedName(name);
-        setCreativeTab(EssenceTabs.blocks);
-        GameRegistry.registerBlock(this, name);
     }
 
     @Override
@@ -34,6 +32,11 @@ public class BlockModSpawner extends BlockContainer {
     @Override
     public int quantityDropped(Random par1Random) {
         return 0;
+    }
+    
+    @Override
+    public EnumWorldBlockLayer getBlockLayer() {
+    	return EnumWorldBlockLayer.CUTOUT;
     }
 
     @Override
