@@ -132,6 +132,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityFrozenTroll.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		
 	}
 
@@ -141,6 +142,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityShatterer.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityCrystalCluster.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 	}
 
 	private static void addEucaSpawns() {

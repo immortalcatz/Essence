@@ -1,5 +1,6 @@
 package net.essence.entity.mob.frozen;
 
+import net.essence.EssenceBlocks;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.Entity;
@@ -8,6 +9,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -61,6 +63,11 @@ public class EntityCrystalCluster extends EntityModMob {
 	@Override
 	public EnumSounds setDeathSound() {
 		return EnumSounds.SMALL_HONGO_HURT;
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.brittleIce;
 	}
 
 	@Override

@@ -2,12 +2,14 @@ package net.essence.entity.mob.frozen;
 
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -58,6 +60,11 @@ public class EntityShatterer extends EntityModFlying {
 	@Override
 	public boolean shouldRenderInPass(int pass) {
 		return pass == 1;
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.brittleIce;
 	}
 	
 	private class AIRandomFly extends EntityAIBase {

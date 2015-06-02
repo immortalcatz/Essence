@@ -1,5 +1,6 @@
 package net.essence.entity.mob.frozen;
 
+import net.essence.EssenceBlocks;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.block.material.Material;
@@ -50,7 +51,8 @@ public class EntityShiveringBushwalker extends EntityModMob {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.posY < 40.0D && super.getCanSpawnHere();
+		return this.posY < 45.0D && super.getCanSpawnHere() &&
+				(this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.frozenGrass);
 	}
 	
 	@Override
