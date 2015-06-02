@@ -15,9 +15,22 @@ import net.slayer.api.worldgen.WorldGenAPI;
 
 public class WorldGenSmeltery extends WorldGenerator {
 
+	public boolean locationIsValidSpawn(World w, int x, int y, int z) {
+		for(int i = 0; i < 11; i++) {
+			for(int l = 0; l < 11; l++) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != EssenceBlocks.eucaGrass) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
 		int x = pos.getX(), y = pos.getY() - 1, z = pos.getZ();
+		if(locationIsValidSpawn(w, x, y, z)) return false;
+		
 		WorldGenAPI.addRectangle(11, 11, 1, w, x - 1, y + 1, z - 1, EssenceBlocks.eucaGrass);
 		WorldGenAPI.addRectangle(11, 11, 4, w, x - 1, y - 3, z - 1, EssenceBlocks.eucaStone);
 		WorldGenAPI.addHollowCube(9, w, x, y, z, EssenceBlocks.eucaStone);
@@ -39,7 +52,7 @@ public class WorldGenSmeltery extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 1, y + 4, z + 6), Blocks.torch.getStateFromMeta(1), 2);
 		w.setBlockState(new BlockPos(x + 7, y + 4, z + 2), Blocks.torch.getStateFromMeta(2), 2);
 		w.setBlockState(new BlockPos(x + 7, y + 4, z + 6), Blocks.torch.getStateFromMeta(2), 2);
-		WorldGenAPI.addBlock(w, x, y + 5, z, Blocks.cobblestone);
+		WorldGenAPI.addBlock(w, x, y + 5, z, EssenceBlocks.eucaStone);
 		WorldGenAPI.addBlock(w, x + 2, y + 5, z, EssenceBlocks.eucaStone);
 		WorldGenAPI.addBlock(w, x + 4, y + 5, z, EssenceBlocks.eucaStone);
 		WorldGenAPI.addBlock(w, x + 6, y + 5, z, EssenceBlocks.eucaStone);
