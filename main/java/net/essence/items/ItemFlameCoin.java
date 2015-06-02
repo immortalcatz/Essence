@@ -5,7 +5,6 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.dimension.euca.gen.WorldGenSmeltery;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -38,9 +37,8 @@ public class ItemFlameCoin extends ItemMod {
 				w.setBlockState(new BlockPos(pos.up()), EssenceBlocks.fire.getDefaultState(), 2);
 				return true;
 			}
+			else return false;
 		}
-		new WorldGenSmeltery().generate(w, r, pos);
-		return true;
 		//BARN
 		/*WorldGenAPI.addRectangle(7, 5, 1, w, x, y, z, EssenceBlocks.greenCorbaPlank);
 		WorldGenAPI.addRectangle(1, 5, 4, w, x, y + 1, z, EssenceBlocks.brownCorbaLog);

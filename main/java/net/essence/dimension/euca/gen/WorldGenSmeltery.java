@@ -29,7 +29,7 @@ public class WorldGenSmeltery extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
 		int x = pos.getX(), y = pos.getY() - 1, z = pos.getZ();
-		if(locationIsValidSpawn(w, x, y, z)) return false;
+		if(locationIsValidSpawn(w, x, y, z)) return true;
 		
 		WorldGenAPI.addRectangle(11, 11, 1, w, x - 1, y + 1, z - 1, EssenceBlocks.eucaGrass);
 		WorldGenAPI.addRectangle(11, 11, 4, w, x - 1, y - 3, z - 1, EssenceBlocks.eucaStone);
@@ -75,6 +75,6 @@ public class WorldGenSmeltery extends WorldGenerator {
 			smith.setLocationAndAngles(x + 4, y + 2, z + 4, 0.0F, 0.0F);
 			w.spawnEntityInWorld(smith);
 		}
-		return true;
+		return false;
 	}
 }
