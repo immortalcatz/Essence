@@ -80,6 +80,7 @@ public class EssenceBlocks {
 	public static final Block enderilliumOre = new BlockModOre("enderilliumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block gorbiteOre = new BlockModOre("gorbiteOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block orbaditeOre = new BlockModOre("orbaditeOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block blaziumOre = new BlockModOre("blaziumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	
 	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block celestiumBlock = new BlockModOre("celestiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
