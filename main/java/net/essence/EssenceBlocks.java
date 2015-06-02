@@ -245,7 +245,7 @@ public class EssenceBlocks {
 	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", false);
 	
 	
-	public static final Block caveVine = new BlockCaveVine("caveVine");
+	//public static final Block caveVine = new BlockCaveVine("caveVine");
 
 	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 	
