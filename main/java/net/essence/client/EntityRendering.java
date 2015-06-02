@@ -77,10 +77,13 @@ import net.essence.client.render.model.mob.euca.ModelShimmerer;
 import net.essence.client.render.model.mob.euca.ModelSilverbot;
 import net.essence.client.render.model.mob.euca.ModelTinbot;
 import net.essence.client.render.model.mob.frozen.ModelCrystalCluster;
+import net.essence.client.render.model.mob.frozen.ModelFrozenFrostbiter;
 import net.essence.client.render.model.mob.frozen.ModelFrozenMerchant;
 import net.essence.client.render.model.mob.frozen.ModelFrozenTroll;
 import net.essence.client.render.model.mob.frozen.ModelPermafraust;
 import net.essence.client.render.model.mob.frozen.ModelShiveringBushwalker;
+import net.essence.client.render.model.mob.frozen.ModelShiveringShrieker;
+import net.essence.client.render.model.mob.frozen.ModelShiverwolf;
 import net.essence.client.render.model.mob.overworld.ModelBigHongo;
 import net.essence.client.render.model.mob.overworld.ModelBoomBoom;
 import net.essence.client.render.model.mob.overworld.ModelBunny;
@@ -156,10 +159,13 @@ import net.essence.entity.mob.euca.EntitySilverbot;
 import net.essence.entity.mob.euca.EntityTinbot;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.essence.entity.mob.frozen.EntityCrystalCluster;
+import net.essence.entity.mob.frozen.EntityFrozenFrostbiter;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
+import net.essence.entity.mob.frozen.EntityShiveringShrieker;
+import net.essence.entity.mob.frozen.EntityShiverwolf;
 import net.essence.entity.mob.frozen.npc.EntityFrozenMerchant;
 import net.essence.entity.mob.overworld.EntityBigHongo;
 import net.essence.entity.mob.overworld.EntityBoom;
@@ -320,6 +326,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCavurn.class, new RenderModMob(new ModelCavurn(), tex.cavurn));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCaveling.class, new RenderModMob(new ModelCaveling(), tex.caveling));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStonewalker.class, new RenderModMob(new ModelStonewalker(), tex.stonewalker));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShiverwolf.class, new RenderModMob(new ModelShiverwolf(), tex.shiverwolf));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShiveringShrieker.class, new RenderModMob(new ModelShiveringShrieker(), tex.shiveringShrieker));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenFrostbiter.class, new RenderModMob(new ModelFrozenFrostbiter(), tex.frozenFrostbiter));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

@@ -54,10 +54,13 @@ import net.essence.entity.mob.euca.EntitySilverbot;
 import net.essence.entity.mob.euca.EntityTinbot;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.essence.entity.mob.frozen.EntityCrystalCluster;
+import net.essence.entity.mob.frozen.EntityFrozenFrostbiter;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
 import net.essence.entity.mob.frozen.EntityShatterer;
 import net.essence.entity.mob.frozen.EntityShiveringBushwalker;
+import net.essence.entity.mob.frozen.EntityShiveringShrieker;
+import net.essence.entity.mob.frozen.EntityShiverwolf;
 import net.essence.entity.mob.frozen.npc.EntityFrozenMerchant;
 import net.essence.entity.mob.overworld.EntityBigHongo;
 import net.essence.entity.mob.overworld.EntityBoom;
@@ -218,6 +221,9 @@ public class EntityRegistry {
 		SlayerAPI.registerMob(EntityCavurn.class, "cavurn");
 		SlayerAPI.registerMob(EntityCaveling.class, "caveling");
 		SlayerAPI.registerMob(EntityStonewalker.class, "stonewalker");
+		SlayerAPI.registerMob(EntityShiverwolf.class, "shiverwolf");
+		SlayerAPI.registerMob(EntityShiveringShrieker.class, "shiveringShrieker");
+		SlayerAPI.registerMob(EntityFrozenFrostbiter.class, "frozenFrostbiter");
 	}
 	
 	public static void registerNPCs() {
