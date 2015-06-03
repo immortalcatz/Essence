@@ -9,6 +9,7 @@ public class RandomItems {
 
 	private Item[] overIngot = new Item[] {EssenceItems.shadiumIngot, EssenceItems.luniumIngot, EssenceItems.sapphire};
 	private Item[] eucaIngot = new Item[] {EssenceItems.mekyumIngot, EssenceItems.storonIngot, EssenceItems.koriteIngot, EssenceItems.celestiumIngot};
+	private Item[] depthsIngot = new Item[] {EssenceItems.flairiumIngot, EssenceItems.desIngot};
 	private Random r = new Random();
 	
 	private int random(int i) {
@@ -25,5 +26,9 @@ public class RandomItems {
 	
 	public Item getRandomEucaIngot() {
 		return eucaIngot[random(eucaIngot.length)];
+	}
+	
+	public Item getRandomDepthsIngot() {
+		return depthsIngot[random(depthsIngot.length)];
 	}
 }
