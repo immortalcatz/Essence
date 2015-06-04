@@ -1,4 +1,4 @@
-package net.essence.blocks.portal;
+/*package net.essence.blocks.portal;
 
 import java.util.Random;
 
@@ -344,4 +344,4 @@ public class BlockWastelandsPortal extends BlockBreakable {
 			}
 		}
 	}
-}
+}*/

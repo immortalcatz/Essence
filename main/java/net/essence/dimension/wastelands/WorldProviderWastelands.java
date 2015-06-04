@@ -1,4 +1,4 @@
-package net.essence.dimension.wastelands;
+/*package net.essence.dimension.wastelands;
 
 import net.essence.dimension.DimensionHelper;
 import net.essence.util.Config;
@@ -24,13 +24,13 @@ public class WorldProviderWastelands extends WorldProvider {
 	
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.0F;
+		return 0.4F;
 	}
     
 	@Override
     @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
-    	return new Vec3(1.5, 1.15, 1.0);
+    	return new Vec3(1.8, 1.15, 1.0);
     }
 
 	@Override
@@ -74,4 +74,4 @@ public class WorldProviderWastelands extends WorldProvider {
 	public String getInternalNameSuffix() {
 		return getDimensionName();
 	}
-}
+}*/

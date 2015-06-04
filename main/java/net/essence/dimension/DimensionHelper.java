@@ -12,8 +12,6 @@ import net.essence.dimension.euca.BiomeGenEuca;
 import net.essence.dimension.euca.WorldProviderEuca;
 import net.essence.dimension.frozen.BiomeGenFrozenLands;
 import net.essence.dimension.frozen.WorldProviderFrozenLands;
-import net.essence.dimension.wastelands.BiomeGenWastelands;
-import net.essence.dimension.wastelands.WorldProviderWastelands;
 import net.essence.entity.mob.boiling.EntityAshHoarder;
 import net.essence.entity.mob.boiling.EntityBurningLight;
 import net.essence.entity.mob.boiling.EntityBurntAsh;
@@ -87,7 +85,7 @@ public class DimensionHelper {
 	public static BiomeGenBase boiling = new BiomeGenBoiling(Config.boilBiome).setHeight(boilHeight);
 	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome);
 	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome);
-	public static BiomeGenBase wastelands = new BiomeGenWastelands(Config.wastelandsBiome);
+	//public static BiomeGenBase wastelands = new BiomeGenWastelands(Config.wastelandsBiome);
 	public static BiomeGenBase cloudia = new BiomeGenCloudia(Config.cloudiaBiome);
 
 	public static void init(){
@@ -96,7 +94,7 @@ public class DimensionHelper {
 		addDimension(Config.boil, WorldProviderBoiling.class, Config.keepLoadingBoil);
 		addDimension(Config.frozen, WorldProviderFrozenLands.class, Config.keepLoadingFrozen);
 		addDimension(Config.corba, WorldProviderCorba.class, Config.keepLoadingCorba);
-		addDimension(Config.wastelands, WorldProviderWastelands.class, Config.keepLoadingWastelands);
+		//addDimension(Config.wastelands, WorldProviderWastelands.class, Config.keepLoadingWastelands);
 		addDimension(Config.cloudia, WorldProviderCloudia.class, Config.keepLoadingCloudia);
 	}
 

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import net.essence.blocks.BlockBoilingFire;
 import net.essence.blocks.BlockBrison;
 import net.essence.blocks.BlockBrittleIce;
-import net.essence.blocks.BlockCaveVine;
 import net.essence.blocks.BlockCloud;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockCorbaPortalFrame;
@@ -22,9 +21,6 @@ import net.essence.blocks.BlockIceLog;
 import net.essence.blocks.BlockIcicle;
 import net.essence.blocks.BlockJoinedGlass;
 import net.essence.blocks.BlockMiniColouredBricks;
-import net.essence.blocks.BlockStatue;
-import net.essence.blocks.BlockTropicalWater;
-import net.essence.blocks.BlockWastelandsStone;
 import net.essence.blocks.base.BlockModFire;
 import net.essence.blocks.base.BlockModOre;
 import net.essence.blocks.crop.BlockCorveggieCrop;
@@ -42,12 +38,6 @@ import net.essence.blocks.portal.BlockCloudiaPortal;
 import net.essence.blocks.portal.BlockCorbaPortal;
 import net.essence.blocks.portal.BlockDepthsPortal;
 import net.essence.blocks.portal.BlockEucaPortal;
-import net.essence.blocks.portal.BlockWastelandsPortal;
-import net.essence.client.render.model.statue.ModelCalciaStatue;
-import net.essence.client.render.model.statue.ModelEudorStatue;
-import net.essence.client.render.model.statue.ModelNetherBeastStatue;
-import net.essence.client.render.model.statue.ModelWitheringBeastStatue;
-import net.essence.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
@@ -162,10 +152,10 @@ public class EssenceBlocks {
 	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud");
 	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud");
 	
-	public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
+	/*public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
 	public static final Block wastelandsGrass = new BlockModGrass((BlockMod)null, "wastelandsGrass", 2.0F);
 	public static final Block wastelandsLog = new BlockModLog("wastelandsLog");
-	public static final Block wastelandsBranches = new BlockModLog("wastelandsBranches");
+	public static final Block wastelandsBranches = new BlockModLeaves("wastelandsBranches", 2.0F).setStepSound(EnumMaterialTypes.WOOD.getSound());*/
 
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
@@ -177,8 +167,8 @@ public class EssenceBlocks {
 	public static final Block frozenPortalFrame = new BlockMod("frozenPortalFrame", 3.0F);
 	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
 	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
-	public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
-	public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
+	//public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
+	//public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
 	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal");
 	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", 3.0F);
 	

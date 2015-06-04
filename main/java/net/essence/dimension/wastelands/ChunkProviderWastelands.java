@@ -1,4 +1,4 @@
-package net.essence.dimension.wastelands;
+/*package net.essence.dimension.wastelands;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -233,9 +233,9 @@ public class ChunkProviderWastelands implements IChunkProvider {
 		double d2 = 512.0D;
 		double d3 = 512.0D;
 		this.gen4 = this.noiseGen6.generateNoiseOctaves(this.gen4, x, z, 5, 5, 200.0D, 200.0D, 0.5D);
-		this.gen1 = this.noiseGen3.generateNoiseOctaves(this.gen1, x, y, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
-		this.gen2 = this.noiseGen1.generateNoiseOctaves(this.gen2, x, y, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
-		this.gen3 = this.noiseGen2.generateNoiseOctaves(this.gen3, x, y, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
+		this.gen1 = this.noiseGen3.generateNoiseOctaves(this.gen1, x, y, z, 5, 33, 5, 9D, 4.277575000000001D, 8.555150000000001D);
+		this.gen2 = this.noiseGen1.generateNoiseOctaves(this.gen2, x, y, z, 5, 33, 5, 1000.412D, 1000.412D, 1000.412D);
+		this.gen3 = this.noiseGen2.generateNoiseOctaves(this.gen3, x, y, z, 5, 33, 5, 1000.412D, 1000.412D, 1000.412D);
 		boolean flag1 = false;
 		boolean flag = false;
 		int l = 0;
@@ -256,9 +256,6 @@ public class ChunkProviderWastelands implements IChunkProvider {
 						float f3 = biomegenbase1.minHeight;
 						float f4 = biomegenbase1.maxHeight;
 
-						f3 = 0.2F + f3;
-						f4 = 0.2F + f4;
-
 						float f5 = this.parabolicField[l1 + 2 + (i2 + 2) * 5] / (f3 + 2.0F);
 
 						if(biomegenbase1.minHeight > biomegenbase.minHeight)
@@ -272,7 +269,7 @@ public class ChunkProviderWastelands implements IChunkProvider {
 
 				f /= f2;
 				f1 /= f2;
-				f = f * 0.9F + 0.1F;
+				f = f * 1.0F;
 				f1 = (f1 * 4.0F - 1.0F) / 8.0F;
 				double d12 = this.gen4[i1] / 8000.0D;
 
@@ -311,9 +308,9 @@ public class ChunkProviderWastelands implements IChunkProvider {
 						d6 *= 4.0D;
 
 
-					double d7 = this.gen2[l] / 512.0D;
-					double d8 = this.gen3[l] / 512.0D;
-					double d9 = (this.gen1[l] / 10.0D + 1.0D) / 2.0D;
+					double d7 = this.gen2[l] / 256.0D;
+					double d8 = this.gen3[l] / 256.0D;
+					double d9 = (this.gen1[l] / 13.0D) / 2.0D;
 					double d10 = MathHelper.denormalizeClamp(d7, d8, d9) - d6;
 
 					if(j2 > 29) {
@@ -342,13 +339,13 @@ public class ChunkProviderWastelands implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 
-		for(i = 0; i < 100; i++) {
+		/*for(i = 0; i < 100; i++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			y = r.nextInt(250);
 			if(isBlockTop(x, y, x, EssenceBlocks.wastelandsGrass))
 				trees.get(r.nextInt(trees.size())).generate(worldObj, r, new BlockPos(x, y, z));
-		}
+		}*
 	}
 
 	public boolean isBlockTop(int x, int y, int z, Block grass) {
@@ -408,4 +405,4 @@ public class ChunkProviderWastelands implements IChunkProvider {
 	public Chunk provideChunk(BlockPos blockPosIn) {
 		return this.provideChunk(blockPosIn.getX() >> 4, blockPosIn.getZ() >> 4);
 	}
-}
+}*/

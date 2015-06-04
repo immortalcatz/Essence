@@ -1,4 +1,4 @@
-package net.essence.dimension.wastelands.gen.trees;
+/*package net.essence.dimension.wastelands.gen.trees;
 
 import java.util.Random;
 
@@ -35,4 +35,4 @@ public class WorldGenWastelandsDeadTree extends WorldGenerator {
 		
 		return true;
 	}
-}
+}*/

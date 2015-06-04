@@ -81,11 +81,11 @@ public class DimensionCommand extends CommandBase {
 				}
 			}
 			
-			if(var2[0].equalsIgnoreCase("Wastelands")) {
+			/*if(var2[0].equalsIgnoreCase("Wastelands")) {
 				if(playerMP.dimension != Config.wastelands) {
 					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.wastelands, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.wastelands), Config.wastelands, EssenceBlocks.wastelandsPortal, EssenceBlocks.wastelandsPortalFrame));
 				}
-			}
+			}*/
 			
 			if(var2[0].equalsIgnoreCase("Cloudia")) {
 				if(playerMP.dimension != Config.wastelands) {

@@ -1,4 +1,4 @@
-package net.essence.dimension.wastelands;
+/*package net.essence.dimension.wastelands;
 
 import net.essence.EssenceBlocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -24,4 +24,4 @@ public class BiomeGenWastelands extends BiomeGenBase {
     public int getSkyColorByTemp(float f) {
         return 0xAE9000;
     }
-}
+}*/
