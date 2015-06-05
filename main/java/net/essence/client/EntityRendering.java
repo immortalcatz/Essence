@@ -51,6 +51,7 @@ import net.essence.client.render.model.mob.boss.ModelSentryKing;
 import net.essence.client.render.model.mob.boss.ModelThunderbird;
 import net.essence.client.render.model.mob.boss.ModelWitheringBeast;
 import net.essence.client.render.model.mob.cloudia.ModelCloudGhost;
+import net.essence.client.render.model.mob.cloudia.ModelStarlightVillager;
 import net.essence.client.render.model.mob.corba.ModelLeafBlower;
 import net.essence.client.render.model.mob.corba.ModelOverseer;
 import net.essence.client.render.model.mob.corba.ModelOverseerElder;
@@ -129,6 +130,7 @@ import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityThunderbird;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
+import net.essence.entity.mob.cloudia.npc.EntityStarlightVillager;
 import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntityNatureMage;
 import net.essence.entity.mob.corba.EntityOverseer;
@@ -329,6 +331,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityShiverwolf.class, new RenderModMob(new ModelShiverwolf(), tex.shiverwolf));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShiveringShrieker.class, new RenderModMob(new ModelShiveringShrieker(), tex.shiveringShrieker));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenFrostbiter.class, new RenderModMob(new ModelFrozenFrostbiter(), tex.frozenFrostbiter));
+		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightVillager.class, new RenderModMob(new ModelStarlightVillager(), tex.starlightVillager));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

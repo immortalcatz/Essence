@@ -20,7 +20,7 @@ import net.slayer.api.entity.tileentity.container.*;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER;
+		ENRICHMENT_TABLE, INCUBATOR, BACKPACK, MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER;
 	}
 
 	@Override
@@ -38,6 +38,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.TORDO.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.ALLOY_MENDER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -56,6 +57,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.TORDO.ordinal()) return new GuiTordo(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new GuiBoilTrader(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.ALLOY_MENDER.ordinal()) return new GuiAlloyMender(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new GuiStarlightVillager(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		return null;
 	}
 

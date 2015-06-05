@@ -52,7 +52,7 @@ public class MobStats {
 	public static double hellwingHealth = 50.0D, hellwingDamage = 10.0D, hellwingSpeed = normalSpeed, hellwingFollowRange = follow;
 	public static double observerHealth = 50.0D, observerDamage = 10.0D, observerSpeed = normalSpeed, observerFollowRange = follow;
 	public static double screamerHealth = 50.0D, screamerDamage = 10.0D, screamerSpeed = normalSpeed, screamerFollowRange = follow;
-
+	
 	//Euca
 	public static double insectoHealth = 25.0D, insectoDamage = 10.0D, insectoSpeed = normalSpeed, insectoFollowRange = follow;
 	public static double psyollomHealth = 50.0D, psyollomDamage = 10.0D, psyollomSpeed = normalSpeed, psyollomFollowRange = follow;

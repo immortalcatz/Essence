@@ -24,6 +24,7 @@ import net.essence.entity.mob.boss.EntitySoulWatcher;
 import net.essence.entity.mob.boss.EntityTempleGuardian;
 import net.essence.entity.mob.boss.EntityWitheringBeast;
 import net.essence.entity.mob.cloudia.EntityCloudGhost;
+import net.essence.entity.mob.cloudia.npc.EntityStarlightVillager;
 import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntityNatureMage;
 import net.essence.entity.mob.corba.EntityOverseer;
@@ -236,6 +237,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityRedTordo.class, "redTordo");
 		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader");
 		SlayerAPI.registerNPC(EntityAlloyMender.class, "alloyMender");
+		SlayerAPI.registerNPC(EntityStarlightVillager.class, "starlightVillager");
 	}
 	
 	public static void registerBosses() {

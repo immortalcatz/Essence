@@ -115,6 +115,7 @@ public class Textures {
     
     //Cloudia
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
+    public static final ResourceLocation starlightVillager = addMob("starlightVillager");
     
     //Boss
     public static final ResourceLocation netherBeast = addMob("netherBeast");
