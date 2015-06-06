@@ -42,23 +42,16 @@ public class ChunkProviderDepths implements IChunkProvider {
 	public NoiseGeneratorOctaves noiseGen5;
 	public NoiseGeneratorOctaves noiseGen6;
 	private World worldObj;
-	private WorldType field_177475_o;
 	private final double[] da;
 	private final float[] parabolicField;
-	private Block field_177476_s;
 	private double[] stoneNoise;
 	private BiomeGenBase[] biomesForGeneration;
-	double[] gen1;
-	double[] gen2;
-	double[] gen3;
-	double[] gen4;
+	double[] gen1, gen2, gen3, gen4;
 
-	public ChunkProviderDepths(World worldIn, long p_i45636_2_) {
-		this.field_177476_s = Blocks.water;
+	public ChunkProviderDepths(World worldIn, long s) {
 		this.stoneNoise = new double[256];
 		this.worldObj = worldIn;
-		this.field_177475_o = worldIn.getWorldInfo().getTerrainType();
-		this.rand = new Random(p_i45636_2_);
+		this.rand = new Random(s);
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
@@ -85,9 +78,9 @@ public class ChunkProviderDepths implements IChunkProvider {
 		this.noiseGen6 = (NoiseGeneratorOctaves)noiseGens[5];
 	}
 
-	public void setBlocksInChunk(int p_180518_1_, int p_180518_2_, ChunkPrimer p_180518_3_) {
-		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_180518_1_ * 4 - 2, p_180518_2_ * 4 - 2, 10, 10);
-		this.generate(p_180518_1_ * 4, 0, p_180518_2_ * 4);
+	public void setBlocksInChunk(int x, int z, ChunkPrimer p_180518_3_) {
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
+		this.generate(x * 4, 0, z * 4);
 
 		for (int k = 0; k < 4; ++k) {
 			int l = k * 5;
@@ -144,15 +137,15 @@ public class ChunkProviderDepths implements IChunkProvider {
 		}
 	}
 
-	public void func_180517_a(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_, BiomeGenBase[] p_180517_4_) {
-		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, p_180517_1_, p_180517_2_, p_180517_3_, this.worldObj);
+	public void func_180517_a(int x, int z, ChunkPrimer c) {
+		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, x, z, c, this.worldObj);
 		MinecraftForge.EVENT_BUS.post(event);
 		if(event.getResult() == Result.DENY) return;
 		double d0 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.func_151599_a(this.stoneNoise, (double)(p_180517_1_ * 16), (double)(p_180517_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+		this.stoneNoise = this.noiseGen4.func_151599_a(this.stoneNoise, (double)(x * 16), (double)(z * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 		for(int k = 0; k < 16; ++k) {
 			for(int l = 0; l < 16; ++l) {
-				generateBiomeTerrain(this.rand, p_180517_3_, p_180517_1_ * 16 + k, p_180517_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+				generateBiomeTerrain(this.rand, c, x * 16 + k, z * 16 + l, this.stoneNoise[l + k * 16]);
 			}
 		}
 	}
@@ -160,8 +153,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double d) {
 		int i1 = x & 15;
 		int j1 = z & 15;
-		for(int p = 0; p < 3; p++) c.setBlockState(j1, 1 + p, i1, EssenceBlocks.depthsDirt.getDefaultState());
-		c.setBlockState(j1, 1 + 3, i1, EssenceBlocks.depthsGrass.getDefaultState());
+		c.setBlockState(j1, 1, i1, EssenceBlocks.darkFloor.getDefaultState());
 		c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 	}
 
@@ -171,10 +163,10 @@ public class ChunkProviderDepths implements IChunkProvider {
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		this.setBlocksInChunk(x, z, chunkprimer);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
-		this.func_180517_a(x, z, chunkprimer, this.biomesForGeneration);
+		this.func_180517_a(x, z, chunkprimer);
 		for(int i = 0; i < 10; i++) {
 			int ycoord = rand.nextInt(249) + 1;
-			if(chunkprimer.getBlockState(8, ycoord, 8).getBlock() == Blocks.air && chunkprimer.getBlockState(8, ycoord - 1, 8).getBlock() == EssenceBlocks.depthsGrass && chunkprimer.getBlockState(8, ycoord + 1, 8).getBlock() == Blocks.air) {
+			if(chunkprimer.getBlockState(8, ycoord, 8).getBlock() == Blocks.air && chunkprimer.getBlockState(8, ycoord - 1, 8).getBlock() == EssenceBlocks.darkFloor && chunkprimer.getBlockState(8, ycoord + 1, 8).getBlock() == Blocks.air) {
 				new WorldGenSpike().generate(chunkprimer, rand, new BlockPos(8, ycoord, 8));
 			}
 		}
@@ -310,19 +302,19 @@ public class ChunkProviderDepths implements IChunkProvider {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.depthsGrass.getDefaultState()) {
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.darkFloor.getDefaultState()) {
 				new WorldGenDepthsTree(true).generate(worldObj, rand, new BlockPos(x, y, z));
 			}
 		}
 	}
 
 	@Override
-	public boolean func_177460_a(IChunkProvider p_177460_1_, Chunk p_177460_2_, int p_177460_3_, int p_177460_4_) {
+	public boolean func_177460_a(IChunkProvider cp, Chunk c, int x, int z) {
 		return false;
 	}
 
 	@Override
-	public boolean saveChunks(boolean p_73151_1_, IProgressUpdate p_73151_2_) {
+	public boolean saveChunks(boolean b, IProgressUpdate ipu) {
 		return true;
 	}
 
@@ -345,13 +337,13 @@ public class ChunkProviderDepths implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p_177458_2_);
-		return biomegenbase.getSpawnableList(p_177458_1_);
+	public List func_177458_a(EnumCreatureType c, BlockPos p) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p);
+		return biomegenbase.getSpawnableList(c);
 	}
 
 	@Override
-	public BlockPos getStrongholdGen(World worldIn, String p_180513_2_, BlockPos p_180513_3_) {
+	public BlockPos getStrongholdGen(World worldIn, String s, BlockPos p) {
 		return null;
 	}
 
@@ -361,7 +353,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 	}
 
 	@Override
-	public void recreateStructures(Chunk p_180514_1_, int p_180514_2_, int p_180514_3_) { }
+	public void recreateStructures(Chunk c, int x, int z) { }
 
 	@Override
 	public Chunk provideChunk(BlockPos blockPosIn) {
