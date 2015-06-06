@@ -93,7 +93,6 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityFireMage.class, "fireMage");
 		SlayerAPI.registerOverworldMob(EntityIceMage.class, "iceMage");
 		SlayerAPI.registerOverworldMob(EntityCaveMage.class, "caveMage");
-		SlayerAPI.registerOverworldMob(EntityNatureMage.class, "natureMage");
 		SlayerAPI.registerOverworldMob(EntityCavurn.class, "cavurn");
 		SlayerAPI.registerOverworldMob(EntityCaveling.class, "caveling");
 		SlayerAPI.registerOverworldMob(EntityStonewalker.class, "stonewalker");
@@ -123,6 +122,7 @@ public class EntityRegistry {
 		SlayerAPI.registerFLMob(EntityShiverwolf.class, "shiverwolf");
 		SlayerAPI.registerFLMob(EntityShiveringShrieker.class, "shiveringShrieker");
 		SlayerAPI.registerFLMob(EntityFrozenFrostbiter.class, "frozenFrostbiter");
+		SlayerAPI.registerFLMob(EntityCrystalCluster.class, "crystalCluster");
 	}
 
 	public static void registerEucaMobs() {
@@ -133,7 +133,6 @@ public class EntityRegistry {
 		SlayerAPI.registerEucaMob(EntityEucaHopper.class, "eucaHopper");
 		SlayerAPI.registerEucaMob(EntityDynaster.class, "dynaster");
 		SlayerAPI.registerEucaMob(EntityGolder.class, "golder");
-		SlayerAPI.registerEucaMob(EntityCrystalCluster.class, "crystalCluster");
 		SlayerAPI.registerEucaMob(EntitySilverbot.class, "silverbot");
 		SlayerAPI.registerEucaMob(EntityGolditeMage.class, "golditeMage");
 		SlayerAPI.registerEucaMob(EntityTinbot.class, "tinbot");
@@ -154,6 +153,7 @@ public class EntityRegistry {
 		SlayerAPI.registerCorbaMob(EntitySurfaceSeer.class, "surfaceSeer");
 		SlayerAPI.registerCorbaMob(EntityTreeGolem.class, "treeGolem");
 		SlayerAPI.registerCorbaMob(EntityWoodCreature.class, "woodCreature");
+		SlayerAPI.registerCorbaMob(EntityNatureMage.class, "natureMage");
 	}
 
 	public static void registerCloudiaMobs() {
