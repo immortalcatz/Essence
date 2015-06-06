@@ -107,9 +107,45 @@ public class SlayerAPI {
 		FMLCommonHandler.instance().bus().register(o);
 	}
 
-	public static void registerMob(Class entityClass, String entityName) {
+	public static void registerMob(Class entityClass, String entityName, int base, int fore) {
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
-        EntityList.addMapping(entityClass, entityName, entityListID++, 0x00A4DB, 0x8200D8);
+        EntityList.addMapping(entityClass, entityName, entityListID++, base, fore);
+	}
+	
+	public static void registerEndMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0x440089, 0xBC00BC);
+	}
+	
+	public static void registerOverworldMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0x218700, 0xC4C400);
+	}
+	
+	public static void registerNetherMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0xA80000, 0x680000);
+	}
+	
+	public static void registerBPMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0x6041160, 0xC14113);
+	}
+	
+	public static void registerFLMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0x005CD6, 0x00A4DB);
+	}
+	
+	public static void registerEucaMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0xBCB600, 0xA5A5A5);
+	}
+	
+	public static void registerDepthsMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0x003CA5, 0x0098A3);
+	}
+	
+	public static void registerCorbaMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0xAA5D41, 0x00A851);
+	}
+	
+	public static void registerCloudiaMob(Class entityClass, String entityName) {
+		registerMob(entityClass, entityName, 0xB3D3C1, 0xD0D1CF);
 	}
 	
 	public static void registerNPC(Class entityClass, String entityName) {
