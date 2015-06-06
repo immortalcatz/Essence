@@ -4,7 +4,18 @@ public class MobStats {
 
 	public static double normalSpeed = 0.200000011920929D, follow = 30D, knockBackResistance = 0.0D;
 
-	public static final int witheringBeastBossID = 0, netherBeastBossID = 1, calciaBossID = 2, wraithBossID = 3, eudorBossID = 4, fourfaBossID = 5, blazierBossID = 6, soulWatcherBossID = 7, sentryKingBossID = 8, thunderbirdBossID = 9;
+	public static final int 
+	witheringBeastBossID = 0, 
+	netherBeastBossID = 1, 
+	calciaBossID = 2, 
+	wraithBossID = 3, 
+	eudorBossID = 4, 
+	fourfaBossID = 5, 
+	blazierBossID = 6, 
+	soulWatcherBossID = 7, 
+	sentryKingBossID = 8, 
+	thunderbirdBossID = 9, 
+	loggerBossID = 10;
 	
 	//End
 	public static double enderLeaperHealth = 20.0D, enderLeaperDamage = 5.0D, enderLeaperSpeed = normalSpeed, enderLeaperFollowRange = follow;
@@ -94,5 +105,6 @@ public class MobStats {
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
 	public static double thunderbirdHealth = 850.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
-
+	public static double loggerHealth = 850.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
+	
 }

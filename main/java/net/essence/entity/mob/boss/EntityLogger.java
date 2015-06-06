@@ -16,12 +16,11 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
-public class EntityThunderbird extends EntityEssenceBoss {
+public class EntityLogger extends EntityEssenceBoss {
 
 	private int attackTimer;
 
-	@SuppressWarnings("this")
-	public EntityThunderbird(World par1World) {
+	public EntityLogger(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(3.0F, 3.5F);
@@ -57,12 +56,12 @@ public class EntityThunderbird extends EntityEssenceBoss {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.thunderbirdDamage;
+		return s.netherBeastDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.thunderbirdHealth;
+		return s.netherBeastHealth;
 	}
 
 	@Override
@@ -82,7 +81,7 @@ public class EntityThunderbird extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.corbaPortalGem;
+		return EssenceItems.eucaPortalGem;
 	}
 
 	@Override

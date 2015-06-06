@@ -183,6 +183,8 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityBlazier.class, "blazier");
 		SlayerAPI.registerBossMob(EntitySoulWatcher.class, "soulWatcher");
 		SlayerAPI.registerBossMob(EntitySentryKing.class, "sentryKing");
+		SlayerAPI.registerBossMob(EntityThunderbird.class, "thunderbird");
+		SlayerAPI.registerBossMob(EntityLogger.class, "logger");
 		//SlayerAPI.registerBossMob(EntityWraith.class, "wraith");
 	}
 
