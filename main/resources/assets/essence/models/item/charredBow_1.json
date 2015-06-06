@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/charredBlade_1"
+		"layer0": "essence:items/charredBow_1"
 	},
 	"display": {
 		"thirdperson": {
