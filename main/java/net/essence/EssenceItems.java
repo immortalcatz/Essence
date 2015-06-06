@@ -414,7 +414,7 @@ public class EssenceItems {
 	public static final Item scaleBow = new ItemModBow("scaleBow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item mantleBow = new ItemModBow("mantleBow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item coreExpender = new ItemModBow("coreExpender", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item royalBow = new ItemModBow("eucaBow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item royalBow = new ItemModBow("royalBow", 384, essenceArrow, EntityEssenceArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 
