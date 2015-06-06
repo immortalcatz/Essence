@@ -62,6 +62,18 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.addBow(EssenceItems.depthsBow, "depthsBow");
 		SlayerAPI.addBow(EssenceItems.frostbittenBow, "frostbittenBow");
 		SlayerAPI.addBow(EssenceItems.frostyBow, "frostyBow");
+		SlayerAPI.addBow(EssenceItems.charredBow, "charredBow");
+		SlayerAPI.addBow(EssenceItems.fluffyBow, "fluffyBow");
+		SlayerAPI.addBow(EssenceItems.golemBow, "golemBow");
+		SlayerAPI.addBow(EssenceItems.loggersBow, "loggersBow");
+		SlayerAPI.addBow(EssenceItems.overgrownBow, "overgrownBow");
+		SlayerAPI.addBow(EssenceItems.overseerBow, "overseerBow");
+		SlayerAPI.addBow(EssenceItems.woodlandBow, "woodlandBow");
+		SlayerAPI.addBow(EssenceItems.rocsWing, "rocsWing");
+		SlayerAPI.addBow(EssenceItems.scaleBow, "scaleBow");
+		SlayerAPI.addBow(EssenceItems.mantleBow, "mantleBow");
+		SlayerAPI.addBow(EssenceItems.coreExpender, "coreExpender");
+		SlayerAPI.addBow(EssenceItems.royalBow, "royalBow");
 	}
 
 	@Override
