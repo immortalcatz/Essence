@@ -239,6 +239,9 @@ public class EssenceItems {
 	public static final Item bloodwieldSword = new ItemModSword("bloodWieldSword", EssenceToolMaterial.BLOODWIELD_SWORD);
 	public static final Item charredBlade = new ItemModSword("charredBlade", EssenceToolMaterial.CHARRED_BLADE);
 	public static final Item sizzlerSword = new ItemModSword("sizzlerSword", EssenceToolMaterial.SIZZLER_SWORD);
+	public static final Item fluffyBlade = new ItemModSword("fluffyBlade", EssenceToolMaterial.FLUFFY_BLADE);
+	public static final Item golemSword = new ItemModSword("golemSword", EssenceToolMaterial.GOLEM_SWORD);
+	public static final Item thunderblade = new ItemModSword("thunderblade", EssenceToolMaterial.THUNDERBLADE);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
