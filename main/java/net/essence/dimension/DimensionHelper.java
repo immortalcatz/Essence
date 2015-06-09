@@ -40,8 +40,8 @@ import net.essence.entity.mob.euca.EntityGolder;
 import net.essence.entity.mob.euca.EntityInsecto;
 import net.essence.entity.mob.euca.EntityPsyollom;
 import net.essence.entity.mob.euca.EntityShimmerer;
+import net.essence.entity.mob.euca.EntityGoldbot;
 import net.essence.entity.mob.euca.EntitySilverbot;
-import net.essence.entity.mob.euca.EntityTinbot;
 import net.essence.entity.mob.frozen.EntityCrystalCluster;
 import net.essence.entity.mob.frozen.EntityFrozenTroll;
 import net.essence.entity.mob.frozen.EntityPermafraust;
@@ -141,7 +141,7 @@ public class DimensionHelper {
 	}
 
 	private static void addEucaSpawns() {
-		int amount = 3;
+		int amount = 2;
 		//EntityRegistry.addSpawn(EntityEucaHopper.class, 1, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityEucaFighter.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		//EntityRegistry.addSpawn(EntityInsecto.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);

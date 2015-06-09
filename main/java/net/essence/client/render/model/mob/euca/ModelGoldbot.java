@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
-public class ModelTinbot extends ModelBase {
+public class ModelGoldbot extends ModelBase {
 
     ModelRenderer head;
     ModelRenderer body;
@@ -17,16 +17,15 @@ public class ModelTinbot extends ModelBase {
     ModelRenderer rightleg;
     ModelRenderer leftleg;
 
-	public ModelTinbot() {
-
-		textureWidth = 64;
-	    textureHeight = 64;
-
+	public ModelGoldbot() {
+	      textureWidth = 64;
+	      textureHeight = 64;
+	    
 	      head = new ModelRenderer(this, 0, 0);
-	      head.addBox(-4F, -8F, -4F, 8, 4, 8);
-	      head.setRotationPoint(0F, 12F, 0F);
+	      head.addBox(-4F, -8F, -4F, 8, 8, 8);
+	      head.setRotationPoint(0F, 8F, 0F);
 	      head.setTextureSize(64, 64);
-	      setRotation(head, 0F, 0F, 0F);
+	      setRotation(head, 0F, 0.8726646F, 0F);
 	      body = new ModelRenderer(this, 16, 16);
 	      body.addBox(-4F, 0F, -2F, 8, 8, 4);
 	      body.setRotationPoint(0F, 8F, 0F);
@@ -34,12 +33,12 @@ public class ModelTinbot extends ModelBase {
 	      setRotation(body, 0F, 0F, 0F);
 	      rightarm = new ModelRenderer(this, 40, 16);
 	      rightarm.addBox(-3F, -2F, -2F, 3, 10, 4);
-	      rightarm.setRotationPoint(-4F, 10F, 0F);
+	      rightarm.setRotationPoint(-4F, 12F, 0F);
 	      rightarm.setTextureSize(64, 64);
 	      setRotation(rightarm, 0F, 0F, 0F);
 	      leftarm = new ModelRenderer(this, 40, 16);
 	      leftarm.addBox(-1F, -2F, -2F, 3, 10, 4);
-	      leftarm.setRotationPoint(5F, 10F, 0F);
+	      leftarm.setRotationPoint(5F, 12F, 0F);
 	      leftarm.setTextureSize(64, 64);
 	      setRotation(leftarm, 0F, 0F, 0F);
 	      rightleg = new ModelRenderer(this, 0, 16);
@@ -74,7 +73,13 @@ public class ModelTinbot extends ModelBase {
 
 	}
 
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, Entity par6Entity) {
-    	
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+    	super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+		this.head.rotateAngleY = f4;
+    	this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+    	this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+    	this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+    	this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+
 	}
 }

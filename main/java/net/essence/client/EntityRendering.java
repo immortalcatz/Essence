@@ -121,9 +121,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityDynaster.class, new RenderModMob(new ModelDynaster(), tex.dynaster));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGolder.class, new RenderModMob(new ModelGolder(), tex.golder));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCrystalCluster.class, new RenderModMob(new ModelCrystalCluster(), tex.crystalCluster));
-		RenderingRegistry.registerEntityRenderingHandler(EntitySilverbot.class, new RenderModMob(new ModelSilverbot(), tex.silverbot));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGoldbot.class, new RenderModMob(new ModelGoldbot(), tex.goldbot));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGolditeMage.class, new RenderModMob(new ModelMage(), tex.golditeMage));
-		RenderingRegistry.registerEntityRenderingHandler(EntityTinbot.class, new RenderModMob(new ModelTinbot(), tex.tinbot));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySilverbot.class, new RenderModMob(new ModelSilverbot(), tex.tinbot));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShimmerer.class, new RenderModMob(new ModelShimmerer(), tex.shimmerer));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderLeaper.class, new RenderModMob(new ModelEnderLeaper(), tex.enderLeaper));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrightener.class, new RenderModMob(new ModelFrightener(), tex.frightener));

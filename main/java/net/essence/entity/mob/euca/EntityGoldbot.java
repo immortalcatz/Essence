@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityTinbot extends EntityModMob {
+public class EntityGoldbot extends EntityModMob {
 
-	public EntityTinbot(World par1World) {
+	public EntityGoldbot(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(0.7F, 1.2F);
@@ -17,12 +17,12 @@ public class EntityTinbot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.tinbotDamage;
+		return s.silverbotDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.tinbotHealth;
+		return s.silverbotHealth;
 	}
 
 	@Override
@@ -45,8 +45,6 @@ public class EntityTinbot extends EntityModMob {
 		if(rand.nextInt(32) == 0) dropItem(EssenceItems.silverClump, 1);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(37) == 0) dropItem(EssenceItems.silverClump, 4);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(60) == 0) dropItem(EssenceItems.gateKeys, 4);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(60) == 0) dropItem(EssenceItems.metalDisk, 1);
 		super.dropFewItems(b, j);
