@@ -303,7 +303,7 @@ public class EssenceBlocks {
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable");
 	public static final Block bossAltar = new BlockMod("bossAltar");
 	
-	public static final Block tinbotSpawner = new BlockModSpawner("tinbotSpawner", "tinbot");
+	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "goldbot");
 	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "silverbot");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");

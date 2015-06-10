@@ -17,12 +17,12 @@ public class EntityGoldbot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.silverbotDamage;
+		return MobStats.silverbotDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.silverbotHealth;
+		return MobStats.silverbotHealth;
 	}
 
 	@Override
@@ -42,9 +42,11 @@ public class EntityGoldbot extends EntityModMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(32) == 0) dropItem(EssenceItems.silverClump, 1);
+		if(rand.nextInt(20) == 0) dropItem(EssenceItems.silverClump, 1);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(37) == 0) dropItem(EssenceItems.silverClump, 4);
+		if(rand.nextInt(40) == 0) dropItem(EssenceItems.silverClump, 4);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(60) == 0) dropItem(EssenceItems.gateKeys, 4);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(60) == 0) dropItem(EssenceItems.metalDisk, 1);
 		super.dropFewItems(b, j);

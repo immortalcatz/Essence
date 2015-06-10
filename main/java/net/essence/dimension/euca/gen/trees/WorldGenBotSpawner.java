@@ -14,7 +14,7 @@ public class WorldGenBotSpawner extends WorldGenerator {
 	public boolean generate(World w, Random r, BlockPos pos) {
 		int x = pos.getX() - 3, y = pos.getY() -1, z = pos.getZ() - 1;
 		int height = r.nextInt(10) + 10;
-		WorldGenAPI.addRectangle(1, 1, 1, w, x + 3, y + height + 2, z + 1, EssenceBlocks.tinbotSpawner);
+		WorldGenAPI.addRectangle(1, 1, 1, w, x + 3, y + height + 2, z + 1, EssenceBlocks.goldbotSpawner);
 		WorldGenAPI.addRectangle(1, 1, 1, w, x + 3, y + height + 3, z + 1, EssenceBlocks.silverbotSpawner);
 		WorldGenAPI.addRectangle(1, 1, height + 1, w, x + 3, y + 1, z + 1, EssenceBlocks.eucaBricks);
 		WorldGenAPI.addRectangle(3, 1, height, w, x + 2, y + 1, z + 1, EssenceBlocks.eucaBricks);

@@ -85,6 +85,8 @@ public class ModelAlloyMender extends ModelBase {
 		this.head.rotateAngleX= f4 / 57.29578f;
 		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
 		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+		this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 	}
 
 }
