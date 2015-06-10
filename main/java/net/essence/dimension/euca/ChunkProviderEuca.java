@@ -239,26 +239,24 @@ public class ChunkProviderEuca implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(255) + 1;
-			new WorldGenSmeltery().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) new WorldGenSmeltery().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 
 		for(times = 0; times < 1; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(255) + 1;
-			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) {
-				new WorldGenBotSpawner().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-			}
+			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) new WorldGenBotSpawner().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 
-		/*for(times = 0; times < 200; times++) {
+		for(times = 0; times < 200; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(255) + 1;
 			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) {
 				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
-		}*/
+		}
 	}
 	
 	public boolean isBlockTop(int x, int y, int z, Block grass) {
