@@ -235,24 +235,24 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16) + 8;
 		z = z1 + this.rand.nextInt(16) + 8;
 
-		for(times = 0; times < 1; times++) {
+		for(times = 0; times < 10; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			int yCoord = rand.nextInt(255) + 1;
+			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) new WorldGenSmeltery().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 
 		for(times = 0; times < 1; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			int yCoord = rand.nextInt(255) + 1;
+			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) new WorldGenBotSpawner().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 
-		for(times = 0; times < 200; times++) {
+		for(times = 0; times < 100; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			int yCoord = rand.nextInt(255) + 1;
+			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, EssenceBlocks.eucaGrass)) {
 				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
