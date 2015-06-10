@@ -294,7 +294,6 @@ public class EssenceBlocks {
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", 0.5F);
 
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin");
-	public static final Block gemBlock = new BlockMod("gemBlock", 1F);
 	public static final Block cloud = new BlockCloud("cloud");
 	
 	public static final Block brisonBlocks = new BlockBrison();

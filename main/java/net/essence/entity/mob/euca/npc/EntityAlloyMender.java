@@ -2,12 +2,7 @@ package net.essence.entity.mob.euca.npc;
 
 import net.essence.EssenceItems;
 import net.essence.client.GuiHandler.GuiIDs;
-import net.essence.items.ItemPresent;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -42,8 +37,10 @@ public class EntityAlloyMender extends EntityModVillager {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.shimmerdust, 64), new ItemStack(EssenceItems.metalDisk, 1), new ItemStack(EssenceItems.royalBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 15), new ItemStack(EssenceItems.goldClump, 15), new ItemStack(EssenceItems.royalBlade, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 10), new ItemStack(EssenceItems.goldClump, 10), new ItemStack(EssenceItems.royalKnife, 15)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.celestiumIngot, 15), new ItemStack(EssenceItems.mekyumIngot, 10), new ItemStack(EssenceItems.celekiumBattleaxe, 1)));
