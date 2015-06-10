@@ -75,6 +75,14 @@ public class BossTickHandler {
 			imageY = 141;
 			barX = -5;
 			r = set("sentryKing");
+		case MobStats.thunderbirdBossID:
+			imageY = 141;
+			barX = -5;
+			r = set("thunderbird");
+		case MobStats.loggerBossID:
+			imageY = 141;
+			barX = -5;
+			r = set("logger");
 		}
 
 		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {
