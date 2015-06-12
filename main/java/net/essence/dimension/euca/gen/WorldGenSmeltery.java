@@ -2,18 +2,23 @@ package net.essence.dimension.euca.gen;
 
 import java.util.Random;
 
+import com.google.common.collect.Lists;
+
 import net.essence.EssenceBlocks;
+import net.essence.EssenceItems;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
-import net.essence.entity.mob.overworld.npc.EntityBlacksmith;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemDoor;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.slayer.api.worldgen.WorldGenAPI;
 
 public class WorldGenSmeltery extends WorldGenerator {
+	
+	
+	private static WeightedRandomChestContent[] loot = {new WeightedRandomChestContent(EssenceItems.metalDisk, 0, 1, 5, 10), new WeightedRandomChestContent(EssenceItems.celekiumBattleaxe, 0, 1, 1, 1), new WeightedRandomChestContent(EssenceItems.celestiteBattleaxe, 0, 1, 1, 2), new WeightedRandomChestContent(EssenceItems.storumBattleaxe, 0, 1, 1, 3), new WeightedRandomChestContent(EssenceItems.bronzedBattleaxe, 0, 1, 1, 4), new WeightedRandomChestContent(EssenceItems.royalBlade, 0, 1, 1, 5), new WeightedRandomChestContent(EssenceItems.royalKnife, 0, 10, 15, 5), new WeightedRandomChestContent(EssenceItems.royalBow, 0, 1, 1, 5), new WeightedRandomChestContent(EssenceItems.golderDust, 0, 1, 10, 32), new WeightedRandomChestContent(EssenceItems.goldClump, 0, 1, 5, 32)};
+	
 
 	public boolean locationIsValidSpawn(World w, int x, int y, int z) {
 		for(int i = 0; i < 11; i++) {
@@ -118,9 +123,22 @@ public class WorldGenSmeltery extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 2, y + 0, z + 10), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 2), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 5), Blocks.chest.getStateFromMeta(5));
+		
+		TileEntityChest te = (TileEntityChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 5));
+		if(te != null) {
+			WeightedRandomChestContent.generateChestContents(r, Lists.newArrayList(loot), te, 4);
+		}
+		
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 6), Blocks.chest.getStateFromMeta(5));
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 8), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 9), Blocks.chest.getStateFromMeta(5));
+		
+		TileEntityChest te2 = (TileEntityChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 9));
+		if(te2 != null) {
+			System.out.println("HEY BB");
+			WeightedRandomChestContent.generateChestContents(r, Lists.newArrayList(loot), te2, 12);
+		}
+		
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 10), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 2, z + 2), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 2, z + 10), EssenceBlocks.eucaBricks.getDefaultState());
