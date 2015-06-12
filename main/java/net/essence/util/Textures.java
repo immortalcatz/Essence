@@ -127,6 +127,7 @@ public class Textures {
     public static final ResourceLocation thunderbird = addMob("thunderbird");
     public static final ResourceLocation templeGuardian = addMob("templeGuardian");
     public static final ResourceLocation logger = addMob("logger");
+    public static final ResourceLocation corallator = addMob("corallator");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

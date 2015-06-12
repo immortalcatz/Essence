@@ -83,6 +83,10 @@ public class BossTickHandler {
 			imageY = 141;
 			barX = -5;
 			r = set("logger");
+		case MobStats.corallatorBossID:
+			imageY = 141;
+			barX = -5;
+			r = set("corallator");
 		}
 
 		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {

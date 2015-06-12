@@ -407,7 +407,7 @@ public class WorldGenSmeltery extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 7, y + 5, z + 9), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 7, y + 5, z + 10), EssenceBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 7, y + 5, z + 11), EssenceBlocks.eucaBricks.getDefaultState());
-		
+
 		if(!w.isRemote) {
 			EntityAlloyMender smith = new EntityAlloyMender(w);
 			smith.setLocationAndAngles(x + 4, y + 2, z + 4, 0.0F, 0.0F);

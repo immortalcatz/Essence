@@ -15,7 +15,8 @@ public class MobStats {
 	soulWatcherBossID = 7, 
 	sentryKingBossID = 8, 
 	thunderbirdBossID = 9, 
-	loggerBossID = 10;
+	loggerBossID = 10,
+	corallatorBossID = 11;
 	
 	//End
 	public static double enderLeaperHealth = 20.0D, enderLeaperDamage = 5.0D, enderLeaperSpeed = normalSpeed, enderLeaperFollowRange = follow;
@@ -104,7 +105,8 @@ public class MobStats {
 	public static double sentryKingHealth = 1000.0D, sentryKingDamage = 20.0D;
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
-	public static double thunderbirdHealth = 850.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
-	public static double loggerHealth = 850.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
+	public static double thunderbirdHealth = 950.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
+	public static double loggerHealth = 1500.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
+	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
 	
 }
