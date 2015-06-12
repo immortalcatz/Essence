@@ -144,7 +144,6 @@ public class WorldGenSmeltery extends WorldGenerator {
 		
 		TileEntityChest te2 = (TileEntityChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 9));
 		if(te2 != null) {
-			System.out.println("HEY BB");
 			WeightedRandomChestContent.generateChestContents(r, Lists.newArrayList(loot), te2, 12);
 		}
 		
