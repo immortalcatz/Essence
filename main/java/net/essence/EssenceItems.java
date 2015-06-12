@@ -2,24 +2,14 @@ package net.essence;
 
 import java.util.ArrayList;
 
-import net.essence.*;
-import net.essence.client.GuiHandler.GuiIDs;
-import net.essence.client.server.DarkEnergyBar;
-import net.essence.client.server.EssenceBar;
 import net.essence.entity.projectile.*;
 import net.essence.enums.EnumKnowledge;
-import net.essence.enums.EnumSounds;
 import net.essence.items.*;
-import net.essence.items.ItemEgg;
 import net.essence.util.*;
-import net.minecraft.block.Block;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
-import net.minecraft.world.gen.ChunkProviderFlat;
 import net.minecraftforge.common.util.EnumHelper;
-import net.slayer.api.*;
 import net.slayer.api.item.*;
 
 public class EssenceItems {
@@ -336,10 +326,10 @@ public class EssenceItems {
 	public static final Item treehuggersLegs = new ItemModArmor(EnumArmor.TREEHUGGERS, LEGS);
 	public static final Item treehuggersBoots = new ItemModArmor(EnumArmor.TREEHUGGERS, BOOTS);
 	
-	public static final Item charSkullHelmet = new ItemModArmor(EnumArmor.CHAR_SKULL, HEAD);
-	public static final Item charSkullChest = new ItemModArmor(EnumArmor.CHAR_SKULL, BODY);
-	public static final Item charSkullLegs = new ItemModArmor(EnumArmor.CHAR_SKULL, LEGS);
-	public static final Item charSkullBoots = new ItemModArmor(EnumArmor.CHAR_SKULL, BOOTS);
+	public static final Item charskullHelmet = new ItemModArmor(EnumArmor.CHAR_SKULL, HEAD);
+	public static final Item charskullChest = new ItemModArmor(EnumArmor.CHAR_SKULL, BODY);
+	public static final Item charskullLegs = new ItemModArmor(EnumArmor.CHAR_SKULL, LEGS);
+	public static final Item charskullBoots = new ItemModArmor(EnumArmor.CHAR_SKULL, BOOTS);
 	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", EssenceToolMaterial.DAWN_BREAKER);

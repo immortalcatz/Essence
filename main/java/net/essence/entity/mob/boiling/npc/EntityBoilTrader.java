@@ -25,15 +25,16 @@ public class EntityBoilTrader extends EntityModVillager {
 		return GuiIDs.BOIL_TRADER;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.flamingBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.boilingBlade, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.ash, 10), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.moltenKnife, 15)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charSkullBoots, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charskullHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charskullChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charskullLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.boilingSkull, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.charskullBoots, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.snakeFlesh, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.snakeskinHelmet, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.snakeFlesh, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.snakeskinChest, 1)));
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.snakeFlesh, 15), new ItemStack(EssenceItems.boilPowder, 10), new ItemStack(EssenceItems.snakeskinLegs, 1)));
