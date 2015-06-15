@@ -15,6 +15,7 @@ import net.essence.entity.mob.euca.npc.*;
 import net.essence.entity.mob.frozen.*;
 import net.essence.entity.mob.frozen.npc.*;
 import net.essence.entity.mob.overworld.*;
+import net.essence.entity.mob.overworld.EntityWraith;
 import net.essence.entity.mob.overworld.npc.*;
 import net.essence.entity.mob.overworld.underground.*;
 import net.essence.entity.projectile.*;
@@ -95,6 +96,7 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityCaveMage.class, "caveMage");
 		SlayerAPI.registerOverworldMob(EntityCavurn.class, "cavurn");
 		SlayerAPI.registerOverworldMob(EntityCaveling.class, "caveling");
+		SlayerAPI.registerOverworldMob(EntityWraith.class, "wraith");
 		SlayerAPI.registerOverworldMob(EntityStonewalker.class, "stonewalker");
 	}
 

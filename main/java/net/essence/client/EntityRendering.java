@@ -14,6 +14,7 @@ import net.essence.client.render.model.mob.end.*;
 import net.essence.client.render.model.mob.euca.*;
 import net.essence.client.render.model.mob.frozen.*;
 import net.essence.client.render.model.mob.overworld.*;
+import net.essence.client.render.model.mob.overworld.ModelWraith;
 import net.essence.client.render.model.mob.overworld.underground.*;
 import net.essence.entity.*;
 import net.essence.entity.mob.boiling.*;
@@ -30,6 +31,7 @@ import net.essence.entity.mob.euca.npc.*;
 import net.essence.entity.mob.frozen.*;
 import net.essence.entity.mob.frozen.npc.*;
 import net.essence.entity.mob.overworld.*;
+import net.essence.entity.mob.overworld.EntityWraith;
 import net.essence.entity.mob.overworld.npc.*;
 import net.essence.entity.mob.overworld.underground.*;
 import net.essence.entity.projectile.*;
@@ -140,6 +142,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityShiveringShrieker.class, new RenderModMob(new ModelShiveringShrieker(), Textures.shiveringShrieker));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenFrostbiter.class, new RenderModMob(new ModelFrozenFrostbiter(), Textures.frozenFrostbiter));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightVillager.class, new RenderModMob(new ModelStarlightVillager(), Textures.starlightVillager));
+		RenderingRegistry.registerEntityRenderingHandler(EntityWraith.class, new RenderModMob(new ModelWraith(), Textures.wraith));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

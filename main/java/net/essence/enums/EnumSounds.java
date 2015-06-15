@@ -58,6 +58,9 @@ public enum EnumSounds {
 	SHIMMERER("essence:shimmerer"),
 	SHIMMERER_HURT("essence:shimmererHurt"),
 	SHIMMERER_DEATH("essence:shimmererDeath"),
+	WRAITH("essence:wraith"),
+	WRAITH_DEATH("essence:wraithDeath"),
+	WRAITH_HURT("essence:wraithHurt"),
 	EMPTY("");
 	
 	private String sound;
