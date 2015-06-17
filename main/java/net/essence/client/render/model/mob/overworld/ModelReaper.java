@@ -122,5 +122,7 @@ public class ModelReaper extends ModelBase {
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		this.Head.rotateAngleY = f4 / (180F / (float)Math.PI);
 		this.Head.rotateAngleX = f5 / (180F / (float)Math.PI);
+		this.Hood.rotateAngleY = f4 / (180F / (float)Math.PI);
+		this.Hood.rotateAngleX = f5 / (180F / (float)Math.PI);
 	}
 }
