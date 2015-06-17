@@ -1,5 +1,6 @@
 package net.essence.entity.mob.overworld;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.init.Items;
@@ -53,6 +54,18 @@ public class EntityWraith extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return Items.spider_eye;
+		return EssenceItems.demonicBone;
+		
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.demonicDust, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(10) == 0) dropItem(EssenceItems.demonicDust, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(20) == 0) dropItem(EssenceItems.demonicDust, 5);
+		super.dropFewItems(b, j);
+		
 	}
 }

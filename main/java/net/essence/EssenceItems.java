@@ -95,6 +95,8 @@ public class EssenceItems {
 	public static final Item shimmerdust = new ItemMod("shimmerdust");
 	public static final Item royalDisk = new ItemMod("royalDisk");
 	public static final Item metalDisk = new ItemMod("metalDisk");
+	public static final Item demonicDust = new ItemMod("demonicDust");
+	public static final Item demonicBone = new ItemMod("demonicBone");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");

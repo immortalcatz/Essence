@@ -35,11 +35,8 @@ import net.essence.entity.mob.overworld.EntityWraith;
 import net.essence.entity.mob.overworld.npc.*;
 import net.essence.entity.mob.overworld.underground.*;
 import net.essence.entity.projectile.*;
-import net.essence.entity.projectile.*;
 import net.essence.util.*;
-import net.minecraft.client.*;
 import net.minecraft.client.model.*;
-import net.minecraft.client.renderer.tileentity.*;
 import net.minecraftforge.fml.client.registry.*;
 
 public class EntityRendering {
@@ -187,5 +184,21 @@ public class EntityRendering {
 
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.celestiumOre.getRenderType(), new OreRenderer());
 		//RenderingRegistry.registerBlockHandler(EssenceBlocks.mossyEssenceStone.getRenderType(), new OtherBlockRenderer());
+	}
+
+	public static MobStats getStat() {
+		return stat;
+	}
+
+	public static void setStat(MobStats stat) {
+		EntityRendering.stat = stat;
+	}
+
+	public static Textures getTex() {
+		return tex;
+	}
+
+	public static void setTex(Textures tex) {
+		EntityRendering.tex = tex;
 	}
 }
