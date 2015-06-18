@@ -1,5 +1,6 @@
 package net.essence.entity.mob.overworld;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.init.Items;
@@ -51,6 +52,6 @@ public class EntityReaper extends EntityModMob {
 	
 	@Override
 	public Item getItemDropped() {
-		return Items.coal;
+		return EssenceItems.withicDust;
 	}
 }
