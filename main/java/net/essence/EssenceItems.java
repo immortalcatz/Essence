@@ -98,6 +98,16 @@ public class EssenceItems {
 	public static final Item demonicDust = new ItemMod("demonicDust");
 	public static final Item demonicBone = new ItemMod("demonicBone");
 	public static final Item withicDust = new ItemMod("withicDust");
+	public static final Item cloudiaOrb = new ItemMod("cloudiaOrb");
+	public static final Item fluffyFeather = new ItemMod("fluffyFeather");
+	public static final Item golemChunk = new ItemMod("golemChunk");
+	public static final Item luniteChunk = new ItemMod("luniteChunk");
+	public static final Item corbaStick = new ItemMod("corbaStick");
+	public static final Item hongoshroom = new ItemMod("hongoshroom");
+	public static final Item spyclopseEye = new ItemMod("spyclopseEye");
+	public static final Item caveCrystal = new ItemMod("caveCrystal");
+	public static final Item caveDust = new ItemMod("caveDust");
+	public static final Item stoneClump = new ItemMod("stoneClump");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust");
@@ -235,6 +245,8 @@ public class EssenceItems {
 	public static final Item fluffyBlade = new ItemModSword("fluffyBlade", EssenceToolMaterial.FLUFFY_BLADE);
 	public static final Item golemSword = new ItemModSword("golemSword", EssenceToolMaterial.GOLEM_SWORD);
 	public static final Item thunderblade = new ItemModSword("thunderblade", EssenceToolMaterial.THUNDERBLADE);
+	public static final Item sentrySword = new ItemModSword("sentrySword", EssenceToolMaterial.SENTRY_SWORD);
+	public static final Item crystalBlade = new ItemModSword("crystalBlade", EssenceToolMaterial.CRYSTAL_BLADE);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem");
@@ -526,9 +538,14 @@ public class EssenceItems {
 	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", 10F, EntityFrostbittenPiercer.class);
 	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", 9F, EntityFrostyPiercer.class);
 	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", 10F, EntityFrostyPiercer.class);
-	public static final Item moltenKnife = new ItemPiercer("moltenKnife", 10F, EntityMoltenKnife.class);
-	public static final Item royalKnife = new ItemPiercer("royalKnife", 14F, EntityRoyalKnife.class);
-	public static final Item aquaticKnife = new ItemPiercer("aquaticKnife", 6F, EntityRoyalKnife.class);
+	public static final Item skyPiercer = new ItemPiercer("skyPiercer", 10F, EntityFrostyPiercer.class);
+	
+	public static final Item moltenKnife = new ItemPiercer("moltenKnife", 10F, EntityFrostyPiercer.class);
+	public static final Item royalKnife = new ItemPiercer("royalKnife", 14F, EntityFrostyPiercer.class);
+	public static final Item aquaticKnife = new ItemPiercer("aquaticKnife", 6F, EntityFrostyPiercer.class);
+	public static final Item bloodKnife = new ItemPiercer("bloodKnife", 6F, EntityFrostyPiercer.class);
+	public static final Item charredKnife = new ItemPiercer("charredKnife", 6F, EntityFrostyPiercer.class);
+	public static final Item sizzlingKnife = new ItemPiercer("sizzlingKnife", 6F, EntityFrostyPiercer.class);
 	
 	public static final Item weakPower = new ItemPower("weakPower", 10F);
 
