@@ -58,12 +58,15 @@ public class EntityCaveling extends EntityModMob {
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-
-		if(rand.nextInt(20) == 0) dropItem(EssenceItems.sapphire, 4);
+		if(rand.nextInt(30) == 0) dropItem(EssenceItems.caveCrystal, 1);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(20) == 0) dropItem(EssenceItems.shadiumIngot, 4);
+		if(rand.nextInt(2) == 0) dropItem(EssenceItems.caveDust, 1);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(20) == 0) dropItem(EssenceItems.luniumIngot, 4);
+		if(rand.nextInt(4) == 0) dropItem(EssenceItems.caveDust, 3);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(3) == 0) dropItem(EssenceItems.stoneClump, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.caveDust, 6);
 		super.dropFewItems(b, j);
 	}
 }

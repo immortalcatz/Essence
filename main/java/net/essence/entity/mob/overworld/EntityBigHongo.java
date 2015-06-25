@@ -1,5 +1,6 @@
 package net.essence.entity.mob.overworld;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.init.Blocks;
@@ -43,6 +44,6 @@ public class EntityBigHongo extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.brown_mushroom);
+		return EssenceItems.hongoShroom;
 	}
 }

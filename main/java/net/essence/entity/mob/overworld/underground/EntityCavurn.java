@@ -90,4 +90,14 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 	public Item getItemDropped() {
 		return null;
 	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(30) == 0) dropItem(EssenceItems.caveCrystal, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(2) == 0) dropItem(EssenceItems.caveDust, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(4) == 0) dropItem(EssenceItems.caveDust, 3);
+		super.dropFewItems(b, j);
+	}
 }
