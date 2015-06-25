@@ -103,7 +103,7 @@ public class EssenceItems {
 	public static final Item golemChunk = new ItemMod("golemChunk");
 	public static final Item luniteChunk = new ItemMod("luniteChunk");
 	public static final Item corbaStick = new ItemMod("corbaStick");
-	public static final Item hongoshroom = new ItemMod("hongoshroom");
+	public static final Item hongoShroom = new ItemMod("hongoShroom");
 	public static final Item spyclopseEye = new ItemMod("spyclopseEye");
 	public static final Item caveCrystal = new ItemMod("caveCrystal");
 	public static final Item caveDust = new ItemMod("caveDust");
