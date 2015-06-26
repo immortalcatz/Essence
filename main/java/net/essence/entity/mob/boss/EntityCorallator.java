@@ -7,6 +7,7 @@ import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
@@ -29,7 +30,7 @@ public class EntityCorallator extends EntityEssenceBoss {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.corallatorDamage;
+		return MobStats.corallatorDamage;
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public class EntityCorallator extends EntityEssenceBoss {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.corallatorHealth;
+		return MobStats.corallatorHealth;
 	}
 
 	@Override
@@ -92,15 +93,14 @@ public class EntityCorallator extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.eucaPortalGem;
+		return EssenceItems.depthsPortalGem;
 	}
-
+	
 	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
-		this.dropItem(EssenceItems.calciaSword, 1);
-
-		//if(rand.nextInt(1) == 0)
-		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(0) == 0) dropItem(EssenceItems.coreMender, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.coreExpender, 1);
+		super.dropFewItems(b, j);
+		}
 	}
-}

@@ -1,5 +1,6 @@
 package net.essence.entity.mob.boss;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityMagmaFireball;
 import net.essence.enums.EnumSounds;
@@ -132,13 +133,20 @@ public class EntityBlazier extends EntityEssenceBoss {
 	}
 
 	@Override
-	protected void dropFewItems(boolean b, int i) {
-		if(b) {
-			int j = this.rand.nextInt(2 + i);
-			for (int k = 0; k < j; ++k) {
-				this.dropItem(Items.blaze_rod, 1);
-			}
-		}
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(0) == 0) dropItem(EssenceItems.sizzlerSword, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.blazingBow, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(2) == 0) dropItem(EssenceItems.flameHelmet, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(3) == 0) dropItem(EssenceItems.flameBoots, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(4) == 0) dropItem(EssenceItems.flameLegs, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.flameChest, 1);
+		super.dropFewItems(b, j);
+		
 	}
 
 	public boolean isFlying() {

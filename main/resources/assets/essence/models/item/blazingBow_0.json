@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/darkEnforcerBow_1"
+		"layer0": "essence:items/blazingBow_0"
 	},
 	"display": {
 		"thirdperson": {

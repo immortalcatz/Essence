@@ -407,6 +407,7 @@ public class EssenceItems {
 	public static final Item starlightBow = new ItemModBow("starlightBow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item wastefulBow = new ItemModBow("wastefulBow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item flamingBow = new ItemModBow("flamingBow", 384, essenceArrow, EntityFlamingArrow.class);
+	public static final Item blazingBow = new ItemModBow("blazingBow", 384, essenceArrow, EntityFlamingArrow.class);
 	public static final Item darkEnforcer = new ItemModBow("darkEnforcer", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item depthsBow = new ItemModBow("depthsBow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item frostbittenBow = new ItemModBow("frostbittenBow", 384, essenceArrow, EntityEssenceArrow.class);
