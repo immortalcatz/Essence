@@ -98,9 +98,9 @@ public class EntityCorallator extends EntityEssenceBoss {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(0) == 0) dropItem(EssenceItems.coreMender, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(1) == 0) dropItem(EssenceItems.coreExpender, 1);
-		super.dropFewItems(b, j);
+		switch(rand.nextInt(2)) {
+		case 0: dropItem(EssenceItems.coreMender, 1); break;
+		case 1: dropItem(EssenceItems.coreExpender, 1); break;
 		}
 	}
+}

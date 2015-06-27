@@ -86,7 +86,13 @@ public class EntityThunderbird extends EntityEssenceBoss {
 	}
 
 	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
+	protected void dropFewItems(boolean b, int j) {
+		switch(rand.nextInt(4)) {
+		case 0: dropItem(EssenceItems.rocSword, 1); break;
+		case 1: dropItem(EssenceItems.swordOfTheThunderbird, 1); break;
+		case 2: dropItem(EssenceItems.thunderbirdBattleaxe, 1); break;
+		case 3: dropItem(EssenceItems.rocsWing, 1); break;
+		
+		}
 	}
 }

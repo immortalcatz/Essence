@@ -85,7 +85,11 @@ public class EntityLogger extends EntityEssenceBoss {
 	}
 
 	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(EssenceItems.eucaPortalGem, 6 + rand.nextInt(4));
+	protected void dropFewItems(boolean b, int j) {
+		switch(rand.nextInt(3)) {
+		case 0: dropItem(EssenceItems.naturesBlade, 1); break;
+		case 1: dropItem(EssenceItems.loggersSword, 1); break;
+		case 2: dropItem(EssenceItems.loggersBow, 1); break;
+		}
 	}
 }
