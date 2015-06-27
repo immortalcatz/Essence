@@ -134,19 +134,13 @@ public class EntityBlazier extends EntityEssenceBoss {
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(0) == 0) dropItem(EssenceItems.sizzlerSword, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(1) == 0) dropItem(EssenceItems.blazingBow, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(2) == 0) dropItem(EssenceItems.flameHelmet, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(3) == 0) dropItem(EssenceItems.flameBoots, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(4) == 0) dropItem(EssenceItems.flameLegs, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(5) == 0) dropItem(EssenceItems.flameChest, 1);
-		super.dropFewItems(b, j);
-		
+		int num = rand.nextInt(6); 
+		if(num == 0)dropItem(EssenceItems.sizzlerSword, 1);
+		else if(num == 1)dropItem(EssenceItems.blazingBow, 1);
+		else if(num == 2)dropItem(EssenceItems.flameHelmet, 1);
+		else if(num == 3)dropItem(EssenceItems.flameLegs, 1);
+		else if(num == 4)dropItem(EssenceItems.flameChest, 1);
+		else if(num == 5)dropItem(EssenceItems.flameBoots, 1);
 	}
 
 	public boolean isFlying() {
@@ -162,12 +156,12 @@ public class EntityBlazier extends EntityEssenceBoss {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.BlazierDamage;
+		return MobStats.BlazierDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.BlazierHealth;
+		return MobStats.BlazierHealth;
 	}
 
 	@Override
