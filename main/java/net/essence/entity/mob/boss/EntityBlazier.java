@@ -134,13 +134,14 @@ public class EntityBlazier extends EntityEssenceBoss {
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		switch(rand.nextInt(6)) {
+		switch(rand.nextInt(7)) {
 		case 0: dropItem(EssenceItems.sizzlerSword, 1); break;
 		case 1: dropItem(EssenceItems.blazingBow, 1); break;
 		case 2: dropItem(EssenceItems.flameHelmet, 1); break;
 		case 3: dropItem(EssenceItems.flameLegs, 1); break;
 		case 4: dropItem(EssenceItems.flameChest, 1); break;
 		case 5: dropItem(EssenceItems.flameBoots, 1); break;
+		case 6: dropItem(EssenceItems.sizzlingKnife, 128); break;
 		}
 	}
 
