@@ -41,15 +41,14 @@ public class MobStats {
 	public static double mobWraithHealth = 35.0D, mobWraithDamage = 8.0D, mobWraithSpeed = normalSpeed, mobWraithFollowRange = follow;
 	
 	//Frozen 
-	@SuppressWarnings("fix these")
 	public static double shattererHealth = 35.0D, shattererSpeed = normalSpeed, shattererFollowRange = follow;
-	public static double frozenTrollHealth = 20.0D, frozenTrollDamage = 5.0D, frozenTrollSpeed = normalSpeed, frozenTrollFollowRange = follow;
-	public static double permafraustHealth = 20.0D, permafraustDamage = 5.0D, permafraustSpeed = normalSpeed, permafraustFollowRange = follow;
-	public static double shiveringBushwalkerHealth = 20.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
+	public static double frozenTrollHealth = 50.0D, frozenTrollDamage = 5.0D, frozenTrollSpeed = normalSpeed, frozenTrollFollowRange = follow;
+	public static double permafraustHealth = 50.0D, permafraustDamage = 5.0D, permafraustSpeed = normalSpeed, permafraustFollowRange = follow;
+	public static double shiveringBushwalkerHealth = 50.0D, shiveringBushwalkerDamage = 5.0D, shiveringBushwalkerSpeed = normalSpeed, shiveringBushwalkerFollowRange = follow;
 	public static double crystalClusterHealth = 20.0D, crystalClusterDamage = 5.0D, crystalClusterSpeed = normalSpeed, crystalClusterRange = follow;
-	public static double shiverwolfHealth = 30.0D, shiverwolfHealthTamed = 50.0D, shiverwolfDamage = 8.0D, shiverwolfSpeed = normalSpeed, shiverwolfFollowRange = follow;
-	public static double shiveringShriekerHealth = 20.0D, shiveringShriekerDamage = 5.0D, shiveringShriekerSpeed = normalSpeed, shiveringShriekerFollowRange = follow;
-	public static double frozenFrostbiterHealth = 20.0D, frozenFrostbiterDamage = 5.0D, frozenFrostbiterSpeed = normalSpeed, frozenFrostbiterFollowRange = follow;
+	public static double shiverwolfHealth = 20.0D, shiverwolfHealthTamed = 100.0D, shiverwolfDamage = 8.0D, shiverwolfSpeed = normalSpeed, shiverwolfFollowRange = follow;
+	public static double shiveringShriekerHealth = 50.0D, shiveringShriekerDamage = 5.0D, shiveringShriekerSpeed = normalSpeed, shiveringShriekerFollowRange = follow;
+	public static double frozenFrostbiterHealth = 50.0D, frozenFrostbiterDamage = 5.0D, frozenFrostbiterSpeed = normalSpeed, frozenFrostbiterFollowRange = follow;
 	
 	//Boil
 	public static double magmaGiantHealth = 50.0D, magmaGiantDamage = 9.0D, magmaGiantSpeed = normalSpeed, magmaGiantFollowRange = follow;
@@ -86,28 +85,29 @@ public class MobStats {
 	public static double rocHealth = 75.0D, rocHealthTamed = 75.0D, rocDamage = 13.0D, rocDamageTamed = 13.0D, rocSpeed = normalSpeed, rocFollowRange = follow;
 
 	//Corba
-	public static double overseerHealth = 90.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
-	public static double elderOverseerHealth = 90.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
+	public static double overseerHealth = 100.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
+	public static double elderOverseerHealth = 200.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;
 	public static double greenTordoHealth = 50.0D, greenTordoDamage = 10.0D, greenTordoSpeed = normalSpeed;
-	public static double leafBlowerHealth = 50.0D, leafBlowerDamage = 10.0D, leafBlowerSpeed = normalSpeed, leafBlowerFollowRange = follow;
-	public static double treeGolemHealth = 100.0D, treeGolemDamage = 10.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
-	public static double woodCreatureHealth = 20.0D, woodCreatureDamage = 5.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
+	public static double leafBlowerHealth = 140.0D, leafBlowerDamage = 10.0D, leafBlowerSpeed = normalSpeed, leafBlowerFollowRange = follow;
+	public static double treeGolemHealth = 150.0D, treeGolemDamage = 10.0D, treeGolemSpeed = normalSpeed, treeGolemFollowRange = follow;
+	public static double woodCreatureHealth = 100.0D, woodCreatureDamage = 5.0D, woodCreatureSpeed = normalSpeed, woodCreatureFollowRange = follow;
 	
 	//Cloudia
-	public static double cloudGhostHealth = 150.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;
-
+	public static double cloudGhostHealth = 200.0D, cloudGhostDamage = 13.0D, cloudGhostSpeed = normalSpeed, cloudGhostFollowRange = follow;
+	public static double starlightGolemHealth = 200.0D, starlightGolemDamage = 13.0D, starlightGolemSpeed = normalSpeed, starlightGolemFollowRange = follow;
+	
 	//Boss
 	public static double witheringBeastHealth = 400.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
 	public static double netherBeastHealth = 400.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
 	public static double calciaHealth = 400.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
 	public static double eudorHealth = 700.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
 	public static double fourfaHealth = 1000.0D, fourfaDamage = 10.0D, fourfaSpeed = normalSpeed, fourfaFollowRange = follow;
-	public static double BlazierHealth = 550.0D, BlazierDamage = 20.0D;
-	public static double sentryKingHealth = 1000.0D, sentryKingDamage = 20.0D;
+	public static double BlazierHealth = 800.0D, BlazierDamage = 20.0D;
+	public static double sentryKingHealth = 2500.0D, sentryKingDamage = 20.0D;
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
-	public static double thunderbirdHealth = 950.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
-	public static double loggerHealth = 1500.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
+	public static double thunderbirdHealth = 1600.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
+	public static double loggerHealth = 2000.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
 	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
 	
 }

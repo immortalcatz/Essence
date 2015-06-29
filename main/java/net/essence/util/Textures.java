@@ -124,6 +124,7 @@ public class Textures {
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
     public static final ResourceLocation starlightVillager = addMob("starlightVillager");
     public static final ResourceLocation cloudFlyer = addMob("cloudFlyer");
+    public static final ResourceLocation starlightGolem = addMob("starlightGolem");
     
     //Boss
     public static final ResourceLocation netherBeast = addMob("netherBeast");

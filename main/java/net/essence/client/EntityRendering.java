@@ -146,6 +146,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGoldwing.class, new RenderModMob(new ModelRoc(), Textures.goldwing));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShiverwing.class, new RenderModMob(new ModelRoc(), Textures.shiverwing));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTurducken.class, new RenderModMob(new ModelRoc(), Textures.turducken));
+		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightGolem.class, new RenderModMob(new ModelStarlightGolem(), Textures.starlightGolem));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

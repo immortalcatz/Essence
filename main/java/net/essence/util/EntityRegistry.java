@@ -165,6 +165,7 @@ public class EntityRegistry {
 	public static void registerCloudiaMobs() {
 		SlayerAPI.registerCloudiaMob(EntityCloudGhost.class, "cloudGhost");
 		SlayerAPI.registerCloudiaMob(EntityCloudFlyer.class, "cloudFlyer");
+		SlayerAPI.registerCloudiaMob(EntityStarlightGolem.class, "starlightGolem");
 	}
 
 	public static void registerNPCs() {

@@ -3,6 +3,7 @@ package net.essence.client.render.model.mob.cloudia;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class ModelStarlightVillager extends ModelBase {
 	    ModelRenderer head;
@@ -65,10 +66,12 @@ public class ModelStarlightVillager extends ModelBase {
 		model.rotateAngleY = y;
 		model.rotateAngleZ = z;
 	}
-
-	@Override
-	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+    	super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+    	this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+    	this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+    	this.leftfoot.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+    	this.rightfoot.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 	}
 
 }
