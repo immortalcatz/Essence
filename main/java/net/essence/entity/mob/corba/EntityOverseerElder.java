@@ -25,12 +25,6 @@ public class EntityOverseerElder extends EntityModFlying {
 	}
 
 	@Override
-	public void onUpdate() {
-        super.onUpdate();
-        if(!this.worldObj.isRemote && this.worldObj.getDifficulty() == EnumDifficulty.EASY) this.setDead();
-    }
-
-	@Override
 	public double setMaxHealth(MobStats s) {
 		return s.elderOverseerHealth;
 	}
