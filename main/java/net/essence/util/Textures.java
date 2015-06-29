@@ -43,6 +43,7 @@ public class Textures {
     public static final ResourceLocation spyclops = addMob("spyclops");
     public static final ResourceLocation boom = addMob("boom");
     public static final ResourceLocation boomArmor = addMob("boomArmor");
+    
    // public static final ResourceLocation wraith = addMob("wraith");
     public static final ResourceLocation bigHongo = addMob("bigHongo");
     public static final ResourceLocation mediumHongo = addMob("mediumHongo");
@@ -59,6 +60,7 @@ public class Textures {
     public static final ResourceLocation caveling = addMob("caveling");
     public static final ResourceLocation stonewalker = addMob("stonewalker");
     public static final ResourceLocation wraith = addMob("wraith");
+    public static final ResourceLocation turducken = addMob("turducken");
     
     //Euca
     public static final ResourceLocation insecto = addMob("insecto");
@@ -74,6 +76,7 @@ public class Textures {
     public static final ResourceLocation goldbot = addMob("goldbot");
     public static final ResourceLocation shimmerer = addMob("shimmerer");
     public static final ResourceLocation shimmererProjectile = addProjectile("shimmerer");
+    public static final ResourceLocation goldwing = addMob("goldwing");
 
     //Depths
     public static final ResourceLocation depthsBeast = addMob("depthsBeast");
@@ -90,6 +93,7 @@ public class Textures {
     public static final ResourceLocation overseer = addMob("overseer");
     public static final ResourceLocation overseerElder = addMob("overseerElder");
     public static final ResourceLocation natureMage = addMob("natureMage");
+    public static final ResourceLocation woodpecker = addMob("woodpecker");
     
     //Frozen
     public static final ResourceLocation frozenTroll = addMob("frozenTroll");
@@ -99,6 +103,7 @@ public class Textures {
     public static final ResourceLocation shiverwolf = addMob("shiverwolf");
     public static final ResourceLocation shiveringShrieker = addMob("shiveringShrieker");
     public static final ResourceLocation frozenFrostbiter = addMob("frozenFrostbiter");
+    public static final ResourceLocation shiverwing = addMob("shiverwing");
     
     //Boil
     public static final ResourceLocation magmaBlaze = addMob("magmaBlaze");
@@ -113,10 +118,12 @@ public class Textures {
     public static final ResourceLocation hellwing = addMob("hellwing");
     public static final ResourceLocation observer = addMob("observer");
     public static final ResourceLocation screamer = addMob("screamer");
+    public static final ResourceLocation phoenix = addMob("phoenix");
     
     //Cloudia
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
     public static final ResourceLocation starlightVillager = addMob("starlightVillager");
+    public static final ResourceLocation cloudFlyer = addMob("cloudFlyer");
     
     //Boss
     public static final ResourceLocation netherBeast = addMob("netherBeast");

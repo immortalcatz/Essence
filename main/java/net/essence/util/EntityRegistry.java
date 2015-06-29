@@ -98,21 +98,22 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityCaveling.class, "caveling");
 		SlayerAPI.registerOverworldMob(EntityWraith.class, "wraith");
 		SlayerAPI.registerOverworldMob(EntityStonewalker.class, "stonewalker");
+		SlayerAPI.registerOverworldMob(EntityTurducken.class, "turducken");
 	}
 
 	public static void registerBPMobs() {
-		SlayerAPI.registerBPMob(EntityMagmaGiant.class, "magmaGiant");
+		//SlayerAPI.registerBPMob(EntityAshHoarder.class, "ashHoarder");
+		//SlayerAPI.registerBPMob(EntityBurntAsh.class, "burntAsh");
+		//SlayerAPI.registerBPMob(EntityMagmaGiant.class, "magmaGiant");
+		//SlayerAPI.registerBPMob(EntityCrisp.class, "crisp");
+		//SlayerAPI.registerBPMob(EntityExposedFlame.class, "exposedFlame");
 		SlayerAPI.registerBPMob(EntityMagmaBlaze.class, "magmaBlaze");
-		SlayerAPI.registerBPMob(EntityCrisp.class, "crisp");
-		SlayerAPI.registerBPMob(EntityBurntMiner.class, "burntMiner");
-		SlayerAPI.registerBPMob(EntityExposedFlame.class, "exposedFlame");
 		SlayerAPI.registerBPMob(EntityBurningLight.class, "burningLight");
-		SlayerAPI.registerBPMob(EntityAshHoarder.class, "ashHoarder");
-		SlayerAPI.registerBPMob(EntityBurntAsh.class, "burntAsh");
 		SlayerAPI.registerBPMob(EntityFrightener.class, "frightener");
 		SlayerAPI.registerBPMob(EntityHellwing.class, "hellwing");
 		SlayerAPI.registerBPMob(EntityObserver.class, "observer");
 		SlayerAPI.registerBPMob(EntityScreamer.class, "screamer");
+		SlayerAPI.registerBPMob(EntityPhoenix.class, "phoenix");
 	}
 
 	public static void registerFLMobs() {
@@ -120,25 +121,26 @@ public class EntityRegistry {
 		SlayerAPI.registerFLMob(EntityFrozenTroll.class, "frozenTroll");
 		SlayerAPI.registerFLMob(EntityPermafraust.class, "permafraust");
 		SlayerAPI.registerFLMob(EntityShiveringBushwalker.class, "shiveringBushwalker");
-		SlayerAPI.registerFLMob(EntityLeafBlower.class, "leafBlower");
 		SlayerAPI.registerFLMob(EntityShiverwolf.class, "shiverwolf");
 		SlayerAPI.registerFLMob(EntityShiveringShrieker.class, "shiveringShrieker");
 		SlayerAPI.registerFLMob(EntityFrozenFrostbiter.class, "frozenFrostbiter");
 		SlayerAPI.registerFLMob(EntityCrystalCluster.class, "crystalCluster");
+		SlayerAPI.registerFLMob(EntityShiverwing.class, "shiverwing");
 	}
 
 	public static void registerEucaMobs() {
-		SlayerAPI.registerEucaMob(EntityInsecto.class, "insecto");
-		SlayerAPI.registerEucaMob(EntityPsyollom.class, "psyollom");
+		//SlayerAPI.registerEucaMob(EntityInsecto.class, "insecto");
+		//SlayerAPI.registerEucaMob(EntityPsyollom.class, "psyollom");
+		//SlayerAPI.registerEucaMob(EntityEucaFighter.class, "eucaFighter");
+		//SlayerAPI.registerEucaMob(EntityEucaHopper.class, "eucaHopper");
 		SlayerAPI.registerEucaMob(EntityEucaCharger.class, "eucaCharger");
-		SlayerAPI.registerEucaMob(EntityEucaFighter.class, "eucaFighter");
-		SlayerAPI.registerEucaMob(EntityEucaHopper.class, "eucaHopper");
 		SlayerAPI.registerEucaMob(EntityDynaster.class, "dynaster");
 		SlayerAPI.registerEucaMob(EntityGolder.class, "golder");
 		SlayerAPI.registerEucaMob(EntityGolditeMage.class, "golditeMage");
 		SlayerAPI.registerEucaMob(EntitySilverbot.class, "silverbot");
 		SlayerAPI.registerEucaMob(EntityGoldbot.class, "goldbot");
 		SlayerAPI.registerEucaMob(EntityShimmerer.class, "shimmerer");
+		SlayerAPI.registerEucaMob(EntityGoldwing.class, "goldwing");
 	}
 
 	public static void registerDepthsMobs() {
@@ -156,10 +158,13 @@ public class EntityRegistry {
 		SlayerAPI.registerCorbaMob(EntityTreeGolem.class, "treeGolem");
 		SlayerAPI.registerCorbaMob(EntityWoodCreature.class, "woodCreature");
 		SlayerAPI.registerCorbaMob(EntityNatureMage.class, "natureMage");
+		SlayerAPI.registerCorbaMob(EntityLeafBlower.class, "leafBlower");
+		SlayerAPI.registerCorbaMob(EntityWoodpecker.class, "woodpecker");
 	}
 
 	public static void registerCloudiaMobs() {
 		SlayerAPI.registerCloudiaMob(EntityCloudGhost.class, "cloudGhost");
+		SlayerAPI.registerCloudiaMob(EntityCloudFlyer.class, "cloudFlyer");
 	}
 
 	public static void registerNPCs() {
