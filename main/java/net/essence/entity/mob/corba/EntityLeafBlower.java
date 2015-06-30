@@ -2,7 +2,6 @@ package net.essence.entity.mob.corba;
 
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
@@ -21,27 +20,27 @@ public class EntityLeafBlower extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.leafBlowerDamage;
+		return MobStats.leafBlowerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.leafBlowerHealth;
+		return MobStats.leafBlowerHealth;
 	}
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.BLAZE;
+		return EnumSounds.HONGO;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.WITHER;
+		return EnumSounds.HONGO_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.WITHER_DEATH;
+		return EnumSounds.HONGO;
 	}
 	
 	@Override

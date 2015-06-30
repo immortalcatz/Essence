@@ -39,6 +39,7 @@ public class MobStats {
 	public static double cavelingHealth = 35.0D, cavelingDamage = 8.0D, cavelingSpeed = normalSpeed, cavelingFollowRange = follow;
 	public static double stonewalkerHealth = 35.0D, stonewalkerDamage = 8.0D, stonewalkerSpeed = normalSpeed, stonewalkerFollowRange = follow;
 	public static double mobWraithHealth = 35.0D, mobWraithDamage = 8.0D, mobWraithSpeed = normalSpeed, mobWraithFollowRange = follow;
+	public static double floroHealth = 35.0D, floroDamage = 8.0D, floroSpeed = normalSpeed, floroFollowRange = follow;
 	
 	//Frozen 
 	public static double shattererHealth = 35.0D, shattererSpeed = normalSpeed, shattererFollowRange = follow;

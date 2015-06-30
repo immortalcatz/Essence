@@ -34,7 +34,7 @@ public class EntityShatterer extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.shattererHealth;
+		return MobStats.shattererHealth;
 	}
 
 	@Override
