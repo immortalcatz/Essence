@@ -31,4 +31,8 @@ public class EntityShimmererProjectile extends EntitySmallFireball {
 		if(var1.entityHit != null) var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, shootingEntity), 7.0F);
 		if(!worldObj.isRemote) this.setDead();
 	}
+
+	public void setThrowableHeading(double d, double e, double f, float g, int i) {
+		
+	}
 }

@@ -2,6 +2,7 @@ package net.essence.entity.mob.overworld.underground;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
+import net.essence.entity.projectile.EntityConjuring;
 import net.essence.entity.projectile.EntityFireBall;
 import net.essence.enums.EnumSounds;
 import net.minecraft.block.material.Material;
@@ -55,7 +56,8 @@ public class EntityCaveMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-		EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
+		EntityConjuring b = new EntityConjuring(this.worldObj, this, 10F);
+        b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
 		EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
 		this.worldObj.spawnEntityInWorld(b);
 	}

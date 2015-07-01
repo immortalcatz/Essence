@@ -53,6 +53,7 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
         EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
+        b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
 	}

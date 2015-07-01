@@ -2,6 +2,7 @@ package net.essence.entity.mob.overworld.underground;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
+import net.essence.entity.projectile.EntityConjuring;
 import net.essence.entity.projectile.EntityFireBall;
 import net.essence.enums.EnumSounds;
 import net.minecraft.block.material.Material;
@@ -34,11 +35,8 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 
 	public void setCombatTask() {
 		this.tasks.removeTask(this.aiArrowAttack);
-		ItemStack itemstack = this.getHeldItem();
-		if(itemstack != null && itemstack.getItem() == EssenceItems.fireWand) {
 			this.tasks.addTask(4, this.aiArrowAttack);
 		}
-	}
 
 	@Override
 	public void setCurrentItemOrArmor(int par1, ItemStack par2ItemStack) {
@@ -50,7 +48,8 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-		EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
+		EntityConjuring b = new EntityConjuring(this.worldObj, this, 10F);
+        b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
 		EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
 		this.worldObj.spawnEntityInWorld(b);
 	}

@@ -34,7 +34,7 @@ public class EntityShimmerer extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.silverbotHealth;
+		return MobStats.silverbotHealth;
 	}
 
 	@Override

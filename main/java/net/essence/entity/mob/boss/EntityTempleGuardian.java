@@ -63,6 +63,7 @@ public class EntityTempleGuardian extends EntityPeacefullMob implements IRangedA
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
 		EntityTempleBall b = new EntityTempleBall(this.worldObj, this, 10F);
+        b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
 	}
