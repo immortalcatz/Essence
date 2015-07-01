@@ -84,7 +84,10 @@ public class MobStats {
 	public static double darknessCrawlerHealth = 80.0D, darknessCrawlerDamage = 10.0D, darknessCrawlerSpeed = normalSpeed, darknessCrawlerFollowRange = follow;
 	public static double depthsHunterHealth = 75.0D, depthsHunterDamage = 13.0D, depthsHunterSpeed = normalSpeed, depthsHunterFollowRange = follow;
 	public static double rocHealth = 75.0D, rocHealthTamed = 75.0D, rocDamage = 13.0D, rocDamageTamed = 13.0D, rocSpeed = normalSpeed, rocFollowRange = follow;
-
+	public static double darkenerHealth = 75.0D, darkenerDamage = 13.0D, darkenerSpeed = normalSpeed, darkenerFollowRange = follow;
+	public static double lightenerHealth = 75.0D, lightenerDamage = 13.0D, lightenerSpeed = normalSpeed, lightenerFollowRange = 10.D;
+	public static double darkSorcererHealth = 75.0D, darkSorcererDamage = 13.0D, darkSorcererSpeed = normalSpeed, darkSorcererFollowRange = follow;
+	
 	//Corba
 	public static double overseerHealth = 100.0D, overseerDamage = 13.0D, overseerSpeed = normalSpeed, overseerFollowRange = follow;
 	public static double elderOverseerHealth = 200.0D, elderOverseerDamage = 13.0D, elderOverseerSpeed = normalSpeed, elderOverseerFollowRange = follow;

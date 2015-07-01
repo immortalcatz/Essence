@@ -84,6 +84,7 @@ public class Textures {
     public static final ResourceLocation spikedBeast = addMob("spikedBeast");
     public static final ResourceLocation depthsHunter = addMob("depthsHunter");
     public static final ResourceLocation roc = addMob("roc");
+    public static final ResourceLocation darkener = addMob("darkener");
     
     //Corba
     public static final ResourceLocation leafBlower = addMob("leafBlower");

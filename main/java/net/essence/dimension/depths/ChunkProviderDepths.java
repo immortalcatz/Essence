@@ -153,7 +153,7 @@ public class ChunkProviderDepths implements IChunkProvider {
 	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double d) {
 		int i1 = x & 15;
 		int j1 = z & 15;
-		c.setBlockState(j1, 1, i1, EssenceBlocks.darkFloor.getDefaultState());
+		c.setBlockState(j1, 1, i1, EssenceBlocks.depthsGrass.getDefaultState());
 		c.setBlockState(j1, 0, i1, Blocks.bedrock.getDefaultState());
 	}
 
