@@ -21,9 +21,11 @@ import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
 import net.essence.entity.mob.corba.EntityTreeGolem;
 import net.essence.entity.mob.corba.EntityWoodCreature;
+import net.essence.entity.mob.depths.EntityDarkener;
 import net.essence.entity.mob.depths.EntityDarknessCrawler;
 import net.essence.entity.mob.depths.EntityDepthsBeast;
 import net.essence.entity.mob.depths.EntityDepthsHunter;
+import net.essence.entity.mob.depths.EntityLightener;
 import net.essence.entity.mob.depths.EntityRoc;
 import net.essence.entity.mob.depths.EntitySpikedBeast;
 import net.essence.entity.mob.euca.EntityDynaster;
@@ -160,11 +162,13 @@ public class DimensionHelper {
 
 	private static void addDepthsSpawns() {
 		int amount = 2;
-		EntityRegistry.addSpawn(EntityDarknessCrawler.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntityDepthsBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntitySpikedBeast.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntityDepthsHunter.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntityRoc.class, amount, 1, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityDarknessCrawler.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityDepthsBeast.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntitySpikedBeast.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityDepthsHunter.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityRoc.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityDarkener.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityLightener.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 	}
 	
 	private static void addCaveSpawns() {

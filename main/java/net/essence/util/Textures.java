@@ -85,6 +85,7 @@ public class Textures {
     public static final ResourceLocation depthsHunter = addMob("depthsHunter");
     public static final ResourceLocation roc = addMob("roc");
     public static final ResourceLocation darkener = addMob("darkener");
+    public static final ResourceLocation lightener = addMob("lightener");
     
     //Corba
     public static final ResourceLocation leafBlower = addMob("leafBlower");
