@@ -152,6 +152,7 @@ public class EntityRegistry {
 		SlayerAPI.registerDepthsMob(EntityRoc.class, "roc");
 		SlayerAPI.registerDepthsMob(EntityDarkener.class, "darkener");
 		SlayerAPI.registerDepthsMob(EntityLightener.class, "lightener");
+		SlayerAPI.registerDepthsMob(EntityDarkSorcerer.class, "darkSorcerer");
 	}
 
 	public static void registerCorbaMobs() {

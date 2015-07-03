@@ -150,6 +150,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityDarkener.class, new RenderModMob(new ModelDarkener(), Textures.darkener));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightGolem.class, new RenderModMob(new ModelStarlightGolem(), Textures.starlightGolem));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLightener.class, new RenderModMob(new ModelLightener(), Textures.lightener));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDarkSorcerer.class, new RenderModMob(new ModelDarkSorcerer(), Textures.darkSorcerer));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
