@@ -103,7 +103,6 @@ public class EssenceItems {
 	public static final Item golemChunk = new ItemMod("golemChunk");
 	public static final Item luniteChunk = new ItemMod("luniteChunk");
 	public static final Item corbaStick = new ItemMod("corbaStick");
-	public static final Item hongoShroom = new ItemMod("hongoShroom");
 	public static final Item spyclopseEye = new ItemMod("spyclopseEye");
 	public static final Item caveCrystal = new ItemMod("caveCrystal");
 	public static final Item caveDust = new ItemMod("caveDust");
@@ -390,6 +389,7 @@ public class EssenceItems {
 	public static final Item eucaMeat = new ItemModFood("eucaMeat", 6, 0.6F, 10, false);
 	public static final Item rocMeat = new ItemModFood("rocMeat", 6, 0.6F, 10, false);
 	public static final Item cookedRocMeat = new ItemModFood("cookedRocMeat", 6, 0.6F, 10, false);
+	public static final Item hongoShroom = new ItemModFood("hongoShroom", 6, 0.6F, 10, false);
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor");
 
