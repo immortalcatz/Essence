@@ -162,7 +162,7 @@ public class EssenceBlocks {
 	public static final Block wastelandsLog = new BlockModLog("wastelandsLog");
 	public static final Block wastelandsBranches = new BlockModLeaves("wastelandsBranches", 2.0F).setStepSound(EnumMaterialTypes.WOOD.getSound());*/
 
-	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");//TODO
+	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", "Euca Portal Frame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
 	public static final Block depthsPortalFrame = new BlockMod("depthsPortalFrame", "Depths Portal Frame", 3.0F);
@@ -280,7 +280,7 @@ public class EssenceBlocks {
 	public static final BlockModFlower infernoPlant = new BlockModFlower("infernoPlant", "Inferno Plant");
 	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass", "Burnt Grass");
 	
-	public static final Block grindstone = new BlockGrindstone("grindstone", "Grindstone");
+	public static final Block grindstone = new BlockGrindstone("grindstone");
 	public static final Block blueGems = new BlockGemBlock("blueGems", "Red Gems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	

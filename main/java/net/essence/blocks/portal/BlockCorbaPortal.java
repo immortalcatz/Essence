@@ -9,6 +9,7 @@ import net.essence.blocks.tileentity.TileEntityCorbaPortal;
 import net.essence.dimension.ModTeleporter;
 import net.essence.dimension.corba.TeleporterCorba;
 import net.essence.util.Config;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.MapColor;
@@ -34,6 +35,7 @@ public class BlockCorbaPortal extends BlockContainer {
     public BlockCorbaPortal(String name) {
         super(Material.portal);
 		setHardness(2.0F);
+		LangRegistry.addBlock(name, "Corba Portal");
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
 		EssenceBlocks.blockName.add(name);

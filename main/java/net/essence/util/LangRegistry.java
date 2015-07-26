@@ -23,7 +23,9 @@ public class LangRegistry {
 	private BufferedWriter writer;
 	public static ArrayList<String> blockUnloc = new ArrayList<String>(), blockFinal = new ArrayList<String>(), itemUnloc = new ArrayList<String>(), itemFinal = new ArrayList<String>()
 			, fileText = new ArrayList<String>();
-
+	public static String[] brickNames = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
+	public static String[] brickTextures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
+	
 	public LangRegistry() {
 		File en_US = new File(location + "en_US.lang");
 		try {
@@ -55,6 +57,8 @@ public class LangRegistry {
 		writeToFile("item.record.raceShore.desc=Chris Geddes - Race Shore");
 		writeToFile("enchantment.Hot Touch=Hot Touch");
 		writeToFile("enchantment.Water Walker=Water Walker");
+		for(int j = 0; j < 13; j++) writeToFile("tile." + brickTextures[j] + "ColouredBricks.name=" + brickNames[j] + " Coloured Brick");
+		for(int j = 0; j < 13; j++) writeToFile("tile." + brickTextures[j] + "MiniColouredBricks.name=" + brickNames[j] + " Coloured Mini Brick");
 	}
 
 	public void register() {

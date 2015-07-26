@@ -97,7 +97,7 @@ public class BlockModOre extends BlockMod {
 
 	@Override
 	public Item getItemDropped(IBlockState par1, Random par2, int par3) {
-		if(this == EssenceBlocks.ashual) return EssenceItems.ash;
+		if(this == EssenceBlocks.ashualOre) return EssenceItems.ash;
 		if(this == EssenceBlocks.sapphireOre) return EssenceItems.sapphire;
 		if(this == EssenceBlocks.enderilliumOre) return EssenceItems.enderilliumShard;
 		if(this == EssenceBlocks.gorbiteOre) return EssenceItems.gorbiteGem;

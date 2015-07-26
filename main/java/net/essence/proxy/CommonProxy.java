@@ -52,7 +52,6 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
 		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
-		GameRegistry.registerTileEntity(TileEntityEssenceSign.class, "Essence Sign");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
 		GameRegistry.registerTileEntity(TileEntitySummoningTable.class, "Summon Table");
 		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
@@ -79,7 +78,7 @@ public class CommonProxy {
 	}
 	
 	private void addOreDictionary() {
-		OreDictionary.registerOre("oreAshual", EssenceBlocks.ashual);
+		OreDictionary.registerOre("oreAshual", EssenceBlocks.ashualOre);
 		OreDictionary.registerOre("oreCelestium", EssenceBlocks.celestiumOre);
 		OreDictionary.registerOre("oreLunium", EssenceBlocks.luniumOre);
 		OreDictionary.registerOre("oreShadium", EssenceBlocks.shadiumOre);

@@ -7,6 +7,7 @@ import net.essence.EssenceTabs;
 import net.essence.client.render.particles.EntityBoilPotalFX;
 import net.essence.dimension.ModTeleporter;
 import net.essence.util.Config;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
@@ -37,6 +38,7 @@ public class BlockBoilPortal extends BlockBreakable {
 
 	public BlockBoilPortal(String name) {
 		super(Material.portal, false);
+		LangRegistry.addBlock(name, "Boiling Portal");
 		this.setTickRandomly(true);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);

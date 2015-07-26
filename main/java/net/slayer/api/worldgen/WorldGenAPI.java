@@ -4,16 +4,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.blocks.BlockEucaPumpkin;
-import net.essence.blocks.tileentity.TileEntityEssenceSign;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.tileentity.TileEntityMobSpawner;
-import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 public class WorldGenAPI {
@@ -162,13 +158,6 @@ public class WorldGenAPI {
 				chest.setInventorySlotContents(chest.getSizeInventory(), it);
 			}
 		}
-	}
-
-	public static void placeSignWithText(World w, int x, int y, int z, int meta, ChatComponentText[] text, boolean standing){
-		if(standing) w.setBlockState(new BlockPos(x, y, z), EssenceBlocks.essenceStandingSign.getStateFromMeta(meta), 2);
-		else w.setBlockState(new BlockPos(x, y, z), EssenceBlocks.essenceWallSign.getStateFromMeta(meta), 2);
-		TileEntityEssenceSign sign = (TileEntityEssenceSign)w.getTileEntity(new BlockPos(x, y, z));
-		if(sign != null && !w.isRemote) sign.signText = text;
 	}
 
 	public static void addHollowRectangle(int east, int south, int height, World w, int x, int y, int z, Block b){

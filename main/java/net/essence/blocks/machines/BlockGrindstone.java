@@ -5,6 +5,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
 import net.essence.blocks.tileentity.TileEntityGrindstone;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.properties.IProperty;
@@ -34,6 +35,7 @@ public class BlockGrindstone extends BlockContainer {
 
 	public BlockGrindstone(String name) {
 		super(EnumMaterialTypes.STONE.getMaterial());
+		LangRegistry.addBlock(name, "Grindstone");
 		setUnlocalizedName(name);
 		setStepSound(soundTypeStone);
 		setHardness(3.0F);
@@ -118,7 +120,7 @@ public class BlockGrindstone extends BlockContainer {
 		Item item = player.getCurrentEquippedItem().getItem();
 		if(player.getCurrentEquippedItem() != null) {
 			if(item == SlayerAPI.toItem(EssenceBlocks.celestiumOre) || item == SlayerAPI.toItem(EssenceBlocks.hellstoneOre) || item == SlayerAPI.toItem(EssenceBlocks.shadiumOre) 
-					|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashual) ||
+					|| item == SlayerAPI.toItem(EssenceBlocks.luniumOre) || item == SlayerAPI.toItem(EssenceBlocks.flairiumOre) || item == SlayerAPI.toItem(EssenceBlocks.ashualOre) ||
 					item == SlayerAPI.toItem(EssenceBlocks.sapphireOre) || item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre) || item == SlayerAPI.toItem(Blocks.gold_ore) || item == SlayerAPI.toItem(Blocks.diamond_ore)
 					|| item == SlayerAPI.toItem(Blocks.iron_ore) || item == SlayerAPI.toItem(EssenceBlocks.gorbiteOre) || item == SlayerAPI.toItem(EssenceBlocks.orbaditeOre)) {
 				if(stone.getItem() == null) {

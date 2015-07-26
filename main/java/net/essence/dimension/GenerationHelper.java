@@ -109,7 +109,7 @@ public class GenerationHelper {
 			break;
 		case 3:
 			y = r.nextInt(250) + 1; x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenMinable(EssenceBlocks.ashual.getDefaultState(), 7, BlockHelper.forBlock(EssenceBlocks.ashBlock))).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenMinable(EssenceBlocks.ashualOre.getDefaultState(), 7, BlockHelper.forBlock(EssenceBlocks.ashBlock))).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 4:
 			y = r.nextInt(200) + 1; x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;

@@ -489,9 +489,7 @@ public class EssenceItems {
 	public static final Item compBegins = new ItemModRecord("compBegins");
 	public static final Item deepBlue = new ItemModRecord("deepBlue");
 	public static final Item raceShore = new ItemModRecord("raceShore");
-
-	public static final Item essenceSign = new ItemEssenceSign("essenceSignItem");
-
+	
 	public static final Item demonicEye = new ItemDemonicEye("demonicEye");
 
 	public static final Item baseEssence = new ItemMod("baseEssence");

@@ -77,7 +77,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.luniumOre)) setItem(EssenceItems.luniumDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.shadiumOre)) setItem(EssenceItems.shadiumDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.flairiumOre)) setItem(EssenceItems.flairiumDust, f, returnVal);
-			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.ashual)) setItem(EssenceItems.ashDust, f, returnVal);
+			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.ashualOre)) setItem(EssenceItems.ashDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) setItem(EssenceItems.sapphireDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) setItem(EssenceItems.enderilliumDust, f, returnVal);
 			else if(itemOnGrind == SlayerAPI.toItem(Blocks.gold_ore)) setItem(EssenceItems.goldDust, f, returnVal);
@@ -107,7 +107,7 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 							else if(item == SlayerAPI.toItem(EssenceBlocks.shadiumOre)) itemOnGrind = EssenceItems.shadiumDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.luniumOre)) itemOnGrind = EssenceItems.luniumDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.flairiumOre)) itemOnGrind = EssenceItems.flairiumDust;
-							else if(item == SlayerAPI.toItem(EssenceBlocks.ashual)) itemOnGrind = EssenceItems.ashDust;
+							else if(item == SlayerAPI.toItem(EssenceBlocks.ashualOre)) itemOnGrind = EssenceItems.ashDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.sapphireOre)) itemOnGrind = EssenceItems.sapphireDust;
 							else if(item == SlayerAPI.toItem(EssenceBlocks.enderilliumOre)) itemOnGrind = EssenceItems.enderilliumDust;
 							else if(item == SlayerAPI.toItem(Blocks.diamond_ore)) itemOnGrind = EssenceItems.diamondDust;
