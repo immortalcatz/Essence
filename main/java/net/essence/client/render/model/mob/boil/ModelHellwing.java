@@ -19,28 +19,33 @@ public class ModelHellwing extends ModelBiped {
 	    
 	      head = new ModelRenderer(this, 0, 0);
 	      head.addBox(-4F, -8F, -4F, 8, 8, 8);
-	      head.setRotationPoint(0F, 11F, 0F);
+	      head.setRotationPoint(0.1F, 11F, 0F);
 	      head.setTextureSize(64, 32);
+	      head.mirror = true;
 	      setRotation(head, 0F, 0F, 0F);
 	      rightwing = new ModelRenderer(this, 32, 9);
-	      rightwing.addBox(-3F, -2F, -2F, 8, 1, 6);
-	      rightwing.setRotationPoint(-9F, 8F, -1F);
+	      rightwing.addBox(-8F, -1F, -2F, 8, 1, 6);
+	      rightwing.setRotationPoint(-4F, 6F, -1F);
 	      rightwing.setTextureSize(64, 32);
-	      setRotation(rightwing, 0F, 0F, 0F);
+	      rightwing.mirror = true;
+	      setRotation(rightwing, 0F, 0F, -0.122173F);
 	      leftwing = new ModelRenderer(this, 32, 9);
-	      leftwing.addBox(-1F, -2F, -2F, 8, 1, 6);
-	      leftwing.setRotationPoint(5F, 8F, -1F);
+	      leftwing.addBox(0F, -1F, -3F, 8, 1, 6);
+	      leftwing.setRotationPoint(4F, 6F, 0F);
 	      leftwing.setTextureSize(64, 32);
-	      setRotation(leftwing, 0F, 0F, 0F);
+	      leftwing.mirror = true;
+	      setRotation(leftwing, 0F, 0F, 0.122173F);
 	      rightwing1 = new ModelRenderer(this, 32, 16);
-	      rightwing1.addBox(0F, 0F, 0F, 8, 1, 4);
-	      rightwing1.setRotationPoint(-19F, 9.4F, -2F);
+	      rightwing1.addBox(-15F, -3.7F, -2F, 8, 1, 4);
+	      rightwing1.setRotationPoint(-4F, 6.4F, 0F);
 	      rightwing1.setTextureSize(64, 32);
+	      rightwing1.mirror = true;
 	      setRotation(rightwing1, 0F, 0F, -0.4363323F);
 	      leftwing1 = new ModelRenderer(this, 32, 16);
-	      leftwing1.addBox(0F, 0F, 0F, 8, 1, 4);
-	      leftwing1.setRotationPoint(12F, 6F, -2F);
+	      leftwing1.addBox(7F, -3.3F, -2F, 8, 1, 4);
+	      leftwing1.setRotationPoint(4F, 6F, 0F);
 	      leftwing1.setTextureSize(64, 32);
+	      leftwing1.mirror = true;
 	      setRotation(leftwing1, 0F, 0F, 0.4363323F);
 
 	}
@@ -65,6 +70,11 @@ public class ModelHellwing extends ModelBiped {
 
 	@Override
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
+		
+        this.rightwing.rotateAngleY = MathHelper.cos(par3 * 1.3F) * (float)Math.PI * 0.25F;
+        this.leftwing.rotateAngleY = -this.rightwing.rotateAngleY;
+        this.rightwing1.rotateAngleY = this.rightwing.rotateAngleY * 0.5F;
+        this.leftwing1.rotateAngleY = -this.rightwing.rotateAngleY * 0.5F;
 		
 	}
 }
