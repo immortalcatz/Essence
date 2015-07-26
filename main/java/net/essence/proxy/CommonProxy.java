@@ -46,7 +46,6 @@ public class CommonProxy {
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
 		SlayerAPI.registerEvent(new PlayerEvent());
 		SlayerAPI.registerEvent(new KnowledgeEvent());
-		GameRegistry.registerTileEntity(TileEntityStatue.class, "EssenceStatue");
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
 		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");

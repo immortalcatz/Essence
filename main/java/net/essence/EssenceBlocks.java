@@ -220,28 +220,18 @@ public class EssenceBlocks {
 	//public static final Block eudorStatue = new BlockStatue("eudorStatue", new ModelEudorStatue(), EnumSounds.CALCIA);
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
-
-	//public static final Block enrichedEnchantmentTable = new BlockEnrichedEnchantmentTable("enrichedEnchantmentTable");
-	
-	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
-	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
 	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "hotDoorBlock", "Hot Door");
 	
-	public static final Block colouredBricks = new BlockColouredBricks();//TODO
+	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
-	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", true);
-	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", false);
-	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", true);
-	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", false);
-	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", true);
-	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", false);
-	
-	
-	//public static final Block caveVine = new BlockCaveVine("caveVine");
-
-	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
-	
+	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
+	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
+	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", "Green Glowshroom", true);
+	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
+	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);
+	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", "Blue Glowshroom", false);
+		
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");

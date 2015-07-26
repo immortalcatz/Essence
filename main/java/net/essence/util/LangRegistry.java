@@ -26,6 +26,8 @@ public class LangRegistry {
 	public static String[] brickNames = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
 	public static String[] brickTextures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
 	
+	public static ArrayList<String> mobUnloc = new ArrayList<String>(), mobFinal = new ArrayList<String>();
+	
 	public LangRegistry() {
 		File en_US = new File(location + "en_US.lang");
 		try {
@@ -64,6 +66,7 @@ public class LangRegistry {
 	public void register() {
 		block();
 		item();
+		mob();
 		misc();
 		closeFile();
 	}
@@ -77,10 +80,20 @@ public class LangRegistry {
 		itemUnloc.add(unloc);
 		itemFinal.add(finalName);
 	}
+	
+	public static void addMob(String unloc, String finalName) {
+		mobUnloc.add(unloc);
+		mobFinal.add(finalName);
+	}
 
 	public void block() {
 		for(int i = 0; i < blockUnloc.size(); i++)
 			writeToFile("tile." + blockUnloc.get(i) + ".name=" + blockFinal.get(i));
+	}
+	
+	public void mob() {
+		for(int i = 0; i < mobUnloc.size(); i++)
+			writeToFile("entity." + mobUnloc.get(i) + ".name=" + mobFinal.get(i));
 	}
 
 	public void item() {

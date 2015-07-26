@@ -9,6 +9,7 @@ import net.essence.client.ChatHandler;
 import net.essence.entity.EssenceEntityList;
 import net.essence.util.Config;
 import net.essence.util.GL11Helper;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -107,48 +108,50 @@ public class SlayerAPI {
 		FMLCommonHandler.instance().bus().register(o);
 	}
 
-	public static void registerMob(Class entityClass, String entityName, int base, int fore) {
-		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
-        EntityList.addMapping(entityClass, entityName, entityListID++, base, fore);
+	public static void registerMob(Class entityClass, String name, String finalN, int base, int fore) {
+		LangRegistry.addMob("EOTG" + name, finalN);
+		EntityRegistry.registerModEntity(entityClass, name, mobID++, Essence.instance, 128, 5, true);
+        EntityList.addMapping(entityClass, name, entityListID++, base, fore);
 	}
 	
-	public static void registerEndMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0x440089, 0xBC00BC);
+	public static void registerEndMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x440089, 0xBC00BC);
 	}
 	
-	public static void registerOverworldMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0x218700, 0xC4C400);
+	public static void registerOverworldMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x218700, 0xC4C400);
 	}
 	
-	public static void registerNetherMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0xA80000, 0x680000);
+	public static void registerNetherMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0xA80000, 0x680000);
 	}
 	
-	public static void registerBPMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0x6041160, 0xC14113);
+	public static void registerBPMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x6041160, 0xC14113);
 	}
 	
-	public static void registerFLMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0x005CD6, 0x00A4DB);
+	public static void registerFLMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x005CD6, 0x00A4DB);
 	}
 	
-	public static void registerEucaMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0xBCB600, 0xA5A5A5);
+	public static void registerEucaMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0xBCB600, 0xA5A5A5);
 	}
 	
-	public static void registerDepthsMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0x003CA5, 0x0098A3);
+	public static void registerDepthsMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x003CA5, 0x0098A3);
 	}
 	
-	public static void registerCorbaMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0xAA5D41, 0x00A851);
+	public static void registerCorbaMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0xAA5D41, 0x00A851);
 	}
 	
-	public static void registerCloudiaMob(Class entityClass, String entityName) {
-		registerMob(entityClass, entityName, 0xB3D3C1, 0xD0D1CF);
+	public static void registerCloudiaMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0xB3D3C1, 0xD0D1CF);
 	}
 	
-	public static void registerNPC(Class entityClass, String entityName) {
+	public static void registerNPC(Class entityClass, String entityName, String finalN) {
+		LangRegistry.addMob("EOTG" + entityName, finalN);
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, entityName, entityListID++, 0x00FF8C, 0x00F6FF);
 	}
@@ -157,8 +160,9 @@ public class SlayerAPI {
 		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
 	}
 
-	public static void registerBossMob(Class entityClass, String entityName) {
-        EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+	public static void registerBossMob(Class entityClass, String entityName, String finalN) {
+		LangRegistry.addMob("EOTG" + entityName, finalN);
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, entityName, entityListID++, 0x000000, 0x9B0000);
 	}
 

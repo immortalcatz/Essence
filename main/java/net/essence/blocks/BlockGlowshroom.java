@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,8 +20,9 @@ import net.slayer.api.SlayerAPI;
 
 public class BlockGlowshroom extends Block {
 
-	public BlockGlowshroom(String name, boolean top) {
+	public BlockGlowshroom(String name, String f, boolean top) {
 		super(EnumMaterialTypes.PLANT.getMaterial());
+		LangRegistry.addBlock(name, f);
 		setStepSound(EnumMaterialTypes.PLANT.getSound());
 		setCreativeTab(EssenceTabs.decoraton);
 		setHardness(0.0F);
