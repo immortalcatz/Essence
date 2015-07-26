@@ -19,7 +19,7 @@ public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
 
-	public String location = "C:/Users/User/Desktop/";
+	public String location = "../src/main/Essence/main/resources/assets/essence/lang";
 	private BufferedWriter writer;
 	public static ArrayList<String> blockUnloc = new ArrayList<String>(), blockFinal = new ArrayList<String>(), itemUnloc = new ArrayList<String>(), itemFinal = new ArrayList<String>()
 			, fileText = new ArrayList<String>();
