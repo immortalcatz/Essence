@@ -9,8 +9,6 @@ import net.essence.blocks.BlockCloud;
 import net.essence.blocks.BlockColouredBricks;
 import net.essence.blocks.BlockCorbaPortalFrame;
 import net.essence.blocks.BlockDungeonBlock;
-import net.essence.blocks.BlockEssenceStandingSign;
-import net.essence.blocks.BlockEssenceWallSign;
 import net.essence.blocks.BlockEucaPumpkin;
 import net.essence.blocks.BlockEucaSapling;
 import net.essence.blocks.BlockFrozenPortal;
@@ -56,35 +54,42 @@ public class EssenceBlocks {
 
 	public static ArrayList<String> blockName = new ArrayList<String>();
 	
-	public static final Block hellstoneOre = new BlockModOre("hellstoneOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block celestiumOre = new BlockModOre("celestiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block mekyumOre = new BlockModOre("mekyumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block koriteOre = new BlockModOre("koriteOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block storonOre = new BlockModOre("storonOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block sapphireOre = new BlockModOre("sapphireOre", "Sapphire Ore").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block shadiumOre = new BlockModOre("shadiumOre", "Shadium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block luniumOre = new BlockModOre("luniumOre", "Lunium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", "Hellstone Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block ashualOre = new BlockModOre("ashualOre", "Ashual Ore");
+	public static final Block blaziumOre = new BlockModOre("blaziumOre", "Blazium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block celestiumOre = new BlockModOre("celestiumOre", "Celestium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block mekyumOre = new BlockModOre("mekyumOre", "Mekyum Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block koriteOre = new BlockModOre("koriteOre", "Korite Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block storonOre = new BlockModOre("storonOre", "Storon Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block flairiumOre = new BlockModOre("flairiumOre", "Flairium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
+	public static final Block desOre = new BlockModOre("desOre", "Des Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
+	public static final Block enderilliumOre = new BlockModOre("enderilliumOre", "Enderillium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block gorbiteOre = new BlockModOre("gorbiteOre", "Gorbite Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block orbaditeOre = new BlockModOre("orbaditeOre", "Orbadite Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	
-	public static final Block luniumOre = new BlockModOre("luniumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block shadiumOre = new BlockModOre("shadiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block flairiumOre = new BlockModOre("flairiumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
-	public static final Block desOre = new BlockModOre("desOre").setHarvestLevel(EnumToolType.DIAMOND_PICK).setLightLevel(0.5F);
-	public static final Block ashual = new BlockModOre("ashual");
-	public static final Block sapphireOre = new BlockModOre("sapphireOre").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block enderilliumOre = new BlockModOre("enderilliumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block gorbiteOre = new BlockModOre("gorbiteOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block orbaditeOre = new BlockModOre("orbaditeOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block blaziumOre = new BlockModOre("blaziumOre").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	
-	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block celestiumBlock = new BlockModOre("celestiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block luniumBlock = new BlockModOre("luniumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block shadiumBlock = new BlockModOre("shadiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block flairiumBlock = new BlockModOre("flairiumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block sapphireBlock = new BlockModOre("sapphireBlock").setHarvestLevel(EnumToolType.IRON_PICK);
-	public static final Block enderilliumBlock = new BlockModOre("enderilliumBlock").setHarvestLevel(EnumToolType.IRON_PICK);
+	public static final Block sapphireBlock = new BlockModOre("sapphireBlock", "Sapphire Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block shadiumBlock = new BlockModOre("shadiumBlock", "Shadium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block luniumBlock = new BlockModOre("luniumBlock", "Lunium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block hellstoneBlock = new BlockModOre("hellstoneBlock", "Hellstone Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block ashualBlock = new BlockModOre("ashualBlock", "Ashual Block");
+	public static final Block blaziumBlock = new BlockModOre("blaziumBlock", "Blazium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block celestiumBlock = new BlockModOre("celestiumBlock", "Celestium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block mekyumBlock = new BlockModOre("mekyumBlock", "Mekyum Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block koriteBlock = new BlockModOre("koriteBlock", "Korite Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block storonBlock = new BlockModOre("storonBlock", "Storon Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block flairiumBlock = new BlockModOre("flairiumBlock", "Flairium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block desBlock = new BlockModOre("desBlock", "Des Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block enderilliumBlock = new BlockModOre("enderilliumBlock", "Enderillium Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block gorbiteBlock = new BlockModOre("gorbiteBlock", "Gorbite Block").setHarvestLevel(EnumToolType.STONE_PICK);
+	public static final Block orbaditeBlock = new BlockModOre("orbaditeBlock", "Orbadite Block").setHarvestLevel(EnumToolType.STONE_PICK);
 
-	public static final Block greenGemBlock = new BlockMod("greenGemBlock");
-	public static final Block purpleGemBlock = new BlockMod("purpleGemBlock");
-	public static final Block blueGemBlock = new BlockMod("blueGemBlock");
-	public static final Block yellowGemBlock = new BlockMod("yellowGemBlock");
+	public static final Block greenGemBlock = new BlockMod("greenGemBlock", "Green Gem Block");
+	public static final Block purpleGemBlock = new BlockMod("purpleGemBlock", "Purple Gem Block");
+	public static final Block blueGemBlock = new BlockMod("blueGemBlock", "Blue Gem Block");
+	public static final Block yellowGemBlock = new BlockMod("yellowGemBlock", "Yellow Gem Block");
 
 	/*public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
 	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
@@ -92,120 +97,120 @@ public class EssenceBlocks {
 	public static final Block shadiumBlockOverlay = new BlockModOre("shadiumBlock_overlay", -1).setCreativeTab(null);
 	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);*/
 
-	public static final BlockModSlab eucaSlab = new BlockModSlab(false, "eucaSlab");
+	public static final BlockModSlab eucaSlab = new BlockModSlab(false, "eucaSlab", "Euca Slab");
 	//public static final BlockModDoubleSlab eucaFullSlab = new BlockModDoubleSlab(true, "eucaDoubleSlab");
 	
-	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab");
+	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab", "Depths Slab");
 	//public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
 	
-	public static final Block eucaGrass = new BlockModGrass(null, "eucaGrass", 2.0F);
-	public static final Block eucaStone = new BlockMod("eucaStone", 2.0F);
-	public static final Block eucaGoldLog = new BlockModLog("eucaGoldLog");
-	public static final Block goldEucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "goldEucaPlank", 1.0F);
-	public static final Block eucaGoldStairs = new BlockModStairs(eucaGoldLog, "eucaGoldStairs");
-	public static final Block eucaGoldLeaves = new BlockModLeaves("eucaGoldLeaves", 1.0F);
-	public static final Block eucaSilverLeaves = new BlockModLeaves("eucaSilverLeaves", 1.0F);
-	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling");
-	public static final Block eucaBricks = new BlockMod("eucaBricks", 2.0F);
-	public static final Block eucaTile = new BlockMod("eucaTile", 2.0F);
+	public static final Block eucaGrass = new BlockModGrass(null, "eucaGrass", "Euca Grass", 2.0F);
+	public static final Block eucaStone = new BlockMod("eucaStone", "Euca Stone", 2.0F);
+	public static final Block eucaGoldLog = new BlockModLog("eucaGoldLog", "Golden Euca Log");
+	public static final Block goldEucaPlank = new BlockMod(EnumMaterialTypes.WOOD, "goldEucaPlank", "Golden Euca Plank", 1.0F);
+	public static final Block eucaGoldStairs = new BlockModStairs(eucaGoldLog, "eucaGoldStairs", "Golden Euca Stairs");
+	public static final Block eucaGoldLeaves = new BlockModLeaves("eucaGoldLeaves", "Golden Euca Leaves", 1.0F);
+	public static final Block eucaSilverLeaves = new BlockModLeaves("eucaSilverLeaves", "Silver Euca Leaves", 1.0F);
+	public static final Block eucaSapling = new BlockEucaSapling("eucaSapling", "Euca Sapling");
+	public static final Block eucaBricks = new BlockMod("eucaBricks", "Euca Bricks", 2.0F);
+	public static final Block eucaTile = new BlockMod("eucaTile", "Euca Tile", 2.0F);
 	
-	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", 2.0F);
-	public static final Block depthsGrass = new BlockModGrass(depthsDirt, "depthsGrass", 2.0F);
-	public static final Block depthsStone = new BlockMod("depthsStone", 2.0F);
-	public static final Block depthsLog = new BlockModLog("depthsLog");
-	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", 1.0F);
-	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs");
-	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", 1.0F);
-	public static final Block darkBrick = new BlockMod("darkBrick", 2.0F);
-	public static final Block darkFloor = new BlockModGrass(null, "darkFloor", 2.0F);
+	public static final BlockMod depthsDirt = new BlockMod(EnumMaterialTypes.DIRT, "depthsDirt", "Depths Dirt", 2.0F);
+	public static final Block depthsGrass = new BlockModGrass(depthsDirt, "depthsGrass", "Depths Grass", 2.0F);
+	public static final Block depthsStone = new BlockMod("depthsStone", "Depths Stone", 2.0F);
+	public static final Block depthsLog = new BlockModLog("depthsLog", "Depths Log");
+	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", "Depths Plank", 1.0F);
+	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs", "Depths Stairs");
+	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
+	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F);
+	public static final Block darkFloor = new BlockModGrass(null, "darkFloor", "Dark Floor", 2.0F);
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
 	//public static final Block godStone = new BlockMod("godStone", 2.0F);
 	
-	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", 2.0F);
-	public static final BlockMod frozenStone = new BlockMod(EnumMaterialTypes.STONE, "frozenStone", 5.0F);
-	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", 2.0F);
-	public static final Block frozenLeaves = new BlockModLeaves("frozenLeaves", 0.5F).setFrozenPlant().setLightLevel(1);
-	public static final Block frozenBark = new BlockModLog("frozenBark");
-	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", 0.5F);
+	public static final BlockMod frozenDirt = new BlockMod(EnumMaterialTypes.DIRT, "frozenDirt", "Frozen Dirt", 2.0F);
+	public static final BlockMod frozenStone = new BlockMod(EnumMaterialTypes.STONE, "frozenStone", "Frozen Stone", 5.0F);
+	public static final Block frozenGrass = new BlockModGrass(frozenDirt, "frozenGrass", "Frozen Grass", 2.0F);
+	public static final Block frozenLeaves = new BlockModLeaves("frozenLeaves", "Frozen Leaves", 0.5F).setFrozenPlant().setLightLevel(1);
+	public static final Block frozenBark = new BlockModLog("frozenBark", "Frozen Bark");
+	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", "Frozen Planks", 0.5F);
 	
-	public static final BlockMod corbaStone = new BlockMod("corbaStone");
-	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", 0.5F);
-	public static final Block corbaLog = new BlockModLog("corbaLog");
-	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", 0.2F);
-	public static final Block corbaPillar = new BlockMod("corbaPillar");
-	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", 0.5F);
+	public static final BlockMod corbaStone = new BlockMod("corbaStone", "Corba Stone");
+	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", "Corba Grass", 0.5F);
+	public static final Block corbaLog = new BlockModLog("corbaLog", "Corba Log");
+	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", "Corba Leaves", 0.2F);
+	public static final Block corbaPillar = new BlockMod("corbaPillar", "Corba Pillar");
+	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", "Corba Plank", 0.5F);
 	
-	public static final Block blazierBricks = new BlockMod("blazierBricks"); 
+	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
 	
-	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", 2.0F);
-	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", 2.0F);
-	public static final Block cloudiaLog = new BlockModLog("cloudiaLog"); 
-	public static final Block cloudiaRock = new BlockMod("cloudiaRock"); 
-	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick");
-	public static final Block cloudiaWall = new BlockMod("cloudiaWall"); 
-	public static final Block cloudiaTile = new BlockMod("cloudiaTile"); 
-	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp").setLightLevel(1.0F);
+	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", "Cloudia Dirt", 2.0F);
+	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", "Cloudia Grass", 2.0F);
+	public static final Block cloudiaLog = new BlockModLog("cloudiaLog", "Cloudia Log"); 
+	public static final Block cloudiaRock = new BlockMod("cloudiaRock", "Cloudia Rock"); 
+	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick", "Cloudia Brick");
+	public static final Block cloudiaWall = new BlockMod("cloudiaWall", "Cloudia Wall"); 
+	public static final Block cloudiaTile = new BlockMod("cloudiaTile", "Cloudia Tile"); 
+	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp", "Cloudia Lamp").setLightLevel(1.0F);
 	//public static final Block cloudiaPost = new BlockCloudiaPost("cloudiaPost");
-	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud");
-	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud");
-	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud");
+	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
+	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud", "Blue Cloudia Cloud");
+	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud", "Light Blue Cloudia Cloud");
 	
 	/*public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
 	public static final Block wastelandsGrass = new BlockModGrass((BlockMod)null, "wastelandsGrass", 2.0F);
 	public static final Block wastelandsLog = new BlockModLog("wastelandsLog");
 	public static final Block wastelandsBranches = new BlockModLeaves("wastelandsBranches", 2.0F).setStepSound(EnumMaterialTypes.WOOD.getSound());*/
 
-	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
-	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", 3.0F);
+	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");//TODO
+	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", "Euca Portal Frame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
-	public static final Block depthsPortalFrame = new BlockMod("depthsPortalFrame", 3.0F);
+	public static final Block depthsPortalFrame = new BlockMod("depthsPortalFrame", "Depths Portal Frame", 3.0F);
 	public static final BlockBoilPortal boilPortal = (BlockBoilPortal)new BlockBoilPortal("boilingPortal");
-	public static final Block boilPortalFrame = new BlockMod("boilingPortalFrame", 3.0F);
+	public static final Block boilPortalFrame = new BlockMod("boilingPortalFrame", "Boiling Portal Frame", 3.0F);
 	public static final BlockFrozenPortal frozenPortal = (BlockFrozenPortal)new BlockFrozenPortal("frozenPortal");
-	public static final Block frozenPortalFrame = new BlockMod("frozenPortalFrame", 3.0F);
+	public static final Block frozenPortalFrame = new BlockMod("frozenPortalFrame", "Frozen Portal Frame", 3.0F);
 	public static final BlockCorbaPortal corbaPortal = (BlockCorbaPortal)new BlockCorbaPortal("corbaPortal");
-	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame");
+	public static final Block corbaPortalFrame = new BlockCorbaPortalFrame("corbaPortalFrame", "Corba Portal Frame");
 	//public static final BlockWastelandsPortal wastelandsPortal = (BlockWastelandsPortal)new BlockWastelandsPortal("wastelandsPortal");
 	//public static final Block wastelandsPortalFrame = new BlockMod("wastelandsPortalFrame");
 	public static final BlockCloudiaPortal cloudiaPortal = (BlockCloudiaPortal)new BlockCloudiaPortal("cloudiaPortal");
-	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", 3.0F);
+	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", "Cloudia Portal Frame", 3.0F);
 	
-	public static final Block depthsLights = new BlockMod("depthsLight").setLightLevel(1.0F);
+	public static final Block depthsLights = new BlockMod("depthsLight", "Depths Light").setLightLevel(1.0F);
 
-	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", 2.0F);
-	public static final Block ashBlock = new BlockMod("ashBlock");
+	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", "Hot Ground", 2.0F);
+	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
 	
-	public static final Block fire = new BlockModFire("fire");
-	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire");
+	public static final Block fire = new BlockModFire("fire", "Fire");
+	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire", "Boiling Fire");
 	
-	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", 2.0F);
+	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", "Mossy Essence Stone", 2.0F);
 
-	public static final Block dungeonBrick = new BlockDungeonBlock("dungeonBrick");
-	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick");
-	public static final Block dungeonChisledBrick = new BlockDungeonBlock("dungeonChiseledBrick");
-	public static final Block dungeonBrickCarved = new BlockDungeonBlock("dungeonBrickCarved");
-	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", true);
+	public static final Block dungeonBrick = new BlockDungeonBlock("dungeonBrick", "Dungeon Brick");
+	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick", "Dungeon Cracked Brick");
+	public static final Block dungeonChisledBrick = new BlockDungeonBlock("dungeonChiseledBrick", "Dungeon Chiseled Brick");
+	public static final Block dungeonBrickCarved = new BlockDungeonBlock("dungeonBrickCarved", "Dungeon Carved Brick");
+	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", "Dungeon Lamp", true);
 	
-	public static final Block dungeonBrickStairs = new BlockModStairs(dungeonBrick, "dungeonBrickStairs");
-	public static final Block dungeonCrackedBrickStairs = new BlockModStairs(dungeonCrackedBrick, "dungeonCrackedBrickStairs");
-	public static final Block dungeonChisledBrickStairs = new BlockModStairs(dungeonChisledBrick, "dungeonChiseledBrickStairs");
-	public static final Block dungeonBrickCarvedStairs = new BlockModStairs(dungeonBrickCarved, "dungeonBrickCarvedStairs");
-	public static final Block dungeonLampStairs = new BlockModStairs(dungeonLamp, "dungeonLampStairs", true);
+	public static final Block dungeonBrickStairs = new BlockModStairs(dungeonBrick, "dungeonBrickStairs", "Dungeon Brick Stairs");
+	public static final Block dungeonCrackedBrickStairs = new BlockModStairs(dungeonCrackedBrick, "dungeonCrackedBrickStairs", "Cracked Dungeon Brick Stairs");
+	public static final Block dungeonChisledBrickStairs = new BlockModStairs(dungeonChisledBrick, "dungeonChiseledBrickStairs", "Chiseled Dungeon Brick Stairs");
+	public static final Block dungeonBrickCarvedStairs = new BlockModStairs(dungeonBrickCarved, "dungeonBrickCarvedStairs", "Carved Dungeon Brick Stairs");
+	public static final Block dungeonLampStairs = new BlockModStairs(dungeonLamp, "dungeonLampStairs", "Dungeon Lamp Stairs", true);
 
-	public static final Block dungeonBrickFence = new BlockModFence(dungeonBrick, "dungeonBrickFence");
-	public static final Block dungeonCrackedBrickFence = new BlockModFence(dungeonCrackedBrick, "dungeonCrackedBrickFence");
-	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrickFence");
-	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarvedFence");
-	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", true);
+	public static final Block dungeonBrickFence = new BlockModFence(dungeonBrick, "dungeonBrickFence", "Dungeon Brick Fence");
+	public static final Block dungeonCrackedBrickFence = new BlockModFence(dungeonCrackedBrick, "dungeonCrackedBrickFence", "Cracked Dungeon Brick Fence");
+	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrickFence", "Chiseled Dungeon Brick Fence");
+	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarvedFence", "Carved Dungeon Brick Fence");
+	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", "Dungeon Lamp Fence", true);
 	
-	public static final Block hotBrick = new BlockMod("hotBrick", 2.0F);
-	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence");
-	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs");
+	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
+	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence", "Hot Brick Fence");
+	public static final Block hotBrick_stairs = new BlockModStairs(hotBrick, "hotBrickStairs", "Hor Brick Stairs");
 
-	public static final Block hotGlass = new BlockJoinedGlass("hotGlass");
-	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass");
+	public static final Block hotGlass = new BlockJoinedGlass("hotGlass", "Hot Glass");
+	public static final Block smoothGlass = new BlockJoinedGlass("smoothGlass", "Smooth Glass");
 	//public static final Block hotGlassPane = new BlockJoinedPane("hotGlass");
 	//public static final Block smoothGlassPane = new BlockJoinedPane("smoothGlass");
 	
@@ -221,12 +226,9 @@ public class EssenceBlocks {
 	//public static final Block incubatorIdle = new BlockIncubator("incubator", false);
 	//public static final Block incubatorActive = new BlockIncubator("incubatorActive", true);
 	
-	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "hotDoorBlock");
+	public static final BlockModDoor hotDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "hotDoorBlock", "Hot Door");
 	
-	public static final Block essenceWallSign = new BlockEssenceWallSign("essenceSign");
-	public static final Block essenceStandingSign = new BlockEssenceStandingSign("essenceStandingSign");
-	
-	public static final Block colouredBricks = new BlockColouredBricks();
+	public static final Block colouredBricks = new BlockColouredBricks();//TODO
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", true);
 	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", false);
@@ -240,11 +242,11 @@ public class EssenceBlocks {
 
 	//public static final Block christmasLights = new BlockChristmasLights("christmasLights");
 	
-	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", 0.5F);
-	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass");
+	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
+	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
-	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", 0.5F).setLightLevel(1.0F);
-	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", 0.5F);
+	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", "Frozen Lamp", 0.5F).setLightLevel(1.0F);
+	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", "Workshop Stone", 0.5F);
 	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence");
 	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock");

@@ -13,8 +13,8 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockModGlass extends BlockMod {
 
-	public BlockModGlass(String name, float hardness) {
-		super(EnumMaterialTypes.GLASS, name, hardness);
+	public BlockModGlass(String name, String finalName, float hardness) {
+		super(EnumMaterialTypes.GLASS, name, finalName, hardness);
 	}
 
 	@SideOnly(Side.CLIENT)

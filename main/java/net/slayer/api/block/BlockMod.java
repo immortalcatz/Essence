@@ -3,20 +3,15 @@ package net.slayer.api.block;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
-import net.essence.client.render.particles.OreParticleFX;
-import net.essence.util.Config;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -35,28 +30,29 @@ public class BlockMod extends Block{
 	public String name;
 	protected boolean isOpaque = true, isNormalCube = true;
 	
-	public BlockMod(String name, float hardness) {
-		this(EnumMaterialTypes.STONE, name, hardness, EssenceTabs.blocks);
+	public BlockMod(String name, String finalName, float hardness) {
+		this(EnumMaterialTypes.STONE, name, finalName, hardness, EssenceTabs.blocks);
 	}
 
-	public BlockMod(String name) {
-		this(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
+	public BlockMod(String name, String finalName) {
+		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, EssenceTabs.blocks);
 	}
 
-	public BlockMod(EnumMaterialTypes type, String name, float hardness) {
-		this(type, name, hardness, EssenceTabs.blocks);
+	public BlockMod(EnumMaterialTypes type, String name, String finalName, float hardness) {
+		this(type, name, finalName, hardness, EssenceTabs.blocks);
 	}
 
-	public BlockMod(String name, boolean breakable, CreativeTabs tab) {
-		this(EnumMaterialTypes.STONE, name, tab);
+	public BlockMod(String name, String finalName, boolean breakable, CreativeTabs tab) {
+		this(EnumMaterialTypes.STONE, name, finalName, tab);
 	}
 
-	public BlockMod(String name, boolean breakable) {
-		this(name, breakable, EssenceTabs.blocks);
+	public BlockMod(String name, String finalName, boolean breakable) {
+		this(name, finalName, breakable, EssenceTabs.blocks);
 	}
 
-	public BlockMod(EnumMaterialTypes blockType, String name, CreativeTabs tab) {
+	public BlockMod(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab) {
 		super(blockType.getMaterial());
+		LangRegistry.addBlock(name, finalName);
 		this.blockType = blockType;
 		setHardness(2.0F);
 		rand = new Random();
@@ -68,8 +64,9 @@ public class BlockMod extends Block{
 		GameRegistry.registerBlock(this, name);
 	}
 
-	public BlockMod(EnumMaterialTypes blockType, String name, float hardness, CreativeTabs tab) {
+	public BlockMod(EnumMaterialTypes blockType, String name, String finalName, float hardness, CreativeTabs tab) {
 		super(blockType.getMaterial());
+		LangRegistry.addBlock(name, finalName);
 		this.blockType = blockType;
 		rand = new Random();
 		setStepSound(blockType.getSound());
@@ -148,7 +145,7 @@ public class BlockMod extends Block{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
-		if(Config.boilBlockSpawnSmoke){
+		/*if(Config.boilBlockSpawnSmoke){
 			if(w.getBlockState(pos) == EssenceBlocks.hotBlock.getDefaultState()){
 				for(int i = 0; i < 3; ++i) {
 					double d0 = (double)pos.getX() + rand.nextDouble();
@@ -157,6 +154,6 @@ public class BlockMod extends Block{
 					w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
 				}
 			}
-		}
+		}*/
 	}
 }

@@ -24,8 +24,8 @@ public class BlockCorbaPortalFrame extends BlockMod {
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     public static final PropertyBool EYE = PropertyBool.create("eye");
 
-    public BlockCorbaPortalFrame(String name) {
-        super(name, false);
+    public BlockCorbaPortalFrame(String name, String f) {
+        super(name, f, false);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(EYE, Boolean.valueOf(false)));
     }
 

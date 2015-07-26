@@ -21,8 +21,8 @@ public class BlockJoinedGlass extends BlockMod {
 	private String[] textures = new String[16];
 	//private IIcon[] icons = new IIcon[16];
 
-	public BlockJoinedGlass(String name) {
-		super(EnumMaterialTypes.GLASS, name, 0.5F);
+	public BlockJoinedGlass(String name, String f) {
+		super(EnumMaterialTypes.GLASS, name, f, 0.5F);
         textures[0] = SlayerAPI.PREFIX + "glass/" + name + "/glass";
         textures[1] = SlayerAPI.PREFIX + "glass/" + name + "/glass_1_d";
         textures[2] = SlayerAPI.PREFIX + "glass/" + name + "/glass_1_u";

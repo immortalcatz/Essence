@@ -17,8 +17,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockCloud extends BlockMod {
 
-	public BlockCloud(String name) {
-		super(EnumMaterialTypes.WOOL, name, 0.2F);
+	public BlockCloud(String name, String f) {
+		super(EnumMaterialTypes.WOOL, name, f, 0.2F);
 	}
 
 	@Override

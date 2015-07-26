@@ -19,8 +19,8 @@ import net.slayer.api.entity.tileentity.container.BlockModContainer;
 
 public class BlockKnowledgeTable extends BlockModContainer {
 
-	public BlockKnowledgeTable(String name) {
-		super(EnumMaterialTypes.STONE, name, 2.0F, EssenceTabs.blocks);
+	public BlockKnowledgeTable(String name, String f) {
+		super(EnumMaterialTypes.STONE, name, f, 2.0F, EssenceTabs.blocks);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.75F, 1.0F);
 	}
 

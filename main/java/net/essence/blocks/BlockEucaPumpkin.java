@@ -28,8 +28,8 @@ public class BlockEucaPumpkin extends BlockMod {
 	private BlockPattern fourfaPattern;
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-	public BlockEucaPumpkin(String name) {
-		super(EnumMaterialTypes.GOURD, name, 0.5F);
+	public BlockEucaPumpkin(String name, String f) {
+		super(EnumMaterialTypes.GOURD, name, f, 0.5F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.setTickRandomly(true);
 	}

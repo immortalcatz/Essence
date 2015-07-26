@@ -13,8 +13,6 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -25,7 +23,6 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
@@ -38,8 +35,8 @@ public class BlockModDoor extends BlockMod {
     public static final PropertyBool POWERED_PROP = PropertyBool.create("powered");
     public static final PropertyEnum HALF_PROP = PropertyEnum.create("half", BlockModDoor.EnumDoorHalf.class);
 
-    public BlockModDoor(EnumMaterialTypes t, float h, String name) {
-        super(t, name, h);
+    public BlockModDoor(EnumMaterialTypes t, float h, String name, String finalName) {
+        super(t, name, finalName, h);
         setCreativeTab(null);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING_PROP, EnumFacing.NORTH).withProperty(OPEN_PROP, Boolean.valueOf(false)).withProperty(HINGEPOSITION_PROP, BlockModDoor.EnumHingePosition.LEFT).withProperty(POWERED_PROP, Boolean.valueOf(false)).withProperty(HALF_PROP, BlockModDoor.EnumDoorHalf.LOWER));
     }
@@ -279,7 +276,7 @@ public class BlockModDoor extends BlockMod {
     }
     
     private Item getItem() {
-    	return this == EssenceBlocks.hotDoor ? EssenceItems.hotDoorItem : null;
+    	return /*this == EssenceBlocks.hotDoor ? EssenceItems.hotDoorItem :*/ null;
     }
     
     @Override

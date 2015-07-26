@@ -6,8 +6,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockCloudiaPost extends BlockMod {
 
-	public BlockCloudiaPost(String name) {
-		super(name);
+	public BlockCloudiaPost(String name, String f) {
+		super(name, f);
 	}
 
 	@Override

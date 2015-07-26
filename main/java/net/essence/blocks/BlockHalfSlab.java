@@ -17,8 +17,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockHalfSlab extends BlockMod {
 
-	public BlockHalfSlab(String name) {
-		super(name, 1.0F);
+	public BlockHalfSlab(String name, String f) {
+		super(name, f, 1.0F);
 		setCreativeTab(EssenceTabs.blocks);
 		setLightOpacity(255);
 	}

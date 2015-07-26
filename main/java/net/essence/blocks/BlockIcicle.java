@@ -9,8 +9,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockIcicle extends BlockMod {
 
-	public BlockIcicle(String name) {
-		super(name);
+	public BlockIcicle(String name, String f) {
+		super(name, f);
 	}
 	
 	@Override

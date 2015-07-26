@@ -12,8 +12,8 @@ import net.slayer.api.block.BlockModFlower;
 
 public class BlockEucaSapling extends BlockModFlower implements IGrowable {
 
-	public BlockEucaSapling(String name) {
-		super(name);
+	public BlockEucaSapling(String name, String f1) {
+		super(name, f1);
 		this.setTickRandomly(true);
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);

@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 
 public class BlockBoilingFire extends BlockModFire {
 
-	public BlockBoilingFire(String name) {
-		super(name);
+	public BlockBoilingFire(String name, String n) {
+		super(name, n);
 	}
 	
 	@Override

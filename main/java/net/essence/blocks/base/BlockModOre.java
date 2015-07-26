@@ -5,15 +5,9 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.client.render.particles.OreParticleFX;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.particle.EffectRenderer;
-import net.minecraft.client.particle.EntityDiggingFX;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -23,13 +17,9 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockModOre extends BlockMod {
 
-	public BlockModOre(String name) {
-		super(name);
+	public BlockModOre(String name, String finalName) {
+		super(name, finalName);
 	}
-
-	public int boostBrightnessLow;
-	public int boostBrightnessHigh;
-	public boolean enhanceBrightness;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -92,17 +82,6 @@ public class BlockModOre extends BlockMod {
 				FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 			}
 		}
-	}
-	
-	@Override
-	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.shadiumOre || this == EssenceBlocks.luniumOre || this == EssenceBlocks.flairiumOre || 
-				this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.flairiumBlock 
-				|| this == EssenceBlocks.hellstoneBlock || this == EssenceBlocks.hellstoneOre || this == EssenceBlocks.sapphireOre) {
-			return super.getMixedBrightnessForBlock(worldIn, pos);
-			//return 1000;
-		}
-		return super.getMixedBrightnessForBlock(worldIn, pos);
 	}
 	
 	@Override

@@ -18,8 +18,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockChristmasLights extends BlockMod implements IShearable {
 
-	public BlockChristmasLights(String name) {
-		super(EnumMaterialTypes.LEAVES, name, 0.2F);
+	public BlockChristmasLights(String name, String f) {
+		super(EnumMaterialTypes.LEAVES, name, f, 0.2F);
 		setLightLevel(0.35F);
 	}
 	

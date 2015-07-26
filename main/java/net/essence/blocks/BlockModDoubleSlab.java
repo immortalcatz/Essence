@@ -11,8 +11,8 @@ import net.slayer.api.block.BlockModSlab;
 
 public class BlockModDoubleSlab extends BlockModSlab {
 
-	public BlockModDoubleSlab(boolean full, String name) {
-		super(full, name);
+	public BlockModDoubleSlab(boolean full, String name, String f) {
+		super(full, name, f);
 		setCreativeTab(null);
 	}
 

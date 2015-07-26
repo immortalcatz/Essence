@@ -41,6 +41,7 @@ public class CommonProxy {
 		DimensionHelper.init();
 		DimensionHelper.addSpawns();
 		EssenceTabs.init();
+		if(SlayerAPI.DEVMODE) LangRegistry.instance.register();
 		addOreDictionary();
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
 		SlayerAPI.registerEvent(new PlayerEvent());

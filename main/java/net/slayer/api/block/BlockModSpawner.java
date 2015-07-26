@@ -9,7 +9,6 @@ import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.entity.tileentity.container.BlockModContainer;
 
@@ -17,8 +16,8 @@ public class BlockModSpawner extends BlockModContainer {
 
     protected String mobName;
 
-    public BlockModSpawner(String name, String mobName) {
-        super(EnumMaterialTypes.STONE, name, -1, EssenceTabs.spawners);
+    public BlockModSpawner(String name, String finalName, String mobName) {
+        super(EnumMaterialTypes.STONE, name, finalName, -1, EssenceTabs.spawners);
         this.mobName = mobName;
     }
 

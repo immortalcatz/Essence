@@ -11,8 +11,8 @@ import net.slayer.api.block.BlockMod;
 
 public abstract class BlockModContainer extends BlockMod implements ITileEntityProvider {
 
-    public BlockModContainer(EnumMaterialTypes type, String name, float hardness, CreativeTabs tab) {
-        super(type, name, hardness, tab);
+    public BlockModContainer(EnumMaterialTypes type, String name, String n, float hardness, CreativeTabs tab) {
+        super(type, name, n, hardness, tab);
         this.isBlockContainer = true;
     }
 

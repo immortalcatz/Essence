@@ -6,8 +6,8 @@ import net.slayer.api.EnumMaterialTypes;
 
 public class BlockModLog extends BlockMod {
 
-	public BlockModLog(String name) {
-		super(EnumMaterialTypes.WOOD, name, 3.0F);
+	public BlockModLog(String name, String finalName) {
+		super(EnumMaterialTypes.WOOD, name, finalName, 3.0F);
 	}
 
 	@Override

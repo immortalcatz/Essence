@@ -2,14 +2,16 @@ package net.slayer.api.block;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockModStairs extends BlockStairs {
 
-	public BlockModStairs(Block stair, String name, boolean light) {
+	public BlockModStairs(Block stair, String name, String finalName, boolean light) {
 		super(stair.getDefaultState());
+		LangRegistry.addBlock(name, finalName);
 		setCreativeTab(EssenceTabs.blocks);
 		setUnlocalizedName(name);
 		if(light) setLightLevel(0.5F);
@@ -19,7 +21,7 @@ public class BlockModStairs extends BlockStairs {
 		GameRegistry.registerBlock(this, name);
 	}
 	
-	public BlockModStairs(Block b, String n) {
-		this(b, n, false);
+	public BlockModStairs(Block b, String n, String n2) {
+		this(b, n, n2, false);
 	}
 }

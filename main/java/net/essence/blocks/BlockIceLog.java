@@ -12,7 +12,7 @@ import net.slayer.api.block.BlockModLog;
 public class BlockIceLog extends BlockModLog {
 
 	public BlockIceLog() {
-		super("iceLog");
+		super("iceLog", "Ice Log");
 		isOpaque = false;
 		isNormalCube = false;
 		setLightOpacity(3);

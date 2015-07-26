@@ -16,8 +16,8 @@ public class BlockGemBlock extends BlockMod {
 
 	public boolean isRare;
 	
-	public BlockGemBlock(String name, boolean rare) {
-		super(EnumMaterialTypes.GLASS, name, 0.4F);
+	public BlockGemBlock(String name, String f, boolean rare) {
+		super(EnumMaterialTypes.GLASS, name, f, 0.4F);
 		isRare = rare;
 	}
 

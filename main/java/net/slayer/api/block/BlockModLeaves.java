@@ -24,8 +24,8 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     protected int[] adjacentTreeBlocks;
 	private boolean isFrozenPlant = false;
 
-    public BlockModLeaves(String name, float hardness) {
-        super(EnumMaterialTypes.LEAVES, name, hardness);
+    public BlockModLeaves(String name, String finalName, float hardness) {
+        super(EnumMaterialTypes.LEAVES, name, finalName, hardness);
         this.setHardness(0.3F);
         this.setLightOpacity(1);
         this.setTickRandomly(true);

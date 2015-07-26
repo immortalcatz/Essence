@@ -2,6 +2,7 @@ package net.slayer.api.block;
 
 import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
@@ -13,8 +14,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockModFence extends BlockFence {
 
-	public BlockModFence(Block block, String name, boolean light) {
+	public BlockModFence(Block block, String name, String finalName, boolean light) {
 		super(block.getMaterial());
+		LangRegistry.addBlock(name, finalName);
 		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.blocks);
 		if(light) setLightLevel(0.5F);
@@ -23,8 +25,8 @@ public class BlockModFence extends BlockFence {
 		GameRegistry.registerBlock(this, name);
 	}
 	
-	public BlockModFence(Block b, String n) {
-		this(b, n, false);
+	public BlockModFence(Block b, String n, String finalName) {
+		this(b, n, finalName, false);
 	}
 	
 	@Override

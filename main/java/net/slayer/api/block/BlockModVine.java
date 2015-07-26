@@ -22,8 +22,6 @@ import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
 
 public class BlockModVine extends BlockMod implements IShearable {
@@ -39,8 +37,8 @@ public class BlockModVine extends BlockMod implements IShearable {
 	public static final int EAST_FLAG = getMetaFlag(EnumFacing.EAST);
 	public static final int WEST_FLAG = getMetaFlag(EnumFacing.WEST);
 
-	public BlockModVine(String name) {
-		super(EnumMaterialTypes.VINES, name, 0.0F);
+	public BlockModVine(String name, String finalName) {
+		super(EnumMaterialTypes.VINES, name, finalName, 0.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
 		this.setTickRandomly(true);
 		this.setCreativeTab(EssenceTabs.decoraton);

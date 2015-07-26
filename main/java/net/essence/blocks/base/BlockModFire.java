@@ -20,8 +20,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockModFire extends BlockMod {
 
-	public BlockModFire(String name) {
-		super(EnumMaterialTypes.FIRE, name, 0.0F);
+	public BlockModFire(String name, String finalN) {
+		super(EnumMaterialTypes.FIRE, name, finalN, 0.0F);
 		setLightLevel(1.0F);
 		setUnlocalizedName(name);
 		setCreativeTab(null);

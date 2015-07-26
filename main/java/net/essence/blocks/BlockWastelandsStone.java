@@ -9,8 +9,8 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockWastelandsStone extends BlockMod {
 
-	public BlockWastelandsStone(String name) {
-		super(name);
+	public BlockWastelandsStone(String name, String f) {
+		super(name, f);
 	}
 	
 	/*@Override

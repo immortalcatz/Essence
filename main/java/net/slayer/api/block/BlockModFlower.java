@@ -1,14 +1,8 @@
 package net.slayer.api.block;
 
-import static net.minecraftforge.common.EnumPlantType.Plains;
-
 import java.util.Random;
 
-import org.apache.http.conn.routing.RouteInfo.LayerType;
-
-import net.essence.EssenceBlocks;
 import net.essence.EssenceTabs;
-import net.essence.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +11,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
@@ -33,8 +26,8 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 	private boolean damageWhenContact = false;
 	private boolean isFrozenPlant = false;
 
-	public BlockModFlower(String name) {
-		super(EnumMaterialTypes.PLANT, name, 0.0F);
+	public BlockModFlower(String name, String finalName) {
+		super(EnumMaterialTypes.PLANT, name, finalName, 0.0F);
 		this.setTickRandomly(true);
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
@@ -89,7 +82,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	protected void checkAndDropBlock(World w, BlockPos pos, IBlockState s) {
 		if(!this.canBlockStay(w, pos, true)) {
-			if(this != EssenceBlocks.eucaTallGrass)
+			//if(this != EssenceBlocks.eucaTallGrass)
 				this.dropBlockAsItem(w, pos, s, 0);
 			w.setBlockState(pos, Blocks.air.getDefaultState(), 3);
 		}
@@ -123,8 +116,8 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 
 	@Override
 	public EnumWorldBlockLayer getBlockLayer() {
-		if(this == EssenceBlocks.permaFlower || this == EssenceBlocks.shiverFlower || this == EssenceBlocks.iceBush)
-			return EnumWorldBlockLayer.TRANSLUCENT;
+		//if(this == EssenceBlocks.permaFlower || this == EssenceBlocks.shiverFlower || this == EssenceBlocks.iceBush)
+		//	return EnumWorldBlockLayer.TRANSLUCENT;
 		return EnumWorldBlockLayer.CUTOUT;
 	}
 

@@ -8,13 +8,13 @@ import net.slayer.api.block.BlockMod;
 
 public class BlockDungeonBlock extends BlockMod {
 
-	public BlockDungeonBlock(String name, boolean light) {
-		super(name, -1.0F);
+	public BlockDungeonBlock(String name, String f, boolean light) {
+		super(name, f, -1.0F);
 		if(light) setLightLevel(0.5F);
 		setResistance(10000000.0F);
 	}
 
-	public BlockDungeonBlock(String name){
-		this(name, false);
+	public BlockDungeonBlock(String name, String f){
+		this(name, f, false);
 	}
 }

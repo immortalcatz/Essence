@@ -6,8 +6,8 @@ import net.slayer.api.block.BlockModVine;
 
 public class BlockCaveVine extends BlockModVine {
 
-	public BlockCaveVine(String name) {
-		super(name);
+	public BlockCaveVine(String name, String f) {
+		super(name, f);
 		setLightLevel(0.6F);
 	}
 	
