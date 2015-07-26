@@ -247,42 +247,42 @@ public class EssenceBlocks {
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
 	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", "Frozen Lamp", 0.5F).setLightLevel(1.0F);
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", "Workshop Stone", 0.5F);
-	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs");
-	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence");
-	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock");
-	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", 2.0F);
-	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab");
-	public static final Block frozenBrick = new BlockMod("frozenBricks");
-	public static final Block icicle = new BlockIcicle("icicle");
-	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn").setContactDamage().setFrozenPlant();
-	public static final BlockModFlower iceBud = new BlockModFlower("iceBud").setFrozenPlant();
-	public static final BlockModFlower frozenBlooms = new BlockModFlower("frozenBlooms").setFrozenPlant();
-	public static final BlockModFlower permaFlower = (BlockModFlower)new BlockModFlower("permaFlower").setFrozenPlant();
-	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower").setFrozenPlant();
-	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush").setFrozenPlant();
+	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs", "Workshop Stairs");
+	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence", "Workshop Fence");
+	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock", "Workshop Fence");
+	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", "Candy Cane", 2.0F);
+	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab", "Workshop Slab");
+	public static final Block frozenBrick = new BlockMod("frozenBricks", "Frozen Bricks");
+	public static final Block icicle = new BlockIcicle("icicle", "Icicle");
+	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn", "Frostberry Thorn").setContactDamage().setFrozenPlant();
+	public static final BlockModFlower iceBud = new BlockModFlower("iceBud", "Ice Bud").setFrozenPlant();
+	public static final BlockModFlower frozenBlooms = new BlockModFlower("frozenBlooms", "Frozen Blooms").setFrozenPlant();
+	public static final BlockModFlower permaFlower = (BlockModFlower)new BlockModFlower("permaFlower", "Perma Flower").setFrozenPlant();
+	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower", "Shiver Flower").setFrozenPlant();
+	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush", "Ice Bush").setFrozenPlant();
 	public static final BlockMod iceLog = new BlockIceLog();
 	public static final BlockMod brittleIce = new BlockBrittleIce();
 	
-	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass");
-	public static final BlockModFlower eucaTallFlowers = new BlockModFlower("eucaTallFlowers");
-	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower");
-	public static final BlockModFlower frozenFlower = new BlockModFlower("frozenFlower");
-	public static final BlockModFlower depthsFlower = new BlockModFlower("depthsFlower");
-	public static final BlockModFlower depthsBlueFlower = new BlockModFlower("depthsBlueFlower").setLightLevel(0.625F);
-	public static final BlockModFlower corbaFlower = new BlockModFlower("corbaFlower");
-	public static final BlockModFlower corbaTallGrass = new BlockModFlower("corbaTallGrass");
-	public static final BlockModFlower corbaSpeckledFlower = new BlockModFlower("corbaSpeckledFlower");
-	public static final BlockModFlower corbaLightPurpleFlower = new BlockModFlower("corbaLightPurpleFlower");
-	public static final BlockModFlower corbaRedFlower = new BlockModFlower("corbaRedFlower");
-	public static final BlockModFlower corbaBlueFlower = new BlockModFlower("corbaBlueFlower");
-	public static final BlockModFlower corbaDarkPurpleFlower = new BlockModFlower("corbaDarkPurpleFlower");
-	public static final BlockModFlower flameFlower = new BlockModFlower("flameFlower");
-	public static final BlockModFlower infernoPlant = new BlockModFlower("infernoPlant");
-	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass");
+	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass", "Euca Tall Grass");
+	public static final BlockModFlower eucaTallFlowers = new BlockModFlower("eucaTallFlowers", "Euca Tall Flowers");
+	public static final BlockModFlower eucaBlueFlower = new BlockModFlower("eucaBlueFlower", "Euca Blue Flower");
+	public static final BlockModFlower frozenFlower = new BlockModFlower("frozenFlower", "Frozen Flower");
+	public static final BlockModFlower depthsFlower = new BlockModFlower("depthsFlower", "Depths Flower");
+	public static final BlockModFlower depthsBlueFlower = new BlockModFlower("depthsBlueFlower", "Depths Blue Flower").setLightLevel(0.625F);
+	public static final BlockModFlower corbaFlower = new BlockModFlower("corbaFlower", "Corba Flower");
+	public static final BlockModFlower corbaTallGrass = new BlockModFlower("corbaTallGrass", "Corba Tall Grass");
+	public static final BlockModFlower corbaSpeckledFlower = new BlockModFlower("corbaSpeckledFlower", "Speckled Flower");
+	public static final BlockModFlower corbaLightPurpleFlower = new BlockModFlower("corbaLightPurpleFlower", "Light Purple Flower");
+	public static final BlockModFlower corbaRedFlower = new BlockModFlower("corbaRedFlower", "Red Flower");
+	public static final BlockModFlower corbaBlueFlower = new BlockModFlower("corbaBlueFlower", "Blue Flower");
+	public static final BlockModFlower corbaDarkPurpleFlower = new BlockModFlower("corbaDarkPurpleFlower", "Dark Purple Flower");
+	public static final BlockModFlower flameFlower = new BlockModFlower("flameFlower", "Flame Flower");
+	public static final BlockModFlower infernoPlant = new BlockModFlower("infernoPlant", "Inferno Plant");
+	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass", "Burnt Grass");
 	
-	public static final Block grindstone = new BlockGrindstone("grindstone");
-	public static final Block blueGems = new BlockGemBlock("blueGems", false);
-	public static final Block redGems = new BlockGemBlock("redGems", true);
+	public static final Block grindstone = new BlockGrindstone("grindstone", "Grindstone");
+	public static final Block blueGems = new BlockGemBlock("blueGems", "Red Gems", false);
+	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
 	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggiesCrop");
@@ -292,20 +292,20 @@ public class EssenceBlocks {
 	public static final Block glowaCrop = new BlockGlowaCrop("glowaCrop");
 	public static final Block zatPedalsCrop = new BlockZatPedalsCrop("zatPedalsCrop");
 
-	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", 0.5F);
-	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", 0.5F);
+	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", "Black Block", 0.5F);
+	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", "White Block", 0.5F);
 
-	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin");
-	public static final Block cloud = new BlockCloud("cloud");
+	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
+	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
 	public static final Block brisonBlocks = new BlockBrison();
 	
-	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable");
-	public static final Block summoningTable = new BlockSummoningTable("summoningTable");
-	public static final Block bossAltar = new BlockMod("bossAltar");
+	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
+	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
+	public static final Block bossAltar = new BlockMod("bossAltar", "Boss Altar");
 	
-	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "goldbot");
-	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "silverbot");
+	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "Goldbot Spawner", "goldbot");
+	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "Silverbot Spawner", "silverbot");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
