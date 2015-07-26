@@ -6,6 +6,7 @@ import java.util.Set;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -30,9 +31,10 @@ public class ItemMultiTool extends ItemTool {
 	private static final Set<Block> blocksEffectiveAgainst = Sets.newHashSet(Block.blockRegistry);
 	protected EssenceToolMaterial mat;
 
-	public ItemMultiTool(String name, EssenceToolMaterial tool) {
+	public ItemMultiTool(String name, String f, EssenceToolMaterial tool) {
 		super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
 		mat = tool;
+		LangRegistry.addItem(name, f);
 		setCreativeTab(EssenceTabs.tools);
 		setUnlocalizedName(name);
 		setHarvestLevel("pickaxe", tool.getHarvestLevel());
