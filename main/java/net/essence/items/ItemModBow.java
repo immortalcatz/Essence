@@ -26,8 +26,8 @@ public class ItemModBow extends ItemMod {
 	public Item arrowItem;
 	public int dur = 18;
 
-	public ItemModBow(String name, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
-		super(name, EssenceTabs.ranged);
+	public ItemModBow(String name, String f, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
+		super(name, f, EssenceTabs.ranged);
 		this.maxStackSize = 1;
 		this.dur = duration;
 		this.arrowClass = arrowEnt;
@@ -36,8 +36,8 @@ public class ItemModBow extends ItemMod {
 		this.setFull3D();
 	}
 	
-	public ItemModBow(String name, int uses, Item arrow, Class<? extends EntityArrow> arrowEnt) {
-		super(name, EssenceTabs.ranged);
+	public ItemModBow(String name, String f, int uses, Item arrow, Class<? extends EntityArrow> arrowEnt) {
+		super(name, f, EssenceTabs.ranged);
 		this.maxStackSize = 1;
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;

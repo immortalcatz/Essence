@@ -19,8 +19,8 @@ import net.slayer.api.item.ItemModSword;
 
 public class ItemFreezeSword extends ItemModSword {
 
-	public ItemFreezeSword(String name, EssenceToolMaterial toolMaterial) {
-		super(name, toolMaterial);
+	public ItemFreezeSword(String name, String f, EssenceToolMaterial toolMaterial) {
+		super(name, f, toolMaterial);
 	}
 
 	@Override

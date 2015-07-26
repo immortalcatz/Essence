@@ -15,8 +15,8 @@ import net.slayer.api.item.ItemModSword;
 
 public class ItemBoilingBlade extends ItemModSword {
 
-	public ItemBoilingBlade(String name, EssenceToolMaterial toolMaterial) {
-		super(name, toolMaterial);
+	public ItemBoilingBlade(String name, String f, EssenceToolMaterial toolMaterial) {
+		super(name, f, toolMaterial);
 	}
 
 	@Override

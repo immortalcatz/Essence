@@ -13,8 +13,8 @@ public class ItemPiercer extends ItemMod {
 	private Class<? extends EntityThrowable> entity;
 	private float damage = 0;
 	
-	public ItemPiercer(String name, float damage, Class<? extends EntityThrowable> entity) {
-		super(name);
+	public ItemPiercer(String name, String f, float damage, Class<? extends EntityThrowable> entity) {
+		super(name, f);
 		this.damage = damage;
 		this.entity = entity;
 		setCreativeTab(EssenceTabs.ranged);

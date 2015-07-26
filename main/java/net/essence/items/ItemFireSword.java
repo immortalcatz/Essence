@@ -20,8 +20,8 @@ import net.slayer.api.item.ItemModSword;
 
 public class ItemFireSword extends ItemModSword {
 
-	public ItemFireSword(String name, EssenceToolMaterial toolMaterial) {
-		super(name, toolMaterial);
+	public ItemFireSword(String name, String f , EssenceToolMaterial toolMaterial) {
+		super(name, f, toolMaterial);
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.essence.util.LangHelper;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,8 +21,9 @@ public class ItemModAxe extends ItemAxe {
 
 	protected EssenceToolMaterial mat;
 
-	public ItemModAxe(String name, EssenceToolMaterial tool) {
-		super(tool.getToolMaterial());
+	public ItemModAxe(String name, String f, EssenceToolMaterial tool) {
+        super(tool.getToolMaterial());
+        LangRegistry.addItem(name, f);
 		mat = tool;
 		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.tools);

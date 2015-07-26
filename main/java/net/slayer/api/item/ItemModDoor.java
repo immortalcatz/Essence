@@ -17,8 +17,8 @@ public class ItemModDoor extends ItemMod {
 
 	private Block door;
 
-	public ItemModDoor(BlockModDoor block, String name) {
-		super(name);
+	public ItemModDoor(BlockModDoor block, String name, String f) {
+		super(name, f);
 		this.door = block;
 		setCreativeTab(EssenceTabs.blocks);
 	}

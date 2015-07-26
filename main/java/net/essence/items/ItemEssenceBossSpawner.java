@@ -18,8 +18,8 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemEssenceBossSpawner extends ItemMod {
 
-	public ItemEssenceBossSpawner(String name) {
-		super(name, EssenceTabs.spawners);
+	public ItemEssenceBossSpawner(String name, String f) {
+		super(name, f, EssenceTabs.spawners);
 		setMaxStackSize(1);
 	}
 	

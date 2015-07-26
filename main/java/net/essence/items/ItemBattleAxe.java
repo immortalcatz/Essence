@@ -15,8 +15,8 @@ import net.slayer.api.item.ItemModAxe;
 
 public class ItemBattleAxe extends ItemModAxe {
 	
-	public ItemBattleAxe(String name, EssenceToolMaterial m) {
-		super(name, m);
+	public ItemBattleAxe(String name, String f, EssenceToolMaterial m) {
+		super(name, f, m);
 		setUnlocalizedName(name);
 		setCreativeTab(EssenceTabs.weapons);
 	}

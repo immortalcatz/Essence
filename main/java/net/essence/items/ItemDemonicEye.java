@@ -14,8 +14,8 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemDemonicEye extends ItemMod {
 
-	public ItemDemonicEye(String name) {
-		super(name);
+	public ItemDemonicEye(String name, String f) {
+		super(name, f);
 	}
 
 	@Override

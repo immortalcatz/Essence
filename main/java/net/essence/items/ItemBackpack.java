@@ -11,8 +11,8 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemBackpack extends ItemMod {
 
-	public ItemBackpack(String name) {
-		super(name);
+	public ItemBackpack(String name, String finalName) {
+		super(name, finalName);
 		setCreativeTab(EssenceTabs.misc);
 	}
 

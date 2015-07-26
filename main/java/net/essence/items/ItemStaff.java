@@ -24,8 +24,8 @@ public class ItemStaff extends ItemMod {
 	protected boolean essence, unBreakable;
 	protected Class<? extends EntityBasicProjectile> projectile; 
 
-	public ItemStaff(String name, boolean essence, int magic, int uses, int dam, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
-		super(name);
+	public ItemStaff(String name, String f, boolean essence, int magic, int uses, int dam, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
+		super(name, f);
 		this.projectile = projectile;
 		damage = dam;
 		usage = magic;

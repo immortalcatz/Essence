@@ -6,6 +6,7 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.essence.util.LangHelper;
+import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -18,8 +19,9 @@ public class ItemModSword extends ItemSword {
 
 	protected EssenceToolMaterial mat;
 	
-    public ItemModSword(String name, EssenceToolMaterial toolMaterial) {
+    public ItemModSword(String name, String f, EssenceToolMaterial toolMaterial) {
         super(toolMaterial.getToolMaterial());
+        LangRegistry.addItem(name, f);
         setUnlocalizedName(name);
         mat = toolMaterial;
         setCreativeTab(EssenceTabs.weapons);

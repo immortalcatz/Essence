@@ -18,8 +18,8 @@ import net.slayer.api.worldgen.WorldGenAPI;
 
 public class ItemFlameCoin extends ItemMod {
 
-	public ItemFlameCoin(String name) {
-		super(name);
+	public ItemFlameCoin(String name, String f) {
+		super(name, f);
 		setCreativeTab(EssenceTabs.util);
 		setMaxStackSize(1);
 	}

@@ -7,8 +7,8 @@ public class ItemKnowledge extends ItemMod {
 
 	private EnumKnowledge[] knowledge;
 	
-	public ItemKnowledge(String name, EnumKnowledge...knowledge) {
-		super(name);
+	public ItemKnowledge(String name, String f, EnumKnowledge...knowledge) {
+		super(name, f);
 		setCreativeTab(null);
 		this.knowledge = knowledge;
 	}

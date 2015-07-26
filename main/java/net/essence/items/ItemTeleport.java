@@ -19,8 +19,8 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemTeleport extends ItemMod {
 
-	public ItemTeleport(String name) {
-		super(name, EssenceTabs.util);
+	public ItemTeleport(String name, String f) {
+		super(name, f, EssenceTabs.util);
 		setMaxStackSize(1);
 		setMaxDamage(100);
 	}

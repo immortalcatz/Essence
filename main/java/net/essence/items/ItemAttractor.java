@@ -19,8 +19,8 @@ public class ItemAttractor extends ItemMod {
 	private boolean attracts, essence;
 	private int magic;
 
-	public ItemAttractor(String name, boolean attracts, boolean essence, int magic) {
-		super(name, EssenceTabs.weapons);
+	public ItemAttractor(String name, String finalName, boolean attracts, boolean essence, int magic) {
+		super(name, finalName, EssenceTabs.weapons);
 		setMaxStackSize(1);
 		this.attracts = attracts;
 		this.magic = magic;

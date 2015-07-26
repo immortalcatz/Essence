@@ -6,6 +6,7 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.client.server.DarkEnergyBar;
 import net.essence.enums.EnumSounds;
+import net.essence.util.LangRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -25,11 +26,12 @@ public class ItemMod extends Item {
 
 	protected int healAmount = 0;
 
-	public ItemMod(String name){
-		this(name, EssenceTabs.items);
+	public ItemMod(String name, String finalName){
+		this(name, finalName, EssenceTabs.items);
 	}
 
-	public ItemMod(String name, CreativeTabs tab){
+	public ItemMod(String name, String finalName, CreativeTabs tab){
+		LangRegistry.addItem(name, finalName);
 		setUnlocalizedName(name);
 		setCreativeTab(tab);
 		EssenceItems.itemNames.add(name);

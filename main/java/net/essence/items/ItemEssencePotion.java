@@ -18,8 +18,8 @@ public class ItemEssencePotion extends ItemMod {
 
 	private boolean isStrong, essence;
 
-	public ItemEssencePotion(String name, boolean strong, boolean essence) {
-		super(name, EssenceTabs.misc);
+	public ItemEssencePotion(String name, String f, boolean strong, boolean essence) {
+		super(name, f, EssenceTabs.misc);
 		isStrong = strong;
 		this.essence = essence;
 	}

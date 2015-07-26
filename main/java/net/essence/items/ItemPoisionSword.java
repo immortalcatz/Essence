@@ -21,8 +21,8 @@ import net.slayer.api.item.ItemModSword;
 
 public class ItemPoisionSword extends ItemModSword {
 
-	public ItemPoisionSword(String name, EssenceToolMaterial toolMaterial) {
-		super(name, toolMaterial);
+	public ItemPoisionSword(String name, String f, EssenceToolMaterial toolMaterial) {
+		super(name, f, toolMaterial);
 	}
 
 	@Override

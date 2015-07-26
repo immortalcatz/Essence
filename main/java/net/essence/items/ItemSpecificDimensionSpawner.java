@@ -25,8 +25,8 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 	public String dimName;
 	public int dimID;
 	
-	public ItemSpecificDimensionSpawner(int dimID, String name, String dimName) {
-		super(name, EssenceTabs.spawners);
+	public ItemSpecificDimensionSpawner(int dimID, String name, String f, String dimName) {
+		super(name, f, EssenceTabs.spawners);
 		setMaxStackSize(1);
 		this.dimID = dimID;
 		this.dimName = dimName;

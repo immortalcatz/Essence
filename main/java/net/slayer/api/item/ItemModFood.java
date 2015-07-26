@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -16,16 +17,17 @@ public class ItemModFood extends ItemFood {
 
 	private int time = 32;
 	
-    public ItemModFood(String name, int food, float sat, boolean wolfFood) {
+    public ItemModFood(String name, String f, int food, float sat, boolean wolfFood) {
         super(food, sat, wolfFood);
+        LangRegistry.addItem(name, f);
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.misc);
         EssenceItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     
-    public ItemModFood(String name, int food, float sat, int timeToEat, boolean wolfFood) {
-       this(name, food, sat, wolfFood);
+    public ItemModFood(String name, String f, int food, float sat, int timeToEat, boolean wolfFood) {
+       this(name, f, food, sat, wolfFood);
        time = timeToEat;
     }
     
@@ -34,8 +36,8 @@ public class ItemModFood extends ItemFood {
     	return time;
     }
 
-    public ItemModFood(String name, int food, float sat, boolean wolfFood, int potionID, int potionDuration, int potionAmplifier, float potionEffectProbability) {
-        this(name, food, sat, wolfFood);
+    public ItemModFood(String name, String f, int food, float sat, boolean wolfFood, int potionID, int potionDuration, int potionAmplifier, float potionEffectProbability) {
+        this(name, f, food, sat, wolfFood);
         setPotionEffect(potionID, potionDuration, potionAmplifier, potionEffectProbability);
     }
 

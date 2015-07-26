@@ -11,8 +11,8 @@ public class ItemPower extends ItemMod {
 
 	private float damage;
 
-	public ItemPower(String name, float dam) {
-		super(name, EssenceTabs.ranged);
+	public ItemPower(String name, String f, float dam) {
+		super(name, f, EssenceTabs.ranged);
 		damage = dam;
 	}
 

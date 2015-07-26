@@ -14,8 +14,8 @@ import net.slayer.api.item.ItemMod;
 
 public class ItemChaosCannon extends ItemMod {
 
-	public ItemChaosCannon(String name) {
-		super(name, EssenceTabs.ranged);
+	public ItemChaosCannon(String name, String f) {
+		super(name, f, EssenceTabs.ranged);
 		setMaxStackSize(1);
 		setMaxDamage(500);
 		setFull3D();

@@ -6,6 +6,7 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.util.EssenceToolMaterial;
 import net.essence.util.LangHelper;
+import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -18,8 +19,9 @@ public class ItemModPickaxe extends ItemPickaxe {
 	
 	protected EssenceToolMaterial mat;
 
-    public ItemModPickaxe(String name, EssenceToolMaterial tool) {
-		super(tool.getToolMaterial());
+    public ItemModPickaxe(String name, String f, EssenceToolMaterial tool) {
+        super(tool.getToolMaterial());
+        LangRegistry.addItem(name, f);
 		mat = tool;
         setUnlocalizedName(name);
         setCreativeTab(EssenceTabs.tools);
