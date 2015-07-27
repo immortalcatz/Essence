@@ -87,7 +87,7 @@ public class LangRegistry {
 		armourUnloc.add(a.getUnlocalizedName());
 		int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 		armorType.add(ar.getFinalName());
-		String part = t == HEAD ? "Helmet" : t == BODY ?"Body" : t == LEGS ? "Legs" : t == BOOTS ? "Boots" : "UNKNOWN";
+		String part = t == HEAD ? "Helmet" : t == BODY ? "Chestplate" : t == LEGS ? "Leggings" : t == BOOTS ? "Boots" : "UNKNOWN";
 		armorPiece.add(part);
 	}
 

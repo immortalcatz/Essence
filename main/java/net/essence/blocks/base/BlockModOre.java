@@ -30,22 +30,23 @@ public class BlockModOre extends BlockMod {
 	@SideOnly(Side.CLIENT)
 	private void renderParticle(World w, int x, int y, int z) {
 		float r = 0.0F, g = 0.0F, b = 0.0F;
-		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.orbaditeOre) {
+		if(this == EssenceBlocks.celestiumOre || this == EssenceBlocks.celestiumBlock || this == EssenceBlocks.orbaditeOre || this == EssenceBlocks.orbaditeBlock) {
 			r = 0.0F;
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre || this == EssenceBlocks.desOre || this == EssenceBlocks.koriteOre) {
+		if(this == EssenceBlocks.shadiumOre || this == EssenceBlocks.shadiumBlock || this == EssenceBlocks.gorbiteOre || this == EssenceBlocks.desOre || 
+				 this == EssenceBlocks.gorbiteBlock || this == EssenceBlocks.desBlock) {
 			r = 0.0F;
 			g = 0.0F;
 			b = 1.0F;
 		}
-		if(this == EssenceBlocks.luniumOre || this == EssenceBlocks.luniumBlock) {
+		if(this == EssenceBlocks.luniumOre || this == EssenceBlocks.luniumBlock || this == EssenceBlocks.storonOre || this == EssenceBlocks.storonBlock) {
 			r = 1.0F;
 			g = 1.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.flairiumOre || this == EssenceBlocks.flairiumBlock || this == EssenceBlocks.storonOre) {
+		if(this == EssenceBlocks.flairiumOre || this == EssenceBlocks.flairiumBlock) {
 			r = 1.0F;
 			g = 0.5F;
 			b = 0.0F;
@@ -60,10 +61,16 @@ public class BlockModOre extends BlockMod {
 			g = 0.0F;
 			b = 1.0F;
 		}
-		if(this == EssenceBlocks.enderilliumOre || this == EssenceBlocks.enderilliumBlock || this == EssenceBlocks.mekyumOre) {
+		if(this == EssenceBlocks.enderilliumOre || this == EssenceBlocks.enderilliumBlock || this == EssenceBlocks.mekyumOre || this == EssenceBlocks.mekyumBlock) {
 			r = 1.0F;
 			g = 0.0F;
 			b = 1.0F;
+		}
+		
+		if(this == EssenceBlocks.koriteOre || this == EssenceBlocks.koriteBlock) {
+			r = 0.4F;
+			g = 0.8F;
+			b = 0.8F;
 		}
 		Random random = w.rand;
 		double d0 = 0.0625D;
