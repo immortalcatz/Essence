@@ -9,12 +9,6 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
-/**
- * 
- * @author The_SlayerMC 
- * 
- * But was based off of BossLetsPlays Lang Generator used in DivineRPG
- */
 public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
