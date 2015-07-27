@@ -13,7 +13,7 @@ public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
 
-	public String location = "../src/main/Essence/main/resources/assets/essence/lang";
+	public String location = "Essence/bin/assets/essence/lang/";
 	private BufferedWriter writer;
 	public static ArrayList<String> blockUnloc = new ArrayList<String>(), blockFinal = new ArrayList<String>(), itemUnloc = new ArrayList<String>(), itemFinal = new ArrayList<String>()
 			, fileText = new ArrayList<String>();
@@ -26,6 +26,7 @@ public class LangRegistry {
 		File en_US = new File(location + "en_US.lang");
 		try {
 			en_US.mkdirs();
+			for(int i = 0; i < 100; i++) System.out.println("Lang file generated at: " + en_US.getAbsolutePath());
 			if(en_US.exists()) en_US.delete();
 			en_US.createNewFile();
 			writer = new BufferedWriter(new FileWriter(en_US));
@@ -35,16 +36,16 @@ public class LangRegistry {
 	}
 
 	public void misc() {
-		writeToFile("itemGroup.essence.blocks=Essence Of The Gods: Blocks");
-		writeToFile("itemGroup.essence.items=Essence Of The Gods: Items");
-		writeToFile("itemGroup.essence.weapons=Essence Of The Gods: Weapons");
-		writeToFile("itemGroup.essence.ranged=Essence Of The Gods: Ranged");
-		writeToFile("itemGroup.essence.tools=Essence Of The Gods: Tools");
-		writeToFile("itemGroup.essence.util=Essence Of The Gods: Utilities");
-		writeToFile("itemGroup.essence.misc=Essence Of The Gods: Misc.");
-		writeToFile("itemGroup.essence.armor=Essence Of The Gods: Armor");
-		writeToFile("itemGroup.essence.decoration=Essence Of The Gods: Decoration");
-		writeToFile("itemGroup.essence.spawners=Essence Of The Gods: Spawners");
+		writeToFile("itemGroup.essence.blocks=Essence of the Gods: Blocks");
+		writeToFile("itemGroup.essence.items=Essence of the Gods: Items");
+		writeToFile("itemGroup.essence.weapons=Essence of the Gods: Weapons");
+		writeToFile("itemGroup.essence.ranged=Essence of the Gods: Ranged");
+		writeToFile("itemGroup.essence.tools=Essence of the Gods: Tools");
+		writeToFile("itemGroup.essence.util=Essence of the Gods: Utilities");
+		writeToFile("itemGroup.essence.misc=Essence of the Gods: Misc.");
+		writeToFile("itemGroup.essence.armor=Essence of the Gods: Armor");
+		writeToFile("itemGroup.essence.decoration=Essence of the Gods: Decoration");
+		writeToFile("itemGroup.essence.spawners=Essence of the Gods: Spawners");
 		writeToFile("item.record.underwaterWorld.desc=Chris Geddes - Underwater World");
 		writeToFile("item.record.blueWater.desc=Chris Geddes - Blue Water");
 		writeToFile("item.record.raceStar.desc=Chris Geddes - Race Star");

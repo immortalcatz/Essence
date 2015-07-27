@@ -109,7 +109,8 @@ public class SlayerAPI {
 	}
 
 	public static void registerMob(Class entityClass, String name, String finalN, int base, int fore) {
-		LangRegistry.addMob("EOTG" + name, finalN);
+		name = "EOTG" + name;
+		LangRegistry.addMob(name, finalN);
 		EntityRegistry.registerModEntity(entityClass, name, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, name, entityListID++, base, fore);
 	}
@@ -151,7 +152,8 @@ public class SlayerAPI {
 	}
 	
 	public static void registerNPC(Class entityClass, String entityName, String finalN) {
-		LangRegistry.addMob("EOTG" + entityName, finalN);
+		entityName = "EOTG" + entityName;
+		LangRegistry.addMob(entityName, finalN);
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, entityName, entityListID++, 0x00FF8C, 0x00F6FF);
 	}
@@ -161,7 +163,8 @@ public class SlayerAPI {
 	}
 
 	public static void registerBossMob(Class entityClass, String entityName, String finalN) {
-		LangRegistry.addMob("EOTG" + entityName, finalN);
+		entityName = "EOTG" + entityName;
+		LangRegistry.addMob(entityName, finalN);
 		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
         EntityList.addMapping(entityClass, entityName, entityListID++, 0x000000, 0x9B0000);
 	}
