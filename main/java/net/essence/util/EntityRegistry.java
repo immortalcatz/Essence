@@ -115,6 +115,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBPMob(EntityObserver.class, "observer", "Observer");
 		SlayerAPI.registerBPMob(EntityScreamer.class, "screamer", "Screamer");
 		SlayerAPI.registerBPMob(EntityPhoenix.class, "phoenix", "Phoenix");
+		SlayerAPI.registerBPMob(EntityLavasnake.class, "lavasnake", "Lavasnake");
 	}
 
 	public static void registerFLMobs() {

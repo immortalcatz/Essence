@@ -44,6 +44,7 @@ public class Textures {
     public static final ResourceLocation boom = addMob("boom");
     public static final ResourceLocation boomArmor = addMob("boomArmor");
     public static final ResourceLocation floro = addMob("floro");
+    
    // public static final ResourceLocation wraith = addMob("wraith");
     public static final ResourceLocation bigHongo = addMob("bigHongo");
     public static final ResourceLocation mediumHongo = addMob("mediumHongo");
@@ -122,6 +123,7 @@ public class Textures {
     public static final ResourceLocation observer = addMob("observer");
     public static final ResourceLocation screamer = addMob("screamer");
     public static final ResourceLocation phoenix = addMob("phoenix");
+    public static final ResourceLocation lavasnake = addMob("lavasnake");
     
     //Cloudia
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
