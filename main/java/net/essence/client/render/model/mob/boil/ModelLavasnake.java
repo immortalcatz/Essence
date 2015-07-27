@@ -141,20 +141,19 @@ public class ModelLavasnake extends ModelBiped {
     {
         setRotationAngles(parTime, parSwingSuppress, par4, parHeadAngleY, parHeadAngleX, 
               par7, parEntity);
-
-        GL11.glPushMatrix();
-
-        if (this.isChild)
-        {
-            float childScaleFactor = 0.5F;
-            GL11.glPushMatrix();
-            GL11.glScalef(1.0F * childScaleFactor, 1.0F * childScaleFactor, 1.0F 
-                  * childScaleFactor);
-            GL11.glTranslatef(0.0F, 24.0F * par7, 0.0F);
-            head.render(par7);
-        }
-    }
-
+        head.render(par7);
+        body.render(par7);
+        body1.render(par7);
+        body2.render(par7);
+        body3.render(par7);
+        fin1.render(par7);
+        fin2.render(par7);
+        fin3.render(par7);
+        tailFin.render(par7);
+        headFin.render(par7);
+        
+    } 
+    
     @Override
     public void setRotationAngles(float parTime, float parSwingSuppress, float par3, 
           float parHeadAngleY, float parHeadAngleX, float par6, Entity parEntity)
