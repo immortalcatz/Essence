@@ -29,9 +29,6 @@ public class ArmorDescription {
 		if(i == EssenceItems.flairiumHelmet || i == EssenceItems.flairiumChest || i == EssenceItems.flairiumLegs || i == EssenceItems.flairiumBoots)
 			list.add("Full set: Lets You Fly");
 		
-		if(i == EssenceItems.condensedDiamondHelmet || i == EssenceItems.condensedDiamondChest || i == EssenceItems.condensedDiamondLegs || i == EssenceItems.condensedDiamondBoots)
-			list.add("Full set: Lets You Fly");
-		
 		if(i == EssenceItems.sapphireHelmet || i == EssenceItems.sapphireChest || i == EssenceItems.sapphireLegs || i == EssenceItems.sapphireBoots)
 			list.add("Full set: Water breathing");
 		

@@ -34,11 +34,6 @@ public class RecipeHelper {
 		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);
 
-		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondHelmet), new Object[] {"iii", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondChest), new Object[] {"d d", "iii", "iii", 'i', Items.diamond, 'd', Blocks.diamond_block});	
-		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondLegs), new Object[] {"iii", "i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-		GameRegistry.addRecipe(new ItemStack(i.condensedDiamondBoots), new Object[] {"i i", "d d", 'i', Items.diamond, 'd', Blocks.diamond_block});
-
 		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
 
 		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});

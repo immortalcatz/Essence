@@ -6,6 +6,7 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.essence.client.ArmorDescription;
 import net.essence.util.EnumArmor;
+import net.essence.util.LangRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,6 +45,7 @@ public class ItemModArmor extends ItemArmor implements ISpecialArmor {
 		setUnlocalizedName(this.name);
 		EssenceItems.itemNames.add(this.name);
 		GameRegistry.registerItem(this, this.name);
+		LangRegistry.addArmour(this, armorMaterial, type);
 	}
 
 	@Override

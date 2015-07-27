@@ -58,8 +58,7 @@ public class ArmorAbilityEvent{
 		else if(event.player instanceof EntityPlayerMP) { 
 			EntityPlayer player = (EntityPlayerMP)event.player;
 			if(!player.capabilities.isCreativeMode && !player.isSpectator()) {
-				if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots ||
-						helmet == item.condensedDiamondHelmet && body == item.condensedDiamondChest && legs == item.condensedDiamondLegs && boots == item.condensedDiamondBoots){
+				if(helmet == item.flairiumHelmet && body == item.flairiumChest && legs == item.flairiumLegs && boots == item.flairiumBoots) {
 					player.capabilities.allowFlying = true;
 				} else {
 					player.capabilities.allowFlying = false;

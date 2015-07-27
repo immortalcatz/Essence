@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import net.essence.items.ItemModArmor;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -19,9 +20,9 @@ public class LangRegistry {
 			, fileText = new ArrayList<String>();
 	public static String[] brickNames = {"Black", "Blue", "Brown", "Cyan", "Gray", "Lime", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow"};
 	public static String[] brickTextures = {"black", "blue", "brown", "cyan", "gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"};
-	
-	public static ArrayList<String> mobUnloc = new ArrayList<String>(), mobFinal = new ArrayList<String>();
-	
+
+	public static ArrayList<String> mobUnloc = new ArrayList<String>(), mobFinal = new ArrayList<String>(), armourUnloc = new ArrayList<String>(), armorType = new ArrayList<String>(), armorPiece = new ArrayList<String>();
+
 	public LangRegistry() {
 		File en_US = new File(location + "en_US.lang");
 		try {
@@ -62,6 +63,7 @@ public class LangRegistry {
 		block();
 		item();
 		mob();
+		armour();
 		misc();
 		closeFile();
 	}
@@ -75,17 +77,25 @@ public class LangRegistry {
 		itemUnloc.add(unloc);
 		itemFinal.add(finalName);
 	}
-	
+
 	public static void addMob(String unloc, String finalName) {
 		mobUnloc.add(unloc);
 		mobFinal.add(finalName);
+	}
+
+	public static void addArmour(ItemModArmor a, EnumArmor ar, int t) {
+		armourUnloc.add(a.getUnlocalizedName());
+		int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
+		armorType.add(ar.getFinalName());
+		String part = t == HEAD ? "Helmet" : t == BODY ?"Body" : t == LEGS ? "Legs" : t == BOOTS ? "Boots" : "UNKNOWN";
+		armorPiece.add(part);
 	}
 
 	public void block() {
 		for(int i = 0; i < blockUnloc.size(); i++)
 			writeToFile("tile." + blockUnloc.get(i) + ".name=" + blockFinal.get(i));
 	}
-	
+
 	public void mob() {
 		for(int i = 0; i < mobUnloc.size(); i++)
 			writeToFile("entity." + mobUnloc.get(i) + ".name=" + mobFinal.get(i));
@@ -94,6 +104,11 @@ public class LangRegistry {
 	public void item() {
 		for(int i = 0; i < itemUnloc.size(); i++)
 			writeToFile("item." + itemUnloc.get(i) + ".name=" + itemFinal.get(i));
+	}
+	
+	public void armour() {
+		for(int i = 0; i < armourUnloc.size(); i++)
+			writeToFile(armourUnloc.get(i) + ".name=" + armorType.get(i) + " " + armorPiece.get(i));
 	}
 
 	private void writeToFile(String s) {

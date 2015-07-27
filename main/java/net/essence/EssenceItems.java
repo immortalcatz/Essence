@@ -282,11 +282,6 @@ public class EssenceItems {
 	public static final Item shadiumLegs = new ItemModArmor(EnumArmor.SHADIUM, LEGS);
 	public static final Item shadiumBoots = new ItemModArmor(EnumArmor.SHADIUM, BOOTS);
 
-	public static final Item condensedDiamondHelmet = new ItemModArmor(EnumArmor.CONDENSED_DIAMOND, HEAD);
-	public static final Item condensedDiamondChest = new ItemModArmor(EnumArmor.CONDENSED_DIAMOND, BODY);
-	public static final Item condensedDiamondLegs = new ItemModArmor(EnumArmor.CONDENSED_DIAMOND, LEGS);
-	public static final Item condensedDiamondBoots = new ItemModArmor(EnumArmor.CONDENSED_DIAMOND, BOOTS);
-
 	public static final Item sapphireHelmet = new ItemModArmor(EnumArmor.SAPPHIRE, HEAD);
 	public static final Item sapphireChest = new ItemModArmor(EnumArmor.SAPPHIRE, BODY);
 	public static final Item sapphireLegs = new ItemModArmor(EnumArmor.SAPPHIRE, LEGS);
