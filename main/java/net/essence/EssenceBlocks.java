@@ -90,18 +90,6 @@ public class EssenceBlocks {
 	public static final Block purpleGemBlock = new BlockMod("purpleGemBlock", "Purple Gem Block");
 	public static final Block blueGemBlock = new BlockMod("blueGemBlock", "Blue Gem Block");
 	public static final Block yellowGemBlock = new BlockMod("yellowGemBlock", "Yellow Gem Block");
-
-	/*public static final Block hellstoneBlockOverlay = new BlockModOre("hellstoneBlock_overlay", -1).setCreativeTab(null);
-	public static final Block celestiumBlockOverlay = new BlockModOre("celestiumBlock_overlay", -1).setCreativeTab(null);
-	public static final Block luniumBlockOverlay = new BlockModOre("luniumBlock_overlay", -1).setCreativeTab(null);
-	public static final Block shadiumBlockOverlay = new BlockModOre("shadiumBlock_overlay", -1).setCreativeTab(null);
-	public static final Block flairiumBlockOverlay = new BlockModOre("flairiumBlock_overlay", -1).setCreativeTab(null);*/
-
-	public static final BlockModSlab eucaSlab = new BlockModSlab(false, "eucaSlab", "Euca Slab");
-	//public static final BlockModDoubleSlab eucaFullSlab = new BlockModDoubleSlab(true, "eucaDoubleSlab");
-	
-	public static final BlockModSlab depthsSlab = new BlockModSlab(false, "depthsSlab", "Depths Slab");
-	//public static final BlockModDoubleSlab depthsFullSlab = new BlockModDoubleSlab(true, "depthsDoubleSlab");
 	
 	public static final Block eucaGrass = new BlockModGrass(null, "eucaGrass", "Euca Grass", 2.0F);
 	public static final Block eucaStone = new BlockMod("eucaStone", "Euca Stone", 2.0F);

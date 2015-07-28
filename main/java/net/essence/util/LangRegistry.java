@@ -1,5 +1,6 @@
 package net.essence.util;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -31,6 +32,7 @@ public class LangRegistry {
 			if(en_US.exists()) en_US.delete();
 			en_US.createNewFile();
 			writer = new BufferedWriter(new FileWriter(en_US));
+			Desktop.getDesktop().open(new File(location));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

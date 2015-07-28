@@ -108,6 +108,7 @@ public class EssenceItems {
 	public static final Item caveDust = new ItemMod("caveDust", "Cave Dust");
 	public static final Item stoneClump = new ItemMod("stoneClump", "Stone Clump");
 	
+	@SuppressWarnings("finish the rest of the dusts for all ores, and add grindstone combatibility")
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
 	public static final Item celestiumDust = new ItemMod("celestiumDust", "Celestium Dust");
