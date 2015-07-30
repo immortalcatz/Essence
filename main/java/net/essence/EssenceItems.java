@@ -413,6 +413,8 @@ public class EssenceItems {
 	public static final Item fireWand = new ItemWand("fireWand", "Fire Wand", false, 5, 600, 8, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", "Ice Wand", true, 5, 600, 8, false, EntityIceBall.class);
 	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
+	
+	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
 
 	public static final Item greenGem = new ItemMod("greenGem", "Green Gem");
 	public static final Item purpleGem = new ItemMod("purpleGem", "Purple Gem");
@@ -466,7 +468,6 @@ public class EssenceItems {
 	public static final Item spineberrySeeds = new ItemModSeeds("spineberrySeeds", "Spine Berry Seeds", EssenceBlocks.spineberryCrop);
 	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", "Glowa Seeds", EssenceBlocks.glowaCrop);
 	public static final Item zatSeeds = new ItemModSeeds("zatSeeds", "Zat Seeds", EssenceBlocks.zatPedalsCrop);
-
 
 	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");
 	public static final Item blueWater = new ItemModRecord("blueWater");

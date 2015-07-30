@@ -1,6 +1,5 @@
 package net.essence.entity.projectile;
 
-import net.essence.util.Helper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
