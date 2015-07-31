@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import net.essence.entity.projectile.*;
 import net.essence.enums.EnumKnowledge;
+import net.essence.enums.EnumSounds;
 import net.essence.items.*;
 import net.essence.util.*;
 import net.minecraft.item.*;
@@ -415,7 +416,12 @@ public class EssenceItems {
 	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
-
+	public static final Item rockLauncher = new ItemChaosCannon("rockLauncher", "Rock Launcher");
+	public static final Item netherPlasma = new ItemChaosCannon("netherPlasma", "Nether Plasma");
+	public static final Item oceanPlasma = new ItemChaosCannon("oceanPlasma", "Ocean Plasma");
+	public static final Item forestPlasma = new ItemChaosCannon("forestPlasma", "Forest Plasma");
+	public static final Item eyeBlaster = new ItemChaosCannon("eyeBlaster", "Eye Blaster");
+	
 	public static final Item greenGem = new ItemMod("greenGem", "Green Gem");
 	public static final Item purpleGem = new ItemMod("purpleGem", "Purple Gem");
 	public static final Item blueGem = new ItemMod("blueGem", "Blue Gem");
