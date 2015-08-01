@@ -108,6 +108,13 @@ public class EssenceItems {
 	public static final Item caveCrystal = new ItemMod("caveCrystal", "Cave Crystal");
 	public static final Item caveDust = new ItemMod("caveDust", "Cave Dust");
 	public static final Item stoneClump = new ItemMod("stoneClump", "Stone Clump");
+	public static final Item enchantedLeaf = new ItemMod("enchantedLeaf", "Enchanted Leaf");
+	public static final Item baseEssence = new ItemMod("baseEssence", "Base Essence");
+	public static final Item cloudPuff = new ItemMod("cloudPuff", "Cloud Puff");
+	public static final Item collectorRock = new ItemMod("collectorRock", "Collector Rock");
+	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
+	public static final Item horn = new ItemMod("horn", "Horn");
+	public static final Item scale = new ItemMod("scale", "Scale");
 	
 	@SuppressWarnings("finish the rest of the dusts for all ores, and add grindstone combatibility")
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
@@ -483,13 +490,6 @@ public class EssenceItems {
 	public static final Item raceShore = new ItemModRecord("raceShore");
 	
 	public static final Item demonicEye = new ItemDemonicEye("demonicEye", "Demonic Eye");
-
-	public static final Item baseEssence = new ItemMod("baseEssence", "Base Essence");
-	public static final Item cloudPuff = new ItemMod("cloudPuff", "Cloud Puff");
-	public static final Item collectorRock = new ItemMod("collectorRock", "Collector Rock");
-	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
-	public static final Item horn = new ItemMod("horn", "Horn");
-	public static final Item scale = new ItemMod("scale", "Scale");
 
 	public static final ItemKnowledge overworldKnowledge = new ItemKnowledge("overworldKnowledge", "Overworld Knowledge", EnumKnowledge.OVERWORLD);
 	public static final ItemKnowledge netherKnowledge = new ItemKnowledge("netherKnowledge", "Nether Knowledge", EnumKnowledge.NETHER);

@@ -2,51 +2,92 @@ package net.essence.entity.mob.corba;
 
 import java.util.Random;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
+import net.essence.entity.projectile.EntityShimmererProjectile;
 import net.essence.enums.EnumSounds;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModFlying;
-import net.slayer.api.entity.EntityModMob;
 
 public class EntityOverseer extends EntityModFlying {
 
-	@SuppressWarnings("do this")
 	public EntityOverseer(World par1World) {
 		super(par1World);
-		this.moveHelper = new EntityOverseer.OverseerMoveHelper();
+		this.moveHelper = new EntityOverseer.MoveHelper();
 		this.tasks.addTask(5, new EntityOverseer.AIRandomFly());
-		setSize(1F, 1F);
+		this.tasks.addTask(7, new EntityOverseer.AIFireballAttack());
+        this.tasks.addTask(7, new EntityOverseer.AILookAround());
+		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+		setSize(0.7F, 1.2F);
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.elderOverseerHealth;
+		return MobStats.overseerHealth;
 	}
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.HONGO;
+		return EnumSounds.SHIMMERER;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.SAND_CRAWLER;
+		return EnumSounds.SHIMMERER_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.SAND_CRAWLER;
+		return EnumSounds.SHIMMERER_DEATH;
+	}
+	
+	@Override
+	protected float getSoundVolume() {
+        return 10.0F;
+    }
+	
+	@Override
+	public boolean getCanSpawnHere() {
+        return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+    }
+
+    @Override
+    public int getMaxSpawnedInChunk() {
+        return 1;
+    }
+
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.overseeingEye, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(50) == 0) dropItem(EssenceItems.overseeingTablet, 4);
+		super.dropFewItems(b, j);
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
 	}
 
 	@Override
 	public Item getItemDropped() {
 		return null;
+	}
+
+	public void setFire(boolean b) {
+		this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b ? 1 : 0)));
 	}
 
 	private class AIRandomFly extends EntityAIBase {
@@ -78,18 +119,18 @@ public class EntityOverseer extends EntityModFlying {
 		@Override
 		public void startExecuting() {
 			Random random = this.e.getRNG();
-			double d0 = this.e.posX + (double)((random.nextFloat() * 1.0F - 1.0F) * 1.0F);
-			double d1 = this.e.posY + (double)((random.nextFloat() * 1.0F - 1.0F) * 1.0F);
-			double d2 = this.e.posZ + (double)((random.nextFloat() * 1.0F - 1.0F) * 1.0F);
+			double d0 = this.e.posX + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+			double d1 = this.e.posY + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+			double d2 = this.e.posZ + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
 			this.e.getMoveHelper().setMoveTo(d0, d1, d2, 1.0D);
 		}
 	}
 
-	private class OverseerMoveHelper extends EntityMoveHelper {
+	private class MoveHelper extends EntityMoveHelper {
 		private EntityOverseer e = EntityOverseer.this;
 		private int height;
 
-		public OverseerMoveHelper() {
+		public MoveHelper() {
 			super(EntityOverseer.this);
 		}
 
@@ -126,6 +167,83 @@ public class EntityOverseer extends EntityModFlying {
 				}
 			}
 			return true;
+		}
+	}
+
+	public class AILookAround extends EntityAIBase {
+		private EntityOverseer e = EntityOverseer.this;
+
+		public AILookAround() {
+			this.setMutexBits(2);
+		}
+
+		@Override
+		public boolean shouldExecute() {
+			return true;
+		}
+
+		@Override
+		public void updateTask() {
+			if (this.e.getAttackTarget() == null) {
+				this.e.renderYawOffset = this.e.rotationYaw = -((float)Math.atan2(this.e.motionX, this.e.motionZ)) * 180.0F / (float)Math.PI;
+			} else {
+				EntityLivingBase entitylivingbase = this.e.getAttackTarget();
+				double d0 = 64.0D;
+
+				if (entitylivingbase.getDistanceSqToEntity(this.e) < d0 * d0) {
+					double d1 = entitylivingbase.posX - this.e.posX;
+					double d2 = entitylivingbase.posZ - this.e.posZ;
+					this.e.renderYawOffset = this.e.rotationYaw = -((float)Math.atan2(d1, d2)) * 180.0F / (float)Math.PI;
+				}
+			}
+		}
+	}
+
+	public class AIFireballAttack extends EntityAIBase {
+		private EntityOverseer entity = EntityOverseer.this;
+		public int counter;
+
+		@Override
+		public boolean shouldExecute() {
+			return this.entity.getAttackTarget() != null;
+		}
+
+		@Override
+		public void startExecuting() {
+			this.counter = 0;
+		}
+
+		@Override
+		public void resetTask() {
+			this.entity.setFire(false);
+		}
+
+		@Override
+		public void updateTask() {
+			EntityLivingBase entitylivingbase = this.entity.getAttackTarget();
+			double d0 = 64.0D;
+
+			if(entitylivingbase.getDistanceSqToEntity(this.entity) < d0 * d0 && this.entity.canEntityBeSeen(entitylivingbase)) {
+				World world = this.entity.worldObj;
+				counter++;
+
+				if(this.counter == 20) {
+					double d1 = 4.0D;
+					Vec3 vec3 = this.entity.getLook(1.0F);
+					double d2 = entitylivingbase.posX - (this.entity.posX + vec3.xCoord * d1);
+					double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.entity.posY + (double)(this.entity.height / 2.0F));
+					double d4 = entitylivingbase.posZ - (this.entity.posZ + vec3.zCoord * d1);
+					world.playAuxSFXAtEntity((EntityPlayer)null, 1008, new BlockPos(this.entity), 0);
+					EntityShimmererProjectile projectile = new EntityShimmererProjectile(world, this.entity, d2, d3, d4);
+					projectile.posX = this.entity.posX + vec3.xCoord * d1;
+					projectile.posY = this.entity.posY + (double)(this.entity.height / 2.0F) + 0.5D;
+					projectile.posZ = this.entity.posZ + vec3.zCoord * d1;
+					world.spawnEntityInWorld(projectile);
+					this.counter = -40;
+				}
+			}
+			else if(this.counter > 0) counter--;
+			this.entity.setFire(this.counter > 10);
 		}
 	}
 }

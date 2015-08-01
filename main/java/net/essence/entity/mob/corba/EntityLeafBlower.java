@@ -1,5 +1,6 @@
 package net.essence.entity.mob.corba;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,12 +47,37 @@ public class EntityLeafBlower extends EntityModMob{
 	@Override
 	public boolean attackEntityFrom(DamageSource e, float a) {
 		if(e.getSourceOfDamage() instanceof EntityPlayer)
+			
+			if(e.getSourceOfDamage() == null){
+			System.out.println("Source of damage is null");
+			   return super.attackEntityFrom(e, a);
+			}
 			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
+		    ((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 60, 1));
 		return super.attackEntityFrom(e, a);
 	}
 	
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return null; 
+	
+	}
+		
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		Item it = getItemDropped();
+		this.dropItem(it, 1);
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.corbaStick, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(12) == 0) dropItem(EssenceItems.corbaStick, 4);
+		super.dropFewItems(b, j); 
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.enchantedLeaf, 2);
+		super.dropFewItems(b, j); 
+		if(rand.nextInt(12) == 0) dropItem(EssenceItems.enchantedLeaf, 4);
+		super.dropFewItems(b, j); 
+		if(rand.nextInt(24) == 0) dropItem(EssenceItems.natureTablet, 2);
+		super.dropFewItems(b, j); 
+		if(rand.nextInt(48) == 0) dropItem(EssenceItems.natureTablet, 4);
+			super.dropFewItems(b, j); 
 	}
 }

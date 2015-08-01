@@ -29,7 +29,7 @@ public class EntityBlazier extends EntityEssenceBoss {
 
 	private float heightOffset = 0.5F;
 	private int heightOffsetUpdateTime;
-	private int attackTimer, spawnTimer;
+	private int spawnTimer;
 
 	public EntityBlazier(World w) {
 		super(w);
