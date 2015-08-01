@@ -23,6 +23,8 @@ import net.essence.entity.mob.boss.*;
 import net.essence.entity.mob.cloudia.*;
 import net.essence.entity.mob.cloudia.npc.*;
 import net.essence.entity.mob.corba.*;
+import net.essence.entity.mob.corba.npc.EntityRedTordo;
+import net.essence.entity.mob.corba.npc.EntityTordo;
 import net.essence.entity.mob.depths.*;
 import net.essence.entity.mob.depths.npc.*;
 import net.essence.entity.mob.end.*;
@@ -108,6 +110,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEscapedConvict.class, new RenderModMob(new ModelEscapedConvict(), Textures.escapedConvict));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBoilTrader.class, new RenderModMob(new ModelBoilTrader(), Textures.boilTrader));
 		RenderingRegistry.registerEntityRenderingHandler(EntityAlloyMender.class, new RenderModMob(new ModelAlloyMender(), Textures.alloyMender));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTordo.class, new RenderModMob(new ModelTordo(), Textures.greenTordo));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedTordo.class, new RenderModMob(new ModelTordo(), Textures.redTordo));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityDragon.class, new RenderDragon());
 		RenderingRegistry.registerEntityRenderingHandler(EntityOverseer.class, new RenderModMob(new ModelOverseer(), Textures.overseer));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySurfaceSeer.class, new RenderModMob(new ModelOverseer(), Textures.surfaceSeer));
