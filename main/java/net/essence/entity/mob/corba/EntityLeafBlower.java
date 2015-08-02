@@ -45,19 +45,6 @@ public class EntityLeafBlower extends EntityModMob{
 	}
 	
 	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			
-			if(e.getSourceOfDamage() == null){
-			System.out.println("Source of damage is null");
-			   return super.attackEntityFrom(e, a);
-			}
-			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
-		    ((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 60, 1));
-		return super.attackEntityFrom(e, a);
-	}
-	
-	@Override
 	public Item getItemDropped() {
 		return null; 
 	

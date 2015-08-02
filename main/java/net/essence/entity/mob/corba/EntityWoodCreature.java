@@ -1,5 +1,6 @@
 package net.essence.entity.mob.corba;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.Entity;
@@ -54,5 +55,17 @@ public class EntityWoodCreature extends EntityModMob{
 	@Override
 	public Item getItemDropped() {
 		return null;
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.enchantedLeaf, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.enchantedLeaf, 4);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.corbaStick, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(10) == 0) dropItem(EssenceItems.corbaStick, 2);
+		super.dropFewItems(b, j);
 	}
 }
