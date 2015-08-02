@@ -26,19 +26,20 @@ public class EntityTordo extends EntityModVillager {
 		return GuiIDs.TORDO;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.cloudPuff, 15), new ItemStack(EssenceItems.healersBlade, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.treeHugger, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.multiToolOfEternalSmelting, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 10), new ItemStack(EssenceItems.treehuggersHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 10), new ItemStack(EssenceItems.treehuggersChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 10), new ItemStack(EssenceItems.treehuggersLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.collectorRock, 10), new ItemStack(EssenceItems.treehuggersBoots, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.leapersHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.leapersChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.leapersLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.collectorRock, 15), new ItemStack(EssenceItems.leapersBoots, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 15), new ItemStack(EssenceItems.overseeingEye, 15), new ItemStack(EssenceItems.healersBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 32), new ItemStack(EssenceItems.collectorRock, 32), new ItemStack(EssenceItems.treeHugger, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 32), new ItemStack(EssenceItems.collectorRock, 64), new ItemStack(EssenceItems.multiToolOfEternalSmelting, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.enchantedLeaf, 32), new ItemStack(EssenceItems.corbaStick, 10), new ItemStack(EssenceItems.treehuggersHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.enchantedLeaf, 32), new ItemStack(EssenceItems.corbaStick, 10), new ItemStack(EssenceItems.treehuggersChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.enchantedLeaf, 32), new ItemStack(EssenceItems.corbaStick, 10), new ItemStack(EssenceItems.treehuggersLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.enchantedLeaf, 32), new ItemStack(EssenceItems.corbaStick, 10), new ItemStack(EssenceItems.treehuggersBoots, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.overseeingEye, 32), new ItemStack(EssenceItems.leapersHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.overseeingEye, 32), new ItemStack(EssenceItems.leapersChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.overseeingEye, 32), new ItemStack(EssenceItems.leapersLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.natureTablet, 10), new ItemStack(EssenceItems.overseeingEye, 32), new ItemStack(EssenceItems.leapersBoots, 1)));
 		
 	}
 }
