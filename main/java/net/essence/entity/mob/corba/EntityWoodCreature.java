@@ -32,17 +32,17 @@ public class EntityWoodCreature extends EntityModMob{
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.BLAZE;
+		return EnumSounds.BUSH;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.WITHER;
+		return EnumSounds.BUSH_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.WITHER;
+		return EnumSounds.BUSH_DEATH;
 	}
 	
 	@Override

@@ -1,4 +1,10 @@
 {
+ "overseer":{"category":"master","sounds": [{"name":"overseer","stream": false}]},
+ "overseerHurt":{"category":"master","sounds": [{"name":"overseerHurt","stream": false}]},
+ "overseerDeath":{"category":"master","sounds": [{"name":"overseerDeath","stream": false}]},
+ "bush":{"category":"master","sounds": [{"name":"bush","stream": false}]},
+ "bushHurt":{"category":"master","sounds": [{"name":"bushHurt","stream": false}]},
+ "bushDeath":{"category":"master","sounds": [{"name":"bushDeath","stream": false}]},
  "robot":{"category":"master","sounds": [{"name":"robot","stream": false}]},
  "robotHurt":{"category":"master","sounds": [{"name":"robotHurt","stream": false}]},
  "robotDeath":{"category":"master","sounds": [{"name":"robotDeath","stream": false}]},

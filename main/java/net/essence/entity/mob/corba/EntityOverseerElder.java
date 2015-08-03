@@ -39,17 +39,17 @@ public class EntityOverseerElder extends EntityModFlying {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.SHIMMERER;
+		return EnumSounds.OVERSEER;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.SHIMMERER_HURT;
+		return EnumSounds.OVERSEER_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.SHIMMERER_DEATH;
+		return EnumSounds.OVERSEER_DEATH;
 	}
 	
 	@Override
