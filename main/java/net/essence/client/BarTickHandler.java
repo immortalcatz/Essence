@@ -1,11 +1,8 @@
 package net.essence.client;
 
-import java.util.Random;
-
 import net.essence.client.server.DarkEnergyBar;
 import net.essence.client.server.EssenceBar;
 import net.essence.client.server.PowerBar;
-import net.essence.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
@@ -14,13 +11,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
@@ -57,11 +52,13 @@ public class BarTickHandler {
 		if(event.phase == Phase.END) tickEnd(event.player);
 	}
 	
+	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void renderEvent(RenderTickEvent event) {
 		onTickRender(Minecraft.getMinecraft().thePlayer);
 	}
 
+	@SideOnly(Side.CLIENT)
 	private void onTickRender(EntityPlayer player) {
 		if(mc.currentScreen == null) {
 			if(!player.capabilities.isCreativeMode) {
@@ -79,7 +76,7 @@ public class BarTickHandler {
 				gig.drawTexturedModalRect(x - 10, y - 20, 0, 177, 117, 19);
 
 				gig.drawTexturedModalRect(x - 6, y - 13, 0, 23, 109, 5);
-				for(int i = 0; i < EssenceBar.getProperties(player).getBarValue(); i++) {
+				for(int i = 0; i < essenceAmount; i++) {
 					if(!(i >= 10)) {
 						x += 11;
 						gig.drawTexturedModalRect(x - 17, y - 13, 0, 0, 10, 5);
@@ -87,12 +84,12 @@ public class BarTickHandler {
 				}
 				y += 15;
 				gig.drawTexturedModalRect(x1 - 6, y - 13, 0, 36, 109, 5);
-				for(int i = 0; i < DarkEnergyBar.getProperties(player).getBarValue(); i++) {
+				for(int i = 0; i < darkAmount; i++) {
 					x1 += 11;
 					gig.drawTexturedModalRect(x1 - 17, y - 13, 0, 5, 10, 5);
 				}
 				gig.drawTexturedModalRect(x2 - 6, y + 2, 0, 49, 109, 5);
-				for(int i = 0; i < PowerBar.getProperties(player).getBarValue(); i++) {
+				for(int i = 0; i < powerAmount; i++) {
 					x2 += 11;
 					gig.drawTexturedModalRect(x2 - 17, y + 2, 0, 10, 10, 5);
 				}

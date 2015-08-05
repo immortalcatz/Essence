@@ -87,7 +87,6 @@ public class ClientProxy extends CommonProxy {
 	public void clientInit(FMLInitializationEvent event) {
 		EntityRendering.init();
 		SlayerAPI.registerEvent(new BossTickHandler());
-		SlayerAPI.registerEvent(new BarTickHandler());
 		SlayerAPI.registerEvent(new KnowledgeRenderHandler());
 		SlayerAPI.registerEvent(new ClientTickEvent());
 		SlayerAPI.registerEvent(new PlayerStats());

@@ -2,6 +2,7 @@ package net.essence.proxy;
 
 import net.essence.*;
 import net.essence.blocks.tileentity.*;
+import net.essence.client.BarTickHandler;
 import net.essence.dimension.*;
 import net.essence.enums.*;
 import net.essence.event.*;
@@ -45,6 +46,7 @@ public class CommonProxy {
 		addOreDictionary();
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
 		SlayerAPI.registerEvent(new PlayerEvent());
+		SlayerAPI.registerEvent(new BarTickHandler());
 		SlayerAPI.registerEvent(new KnowledgeEvent());
 		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
 		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
