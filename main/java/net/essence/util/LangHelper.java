@@ -43,10 +43,10 @@ public class LangHelper {
 	}
 	
 	public static String setBossSpawner(String boss) {
-		return getFormattedText("essence.bossSpawn") + " " + boss;
+		return getFormattedText("essence.bossSpawn") + ": " + boss;
 	}
 	
 	public static String setPetSpawner(String pet) {
-		return getFormattedText("essence.petSpawn") + " " + pet;
+		return getFormattedText("essence.petSpawn") + ": " + pet;
 	}
 }

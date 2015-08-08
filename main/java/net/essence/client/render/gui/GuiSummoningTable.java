@@ -37,7 +37,7 @@ public class GuiSummoningTable extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String s = "essence.summoningTable";
-		this.fontRendererObj.drawString(s, this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 6, 0xFFFFFF);
+		this.fontRendererObj.drawString(I18n.format(s), this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 6, 0xFFFFFF);
 		this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 8, this.ySize - 96 + 2, 0xFFFFFF);
 	}
 
@@ -64,7 +64,7 @@ public class GuiSummoningTable extends GuiContainer {
 		table.update();
 		//table.setInventorySlotContents(3, new ItemStack(EssenceItems.ash));
 		PacketBuffer packetbuffer = new PacketBuffer(Unpooled.buffer());
-        this.mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload("EOTG|SUMMONING", packetbuffer));
+		this.mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload("EOTG|SUMMONING", packetbuffer));
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -81,10 +81,10 @@ public class GuiSummoningTable extends GuiContainer {
 			boolean flag = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
 			int k = 0, l = 176;
 			if(flag) {
-				//mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/summoning.png"));
-				//GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-				//this.drawTexturedModalRect(this.xPosition, this.yPosition, l, 12, 18, 12);
-				//drawCreativeTabHoveringText("TADAAAAA", mouseX, mouseY);
+				mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/gui/summoning.png"));
+				GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+				this.drawTexturedModalRect(this.xPosition, this.yPosition, l, 12, 18, 12);
+				drawCreativeTabHoveringText("Craft boss spawner", mouseX, mouseY);
 				k += 12;
 			}
 			this.drawTexturedModalRect(this.xPosition, this.yPosition, l, k, 18, 12);

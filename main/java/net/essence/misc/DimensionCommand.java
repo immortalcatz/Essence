@@ -23,7 +23,7 @@ public class DimensionCommand extends CommandBase {
 	public String getName() {
 		return "dimension";
 	}
-	
+
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
 		return "/dimension";
@@ -35,67 +35,67 @@ public class DimensionCommand extends CommandBase {
 		if(!playerMP.worldObj.isRemote) {
 			if(var2[0].equalsIgnoreCase("Overworld")) {
 				if(playerMP.dimension != 0) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, 0, new Teleporter(playerMP.mcServer.worldServerForDimension(0)));
+					playerMP.dimension = 0;
 				}
 			}
 
 			if(var2[0].equalsIgnoreCase("Nether")) {
 				if(playerMP.dimension != -1) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, -1, new Teleporter(playerMP.mcServer.worldServerForDimension(-1)));
+					playerMP.dimension = -1;
 				}
 			}
 
 			if(var2[0].equalsIgnoreCase("End")) {
 				if(playerMP.dimension != 1) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, 1, new Teleporter(playerMP.mcServer.worldServerForDimension(1)));
+					playerMP.dimension = 1;
 				}
 			}
 
 			if(var2[0].equalsIgnoreCase("Euca")) {
 				if(playerMP.dimension != Config.euca) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.euca, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.euca), Config.euca, EssenceBlocks.eucaPortal, EssenceBlocks.eucaPortalFrame));
+					playerMP.dimension = Config.euca;
 				}
 			}
 
 			if(var2[0].equalsIgnoreCase("BoilingPoint")) {
 				if(playerMP.dimension != Config.boil) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.boil, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.boil), Config.boil, EssenceBlocks.boilPortal, EssenceBlocks.boilPortalFrame));
+					playerMP.dimension = Config.boil;
 				}
 			}
 
 			if(var2[0].equalsIgnoreCase("Depths")) {
 				if(playerMP.dimension != Config.depths) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.depths, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.depths), Config.depths, EssenceBlocks.depthsPortal, EssenceBlocks.depthsPortalFrame));
+					playerMP.dimension = Config.depths;
 				}
 			}
-			
+
 			if(var2[0].equalsIgnoreCase("FrozenLands")) {
 				if(playerMP.dimension != Config.frozen) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.frozen, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.frozen), Config.frozen, EssenceBlocks.frozenPortal, Blocks.snow));
+					playerMP.dimension = Config.frozen;
 				}
 			}
-			
+
 			if(var2[0].equalsIgnoreCase("Corba")) {
 				if(playerMP.dimension != Config.corba) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.corba, new TeleporterCorba(playerMP.mcServer.worldServerForDimension(Config.corba)));
+					playerMP.dimension = Config.corba;
 				}
 			}
-			
+
 			/*if(var2[0].equalsIgnoreCase("Wastelands")) {
 				if(playerMP.dimension != Config.wastelands) {
 					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.wastelands, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.wastelands), Config.wastelands, EssenceBlocks.wastelandsPortal, EssenceBlocks.wastelandsPortalFrame));
 				}
 			}*/
-			
+
 			if(var2[0].equalsIgnoreCase("Cloudia")) {
-				if(playerMP.dimension != Config.wastelands) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.cloudia, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.cloudia), Config.cloudia, EssenceBlocks.cloudiaPortal, EssenceBlocks.cloudiaPortalFrame));
+				if(playerMP.dimension != Config.cloudia) {
+					playerMP.dimension = Config.cloudia;
 				}
 			}
 		}
-		
+
 	}
-	
+
 	@Override
 	public int getRequiredPermissionLevel() {
 		return 0;

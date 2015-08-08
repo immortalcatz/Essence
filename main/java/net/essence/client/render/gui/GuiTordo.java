@@ -7,6 +7,6 @@ import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 public class GuiTordo extends GuiModVillager {
 
 	public GuiTordo(ContainerModVillager container, IMerchant mer) {
-		super(container, mer, "Tordo", "tordo");
+		super(container, mer, "Tordo", "tordo", true);
 	}
 }

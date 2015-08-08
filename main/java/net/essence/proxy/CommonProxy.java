@@ -6,7 +6,6 @@ import net.essence.client.BarTickHandler;
 import net.essence.dimension.*;
 import net.essence.enums.*;
 import net.essence.event.*;
-import net.essence.items.tileentity.*;
 import net.essence.misc.*;
 import net.essence.util.*;
 import net.essence.util.EntityRegistry;
@@ -48,9 +47,6 @@ public class CommonProxy {
 		SlayerAPI.registerEvent(new PlayerEvent());
 		SlayerAPI.registerEvent(new BarTickHandler());
 		SlayerAPI.registerEvent(new KnowledgeEvent());
-		GameRegistry.registerTileEntity(TileEntityEnrichedTable.class, "Enriched table");
-		GameRegistry.registerTileEntity(TileEntityIncubator.class, "incubator");
-		GameRegistry.registerTileEntity(TileEntityBackpack.class, "backpack");
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
 		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
