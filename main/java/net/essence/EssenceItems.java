@@ -242,6 +242,8 @@ public class EssenceItems {
 	public static final Item thunderblade = new ItemModSword("thunderblade", "Thunder Blade", EssenceToolMaterial.THUNDERBLADE);
 	public static final Item sentrySword = new ItemModSword("sentrySword", "Sentry Sword", EssenceToolMaterial.SENTRY_SWORD);
 	public static final Item crystalBlade = new ItemModSword("crystalBlade", "Crystal Blade", EssenceToolMaterial.CRYSTAL_BLADE);
+	
+	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem", "Euca Portal Gem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem", "Depths Portal Gem");

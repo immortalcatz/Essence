@@ -57,11 +57,13 @@ public enum EssenceToolMaterial {
 	BLOODWIELD_SWORD(SlayerAPI.addMeleeMaterial(3000, 14, 25)),
 	CHARRED_BLADE(SlayerAPI.addMeleeMaterial(3000, 18, 25)),
 	SIZZLER_SWORD(SlayerAPI.addMeleeMaterial(3000, 22, 25)),
-	FLUFFY_BLADE(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
-	GOLEM_SWORD(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
-	THUNDERBLADE(SlayerAPI.addMeleeMaterial(3000, 38, 25)),
+	FLUFFY_BLADE(SlayerAPI.addMeleeMaterial(3000, 38, 25)),
+	GOLEM_SWORD(SlayerAPI.addMeleeMaterial(3000, 32, 25)),
+	THUNDERBLADE(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
 	SENTRY_SWORD(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
 	CRYSTAL_BLADE(SlayerAPI.addMeleeMaterial(3000, 9, 25)),
+	
+	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	
 	HELLSTONE_MULTI_TOOL(EssenceItems.hellstoneMulti, EssenceItems.hellstoneIngot, 3),
 	FLAIRIUM_MULTI_TOOL(EssenceItems.flairiumMulti, EssenceItems.flairiumIngot, 3),
