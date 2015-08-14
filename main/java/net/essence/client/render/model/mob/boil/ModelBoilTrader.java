@@ -60,7 +60,5 @@ public class ModelBoilTrader extends ModelBase {
 		this.leftarm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 		this.head.rotateAngleY = par4 / (180F / (float)Math.PI);
 		this.head.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.top.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.top.rotateAngleX = par5 / (180F / (float)Math.PI);
 	}
 }
