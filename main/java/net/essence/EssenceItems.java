@@ -24,21 +24,30 @@ public class EssenceItems {
 	public static ToolMaterial gorbiteSwordMat = addToolMaterial(3120, 13F, 25F, true);
 	public static ToolMaterial orbaditeSwordMat = addToolMaterial(3120, 13F, 25F, true);
 	public static ToolMaterial desSwordMat = addToolMaterial(3120, 13F, 25F, true);
-
+	public static ToolMaterial mekyumSwordMat = addToolMaterial(3120, 13F, 25F, true);
+	public static ToolMaterial storonSwordMat = addToolMaterial(3120, 13F, 25F, true);
+	public static ToolMaterial koriteSwordMat = addToolMaterial(3120, 13F, 25F, true);
+	
 	public static ToolMaterial hellstone = addToolMaterial(1600, 10F, 5F, true);
 	public static ToolMaterial flairium = addToolMaterial(3000, 15F, 5F, true);
 	public static ToolMaterial lunium = addToolMaterial(3000, 9F, 5F, true);
 	public static ToolMaterial celestium = addToolMaterial(1600, 13F, 5F, true);
+	public static ToolMaterial mekyum = addToolMaterial(1600, 13F, 5F, true);
+	public static ToolMaterial storon = addToolMaterial(1600, 13F, 5F, true);
+	public static ToolMaterial korite = addToolMaterial(1600, 13F, 5F, true);
 	public static ToolMaterial shadium = addToolMaterial(1600, 10F, 5F, true);
 	public static ToolMaterial sapphiretool = addToolMaterial(1561, 8F, 5F, true);
 	public static ToolMaterial orbadite = addToolMaterial(3000, 15F, 5F, true);
 	public static ToolMaterial gorbite = addToolMaterial(3000, 15F, 5F, true);
 	public static ToolMaterial des = addToolMaterial(3000, 15F, 5F, true);
-
+	
 	public static ToolMaterial hellstoneMulti = addToolMaterial(3000, 12F, 5F, false);
 	public static ToolMaterial flairiumMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial luniumMulti = addToolMaterial(3000, 9F, 5F, false);
 	public static ToolMaterial celestiumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial mekyumMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial storonMulti = addToolMaterial(3000, 13F, 5F, false);
+	public static ToolMaterial koriteMulti = addToolMaterial(3000, 13F, 5F, false);
 	public static ToolMaterial shadiumMulti = addToolMaterial(3000, 10F, 5F, false);
 	public static ToolMaterial sapphireMulti = addToolMaterial(3000, 8F, 5F, false);
 	public static ToolMaterial orbaditeMulti = addToolMaterial(3000, 15F, 5F, false);
