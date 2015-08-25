@@ -124,6 +124,9 @@ public class EssenceItems {
 	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
 	public static final Item horn = new ItemMod("horn", "Horn");
 	public static final Item scale = new ItemMod("scale", "Scale");
+	public static final Item greenHonglowShroom = new ItemMod("greenHonglowShroom", "Green Honglow Shroom");
+	public static final Item redHonglowShroom = new ItemMod("redHonglowShroom", "Red Honglow Shroom");
+	public static final Item blueHonglowShroom = new ItemMod("blueHonglowShroom", "Blue Honglow Shroom");
 	
 	@SuppressWarnings("finish the rest of the dusts for all ores, and add grindstone combatibility")
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");

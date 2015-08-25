@@ -1,4 +1,4 @@
-package net.essence.entity.mob.overworld;
+package net.essence.entity.mob.overworld.underground;
 
 import net.essence.Essence;
 import net.essence.EssenceItems;
@@ -10,9 +10,9 @@ import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 
-public class EntityHonglow extends EntityModMob {
+public class EntityGreenHonglow extends EntityModMob {
 
-	public EntityHonglow(World par1World) {
+	public EntityGreenHonglow(World par1World) {
 		super(par1World);
 		addAttackingAI();
 		setSize(1.0F, 1.0F);
@@ -44,6 +44,6 @@ public class EntityHonglow extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.hongoShroom;
+		return EssenceItems.greenHonglowShroom;
 	}
 }

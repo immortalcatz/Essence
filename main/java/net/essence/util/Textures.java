@@ -63,6 +63,9 @@ public class Textures {
     public static final ResourceLocation stonewalker = addMob("stonewalker");
     public static final ResourceLocation wraith = addMob("wraith");
     public static final ResourceLocation turducken = addMob("turducken");
+    public static final ResourceLocation greenHonglow = addMob("greenHonglow");
+    public static final ResourceLocation redHonglow = addMob("redHonglow");
+    public static final ResourceLocation blueHonglow = addMob("blueHonglow");
     
     //Euca
     public static final ResourceLocation insecto = addMob("insecto");

@@ -158,6 +158,9 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightTransporter.class, new RenderModMob(new ModelStarlightTransporter(), Textures.starlightTransporter));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLavasnake.class, new RenderModMob(new ModelLavasnake(), Textures.lavasnake));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySpectre.class, new RenderModMob(new ModelBiped(), Textures.spectre));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGreenHonglow.class, new RenderModMob(new ModelBigHongo(), Textures.greenHonglow));
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlueHonglow.class, new RenderModMob(new ModelBigHongo(), Textures.blueHonglow));
+		RenderingRegistry.registerEntityRenderingHandler(EntityHonglow.class, new RenderModMob(new ModelBigHongo(), Textures.redHonglow));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

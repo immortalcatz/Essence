@@ -101,6 +101,9 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityTurducken.class, "turducken", "Turducken");
 		SlayerAPI.registerOverworldMob(EntityFloro.class, "floro", "Floro");
 		SlayerAPI.registerOverworldMob(EntitySpectre.class, "spectre", "Spectre");
+		SlayerAPI.registerOverworldMob(EntityGreenHonglow.class, "greenHonglow", "Green Honglow");
+		SlayerAPI.registerOverworldMob(EntityHonglow.class, "redHonglow", "Red Honglow");
+		SlayerAPI.registerOverworldMob(EntityBlueHonglow.class, "blueHonglow", "Blue Honglow");
 	}
 
 	public static void registerBPMobs() {
