@@ -1,13 +1,10 @@
 package net.essence.entity.mob.overworld.underground;
 
-import net.essence.Essence;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 
 public class EntityGreenHonglow extends EntityModMob {
@@ -20,12 +17,12 @@ public class EntityGreenHonglow extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.mediumHongoDamage;
+		return MobStats.mediumHongoDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mediumHongoHealth;
+		return MobStats.mediumHongoHealth;
 	}
 	@Override
 	public EnumSounds setLivingSound() {
