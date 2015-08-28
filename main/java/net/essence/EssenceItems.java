@@ -124,9 +124,6 @@ public class EssenceItems {
 	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
 	public static final Item horn = new ItemMod("horn", "Horn");
 	public static final Item scale = new ItemMod("scale", "Scale");
-	public static final Item greenHonglowShroom = new ItemMod("greenHonglowShroom", "Green Honglow Shroom");
-	public static final Item redHonglowShroom = new ItemMod("redHonglowShroom", "Red Honglow Shroom");
-	public static final Item blueHonglowShroom = new ItemMod("blueHonglowShroom", "Blue Honglow Shroom");
 	
 	@SuppressWarnings("finish the rest of the dusts for all ores, and add grindstone combatibility")
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
@@ -395,6 +392,9 @@ public class EssenceItems {
 	public static final Item rocMeat = new ItemModFood("rocMeat", "Bird Wing", 6, 0.6F, 10, false);
 	public static final Item cookedRocMeat = new ItemModFood("cookedRocMeat", "Cooked Bird Wing", 6, 0.6F, 10, false);
 	public static final Item hongoShroom = new ItemModFood("hongoShroom", "Hongoshroom", 6, 0.6F, 10, false);
+	public static final Item greenHonglowShroom = new ItemHonglow("greenHonglowShroom", "Green Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.jump.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor", "Hot Door");
 
