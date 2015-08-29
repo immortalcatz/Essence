@@ -24,7 +24,7 @@ public class BarTickHandler {
 
 	private Minecraft mc = Minecraft.getMinecraft();
 	private EntityPlayer player;
-	private int ticks = 25;
+	private int ticks = 10;
 
 	public static int darkAmount, essenceAmount, powerAmount;
 	public static boolean regenDark, regenEssence, regenPower;
@@ -101,8 +101,8 @@ public class BarTickHandler {
 	}
 
 	private void tickEnd(EntityPlayer player) {
-		if(ticks-- <= 0) ticks = 25;
-		if(ticks >= 25) {
+		if(ticks-- <= 0) ticks = 10;
+		if(ticks >= 10) {
 			DarkEnergyBar.getProperties(player).updateAllBars();
 			EssenceBar.getProperties(player).updateAllBars();
 			PowerBar.getProperties(player).updateAllBars();
