@@ -3,7 +3,6 @@ package net.essence.items;
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -38,4 +37,5 @@ public class ItemHonglow extends ItemFood {
             }
             super.onFoodEaten(i, w, p);
         }
+
     }

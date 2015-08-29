@@ -1,12 +1,14 @@
 package net.essence;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.essence.entity.projectile.*;
 import net.essence.enums.EnumKnowledge;
 import net.essence.enums.EnumSounds;
 import net.essence.items.*;
 import net.essence.util.*;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
@@ -392,9 +394,9 @@ public class EssenceItems {
 	public static final Item rocMeat = new ItemModFood("rocMeat", "Bird Wing", 6, 0.6F, 10, false);
 	public static final Item cookedRocMeat = new ItemModFood("cookedRocMeat", "Cooked Bird Wing", 6, 0.6F, 10, false);
 	public static final Item hongoShroom = new ItemModFood("hongoShroom", "Hongoshroom", 6, 0.6F, 10, false);
-	public static final Item greenHonglowShroom = new ItemHonglow("greenHonglowShroom", "Green Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.jump.id, 10, 1, 1.0F).setAlwaysEdible();
-	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
-	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Hongoshroom", 4, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item greenHonglowShroom = new ItemHonglow("greenHonglowShroom", "Green Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.jump.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor", "Hot Door");
 

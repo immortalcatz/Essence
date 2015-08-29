@@ -3,8 +3,12 @@ package net.essence.entity.mob.overworld.underground;
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModMob;
 
 public class EntityGreenHonglow extends EntityModMob {
@@ -12,18 +16,19 @@ public class EntityGreenHonglow extends EntityModMob {
 	public EntityGreenHonglow(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(1.0F, 1.0F);
+		this.setSize(1.0F, 2.0F);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.mediumHongoDamage;
+		return MobStats.bigHongoDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.mediumHongoHealth;
+		return MobStats.bigHongoHealth;
 	}
+
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.HONGO;
@@ -41,6 +46,21 @@ public class EntityGreenHonglow extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.greenHonglowShroom;
+		return SlayerAPI.toItem(Blocks.stone);
+
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY < 40.0D && super.getCanSpawnHere() && 
+				this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock().getMaterial() == Material.rock; 
+	}
+
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.greenHonglowShroom, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(5) == 0) dropItem(EssenceItems.greenHonglowShroom, 2);
+		super.dropFewItems(b, j);
 	}
 }

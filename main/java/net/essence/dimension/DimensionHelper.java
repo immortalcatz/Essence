@@ -49,9 +49,12 @@ import net.essence.entity.mob.overworld.EntityRobot;
 import net.essence.entity.mob.overworld.EntitySandCrawler;
 import net.essence.entity.mob.overworld.EntitySmallHongo;
 import net.essence.entity.mob.overworld.EntitySpyclops;
+import net.essence.entity.mob.overworld.underground.EntityBlueHonglow;
 import net.essence.entity.mob.overworld.underground.EntityCaveMage;
 import net.essence.entity.mob.overworld.underground.EntityCaveling;
 import net.essence.entity.mob.overworld.underground.EntityCavurn;
+import net.essence.entity.mob.overworld.underground.EntityGreenHonglow;
+import net.essence.entity.mob.overworld.underground.EntityHonglow;
 import net.essence.entity.mob.overworld.underground.EntityStonewalker;
 import net.essence.util.Config;
 import net.essence.util.LogHelper;
@@ -172,7 +175,7 @@ public class DimensionHelper {
 	}
 	
 	private static void addCaveSpawns() {
-		int amount = 78;
+		int amount = 70;
 		
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityCaveMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
@@ -245,6 +248,60 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
 		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
 		EntityRegistry.addSpawn(EntityStonewalker.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityBlueHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
+		
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MUSHROOM));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WASTELAND));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.HOT));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WET));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MAGICAL));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SNOWY));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		EntityRegistry.addSpawn(EntityGreenHonglow.class, amount, 2, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.CONIFEROUS));
 		
 	}
 
