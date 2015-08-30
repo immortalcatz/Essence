@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/essenceFeather"
+		"layer0": "essence:items/snakeskinChest"
 	},
 	"display": {
 		"thirdperson": {

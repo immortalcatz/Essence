@@ -91,7 +91,7 @@ public class EssenceItems {
 	public static final Item darkOrb = new ItemMod("darkOrb", "Dark Orb");
 	public static final Item depthsFlake = new ItemMod("depthsFlake", "Depths Flake");
 	public static final Item beastlyStomach = new ItemMod("beastlyStomach", "Beastly Stomach");
-	public static final Item rocFeather = new ItemMod("rocFeather", "Roc Feather");
+	public static final Item rocFeather = new ItemMod("rocFeather", "Essence Feather");
 	public static final Item coldClump = new ItemMod("coldClump", "Cold Clump");
 	public static final Item crystalEye = new ItemMod("crystalEye", "Crystal Eye");
 	public static final Item crystalFlake = new ItemMod("crystalFlake", "Crystal Flake");
@@ -126,6 +126,9 @@ public class EssenceItems {
 	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
 	public static final Item horn = new ItemMod("horn", "Horn");
 	public static final Item scale = new ItemMod("scale", "Scale");
+	public static final Item crystalBall = new ItemMod("crystalBall", "Crystal Ball");
+	public static final Item floroPedal = new ItemMod("floroPedal", "Floro Pedal");
+	public static final Item glowshroomPowder = new ItemMod("glowshroomPowder", "Glowshroom Powder");
 	
 	@SuppressWarnings("finish the rest of the dusts for all ores, and add grindstone combatibility")
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
@@ -397,6 +400,7 @@ public class EssenceItems {
 	public static final Item greenHonglowShroom = new ItemHonglow("greenHonglowShroom", "Green Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.jump.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 4, 1.2F, false, false).setAlwaysEdible();
 
 	public static final ItemModDoor hotDoorItem = new ItemModDoor(EssenceBlocks.hotDoor, "hotDoor", "Hot Door");
 

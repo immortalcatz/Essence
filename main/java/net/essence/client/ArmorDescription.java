@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 public class ArmorDescription {
 
-	public static void add(ItemStack item, EntityPlayer player, List list) {
+	public static void add(ItemStack item, EntityPlayer player, List<String> list) {
 		Item i = item.getItem();
 		if(i == EssenceItems.hellstoneHelmet || i == EssenceItems.hellstoneChest || i == EssenceItems.hellstoneLegs || i == EssenceItems.hellstoneBoots)
 			list.add("Full set: Fire Protection");
@@ -39,12 +39,15 @@ public class ArmorDescription {
 			list.add("Full set: Grants the player Night Vision");
 		
 		if(i == EssenceItems.snakeskinHelmet || i == EssenceItems.snakeskinChest || i == EssenceItems.snakeskinLegs || i == EssenceItems.snakeskinBoots)
-			list.add("Full set: Grants buffs while in lava");
+			list.add("Full set: Grants speed and fire resistance while in lava");
 		
 		if(i == EssenceItems.leapersHelmet || i == EssenceItems.leapersChest || i == EssenceItems.leapersLegs || i == EssenceItems.leapersBoots)
-			list.add("Full set: Grants fast regeneration underground");
+			list.add("Full set: Grants increased jump hight");
 		
 		if(i == EssenceItems.treehuggersHelmet || i == EssenceItems.treehuggersChest || i == EssenceItems.treehuggersLegs || i == EssenceItems.treehuggersBoots)
 			list.add("Full set: Grants increased farming drops");
+
+		if(i == EssenceItems.charskullHelmet || i == EssenceItems.charskullChest || i == EssenceItems.charskullLegs || i == EssenceItems.charskullBoots)
+			list.add("Full set: Grants resistance and haste");
 	}
 }
