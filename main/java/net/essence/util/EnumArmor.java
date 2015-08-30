@@ -22,7 +22,9 @@ public enum EnumArmor {
 	SNAKESKIN(SlayerAPI.addArmorMaterial("snakeskin", 3000, new int[] {3, 4, 3, 2,}, 10), "snakeskin", false, 76, (Item)null, "Snakeskin"),
 	CHAR_SKULL(SlayerAPI.addArmorMaterial("charSkull", 3000, new int[] {3, 4, 3, 2}, 10), "charSkull", false, 76, (Item)null, "Char Skull"),
 	LEAPERS(SlayerAPI.addArmorMaterial("leapers", 3000, new int[] {3, 4, 3, 2}, 10), "leapers", false, 76, (Item)null, "Leapers"),
-	TREEHUGGERS(SlayerAPI.addArmorMaterial("treehuggers", 3000, new int[] {3, 4, 3, 2}, 10), "treehuggers", false, 76, (Item)null, "Tree Huggers");
+	TREEHUGGERS(SlayerAPI.addArmorMaterial("treehuggers", 3000, new int[] {3, 4, 3, 2}, 10), "treehuggers", false, 76, (Item)null, "Tree Huggers"),
+	BRONZED(SlayerAPI.addArmorMaterial("bronzed", 3000, new int[] {3, 4, 3, 2}, 10), "bronzed", false, 76, (Item)null, "Bronzed"),
+	GOLDITE(SlayerAPI.addArmorMaterial("goldite", 3000, new int[] {3, 4, 3, 2}, 10), "goldite", false, 76, (Item)null, "Goldite");
 	
 	private ArmorMaterial armorMaterial;
 	private String type, finalName;

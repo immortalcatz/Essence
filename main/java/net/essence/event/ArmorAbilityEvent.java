@@ -61,13 +61,13 @@ public class ArmorAbilityEvent{
 		
 		else if(helmet == EssenceItems.snakeskinHelmet && body == EssenceItems.snakeskinChest && legs == EssenceItems.snakeskinLegs && boots == EssenceItems.snakeskinBoots){
 			event.player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 10, 1));
-			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 1));
-				else if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 1));
+			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 1));
+			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 3));
 		}
 		
 		else if(helmet == EssenceItems.charskullHelmet && body == EssenceItems.charskullChest && legs == EssenceItems.charskullLegs && boots == EssenceItems.charskullBoots){
-			event.player.addPotionEffect(new PotionEffect(Potion.resistance.id, 10, 1));
-			event.player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 10, 1));
+			event.player.removePotionEffect(19);
+			event.player.removePotionEffect(20);
 
 		}
 
