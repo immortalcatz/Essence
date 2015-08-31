@@ -352,6 +352,16 @@ public class EssenceItems {
 	public static final Item charskullLegs = new ItemModArmor(EnumArmor.CHAR_SKULL, LEGS);
 	public static final Item charskullBoots = new ItemModArmor(EnumArmor.CHAR_SKULL, BOOTS);
 	
+	public static final Item bronzedHelmet = new ItemModArmor(EnumArmor.BRONZED, HEAD);
+	public static final Item bronzedChest = new ItemModArmor(EnumArmor.BRONZED, BODY);
+	public static final Item bronzedLegs = new ItemModArmor(EnumArmor.BRONZED, LEGS);
+	public static final Item bronzedBoots = new ItemModArmor(EnumArmor.BRONZED, BOOTS);
+	
+	public static final Item golditeHelmet = new ItemModArmor(EnumArmor.GOLDITE, HEAD);
+	public static final Item golditeChest = new ItemModArmor(EnumArmor.GOLDITE, BODY);
+	public static final Item golditeLegs = new ItemModArmor(EnumArmor.GOLDITE, LEGS);
+	public static final Item golditeBoots = new ItemModArmor(EnumArmor.GOLDITE, BOOTS);
+	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", "Back Biter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", "Dawn Breaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", "Tempest Battleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);

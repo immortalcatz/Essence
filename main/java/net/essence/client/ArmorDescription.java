@@ -48,6 +48,12 @@ public class ArmorDescription {
 			list.add("Full set: Grants increased farming drops");
 
 		if(i == EssenceItems.charskullHelmet || i == EssenceItems.charskullChest || i == EssenceItems.charskullLegs || i == EssenceItems.charskullBoots)
-			list.add("Full set: Grants resistance and haste");
+			list.add("Full set: Grants immunity towards poison and wither effects");
+		
+		if(i == EssenceItems.golditeHelmet || i == EssenceItems.golditeChest || i == EssenceItems.golditeLegs || i == EssenceItems.golditeBoots)
+			list.add("Full set: No fall damage and speed II");
+		
+		if(i == EssenceItems.bronzedHelmet || i == EssenceItems.bronzedChest || i == EssenceItems.bronzedLegs || i == EssenceItems.bronzedBoots)
+			list.add("Full set: Grants +6 melee damage and slows enemies you hit");
 	}
 }

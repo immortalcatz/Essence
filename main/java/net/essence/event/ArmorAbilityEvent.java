@@ -68,6 +68,11 @@ public class ArmorAbilityEvent{
 		else if(helmet == EssenceItems.charskullHelmet && body == EssenceItems.charskullChest && legs == EssenceItems.charskullLegs && boots == EssenceItems.charskullBoots){
 			event.player.removePotionEffect(19);
 			event.player.removePotionEffect(20);
+		}
+		
+		else if(helmet == EssenceItems.charskullHelmet && body == EssenceItems.charskullChest && legs == EssenceItems.charskullLegs && boots == EssenceItems.charskullBoots){
+			player.fallDamage=0;
+			event.player.removePotionEffect(20);
 
 		}
 
@@ -176,8 +181,13 @@ public class ArmorAbilityEvent{
 		if(!(e.entity instanceof EntityPlayer)) {
 			if(helmet == EssenceItems.luniumHelmet && body == EssenceItems.luniumChest && legs == EssenceItems.luniumLegs && boots == EssenceItems.luniumBoots)
 				e.ammount += 4;
+			
 			else if(helmet == EssenceItems.flameHelmet && body == EssenceItems.flameChest && legs == EssenceItems.flameLegs && boots == EssenceItems.flameBoots)
 				e.entityLiving.setFire(5);
+			
+			if(!(e.entity instanceof EntityPlayer)) {
+				if(helmet == EssenceItems.bronzedHelmet && body == EssenceItems.bronzedChest && legs == EssenceItems.bronzedLegs && boots == EssenceItems.bronzedBoots)
+					e.ammount += 6;
 		}
 	}
-}
+}}
