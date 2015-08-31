@@ -1,5 +1,6 @@
 package net.essence.entity.mob.overworld;
 
+import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
 import net.essence.entity.projectile.EntityGreenpace;
 import net.essence.enums.EnumSounds;
@@ -87,6 +88,6 @@ public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 	
 	@Override
 	public Item getItemDropped() {
-		return null;
+		return EssenceItems.floroPedal;
 	}
 }

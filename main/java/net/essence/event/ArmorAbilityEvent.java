@@ -2,6 +2,7 @@ package net.essence.event;
 
 import net.essence.EssenceItems;
 import net.essence.util.Helper;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
@@ -70,13 +71,13 @@ public class ArmorAbilityEvent{
 			event.player.removePotionEffect(20);
 		}
 		
-		else if(helmet == EssenceItems.charskullHelmet && body == EssenceItems.charskullChest && legs == EssenceItems.charskullLegs && boots == EssenceItems.charskullBoots){
-			player.fallDamage=0;
-			event.player.removePotionEffect(20);
+		else if(helmet == EssenceItems.golditeHelmet && body == EssenceItems.golditeChest && legs == EssenceItems.golditeLegs && boots == EssenceItems.golditeBoots){
+			event.player.fallDistance=0;
+			event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 1));
 
 		}
 
-		else if(event.player instanceof EntityPlayerMP) { 
+		if(event.player instanceof EntityPlayerMP) { 
 			EntityPlayer player = (EntityPlayerMP)event.player;
 			if(!player.capabilities.isCreativeMode && !player.isSpectator()) {
 				if(helmet == EssenceItems.flairiumHelmet && body == EssenceItems.flairiumChest && legs == EssenceItems.flairiumLegs && boots == EssenceItems.flairiumBoots) {
@@ -181,13 +182,11 @@ public class ArmorAbilityEvent{
 		if(!(e.entity instanceof EntityPlayer)) {
 			if(helmet == EssenceItems.luniumHelmet && body == EssenceItems.luniumChest && legs == EssenceItems.luniumLegs && boots == EssenceItems.luniumBoots)
 				e.ammount += 4;
-			
+			if(helmet == EssenceItems.bronzedHelmet && body == EssenceItems.bronzedChest && legs == EssenceItems.bronzedLegs && boots == EssenceItems.bronzedBoots)
+				e.ammount += 6;
+			if(e.entity instanceof EntityLivingBase)((EntityLivingBase)e.entity).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 1));
 			else if(helmet == EssenceItems.flameHelmet && body == EssenceItems.flameChest && legs == EssenceItems.flameLegs && boots == EssenceItems.flameBoots)
 				e.entityLiving.setFire(5);
-			
-			if(!(e.entity instanceof EntityPlayer)) {
-				if(helmet == EssenceItems.bronzedHelmet && body == EssenceItems.bronzedChest && legs == EssenceItems.bronzedLegs && boots == EssenceItems.bronzedBoots)
-					e.ammount += 6;
 		}
 	}
-}}
+}
