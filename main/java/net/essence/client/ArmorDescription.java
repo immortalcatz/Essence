@@ -42,7 +42,7 @@ public class ArmorDescription {
 			list.add("Full set: Grants speed and fire resistance while in lava");
 		
 		if(i == EssenceItems.leapersHelmet || i == EssenceItems.leapersChest || i == EssenceItems.leapersLegs || i == EssenceItems.leapersBoots)
-			list.add("Full set: Grants increased jump hight");
+			list.add("Full set: Grants increased jump height");
 		
 		if(i == EssenceItems.treehuggersHelmet || i == EssenceItems.treehuggersChest || i == EssenceItems.treehuggersLegs || i == EssenceItems.treehuggersBoots)
 			list.add("Full set: Grants increased farming drops");
