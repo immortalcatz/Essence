@@ -5,7 +5,6 @@ Essence of the Gods
 * [Essence's website] (https://essence-of-the-gods.net)
 
 ####Developers:
-* The_SlayerMC
 * Eternaldoom
 * Dizzlepop12
 
@@ -20,3 +19,4 @@ Essence of the Gods
 
 ####Other:
 * RadioactiveStud - Wiki admin
+* The_SlayerMC - Creator and Ex-Developer
