@@ -66,11 +66,6 @@ public class EntityBurningLight extends EntityModMob{
 	}
 	
 	@Override
-	public boolean getCanSpawnHere() {
-		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.hotBlock;
-	}
-	
-	@Override
 	protected void dropFewItems(boolean b, int j) {
 		Item it = getItemDropped();
 		this.dropItem(it, 1);

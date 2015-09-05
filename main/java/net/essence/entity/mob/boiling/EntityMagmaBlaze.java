@@ -60,10 +60,6 @@ public class EntityMagmaBlaze extends EntityModMob {
 		return 1.0F;
 	}
 	
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.hotBlock;
-	}
 	
 	@Override
 	public void onLivingUpdate() {

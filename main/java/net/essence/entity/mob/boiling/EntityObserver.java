@@ -47,12 +47,7 @@ public class EntityObserver extends EntityModMob{
 	public EnumSounds setDeathSound() {
 		return EnumSounds.BLAZE_DEATH;
 	}
-	
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == EssenceBlocks.hotBlock;
-	}
-	
+
 	@Override
 	public boolean attackEntityFrom(DamageSource e, float a) {
 		if(e.getSourceOfDamage() instanceof EntityPlayer)

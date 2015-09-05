@@ -29,7 +29,6 @@ public class LangRegistry {
 		File en_US = new File(location + "en_US.lang");
 		try {
 			en_US.mkdirs();
-			for(int i = 0; i < 100; i++) System.out.println("Lang file generated at: " + en_US.getAbsolutePath());
 			if(en_US.exists()) en_US.delete();
 			en_US.createNewFile();
 			writer = new BufferedWriter(new FileWriter(en_US));

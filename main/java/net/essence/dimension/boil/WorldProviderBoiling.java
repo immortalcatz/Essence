@@ -18,6 +18,7 @@ public class WorldProviderBoiling extends WorldProvider {
 		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.0F);
 		this.dimensionId = Config.boil;
 		isHellWorld = true;
+		hasNoSky=true;
 	}
 	
 	@Override
@@ -55,16 +56,6 @@ public class WorldProviderBoiling extends WorldProvider {
 	@Override
 	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderBoiling(this.worldObj, this.worldObj.getSeed());
-	}
-	
-	@Override
-	protected void generateLightBrightnessTable() {
-		float f = 1.2F;
-
-		for (int i = 0; i <= 15; ++i) {
-			float f1 = 1.0F - (float)i / 15.0F;
-			this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
-		}
 	}
 
 	@Override
