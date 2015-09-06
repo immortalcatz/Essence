@@ -14,6 +14,7 @@ import net.essence.blocks.BlockFrozenPortal;
 import net.essence.blocks.BlockGemBlock;
 import net.essence.blocks.BlockGlowshroom;
 import net.essence.blocks.BlockHalfSlab;
+import net.essence.blocks.BlockHotBlock;
 import net.essence.blocks.BlockIceLog;
 import net.essence.blocks.BlockIcicle;
 import net.essence.blocks.BlockJoinedGlass;
@@ -166,7 +167,7 @@ public class EssenceBlocks {
 	
 	public static final Block depthsLights = new BlockMod("depthsLight", "Depths Light").setLightLevel(1.0F);
 
-	public static final Block hotBlock = new BlockMod(EnumMaterialTypes.GRASS, "hotGround", "Hot Ground", 2.0F);
+	public static final Block hotBlock = new BlockHotBlock("hotGround", "Hot Ground");
 	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
 	
 	public static final Block fire = new BlockModFire("fire", "Fire");

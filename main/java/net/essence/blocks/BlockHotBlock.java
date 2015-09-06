@@ -1,6 +1,5 @@
 package net.essence.blocks;
 
-import net.essence.EssenceBlocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
