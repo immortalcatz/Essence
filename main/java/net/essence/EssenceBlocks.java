@@ -2,7 +2,6 @@ package net.essence;
 
 import java.util.ArrayList;
 
-import net.essence.blocks.BlockBoilingFire;
 import net.essence.blocks.BlockBrison;
 import net.essence.blocks.BlockBrittleIce;
 import net.essence.blocks.BlockCloud;
@@ -171,7 +170,6 @@ public class EssenceBlocks {
 	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
 	
 	public static final Block fire = new BlockModFire("fire", "Fire");
-	public static final BlockBoilingFire boilingFire = new BlockBoilingFire("boilingFire", "Boiling Fire");
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", "Mossy Essence Stone", 2.0F);
 

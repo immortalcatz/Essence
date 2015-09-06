@@ -10,6 +10,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -155,5 +156,19 @@ public class BlockMod extends Block{
 				}
 			}
 		}*/
+	}
+
+	@Override
+    public boolean isFireSource(World world, BlockPos pos, EnumFacing side)
+    {
+        if (this == net.minecraft.init.Blocks.netherrack && side == EnumFacing.UP)
+        {
+            return true;
+        }
+        if ((world.provider instanceof net.minecraft.world.WorldProviderEnd) && this == net.minecraft.init.Blocks.bedrock && side == EnumFacing.UP)
+        {
+            return true;
+        }
+        return false;
 	}
 }

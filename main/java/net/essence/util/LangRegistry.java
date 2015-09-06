@@ -7,10 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import net.essence.items.ItemHonglow;
 import net.essence.items.ItemModArmor;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 
 public class LangRegistry {
 
