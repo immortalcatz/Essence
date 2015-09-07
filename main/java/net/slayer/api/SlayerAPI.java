@@ -110,7 +110,7 @@ public class SlayerAPI {
 
 	public static void registerMob(Class entityClass, String name, String finalN, int base, int fore) {
 		LangRegistry.addMob(name, finalN);
-		EntityRegistry.registerModEntity(entityClass, name, mobID++, Essence.instance, 128, 5, true);
+		EntityRegistry.registerModEntity(entityClass, name, mobID++, Essence.instance, 128, 5, true, base, fore);
 	}
 	
 	public static void registerEndMob(Class entityClass, String entityName, String finalN) {
@@ -151,7 +151,7 @@ public class SlayerAPI {
 	
 	public static void registerNPC(Class entityClass, String entityName, String finalN) {
 		LangRegistry.addMob(entityName, finalN);
-		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true, 0x00FF8C, 0x00F6FF);
 	}
 	
 	public static void registerEntity(Class entityClass, String entityName, int ID) {
@@ -160,7 +160,7 @@ public class SlayerAPI {
 
 	public static void registerBossMob(Class entityClass, String entityName, String finalN) {
 		LangRegistry.addMob(entityName, finalN);
-		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true);
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true, 0x000000, 0x9B0000);
 	}
 
 	public static void registerProjectile(Class entityClass, String entityName) {
