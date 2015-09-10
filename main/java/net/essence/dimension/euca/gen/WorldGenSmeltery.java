@@ -18,13 +18,6 @@ public class WorldGenSmeltery extends WorldGenerator {
 	
 	
 	private static WeightedRandomChestContent[] loot = {new WeightedRandomChestContent(EssenceItems.metalDisk, 0, 1, 5, 10), 
-		new WeightedRandomChestContent(EssenceItems.celekiumBattleaxe, 0, 1, 1, 1), 
-		new WeightedRandomChestContent(EssenceItems.celestiteBattleaxe, 0, 1, 1, 2),
-		new WeightedRandomChestContent(EssenceItems.storumBattleaxe, 0, 1, 1, 3), 
-		new WeightedRandomChestContent(EssenceItems.bronzedBattleaxe, 0, 1, 1, 4), 
-		new WeightedRandomChestContent(EssenceItems.royalBlade, 0, 1, 1, 2), 
-		new WeightedRandomChestContent(EssenceItems.royalKnife, 0, 10, 15, 2), 
-		new WeightedRandomChestContent(EssenceItems.royalBow, 0, 1, 1, 2), 
 		new WeightedRandomChestContent(EssenceItems.golderDust, 0, 1, 10, 40), 
 		new WeightedRandomChestContent(EssenceItems.goldClump, 0, 1, 5, 40)};
 	
