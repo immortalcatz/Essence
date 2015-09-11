@@ -38,14 +38,12 @@ public class ChunkProviderCloudia implements IChunkProvider {
 		int x, z, times;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
-		for(times = 0; times < 10;) {
+		if(rand.nextInt(30) == 0)
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 				new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-				break;
 			}
-		}
 
 	@Override
 	public boolean chunkExists(int x, int z) {
