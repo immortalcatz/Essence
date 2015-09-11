@@ -7,7 +7,6 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.cloudia.gen.WorldGenHut;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
-import net.essence.dimension.euca.gen.trees.WorldGenBotSpawner;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
@@ -16,6 +15,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ChunkProviderCloudia implements IChunkProvider {
 
@@ -28,40 +28,48 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	}
 
 	@Override
-	public Chunk provideChunk(int x, int z) {
-		this.rand.setSeed((long) x * 341873128712L + (long) z * 132897987541L);
-		ChunkPrimer chunkprimer = new ChunkPrimer();
-		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
+	public Chunk provideChunk(int cx, int cz) {
+		this.rand.setSeed((long) cx * 341873128712L + (long) cz * 132897987541L);
+		ChunkPrimer c = new ChunkPrimer();
+		
+		for(int i = 0; i < 65536; i++) {
+			if(i%256 < 12 + this.rand.nextInt(2)) c.setBlockState(i, EssenceBlocks.cloud.getDefaultState());
+		}
+		
+		Chunk chunk = new Chunk(this.worldObj, c, cx, cz);
 		chunk.generateSkylightMap();
 		return chunk;
 	}
 
+	private static WorldGenerator castle = new WorldGenStarlightCastle();
+	private static WorldGenerator tower = new WorldGenTower();
+	private static WorldGenerator hut = new WorldGenHut();
+	
 	@Override
 	public void populate(IChunkProvider c, int cx, int cz) {
 		this.rand.setSeed(this.worldObj.getSeed() * (cx + cz) * this.rand.nextInt());
 		int x1 = cx * 16;
 		int z1 = cz * 16;
 		int x, z, times;
-		for(times = 0; times < 5; times++) {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
-		if (this.rand.nextInt(20) == 0) {
-			int yCoord = rand.nextInt(128) + 1;
-			new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		
+		if (this.rand.nextInt(15) == 0) {
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))castle.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
-	for(times = 0; times < 1; times++) {
-		x = x1 + this.rand.nextInt(16) + 8;
-		z = z1 + this.rand.nextInt(16) + 8;
-		int yCoord = rand.nextInt(128) + 1;
-		new WorldGenTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-	}
+		if (this.rand.nextInt(15) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))tower.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
 
-	for(times = 0; times < 10; times++) {
-		x = x1 + this.rand.nextInt(16) + 8;
-		z = z1 + this.rand.nextInt(16) + 8;
-		int yCoord = rand.nextInt(128) + 1;
-		new WorldGenHut().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-			}
+		if (this.rand.nextInt(15) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))hut.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 	}
 
