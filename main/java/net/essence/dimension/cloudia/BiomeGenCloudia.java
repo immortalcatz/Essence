@@ -24,6 +24,6 @@ public class BiomeGenCloudia extends BiomeGenBase {
 	@Override
     @SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float f) {
-		return Color.getHSBColor(-18.0F, -10.0F, 10.0F).getRGB();
+		return 0xFFB3DC;
     }
 }
