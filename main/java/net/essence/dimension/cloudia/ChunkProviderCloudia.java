@@ -7,7 +7,10 @@ import net.essence.EssenceBlocks;
 import net.essence.dimension.cloudia.gen.WorldGenHut;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.World;
@@ -15,28 +18,29 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ChunkProviderCloudia implements IChunkProvider {
 
 	private Random rand;
 	private World worldObj;
-
+	private BiomeGenBase[] biomesForGeneration;
 	public ChunkProviderCloudia(World worldIn, long seed) {
 		this.worldObj = worldIn;
 		this.rand = new Random(seed);
+		new NoiseGeneratorOctaves(this.rand, 4);
+		new NoiseGeneratorOctaves(this.rand, 4);
 	}
 
 	@Override
 	public Chunk provideChunk(int cx, int cz) {
-		this.rand.setSeed((long) cx * 341873128712L + (long) cz * 132897987541L);
-		ChunkPrimer c = new ChunkPrimer();
-		
-		for(int i = 0; i < 65536; i++) {
-			if(i%256 < 12 + this.rand.nextInt(2)) c.setBlockState(i, EssenceBlocks.cloud.getDefaultState());
-		}
-		
-		Chunk chunk = new Chunk(this.worldObj, c, cx, cz);
+		this.rand.setSeed((long)cx * 391279512714L + (long)cz * 132894987741L);
+		ChunkPrimer primer = new ChunkPrimer();
+		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, cx* 16, cz* 16, 16, 16);
+		Chunk chunk = new Chunk(this.worldObj, primer, cx, cz);
+		byte[] abyte = chunk.getBiomeArray();
+		for(int k = 0; k < abyte.length; ++k) abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
 		chunk.generateSkylightMap();
 		return chunk;
 	}
@@ -50,7 +54,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 		this.rand.setSeed(this.worldObj.getSeed() * (cx + cz) * this.rand.nextInt());
 		int x1 = cx * 16;
 		int z1 = cz * 16;
-		int x, z, times;
+		int x, z;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		
