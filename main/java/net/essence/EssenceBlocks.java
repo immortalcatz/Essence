@@ -129,7 +129,6 @@ public class EssenceBlocks {
 	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", "Corba Leaves", 0.2F);
 	public static final Block corbaPillar = new BlockMod("corbaPillar", "Corba Pillar");
 	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", "Corba Plank", 0.5F);
-	
 	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
 	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", "Cloudia Dirt", 2.0F);
@@ -139,6 +138,7 @@ public class EssenceBlocks {
 	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick", "Cloudia Brick");
 	public static final Block cloudiaWall = new BlockMod("cloudiaWall", "Cloudia Wall"); 
 	public static final Block cloudiaTile = new BlockMod("cloudiaTile", "Cloudia Tile"); 
+	public static final Block cloudiaLeaves = new BlockModLeaves("cloudiaLeaves", "Cloudia Leaves", 0.5F).setFrozenPlant().setLightLevel(1);
 	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp", "Cloudia Lamp").setLightLevel(1.0F);
 	//public static final Block cloudiaPost = new BlockCloudiaPost("cloudiaPost");
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
@@ -190,6 +190,7 @@ public class EssenceBlocks {
 	public static final Block dungeonCrackedBrickFence = new BlockModFence(dungeonCrackedBrick, "dungeonCrackedBrickFence", "Cracked Dungeon Brick Fence");
 	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrickFence", "Chiseled Dungeon Brick Fence");
 	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarvedFence", "Carved Dungeon Brick Fence");
+	public static final Block cloudiaPost = new BlockModFence(pinkCloudiaCloud, "cloudiaPost", "Cloudia Post");
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", "Dungeon Lamp Fence", true);
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
