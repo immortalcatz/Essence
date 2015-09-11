@@ -33,6 +33,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 
 	@Override
 	public void populate(IChunkProvider c, int cx, int cz) {
+		this.rand.setSeed(this.worldObj.getSeed()  *(cx + cz)*  this.rand.nextInt());
 		int x1 = cx * 16;
 		int z1 = cz * 16;
 		int x, z, times;
