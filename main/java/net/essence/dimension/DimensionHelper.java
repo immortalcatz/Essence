@@ -17,6 +17,8 @@ import net.essence.entity.mob.boiling.EntityFrightener;
 import net.essence.entity.mob.boiling.EntityHellwing;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityObserver;
+import net.essence.entity.mob.cloudia.EntityStarlightGolem;
+import net.essence.entity.mob.cloudia.EntityStarlightTransporter;
 import net.essence.entity.mob.corba.EntityLeafBlower;
 import net.essence.entity.mob.corba.EntitySurfaceSeer;
 import net.essence.entity.mob.corba.EntityTreeGolem;
@@ -103,9 +105,17 @@ public class DimensionHelper {
 		addVanillaSpawns();
 		addCaveSpawns();
 		addCorbaSpawns();
+		addCloudiaSpawns();
 		addRareVanillaSpawns();
 	}
 	
+	private static void addCloudiaSpawns() {
+		int amount = 50;
+		EntityRegistry.addSpawn(EntityStarlightTransporter.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityStarlightGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		
+	}
+
 	private static void addCorbaSpawns() {
 		int amount = 4;
 		EntityRegistry.addSpawn(EntityTreeGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, corba);
