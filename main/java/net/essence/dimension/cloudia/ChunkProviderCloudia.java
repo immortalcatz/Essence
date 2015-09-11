@@ -17,6 +17,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 
 	private Random rand;
 	private World worldObj;
+
 	public ChunkProviderCloudia(World worldIn, long seed) {
 		this.worldObj = worldIn;
 		this.rand = new Random(seed);
@@ -24,7 +25,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 
 	@Override
 	public Chunk provideChunk(int x, int z) {
-		this.rand.setSeed((long)x * 341873128712L + (long)z * 132897987541L);
+		this.rand.setSeed((long) x * 341873128712L + (long) z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 		chunk.generateSkylightMap();
@@ -33,18 +34,17 @@ public class ChunkProviderCloudia implements IChunkProvider {
 
 	@Override
 	public void populate(IChunkProvider c, int cx, int cz) {
-		this.rand.setSeed(this.worldObj.getSeed()  *(cx + cz)*  this.rand.nextInt());
+		this.rand.setSeed(this.worldObj.getSeed() * (cx + cz) * this.rand.nextInt());
 		int x1 = cx * 16;
 		int z1 = cz * 16;
 		int x, z, times;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
-		if(rand.nextInt(30) == 0)
-			x = x1 + this.rand.nextInt(16) + 8;
-			z = z1 + this.rand.nextInt(16) + 8;
+		if (this.rand.nextInt(20) == 0) {
 			int yCoord = rand.nextInt(128) + 1;
-				new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-			}
+			new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+	}
 
 	@Override
 	public boolean chunkExists(int x, int z) {
@@ -62,7 +62,8 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	}
 
 	@Override
-	public void saveExtraData() {}
+	public void saveExtraData() {
+	}
 
 	@Override
 	public boolean unloadQueuedChunks() {
@@ -96,7 +97,8 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	}
 
 	@Override
-	public void recreateStructures(Chunk c, int x, int z) { }
+	public void recreateStructures(Chunk c, int x, int z) {
+	}
 
 	@Override
 	public Chunk provideChunk(BlockPos blockPosIn) {

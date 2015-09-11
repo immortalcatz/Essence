@@ -1,4 +1,5 @@
 package net.essence.dimension.cloudia.gen;
+
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
@@ -7,11 +8,12 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class WorldGenStarlightCastle extends WorldGenerator
-{
-	public WorldGenStarlightCastle() { }
-
-	public boolean generate(World world, Random rand, int i, int j, int k) {
+public class WorldGenStarlightCastle extends WorldGenerator {
+	
+	@Override
+	public boolean generate(World world, Random rand, BlockPos pos) {
+		int i = pos.getX(), j = pos.getY(), k = pos.getZ();
+		
 		world.setBlockState(new BlockPos(i + 1, j + 4, k + 6), EssenceBlocks.cloudiaGrass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 4, k + 7), EssenceBlocks.cloudiaGrass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 2, j + 3, k + 7), EssenceBlocks.cloudiaDirt.getDefaultState());
@@ -579,12 +581,5 @@ public class WorldGenStarlightCastle extends WorldGenerator
 		world.setBlockState(new BlockPos(i + 11, j + 4, k + 7), EssenceBlocks.cloudiaGrass.getDefaultState());
 
 		return true;
-	}
-
-	@Override
-	public boolean generate(World worldIn, Random p_180709_2_,
-			BlockPos p_180709_3_) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }
