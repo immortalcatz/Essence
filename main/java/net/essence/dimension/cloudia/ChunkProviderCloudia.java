@@ -3,6 +3,7 @@ package net.essence.dimension.cloudia;
 import java.util.List;
 import java.util.Random;
 
+import net.essence.dimension.cloudia.gen.WorldGenHut;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
 import net.minecraft.entity.EnumCreatureType;
@@ -39,20 +40,32 @@ public class ChunkProviderCloudia implements IChunkProvider {
 		int x1 = cx * 16;
 		int z1 = cz * 16;
 		int x, z, times;
+		for(times = 0; times < 5; times++) {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		if (this.rand.nextInt(20) == 0) {
 			int yCoord = rand.nextInt(128) + 1;
 			new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
+		for(times = 0; times < 1; times++) {
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		if (this.rand.nextInt(20) == 0) {
 			int yCoord = rand.nextInt(128) + 1;
 			new WorldGenTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		for(times = 0; times < 10; times++) {
+		x = x1 + this.rand.nextInt(16);
+		z = z1 + this.rand.nextInt(16);
+		if (this.rand.nextInt(20) == 0) {
+			int yCoord = rand.nextInt(128) + 1;
+			new WorldGenHut().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 	}
 
 	for(times = 0; times < 1; times++) {
+					}
+				}
+			}
 		}
 	}
 

@@ -29,13 +29,11 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class ChunkProviderEuca implements IChunkProvider {
 
 	private Random rand;
-	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, field_909_n, noiseGen4, noiseGen5, noiseGen6;
+	private NoiseGeneratorOctaves noiseGen1, noiseGen2, noiseGen3, noiseGen5, noiseGen6;
 	private World worldObj;
-	private double[] noiseArray, stoneNoise = new double[256];
+	private double[] noiseArray;
 	private BiomeGenBase[] biomesForGeneration;
 	private double[] noise3, noise1, noise2, noise5, noise6;
-	private double[] generatedTemperatures;
-	private WorldGenEucaWater water1, water2;
 	private ArrayList<WorldGenerator> trees;
 
 	public ChunkProviderEuca(World var1, long var2){
@@ -44,14 +42,14 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
-		this.field_909_n = new NoiseGeneratorOctaves(this.rand, 4);
-		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
+		new NoiseGeneratorOctaves(this.rand, 4);
+		new NoiseGeneratorOctaves(this.rand, 4);
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
-		water1 = new WorldGenEucaWater(Blocks.flowing_water, true);
-		water2 = new WorldGenEucaWater(Blocks.flowing_water, false);
+		new WorldGenEucaWater(Blocks.flowing_water, true);
+		new WorldGenEucaWater(Blocks.flowing_water, false);
 
-		trees = new ArrayList(3);
+		trees = new ArrayList<WorldGenerator>(3);
 		trees.add(new WorldGenEucaTree());
 		trees.add(new WorldGenEucaTree2());
 		trees.add(new WorldGenEucaTree3());
@@ -179,12 +177,8 @@ public class ChunkProviderEuca implements IChunkProvider {
 		this.noise2 = this.noiseGen2.generateNoiseOctaves(this.noise2, var2, var3, var4, var5, var6, var7, var8, var10, var8);
 		int var12 = 0;
 		int var13 = 0;
-		int var14 = 16 / var5;
-
 		for(int var15 = 0; var15 < var5; var15++) {
-			int var16 = var15 * var14 + var14 / 2;
 			for(int var17 = 0; var17 < var7; var17++) {
-				int var18 = var17 * var14 + var14 / 2;
 				double var19 = (this.noise5[var13] + 64.0D) / 64.0D;
 				double var21 = this.noise6[var13] / 6000.0D;
 				if(var21 < 0.0D) var21 = -var21 * 0.3D;
@@ -231,11 +225,11 @@ public class ChunkProviderEuca implements IChunkProvider {
 	public void populate(IChunkProvider ichunkprovider, int i, int j) {
 		int x1 = i * 16;
 		int z1 = j * 16;
-		int x, y, z, times;
+		int x, z, times;
 		x = x1 + this.rand.nextInt(16) + 8;
 		z = z1 + this.rand.nextInt(16) + 8;
 
-		for(times = 0; times < 10; times++) {
+		for(times = 0; times < 3; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
@@ -302,7 +296,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
+	public List<?> func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
 		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
 		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
 	}
