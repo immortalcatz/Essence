@@ -1,5 +1,7 @@
 package net.essence.dimension.cloudia;
 
+import java.awt.Color;
+
 import net.essence.EssenceBlocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,7 +23,7 @@ public class BiomeGenCloudia extends BiomeGenBase {
 	
 	@Override
     @SideOnly(Side.CLIENT)
-    public int getSkyColorByTemp(float f) {
-        return 0x00FFD0;
+	public int getSkyColorByTemp(float f) {
+		return Color.getHSBColor(-18.0F, -10.0F, 10.0F).getRGB();
     }
 }
