@@ -3,9 +3,11 @@ package net.essence.dimension.cloudia;
 import java.util.List;
 import java.util.Random;
 
+import net.essence.EssenceBlocks;
 import net.essence.dimension.cloudia.gen.WorldGenHut;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
+import net.essence.dimension.euca.gen.trees.WorldGenBotSpawner;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
@@ -47,24 +49,18 @@ public class ChunkProviderCloudia implements IChunkProvider {
 			int yCoord = rand.nextInt(128) + 1;
 			new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
-		for(times = 0; times < 1; times++) {
-		x = x1 + this.rand.nextInt(16);
-		z = z1 + this.rand.nextInt(16);
-		if (this.rand.nextInt(20) == 0) {
-			int yCoord = rand.nextInt(128) + 1;
-			new WorldGenTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-		}
-		for(times = 0; times < 10; times++) {
-		x = x1 + this.rand.nextInt(16);
-		z = z1 + this.rand.nextInt(16);
-		if (this.rand.nextInt(20) == 0) {
-			int yCoord = rand.nextInt(128) + 1;
-			new WorldGenHut().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+	for(times = 0; times < 1; times++) {
+		x = x1 + this.rand.nextInt(16) + 8;
+		z = z1 + this.rand.nextInt(16) + 8;
+		int yCoord = rand.nextInt(128) + 1;
+		new WorldGenTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 	}
 
-	for(times = 0; times < 1; times++) {
-					}
-				}
+	for(times = 0; times < 10; times++) {
+		x = x1 + this.rand.nextInt(16) + 8;
+		z = z1 + this.rand.nextInt(16) + 8;
+		int yCoord = rand.nextInt(128) + 1;
+		new WorldGenHut().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 	}
