@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
+import net.essence.dimension.cloudia.gen.WorldGenTower;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
@@ -43,6 +44,15 @@ public class ChunkProviderCloudia implements IChunkProvider {
 		if (this.rand.nextInt(20) == 0) {
 			int yCoord = rand.nextInt(128) + 1;
 			new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		x = x1 + this.rand.nextInt(16);
+		z = z1 + this.rand.nextInt(16);
+		if (this.rand.nextInt(20) == 0) {
+			int yCoord = rand.nextInt(128) + 1;
+			new WorldGenTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+	}
+
+	for(times = 0; times < 1; times++) {
 		}
 	}
 
