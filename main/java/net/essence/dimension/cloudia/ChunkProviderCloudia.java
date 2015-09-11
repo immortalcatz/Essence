@@ -1,9 +1,9 @@
 package net.essence.dimension.cloudia;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
@@ -12,17 +12,11 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenerator;
-import net.slayer.api.block.BlockModFlower;
 
 public class ChunkProviderCloudia implements IChunkProvider {
 
 	private Random rand;
 	private World worldObj;
-	private BiomeGenBase[] biomesForGeneration;
-	private ArrayList<BlockModFlower> flowers;
-	private ArrayList<WorldGenerator> trees;
-
 	public ChunkProviderCloudia(World worldIn, long seed) {
 		this.worldObj = worldIn;
 		this.rand = new Random(seed);
@@ -41,11 +35,18 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	public void populate(IChunkProvider c, int cx, int cz) {
 		int x1 = cx * 16;
 		int z1 = cz * 16;
-		int x, y, z, i;
+		int x, z, times;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
-	}
-	
+		for(times = 0; times < 10;) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+				new WorldGenStarlightCastle().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				break;
+			}
+		}
+
 	@Override
 	public boolean chunkExists(int x, int z) {
 		return true;
@@ -80,7 +81,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType t, BlockPos p) {
+	public List<?> func_177458_a(EnumCreatureType t, BlockPos p) {
 		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p);
 		return biomegenbase.getSpawnableList(t);
 	}
