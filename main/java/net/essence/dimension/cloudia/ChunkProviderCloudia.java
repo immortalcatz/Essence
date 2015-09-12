@@ -6,6 +6,7 @@ import java.util.Random;
 import net.essence.EssenceBlocks;
 import net.essence.dimension.cloudia.gen.WorldGenCloudiaLamp;
 import net.essence.dimension.cloudia.gen.WorldGenHut;
+import net.essence.dimension.cloudia.gen.WorldGenIsland;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightTree;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
@@ -52,6 +53,7 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	private static WorldGenerator hut = new WorldGenHut();
 	private static WorldGenerator lamp = new WorldGenCloudiaLamp();
 	private static WorldGenerator tree = new WorldGenStarlightTree();
+	private static WorldGenerator island = new WorldGenIsland();
 	
 	@Override
 	public void populate(IChunkProvider c, int cx, int cz) {
@@ -92,6 +94,13 @@ public class ChunkProviderCloudia implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))tree.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		
+		if (this.rand.nextInt(15) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))island.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 	}
 

@@ -171,6 +171,11 @@ public class GenerationHelper {
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == EssenceBlocks.eucaGrass.getDefaultState()) new WorldGenSmeltery().generate(w, r, new BlockPos(x, y, z));
 			break;
+		case 19:
+			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenMinable(EssenceBlocks.pinkCloudiaCloud.getDefaultState(), 10, BlockHelper.forBlock(Blocks.air))).generate(w, r, new BlockPos(x, y, z));
+			break;
+			
 		}
 	}
 

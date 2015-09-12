@@ -13,7 +13,6 @@ public class WorldGenCloudiaLamp extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		int i = pos.getX(), j = pos.getY(), k = pos.getZ();
 		
-		world.setBlockState(new BlockPos(i + 0, j + 3, k + 1), EssenceBlocks.cloudiaGrass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 1), EssenceBlocks.cloudiaDirt.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 2), EssenceBlocks.cloudiaRock.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 3), EssenceBlocks.cloudiaRock.getDefaultState());

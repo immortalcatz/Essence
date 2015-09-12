@@ -17,6 +17,8 @@ import net.essence.entity.mob.boiling.EntityFrightener;
 import net.essence.entity.mob.boiling.EntityHellwing;
 import net.essence.entity.mob.boiling.EntityMagmaBlaze;
 import net.essence.entity.mob.boiling.EntityObserver;
+import net.essence.entity.mob.cloudia.EntityCloudFlyer;
+import net.essence.entity.mob.cloudia.EntityCloudGhost;
 import net.essence.entity.mob.cloudia.EntityStarlightGolem;
 import net.essence.entity.mob.cloudia.EntityStarlightTransporter;
 import net.essence.entity.mob.corba.EntityLeafBlower;
@@ -110,10 +112,11 @@ public class DimensionHelper {
 	}
 	
 	private static void addCloudiaSpawns() {
-		int amount = 50;
+		int amount = 70;
 		EntityRegistry.addSpawn(EntityStarlightTransporter.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityStarlightGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		
+		EntityRegistry.addSpawn(EntityCloudFlyer.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityCloudGhost.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 	}
 
 	private static void addCorbaSpawns() {
@@ -124,7 +127,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityWoodCreature.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 	}
 	private static void addColdFrozenSpawns() {
-		int amount = 10;
+		int amount = 5;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityFrozenTroll.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);

@@ -135,10 +135,10 @@ public class EssenceBlocks {
 	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", "Cloudia Grass", 2.0F);
 	public static final Block cloudiaLog = new BlockModLog("cloudiaLog", "Cloudia Log"); 
 	public static final Block cloudiaRock = new BlockMod("cloudiaRock", "Cloudia Rock"); 
-	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick", "Cloudia Brick");
-	public static final Block cloudiaWall = new BlockMod("cloudiaWall", "Cloudia Wall"); 
-	public static final Block cloudiaTile = new BlockMod("cloudiaTile", "Cloudia Tile"); 
-	public static final Block cloudiaLeaves = new BlockModLeaves("cloudiaLeaves", "Cloudia Leaves", 0.5F).setFrozenPlant().setLightLevel(1);
+	public static final Block cloudiaBrick = new BlockMod("cloudiaBrick", "Cloudia Brick").setLightLevel(0.5F); 
+	public static final Block cloudiaWall = new BlockMod("cloudiaWall", "Cloudia Wall").setLightLevel(0.5F);  
+	public static final Block cloudiaTile = new BlockMod("cloudiaTile", "Cloudia Tile").setLightLevel(0.5F); 
+	public static final Block cloudiaLeaves = new BlockModLeaves("cloudiaLeaves", "Cloudia Leaves", 0.5F).setFrozenPlant().setLightLevel(2);
 	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp", "Cloudia Lamp").setLightLevel(1.0F);
 	//public static final Block cloudiaPost = new BlockCloudiaPost("cloudiaPost");
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
