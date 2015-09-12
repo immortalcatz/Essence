@@ -24,7 +24,7 @@ public class WorldProviderCloudia extends WorldProvider {
 	
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.32F;
+		return 0.99F;
 	}
     
 	@Override
