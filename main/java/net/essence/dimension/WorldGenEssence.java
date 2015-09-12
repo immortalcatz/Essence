@@ -30,6 +30,7 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(dim == Config.euca) generateEuca(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.frozen) generateFrozen(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.corba) generateCorba(w, r, chunkX * 16, chunkZ * 16);
+		if(dim == Config.cloudia) generateCloudia(w, r, chunkX * 16, chunkZ * 16);
 		int i;
 		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(3, w, chunkX * 16, chunkZ * 16);
 		for(i = 0; i < 3; i++) GenerationHelper.generateVanilla(2, w, chunkX * 16, chunkZ * 16);
@@ -70,6 +71,13 @@ public class WorldGenEssence implements IWorldGenerator {
 		for(i = 0; i < 70; i++) GenerationHelper.generateEssenceDimensions(6, w, chunkX, chunkZ);
 		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(7, w, chunkX, chunkZ);
 		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(8, w, chunkX, chunkZ);
+	}
+	
+	private void generateCloudia(World w, Random r, int chunkX, int chunkZ) {
+		int i = 0;
+		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions(19, w, chunkX, chunkZ);
+		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions(20, w, chunkX, chunkZ);
+		
 	}
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {

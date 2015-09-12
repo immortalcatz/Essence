@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/cloudiaLeaves",
+	"parent": "essence:block/frozenLeaves",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],
