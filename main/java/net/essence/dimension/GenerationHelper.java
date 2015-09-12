@@ -179,7 +179,7 @@ public class GenerationHelper {
 		case 20:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y<64);
-			(new WorldGenMinable(EssenceBlocks.lightBlueCloudiaCloud.getDefaultState(), 20, BlockHelper.forBlock(Blocks.air))).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenMinable(EssenceBlocks.blueCloudiaCloud.getDefaultState(), 5, BlockHelper.forBlock(Blocks.air))).generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}
