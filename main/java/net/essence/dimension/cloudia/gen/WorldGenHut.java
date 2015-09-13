@@ -3,15 +3,29 @@ package net.essence.dimension.cloudia.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.entity.mob.cloudia.npc.EntityStarlightVillager;
+import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenHut extends WorldGenerator {
 	
+	public boolean locationIsValidSpawn(World w, int x, int y, int z) {
+		for(int i = 0; i < 11; i++) {
+			for(int l = 0; l < 11; l++) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != EssenceBlocks.cloudiaGrass) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		int i = pos.getX(), j = pos.getY(), k = pos.getZ();
+		if(locationIsValidSpawn(world, i, j, k)) return true;
 
 		world.setBlockState(new BlockPos(i + 0, j + 4, k + 4), EssenceBlocks.cloudiaGrass.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 9, k + 3), EssenceBlocks.cloudiaWall.getDefaultState());
@@ -493,6 +507,11 @@ public class WorldGenHut extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 12, j + 9, k + 7), EssenceBlocks.cloudiaWall.getDefaultState());
 		world.setBlockState(new BlockPos(i + 12, j + 9, k + 8), EssenceBlocks.cloudiaWall.getDefaultState());
 
-		return true;
+		if(!world.isRemote) {
+			EntityStarlightVillager smith = new EntityStarlightVillager(world);
+			smith.setLocationAndAngles(i + 4, j + 2, k + 4, 0.0F, 0.0F);
+			world.spawnEntityInWorld(smith);
+		}
+		return false;
 	}
 }

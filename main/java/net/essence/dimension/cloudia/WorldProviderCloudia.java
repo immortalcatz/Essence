@@ -21,11 +21,6 @@ public class WorldProviderCloudia extends WorldProvider {
 	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderCloudia(this.worldObj, this.worldObj.getSeed());
 	}
-	
-	@Override
-	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.0F;
-	}
     
 	@Override
     @SideOnly(Side.CLIENT)
@@ -51,7 +46,7 @@ public class WorldProviderCloudia extends WorldProvider {
 
 	@Override
     public int getAverageGroundLevel() {
-        return 63;
+        return 70;
     }
 
 	@Override
