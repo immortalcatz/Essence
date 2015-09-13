@@ -73,12 +73,13 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 public class DimensionHelper {
 
 	protected static final BiomeGenBase.Height boilHeight = new BiomeGenBase.Height(0.0F, 0.9F); 
+	protected static final BiomeGenBase.Height corbaHeight = new BiomeGenBase.Height(0.2F, 0.2F); 
 
 	public static BiomeGenBase euca = new BiomeGenEuca(Config.eucaBiome).setHeight(new BiomeGenBase.Height(0.125F, 0.05F));
 	public static BiomeGenBase depths = new BiomeGenDepths(Config.depthsBiome);
 	public static BiomeGenBase boiling = new BiomeGenBoiling(Config.boilBiome).setHeight(boilHeight);
 	public static BiomeGenBase frozen = new BiomeGenFrozenLands(Config.frozenBiome);
-	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome);
+	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome).setHeight(corbaHeight);
 	//public static BiomeGenBase wastelands = new BiomeGenWastelands(Config.wastelandsBiome);
 	public static BiomeGenBase cloudia = new BiomeGenCloudia(Config.cloudiaBiome);
 
