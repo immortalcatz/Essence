@@ -176,9 +176,11 @@ public class EntityRegistry {
 		SlayerAPI.registerCloudiaMob(EntityCloudFlyer.class, "cloudFlyer", "Cloud Flyer");
 		SlayerAPI.registerCloudiaMob(EntityStarlightGolem.class, "starlightGolem", "Starlight Golem");
 		SlayerAPI.registerCloudiaMob(EntityStarlightTransporter.class, "starlightTransporter", "Starlight Transporter");
+		SlayerAPI.registerCloudiaMob(EntityStarlightWalker.class, "starlightWalker", "Starlight Walker");
 	}
 
 	public static void registerNPCs() {
+		SlayerAPI.registerNPC(EntityStarlightVillager.class, "starlightVillager", "Starlight Villager");
 		SlayerAPI.registerNPC(EntityMage.class, "mage", "Mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith", "Blacksmith");
 		SlayerAPI.registerNPC(EntityFrozenMerchant.class, "frozenMerchant", "Frozen Merchant");
@@ -188,7 +190,6 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityRedTordo.class, "redTordo", "Red Tordo");
 		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader", "Boil Trader");
 		SlayerAPI.registerNPC(EntityAlloyMender.class, "alloyMender", "Alloy Mender");
-		SlayerAPI.registerNPC(EntityStarlightVillager.class, "starlightVillager", "Starlight Villager");
 	}
 
 	public static void registerBosses() {

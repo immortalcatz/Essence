@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
-public class EntityStarlightTransporter extends EntityPeacefullUntillAttacked {
+public class EntityStarlightWalker extends EntityPeacefullUntillAttacked {
 
-	public EntityStarlightTransporter(World w) {
+	public EntityStarlightWalker(World w) {
 		super(w);
 	}
 
@@ -47,7 +47,7 @@ public class EntityStarlightTransporter extends EntityPeacefullUntillAttacked {
 
 	@Override
 	public Item getItemDropped() {
-		return EssenceItems.cloudiaOrb;
+		return null;
 	}
 
 }

@@ -62,6 +62,7 @@ public enum EssenceToolMaterial {
 	THUNDERBLADE(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
 	SENTRY_SWORD(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
 	CRYSTAL_BLADE(SlayerAPI.addMeleeMaterial(3000, 9, 25)),
+	STARLIGHT_BLADE(SlayerAPI.addMeleeMaterial(3000, 33, 25)),
 	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	
