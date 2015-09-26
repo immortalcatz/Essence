@@ -3,6 +3,7 @@ package net.essence.dimension.cloudia.gen;
 import java.util.Random;
 
 import net.essence.EssenceBlocks;
+import net.essence.entity.mob.cloudia.npc.EntityStarlightBlacksmith;
 import net.essence.entity.mob.cloudia.npc.EntityStarlightVillager;
 import net.essence.entity.mob.euca.npc.EntityAlloyMender;
 import net.minecraft.util.BlockPos;
@@ -14,7 +15,7 @@ public class WorldGenStarlightVillage extends WorldGenerator {
 	public boolean locationIsValidSpawn(World w, int x, int y, int z) {
 		for(int i = 0; i < 11; i++) {
 			for(int l = 0; l < 11; l++) {
-				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != EssenceBlocks.cloudiaBrick) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != EssenceBlocks.cloudiaTile) {
 					return false;
 				}
 			}
@@ -1076,8 +1077,11 @@ public class WorldGenStarlightVillage extends WorldGenerator {
 
 		if(!world.isRemote) {
 			EntityStarlightVillager smith = new EntityStarlightVillager(world);
-			smith.setLocationAndAngles(i + 4, j + 2, k + 4, 0.0F, 0.0F);
-			world.spawnEntityInWorld(smith);
+				smith.setLocationAndAngles(i + 6, j + 4, k + 6, 0.0F, 0.0F);
+				world.spawnEntityInWorld(smith);
+			EntityStarlightBlacksmith smith1 = new EntityStarlightBlacksmith(world);
+				smith1.setLocationAndAngles(i + 6, j + 4, k + 6, 0.0F, 0.0F);
+				world.spawnEntityInWorld(smith1);
 		}
 		return false;
 	}

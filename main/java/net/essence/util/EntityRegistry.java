@@ -182,6 +182,7 @@ public class EntityRegistry {
 
 	public static void registerNPCs() {
 		SlayerAPI.registerNPC(EntityStarlightVillager.class, "starlightVillager", "Starlight Villager");
+		SlayerAPI.registerNPC(EntityStarlightBlacksmith.class, "starlightBlacksmith", "Starlight Blacksmith");
 		SlayerAPI.registerNPC(EntityMage.class, "mage", "Mage");
 		SlayerAPI.registerNPC(EntityBlacksmith.class, "blacksmith", "Blacksmith");
 		SlayerAPI.registerNPC(EntityFrozenMerchant.class, "frozenMerchant", "Frozen Merchant");
@@ -206,6 +207,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityThunderbird.class, "thunderbird", "Thunderbird");
 		SlayerAPI.registerBossMob(EntityLogger.class, "logger", "Logger");
 		SlayerAPI.registerBossMob(EntityCorallator.class, "corallator", "Corrallator");
+		SlayerAPI.registerBossMob(EntitySkyStalker.class, "skyStalker", "Sky Stalker");
 		//SlayerAPI.registerBossMob(EntityWraith.class, "wraith");
 	}
 

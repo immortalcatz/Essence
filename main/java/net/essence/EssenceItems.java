@@ -273,6 +273,7 @@ public class EssenceItems {
 	public static final Item soulWatcherOrb = new ItemSpecificDimensionSpawner(Config.boil, "soulWatcherOrb", "Soul Watcher Orb", "Boiling Point");
 	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Sentry King Orb", "Corba");
 	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Thunderbird Orb", "Depths");
+	public static final Item mysteriousDisk = new ItemSpecificDimensionSpawner(Config.cloudia, "mysteriousDisk", "Mysterious Disk", "Cloudia");
 	
 	//TODO
 	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Scale Orb", "Depths");

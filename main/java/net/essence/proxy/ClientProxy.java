@@ -132,6 +132,7 @@ public class ClientProxy extends CommonProxy {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void spawnParticle(EnumParticlesClasses particle, World worldObj, double posX, double posY, double posZ, boolean b) {
 		try {

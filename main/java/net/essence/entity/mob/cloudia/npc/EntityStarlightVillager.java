@@ -13,7 +13,7 @@ public class EntityStarlightVillager extends EntityModVillager {
 
 	public EntityStarlightVillager(World par1World) {
 		super(par1World);
-		setSize(0.7F, 2.5F);
+		setSize(2.2F, 2.5F);
 	}
 
 	@Override
@@ -29,10 +29,9 @@ public class EntityStarlightVillager extends EntityModVillager {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.fluffyFeather, 15), new ItemStack(EssenceItems.golemChunk, 5), new ItemStack(EssenceItems.golemSword, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.fluffyFeather, 15), new ItemStack(EssenceItems.golemChunk, 5), new ItemStack(EssenceItems.golemBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.luniteChunk, 15), new ItemStack(EssenceItems.golemChunk, 15), new ItemStack(EssenceItems.starlightBlade, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.luniteChunk, 15), new ItemStack(EssenceItems.golemChunk, 15), new ItemStack(EssenceItems.starlightBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.fluffyFeather, 32), new ItemStack(EssenceItems.golemChunk, 16), new ItemStack(EssenceItems.cloudiaOrb, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.fluffyFeather, 64), new ItemStack(EssenceItems.golemChunk, 32), new ItemStack(EssenceItems.luniteChunk, 8)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.cloudiaOrb, 15), new ItemStack(EssenceItems.luniteChunk, 16), new ItemStack(EssenceItems.mysteriousDisk, 1)));
 		
 	}
 }

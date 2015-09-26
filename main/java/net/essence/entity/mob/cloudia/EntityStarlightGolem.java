@@ -5,12 +5,15 @@ import net.essence.entity.MobStats;
 import net.essence.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+import net.slayer.api.entity.EntityModMob;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
-public class EntityStarlightGolem extends EntityPeacefullUntillAttacked {
+public class EntityStarlightGolem extends EntityModMob {
 
-	public EntityStarlightGolem(World w) {
-		super(w);
+	public EntityStarlightGolem(World par1World) {
+		super(par1World);
+		addAttackingAI();
+		setSize(3F, 2.5F);
 	}
 
 	@Override

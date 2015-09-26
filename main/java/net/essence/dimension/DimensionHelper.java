@@ -114,12 +114,12 @@ public class DimensionHelper {
 	}
 	
 	private static void addCloudiaSpawns() {
-		int amount = 70;
+		int amount = 90;
 		EntityRegistry.addSpawn(EntityStarlightTransporter.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityStarlightGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityCloudFlyer.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityCloudGhost.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntitySkyEel.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntitySkyEel.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
 	}
 
 	private static void addCorbaSpawns() {

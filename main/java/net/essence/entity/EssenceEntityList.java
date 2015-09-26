@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import net.essence.entity.EssenceEntityList.EntityEggInfo;
 import net.essence.util.LogHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
@@ -15,14 +16,14 @@ import net.minecraft.world.World;
  */
 public class EssenceEntityList {
 
-    public static Map stringToClassMapping = new HashMap();
-    public static Map classToStringMapping = new HashMap();
-    public static Map IDtoClassMapping = new HashMap();
-    private static Map classToIDMapping = new HashMap();
-    private static Map stringToIDMapping = new HashMap();
-    public static HashMap entityEggs = new LinkedHashMap();
+    public static Map<String, Class<?>> stringToClassMapping = new HashMap<String, Class<?>>();
+    public static Map<Class<?>, String> classToStringMapping = new HashMap<Class<?>, String>();
+    public static Map<Integer, Class<?>> IDtoClassMapping = new HashMap<Integer, Class<?>>();
+    private static Map<Class<?>, Integer> classToIDMapping = new HashMap<Class<?>, Integer>();
+    private static Map<String, Integer> stringToIDMapping = new HashMap<String, Integer>();
+    public static HashMap<Integer, EntityEggInfo> entityEggs = new LinkedHashMap<Integer, EntityEggInfo>();
 
-    public static void addMapping(Class clazz, String name, int id) {
+    public static void addMapping(Class<?> clazz, String name, int id) {
 
         if(stringToClassMapping.containsKey(name))
             throw new IllegalArgumentException("ID is already registered: " + name);
@@ -39,21 +40,21 @@ public class EssenceEntityList {
         }
     }
 
-    public static void addMapping(Class clazz, String name, int id, int primary, int secondary) {
+    public static void addMapping(Class<?> clazz, String name, int id, int primary, int secondary) {
         addMapping(clazz, name, id);
         entityEggs.put(Integer.valueOf(id), new EssenceEntityList.EntityEggInfo(id, primary, secondary));
     }
 
     public static String getStringFromID(int id) {
-        Class oclass = getClassFromID(id);
+        Class<?> oclass = getClassFromID(id);
         return oclass != null ? (String) classToStringMapping.get(oclass) : null;
     }
 
-    public static Class getClassFromID(int id) {
-        return (Class) IDtoClassMapping.get(Integer.valueOf(id));
+    public static Class<?> getClassFromID(int id) {
+        return (Class<?>) IDtoClassMapping.get(Integer.valueOf(id));
     }
 
-    public static int getIDFromClass(Class clazz) {
+    public static int getIDFromClass(Class<?> clazz) {
         return (Integer) classToIDMapping.get(clazz);
     }
 
@@ -62,7 +63,7 @@ public class EssenceEntityList {
         Entity entity = null;
 
         try {
-            Class oclass = getClassFromID(id);
+            Class<?> oclass = getClassFromID(id);
             if(oclass != null) {
                 entity = (Entity) oclass.getConstructor(new Class[] { World.class }).newInstance(new Object[] { world });
             }

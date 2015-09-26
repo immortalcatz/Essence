@@ -132,6 +132,7 @@ public class Textures {
     //Cloudia
     public static final ResourceLocation cloudGhost = addMob("cloudGhost");
     public static final ResourceLocation starlightVillager = addMob("starlightVillager");
+    public static final ResourceLocation starlightBlacksmith = addMob("starlightBlacksmith");
     public static final ResourceLocation cloudFlyer = addMob("cloudFlyer");
     public static final ResourceLocation starlightGolem = addMob("starlightGolem");
     public static final ResourceLocation starlightTransporter = addMob("starlightTransporter");
@@ -149,6 +150,7 @@ public class Textures {
     public static final ResourceLocation templeGuardian = addMob("templeGuardian");
     public static final ResourceLocation logger = addMob("logger");
     public static final ResourceLocation corallator = addMob("corallator");
+    public static final ResourceLocation skyStalker = addMob("skyStalker");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
