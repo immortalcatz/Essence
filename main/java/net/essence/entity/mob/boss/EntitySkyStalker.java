@@ -4,13 +4,11 @@ import java.util.Random;
 
 import net.essence.EssenceItems;
 import net.essence.entity.MobStats;
-import net.essence.entity.mob.cloudia.EntitySkyEel;
-import net.essence.entity.projectile.EntityIceBall;
 import net.essence.entity.projectile.EntityShimmererProjectile;
 import net.essence.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,25 +16,20 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.slayer.api.entity.EntityEssenceBoss;
+import net.slayer.api.entity.EntityModFlying;
 
-public class EntitySkyStalker extends EntityEssenceBoss implements IRangedAttackMob {
-	
+public class EntitySkyStalker extends EntityModFlying {
+
 	public EntitySkyStalker(World par1World) {
 		super(par1World);
-		addAttackingAI();
-		setSize(2.0F, 3.8F);
-	}
-
-	@Override
-	public double setAttackDamage(MobStats s) {
-		return MobStats.skyStalkerDamage;
-	}
-	
-	@Override
-	public double setKnockbackResistance() {
-		return 1.0D;
+		this.moveHelper = new EntitySkyStalker.MoveHelper();
+		this.tasks.addTask(5, new EntitySkyStalker.AIRandomFly());
+		this.tasks.addTask(7, new EntitySkyStalker.AIFireballAttack());
+        this.tasks.addTask(7, new EntitySkyStalker.AILookAround());
+		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+		setSize(0.7F, 1.2F);
 	}
 
 	@Override
@@ -46,38 +39,55 @@ public class EntitySkyStalker extends EntityEssenceBoss implements IRangedAttack
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.WITHER;
+		return EnumSounds.INSECTO;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.WITHER_HURT;
+		return EnumSounds.SHIMMERER_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.WITHER_DEATH;
+		return EnumSounds.SHIMMERER_DEATH;
+	}
+	
+	@Override
+	protected float getSoundVolume() {
+        return 10.0F;
+    }
+	
+	@Override
+	public boolean getCanSpawnHere() {
+        return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+    }
+
+    @Override
+    public int getMaxSpawnedInChunk() {
+        return 3;
+    }
+
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.fluffyFeather, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.fluffyFeather, 4);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(30) == 0) dropItem(EssenceItems.cloudiaOrb, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(60) == 0) dropItem(EssenceItems.cloudiaOrb, 4);
+		super.dropFewItems(b, j);
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
 	}
 
 	@Override
 	public Item getItemDropped() {
 		return null;
-	}
-
-	@Override
-	protected void dropFewItems(boolean b, int j) {
-		switch(rand.nextInt(3)) {
-		case 0: dropItem(EssenceItems.skyPiercer, 1); break;
-		case 1: dropItem(EssenceItems.fluffyBow, 1); break;
-		case 2: dropItem(EssenceItems.fluffyBlade, 1); break;
-		}
-	}
-
-	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-		EntityIceBall b = new EntityIceBall(this.worldObj, this, 10F);
-        EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
-        this.worldObj.spawnEntityInWorld(b);
 	}
 
 	public void setFire(boolean b) {

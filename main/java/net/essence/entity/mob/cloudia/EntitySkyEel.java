@@ -64,7 +64,7 @@ public class EntitySkyEel extends EntityModFlying {
 
     @Override
     public int getMaxSpawnedInChunk() {
-        return 1;
+        return 3;
     }
 
 	@Override
