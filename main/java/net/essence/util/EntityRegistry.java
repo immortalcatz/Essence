@@ -177,6 +177,7 @@ public class EntityRegistry {
 		SlayerAPI.registerCloudiaMob(EntityStarlightGolem.class, "starlightGolem", "Starlight Golem");
 		SlayerAPI.registerCloudiaMob(EntityStarlightTransporter.class, "starlightTransporter", "Starlight Transporter");
 		SlayerAPI.registerCloudiaMob(EntityStarlightWalker.class, "starlightWalker", "Starlight Walker");
+		SlayerAPI.registerCloudiaMob(EntitySkyEel.class, "skyEel", "Sky Eel");
 	}
 
 	public static void registerNPCs() {
