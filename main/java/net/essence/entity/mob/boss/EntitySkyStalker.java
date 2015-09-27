@@ -7,9 +7,9 @@ import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.slayer.api.entity.EntityModFlying;
+import net.slayer.api.entity.EntityEssenceBoss;
 
-public class EntitySkyStalker extends EntityModFlying {
+public class EntitySkyStalker extends EntityEssenceBoss {
 
 	public EntitySkyStalker(World par1World) {
 		super(par1World);
@@ -73,5 +73,11 @@ public class EntitySkyStalker extends EntityModFlying {
 	@Override
 	public Item getItemDropped() {
 		return null;
+	}
+
+	@Override
+	public double setAttackDamage(MobStats s) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
