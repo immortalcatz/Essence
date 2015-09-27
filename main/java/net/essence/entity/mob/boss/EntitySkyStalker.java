@@ -68,14 +68,11 @@ public class EntitySkyStalker extends EntityEssenceBoss {public EntitySkyStalker
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(1) == 0) dropItem(EssenceItems.fluffyFeather, 2);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(1) == 0) dropItem(EssenceItems.fluffyFeather, 4);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(30) == 0) dropItem(EssenceItems.cloudiaOrb, 2);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(60) == 0) dropItem(EssenceItems.cloudiaOrb, 4);
-		super.dropFewItems(b, j);
+		switch(rand.nextInt(3)) {
+		case 0: dropItem(EssenceItems.skyPiercer, 128); break;
+		case 1: dropItem(EssenceItems.fluffyBlade, 1); break;
+		case 2: dropItem(EssenceItems.fluffyBow, 1); break;
+		}
 	}
 
 	@Override
