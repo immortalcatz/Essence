@@ -141,7 +141,7 @@ public class EntityRegistry {
 		//SlayerAPI.registerEucaMob(EntityEucaHopper.class, "eucaHopper");
 		SlayerAPI.registerEucaMob(EntityEucaCharger.class, "eucaCharger", "Euca Charger");
 		SlayerAPI.registerEucaMob(EntityDynaster.class, "dynaster", "Dynaster");
-		SlayerAPI.registerEucaMob(EntityGolder.class, "golder", "Golder");
+		//SlayerAPI.registerEucaMob(EntityGolder.class, "golder", "Golder");
 		SlayerAPI.registerEucaMob(EntityGolditeMage.class, "golditeMage", "Goldite Mage");
 		SlayerAPI.registerEucaMob(EntitySilverbot.class, "silverbot", "Silverbot");
 		SlayerAPI.registerEucaMob(EntityGoldbot.class, "goldbot", "Goldbot");
