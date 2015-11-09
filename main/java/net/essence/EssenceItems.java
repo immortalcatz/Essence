@@ -129,6 +129,7 @@ public class EssenceItems {
 	public static final Item crystalBall = new ItemMod("crystalBall", "Crystal Ball");
 	public static final Item floroPedal = new ItemMod("floroPedal", "Floro Pedal");
 	public static final Item glowshroomPowder = new ItemMod("glowshroomPowder", "Glowshroom Powder");
+	public static final Item cloudiaGem = new ItemMod("cloudiaGem", "Cloudia Gem");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");

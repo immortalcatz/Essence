@@ -60,6 +60,11 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(sentry);
 				}
+				if(item == EssenceItems.mysteriousDisk) {
+					SlayerAPI.sendMessageToAll("The Sky Stalker has been summoned", true);
+					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(sentry);
+				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
 				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the " + dimName + " dimension.");
