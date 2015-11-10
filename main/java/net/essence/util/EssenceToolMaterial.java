@@ -27,6 +27,7 @@ public enum EssenceToolMaterial {
 	ORBADITE(EssenceItems.orbadite, EssenceItems.orbaditeIngot, 3),
 	GORBITE(EssenceItems.gorbite, EssenceItems.gorbiteGem, 3),
 	DES(EssenceItems.des, EssenceItems.desIngot, 3),
+	KORITE(EssenceItems.korite, EssenceItems.koriteIngot, 3),
 	
 	NETHER_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
 	WITHERING_BEAST_SWORD(SlayerAPI.addMeleeMaterial(3000, 15, 25)),
@@ -63,6 +64,7 @@ public enum EssenceToolMaterial {
 	SENTRY_SWORD(SlayerAPI.addMeleeMaterial(3000, 35, 25)),
 	CRYSTAL_BLADE(SlayerAPI.addMeleeMaterial(3000, 9, 25)),
 	STARLIGHT_BLADE(SlayerAPI.addMeleeMaterial(3000, 33, 25)),
+	KORITE_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
 	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	
@@ -75,15 +77,16 @@ public enum EssenceToolMaterial {
 	ORBADITE_MULTI_TOOL(EssenceItems.orbaditeMulti, EssenceItems.orbaditeIngot, 3),
 	GORBITE_MULTI_TOOL(EssenceItems.gorbiteMulti, EssenceItems.gorbiteGem, 3),
 	DES_MULTI_TOOL(EssenceItems.desMulti, EssenceItems.desIngot, 3),
+	KORITE_MULTI_TOOL(EssenceItems.koriteMulti, EssenceItems.koriteIngot, 3),
 	SMELTING_TOOL(EssenceItems.smeltingMulti, null, 3),
 
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
 	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25)),
-	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 23, 25)),
-	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 24, 25)),
-	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 22, 25)),
-	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 25, 25)),
+	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
+	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 17, 25)),
+	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 18, 25)),
+	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 19, 25)),
 	THUNDERBIRD_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 27, 25));
 
 	private ToolMaterial toolMaterial;

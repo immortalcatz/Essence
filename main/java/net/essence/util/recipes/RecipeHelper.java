@@ -21,9 +21,10 @@ public class RecipeHelper {
 		EssenceBlocks b = new EssenceBlocks();
 		EssenceItems i = new EssenceItems();
 		GameRegistry.addRecipe(new ItemStack(EssenceItems.flameCoin), new Object[] {"iii", "idi", "iii", 'i', Items.gold_ingot, 'd', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.eucaPortalFrame, 3), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.eucaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.depthsPortalFrame, 3), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.depthsPortalGem});
-		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.cloudiaPortalFrame, 3), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.cloudiaGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.eucaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.eucaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.depthsPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.depthsPortalGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.cloudiaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.cloudiaGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.corbaPortalFrame, 6), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.corbaPortalGem});
 
 		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
 		addOre(b.hellstoneOre, i.hellstoneIngot, b.hellstoneBlock, i.hellstoneAxe, i.hellstonePickaxe, i.hellstoneShovel, i.hellstoneHoe, i.hellstoneSword, i.hellstoneMultiTool, i.hellstoneHelmet, i.hellstoneChest, i.hellstoneLegs, i.hellstoneBoots, i.hellstoneDust);
@@ -31,6 +32,7 @@ public class RecipeHelper {
 		addOre(b.shadiumOre, i.shadiumIngot, b.shadiumBlock, i.shadiumAxe, i.shadiumPickaxe, i.shadiumShovel, i.shadiumHoe, i.shadiumSword, i.shadiumMultiTool, i.shadiumHelmet, i.shadiumChest, i.shadiumLegs, i.shadiumBoots, i.shadiumDust);
 		addOre(b.luniumOre, i.luniumIngot, b.luniumBlock, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots, i.luniumDust);
 		addOre(b.sapphireOre, i.sapphire, b.sapphireBlock, i.sapphireAxe, i.sapphirePickaxe, i.sapphireShovel, i.sapphireHoe, i.sapphireSword, i.sapphireMultiTool, i.sapphireHelmet, i.sapphireChest, i.sapphireLegs, i.sapphireBoots, i.sapphireDust);
+		addOre(b.koriteOre, i.koriteIngot, b.koriteBlock, i.koriteAxe, i.koritePickaxe, i.koriteShovel, i.koriteHoe, i.koriteSword, i.koriteMultiTool, null, null, null, null, null);
 
 		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);
