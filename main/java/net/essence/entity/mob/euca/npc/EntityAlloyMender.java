@@ -1,5 +1,6 @@
 package net.essence.entity.mob.euca.npc;
 
+import net.essence.EssenceBlocks;
 import net.essence.EssenceItems;
 import net.essence.client.GuiHandler.GuiIDs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,11 +42,11 @@ public class EntityAlloyMender extends EntityModVillager {
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(EssenceItems.shimmerdust, 64), new ItemStack(EssenceItems.metalDisk, 1), new ItemStack(EssenceItems.royalBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 15), new ItemStack(EssenceItems.goldClump, 15), new ItemStack(EssenceItems.royalBlade, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 10), new ItemStack(EssenceItems.goldClump, 10), new ItemStack(EssenceItems.royalKnife, 15)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.celestiumIngot, 15), new ItemStack(EssenceItems.mekyumIngot, 10), new ItemStack(EssenceItems.celekiumBattleaxe, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.celestiumIngot, 15), new ItemStack(EssenceItems.koriteIngot, 10), new ItemStack(EssenceItems.celestiteBattleaxe, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.storonIngot, 15), new ItemStack(EssenceItems.mekyumIngot, 10), new ItemStack(EssenceItems.storumBattleaxe, 1)));
-		list.add(new MerchantRecipe(new ItemStack(EssenceItems.storonIngot, 15), new ItemStack(EssenceItems.koriteIngot, 10), new ItemStack(EssenceItems.bronzedBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 16), new ItemStack(EssenceItems.goldClump, 16), new ItemStack(EssenceItems.royalBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceItems.golderDust, 10), new ItemStack(EssenceItems.goldClump, 10), new ItemStack(EssenceItems.royalKnife, 16)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceBlocks.celestiumBlock, 8), new ItemStack(EssenceBlocks.mekyumBlock, 8), new ItemStack(EssenceItems.celekiumBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceBlocks.celestiumBlock, 7), new ItemStack(EssenceBlocks.koriteBlock, 7), new ItemStack(EssenceItems.celestiteBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceBlocks.storonBlock, 6), new ItemStack(EssenceItems.mekyumIngot, 6), new ItemStack(EssenceItems.storumBattleaxe, 1)));
+		list.add(new MerchantRecipe(new ItemStack(EssenceBlocks.storonBlock, 5), new ItemStack(EssenceItems.koriteIngot, 5), new ItemStack(EssenceItems.bronzedBattleaxe, 1)));
 	}
 }

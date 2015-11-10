@@ -24,7 +24,10 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.eucaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.eucaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.depthsPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.depthsPortalGem});
 		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.cloudiaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.cloudiaGem});
-		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.corbaPortalFrame, 6), new Object[] {"iii", "iii", "iii", 'i', EssenceItems.corbaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.corbaPortalFrame, 6), new Object[] {"   ", "iii", "iii", 'i', EssenceItems.corbaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.frozenPortalFrame, 4), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
+		
+		GameRegistry.addRecipe(new ItemStack(EssenceItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', EssenceItems.sapphire});
 
 		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
 		addOre(b.hellstoneOre, i.hellstoneIngot, b.hellstoneBlock, i.hellstoneAxe, i.hellstonePickaxe, i.hellstoneShovel, i.hellstoneHoe, i.hellstoneSword, i.hellstoneMultiTool, i.hellstoneHelmet, i.hellstoneChest, i.hellstoneLegs, i.hellstoneBoots, i.hellstoneDust);
