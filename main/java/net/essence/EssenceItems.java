@@ -173,7 +173,9 @@ public class EssenceItems {
 	public static final Item orbaditeMultiTool = new ItemMultiTool("orbaditeMultiTool", "Orbadite Multi Tool", EssenceToolMaterial.ORBADITE_MULTI_TOOL);
 	public static final Item desMultiTool = new ItemMultiTool("desMultiTool", "Des Multi Tool", EssenceToolMaterial.DES_MULTI_TOOL);
 	public static final Item koriteMultiTool = new ItemMultiTool("koriteMultiTool", "Korite Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
-
+	public static final Item storonMultiTool = new ItemMultiTool("storonMultiTool", "Storon Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
+	public static final Item mekyumMultiTool = new ItemMultiTool("mekyumMultiTool", "Mekyum Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
+	
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", "Hellstone Pickaxe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", "Shadium Pickaxe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumPickaxe = new ItemModPickaxe("celestiumPickaxe", "Celestium Pickaxe", EssenceToolMaterial.CELESTIUM);
@@ -184,6 +186,8 @@ public class EssenceItems {
 	public static final Item orbaditePickaxe = new ItemModPickaxe("orbaditePickaxe", "Orbadite Pickaxe", EssenceToolMaterial.ORBADITE);
 	public static final Item desPickaxe = new ItemModPickaxe("desPickaxe", "Des Pickaxe", EssenceToolMaterial.DES);
 	public static final Item koritePickaxe = new ItemModPickaxe("koritePickaxe", "Korite Pickaxe", EssenceToolMaterial.KORITE);
+	public static final Item storonPickaxe = new ItemModPickaxe("storonPickaxe", "Storon Pickaxe", EssenceToolMaterial.KORITE);
+	public static final Item mekyumPickaxe = new ItemModPickaxe("mekyumPickaxe", "Mekyum Pickaxe", EssenceToolMaterial.KORITE);
 
 	public static final Item hellstoneShovel = new ItemModShovel("hellstoneShovel", "Hellstone Shovel", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumShovel = new ItemModShovel("shadiumShovel", "Shadium Shovel", EssenceToolMaterial.SHADIUM);
@@ -195,6 +199,8 @@ public class EssenceItems {
 	public static final Item orbaditeShovel = new ItemModShovel("orbaditeShovel", "Orbadite Shovel", EssenceToolMaterial.ORBADITE);
 	public static final Item desShovel = new ItemModShovel("desShovel", "Des Shovel", EssenceToolMaterial.DES);
 	public static final Item koriteShovel = new ItemModShovel("koriteShovel", "Korite Shovel", EssenceToolMaterial.KORITE);
+	public static final Item storonShovel = new ItemModShovel("storonShovel", "Storon Shovel", EssenceToolMaterial.KORITE);
+	public static final Item mekyumShovel = new ItemModShovel("mekyumShovel", "Mekyum Shovel", EssenceToolMaterial.KORITE);
 
 	public static final Item hellstoneAxe = new ItemModAxe("hellstoneAxe", "Hellstone Axe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumAxe = new ItemModAxe("shadiumAxe", "Shadium Axe", EssenceToolMaterial.SHADIUM);
@@ -206,6 +212,8 @@ public class EssenceItems {
 	public static final Item orbaditeAxe = new ItemModAxe("orbaditeAxe", "Orbadite Axe", EssenceToolMaterial.ORBADITE);
 	public static final Item desAxe = new ItemModAxe("desAxe", "Des Axe", EssenceToolMaterial.DES);
 	public static final Item koriteAxe = new ItemModAxe("koriteAxe", "Korite Axe", EssenceToolMaterial.KORITE);
+	public static final Item storonAxe = new ItemModAxe("storonAxe", "Storon Axe", EssenceToolMaterial.KORITE);
+	public static final Item mekyumAxe = new ItemModAxe("mekyumAxe", "Mekyum Axe", EssenceToolMaterial.KORITE);
 
 	public static final Item hellstoneHoe = new ItemModHoe("hellstoneHoe", "Hellstone Hoe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumHoe = new ItemModHoe("shadiumHoe", "Shadium Hoe", EssenceToolMaterial.SHADIUM);
@@ -217,6 +225,8 @@ public class EssenceItems {
 	public static final Item orbaditeHoe = new ItemModHoe("orbaditeHoe", "Orbadite Hoe", EssenceToolMaterial.ORBADITE);
 	public static final Item desHoe = new ItemModHoe("desHoe", "Des Hoe", EssenceToolMaterial.DES);
 	public static final Item koriteHoe = new ItemModHoe("koriteHoe", "Korite Hoe", EssenceToolMaterial.KORITE);
+	public static final Item storonHoe = new ItemModHoe("storonHoe", "Storon Hoe", EssenceToolMaterial.KORITE);
+	public static final Item mekyumHoe = new ItemModHoe("mekyumHoe", "Storon Hoe", EssenceToolMaterial.KORITE);
 	
 	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", "Multi Tool of Eternal Smelting", EssenceToolMaterial.SMELTING_TOOL);
 
@@ -263,9 +273,11 @@ public class EssenceItems {
 	public static final Item crystalBlade = new ItemModSword("crystalBlade", "Crystal Blade", EssenceToolMaterial.CRYSTAL_BLADE);
 	public static final Item starlightBlade = new ItemModSword("starlightBlade", "Starlight Blade", EssenceToolMaterial.STARLIGHT_BLADE);
 	public static final Item koriteSword = new ItemModSword("koriteSword", "Korite Sword", EssenceToolMaterial.KORITE_SWORD);
+	public static final Item storonSword = new ItemModSword("storonSword", "Storon Sword", EssenceToolMaterial.KORITE_SWORD);
+	public static final Item mekyumSword = new ItemModSword("mekyumSword", "Mekyum Sword", EssenceToolMaterial.KORITE_SWORD);
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
-
+	
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem", "Euca Portal Gem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem", "Depths Portal Gem");
 	public static final Item corbaPortalGem = new ItemMod("corbaPortalGem", "Corba Portal Gem");
