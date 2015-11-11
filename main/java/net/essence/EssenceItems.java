@@ -275,6 +275,7 @@ public class EssenceItems {
 	public static final Item koriteSword = new ItemModSword("koriteSword", "Korite Sword", EssenceToolMaterial.KORITE_SWORD);
 	public static final Item storonSword = new ItemModSword("storonSword", "Storon Sword", EssenceToolMaterial.KORITE_SWORD);
 	public static final Item mekyumSword = new ItemModSword("mekyumSword", "Mekyum Sword", EssenceToolMaterial.KORITE_SWORD);
+	public static final Item pedalSword = new ItemModSword("pedalSword", "Pedal Sword", EssenceToolMaterial.PEDAL_SWORD);
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 	

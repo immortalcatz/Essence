@@ -27,6 +27,8 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.corbaPortalFrame, 6), new Object[] {"   ", "iii", "iii", 'i', EssenceItems.corbaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(EssenceBlocks.frozenPortalFrame, 4), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
 		
+		GameRegistry.addRecipe(new ItemStack(EssenceItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', EssenceItems.floroPedal, 'i', EssenceItems.caveDust});
+		GameRegistry.addRecipe(new ItemStack(EssenceItems.crystalBlade), new Object[] {" d ", " d ", " i ", 'd', EssenceItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(EssenceItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', EssenceItems.sapphire});
 
 		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
