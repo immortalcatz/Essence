@@ -30,6 +30,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(EssenceItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', EssenceItems.floroPedal, 'i', EssenceItems.caveDust});
 		GameRegistry.addRecipe(new ItemStack(EssenceItems.crystalBlade), new Object[] {" d ", " d ", " i ", 'd', EssenceItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(EssenceItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', EssenceItems.sapphire});
+		GameRegistry.addRecipe(new ItemStack(EssenceItems.demonicBomb), new Object[] {"ddd", "did", "ddd", 'd', EssenceItems.demonicDust, 'i', EssenceItems.crystalBall});
 
 		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
 		addOre(b.hellstoneOre, i.hellstoneIngot, b.hellstoneBlock, i.hellstoneAxe, i.hellstonePickaxe, i.hellstoneShovel, i.hellstoneHoe, i.hellstoneSword, i.hellstoneMultiTool, i.hellstoneHelmet, i.hellstoneChest, i.hellstoneLegs, i.hellstoneBoots, i.hellstoneDust);
