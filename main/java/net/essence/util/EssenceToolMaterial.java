@@ -84,9 +84,9 @@ public enum EssenceToolMaterial {
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),
 	TEMPEST_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 13, 25)),
-	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
-	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 17, 25)),
-	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 18, 25)),
+	BRONZED_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 16, 25)),
+	STORUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 17, 25)),
+	CELESTITE_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 18, 25)),
 	CELEKIUM_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 19, 25)),
 	THUNDERBIRD_BATTLEAXE(SlayerAPI.addAxeMaterial(3, 1300, 13, 27, 25));
 

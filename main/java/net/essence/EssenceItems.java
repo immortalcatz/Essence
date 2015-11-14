@@ -581,6 +581,7 @@ public class EssenceItems {
 	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", "Frosty Piercer", 9F, EntityFrostyPiercer.class);
 	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, EntityFrostyPiercer.class);
 	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, EntityFrostyPiercer.class);
+	public static final Item demonicBomb = new ItemPiercer("demonicBomb", "Demonic Bomb", 10F, EntityDemonicBomb.class);
 	
 	public static final Item moltenKnife = new ItemPiercer("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
 	public static final Item royalKnife = new ItemPiercer("royalKnife", "Royal Knife", 14F, EntityFrostyPiercer.class);
