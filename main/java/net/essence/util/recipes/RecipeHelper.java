@@ -127,7 +127,7 @@ public class RecipeHelper {
 		GameRegistry.addShapelessRecipe(new ItemStack(multiTool), new Object[] {pick, shovel, hoe, axe});
 		GameRegistry.addShapelessRecipe(new ItemStack(ingot, 9), new Object[] {block});
 		GameRegistry.addSmelting(ore, new ItemStack(ingot), 0.5F);
-		GameRegistry.addSmelting(dust, new ItemStack(ingot), 0.5F);
+		if(dust !=null)GameRegistry.addSmelting(dust, new ItemStack(ingot), 0.5F);
 	}
 
 	private static void addWood(Block log, Block plank, Block stair, int slabMeta, boolean smelt) {
