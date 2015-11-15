@@ -21,7 +21,6 @@ import net.slayer.api.entity.EntityEssenceBoss;
 
 public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttackMob {
 	
-	@SuppressWarnings("this")
 	public EntitySentryKing(World par1World) {
 		super(par1World);
 		addAttackingAI();
