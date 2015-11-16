@@ -98,6 +98,7 @@ public class EntityCorallator extends EntityEssenceBoss {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
+		dropItem(EssenceItems.depthsPortalGem, 18);
 		switch(rand.nextInt(2)) {
 		case 0: dropItem(EssenceItems.coreMender, 1); break;
 		case 1: dropItem(EssenceItems.coreExpender, 1); break;
