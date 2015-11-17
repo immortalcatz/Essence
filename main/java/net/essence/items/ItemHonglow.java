@@ -2,6 +2,7 @@ package net.essence.items;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -18,6 +19,7 @@ public class ItemHonglow extends ItemFood {
 	
     public ItemHonglow(String name, String actual, int heal, float f, boolean sat, boolean b) {
         super(heal, sat);
+        LangRegistry.addItem(name, actual);
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
         EssenceItems.itemNames.add(name);

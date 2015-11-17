@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
+import net.essence.util.LangRegistry;
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -30,9 +31,10 @@ public class ItemModRecord extends ItemRecord {
     private static final Map RECORDS = Maps.newHashMap();
     private String recordName = "";
     
-	public ItemModRecord(String name) {
+	public ItemModRecord(String name, String finalName) {
 		super(name);
 		setUnlocalizedName(name + "Record");
+		LangRegistry.addItem(name + "Record", finalName);
 		setCreativeTab(EssenceTabs.util);
 		EssenceItems.itemNames.add(name + "Record");
 		this.recordName = name;

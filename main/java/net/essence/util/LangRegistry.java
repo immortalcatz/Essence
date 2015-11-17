@@ -103,7 +103,7 @@ public class LangRegistry {
 	}
 
 	public static void addMob(String unloc, String finalName) {
-		mobUnloc.add(unloc);
+		mobUnloc.add("essence." + unloc);
 		mobFinal.add(finalName);
 	}
 

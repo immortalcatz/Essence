@@ -24,7 +24,7 @@ public class BlockModSpawner extends BlockModContainer {
     @Override
     public TileEntity createNewTileEntity(World world, int par1) {
         TileEntityMobSpawner spawner = new TileEntityMobSpawner();
-        spawner.getSpawnerBaseLogic().setEntityName(mobName);
+        spawner.getSpawnerBaseLogic().setEntityName("essence." + mobName);
         return spawner;
     }
 

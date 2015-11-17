@@ -509,7 +509,7 @@ public class WorldGenHut extends WorldGenerator {
 
 		if(!world.isRemote) {
 			EntityStarlightVillager smith = new EntityStarlightVillager(world);
-			smith.setLocationAndAngles(i + 6, j + 4, k + 6, 0.0F, 0.0F);
+			smith.setLocationAndAngles(i + 6, j + 5, k + 6, 0.0F, 0.0F);
 			world.spawnEntityInWorld(smith);
 		}
 		return false;

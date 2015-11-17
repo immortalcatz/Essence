@@ -4,7 +4,6 @@ import net.essence.EssenceItems;
 import net.essence.EssenceTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,14 +11,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.slayer.api.SlayerAPI;
+import net.slayer.api.item.ItemModFood;
 
-public class ItemGoldenFood extends ItemFood {
+public class ItemGoldenFood extends ItemModFood {
 	
 	private boolean op;
 	
     public ItemGoldenFood(String name, String actual, int heal, float sat, boolean wolf, boolean isOP) {
-        super(heal, sat, wolf);
+        super(name, actual, heal, sat, wolf);
         op = isOP;
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);

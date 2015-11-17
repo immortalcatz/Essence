@@ -1077,10 +1077,10 @@ public class WorldGenStarlightVillage extends WorldGenerator {
 
 		if(!world.isRemote) {
 			EntityStarlightVillager smith = new EntityStarlightVillager(world);
-				smith.setLocationAndAngles(i + 6, j + 4, k + 6, 0.0F, 0.0F);
+				smith.setLocationAndAngles(i + 6, j + 5, k + 6, 0.0F, 0.0F);
 				world.spawnEntityInWorld(smith);
 			EntityStarlightBlacksmith smith1 = new EntityStarlightBlacksmith(world);
-				smith1.setLocationAndAngles(i + 6, j + 4, k + 6, 0.0F, 0.0F);
+				smith1.setLocationAndAngles(i + 6, j + 5, k + 6, 0.0F, 0.0F);
 				world.spawnEntityInWorld(smith1);
 		}
 		return false;

@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class Config {
 
 	public static Configuration cfg;
-	private static HashMap<String, Integer> configMap = new HashMap<String, Integer>();
 
 	public static void init(FMLPreInitializationEvent event) {
 		cfg = new Configuration(new File(event.getModConfigurationDirectory() + "/EssenceOfTheGods.cfg"));
@@ -58,7 +57,7 @@ public class Config {
 		showDeathMessage = cfg.get("Gui", "Tell you where you died after death?", true).getBoolean(true);
 		baseMobID = cfg.get("Entity", "The starting ID for the mobs (only gets greater the more mobs this mod has registered)", 350).getInt();
 		baseProjectileID = cfg.get("Entity", "The starting ID for the projectiles (only gets greater the more projectiles this mod has registered)", 230).getInt();
-		baseEntityListID = cfg.get("Entity", "The starting 'Entity List ID'", 3000).getInt();
+		baseEntityListID = cfg.get("Entity", "The starting 'Entity List ID'", 2650).getInt();
 		entityHealthDistance = cfg.get("Entity", "The distance the player can see the mobs health", 10).getInt();
 		showEntityHealth = cfg.get("Entity", "Show the health bar above the entitys head?", true).getBoolean(true);
 	}

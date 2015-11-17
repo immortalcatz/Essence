@@ -533,12 +533,12 @@ public class EssenceItems {
 	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", "Glowa Seeds", EssenceBlocks.glowaCrop);
 	public static final Item zatSeeds = new ItemModSeeds("zatSeeds", "Zat Seeds", EssenceBlocks.zatPedalsCrop);
 
-	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld");
-	public static final Item blueWater = new ItemModRecord("blueWater");
-	public static final Item raceStar = new ItemModRecord("raceStar");
-	public static final Item compBegins = new ItemModRecord("compBegins");
-	public static final Item deepBlue = new ItemModRecord("deepBlue");
-	public static final Item raceShore = new ItemModRecord("raceShore");
+	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld", "Underwater World");
+	public static final Item blueWater = new ItemModRecord("blueWater", "Blue Water");
+	public static final Item raceStar = new ItemModRecord("raceStar", "Race Star");
+	public static final Item compBegins = new ItemModRecord("compBegins", "Compition Begins");
+	public static final Item deepBlue = new ItemModRecord("deepBlue", "Deep Blue");
+	public static final Item raceShore = new ItemModRecord("raceShore", "Race to Shore");
 	
 	public static final Item demonicEye = new ItemDemonicEye("demonicEye", "Demonic Eye");
 
