@@ -8,6 +8,7 @@ import net.essence.client.server.EssenceBar;
 import net.essence.client.server.PowerBar;
 import net.essence.dimension.ModTeleporter;
 import net.essence.dimension.corba.TeleporterCorba;
+import net.essence.dimension.depths.TeleporterDepths;
 import net.essence.util.Config;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -82,7 +83,7 @@ public class EssenceCommands extends CommandBase {
 
 			if(var2[0].equalsIgnoreCase("Depths")) {
 				if(playerMP.dimension != Config.depths) {
-					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.depths, new ModTeleporter(playerMP.mcServer.worldServerForDimension(Config.depths), Config.depths, EssenceBlocks.depthsPortal, EssenceBlocks.depthsPortalFrame));
+					playerMP.mcServer.getConfigurationManager().transferPlayerToDimension(playerMP, Config.depths, new TeleporterDepths(playerMP.mcServer.worldServerForDimension(Config.depths)));
 				}
 			}
 			
