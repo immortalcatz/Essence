@@ -75,8 +75,8 @@ public class WorldGenEssence implements IWorldGenerator {
 	
 	private void generateCloudia(World w, Random r, int chunkX, int chunkZ) {
 		int i = 0;
-		for(i = 0; i < 10; i++) GenerationHelper.generateEssenceDimensions(19, w, chunkX, chunkZ);
-		
+		for(i = 0; i < 15; i++) GenerationHelper.generateEssenceDimensions(19, w, chunkX, chunkZ);
+		for(i = 0; i < 3; i++) GenerationHelper.generateEssenceDimensions(20, w, chunkX, chunkZ);
 	}
 
 	private void generateNether(World w, Random r, int chunkX, int chunkZ) {

@@ -174,8 +174,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess w, BlockPos pos, EnumFacing s) {
-        Block block = w.getBlockState(pos).getBlock();
-        return !Minecraft.getMinecraft().gameSettings.fancyGraphics && block == this ? false : super.shouldSideBeRendered(w, pos, s);
+        return true;
     }
 
     @Override

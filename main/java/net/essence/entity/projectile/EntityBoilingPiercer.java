@@ -10,38 +10,35 @@ import net.minecraft.world.World;
 public class EntityBoilingPiercer extends EntityThrowable {
 
 	public float damage;
-	public float impacts, maxImpact;
+	public EntityLivingBase thrower;
+	protected int bounces, maxBounces;
 
 	public EntityBoilingPiercer(World var1) {
 		super(var1);
 	}
 
-	public EntityBoilingPiercer(World var1, EntityLivingBase var3, float dam, float mi, float i) {
+	public EntityBoilingPiercer(World var1, EntityLivingBase var3, float dam, int max) {
 		super(var1, var3);
-		damage = dam;
-		maxImpact = mi;
-		impacts = i;
+		this.damage = dam;
+		this.thrower = var3;
+		this.maxBounces = max;
 	}
-	
-	public float getDamage() {
-		return damage;
-	}
-	
-	public void setDamage(float damage) {
-		this.damage = damage;
-		
-	}
+
 	@Override
-	protected void onImpact(MovingObjectPosition var1) {
-		if(var1.entityHit != null) var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), damage);
-		if(var1.sideHit == EnumFacing.UP||var1.sideHit == EnumFacing.DOWN) {
-			this.motionY *= -1.0D;
-		} else if(var1.sideHit == EnumFacing.SOUTH||var1.sideHit == EnumFacing.NORTH) {
-			this.motionZ *= -1.0D;
-		} else if(var1.sideHit == EnumFacing.EAST||var1.sideHit == EnumFacing.WEST) {
-			this.motionX *= -1.0D;
+	protected void onImpact(MovingObjectPosition par1) {
+		if(par1.entityHit != null && par1.entityHit != this.thrower) {
+			par1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), this.damage);
+			if(!this.worldObj.isRemote) this.setDead();
+			return;
 		}
-		this.maxImpact++;
-		if(this.impacts == maxImpact) this.setDead();
+		if(par1.sideHit == EnumFacing.UP || par1.sideHit == EnumFacing.DOWN) {
+			this.motionY *= -1.0D;
+		} else if(par1.sideHit == EnumFacing.SOUTH || par1.sideHit == EnumFacing.NORTH) {
+			this.motionZ *= -1.0D;
+		} else if(par1.sideHit == EnumFacing.EAST || par1.sideHit == EnumFacing.WEST) {
+			this.motionX *= -1.0D;
+		}		
+		this.bounces++;
+		if(this.bounces == maxBounces) this.setDead();
 	}
 }

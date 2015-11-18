@@ -12,9 +12,11 @@ public class ItemPiercer extends ItemMod {
 
 	private Class<? extends EntityThrowable> entity;
 	private float damage = 0;
+	private int maxBounces = 0;
 	
-	public ItemPiercer(String name, String f, float damage, Class<? extends EntityThrowable> entity) {
+	public ItemPiercer(String name, String f, float damage, int bounces, Class<? extends EntityThrowable> entity) {
 		super(name, f);
+		this.maxBounces = bounces;
 		this.damage = damage;
 		this.entity = entity;
 		setCreativeTab(EssenceTabs.ranged);
@@ -25,7 +27,7 @@ public class ItemPiercer extends ItemMod {
 		try {
 			if(!world.isRemote) {
 				world.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-				world.spawnEntityInWorld(entity.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
+				world.spawnEntityInWorld(entity.getConstructor(World.class, EntityLivingBase.class, float.class, int.class).newInstance(world, player, damage, maxBounces));
 				if(!player.capabilities.isCreativeMode) stack.stackSize--;
 			}
 		} catch(Exception e) {
