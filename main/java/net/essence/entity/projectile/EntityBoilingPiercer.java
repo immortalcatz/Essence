@@ -45,5 +45,5 @@ public class EntityBoilingPiercer extends EntityThrowable {
 	@Override
 	protected float getGravityVelocity() {
 		return 0.031F;
-	
+	}
 }
