@@ -571,24 +571,24 @@ public class EssenceItems {
 	//public static final ItemMod blazesEssence = new ItemMod("blazesEssence");
 	
 	//TODO
-	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, EntityBoilingPiercer.class);
-	//public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, EntityNethicPiercer.class);
-	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", "Frozen Piercer", 9F, EntityFrozenPiercer.class);
-	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", "Euca Piercer", 12F, EntityEucaPiercer.class);
-	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", "Depths Piercer", 21F, EntityDepthsPiercer.class);
-	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", "Corba Piercer", 29F, EntityCorbaPiercer.class);
-	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", "Frostbitten Piercer", 10F, EntityFrostbittenPiercer.class);
-	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", "Frosty Piercer", 9F, EntityFrostyPiercer.class);
-	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, EntityFrostyPiercer.class);
-	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, EntityFrostyPiercer.class);
-	public static final Item demonicBomb = new ItemPiercer("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
+	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, 6, EntityBoilingPiercer.class);
+	//public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);
+	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", "Frozen Piercer", 9F, 6, EntityFrozenPiercer.class);
+	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", "Euca Piercer", 12F, 6, EntityEucaPiercer.class);
+	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", "Depths Piercer", 21F, 6, EntityDepthsPiercer.class);
+	public static final Item corbaPiercer = new ItemPiercer("corbaPiercer", "Corba Piercer", 29F, 6, EntityCorbaPiercer.class);
+	public static final Item frostbittenPiercer = new ItemPiercer("frostbittenPiercer", "Frostbitten Piercer", 10F, 6, EntityFrostbittenPiercer.class);
+	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", "Frosty Piercer", 9F, 6, EntityFrostyPiercer.class);
+	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, 6, EntityFrostyPiercer.class);
+	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, 6, EntityFrostyPiercer.class);
+	public static final Item demonicBomb = new ItemPiercer("demonicBomb", "Demonic Bomb", 8F, 6, EntityDemonicBomb.class);
 	
-	public static final Item moltenKnife = new ItemPiercer("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
-	public static final Item royalKnife = new ItemPiercer("royalKnife", "Royal Knife", 14F, EntityFrostyPiercer.class);
-	public static final Item aquaticKnife = new ItemPiercer("aquaticKnife", "Aquatic Knife", 6F, EntityFrostyPiercer.class);
-	public static final Item bloodKnife = new ItemPiercer("bloodKnife", "Blood Knife", 6F, EntityFrostyPiercer.class);
-	public static final Item charredKnife = new ItemPiercer("charredKnife", "Charred Knife", 6F, EntityFrostyPiercer.class);
-	public static final Item sizzlingKnife = new ItemPiercer("sizzlingKnife", "Sizzling Knife", 6F, EntityFrostyPiercer.class);
+	public static final Item moltenKnife = new ItemThrowable("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
+	public static final Item royalKnife = new ItemThrowable("royalKnife", "Royal Knife", 14F, EntityFrostyPiercer.class);
+	public static final Item aquaticKnife = new ItemThrowable("aquaticKnife", "Aquatic Knife", 6F, EntityFrostyPiercer.class);
+	public static final Item bloodKnife = new ItemThrowable("bloodKnife", "Blood Knife", 6F, EntityFrostyPiercer.class);
+	public static final Item charredKnife = new ItemThrowable("charredKnife", "Charred Knife", 6F, EntityFrostyPiercer.class);
+	public static final Item sizzlingKnife = new ItemThrowable("sizzlingKnife", "Sizzling Knife", 6F, EntityFrostyPiercer.class);
 	
 	/**
 	public static final Item weakPower = new ItemPower("weakPower", 10F);
