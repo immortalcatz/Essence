@@ -21,7 +21,7 @@ public class WorldGenCloudiaLand extends WorldGenerator {
     
     public WorldGenCloudiaLand() {
     	stone = EssenceBlocks.cloudiaRock.getDefaultState();
-    	numberOfBlocks = 50;
+    	numberOfBlocks = 60;
     	replace = BlockHelper.forBlock(Blocks.air);
     }
 
