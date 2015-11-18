@@ -41,4 +41,9 @@ public class EntityBoilingPiercer extends EntityThrowable {
 		this.bounces++;
 		if(this.bounces == maxBounces) this.setDead();
 	}
+	
+	@Override
+	protected float getGravityVelocity() {
+		return 0.031F;
+	
 }
