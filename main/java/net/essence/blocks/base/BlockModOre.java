@@ -56,7 +56,7 @@ public class BlockModOre extends BlockMod {
 			g = 0.0F;
 			b = 0.0F;
 		}
-		if(this == EssenceBlocks.sapphireOre || this == EssenceBlocks.sapphireBlock) {
+		if(this == EssenceBlocks.sapphireOre || this == EssenceBlocks.sapphireBlock || this == EssenceBlocks.luniteOre || this == EssenceBlocks.luniteBlock) {
 			r = 0.5F;
 			g = 0.0F;
 			b = 1.0F;
@@ -108,6 +108,7 @@ public class BlockModOre extends BlockMod {
 		if(this == EssenceBlocks.sapphireOre) return EssenceItems.sapphire;
 		if(this == EssenceBlocks.enderilliumOre) return EssenceItems.enderilliumShard;
 		if(this == EssenceBlocks.gorbiteOre) return EssenceItems.gorbiteGem;
+		if(this == EssenceBlocks.luniteOre) return EssenceItems.luniteChunk;
 		return Item.getItemFromBlock(this);
 	}
 }

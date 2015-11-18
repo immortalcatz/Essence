@@ -3,18 +3,15 @@ package net.essence.dimension.cloudia;
 import java.util.List;
 import java.util.Random;
 
-import net.essence.EssenceBlocks;
 import net.essence.dimension.cloudia.gen.WorldGenCloudiaLamp;
+import net.essence.dimension.cloudia.gen.WorldGenCloudiaLand;
 import net.essence.dimension.cloudia.gen.WorldGenHut;
 import net.essence.dimension.cloudia.gen.WorldGenIsland;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightCastle;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightTree;
 import net.essence.dimension.cloudia.gen.WorldGenStarlightVillage;
 import net.essence.dimension.cloudia.gen.WorldGenTower;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.World;
@@ -110,6 +107,13 @@ public class ChunkProviderCloudia implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))village.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		
+		if (this.rand.nextInt(15) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int y = rand.nextInt(250);
+			if(y > 30 && y < 130) new WorldGenCloudiaLand().generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 	}
 
