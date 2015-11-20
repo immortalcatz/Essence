@@ -217,6 +217,9 @@ public class EntityDarkener extends EntityModFlying {
 			this.entity.setFire(false);
 		}
 
+	    public int getMaxSpawnedInChunk() {
+	        return 1;
+		}
 		@Override
 		public void updateTask() {
 			EntityLivingBase entitylivingbase = this.entity.getAttackTarget();
