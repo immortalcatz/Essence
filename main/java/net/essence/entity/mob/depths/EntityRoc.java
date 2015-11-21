@@ -46,7 +46,11 @@ public class EntityRoc extends EntityPeacefullUntillAttacked {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(6) == 0) dropItem(EssenceItems.rocFeather, 4);
+		if(rand.nextInt(1) == 0) dropItem(EssenceItems.rocFeather, 4);
+		if(rand.nextInt(3) == 0) dropItem(EssenceItems.rocFeather, 2);
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.rocFeather, 1);
+		if(rand.nextInt(3) == 0) dropItem(EssenceItems.rocMeat, 1);
+		if(rand.nextInt(6) == 0) dropItem(EssenceItems.rocMeat, 2);
 		super.dropFewItems(b, j);
 	}
 
