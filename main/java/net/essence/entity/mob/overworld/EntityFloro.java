@@ -21,7 +21,7 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 
-	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 15, 60);
+	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 15, 10);
 
 	public EntityFloro(World par1World) {
 		super(par1World);
@@ -53,7 +53,7 @@ public class EntityFloro extends EntityModMob implements IRangedAttackMob {
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
 	}
-
+	
 	@Override
 	public double setAttackDamage(MobStats s) {
 		return MobStats.floroDamage;
