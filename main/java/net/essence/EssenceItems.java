@@ -571,6 +571,8 @@ public class EssenceItems {
 	//public static final ItemMod blazesEssence = new ItemMod("blazesEssence");
 	
 	//TODO
+	public static final Item demonicBomb = new ItemThrowable("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
+	
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, 6, EntityBoilingPiercer.class);
 	//public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);
 	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", "Frozen Piercer", 9F, 6, EntityFrozenPiercer.class);
@@ -581,7 +583,6 @@ public class EssenceItems {
 	public static final Item frostyPiercer = new ItemPiercer("frostyPiercer", "Frosty Piercer", 9F, 6, EntityFrostyPiercer.class);
 	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, 6, EntityFrostyPiercer.class);
 	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, 6, EntityFrostyPiercer.class);
-	public static final Item demonicBomb = new ItemPiercer("demonicBomb", "Demonic Bomb", 8F, 6, EntityDemonicBomb.class);
 	
 	public static final Item moltenKnife = new ItemThrowable("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
 	public static final Item royalKnife = new ItemThrowable("royalKnife", "Royal Knife", 14F, EntityFrostyPiercer.class);

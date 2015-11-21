@@ -8,15 +8,16 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityDemonicBomb extends EntityThrowable {
+public class EntityDemonicBomb extends EntityThrowable{
 
 	public float damage;
-	
+
 	public EntityDemonicBomb(World var1) {
 		super(var1);
 	}
 	public EntityDemonicBomb(World var1, EntityLivingBase var3, float dam) {
-		this.damage = dam;
+		super(var1, var3);
+		damage = dam;
 	}
 	public float getDamage() {
 		return damage;
