@@ -11,6 +11,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -53,6 +54,16 @@ public class EntityBoom extends EntityModMob {
 		return EnumSounds.CREEPER_DEATH;
 	}
 
+	@Override
+	public void onLivingUpdate(){
+        if (this.worldObj.isDaytime()){
+            float f = this.getBrightness(1.0F);
+            BlockPos blockpos = new BlockPos(this.posX, (double)Math.round(this.posY), this.posZ);
+            if (f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.worldObj.canSeeSky(blockpos)){
+            this.setFire(8);
+            }
+        }
+	}
 	@Override
 	public EnumSounds setDeathSound() {
 		return EnumSounds.CREEPER_DEATH;
