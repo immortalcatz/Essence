@@ -71,6 +71,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityFrostyPiercer.class, "frostypiercer");
 		SlayerAPI.registerProjectile(EntityPower.class, "power");
 		SlayerAPI.registerProjectile(EntityShimmererProjectile.class, "shimmererprojectile");
+		SlayerAPI.registerProjectile(EntityDemonicBomb.class, "demonicbomb");
 	}
 
 	public static void registerEndMobs() {
