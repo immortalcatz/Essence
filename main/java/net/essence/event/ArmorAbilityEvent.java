@@ -184,7 +184,6 @@ public class ArmorAbilityEvent{
 				e.ammount += 4;
 			if(helmet == EssenceItems.bronzedHelmet && body == EssenceItems.bronzedChest && legs == EssenceItems.bronzedLegs && boots == EssenceItems.bronzedBoots)
 				e.ammount += 6;
-			if(e.entity instanceof EntityLivingBase)((EntityLivingBase)e.entity).addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 1));
 			else if(helmet == EssenceItems.flameHelmet && body == EssenceItems.flameChest && legs == EssenceItems.flameLegs && boots == EssenceItems.flameBoots)
 				e.entityLiving.setFire(5);
 		}
