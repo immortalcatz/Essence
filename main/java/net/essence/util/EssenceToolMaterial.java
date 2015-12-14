@@ -1,6 +1,7 @@
 package net.essence.util;
 
 import net.essence.EssenceItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -80,6 +81,7 @@ public enum EssenceToolMaterial {
 	DES_MULTI_TOOL(EssenceItems.desMulti, EssenceItems.desIngot, 3),
 	KORITE_MULTI_TOOL(EssenceItems.koriteMulti, EssenceItems.koriteIngot, 3),
 	SMELTING_TOOL(EssenceItems.smeltingMulti, null, 3),
+	WOOD_MULTI_TOOL(EssenceItems.woodMultiTool, Blocks.planks, 3),
 
 	BACK_BITER(SlayerAPI.addAxeMaterial(3, 1300, 13, 15, 25)),
 	DAWN_BREAKER(SlayerAPI.addAxeMaterial(3, 1300, 13, 10, 25)),

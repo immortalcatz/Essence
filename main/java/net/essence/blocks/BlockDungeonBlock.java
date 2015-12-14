@@ -10,7 +10,7 @@ public class BlockDungeonBlock extends BlockMod {
 
 	public BlockDungeonBlock(String name, String f, boolean light) {
 		super(name, f, -1.0F);
-		if(light) setLightLevel(0.5F);
+		if(light) setLightLevel(0.1F);
 		setResistance(10000000.0F);
 	}
 

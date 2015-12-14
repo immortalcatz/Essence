@@ -175,6 +175,9 @@ public class EssenceItems {
 	public static final Item koriteMultiTool = new ItemMultiTool("koriteMultiTool", "Korite Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
 	public static final Item storonMultiTool = new ItemMultiTool("storonMultiTool", "Storon Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
 	public static final Item mekyumMultiTool = new ItemMultiTool("mekyumMultiTool", "Mekyum Multi Tool", EssenceToolMaterial.KORITE_MULTI_TOOL);
+	public static final Item woodMultiTool = new ItemMultiTool("woodMultiTool", "Wooden Multi Tool", EssenceToolMaterial.WOOD_MULTI_TOOL);
+	public static final Item stoneMultiTool = new ItemMultiTool("stoneMultiTool", "Stone Multi Tool", EssenceToolMaterial.STONE_MULTI_TOOL);
+	public static final Item ironMultiTool = new ItemMultiTool("ironMultiTool", "Iron Multi Tool", EssenceToolMaterial.IRON_MULTI_TOOL);
 	
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", "Hellstone Pickaxe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", "Shadium Pickaxe", EssenceToolMaterial.SHADIUM);
