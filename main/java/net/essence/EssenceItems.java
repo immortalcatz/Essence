@@ -56,6 +56,12 @@ public class EssenceItems {
 	public static ToolMaterial gorbiteMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial desMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial smeltingMulti = addToolMaterial(3000, 15F, 5F, false);
+	//TODO MATERIALS
+	public static ToolMaterial woodMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial stoneMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial ironMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial goldMulti = addToolMaterial(3000, 15F, 5F, false);
+	public static ToolMaterial diamondMulti = addToolMaterial(3000, 15F, 5F, false);
 
 	public static ArrayList<String> itemNames = new ArrayList<String>();
 
@@ -178,7 +184,9 @@ public class EssenceItems {
 	public static final Item woodMultiTool = new ItemMultiTool("woodMultiTool", "Wooden Multi Tool", EssenceToolMaterial.WOOD_MULTI_TOOL);
 	public static final Item stoneMultiTool = new ItemMultiTool("stoneMultiTool", "Stone Multi Tool", EssenceToolMaterial.STONE_MULTI_TOOL);
 	public static final Item ironMultiTool = new ItemMultiTool("ironMultiTool", "Iron Multi Tool", EssenceToolMaterial.IRON_MULTI_TOOL);
-	
+	public static final Item goldMultiTool = new ItemMultiTool("goldMultiTool", "Gold Multi Tool", EssenceToolMaterial.GOLD_MULTI_TOOL);
+	public static final Item diamondMultiTool = new ItemMultiTool("diamondMultiTool", "Diamond Multi Tool", EssenceToolMaterial.DIAMOND_MULTI_TOOL);
+
 	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", "Hellstone Pickaxe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", "Shadium Pickaxe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumPickaxe = new ItemModPickaxe("celestiumPickaxe", "Celestium Pickaxe", EssenceToolMaterial.CELESTIUM);
