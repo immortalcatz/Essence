@@ -60,11 +60,11 @@ public class EntitySkyEel extends EntityModFlying {
 	@Override
 	public boolean getCanSpawnHere() {
         return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
-    }
 
+	}
     @Override
     public int getMaxSpawnedInChunk() {
-        return 3;
+        return 6;
     }
 
 	@Override
