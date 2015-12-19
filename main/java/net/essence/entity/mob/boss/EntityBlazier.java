@@ -42,7 +42,7 @@ public class EntityBlazier extends EntityEssenceBoss {
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[0]));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.isImmuneToFire = true;
-		this.setSize(1.6F, 4.5F);
+		this.setSize(2.0F, 6.0F);
 		spawnTimer = 0;
 	}
 
