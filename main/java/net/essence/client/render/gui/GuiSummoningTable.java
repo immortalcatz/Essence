@@ -9,6 +9,7 @@ import net.essence.blocks.tileentity.TileEntitySummoningTable;
 import net.essence.blocks.tileentity.container.ContainerSummoningTable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.inventory.GuiBeacon;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
@@ -55,14 +56,13 @@ public class GuiSummoningTable extends GuiContainer {
 		super.initGui();
 		int x = (this.width - this.xSize) / 2;
 		int y = (this.height - this.ySize) / 2;
-		this.buttonList.add(button = new GuiSummoningTable.CraftButton(x + 79, y + 55));
+		//this.buttonList.add(button = new GuiSummoningTable.CraftButton(x + 79, y + 55));
 	}
 
 	@Override
 	protected void actionPerformed(GuiButton button) throws IOException {
 		super.actionPerformed(button);
-		table.update();
-		//table.setInventorySlotContents(3, new ItemStack(EssenceItems.ash));
+		//table.update();
 		PacketBuffer packetbuffer = new PacketBuffer(Unpooled.buffer());
 		this.mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload("EOTG|SUMMONING", packetbuffer));
 	}
