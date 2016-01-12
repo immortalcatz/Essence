@@ -294,9 +294,9 @@ public class ChunkProviderBoiling implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
-		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
-		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	public List func_177458_a(EnumCreatureType list, BlockPos coords) {
+		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(coords);
+		return var5 == null ? null : var5.getSpawnableList(list);
 	}
 
 	@Override
