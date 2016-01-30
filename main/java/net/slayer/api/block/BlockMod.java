@@ -140,7 +140,7 @@ public class BlockMod extends Block{
 
 	@Override
 	public boolean isNormalCube() {
-		return isNormalCube;
+		return false;
 	}
 
 	@Override
