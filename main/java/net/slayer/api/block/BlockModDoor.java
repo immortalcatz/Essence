@@ -2,8 +2,8 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.EssenceBlocks;
-import net.essence.EssenceItems;
+import net.journey.JourneyBlocks;
+import net.journey.JourneyItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

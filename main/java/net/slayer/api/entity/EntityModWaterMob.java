@@ -1,6 +1,6 @@
 package net.slayer.api.entity;
 
-import net.essence.entity.MobStats;
+import net.journey.entity.MobStats;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;

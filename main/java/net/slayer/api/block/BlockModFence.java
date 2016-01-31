@@ -1,8 +1,8 @@
 package net.slayer.api.block;
 
-import net.essence.EssenceBlocks;
-import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyBlocks;
+import net.journey.JourneyTabs;
+import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
@@ -18,10 +18,10 @@ public class BlockModFence extends BlockFence {
 		super(block.getMaterial());
 		LangRegistry.addBlock(name, finalName);
 		setUnlocalizedName(name);
-		setCreativeTab(EssenceTabs.blocks);
+		setCreativeTab(JourneyTabs.blocks);
 		if(light) setLightLevel(0.5F);
 		setHardness(block.getBlockHardness(null, null));
-		EssenceBlocks.blockName.add(name);
+		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 	

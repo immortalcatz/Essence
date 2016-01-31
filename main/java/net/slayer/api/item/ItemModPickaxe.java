@@ -2,11 +2,11 @@ package net.slayer.api.item;
 
 import java.util.List;
 
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangHelper;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.EssenceToolMaterial;
+import net.journey.util.LangHelper;
+import net.journey.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -24,9 +24,9 @@ public class ItemModPickaxe extends ItemPickaxe {
         LangRegistry.addItem(name, f);
 		mat = tool;
         setUnlocalizedName(name);
-        setCreativeTab(EssenceTabs.tools);
+        setCreativeTab(JourneyTabs.tools);
         setHarvestLevel("pickaxe", tool.getHarvestLevel());
-        EssenceItems.itemNames.add(name);
+        JourneyItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

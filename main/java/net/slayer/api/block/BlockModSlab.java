@@ -1,6 +1,6 @@
 package net.slayer.api.block;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.slayer.api.EnumMaterialTypes;
@@ -12,7 +12,7 @@ public class BlockModSlab extends BlockMod {
 	public BlockModSlab(boolean full, String name, String finalName) {
 		super(name, finalName, 1.0F);
 		isFull = full;
-		setCreativeTab(EssenceTabs.decoraton);
+		setCreativeTab(JourneyTabs.decoraton);
 		setStepSound(EnumMaterialTypes.WOOD.getSound());
 		setHardness(1.0F);
 		this.useNeighborBrightness = true;

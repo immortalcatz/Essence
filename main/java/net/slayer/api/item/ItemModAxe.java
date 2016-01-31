@@ -2,11 +2,11 @@ package net.slayer.api.item;
 
 import java.util.List;
 
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.util.EssenceToolMaterial;
-import net.essence.util.LangHelper;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.EssenceToolMaterial;
+import net.journey.util.LangHelper;
+import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,8 +26,8 @@ public class ItemModAxe extends ItemAxe {
         LangRegistry.addItem(name, f);
 		mat = tool;
 		setUnlocalizedName(name);
-		setCreativeTab(EssenceTabs.tools);
-		EssenceItems.itemNames.add(name);
+		setCreativeTab(JourneyTabs.tools);
+		JourneyItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 

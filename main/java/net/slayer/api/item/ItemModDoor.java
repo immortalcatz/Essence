@@ -1,6 +1,6 @@
 package net.slayer.api.item;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +20,7 @@ public class ItemModDoor extends ItemMod {
 	public ItemModDoor(BlockModDoor block, String name, String f) {
 		super(name, f);
 		this.door = block;
-		setCreativeTab(EssenceTabs.blocks);
+		setCreativeTab(JourneyTabs.blocks);
 	}
 
 	@Override

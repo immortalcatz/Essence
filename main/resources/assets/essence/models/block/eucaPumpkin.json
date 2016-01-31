@@ -1,8 +1,0 @@
-{
-    "parent": "block/orientable",
-    "textures": {
-        "top": "essence:blocks/eucaPumpkin_top",
-        "front": "essence:blocks/eucaPumpkin_front",
-        "side": "essence:blocks/eucaPumpkin_side"
-    }
-}

@@ -1,6 +1,6 @@
 package net.slayer.api.entity;
 
-import net.essence.util.IEssenceBoss;
+import net.journey.util.IEssenceBoss;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;

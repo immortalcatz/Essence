@@ -3,7 +3,7 @@ package net.slayer.api.worldgen;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.essence.EssenceBlocks;
+import net.journey.JourneyBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -29,11 +29,11 @@ public class WorldGenAPI {
 
 	public static Block getEucaLeaves() {
 		int i = r.nextInt(2);
-		return i == 0 ? EssenceBlocks.eucaSilverLeaves : EssenceBlocks.eucaGoldLeaves;
+		return i == 0 ? JourneyBlocks.eucaSilverLeaves : JourneyBlocks.eucaGoldLeaves;
 	}
 	
 	public static Block getEucaLog() {
-		return EssenceBlocks.eucaGoldLog;
+		return JourneyBlocks.eucaGoldLog;
 	}
 
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {

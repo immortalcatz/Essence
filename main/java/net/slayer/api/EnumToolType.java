@@ -1,6 +1,6 @@
 package net.slayer.api;
 
-import net.essence.util.EssenceToolMaterial;
+import net.journey.util.EssenceToolMaterial;
 import net.minecraft.item.Item;
 
 public enum EnumToolType {

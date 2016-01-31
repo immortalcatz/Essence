@@ -2,7 +2,7 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -22,7 +22,7 @@ public class BlockModGrass extends BlockMod implements IGrowable {
 	public BlockModGrass(BlockMod dirt, String name, String finalName, float hardness) {
 		super(EnumMaterialTypes.GRASS, name, finalName, hardness);
 		this.dirt = dirt;
-		setCreativeTab(EssenceTabs.blocks);
+		setCreativeTab(JourneyTabs.blocks);
 		setTickRandomly(true);
 	}
 

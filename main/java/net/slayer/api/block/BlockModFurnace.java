@@ -2,8 +2,8 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.Essence;
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
+import net.journey.JITL;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -36,7 +36,7 @@ public abstract class BlockModFurnace extends BlockContainer {
 	public BlockModFurnace(String name, boolean act, int GuiID) {
 		super(Material.rock);
 		setStepSound(Block.soundTypeStone);
-		if(!act) setCreativeTab(EssenceTabs.blocks);
+		if(!act) setCreativeTab(JourneyTabs.blocks);
 		setUnlocalizedName(name);
 		active = act;
 		guiID = GuiID;
@@ -80,7 +80,7 @@ public abstract class BlockModFurnace extends BlockContainer {
 		TileEntityModFurnace furnace  = (TileEntityModFurnace)w.getTileEntity(pos);
 		if(!w.isRemote && furnace != null){
 			if(!p.isSneaking()){
-				p.openGui(Essence.instance, guiID, w, 0, 0, 0);
+				p.openGui(JITL.instance, guiID, w, 0, 0, 0);
 			}
 		}
 		return false;

@@ -2,7 +2,7 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
@@ -17,7 +17,7 @@ public class BlockModSpawner extends BlockModContainer {
     protected String mobName;
 
     public BlockModSpawner(String name, String finalName, String mobName) {
-        super(EnumMaterialTypes.STONE, name, finalName, -1, EssenceTabs.spawners);
+        super(EnumMaterialTypes.STONE, name, finalName, -1, JourneyTabs.spawners);
         this.mobName = mobName;
     }
 

@@ -1,7 +1,7 @@
 package net.slayer.api.entity;
 
-import net.essence.entity.MobStats;
-import net.essence.enums.EnumSounds;
+import net.journey.entity.MobStats;
+import net.journey.enums.EnumSounds;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.Item;

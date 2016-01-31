@@ -2,9 +2,9 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.EssenceBlocks;
-import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyBlocks;
+import net.journey.JourneyTabs;
+import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -32,15 +32,15 @@ public class BlockMod extends Block{
 	protected boolean isOpaque = true, isNormalCube = true;
 	
 	public BlockMod(String name, String finalName, float hardness) {
-		this(EnumMaterialTypes.STONE, name, finalName, hardness, EssenceTabs.blocks);
+		this(EnumMaterialTypes.STONE, name, finalName, hardness, JourneyTabs.blocks);
 	}
 
 	public BlockMod(String name, String finalName) {
-		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, EssenceTabs.blocks);
+		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, JourneyTabs.blocks);
 	}
 
 	public BlockMod(EnumMaterialTypes type, String name, String finalName, float hardness) {
-		this(type, name, finalName, hardness, EssenceTabs.blocks);
+		this(type, name, finalName, hardness, JourneyTabs.blocks);
 	}
 
 	public BlockMod(String name, String finalName, boolean breakable, CreativeTabs tab) {
@@ -48,7 +48,7 @@ public class BlockMod extends Block{
 	}
 
 	public BlockMod(String name, String finalName, boolean breakable) {
-		this(name, finalName, breakable, EssenceTabs.blocks);
+		this(name, finalName, breakable, JourneyTabs.blocks);
 	}
 
 	public BlockMod(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab) {
@@ -61,7 +61,7 @@ public class BlockMod extends Block{
 		setCreativeTab(tab);
 		setUnlocalizedName(name);
 		this.name = name; 
-		EssenceBlocks.blockName.add(name);
+		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -75,12 +75,12 @@ public class BlockMod extends Block{
 		setUnlocalizedName(name);
 		setHardness(hardness);
 		this.name = name;
-		EssenceBlocks.blockName.add(name);
+		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
 
 	public Block addName(String name) {
-		EssenceBlocks.blockName.add(name);
+		JourneyBlocks.blockName.add(name);
 		return this;
 	}
 

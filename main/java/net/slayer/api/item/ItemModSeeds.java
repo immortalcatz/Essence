@@ -2,9 +2,9 @@ package net.slayer.api.item;
 
 import java.util.List;
 
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -19,8 +19,8 @@ public class ItemModSeeds extends ItemSeeds {
 		super(block, Blocks.farmland);
 		LangRegistry.addItem(name, f);
 		setUnlocalizedName(name);
-		setCreativeTab(EssenceTabs.util);
-		EssenceItems.itemNames.add(name);
+		setCreativeTab(JourneyTabs.util);
+		JourneyItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 }

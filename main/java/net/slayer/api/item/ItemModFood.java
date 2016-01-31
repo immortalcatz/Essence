@@ -2,9 +2,9 @@ package net.slayer.api.item;
 
 import java.util.List;
 
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -21,8 +21,8 @@ public class ItemModFood extends ItemFood {
         super(food, sat, wolfFood);
         LangRegistry.addItem(name, f);
         setUnlocalizedName(name);
-        setCreativeTab(EssenceTabs.misc);
-        EssenceItems.itemNames.add(name);
+        setCreativeTab(JourneyTabs.misc);
+        JourneyItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
     

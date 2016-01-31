@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import net.essence.Essence;
-import net.essence.client.ChatHandler;
-import net.essence.entity.EssenceEntityList;
-import net.essence.util.Config;
-import net.essence.util.GL11Helper;
-import net.essence.util.LangRegistry;
+import net.journey.JITL;
+import net.journey.client.ChatHandler;
+import net.journey.entity.EssenceEntityList;
+import net.journey.util.Config;
+import net.journey.util.GL11Helper;
+import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -110,7 +110,7 @@ public class SlayerAPI {
 
 	public static void registerMob(Class entityClass, String name, String finalN, int base, int fore) {
 		LangRegistry.addMob(name, finalN);
-		EntityRegistry.registerModEntity(entityClass, name, mobID++, Essence.instance, 128, 5, true, base, fore);
+		EntityRegistry.registerModEntity(entityClass, name, mobID++, JITL.instance, 128, 5, true, base, fore);
 	}
 	
 	public static void registerEndMob(Class entityClass, String entityName, String finalN) {
@@ -151,20 +151,20 @@ public class SlayerAPI {
 	
 	public static void registerNPC(Class entityClass, String entityName, String finalN) {
 		LangRegistry.addMob(entityName, finalN);
-		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true, 0x00FF8C, 0x00F6FF);
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, JITL.instance, 128, 5, true, 0x00FF8C, 0x00F6FF);
 	}
 	
 	public static void registerEntity(Class entityClass, String entityName, int ID) {
-		EntityRegistry.registerModEntity(entityClass, entityName, ID, Essence.instance, 120, 5, true);
+		EntityRegistry.registerModEntity(entityClass, entityName, ID, JITL.instance, 120, 5, true);
 	}
 
 	public static void registerBossMob(Class entityClass, String entityName, String finalN) {
 		LangRegistry.addMob(entityName, finalN);
-		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, Essence.instance, 128, 5, true, 0x000000, 0x9B0000);
+		EntityRegistry.registerModEntity(entityClass, entityName, mobID++, JITL.instance, 128, 5, true, 0x000000, 0x9B0000);
 	}
 
 	public static void registerProjectile(Class entityClass, String entityName) {
-		EntityRegistry.registerModEntity(entityClass, entityName + " Projectile", projectileID, Essence.instance, 250, 5, true);
+		EntityRegistry.registerModEntity(entityClass, entityName + " Projectile", projectileID, JITL.instance, 250, 5, true);
 		projectileID++;
 	}
 

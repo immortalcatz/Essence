@@ -2,8 +2,8 @@ package net.slayer.api.entity;
 
 import java.util.Iterator;
 
-import net.essence.Essence;
-import net.essence.client.GuiHandler.GuiIDs;
+import net.journey.JITL;
+import net.journey.client.GuiHandler.GuiIDs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.INpc;
@@ -146,7 +146,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 	public boolean interact(EntityPlayer var1) {
 		if(!this.worldObj.isRemote) {
 			abstractInteract(var1);
-			var1.openGui(Essence.instance, guiID().ordinal(), this.worldObj, getEntityId(), 0, 0);
+			var1.openGui(JITL.instance, guiID().ordinal(), this.worldObj, getEntityId(), 0, 0);
 			return true;
 		} else {
 			return super.interact(var1);

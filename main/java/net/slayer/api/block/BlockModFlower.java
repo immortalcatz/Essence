@@ -2,7 +2,7 @@ package net.slayer.api.block;
 
 import java.util.Random;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -31,7 +31,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		this.setTickRandomly(true);
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
-		this.setCreativeTab(EssenceTabs.decoraton);
+		this.setCreativeTab(JourneyTabs.decoraton);
 	}
 
 	public BlockModFlower setContactDamage() {

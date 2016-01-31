@@ -3,7 +3,7 @@ package net.slayer.api.block;
 import java.util.Iterator;
 import java.util.Random;
 
-import net.essence.EssenceTabs;
+import net.journey.JourneyTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -41,7 +41,7 @@ public class BlockModVine extends BlockMod implements IShearable {
 		super(EnumMaterialTypes.VINES, name, finalName, 0.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
 		this.setTickRandomly(true);
-		this.setCreativeTab(EssenceTabs.decoraton);
+		this.setCreativeTab(JourneyTabs.decoraton);
 	}
 
 	@Override

@@ -2,11 +2,11 @@ package net.slayer.api.item;
 
 import java.util.List;
 
-import net.essence.EssenceItems;
-import net.essence.EssenceTabs;
-import net.essence.client.server.DarkEnergyBar;
-import net.essence.enums.EnumSounds;
-import net.essence.util.LangRegistry;
+import net.journey.JourneyItems;
+import net.journey.JourneyTabs;
+import net.journey.client.server.DarkEnergyBar;
+import net.journey.enums.EnumSounds;
+import net.journey.util.LangRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -27,14 +27,14 @@ public class ItemMod extends Item {
 	protected int healAmount = 0;
 
 	public ItemMod(String name, String finalName){
-		this(name, finalName, EssenceTabs.items);
+		this(name, finalName, JourneyTabs.items);
 	}
 
 	public ItemMod(String name, String finalName, CreativeTabs tab){
 		LangRegistry.addItem(name, finalName);
 		setUnlocalizedName(name);
 		setCreativeTab(tab);
-		EssenceItems.itemNames.add(name);
+		JourneyItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}
 
