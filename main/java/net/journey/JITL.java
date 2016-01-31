@@ -33,7 +33,7 @@ public class JITL {
 	@Instance(SlayerAPI.MOD_ID)
 	public static JITL instance;
 
-	@SidedProxy(clientSide = "net.essence.proxy.ClientProxy", serverSide = "net.essence.proxy.CommonProxy")
+	@SidedProxy(clientSide = "net.journey.proxy.ClientProxy", serverSide = "net.journey.proxy.CommonProxy")
 	public static CommonProxy proxy;
 
 	public static final Enchantment hotTouch = new EnchantmentHotTouch(165, 3);
