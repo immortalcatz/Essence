@@ -27,8 +27,13 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 6), new Object[] {"   ", "iii", "iii", 'i', JourneyItems.corbaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 4), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
 		
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.floroPedal, 'i', JourneyItems.caveDust});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.stoneClump});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', JourneyItems.caveCrystal});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', JourneyItems.sapphire});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.demonicBomb, 16), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.demonicDust, 'i', JourneyItems.crystalBall});
 		

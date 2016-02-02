@@ -69,6 +69,9 @@ public enum EssenceToolMaterial {
 	STARLIGHT_BLADE(SlayerAPI.addMeleeMaterial(3000, 33, 25)),
 	KORITE_SWORD(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
 	PEDAL_SWORD(SlayerAPI.addMeleeMaterial(50, 8, 25)),
+	RE_CRYSTAL_SWORD(SlayerAPI.addMeleeMaterial(50, 8, 25)),
+	RE_STONE_SWORD(SlayerAPI.addMeleeMaterial(20, 11, 25)),
+	WITHIC_BLADE(SlayerAPI.addMeleeMaterial(70, 10, 25)),
 	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	

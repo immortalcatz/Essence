@@ -132,10 +132,13 @@ public class JourneyItems {
 	public static final Item natureTablet = new ItemMod("natureTablet", "Nature Tablet");
 	public static final Item horn = new ItemMod("horn", "Horn");
 	public static final Item scale = new ItemMod("scale", "Scale");
+	public static final Item reinforcedStoneIngot = new ItemMod("reinforcedStoneIngot", "Reinforced Stone Ingot");
+	public static final Item reinforcedCrystalIngot = new ItemMod("reinforcedCrystalIngot", "Reinforced Crystal Ingot");
 	public static final Item crystalBall = new ItemMod("crystalBall", "Crystal Ball");
 	public static final Item floroPedal = new ItemMod("floroPedal", "Floro Pedal");
 	public static final Item glowshroomPowder = new ItemMod("glowshroomPowder", "Glowshroom Powder");
 	public static final Item cloudiaGem = new ItemMod("cloudiaGem", "Cloudia Gem");
+	public static final Item stoneStick = new ItemMod("stoneStick", "Stone Stick");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -287,6 +290,9 @@ public class JourneyItems {
 	public static final Item storonSword = new ItemModSword("storonSword", "Storon Sword", EssenceToolMaterial.KORITE_SWORD);
 	public static final Item mekyumSword = new ItemModSword("mekyumSword", "Mekyum Sword", EssenceToolMaterial.KORITE_SWORD);
 	public static final Item pedalSword = new ItemModSword("pedalSword", "Pedal Sword", EssenceToolMaterial.PEDAL_SWORD);
+	public static final Item withicBlade = new ItemModSword("withicBlade", "Withic Blade", EssenceToolMaterial.WITHIC_BLADE);
+	public static final Item reinforcedCrystalSword = new ItemModSword("reinforcedCrystalSword", "Reinforced Crystal Sword", EssenceToolMaterial.RE_CRYSTAL_SWORD);
+	public static final Item reinforcedStoneSword = new ItemModSword("reinforcedStoneSword", "Reinforced Stone Sword", EssenceToolMaterial.RE_STONE_SWORD);
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 	
