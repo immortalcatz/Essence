@@ -115,6 +115,6 @@ public class ItemMultiTool extends ItemTool {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
 		list.add(SlayerAPI.Colour.BLUE + "Efficiency: " + toolMaterial.getEfficiencyOnProperMaterial());
 		if (stack.getMaxDamage() != -1) list.add(stack.getMaxDamage() - stack.getItemDamage() + " Uses");
-		else list.add(SlayerAPI.Colour.GREEN + "Infinite Uses");
+		else list.add(SlayerAPI.Colour.GREEN + "Acts as multiple tools");
 	}
 }

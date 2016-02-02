@@ -57,8 +57,8 @@ public class JourneyItems {
 	public static ToolMaterial desMulti = addToolMaterial(3000, 15F, 5F, false);
 	public static ToolMaterial smeltingMulti = addToolMaterial(3000, 15F, 5F, false);
 	//TODO MATERIALS
-	public static ToolMaterial woodMulti = addToolMaterial(60, 3F, 5F, false);
-	public static ToolMaterial stoneMulti = addToolMaterial(132, 5F, 5F, false);
+	public static ToolMaterial woodMulti = addToolMaterial(60, 2F, 5F, false);
+	public static ToolMaterial stoneMulti = addToolMaterial(132, 4F, 5F, false);
 	public static ToolMaterial ironMulti = addToolMaterial(251, 8F, 5F, false);
 	public static ToolMaterial goldMulti = addToolMaterial(33, 10F, 5F, false);
 	public static ToolMaterial diamondMulti = addToolMaterial(1562, 13F, 5F, false);

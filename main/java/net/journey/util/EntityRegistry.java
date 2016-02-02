@@ -86,7 +86,6 @@ public class EntityRegistry {
 	public static void registerOverworldMobs() {
 		SlayerAPI.registerOverworldMob(EntityRobot.class, "robot", "Robot");
 		SlayerAPI.registerOverworldMob(EntitySpyclops.class, "spyclops", "Spyclopse");
-		SlayerAPI.registerOverworldMob(EntityBoom.class, "boomBoom", "BoomBoom");
 		SlayerAPI.registerOverworldMob(EntitySmallHongo.class, "smallHongo", "Small Hongo");
 		SlayerAPI.registerOverworldMob(EntityMediumHongo.class, "mediumHongo", "Medium Hongo");
 		SlayerAPI.registerOverworldMob(EntityBigHongo.class, "bigHongo", "Big Hongo");
