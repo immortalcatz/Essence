@@ -46,7 +46,6 @@ public class CommonProxy {
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
 		SlayerAPI.registerEvent(new PlayerEvent());
 		SlayerAPI.registerEvent(new BarTickHandler());
-		SlayerAPI.registerEvent(new KnowledgeEvent());
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
 		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
@@ -61,7 +60,6 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
 		SlayerAPI.registerEvent(new PlayerEvent());
-		SlayerAPI.registerEvent(new KnowledgeEvent());
 		//EssenceAchievements.init();
 	}
 	

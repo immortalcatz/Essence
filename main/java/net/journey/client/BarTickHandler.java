@@ -2,7 +2,6 @@ package net.journey.client;
 
 import net.journey.client.server.DarkEnergyBar;
 import net.journey.client.server.EssenceBar;
-import net.journey.client.server.PowerBar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
@@ -40,11 +39,6 @@ public class BarTickHandler {
 			EssenceBar.addProperties((EntityPlayer)event.entity);
 		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(EssenceBar.PROP) == null)
 			event.entity.registerExtendedProperties(EssenceBar.PROP, new EssenceBar((EntityPlayer)event.entity));
-		
-		if(event.entity instanceof EntityPlayer && PowerBar.getProperties((EntityPlayer) event.entity) == null)
-			PowerBar.addProperties((EntityPlayer)event.entity);
-		if(event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(PowerBar.PROP) == null)
-			event.entity.registerExtendedProperties(PowerBar.PROP, new PowerBar((EntityPlayer)event.entity));
 	}
 
 	@SubscribeEvent
@@ -88,11 +82,6 @@ public class BarTickHandler {
 					x1 += 11;
 					gig.drawTexturedModalRect(x1 - 17, y - 13, 0, 5, 10, 5);
 				}
-				gig.drawTexturedModalRect(x2 - 6, y + 2, 0, 49, 109, 5);
-				for(int i = 0; i < powerAmount; i++) {
-					x2 += 11;
-					gig.drawTexturedModalRect(x2 - 17, y + 2, 0, 10, 10, 5);
-				}
 				GlStateManager.disableAlpha();
 				GlStateManager.disableBlend();
 				GL11.glPopMatrix();
@@ -105,10 +94,8 @@ public class BarTickHandler {
 		if(ticks >= 10) {
 			DarkEnergyBar.getProperties(player).updateAllBars();
 			EssenceBar.getProperties(player).updateAllBars();
-			PowerBar.getProperties(player).updateAllBars();
 		}
 		DarkEnergyBar.getProperties(player).mainUpdate();
 		EssenceBar.getProperties(player).mainUpdate();
-		PowerBar.getProperties(player).mainUpdate();
 	}
 }
