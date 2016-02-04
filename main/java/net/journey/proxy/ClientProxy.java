@@ -7,7 +7,6 @@ import net.journey.client.BarTickHandler;
 import net.journey.client.BossTickHandler;
 import net.journey.client.EntityRendering;
 import net.journey.client.GuiHandler;
-import net.journey.client.KnowledgeRenderHandler;
 import net.journey.client.MusicEvent;
 import net.journey.client.MusicHandler;
 import net.journey.client.PlayerStats;
@@ -86,7 +85,6 @@ public class ClientProxy extends CommonProxy {
 	public void clientInit(FMLInitializationEvent event) {
 		EntityRendering.init();
 		SlayerAPI.registerEvent(new BossTickHandler());
-		SlayerAPI.registerEvent(new KnowledgeRenderHandler());
 		SlayerAPI.registerEvent(new ClientTickEvent());
 		SlayerAPI.registerEvent(new PlayerStats());
 	}
