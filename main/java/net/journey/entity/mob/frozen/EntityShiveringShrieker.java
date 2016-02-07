@@ -51,8 +51,7 @@ public class EntityShiveringShrieker extends EntityModMob {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.posY < 45.0D && super.getCanSpawnHere() &&
-				(this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == JourneyBlocks.frozenGrass);
+		return this.posY < 40.0D && super.getCanSpawnHere();
 	}
 	
 	@Override

@@ -36,7 +36,10 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', JourneyItems.caveCrystal});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', JourneyItems.sapphire});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.demonicBomb, 16), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.demonicDust, 'i', JourneyItems.crystalBall});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', JourneyItems.caveDust});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 4), new Object[] {"ddd", "ddd", "ddd", 'd', JourneyItems.caveDust});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneStick, 16), new Object[] {" d ", " d ", " d ", 'd', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 
@@ -68,6 +71,12 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(i.shadiumClump), new Object[] {"iii", 'i', i.shadiumIngot});
 		GameRegistry.addRecipe(new ItemStack(i.luniumClump), new Object[] {"iii", 'i', i.luniumIngot});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.spawnerClump), new Object[]{i.shadiumClump, i.luniumClump, i.hellstoneClump});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.redGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.redGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.blueGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.blueGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomBottom});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
 		GameRegistry.addSmelting(Blocks.glass, new ItemStack(b.smoothGlass), 1.0F);
 

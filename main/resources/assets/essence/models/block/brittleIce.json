@@ -1,6 +1,8 @@
 {
-	"parent": "block/cube_all",
+	"parent": "essence:block/grass",
 	"textures": {
-		"all": "essence:blocks/brittleIce"
+		"bottom": "essence:blocks/brittleIce_bottom",
+		"top": "essence:blocks/brittleIce_top",
+		"side": "essence:blocks/brittleIce_side"
 	}
 }

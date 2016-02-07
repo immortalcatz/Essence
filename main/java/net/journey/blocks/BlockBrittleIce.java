@@ -23,11 +23,6 @@ public class BlockBrittleIce extends BlockMod {
 	}
 
 	@Override
-	public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.TRANSLUCENT;
-	}
-
-	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockAccess iba, BlockPos pos, EnumFacing side) {
 		Block block = iba.getBlockState(pos).getBlock();

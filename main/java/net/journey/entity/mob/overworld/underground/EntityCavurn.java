@@ -92,7 +92,7 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(30) == 0) dropItem(JourneyItems.caveCrystal, 1);
+		if(rand.nextInt(12) == 0) dropItem(JourneyItems.caveCrystal, 1);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(2) == 0) dropItem(JourneyItems.caveDust, 1);
 		super.dropFewItems(b, j);

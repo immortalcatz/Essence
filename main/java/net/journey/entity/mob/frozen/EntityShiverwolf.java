@@ -197,6 +197,11 @@ public class EntityShiverwolf extends EntityModTameable {
 	public int getMaxSpawnedInChunk() {
 		return 1;
 	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY > 40.0D && super.getCanSpawnHere();
+	}
 
 	@Override
 	public String setLivingSound() {

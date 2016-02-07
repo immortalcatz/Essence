@@ -114,7 +114,7 @@ public class DimensionHelper {
 	}
 	
 	private static void addCloudiaSpawns() {
-		int amount = 90;
+		int amount = 100;
 		EntityRegistry.addSpawn(EntityStarlightTransporter.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityStarlightGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityCloudFlyer.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
@@ -130,7 +130,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityWoodCreature.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 	}
 	private static void addColdFrozenSpawns() {
-		int amount = 5;
+		int amount = 10;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityFrozenTroll.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
@@ -162,7 +162,7 @@ public class DimensionHelper {
 	}
 
 	private static void addBoilSpawns() {
-		int amount = 70;
+		int amount = 10;
 		//EntityRegistry.addSpawn(EntityMagmaGiant.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityMagmaCube.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		//EntityRegistry.addSpawn(EntityBlaze.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);

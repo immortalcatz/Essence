@@ -49,5 +49,9 @@ public class EntityShiverwing extends EntityPeacefullUntillAttacked {
 		if(rand.nextInt(6) == 0) dropItem(JourneyItems.rocFeather, 4);
 		super.dropFewItems(b, j);
 	}
-
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY > 40.0D && super.getCanSpawnHere();
+	}
 }
