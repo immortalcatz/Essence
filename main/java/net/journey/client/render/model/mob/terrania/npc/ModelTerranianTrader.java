@@ -7,6 +7,7 @@ import net.minecraft.util.MathHelper;
 
 /**
  * terranianTrader - Dizzlepop12
+ * Animated by Dizzlepop12
  * Created using Tabula 5.1.0
  */
 public class ModelTerranianTrader extends ModelBase {

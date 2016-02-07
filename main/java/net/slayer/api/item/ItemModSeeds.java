@@ -19,7 +19,7 @@ public class ItemModSeeds extends ItemSeeds {
 		super(block, Blocks.farmland);
 		LangRegistry.addItem(name, f);
 		setUnlocalizedName(name);
-		setCreativeTab(JourneyTabs.util);
+		setCreativeTab(JourneyTabs.crops);
 		JourneyItems.itemNames.add(name);
 		GameRegistry.registerItem(this, name);
 	}

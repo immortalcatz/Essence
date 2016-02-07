@@ -139,6 +139,11 @@ public class JourneyItems {
 	public static final Item glowshroomPowder = new ItemMod("glowshroomPowder", "Glowshroom Powder");
 	public static final Item cloudiaGem = new ItemMod("cloudiaGem", "Cloudia Gem");
 	public static final Item stoneStick = new ItemMod("stoneStick", "Stone Stick");
+	public static final Item darkTerrarianSoil = new ItemMod("darkTerrarianSoil", "Dark Terrarian Soil");
+	public static final Item earthenCrystal = new ItemMod("earthenCrystal", "EarthenCrystal");
+	public static final Item lightTerrarianSoil = new ItemMod("lightTerrarianSoil", "Light Terrarian Soil");
+	public static final Item terrastar = new ItemMod("Terrastar", "Terrastar");
+	public static final Item purplePowder = new ItemMod("purplePowder", "Purple Powder");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");

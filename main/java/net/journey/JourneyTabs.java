@@ -19,6 +19,7 @@ public class JourneyTabs extends CreativeTabs {
 	public static final JourneyTabs misc = new JourneyTabs("journey.misc");
 	public static final JourneyTabs armor = new JourneyTabs("journey.armor");
 	public static final JourneyTabs spawners = new JourneyTabs("journey.spawners");
+	public static final JourneyTabs crops = new JourneyTabs("journey.crops");
 
 	public Item item;
 	
@@ -54,5 +55,6 @@ public class JourneyTabs extends CreativeTabs {
 		util.setIcon(JourneyItems.flameCoin);
 		misc.setIcon(JourneyItems.weakDarkEnergyPotion);
 		armor.setIcon(JourneyItems.twilightHelmet);
+		crops.setIcon(JourneyItems.crackenCaneSeeds);
 	}
 }

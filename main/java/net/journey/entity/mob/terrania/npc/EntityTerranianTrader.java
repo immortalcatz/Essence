@@ -42,7 +42,7 @@ public class EntityTerranianTrader extends EntityModVillager {
 
 	@Override
 	public GuiIDs guiID() {
-		return GuiIDs.BLACKSMITH;
+		return GuiIDs.TERRANIAN;
 	}
 
 	@Override

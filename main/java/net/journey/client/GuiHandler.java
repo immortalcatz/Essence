@@ -14,6 +14,7 @@ import net.journey.client.render.gui.GuiStaringGuardian;
 import net.journey.client.render.gui.GuiStarlightBlacksmith;
 import net.journey.client.render.gui.GuiStarlightVillager;
 import net.journey.client.render.gui.GuiSummoningTable;
+import net.journey.client.render.gui.GuiTerranian;
 import net.journey.client.render.gui.GuiTordo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
@@ -27,7 +28,7 @@ import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH;
+		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN;
 	}
 
 	@Override
@@ -44,6 +45,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.ALLOY_MENDER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.STARLIGHT_BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.TERRANIAN.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -61,6 +63,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.ALLOY_MENDER.ordinal()) return new GuiAlloyMender(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new GuiStarlightVillager(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.STARLIGHT_BLACKSMITH.ordinal()) return new GuiStarlightBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.TERRANIAN.ordinal()) return new GuiTerranian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		return null;
 	}
 
