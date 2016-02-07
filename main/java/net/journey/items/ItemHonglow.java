@@ -1,5 +1,7 @@
 package net.journey.items;
 
+import java.util.List;
+
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.util.LangRegistry;
@@ -12,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.slayer.api.SlayerAPI;
 
 public class ItemHonglow extends ItemFood {
 	
@@ -31,7 +34,17 @@ public class ItemHonglow extends ItemFood {
     public boolean hasEffect(ItemStack i) {
         return op;
     }
-
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack i, EntityPlayer p, List list, boolean par4) {
+		list.add(SlayerAPI.Colour.YELLOW + "Note: All Variants Grant Nightvision Upon Eaten");
+		list.add(SlayerAPI.Colour.DARK_GREEN + "Green - Jump Boost");
+		list.add(SlayerAPI.Colour.BLUE + "Blue - Speed Boost");
+		list.add(SlayerAPI.Colour.RED + "Red - Regeneration");
+		list.add(SlayerAPI.Colour.GREEN + "Light Green - Nightvision (only)");
+    	
+    }
     @Override
     protected void onFoodEaten(ItemStack i, World w, EntityPlayer p) {
         if(!w.isRemote) {
