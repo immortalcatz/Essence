@@ -17,7 +17,7 @@ public class EntityTerranianTrader extends EntityModVillager {
 
 	public EntityTerranianTrader(World var1) {
 		super(var1);
-		setSize(2.5F, 5.0F);
+		setSize(2.0F, 4.0F);
 	}
 
 	@Override
