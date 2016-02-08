@@ -64,11 +64,6 @@ public class EntityTerralight extends EntityModFlying {
 		return pass == 1;
 	}
 	
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == JourneyBlocks.brittleIce;
-	}
-	
 	private class AIRandomFly extends EntityAIBase {
         private EntityTerralight e = EntityTerralight.this;
 
@@ -98,9 +93,9 @@ public class EntityTerralight extends EntityModFlying {
         @Override
         public void startExecuting() {
             Random random = this.e.getRNG();
-            double d0 = this.e.posX + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            double d1 = this.e.posY + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            double d2 = this.e.posZ + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            double d0 = this.e.posX + (double)((random.nextFloat() * 2.0F - 1.0F) * 4.0F);
+            double d1 = this.e.posY + (double)((random.nextFloat() * 2.0F - 1.0F) * 4.0F);
+            double d2 = this.e.posZ + (double)((random.nextFloat() * 2.0F - 1.0F) * 4.0F);
             this.e.getMoveHelper().setMoveTo(d0, d1, d2, 1.0D);
         }
     }
