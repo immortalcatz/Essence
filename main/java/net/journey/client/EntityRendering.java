@@ -16,6 +16,7 @@ import net.journey.client.render.model.mob.frozen.*;
 import net.journey.client.render.model.mob.overworld.*;
 import net.journey.client.render.model.mob.overworld.ModelWraith;
 import net.journey.client.render.model.mob.overworld.underground.*;
+import net.journey.client.render.model.mob.terrania.mob.ModelTerralight;
 import net.journey.client.render.model.mob.terrania.npc.ModelTerranianTrader;
 import net.journey.entity.*;
 import net.journey.entity.mob.boiling.*;
@@ -37,6 +38,7 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
 import net.journey.entity.projectile.*;
 import net.journey.util.*;
@@ -166,6 +168,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightVillager.class, new RenderModMob(new ModelStarlightVillager(), Textures.starlightVillager));
 		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightBlacksmith.class, new RenderModMob(new ModelStarlightVillager(), Textures.starlightBlacksmith));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkyEel.class, new RenderModMob(new ModelSkyEel(), Textures.skyEel));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTerralight.class, new RenderModMob(new ModelTerralight(), Textures.terralight));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTerranianTrader.class, new RenderModMob(new ModelTerranianTrader(), Textures.terranianTrader));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));

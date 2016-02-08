@@ -18,6 +18,7 @@ import net.journey.blocks.BlockHotBlock;
 import net.journey.blocks.BlockIceLog;
 import net.journey.blocks.BlockIcicle;
 import net.journey.blocks.BlockJoinedGlass;
+import net.journey.blocks.BlockJoinedPane;
 import net.journey.blocks.BlockMiniColouredBricks;
 import net.journey.blocks.base.BlockModFire;
 import net.journey.blocks.base.BlockModOre;
@@ -40,6 +41,7 @@ import net.minecraft.block.Block;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.block.BlockMod;
+import net.slayer.api.block.BlockModBars;
 import net.slayer.api.block.BlockModDoor;
 import net.slayer.api.block.BlockModFence;
 import net.slayer.api.block.BlockModFlower;
@@ -49,6 +51,7 @@ import net.slayer.api.block.BlockModLog;
 import net.slayer.api.block.BlockModSlab;
 import net.slayer.api.block.BlockModSpawner;
 import net.slayer.api.block.BlockModStairs;
+import net.slayer.api.block.BlockModVine;
 
 public class JourneyBlocks {
 
@@ -113,6 +116,17 @@ public class JourneyBlocks {
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
 	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F);
 	public static final Block darkFloor = new BlockModGrass(null, "darkFloor", "Dark Floor", 2.0F);
+	
+	public static final Block terraniaLeaves = new BlockModLeaves("terranianLeaves", "Terrania Leaves", 1.0F);
+	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine");
+	public static final BlockMod terranianDirt = new BlockMod(EnumMaterialTypes.DIRT, "terranianDirt", "Terranian Dirt", 2.0F);
+	public static final Block terranianLog = new BlockModLog("terranianLog", "Terranian Log");
+	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);
+	public static final Block terranianStone = new BlockMod("terranianStone", "Terranian Stone", 2.0F);
+	public static final Block terranianBars = new BlockMod("terranianBars", "Terranian Bars");
+	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
+	public static final Block terranianPanels = new BlockModBars("terranianPanels", "Terranian Panels", 2.0F);
+	public static final Block terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
@@ -261,7 +275,7 @@ public class JourneyBlocks {
 	public static final BlockModFlower burntGrass = new BlockModFlower("burntGrass", "Burnt Grass");
 	
 	public static final Block grindstone = new BlockGrindstone("grindstone");
-	public static final Block blueGems = new BlockGemBlock("blueGems", "Red Gems", false);
+	public static final Block blueGems = new BlockGemBlock("blueGems", "Blue Gems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");

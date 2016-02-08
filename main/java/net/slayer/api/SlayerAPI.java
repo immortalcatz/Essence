@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import net.journey.JITL;
 import net.journey.client.ChatHandler;
 import net.journey.entity.EssenceEntityList;
+import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.util.Config;
 import net.journey.util.GL11Helper;
 import net.journey.util.LangRegistry;
@@ -147,6 +148,11 @@ public class SlayerAPI {
 	
 	public static void registerCloudiaMob(Class entityClass, String entityName, String finalN) {
 		registerMob(entityClass, entityName, finalN, 0xB3D3C1, 0xD0D1CF);
+	}
+	
+	public static void registerTerraniaMob(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0xB3D3C1, 0xD0D1CF);
+		
 	}
 	
 	public static void registerNPC(Class entityClass, String entityName, String finalN) {
@@ -407,5 +413,6 @@ public class SlayerAPI {
 
 	public static void registerItemRender(Item item, String itemName) {
 		registerItemRender(item, 0, itemName);
+		
 	}
 }

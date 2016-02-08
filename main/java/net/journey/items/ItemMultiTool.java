@@ -35,6 +35,7 @@ public class ItemMultiTool extends ItemTool {
 	public ItemMultiTool(String name, String f, EssenceToolMaterial tool) {
 		super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
 		mat = tool;
+		setMaxDamage(tool.getToolMaterial().getMaxUses());
 		LangRegistry.addItem(name, f);
 		setCreativeTab(JourneyTabs.tools);
 		setUnlocalizedName(name);
@@ -48,8 +49,8 @@ public class ItemMultiTool extends ItemTool {
 		boolean canRepair = mat.getRepairItem() != null;
 		if(canRepair) return mat.getRepairItem() == i1.getItem() ? true : super.getIsRepairable(i, i1);
 		return super.getIsRepairable(i, i1);
+		
 	}
-
 	@Override
 	public boolean isItemTool(ItemStack i) {
 		return true;

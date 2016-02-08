@@ -18,6 +18,7 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
 import net.journey.entity.projectile.*;
 import net.slayer.api.SlayerAPI;
@@ -36,6 +37,7 @@ public class EntityRegistry {
 		registerDepthsMobs();
 		registerCorbaMobs();
 		registerCloudiaMobs();
+		registerTerraniaMobs();
 		registerNPCs();
 		registerBosses();
 	}
@@ -211,6 +213,10 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntityCorallator.class, "corallator", "Corrallator");
 		SlayerAPI.registerBossMob(EntitySkyStalker.class, "skyStalker", "Sky Stalker");
 		//SlayerAPI.registerBossMob(EntityWraith.class, "wraith");
+	}
+	
+	public static void registerTerraniaMobs() {
+		SlayerAPI.registerTerraniaMob(EntityTerralight.class, "terralight", "Terralight");
 	}
 
 	public static void registerEntitys() {
