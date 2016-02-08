@@ -298,6 +298,10 @@ public class JourneyItems {
 	public static final Item withicBlade = new ItemModSword("withicBlade", "Withic Blade", EssenceToolMaterial.WITHIC_BLADE);
 	public static final Item reinforcedCrystalSword = new ItemModSword("reinforcedCrystalSword", "Reinforced Crystal Sword", EssenceToolMaterial.RE_CRYSTAL_SWORD);
 	public static final Item reinforcedStoneSword = new ItemModSword("reinforcedStoneSword", "Reinforced Stone Sword", EssenceToolMaterial.RE_STONE_SWORD);
+	public static final Item terralightBlade = new ItemModSword("terralightBlade", "Terralight Blade", EssenceToolMaterial.TERRALIGHT_BLADE);
+	public static final Item terranaSword = new ItemModSword("terranaSword", "Terrana Sword", EssenceToolMaterial.TERRANA_SWORD);
+	public static final Item terrolicaSword = new ItemModSword("terrolicaSword", "Terrolica Sword", EssenceToolMaterial.TERROLICA_SWORD);
+	public static final Item voliteSword = new ItemModSword("voliteSword", "Volite Sword", EssenceToolMaterial.VOLITE_SWORD);
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 	

@@ -116,17 +116,6 @@ public class JourneyBlocks {
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
 	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F);
 	public static final Block darkFloor = new BlockModGrass(null, "darkFloor", "Dark Floor", 2.0F);
-	
-	public static final Block terraniaLeaves = new BlockModLeaves("terranianLeaves", "Terrania Leaves", 1.0F);
-	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine");
-	public static final BlockMod terranianDirt = new BlockMod(EnumMaterialTypes.DIRT, "terranianDirt", "Terranian Dirt", 2.0F);
-	public static final Block terranianLog = new BlockModLog("terranianLog", "Terranian Log");
-	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);
-	public static final Block terranianStone = new BlockMod("terranianStone", "Terranian Stone", 2.0F);
-	public static final Block terranianBars = new BlockModBars("terranianBars", "Terranian Bars");
-	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
-	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
-	public static final Block terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
@@ -207,7 +196,19 @@ public class JourneyBlocks {
 	public static final Block dungeonChisledBrickFence = new BlockModFence(dungeonChisledBrick, "dungeonChiseledBrickFence", "Chiseled Dungeon Brick Fence");
 	public static final Block dungeonBrickCarvedFence = new BlockModFence(dungeonBrickCarved, "dungeonBrickCarvedFence", "Carved Dungeon Brick Fence");
 	public static final Block cloudiaPost = new BlockModFence(pinkCloudiaCloud, "cloudiaPost", "Cloudia Post");
+	public static final Block terranianPost = new BlockModFence(pinkCloudiaCloud, "terranianPost", "Terranian Post");
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", "Dungeon Lamp Fence", true);
+	
+	public static final Block terraniaLeaves = new BlockModLeaves("terranianLeaves", "Terrania Leaves", 1.0F);
+	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine");
+	public static final BlockMod terranianDirt = new BlockMod(EnumMaterialTypes.DIRT, "terranianDirt", "Terranian Dirt", 2.0F);
+	public static final Block terranianLog = new BlockModLog("terranianLog", "Terranian Log");
+	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);
+	public static final Block terranianStone = new BlockMod("terranianStone", "Terranian Stone", 2.0F);
+	public static final Block terranianBars = new BlockModBars("terranianBars", "Terranian Bars");
+	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
+	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
+	public static final Block terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
 	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence", "Hot Brick Fence");

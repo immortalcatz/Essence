@@ -19,6 +19,7 @@ import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
 import net.journey.entity.mob.terrania.mob.EntityTerralight;
+import net.journey.entity.mob.terrania.npc.EntityTerranianEnchanter;
 import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
 import net.journey.entity.projectile.*;
 import net.slayer.api.SlayerAPI;
@@ -196,6 +197,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader", "Boil Trader");
 		SlayerAPI.registerNPC(EntityAlloyMender.class, "alloyMender", "Alloy Mender");
 		SlayerAPI.registerNPC(EntityTerranianTrader.class, "terranianTrader", "Terranian Trader");
+		SlayerAPI.registerNPC(EntityTerranianEnchanter.class, "terranianEnchanter", "Terranian Enchanter");
 	}
 
 	public static void registerBosses() {

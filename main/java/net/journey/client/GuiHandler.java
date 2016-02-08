@@ -28,7 +28,7 @@ import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN;
+		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN, TERRANIAN_ENCHANTER;
 	}
 
 	@Override
@@ -46,6 +46,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.STARLIGHT_BLACKSMITH.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.TERRANIAN.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if(ID == GuiIDs.TERRANIAN_ENCHANTER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		return null;
 	}
 
@@ -64,6 +65,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.STARLIGHT_VILLAGER.ordinal()) return new GuiStarlightVillager(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.STARLIGHT_BLACKSMITH.ordinal()) return new GuiStarlightBlacksmith(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.TERRANIAN.ordinal()) return new GuiTerranian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.TERRANIAN_ENCHANTER.ordinal()) return new GuiTerranian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		return null;
 	}
 

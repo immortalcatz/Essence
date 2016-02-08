@@ -153,6 +153,7 @@ public class Textures {
     public static final ResourceLocation skyStalker = addMob("skyStalker");
 	public static final ResourceLocation terranianTrader = addMob("terranianTrader");
 	public static final ResourceLocation terralight = addMob("terralight");
+	public static final ResourceLocation terranianEnchanter = addMob("terranianTrader_enchanter");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

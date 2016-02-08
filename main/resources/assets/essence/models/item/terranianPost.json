@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/terranianBars",
+	"parent": "essence:block/terranianPost",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],
@@ -8,4 +8,3 @@
 		}
 	}
 }
-
