@@ -75,7 +75,8 @@ public enum EssenceToolMaterial {
 	TERRALIGHT_BLADE(SlayerAPI.addMeleeMaterial(3500, 38, 25)),
 	TERRANA_SWORD(SlayerAPI.addMeleeMaterial(3400, 37, 25)),
 	TERROLICA_SWORD(SlayerAPI.addMeleeMaterial(3500, 40, 25)),
-	VOLITE_SWORD(SlayerAPI.addMeleeMaterial(3500, 36, 25)),
+	VOLITE_SWORD(SlayerAPI.addMeleeMaterial(3500, 38, 25)),
+	TERRONIC_BLADE(SlayerAPI.addMeleeMaterial(3500, 39, 25)),
 	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	
