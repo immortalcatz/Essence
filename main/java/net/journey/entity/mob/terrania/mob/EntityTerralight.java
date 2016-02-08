@@ -31,12 +31,7 @@ public class EntityTerralight extends EntityModFlying {
     }
     
     public float getBrightness(float p_70013_1_) {
-        return 5.0F;
-    }
-	@Override
-	public void onUpdate() {
-        super.onUpdate();
-        if(!this.worldObj.isRemote && this.worldObj.getDifficulty() == EnumDifficulty.PEACEFUL) this.setDead();
+        return 10.0F;
     }
 
 	@Override
