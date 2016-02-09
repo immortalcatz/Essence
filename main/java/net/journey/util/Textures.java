@@ -36,6 +36,8 @@ public class Textures {
     public static final ResourceLocation redTordo = addMob("redTordo");
     public static final ResourceLocation greenTordo = addMob("greenTordo");
     public static final ResourceLocation staringGuardian = addMob("staringGuardian");
+	public static final ResourceLocation terranianEnchanter = addMob("terranianTrader_enchanter");
+	public static final ResourceLocation terranianTrader = addMob("terranianTrader");
     
     //Overworld
     public static final ResourceLocation robot = addMob("robot");
@@ -151,9 +153,10 @@ public class Textures {
     public static final ResourceLocation logger = addMob("logger");
     public static final ResourceLocation corallator = addMob("corallator");
     public static final ResourceLocation skyStalker = addMob("skyStalker");
-	public static final ResourceLocation terranianTrader = addMob("terranianTrader");
+
+    //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");
-	public static final ResourceLocation terranianEnchanter = addMob("terranianTrader_enchanter");
+	public static final ResourceLocation terraScatterer = addMob("terraScatterer");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

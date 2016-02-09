@@ -12,6 +12,7 @@ import net.journey.dimension.euca.BiomeGenEuca;
 import net.journey.dimension.euca.WorldProviderEuca;
 import net.journey.dimension.frozen.BiomeGenFrozenLands;
 import net.journey.dimension.frozen.WorldProviderFrozenLands;
+import net.journey.dimension.terrania.BiomeGenTerrania;
 import net.journey.entity.mob.boiling.EntityBurningLight;
 import net.journey.entity.mob.boiling.EntityFrightener;
 import net.journey.entity.mob.boiling.EntityHellwing;
@@ -61,6 +62,8 @@ import net.journey.entity.mob.overworld.underground.EntityCavurn;
 import net.journey.entity.mob.overworld.underground.EntityGreenHonglow;
 import net.journey.entity.mob.overworld.underground.EntityHonglow;
 import net.journey.entity.mob.overworld.underground.EntityStonewalker;
+import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
+import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.util.Config;
 import net.journey.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
@@ -83,6 +86,7 @@ public class DimensionHelper {
 	public static BiomeGenBase corba = new BiomeGenCorba(Config.corbaBiome).setHeight(corbaHeight);
 	//public static BiomeGenBase wastelands = new BiomeGenWastelands(Config.wastelandsBiome);
 	public static BiomeGenBase cloudia = new BiomeGenCloudia(Config.cloudiaBiome);
+	public static BiomeGenBase terrania = new BiomeGenTerrania(Config.terraniaBiome);
 
 	public static void init(){
 		addDimension(Config.euca, WorldProviderEuca.class, Config.keepLoadingEuca);
@@ -92,6 +96,7 @@ public class DimensionHelper {
 		addDimension(Config.corba, WorldProviderCorba.class, Config.keepLoadingCorba);
 		//addDimension(Config.wastelands, WorldProviderWastelands.class, Config.keepLoadingWastelands);
 		addDimension(Config.cloudia, WorldProviderCloudia.class, Config.keepLoadingCloudia);
+		addDimension(Config.terrania, WorldProviderCloudia.class, Config.keepLoadingTerrania);
 	}
 
 	private static void addDimension(int id, Class<? extends WorldProvider> w, boolean keeploading) {
@@ -110,6 +115,7 @@ public class DimensionHelper {
 		addCaveSpawns();
 		addCorbaSpawns();
 		addCloudiaSpawns();
+		addTerraniaSpawns();
 		addRareVanillaSpawns();
 	}
 	
@@ -146,6 +152,13 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityShatterer.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityCrystalCluster.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityIceMage.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
+	}
+	
+	private static void addTerraniaSpawns() {
+		int amount = 10;
+		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityTerraScatterer.class, 1, 1, 1, EnumCreatureType.CREATURE, terrania);
+		EntityRegistry.addSpawn(EntityTerralight.class, 1, 1, 1, EnumCreatureType.CREATURE, terrania);
 	}
 
 	private static void addEucaSpawns() {

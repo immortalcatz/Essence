@@ -18,6 +18,7 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
 import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.entity.mob.terrania.npc.EntityTerranianEnchanter;
 import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
@@ -219,6 +220,7 @@ public class EntityRegistry {
 	
 	public static void registerTerraniaMobs() {
 		SlayerAPI.registerTerraniaMob(EntityTerralight.class, "terralight", "Terralight");
+		SlayerAPI.registerTerraniaMob(EntityTerraScatterer.class, "terraScatterer", "Terra Scatterer");
 	}
 
 	public static void registerEntitys() {
