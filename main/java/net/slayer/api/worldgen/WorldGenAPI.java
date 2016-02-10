@@ -35,6 +35,18 @@ public class WorldGenAPI {
 	public static Block getEucaLog() {
 		return JourneyBlocks.eucaGoldLog;
 	}
+	
+	public static Block getTerranianLog() {
+		return JourneyBlocks.terranianLog;
+	}
+	
+	public static Block getTerraniaLeaves() {
+		return JourneyBlocks.terraniaLeaves;
+	}
+	
+	public static Block getTerraniaVine() {
+		return JourneyBlocks.terraniaVine;
+	}
 
 	public static boolean isAirBlocks(World w, int size, int x, int y, int z) {
 		boolean is = false;

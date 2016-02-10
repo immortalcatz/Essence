@@ -19,6 +19,7 @@ public class WorldGenEucaTree3 extends WorldGenerator {
 		}
 		
 		j+=height;
+			world.setBlockState(new BlockPos(i, j, k), log);
 		
 		i-=5;
 		k-=5;

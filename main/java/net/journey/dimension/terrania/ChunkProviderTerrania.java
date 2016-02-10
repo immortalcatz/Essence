@@ -12,7 +12,10 @@ import net.journey.dimension.corba.gen.trees.WorldGenCorbaSmallTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
 import net.journey.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
+import net.journey.dimension.euca.gen.trees.WorldGenEucaTree3;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
+import net.journey.dimension.terrania.gen.trees.WorldGenTerraniaBigTree3;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -41,6 +44,7 @@ import net.slayer.api.block.BlockModFlower;
 public class ChunkProviderTerrania implements IChunkProvider {
 
 	private Random rand;
+	private ArrayList<WorldGenerator> trees;
 	private NoiseGeneratorOctaves noiseGen1;
 	private NoiseGeneratorOctaves noiseGen2;
 	private NoiseGeneratorOctaves noiseGen3;
@@ -75,6 +79,8 @@ public class ChunkProviderTerrania implements IChunkProvider {
 		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
 		this.da = new double[825];
 		this.parabolicField = new float[25];
+		trees = new ArrayList<WorldGenerator>(3);
+		trees.add(new WorldGenTerraniaBigTree3());
 		for(int j = -2; j <= 2; ++j) {
 			for(int k = -2; k <= 2; ++k) {
 				float f = 10.0F / MathHelper.sqrt_float((float)(j * j + k * k) + 0.2F);
@@ -130,7 +136,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.terranianDirt.getDefaultState());
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.terranianGrass.getDefaultState());
 								}
 							}
 
@@ -328,6 +334,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 		int x1 = cx * 16;
 		int z1 = cz * 16;
 		int x, y, z, i;
+		int times;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
@@ -336,6 +343,21 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.terranianTallgrass).generate(worldObj, r, new BlockPos(x, y, z));
 		}
+
+		for(times = 0; times < 100; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.terranianGrass)) {
+				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+	}
+	
+	public boolean isBlockTop(int x, int y, int z, Block grass) {
+		return worldObj.getBlockState(new BlockPos(x, y, z)) == grass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 2, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 3, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 4, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 5, z)) == Blocks.air.getDefaultState();
 	}
 
 	@Override
