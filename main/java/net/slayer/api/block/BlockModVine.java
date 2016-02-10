@@ -163,9 +163,8 @@ public class BlockModVine extends BlockMod implements IShearable {
 		}
 	}
 
-	private boolean canPlaceOn(Block p_150093_1_)
-	{
-		return p_150093_1_.isFullCube() && p_150093_1_.getMaterial().blocksMovement();
+	private boolean canPlaceOn(Block p_150093_1_){
+		return true;
 	}
 
 	private boolean recheckGrownSides(World worldIn, BlockPos pos, IBlockState state)

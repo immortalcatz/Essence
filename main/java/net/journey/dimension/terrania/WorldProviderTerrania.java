@@ -16,7 +16,7 @@ public class WorldProviderTerrania extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.terrania, 0.0F);
-		this.dimensionId = Config.boil;
+		this.dimensionId = Config.terrania;
 	}
 	
 	@Override
@@ -34,8 +34,8 @@ public class WorldProviderTerrania extends WorldProvider {
 	@Override
 	public boolean canDoRainSnowIce(Chunk chunk) {
 		return false;
+
 	}
-	
 	@Override
 	public boolean canSnowAt(BlockPos pos, boolean checkLight) {
 		return false;
@@ -63,7 +63,7 @@ public class WorldProviderTerrania extends WorldProvider {
 
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.18F; 
+		return 0.4F; 
 	}
 
 	@Override
