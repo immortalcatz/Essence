@@ -13,6 +13,7 @@ import net.journey.dimension.euca.WorldProviderEuca;
 import net.journey.dimension.frozen.BiomeGenFrozenLands;
 import net.journey.dimension.frozen.WorldProviderFrozenLands;
 import net.journey.dimension.terrania.BiomeGenTerrania;
+import net.journey.dimension.terrania.WorldProviderTerrania;
 import net.journey.entity.mob.boiling.EntityBurningLight;
 import net.journey.entity.mob.boiling.EntityFrightener;
 import net.journey.entity.mob.boiling.EntityHellwing;
@@ -96,7 +97,7 @@ public class DimensionHelper {
 		addDimension(Config.corba, WorldProviderCorba.class, Config.keepLoadingCorba);
 		//addDimension(Config.wastelands, WorldProviderWastelands.class, Config.keepLoadingWastelands);
 		addDimension(Config.cloudia, WorldProviderCloudia.class, Config.keepLoadingCloudia);
-		addDimension(Config.terrania, WorldProviderCloudia.class, Config.keepLoadingTerrania);
+		addDimension(Config.terrania, WorldProviderTerrania.class, Config.keepLoadingTerrania);
 	}
 
 	private static void addDimension(int id, Class<? extends WorldProvider> w, boolean keeploading) {
