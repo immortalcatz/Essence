@@ -212,7 +212,7 @@ public class JourneyBlocks {
 	public static final Block terranianBars = new BlockModBars("terranianBars", "Terranian Bars");
 	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
 	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
-	public static final Block terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
+	public static final BlockModFlower terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
 	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence", "Hot Brick Fence");
