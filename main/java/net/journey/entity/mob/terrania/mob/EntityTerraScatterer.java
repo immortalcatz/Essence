@@ -34,7 +34,7 @@ public class EntityTerraScatterer extends EntityModMob {
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.CREEPER_DEATH;
+		return EnumSounds.WRAITH_HURT;
 	}
 
 	@Override
@@ -44,14 +44,21 @@ public class EntityTerraScatterer extends EntityModMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(30) == 0) dropItem(JourneyItems.cloudiaOrb, 1);
+		if(rand.nextInt(13) == 0) dropItem(JourneyItems.earthenCrystal, 1);
 		super.dropFewItems(b, j);
-		
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.purplePowder, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.purplePowder, 3);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.darkTerrarianSoil, 4);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.darkTerrarianSoil, 2);
+		super.dropFewItems(b, j);
 	}
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.cloudiaOrb;
+		return null;
 	}
 
 }
