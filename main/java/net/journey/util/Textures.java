@@ -157,6 +157,7 @@ public class Textures {
     //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");
 	public static final ResourceLocation terraScatterer = addMob("terraScatterer");
+	public static final ResourceLocation purplian = addMob("purplian");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
