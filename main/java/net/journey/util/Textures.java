@@ -47,6 +47,7 @@ public class Textures {
     public static final ResourceLocation boomArmor = addMob("boomArmor");
     public static final ResourceLocation floro = addMob("floro");
     public static final ResourceLocation spectre = addMob("spectre");
+	public static final ResourceLocation swampFly = addMob("swampFly");
     
    // public static final ResourceLocation wraith = addMob("wraith");
     public static final ResourceLocation bigHongo = addMob("bigHongo");

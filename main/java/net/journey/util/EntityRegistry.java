@@ -110,6 +110,7 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityGreenHonglow.class, "greenHonglow", "Green Honglow");
 		SlayerAPI.registerOverworldMob(EntityHonglow.class, "redHonglow", "Red Honglow");
 		SlayerAPI.registerOverworldMob(EntityBlueHonglow.class, "blueHonglow", "Blue Honglow");
+		SlayerAPI.registerOverworldMob(EntitySwampFly.class, "swampFly", "Swamp Fly");
 	}
 
 	public static void registerBPMobs() {

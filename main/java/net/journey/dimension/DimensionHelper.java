@@ -56,6 +56,7 @@ import net.journey.entity.mob.overworld.EntityRobot;
 import net.journey.entity.mob.overworld.EntitySandCrawler;
 import net.journey.entity.mob.overworld.EntitySmallHongo;
 import net.journey.entity.mob.overworld.EntitySpyclops;
+import net.journey.entity.mob.overworld.EntitySwampFly;
 import net.journey.entity.mob.overworld.underground.EntityBlueHonglow;
 import net.journey.entity.mob.overworld.underground.EntityCaveMage;
 import net.journey.entity.mob.overworld.underground.EntityCaveling;
@@ -346,6 +347,8 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityFloro.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
 		EntityRegistry.addSpawn(EntityFloro.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
 		EntityRegistry.addSpawn(EntityFloro.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
+		
+		EntityRegistry.addSpawn(EntitySwampFly.class, amount, 10, 10, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SWAMP));
 		
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityBigHongo.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
