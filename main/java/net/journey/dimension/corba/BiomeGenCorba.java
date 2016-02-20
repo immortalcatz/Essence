@@ -16,11 +16,12 @@ public class BiomeGenCorba extends BiomeGenBase {
         this.spawnableMonsterList.clear();
         this.spawnableCaveCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
+        setColor(0xb2d27a);
 	}
 	
 	@Override
     @SideOnly(Side.CLIENT)
-    public int getSkyColorByTemp(float p_76731_1_) {
-        return 0;
+	public int getSkyColorByTemp(float f) {
+		return 0xb2d27a;
     }
 }

@@ -21,7 +21,7 @@ public class WorldGenSmallGlowshrooms extends WorldGenerator {
 		case 2: top = JourneyBlocks.blueGlowshroomTop; break;
 		}
 		for(int i = 0; i < 50; i++) {
-			if(w.getBlockState(pos.down()).getBlock().getMaterial() == Material.rock && w.getBlockState(pos) == Blocks.air.getDefaultState() && pos.getY() < 60) {
+			if(w.getBlockState(pos.down()).getBlock() == Blocks.stone && w.getBlockState(pos) == Blocks.air.getDefaultState() && pos.getY() < 60) {
 				w.setBlockState(pos, top.getDefaultState(), 2);
 			}
 		}

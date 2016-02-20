@@ -39,7 +39,7 @@ public class EntitySurfaceSeer extends EntityModFlying {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.OVERSEER;
+		return EnumSounds.EMPTY;
 	}
 
 	@Override

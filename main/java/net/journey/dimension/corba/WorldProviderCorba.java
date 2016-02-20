@@ -2,6 +2,7 @@ package net.journey.dimension.corba;
 
 import net.journey.dimension.DimensionHelper;
 import net.journey.util.Config;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -25,6 +26,12 @@ public class WorldProviderCorba extends WorldProvider {
 	public float calculateCelestialAngle(long var1, float var3) {
 		return 0.18F; 
 	}
+    
+	@Override
+    @SideOnly(Side.CLIENT)
+    public Vec3 getFogColor(float f1, float f2) {
+    	return new Vec3(1, 2, 1);
+    }
 
 	@Override
     public boolean canRespawnHere() {

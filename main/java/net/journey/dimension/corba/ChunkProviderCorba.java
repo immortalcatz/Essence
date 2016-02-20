@@ -138,7 +138,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.corbaGrass.getDefaultState());
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.corbaStone.getDefaultState());
 								}
 							}
 
@@ -341,12 +341,18 @@ public class ChunkProviderCorba implements IChunkProvider {
 		z = z1 + this.rand.nextInt(16);
 		Random r = rand;
 
-		for(i = 0; i < 17; i++) {
+		for(i = 0; i < 100; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaSpeckledFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaDarkPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaRedFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaBlueFlower).generate(worldObj, r, new BlockPos(x, y, z));
+			new WorldGenModFlower(JourneyBlocks.corbaLightPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 
-		for(times = 0; times < 100; times++) {
+		for(times = 0; times < 300; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
