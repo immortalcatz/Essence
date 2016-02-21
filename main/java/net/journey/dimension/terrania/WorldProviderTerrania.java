@@ -63,7 +63,7 @@ public class WorldProviderTerrania extends WorldProvider {
 
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.4F; 
+		return 0.5F; 
 	}
 
 	@Override

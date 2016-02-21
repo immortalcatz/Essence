@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.dimension.corba.gen.WorldGenCorbaLamp;
+import net.journey.dimension.corba.gen.WorldGenCorbaVillage;
+import net.journey.dimension.corba.gen.WorldGenTreehouse;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaLargeTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaMediumTree;
@@ -12,6 +15,7 @@ import net.journey.dimension.corba.gen.trees.WorldGenCorbaSmallTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
 import net.journey.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
+import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree3;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
 import net.journey.dimension.terrania.gen.trees.WorldGenTerraniaBigTree3;
@@ -351,8 +355,38 @@ public class ChunkProviderCorba implements IChunkProvider {
 			new WorldGenModFlower(JourneyBlocks.corbaBlueFlower).generate(worldObj, r, new BlockPos(x, y, z));
 			new WorldGenModFlower(JourneyBlocks.corbaLightPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
+		
+		for(times = 0; times < 3; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+				new WorldGenTreehouse().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				break;
+			}
+		}
+		
+		for(times = 0; times < 1; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+				new WorldGenCorbaVillage().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				break;
+			}
+		}
+		
+		for(times = 0; times < 26; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+				new WorldGenCorbaLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				break;
+			}
+		}
 
-		for(times = 0; times < 300; times++) {
+		for(times = 0; times < 450; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;

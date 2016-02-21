@@ -200,6 +200,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityBoilTrader.class, "boilTrader", "Boil Trader");
 		SlayerAPI.registerNPC(EntityAlloyMender.class, "alloyMender", "Alloy Mender");
 		SlayerAPI.registerNPC(EntityTerranianTrader.class, "terranianTrader", "Terranian Trader");
+		SlayerAPI.registerNPC(EntityOvergrownMerchant.class, "overgrownMurchant", "Overgrown Merchant");
 		SlayerAPI.registerNPC(EntityTerranianEnchanter.class, "terranianEnchanter", "Terranian Enchanter");
 	}
 

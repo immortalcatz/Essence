@@ -38,6 +38,7 @@ public class Textures {
     public static final ResourceLocation staringGuardian = addMob("staringGuardian");
 	public static final ResourceLocation terranianEnchanter = addMob("terranianTrader_enchanter");
 	public static final ResourceLocation terranianTrader = addMob("terranianTrader");
+	public static final ResourceLocation overgrownMerchant = addMob("overgrownMerchant");
     
     //Overworld
     public static final ResourceLocation robot = addMob("robot");

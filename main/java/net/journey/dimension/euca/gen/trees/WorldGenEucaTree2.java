@@ -14,7 +14,7 @@ public class WorldGenEucaTree2 extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		int i = pos.getX(), j = pos.getY(), k = pos.getZ();
 		IBlockState leaves = WorldGenAPI.getEucaLeaves().getDefaultState(), log = WorldGenAPI.getEucaLog().getDefaultState();
-		int height = 15+rand.nextInt(10);
+		int height = 5+rand.nextInt(5);
 		for(int y = 0; y<height; y++) {
 			world.setBlockState(new BlockPos(i, y+j, k), log);
 		}

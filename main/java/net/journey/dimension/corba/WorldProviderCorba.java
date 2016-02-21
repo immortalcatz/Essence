@@ -24,13 +24,13 @@ public class WorldProviderCorba extends WorldProvider {
 	
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.18F; 
+		return 0.6F; 
 	}
     
 	@Override
     @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
-    	return new Vec3(1, 2, 1);
+    	return new Vec3(0.5, 0.5, 0);
     }
 
 	@Override

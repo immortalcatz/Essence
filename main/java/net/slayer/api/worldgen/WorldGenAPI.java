@@ -36,12 +36,20 @@ public class WorldGenAPI {
 		return JourneyBlocks.eucaGoldLog;
 	}
 	
+	public static Block getCorbaLog() {
+		return JourneyBlocks.corbaLog;
+	}
+	
 	public static Block getTerranianLog() {
 		return JourneyBlocks.terranianLog;
 	}
 	
 	public static Block getTerraniaLeaves() {
 		return JourneyBlocks.terraniaLeaves;
+	}
+	
+	public static Block getCorbaLeaves() {
+		return JourneyBlocks.corbaLeaves;
 	}
 	
 	public static Block getTerraniaVine() {
