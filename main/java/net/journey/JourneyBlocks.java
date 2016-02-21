@@ -48,6 +48,7 @@ import net.slayer.api.block.BlockModDoor;
 import net.slayer.api.block.BlockModFence;
 import net.slayer.api.block.BlockModFlower;
 import net.slayer.api.block.BlockModGrass;
+import net.slayer.api.block.BlockModLadder;
 import net.slayer.api.block.BlockModLeaves;
 import net.slayer.api.block.BlockModLog;
 import net.slayer.api.block.BlockModSlab;
@@ -302,6 +303,8 @@ public class JourneyBlocks {
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
 	public static final Block brisonBlocks = new BlockBrison();
+	
+	public static final Block corbaLadder = new BlockModLadder();
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
