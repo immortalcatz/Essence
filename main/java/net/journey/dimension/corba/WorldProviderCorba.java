@@ -30,7 +30,7 @@ public class WorldProviderCorba extends WorldProvider {
 	@Override
     @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
-    	return new Vec3(0.5, 0.5, 0);
+    	return new Vec3(0.5, 0.55, 0);
     }
 
 	@Override

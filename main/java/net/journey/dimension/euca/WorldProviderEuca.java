@@ -54,7 +54,7 @@ public class WorldProviderEuca extends WorldProvider {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean doesXZShowFog(int x, int z) {
-        return true;
+        return false;
     }
     
     @Override
