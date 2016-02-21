@@ -381,15 +381,15 @@ public class JourneyItems {
 	public static final Item twilightLegs = new ItemModArmor(EnumArmor.TWILIGHT, LEGS);
 	public static final Item twilightBoots = new ItemModArmor(EnumArmor.TWILIGHT, BOOTS);
 	
-	public static final Item snakeskinHelmet = new ItemModArmor(EnumArmor.SNAKESKIN, HEAD);
-	public static final Item snakeskinChest = new ItemModArmor(EnumArmor.SNAKESKIN, BODY);
-	public static final Item snakeskinLegs = new ItemModArmor(EnumArmor.SNAKESKIN, LEGS);
-	public static final Item snakeskinBoots = new ItemModArmor(EnumArmor.SNAKESKIN, BOOTS);
-	
 	public static final Item leapersHelmet = new ItemModArmor(EnumArmor.LEAPERS, HEAD);
 	public static final Item leapersChest = new ItemModArmor(EnumArmor.LEAPERS, BODY);
 	public static final Item leapersLegs = new ItemModArmor(EnumArmor.LEAPERS, LEGS);
 	public static final Item leapersBoots = new ItemModArmor(EnumArmor.LEAPERS, BOOTS);
+	
+	public static final Item snakeskinHelmet = new ItemModArmor(EnumArmor.SNAKESKIN, HEAD);
+	public static final Item snakeskinChest = new ItemModArmor(EnumArmor.SNAKESKIN, BODY);
+	public static final Item snakeskinLegs = new ItemModArmor(EnumArmor.SNAKESKIN, LEGS);
+	public static final Item snakeskinBoots = new ItemModArmor(EnumArmor.SNAKESKIN, BOOTS);
 	
 	public static final Item treehuggersHelmet = new ItemModArmor(EnumArmor.TREEHUGGERS, HEAD);
 	public static final Item treehuggersChest = new ItemModArmor(EnumArmor.TREEHUGGERS, BODY);
