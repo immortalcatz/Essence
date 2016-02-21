@@ -12,6 +12,7 @@ import net.journey.dimension.euca.gen.trees.WorldGenEucaTree;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree2;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree3;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree4;
+import net.journey.dimension.euca.gen.trees.WorldGenEucaTree5;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -55,6 +56,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		trees.add(new WorldGenEucaTree2());
 		trees.add(new WorldGenEucaTree3());
 		trees.add(new WorldGenEucaTree4());
+		trees.add(new WorldGenEucaTree5());
 	}
 
 	@Override
@@ -231,7 +233,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 		x = x1 + this.rand.nextInt(16) + 8;
 		z = z1 + this.rand.nextInt(16) + 8;
 
-		for(times = 0; times < 3; times++) {
+		for(times = 0; times < 1; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
@@ -257,12 +259,21 @@ public class ChunkProviderEuca implements IChunkProvider {
 			}
 		}
 		
-		for(times = 0; times < 230; times++) {
+		for(times = 0; times < 115; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.eucaGrass)) {
 				new WorldGenEucaTree4().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+		
+		for(times = 0; times < 115; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.eucaGrass)) {
+				new WorldGenEucaTree5().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 	}
