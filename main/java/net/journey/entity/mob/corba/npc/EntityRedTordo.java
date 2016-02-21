@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
+import net.slayer.api.SlayerAPI;
 import net.slayer.api.entity.EntityModVillager;
 
 public class EntityRedTordo extends EntityModVillager {
@@ -18,6 +19,17 @@ public class EntityRedTordo extends EntityModVillager {
 
 	@Override
 	public void abstractInteract(EntityPlayer p) {
+		switch(rand.nextInt(3)) {
+		case 0:
+			SlayerAPI.addFormattedChatMessage(p, "Tordo: It sure is easy to break a limb, especially when you're completely made out of sticks.");
+			break;
+		case 1:
+			SlayerAPI.addFormattedChatMessage(p, "Tordo: I'm not sure where you come from, but you don't look like a normal inhabitant.");
+			break;
+		case 2:
+			SlayerAPI.addFormattedChatMessage(p, "Tordo: My crops are grown to perfection and treated with great nutriants!");
+			break;
+		}
 		
 	}
 

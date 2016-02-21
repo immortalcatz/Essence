@@ -348,8 +348,11 @@ public class ChunkProviderCorba implements IChunkProvider {
 		for(i = 0; i < 100; i++) {
 			y = r.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.corbaTallGrass).generate(worldObj, r, new BlockPos(x, y, z));
-			new WorldGenModFlower(JourneyBlocks.corbaSpeckledFlower).generate(worldObj, r, new BlockPos(x, y, z));
 			new WorldGenModFlower(JourneyBlocks.corbaFlower).generate(worldObj, r, new BlockPos(x, y, z));
+		}
+		for(i = 0; i < 16; i++) {
+			y = r.nextInt(16); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			new WorldGenModFlower(JourneyBlocks.corbaSpeckledFlower).generate(worldObj, r, new BlockPos(x, y, z));
 			new WorldGenModFlower(JourneyBlocks.corbaDarkPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
 			new WorldGenModFlower(JourneyBlocks.corbaRedFlower).generate(worldObj, r, new BlockPos(x, y, z));
 			new WorldGenModFlower(JourneyBlocks.corbaBlueFlower).generate(worldObj, r, new BlockPos(x, y, z));
@@ -366,21 +369,21 @@ public class ChunkProviderCorba implements IChunkProvider {
 			}
 		}
 		
-		for(times = 0; times < 1; times++) {
+		for(times = 0; times < 2; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+			if(isBlockTop(x, yCoord - 4, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaVillage().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
 		}
 		
-		for(times = 0; times < 26; times++) {
+		for(times = 0; times < 30; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}

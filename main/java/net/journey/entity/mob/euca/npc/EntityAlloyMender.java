@@ -21,13 +21,13 @@ public class EntityAlloyMender extends EntityModVillager {
 	public void abstractInteract(EntityPlayer p) {
 		switch(rand.nextInt(3)) {
 		case 0:
-			SlayerAPI.addFormattedChatMessage(p, "mender.welcome");
+			SlayerAPI.addFormattedChatMessage(p, "Mender: It takes over a thousand degreese to melt this gold!");
 			break;
 		case 1:
-			SlayerAPI.addFormattedChatMessage(p, "mender.hello");
+			SlayerAPI.addFormattedChatMessage(p, "Mender: My weapons have been melted and shaped into deadly perfection!");
 			break;
 		case 2:
-			SlayerAPI.addFormattedChatMessage(p, "mender.good");
+			SlayerAPI.addFormattedChatMessage(p, "Mender: It's a real struggle living here, when everything wants to kill you...");
 			break;
 		}
 	}

@@ -23,15 +23,18 @@ public class EntityOvergrownMerchant extends EntityModVillager {
 
 	@Override
 	public void abstractInteract(EntityPlayer p) {
-		switch(rand.nextInt(3)) {
+		switch(rand.nextInt(4)) {
 		case 0:
-			SlayerAPI.addFormattedChatMessage(p, "Herro");
+			SlayerAPI.addFormattedChatMessage(p, "Merchant: This place isn't as terrible as it seems. At least, that's what they tell me.");
 			break;
 		case 1:
-			SlayerAPI.addFormattedChatMessage(p, "Ayyy lmao");
+			SlayerAPI.addFormattedChatMessage(p, "Merchant: Some say this place was a Utopian World long ago. I personally think it's always been miserable...");
 			break;
 		case 2:
-			SlayerAPI.addFormattedChatMessage(p, "lol wut");
+			SlayerAPI.addFormattedChatMessage(p, "Merchant: If you travel far enough, some speculate that you'll reach an Enchanted Jungle.");
+			break;
+		case 3:
+			SlayerAPI.addFormattedChatMessage(p, "Merchant: My goods are enchanted with the greatest magic of the land! Not that it's anything special, however.");
 			break;
 		}
 	}

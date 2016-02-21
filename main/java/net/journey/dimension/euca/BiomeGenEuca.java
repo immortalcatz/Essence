@@ -16,11 +16,11 @@ public class BiomeGenEuca extends BiomeGenBase {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		setColor(0xE57272);
+		setColor(0xffd800);
 	}
 
 	@Override
 	public int getSkyColorByTemp(float f) {
-		return 0xDBFF00;
+		return 0xffd800;
 	}
 }
