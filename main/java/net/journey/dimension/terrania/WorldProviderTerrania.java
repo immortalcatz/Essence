@@ -23,7 +23,7 @@ public class WorldProviderTerrania extends WorldProvider {
 	@SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float p_76562_1_, float p_76562_2_)
     {
-        return new Vec3(0.4, 0, 0.5);
+        return new Vec3(0.6, 0, 1.0);
     }
 	
 	@Override
@@ -69,7 +69,7 @@ public class WorldProviderTerrania extends WorldProvider {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean doesXZShowFog(int x, int z) {
-        return true;
+        return false;
     }
     
 	@Override

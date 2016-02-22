@@ -21,6 +21,7 @@ import net.journey.entity.mob.overworld.underground.*;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
 import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
 import net.journey.entity.mob.terrania.mob.EntityTerralight;
+import net.journey.entity.mob.terrania.mob.EntityTerraslug;
 import net.journey.entity.mob.terrania.npc.EntityTerranianEnchanter;
 import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
 import net.journey.entity.projectile.*;
@@ -225,6 +226,7 @@ public class EntityRegistry {
 		SlayerAPI.registerTerraniaMob(EntityTerralight.class, "terralight", "Terralight");
 		SlayerAPI.registerTerraniaMob(EntityTerraScatterer.class, "terraScatterer", "Terra Scatterer");
 		SlayerAPI.registerTerraniaMob(EntityPurplian.class, "purplian", "Purplian");
+		SlayerAPI.registerTerraniaMob(EntityTerraslug.class, "terraslug", "Terraslug");
 	}
 
 	public static void registerEntitys() {
