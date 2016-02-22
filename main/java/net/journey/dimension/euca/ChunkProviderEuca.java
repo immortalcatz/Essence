@@ -22,6 +22,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -335,4 +336,11 @@ public class ChunkProviderEuca implements IChunkProvider {
 
 	@Override
 	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) { }
+
+	@Override
+	public List<SpawnListEntry> getPossibleCreatures(
+			EnumCreatureType creatureType, BlockPos pos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
