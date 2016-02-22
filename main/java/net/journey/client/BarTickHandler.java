@@ -61,7 +61,7 @@ public class BarTickHandler {
 				GlStateManager.enableAlpha();
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				GuiIngame gig = mc.ingameGUI;
-				ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+				ScaledResolution scaledresolution = new ScaledResolution(mc);
 				this.mc.getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.MOD_ID, "textures/gui/misc.png"));
 				//int sw = scaledresolution.getScaledWidth(), sh = scaledresolution.getScaledHeight();
 				int y = scaledresolution.getScaledHeight() - 30, x = 10, x1 = 10, x2 = 10;

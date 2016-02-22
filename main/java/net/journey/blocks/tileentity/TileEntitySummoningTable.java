@@ -4,22 +4,20 @@ import java.util.Random;
 
 import net.journey.JourneyItems;
 import net.journey.client.render.particles.EntityModFireFX;
-import net.journey.client.render.particles.EntityModSnowFX;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
+import net.minecraft.util.ITickable;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntitySummoningTable extends TileEntity implements IUpdatePlayerListBox, IInventory {
+public class TileEntitySummoningTable extends TileEntity implements ITickable, IInventory {
 
 	private ItemStack[] inventory;
 
@@ -143,7 +141,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 	}
 
 	@Override
-	public ItemStack getStackInSlotOnClosing(int index) {
+	public ItemStack removeStackFromSlot(int index) {
 		if(this.inventory[index] != null)  {
 			ItemStack itemstack = inventory[index];
 			this.inventory[index] = null;

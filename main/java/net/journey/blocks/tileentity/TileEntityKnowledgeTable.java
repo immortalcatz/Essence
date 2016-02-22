@@ -8,11 +8,11 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
+import net.minecraft.util.ITickable;
 
-public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlayerListBox, IInventory {
+public class TileEntityKnowledgeTable extends TileEntity implements ITickable, IInventory {
 
 	private ItemStack inventory;
 
@@ -79,7 +79,7 @@ public class TileEntityKnowledgeTable extends TileEntity implements IUpdatePlaye
 	}
 
 	@Override
-	public ItemStack getStackInSlotOnClosing(int index) {
+	public ItemStack removeStackFromSlot(int index) {
 		if(index == 0 && this.inventory != null)  {
 			ItemStack itemstack = this.inventory;
 			this.inventory = null;

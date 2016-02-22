@@ -29,18 +29,6 @@ import com.google.common.base.Predicate;
 
 public abstract class EntityPeacefullMob extends EntityCreature implements IMob
 {
-    protected final EntityAIBase field_175455_a = new EntityAIAvoidEntity(this, new Predicate()
-    {
-        private static final String __OBFID = "CL_00002208";
-        public boolean func_179911_a(Entity p_179911_1_)
-        {
-            return p_179911_1_ instanceof EntityCreeper && ((EntityCreeper)p_179911_1_).getCreeperState() > 0;
-        }
-        public boolean apply(Object p_apply_1_)
-        {
-            return this.func_179911_a((Entity)p_apply_1_);
-        }
-    }, 4.0F, 1.0D, 2.0D);
 
     public EntityPeacefullMob(World worldIn)
     {
@@ -194,7 +182,7 @@ public abstract class EntityPeacefullMob extends EntityCreature implements IMob
                 p_70652_1_.setFire(j * 4);
             }
 
-            this.func_174815_a(this, p_70652_1_);
+            this.applyEnchantments(this, p_70652_1_);
         }
 
         return flag;

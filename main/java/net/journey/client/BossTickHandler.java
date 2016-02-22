@@ -97,7 +97,7 @@ public class BossTickHandler {
 			EssenceBossStatus.statusBarTime--;
 			GuiIngame gig = mc.ingameGUI;
 			FontRenderer fontrenderer = this.mc.fontRendererObj;
-			ScaledResolution scaledresolution = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+			ScaledResolution scaledresolution = new ScaledResolution(mc);
 			int i = scaledresolution.getScaledWidth();
 			int barLength = 182;
 			int finalBarLength = barLength + 1;
