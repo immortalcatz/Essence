@@ -51,7 +51,7 @@ public class BlockModVine extends BlockMod implements IShearable {
 
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	{
-		return state.withProperty(UP, Boolean.valueOf(worldIn.getBlockState(pos.up()).getBlock().isSolidFullCube()));
+		return state.withProperty(UP, Boolean.valueOf(worldIn.getBlockState(pos.up()).getBlock().isFullCube()));
 	}
 
 	public void setBlockBoundsForItemRender()
