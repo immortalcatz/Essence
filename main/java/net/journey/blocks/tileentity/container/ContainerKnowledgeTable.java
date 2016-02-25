@@ -27,7 +27,7 @@ public class ContainerKnowledgeTable extends Container {
 	public void onContainerClosed(EntityPlayer playerIn) {
 		super.onContainerClosed(playerIn);
 		if(!world.isRemote) {
-			ItemStack itemstack = this.tableInventory.removeStackFromSlot(0);
+			ItemStack itemstack = this.tableInventory.getStackInSlotOnClosing(0);
 			if (itemstack != null) {
 				playerIn.dropPlayerItemWithRandomChoice(itemstack, false);
 			}
