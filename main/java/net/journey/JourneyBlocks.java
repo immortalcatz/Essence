@@ -63,7 +63,7 @@ public class JourneyBlocks {
 	public static final Block sapphireOre = new BlockModOre("sapphireOre", "Sapphire Ore").setHarvestLevel(EnumToolType.IRON_PICK);
 	public static final Block shadiumOre = new BlockModOre("shadiumOre", "Shadium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block luniumOre = new BlockModOre("luniumOre", "Lunium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
-	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", "Hellstone Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
+	public static final Block hellstoneOre = new BlockModOre("hellstoneOre", "Bloodcrust Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block ashualOre = new BlockModOre("ashualOre", "Ashual Ore");
 	public static final Block blaziumOre = new BlockModOre("blaziumOre", "Blazium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
 	public static final Block celestiumOre = new BlockModOre("celestiumOre", "Celestium Ore").setHarvestLevel(EnumToolType.DIAMOND_PICK);
@@ -137,8 +137,12 @@ public class JourneyBlocks {
 	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", "Corba Leaves", 0.2F);
 	public static final Block corbaPillar = new BlockMod("corbaPillar", "Corba Pillar");
 	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", "Corba Plank", 0.5F);
-	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
 	public static final Block corbaLamp = new BlockMod("corbaLamp", "Corba Lamp").setLightLevel(1.0F);
+	
+	public static final Block boilingLamp = new BlockDungeonBlock("boilingLamp", "Boiling Lamp", true).setLightLevel(1.0F);
+	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
+	public static final Block hotBlock = new BlockHotBlock("hotGround", "Hot Ground");
+	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
 	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", "Cloudia Dirt", 2.0F);
 	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", "Cloudia Grass", 2.0F);
@@ -179,9 +183,6 @@ public class JourneyBlocks {
 	public static final Block cloudiaPortalFrame = new BlockMod("cloudiaPortalFrame", "Cloudia Portal Frame", 3.0F);
 	
 	public static final Block depthsLights = new BlockMod("depthsLight", "Depths Light").setLightLevel(1.0F);
-
-	public static final Block hotBlock = new BlockHotBlock("hotGround", "Hot Ground");
-	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
 	
 	public static final Block fire = new BlockModFire("fire", "Fire");
 	

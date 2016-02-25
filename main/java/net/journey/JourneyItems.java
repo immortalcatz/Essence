@@ -67,7 +67,7 @@ public class JourneyItems {
 
 	public static int HEAD = 0, BODY = 1, LEGS = 2, BOOTS = 3;
 
-	public static final Item hellstoneIngot = new ItemMod("hellstoneIngot", "Hellstone Ingot");
+	public static final Item hellstoneIngot = new ItemMod("hellstoneIngot", "Bloodcrust Ingot");
 	public static final Item shadiumIngot = new ItemMod("shadiumIngot", "Shadium Ingot");
 	public static final Item celestiumIngot = new ItemMod("celestiumIngot", "Celestium Ingot");
 	public static final Item mekyumIngot = new ItemMod("mekyumIngot", "Mekyum Ingot");
@@ -145,7 +145,7 @@ public class JourneyItems {
 	public static final Item terrastar = new ItemMod("Terrastar", "Terrastar");
 	public static final Item purplePowder = new ItemMod("purplePowder", "Purple Powder");
 	
-	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Hellstone Dust");
+	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
 	public static final Item celestiumDust = new ItemMod("celestiumDust", "Celestium Dust");
 	public static final Item luniumDust = new ItemMod("luniumDust", "Lunium Dust");
@@ -159,7 +159,7 @@ public class JourneyItems {
 	public static final Item goldDust = new ItemMod("goldDust", "Gold Dust");
 	public static final Item ironDust = new ItemMod("ironDust", "Iron Dust");
 
-	public static final Item hellstoneClump = new ItemMod("hellstoneClump", "Hellstone Clump");
+	public static final Item hellstoneClump = new ItemMod("hellstoneClump", "Bloodcrust Clump");
 	public static final Item shadiumClump = new ItemMod("shadiumClump", "Shadium Clump");
 	public static final Item luniumClump = new ItemMod("luniumClump", "Lunium Clump");
 	public static final Item spawnerClump = new ItemMod("spawnerClump", "Spawner Clump");
@@ -177,7 +177,7 @@ public class JourneyItems {
 	**/
 	public static final Item fireBomb = new ItemMod("fireBomb", "Fire Bomb");
 
-	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", "Hellstone Multi Tool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
+	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", "Bloodcrust Multi Tool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
 	public static final Item shadiumMultiTool = new ItemMultiTool("shadiumMultiTool", "Shadium Multi Tool", EssenceToolMaterial.SHADIUM_MULTI_TOOL);
 	public static final Item celestiumMultiTool = new ItemMultiTool("celestiumMultiTool", "Celestium Multi Tool", EssenceToolMaterial.CELESTIUM_MULTI_TOOL);
 	public static final Item luniumMultiTool = new ItemMultiTool("luniumMultiTool", "Lunium Multi Tool", EssenceToolMaterial.LUNIUM_MULTI_TOOL);
@@ -195,7 +195,7 @@ public class JourneyItems {
 	public static final Item goldMultiTool = new ItemMultiTool("goldMultiTool", "Gold Multi Tool", EssenceToolMaterial.GOLD_MULTI_TOOL);
 	public static final Item diamondMultiTool = new ItemMultiTool("diamondMultiTool", "Diamond Multi Tool", EssenceToolMaterial.DIAMOND_MULTI_TOOL);
 
-	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", "Hellstone Pickaxe", EssenceToolMaterial.HELLSTONE);
+	public static final Item hellstonePickaxe = new ItemModPickaxe("hellstonePickaxe", "Bloodcrust Pickaxe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumPickaxe = new ItemModPickaxe("shadiumPickaxe", "Shadium Pickaxe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumPickaxe = new ItemModPickaxe("celestiumPickaxe", "Celestium Pickaxe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumPickaxe = new ItemModPickaxe("luniumPickaxe", "Lunium Pickaxe", EssenceToolMaterial.LUNIUM);
@@ -208,7 +208,7 @@ public class JourneyItems {
 	public static final Item storonPickaxe = new ItemModPickaxe("storonPickaxe", "Storon Pickaxe", EssenceToolMaterial.KORITE);
 	public static final Item mekyumPickaxe = new ItemModPickaxe("mekyumPickaxe", "Mekyum Pickaxe", EssenceToolMaterial.KORITE);
 
-	public static final Item hellstoneShovel = new ItemModShovel("hellstoneShovel", "Hellstone Shovel", EssenceToolMaterial.HELLSTONE);
+	public static final Item hellstoneShovel = new ItemModShovel("hellstoneShovel", "Bloodcrust Shovel", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumShovel = new ItemModShovel("shadiumShovel", "Shadium Shovel", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumShovel = new ItemModShovel("celestiumShovel", "Celestium Shovel", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumShovel = new ItemModShovel("luniumShovel", "Lunium Shovel", EssenceToolMaterial.LUNIUM);
