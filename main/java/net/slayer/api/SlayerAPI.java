@@ -4,22 +4,25 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.lwjgl.opengl.GL11;
-
 import net.journey.JITL;
 import net.journey.client.ChatHandler;
+import net.journey.entity.EssenceEntityList;
+import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.util.Config;
+import net.journey.util.GL11Helper;
 import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ServerCommandManager;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
@@ -36,6 +39,8 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
+import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
@@ -50,6 +55,8 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import org.lwjgl.opengl.GL11;
 
 public class SlayerAPI {
 
@@ -221,6 +228,22 @@ public class SlayerAPI {
 		public static final String	RESET		= SECTION_SIGN + "r";
 	}
 
+	/**
+	 * Not used in 1.8
+	 */
+	@Deprecated
+	public static void registerItemRenderer(Item i, IItemRenderer ir) {
+		MinecraftForgeClient.registerItemRenderer(i, ir);
+	}
+
+	/**
+	 * Not used in 1.8
+	 */
+	@Deprecated
+	public static void registerItemRenderer(Block b, IItemRenderer ir) {
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(b), ir);
+	}
+
 	@SideOnly(Side.CLIENT)
 	public static void sendMessageToAll(String message, boolean showMod) {
 		if(showMod) FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(SlayerAPI.Colour.DARK_AQUA + "[" + SlayerAPI.Colour.DARK_GREEN + MOD_NAME + SlayerAPI.Colour.DARK_AQUA + "] " + SlayerAPI.Colour.GREEN + message));
@@ -350,6 +373,15 @@ public class SlayerAPI {
 		return boolAddedToInventory;
 	}
 	
+	@SideOnly(Side.CLIENT)
+	public static void renderItem(ItemStack stack, double x, double y, double z, float scale) {
+		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+		if(stack != null) {
+			GL11.glTranslated(x, y, z);
+			GL11Helper.scale(scale);
+			renderItem.renderItemModel(stack);
+		}
+	}
 	
 	public static void addBow(Item bow, String name) {
 		SlayerAPI.registerModelBakery(bow, new String[] {SlayerAPI.PREFIX + name, SlayerAPI.PREFIX + name + "_0", SlayerAPI.PREFIX + name + "_1", SlayerAPI.PREFIX  + name + "_2"});

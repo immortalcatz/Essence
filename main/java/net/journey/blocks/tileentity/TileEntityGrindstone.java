@@ -2,17 +2,19 @@ package net.journey.blocks.tileentity;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ITickable;
 import net.slayer.api.SlayerAPI;
 
-public class TileEntityGrindstone extends TileEntity implements ITickable {
+public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerListBox {
 
 	public Item itemOnGrind = null;
 	public int state = 0, count = 0;

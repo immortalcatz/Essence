@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
@@ -68,10 +67,10 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			GlStateManager.texGen(GlStateManager.TexGen.T, 9217);
 			GlStateManager.texGen(GlStateManager.TexGen.R, 9217);
 			GlStateManager.texGen(GlStateManager.TexGen.Q, 9216);
-			GlStateManager.texGen(GlStateManager.TexGen.S, 9473, this.buff(1.0F, 0.0F, 0.0F, 0.0F));
-			GlStateManager.texGen(GlStateManager.TexGen.T, 9473, this.buff(0.0F, 0.0F, 1.0F, 0.0F));
-			GlStateManager.texGen(GlStateManager.TexGen.R, 9473, this.buff(0.0F, 0.0F, 0.0F, 1.0F));
-			GlStateManager.texGen(GlStateManager.TexGen.Q, 9474, this.buff(0.0F, 1.0F, 0.0F, 0.0F));
+			GlStateManager.func_179105_a(GlStateManager.TexGen.S, 9473, this.buff(1.0F, 0.0F, 0.0F, 0.0F));
+			GlStateManager.func_179105_a(GlStateManager.TexGen.T, 9473, this.buff(0.0F, 0.0F, 1.0F, 0.0F));
+			GlStateManager.func_179105_a(GlStateManager.TexGen.R, 9473, this.buff(0.0F, 0.0F, 0.0F, 1.0F));
+			GlStateManager.func_179105_a(GlStateManager.TexGen.Q, 9474, this.buff(0.0F, 1.0F, 0.0F, 0.0F));
 			GlStateManager.enableTexGenCoord(GlStateManager.TexGen.S);
 			GlStateManager.enableTexGenCoord(GlStateManager.TexGen.T);
 			GlStateManager.enableTexGenCoord(GlStateManager.TexGen.R);
@@ -89,7 +88,7 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 			GlStateManager.translate((float)ActiveRenderInfo.getPosition().xCoord * f5 / f9, (float)ActiveRenderInfo.getPosition().zCoord * f5 / f9, -f2);
 			Tessellator tessellator = Tessellator.getInstance();
 			WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-			worldrenderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
+			worldrenderer.startDrawingQuads();
 			float f12 = random.nextFloat() * 0.5F + 0.1F;
 			float f13 = random.nextFloat() * 0.5F + 0.4F;
 			float f14 = random.nextFloat() * 0.5F + 0.5F;
@@ -98,10 +97,11 @@ public class CorbaPortalRenderer extends TileEntitySpecialRenderer {
 				f13 = 1.0F;
 				f12 = 1.0F;
 			}
-			worldrenderer.pos(x, y + (double)f4, z).endVertex();
-			worldrenderer.pos(x, y + (double)f4, z + 1.0D).endVertex();
-			worldrenderer.pos(x + 1.0D, y + (double)f4, z + 1.0D).endVertex();
-			worldrenderer.pos(x + 1.0D, y + (double)f4, z).endVertex();
+			worldrenderer.setColorRGBA_F(f12 * f7, f13 * f7, f14 * f7, 1.0F);
+			worldrenderer.addVertex(x, y + (double)f4, z);
+			worldrenderer.addVertex(x, y + (double)f4, z + 1.0D);
+			worldrenderer.addVertex(x + 1.0D, y + (double)f4, z + 1.0D);
+			worldrenderer.addVertex(x + 1.0D, y + (double)f4, z);
 			tessellator.draw();
 			GlStateManager.popMatrix();
 			GlStateManager.matrixMode(5888);
