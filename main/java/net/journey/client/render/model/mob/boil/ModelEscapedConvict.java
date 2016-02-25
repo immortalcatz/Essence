@@ -29,11 +29,11 @@ public class ModelEscapedConvict extends ModelBase {
         this.arm1 = new ModelRenderer(this, 40, 16);
         this.arm1.setRotationPoint(-5.0F, 2.0F, 0.0F);
         this.arm1.addBox(-3.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F);
-        this.setRotation(arm1, 0.0F, 0.0F, 0.10000736613927509F);
+        this.setRotation(arm1, 0.0F, 0.0F, 0.0F);
         this.arm2 = new ModelRenderer(this, 32, 48);
         this.arm2.setRotationPoint(5.0F, 2.0F, -0.0F);
         this.arm2.addBox(-1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F);
-        this.setRotation(arm2, -0.015939081245670388F, 0.0F, -0.10000736613927509F);
+        this.setRotation(arm2, 0.0F, 0.0F, 0.0F);
         this.body = new ModelRenderer(this, 16, 16);
         this.body.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.body.addBox(-4.0F, 0.0F, -2.0F, 8, 12, 4, 0.0F);
