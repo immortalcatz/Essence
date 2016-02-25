@@ -335,12 +335,7 @@ public class ChunkProviderEuca implements IChunkProvider {
 	}
 
 	@Override
-	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) { }
-
-	@Override
-	public List<SpawnListEntry> getPossibleCreatures(
-			EnumCreatureType creatureType, BlockPos pos) {
-		// TODO Auto-generated method stub
-		return null;
+	public void recreateStructures(Chunk p_180514_1_, int par1, int par2) { 
+		
 	}
 }
