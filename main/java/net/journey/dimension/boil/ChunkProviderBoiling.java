@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.dimension.boil.gen.WorldGenBoilingLamp;
 import net.journey.dimension.corba.gen.WorldGenCorbaLamp;
 import net.journey.dimension.corba.gen.WorldGenCorbaVillage;
 import net.journey.dimension.corba.gen.WorldGenTreehouse;
@@ -356,8 +357,8 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.hotBlock)) {
-				new WorldGenCorbaLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
+				new WorldGenBoilingLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
 		}

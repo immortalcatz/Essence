@@ -44,7 +44,6 @@ public class ClientProxy extends CommonProxy {
 	public void clientPreInit() {
 		SlayerAPI.registerModelBakery(JourneyBlocks.miniColouredBricks, miniBricks);
 		SlayerAPI.registerModelBakery(JourneyBlocks.colouredBricks, brick);
-		SlayerAPI.registerModelBakery(JourneyBlocks.brisonBlocks, new String[] {SlayerAPI.PREFIX + "darkBrisonBrick", SlayerAPI.PREFIX + "redBrisonBrick", SlayerAPI.PREFIX + "smallBrisonBrick", SlayerAPI.PREFIX + "brisonStone"});
 		SlayerAPI.addBow(JourneyItems.flameBow, "flameBow");
 		SlayerAPI.addBow(JourneyItems.poisonBow, "poisonBow");
 		SlayerAPI.addBow(JourneyItems.darknessBow, "darknessBow");

@@ -18,14 +18,13 @@ public class WorldProviderBoiling extends WorldProvider {
 		this.worldChunkMgr = new WorldChunkManagerHell(DimensionHelper.boiling, 0.0F);
 		this.dimensionId = Config.boil;
 		isHellWorld = true;
-		hasNoSky=true;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float p_76562_1_, float p_76562_2_)
     {
-        return new Vec3(0.1, 0, 0);
+        return new Vec3(0.2, 0.1, 0);
     }
 	
 	@Override
@@ -65,7 +64,7 @@ public class WorldProviderBoiling extends WorldProvider {
 
 	@Override
 	public float calculateCelestialAngle(long var1, float var3) {
-		return 0.18F; 
+		return 0.6F; 
 	}
 
 	@Override

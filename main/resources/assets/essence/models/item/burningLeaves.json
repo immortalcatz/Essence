@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/terranianBars",
+	"parent": "essence:block/burningLeaves",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

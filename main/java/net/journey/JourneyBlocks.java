@@ -2,7 +2,6 @@ package net.journey;
 
 import java.util.ArrayList;
 
-import net.journey.blocks.BlockBrison;
 import net.journey.blocks.BlockBrittleIce;
 import net.journey.blocks.BlockCloud;
 import net.journey.blocks.BlockColouredBricks;
@@ -141,8 +140,14 @@ public class JourneyBlocks {
 	
 	public static final Block boilingLamp = new BlockDungeonBlock("boilingLamp", "Boiling Lamp", true).setLightLevel(1.0F);
 	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
-	public static final Block hotBlock = new BlockHotBlock("hotGround", "Hot Ground");
-	public static final Block ashBlock = new BlockMod("ashBlock", "Ash");
+	public static final BlockMod ashBlock = new BlockMod("ashBlock", "Ash");
+	public static final Block hotBlock = new BlockModGrass(ashBlock, "hotGround", "Hot Ground", 2.0F);
+	public static final Block brisonStone = new BlockMod("brisonStone", "Brison Stone", 2.0F);
+	public static final Block darkBrisonBrick = new BlockMod("darkBrisonBrick", "Dark Brison Brick", 2.0F);
+	public static final Block redBrisonBrick = new BlockMod("redBrisonBrick", "Red Brison Brick", 2.0F);
+	public static final Block smallBrisonBrick = new BlockMod("smallBrisonBrick", "Small Brison Brick", 2.0F);
+	public static final Block boilingBars = new BlockModBars("boilingBars", "Brison Bars");
+	public static final Block burningLeaves = new BlockModLeaves("burningLeaves", "Burning Leaves", 0.5F);
 	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", "Cloudia Dirt", 2.0F);
 	public static final Block cloudiaGrass = new BlockModGrass(cloudiaDirt, "cloudiaGrass", "Cloudia Grass", 2.0F);
@@ -159,6 +164,7 @@ public class JourneyBlocks {
 	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud", "Light Blue Cloudia Cloud");
 	
 	public static final Block corbaPost = new BlockModFence(pinkCloudiaCloud, "corbaPost", "Corba Post");
+	public static final Block sizzlingPost = new BlockModFence(pinkCloudiaCloud, "sizzlingPost", "Sizzling Post");
 	
 	/*public static final BlockMod wastelandsStone = new BlockWastelandsStone("wastelandsStone");
 	public static final Block wastelandsGrass = new BlockModGrass((BlockMod)null, "wastelandsGrass", 2.0F);
@@ -303,8 +309,6 @@ public class JourneyBlocks {
 
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
-	
-	public static final Block brisonBlocks = new BlockBrison();
 	
 	public static final Block corbaLadder = new BlockModLadder();
 	
