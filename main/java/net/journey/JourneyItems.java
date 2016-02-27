@@ -137,7 +137,6 @@ public class JourneyItems {
 	public static final Item crystalBall = new ItemMod("crystalBall", "Crystal Ball");
 	public static final Item floroPedal = new ItemMod("floroPedal", "Floro Pedal");
 	public static final Item glowshroomPowder = new ItemMod("glowshroomPowder", "Glowshroom Powder");
-	public static final Item cloudiaGem = new ItemMod("cloudiaGem", "Cloudia Gem");
 	public static final Item stoneStick = new ItemMod("stoneStick", "Stone Stick");
 	public static final Item darkTerrarianSoil = new ItemMod("darkTerrarianSoil", "Dark Terrarian Soil");
 	public static final Item earthenCrystal = new ItemMod("earthenCrystal", "EarthenCrystal");
@@ -309,6 +308,8 @@ public class JourneyItems {
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem", "Euca Portal Gem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem", "Depths Portal Gem");
 	public static final Item corbaPortalGem = new ItemMod("corbaPortalGem", "Corba Portal Gem");
+	public static final Item terraniaPortalGem = new ItemMod("terraniaPortalGem", "Terrania Portal Gem");
+	public static final Item cloudiaPortalGem = new ItemMod("cloudiaPortalGem", "Cloudia Portal Gem");
 	//public static final Item wastelandPortalGem = new ItemMod("wastelandPortalGem");
 
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb", "Calcia Orb");
@@ -319,6 +320,7 @@ public class JourneyItems {
 	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Pet Roc Egg", "Overworld");
 	public static final Item soulWatcherOrb = new ItemSpecificDimensionSpawner(Config.boil, "soulWatcherOrb", "Soul Watcher Orb", "Boiling Point");
 	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Sentry King Orb", "Corba");
+	public static final Item loggerOrb = new ItemSpecificDimensionSpawner(Config.corba, "loggerOrb", "Logger Orb", "Corba");
 	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Thunderbird Orb", "Depths");
 	public static final Item mysteriousDisk = new ItemSpecificDimensionSpawner(Config.cloudia, "mysteriousDisk", "Mysterious Disk", "Cloudia");
 	public static final Item corallatorOrb = new ItemSpecificDimensionSpawner(Config.euca, "corallatorOrb", "Corallator Orb", "Euca");

@@ -32,8 +32,8 @@ public class ItemFlameCoin extends ItemMod {
 			return false;
 		} else {
 			Block block = w.getBlockState(pos).getBlock();
-			if(block == JourneyBlocks.frozenPortalFrame ||block == JourneyBlocks.eucaPortalFrame || block == JourneyBlocks.depthsPortalFrame || block == JourneyBlocks.boilPortalFrame
-					 || block == JourneyBlocks.cloudiaPortalFrame/* || block == EssenceBlocks.wastelandsPortalFrame*/) {
+			if(block == JourneyBlocks.frozenPortalFrame ||block == JourneyBlocks.eucaPortalFrame || block == JourneyBlocks.depthsPortalFrame || block == JourneyBlocks.boilPortalFrame 
+					 || block == JourneyBlocks.cloudiaPortalFrame || block == JourneyBlocks.terraniaPortalFrame){
 				w.setBlockState(new BlockPos(pos.up()), JourneyBlocks.fire.getDefaultState(), 2);
 				return true;
 			}
@@ -76,6 +76,6 @@ public class ItemFlameCoin extends ItemMod {
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
-		list.add(SlayerAPI.Colour.GREEN + "Used to light portals.");
+		list.add(SlayerAPI.Colour.GREEN + "Key item used to light all portals.");
 	}
 }

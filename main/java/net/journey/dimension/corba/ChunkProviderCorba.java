@@ -363,7 +363,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.corbaGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenTreehouse().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
@@ -373,7 +373,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 4, z, JourneyBlocks.corbaGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaVillage().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
@@ -383,7 +383,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.corbaGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}

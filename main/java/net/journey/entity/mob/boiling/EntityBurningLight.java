@@ -49,13 +49,6 @@ public class EntityBurningLight extends EntityModMob{
 	}
 	
 	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
-		return super.attackEntityFrom(e, a);
-	}
-	
-	@Override
 	public Item getItemDropped() {
 		return null;
 	}

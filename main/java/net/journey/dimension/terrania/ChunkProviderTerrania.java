@@ -365,7 +365,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.terranianGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.terranianGrass)) {
 				new WorldGenTreeHut().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
@@ -375,7 +375,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.terranianGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.terranianGrass)) {
 				new WorldGenHollowTree().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
@@ -385,7 +385,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord - 3, z, JourneyBlocks.terranianGrass)) {
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.terranianGrass)) {
 				new WorldGenTerranianLamp().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}

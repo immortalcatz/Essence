@@ -19,7 +19,6 @@ import net.journey.blocks.BlockIcicle;
 import net.journey.blocks.BlockJoinedGlass;
 import net.journey.blocks.BlockJoinedPane;
 import net.journey.blocks.BlockMiniColouredBricks;
-import net.journey.blocks.BlockTerraniaPortalFrame;
 import net.journey.blocks.base.BlockModFire;
 import net.journey.blocks.base.BlockModOre;
 import net.journey.blocks.crop.BlockCorveggieCrop;
@@ -191,7 +190,7 @@ public class JourneyBlocks {
 	
 	public static final Block depthsLights = new BlockMod("depthsLight", "Depths Light").setLightLevel(1.0F);
 	
-	public static final Block fire = new BlockModFire("fire", "Fire");
+	public static final Block fire = new BlockModFire("fire", "Essential Fire");
 	
 	public static final Block mossyEssenceStone = new BlockMod("mossyEssenceStone", "Mossy Essence Stone", 2.0F);
 

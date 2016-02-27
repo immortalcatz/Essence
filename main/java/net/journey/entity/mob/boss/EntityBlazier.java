@@ -134,14 +134,22 @@ public class EntityBlazier extends EntityEssenceBoss {
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		switch(rand.nextInt(7)) {
-		case 0: dropItem(JourneyItems.sizzlerSword, 1); break;
-		case 1: dropItem(JourneyItems.blazingBow, 1); break;
-		case 2: dropItem(JourneyItems.flameHelmet, 1); break;
-		case 3: dropItem(JourneyItems.flameLegs, 1); break;
-		case 4: dropItem(JourneyItems.flameChest, 1); break;
-		case 5: dropItem(JourneyItems.flameBoots, 1); break;
-		case 6: dropItem(JourneyItems.sizzlingKnife, 128); break;
+		switch(rand.nextInt(3)) {
+		case 0: dropItem(JourneyItems.blazingBow, 1); 
+			dropItem(JourneyItems.flameHelmet, 1); 
+			dropItem(JourneyItems.flameLegs, 1);
+			dropItem(JourneyItems.flameChest, 1);
+			dropItem(JourneyItems.flameBoots, 1);break;
+		case 1: dropItem(JourneyItems.sizzlerSword, 1);
+			dropItem(JourneyItems.flameHelmet, 1); 
+			dropItem(JourneyItems.flameLegs, 1);
+			dropItem(JourneyItems.flameChest, 1);
+			dropItem(JourneyItems.flameBoots, 1);break;
+		case 3: dropItem(JourneyItems.sizzlingKnife, 128);
+			dropItem(JourneyItems.flameHelmet, 1); 
+			dropItem(JourneyItems.flameLegs, 1);
+			dropItem(JourneyItems.flameChest, 1);
+			dropItem(JourneyItems.flameBoots, 1);break;
 		}
 	}
 

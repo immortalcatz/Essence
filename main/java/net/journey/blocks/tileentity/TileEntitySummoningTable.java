@@ -57,14 +57,88 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 	@Override
 	public void update() {
 		if(inventory[0] != null && inventory[1] != null && inventory[2] != null && inventory[3] != null && inventory[4] != null && inventory[5] != null && inventory[6] != null) {
-			if(areItemsInSlots(JourneyItems.boilPowder, JourneyItems.boilPowder, JourneyItems.boilPowder, JourneyItems.blazingFireball, JourneyItems.boilPowder, JourneyItems.boilPowder, JourneyItems.boilPowder)) {
+			if(areItemsInSlots(
+					JourneyItems.boilPowder, 
+					JourneyItems.boilPowder, 
+					JourneyItems.boilPowder, 
+						JourneyItems.blazingFireball, 
+					JourneyItems.boilPowder, 
+					JourneyItems.boilPowder, 
+					JourneyItems.boilPowder)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.blazierOrb);
 				addParticles();
 			}
-			else if(areItemsInSlots(JourneyItems.snakeFlesh, JourneyItems.boilPowder, JourneyItems.snakeFlesh, JourneyItems.sizzlingEye, JourneyItems.snakeFlesh, JourneyItems.boilPowder, JourneyItems.snakeFlesh)) {
+			else if(areItemsInSlots(
+					JourneyItems.snakeFlesh, 
+					JourneyItems.boilPowder, 
+					JourneyItems.snakeFlesh, 
+						JourneyItems.sizzlingEye, 
+					JourneyItems.snakeFlesh, 
+					JourneyItems.boilPowder, 
+					JourneyItems.snakeFlesh)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.soulWatcherOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.natureTablet, 
+					JourneyItems.enchantedLeaf, 
+					JourneyItems.natureTablet, 
+						JourneyItems.overgrownNatureBall, 
+					JourneyItems.natureTablet, 
+					JourneyItems.enchantedLeaf, 
+					JourneyItems.natureTablet)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.loggerOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.overseeingEye, 
+					JourneyItems.collectorRock, 
+					JourneyItems.overseeingEye, 
+						JourneyItems.overseeingTablet, 
+					JourneyItems.overseeingEye, 
+					JourneyItems.collectorRock, 
+					JourneyItems.overseeingEye)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.sentryKingOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.depthsFlake, 
+					JourneyItems.beastlyStomach, 
+					JourneyItems.depthsFlake, 
+						JourneyItems.darkOrb, 
+					JourneyItems.depthsFlake, 
+					JourneyItems.beastlyStomach, 
+					JourneyItems.depthsFlake)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.scaleOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.rocFeather, 
+					JourneyItems.darkCrystal, 
+					JourneyItems.rocFeather, 
+						JourneyItems.darkOrb, 
+					JourneyItems.rocFeather, 
+					JourneyItems.darkCrystal, 
+					JourneyItems.rocFeather)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.thunderbirdOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.gateKeys, 
+					JourneyItems.goldClump, 
+					JourneyItems.gateKeys, 
+						JourneyItems.royalDisk, 
+					JourneyItems.gateKeys, 
+					JourneyItems.goldClump, 
+					JourneyItems.gateKeys)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.corallatorOrb);
 				addParticles();
 			}
 		}

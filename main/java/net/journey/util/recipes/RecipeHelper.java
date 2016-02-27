@@ -21,11 +21,12 @@ public class RecipeHelper {
 		JourneyBlocks b = new JourneyBlocks();
 		JourneyItems i = new JourneyItems();
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.flameCoin), new Object[] {"iii", "idi", "iii", 'i', Items.gold_ingot, 'd', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.cloudiaPortalFrame, 4), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.cloudiaGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 6), new Object[] {"   ", "iii", "iii", 'i', JourneyItems.corbaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 4), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.cloudiaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.cloudiaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 12), new Object[] {"   ", "iii", "iii", 'i', JourneyItems.corbaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.terraniaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.terraniaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 10), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.stoneClump});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});

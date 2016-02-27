@@ -1,6 +1,6 @@
 {
 	"parent": "block/cross",
 	"textures": {
-		"cross": "blocks/fire_layer_0"
+		"cross": "essence:blocks/essentialFire"
 	}
 }
