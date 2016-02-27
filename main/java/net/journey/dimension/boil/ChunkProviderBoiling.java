@@ -146,7 +146,6 @@ public class ChunkProviderBoiling implements IChunkProvider {
 									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.ashBlock.getDefaultState());
 								}
 							}
-
 							d10 += d12;
 							d11 += d13;
 						}

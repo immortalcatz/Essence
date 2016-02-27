@@ -461,8 +461,6 @@ public class JourneyItems {
 	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 4, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 4, 1.2F, false, false).setAlwaysEdible();
 
-	public static final ItemModDoor hotDoorItem = new ItemModDoor(JourneyBlocks.hotDoor, "hotDoor", "Hot Door");
-
 	//public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
 	public static final Item essenceArrow = new ItemMod("essenceArrow", "Essence Arrow", JourneyTabs.ranged);
 

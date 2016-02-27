@@ -52,6 +52,10 @@ public class BlockModGrass extends BlockMod implements IGrowable {
 	}
 
 	@Override
+	public boolean isFireSource(World world, BlockPos pos, EnumFacing side) {
+		return true;
+	}
+	@Override
 	public Item getItem(World w, BlockPos pos) {
 		return Item.getItemFromBlock(this);
 	}
