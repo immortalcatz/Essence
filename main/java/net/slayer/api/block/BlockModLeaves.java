@@ -23,6 +23,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
 	
     protected int[] adjacentTreeBlocks;
 	private boolean isFrozenPlant = false;
+	private boolean isBurningPlant = false;
 
     public BlockModLeaves(String name, String finalName, float hardness) {
         super(EnumMaterialTypes.LEAVES, name, finalName, hardness);
@@ -33,6 +34,11 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     
     public BlockModLeaves setFrozenPlant() {
 		isFrozenPlant = true;
+		return this;
+	}
+    
+    public BlockModLeaves setBurningPlant() {
+		isBurningPlant = true;
 		return this;
 	}
     
@@ -49,7 +55,19 @@ public class BlockModLeaves extends BlockMod implements IShearable {
 				}
 			}
 		}
-	}
+		if(isBurningPlant) {
+		if(random.nextInt(2) == 0) {
+			for(int i = 0; i < 100; ++i) {
+				double d0 = (double)pos.getX() + rand.nextDouble() * 0;
+				double d1 = (double)pos.getY() + rand.nextDouble() * 0D + 0D;
+				double d2 = (double)pos.getZ() + rand.nextDouble() * 0;
+				//w.spawnParticle(EnumParticleTypes.LAVA, d0 * rand.nextFloat(), d1, d2 * rand.nextFloat(), 0, 0D, 0, new int[0]);
+				w.spawnParticle(EnumParticleTypes.FLAME, d0 * rand.nextFloat(), d1, d2 * rand.nextFloat(), 0, 0D, 0, new int[0]);
+				w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 * rand.nextFloat(), d1, d2 * rand.nextFloat(), 0, 0D, 0, new int[0]);
+					}
+				}
+			}
+		}
 
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState s) {

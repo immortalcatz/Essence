@@ -147,7 +147,7 @@ public class JourneyBlocks {
 	public static final Block redBrisonBrick = new BlockMod("redBrisonBrick", "Red Brison Brick", 2.0F);
 	public static final Block smallBrisonBrick = new BlockMod("smallBrisonBrick", "Small Brison Brick", 2.0F);
 	public static final Block boilingBars = new BlockModBars("boilingBars", "Brison Bars");
-	public static final Block burningLeaves = new BlockModLeaves("burningLeaves", "Burning Leaves", 0.5F);
+	public static final Block burningLeaves = new BlockModLeaves("burningLeaves", "Burning Leaves", 0.5F).setBurningPlant();
 	public static final Block boilingLog = new BlockModLog("boilingLog", "Boiling Log"); 
 	
 	public static final BlockMod cloudiaDirt = new BlockMod(EnumMaterialTypes.DIRT, "cloudiaDirt", "Cloudia Dirt", 2.0F);
