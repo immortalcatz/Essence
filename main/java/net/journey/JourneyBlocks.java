@@ -308,7 +308,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	public static final Block corbaLadder = new BlockModLadder();
+	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
