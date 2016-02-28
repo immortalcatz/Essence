@@ -25,7 +25,7 @@ public class ItemGun extends ItemMod {
 	private EnumSounds sound;
 	
 	public ItemGun(String name, String f, Item ammo, float damage, int uses, EnumSounds sound, Class<? extends Entity> projectile) {
-		super(name, f, JourneyTabs.ranged);
+		super(name, f, JourneyTabs.staves);
 		setMaxStackSize(1);
 		setMaxDamage(uses);
 		setFull3D();
@@ -36,7 +36,7 @@ public class ItemGun extends ItemMod {
 	}
 	
 	public ItemGun(String name, String f, Item ammo, float damage, Class<? extends Entity> projectile) {
-		super(name, f, JourneyTabs.ranged);
+		super(name, f, JourneyTabs.staves);
 		setMaxStackSize(1);
 		setMaxDamage(500);
 		setFull3D();

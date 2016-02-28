@@ -41,7 +41,7 @@ public class BlockModVine extends BlockMod implements IShearable {
 		super(EnumMaterialTypes.VINES, name, finalName, 0.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
 		this.setTickRandomly(true);
-		this.setCreativeTab(JourneyTabs.decoraton);
+		this.setCreativeTab(JourneyTabs.decoration);
 	}
 
 	@Override

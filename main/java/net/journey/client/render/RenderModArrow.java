@@ -18,7 +18,7 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class RenderModArrow extends Render {
 	
-    private static final ResourceLocation arrowTextures = new ResourceLocation("textures/entity/arrow.png");
+    private static final ResourceLocation arrowTextures = new ResourceLocation("essence/textures/entity/essenceArrow.png");
 
     public RenderModArrow() {
         super(Minecraft.getMinecraft().getRenderManager());

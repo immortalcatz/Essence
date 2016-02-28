@@ -38,7 +38,7 @@ public class BlockMiniColouredBricks extends Block {
 	public BlockMiniColouredBricks() {
 		super(EnumMaterialTypes.STONE.getMaterial());
 		setStepSound(EnumMaterialTypes.STONE.getSound());
-		setCreativeTab(JourneyTabs.decoraton);
+		setCreativeTab(JourneyTabs.decoration);
 		setHardness(2.0F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(type, BlockMiniColouredBricks.EnumMetadata.BLACK));
 		GameRegistry.registerBlock(this, ItemMiniBlockMetadata.class, "blockMiniColouredBricks");

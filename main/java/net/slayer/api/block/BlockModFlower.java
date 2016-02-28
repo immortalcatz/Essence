@@ -31,7 +31,7 @@ public class BlockModFlower extends BlockMod implements IPlantable {
 		this.setTickRandomly(true);
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
-		this.setCreativeTab(JourneyTabs.decoraton);
+		this.setCreativeTab(JourneyTabs.decoration);
 	}
 
 	public BlockModFlower setContactDamage() {

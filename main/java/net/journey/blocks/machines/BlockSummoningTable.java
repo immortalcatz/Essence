@@ -17,7 +17,7 @@ import net.slayer.api.entity.tileentity.container.BlockModContainer;
 public class BlockSummoningTable extends BlockModContainer {
 
 	public BlockSummoningTable(String name, String f) {
-		super(EnumMaterialTypes.STONE, name, f, 2.0F, JourneyTabs.blocks);
+		super(EnumMaterialTypes.STONE, name, f, 2.0F, JourneyTabs.machineBlocks);
 	}
 
 	@Override

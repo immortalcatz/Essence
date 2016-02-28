@@ -17,7 +17,7 @@ public class ItemThrowable extends ItemMod {
 		super(name, f);
 		this.damage = damage;
 		this.entity = entity;
-		setCreativeTab(JourneyTabs.ranged);
+		setCreativeTab(JourneyTabs.piercers);
 	}
 
 	@Override

@@ -10,16 +10,20 @@ import net.minecraft.item.ItemStack;
 public class JourneyTabs extends CreativeTabs {
 	
 	public static final JourneyTabs blocks = new JourneyTabs("journey.blocks");
-	public static final JourneyTabs decoraton = new JourneyTabs("journey.decoration");
+	public static final JourneyTabs decoration = new JourneyTabs("journey.decoration");
 	public static final JourneyTabs items = new JourneyTabs("journey.items");
 	public static final JourneyTabs tools = new JourneyTabs("journey.tools");
-	public static final JourneyTabs weapons = new JourneyTabs("journey.weapons");
-	public static final JourneyTabs ranged = new JourneyTabs("journey.ranged");
+	public static final JourneyTabs swords = new JourneyTabs("journey.swords");
+	public static final JourneyTabs battleaxes = new JourneyTabs("journey.battleaxes");
+	public static final JourneyTabs bows = new JourneyTabs("journey.bows");
+	public static final JourneyTabs piercers = new JourneyTabs("journey.piercers");
+	public static final JourneyTabs staves = new JourneyTabs("journey.staves");
 	public static final JourneyTabs util = new JourneyTabs("journey.util");
 	public static final JourneyTabs misc = new JourneyTabs("journey.misc");
 	public static final JourneyTabs armor = new JourneyTabs("journey.armor");
 	public static final JourneyTabs spawners = new JourneyTabs("journey.spawners");
 	public static final JourneyTabs crops = new JourneyTabs("journey.crops");
+	public static final JourneyTabs machineBlocks = new JourneyTabs("journey.machineBlocks");
 
 	public Item item;
 	
@@ -45,14 +49,20 @@ public class JourneyTabs extends CreativeTabs {
 	}
 	
 	public static void init(){
-		decoraton.setIcon(JourneyBlocks.terraniaLamp);
-		spawners.setIcon(JourneyItems.sentryKingOrb);
-		blocks.setIcon(JourneyBlocks.celestiumBlock);
+		blocks.setIcon(JourneyBlocks.cloudiaRock);
+		decoration.setIcon(JourneyBlocks.boilingLamp);
 		items.setIcon(JourneyItems.koriteIngot);
 		tools.setIcon(JourneyItems.multiToolOfEternalSmelting);
+		swords.setIcon(JourneyItems.terronicBlade);
+		battleaxes.setIcon(JourneyItems.backBiter);
+		bows.setIcon(JourneyItems.flamingBow);
+		piercers.setIcon(JourneyItems.eucaPiercer);
+		staves.setIcon(JourneyItems.conjuringStaff);
 		util.setIcon(JourneyItems.flameCoin);
 		misc.setIcon(JourneyItems.weakDarkEnergyPotion);
 		armor.setIcon(JourneyItems.twilightHelmet);
+		spawners.setIcon(JourneyItems.sentryKingOrb);
 		crops.setIcon(JourneyItems.crackenCaneSeeds);
+		machineBlocks.setIcon(JourneyBlocks.summoningTable);
 	}
 }
