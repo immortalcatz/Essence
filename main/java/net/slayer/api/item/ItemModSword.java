@@ -24,7 +24,7 @@ public class ItemModSword extends ItemSword {
         LangRegistry.addItem(name, f);
         setUnlocalizedName(name);
         mat = toolMaterial;
-        setCreativeTab(JourneyTabs.swords);
+        setCreativeTab(JourneyTabs.weapons);
         JourneyItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }

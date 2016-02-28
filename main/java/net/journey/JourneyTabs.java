@@ -9,21 +9,17 @@ import net.minecraft.item.ItemStack;
 
 public class JourneyTabs extends CreativeTabs {
 	
-	public static final JourneyTabs blocks = new JourneyTabs("Blocks");
-	public static final JourneyTabs decoraton = new JourneyTabs("Decoration");
-	public static final JourneyTabs items = new JourneyTabs("Items");
-	public static final JourneyTabs tools = new JourneyTabs("Tools");
-	public static final JourneyTabs swords = new JourneyTabs("Swords");
-	public static final JourneyTabs battleaxes = new JourneyTabs("Battleaxes");
-	public static final JourneyTabs bows = new JourneyTabs("Bows");
-	public static final JourneyTabs wands_staves = new JourneyTabs("Wands_Staves");
-	public static final JourneyTabs util = new JourneyTabs("Utility");
-	//public static final JourneyTabs misc = new JourneyTabs("Miscellaneous");
-	public static final JourneyTabs armor = new JourneyTabs("Armor");
-	public static final JourneyTabs spawners = new JourneyTabs("Spawners");
-	public static final JourneyTabs crops = new JourneyTabs("Crops");
-	public static final JourneyTabs ammunition = new JourneyTabs("Ammo");
-	public static final JourneyTabs piercers = new JourneyTabs("Piercers");
+	public static final JourneyTabs blocks = new JourneyTabs("journey.blocks");
+	public static final JourneyTabs decoraton = new JourneyTabs("journey.decoration");
+	public static final JourneyTabs items = new JourneyTabs("journey.items");
+	public static final JourneyTabs tools = new JourneyTabs("journey.tools");
+	public static final JourneyTabs weapons = new JourneyTabs("journey.weapons");
+	public static final JourneyTabs ranged = new JourneyTabs("journey.ranged");
+	public static final JourneyTabs util = new JourneyTabs("journey.util");
+	public static final JourneyTabs misc = new JourneyTabs("journey.misc");
+	public static final JourneyTabs armor = new JourneyTabs("journey.armor");
+	public static final JourneyTabs spawners = new JourneyTabs("journey.spawners");
+	public static final JourneyTabs crops = new JourneyTabs("journey.crops");
 
 	public Item item;
 	
@@ -54,13 +50,9 @@ public class JourneyTabs extends CreativeTabs {
 		blocks.setIcon(JourneyBlocks.celestiumBlock);
 		items.setIcon(JourneyItems.koriteIngot);
 		tools.setIcon(JourneyItems.multiToolOfEternalSmelting);
-		swords.setIcon(JourneyItems.fluffyBlade);
-		bows.setIcon(JourneyItems.starlightBow);
-		wands_staves.setIcon(JourneyItems.wizardsStar);
 		util.setIcon(JourneyItems.flameCoin);
-		//misc.setIcon(JourneyItems.weakDarkEnergyPotion);
+		misc.setIcon(JourneyItems.weakDarkEnergyPotion);
 		armor.setIcon(JourneyItems.twilightHelmet);
 		crops.setIcon(JourneyItems.crackenCaneSeeds);
-		ammunition.setIcon(JourneyItems.essenceArrow);
 	}
 }

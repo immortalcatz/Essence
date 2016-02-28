@@ -34,7 +34,7 @@ public class ItemStaff extends ItemMod {
 		setMaxDamage(uses);
 		setMaxStackSize(1);
 		setFull3D();
-		setCreativeTab(JourneyTabs.wands_staves);
+		setCreativeTab(JourneyTabs.ranged);
 	}
 
 	@Override
