@@ -3,6 +3,7 @@ package net.journey.items;
 import java.util.List;
 
 import net.journey.JourneyTabs;
+import net.journey.client.server.DarkEnergyBar;
 import net.journey.client.server.EssenceBar;
 import net.journey.entity.projectile.EntityChaosProjectile;
 import net.journey.enums.EnumSounds;
@@ -24,7 +25,7 @@ public class ItemChaosCannon extends ItemMod {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(!world.isRemote) {
-			if(EssenceBar.getProperties(player).useBar(1)) {
+			if(DarkEnergyBar.getProperties(player).useBar(1)) {
 				world.spawnEntityInWorld(new EntityChaosProjectile(world, player));
 				EnumSounds.playSound(EnumSounds.CANNON, world, player);
 				stack.damageItem(1, player);
@@ -35,7 +36,6 @@ public class ItemChaosCannon extends ItemMod {
 
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {
-		l.add("Spawns a weak bouncing projectile");
 		l.add("Rapid fire");
 		l.add("Infinite ammo");
 		l.add("Uses 1 Essence");

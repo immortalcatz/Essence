@@ -266,7 +266,7 @@ public class JourneyItems {
 	public static final Item championsSword = new ItemModSword("championsSword", "Champions Sword", EssenceToolMaterial.CHAMPIONS_SWORD);
 	public static final Item theWraith = new ItemModSword("theWraith", "The Wraith", EssenceToolMaterial.THE_WRAITH);
 	public static final Item bubbleSword = new ItemModSword("bubbleSword", "Bubble Sword", EssenceToolMaterial.BUBBLE_SWORD);
-	public static final Item boilingBlade = new ItemModSword("boilingBlade", "Boiling Blade", EssenceToolMaterial.BOILING_BLADE);
+	public static final Item boilingBlade = new ItemFireSword("boilingBlade", "Boiling Blade", EssenceToolMaterial.BOILING_BLADE);
 	public static final Item loggersSword = new ItemModSword("loggersSword", "Loggers Sword", EssenceToolMaterial.LOGGERS_SWORD);
 	public static final Item naturesBlade = new ItemModSword("naturesBlade", "Natures Blade", EssenceToolMaterial.NATURES_BLADE);
 	public static final Item depthsDarksword = new ItemModSword("depthsDarksword", "Depths Darksword", EssenceToolMaterial.DEPTHS_DARKSWORD);
@@ -275,14 +275,13 @@ public class JourneyItems {
 	public static final Item frostySword = new ItemModSword("frostySword", "Frosty Sword", EssenceToolMaterial.FROSTY_SWORD);
 	public static final Item frostbittenSword = new ItemModSword("frostbittenSword", "Frostbitten Sword", EssenceToolMaterial.FROSTBITTEN_SWORD);
 	public static final Item treeHugger = new ItemModSword("treeHugger", "Tree Hugger", EssenceToolMaterial.TREE_HUGGER);
-	public static final Item healersBlade = new ItemModSword("healersBlade", "Healers Blade", EssenceToolMaterial.HEALERS_BLADE);
-	public static final Item coreMender = new ItemModSword("coreMender", "Core Mender", EssenceToolMaterial.CORE_MENDER);
-	public static final Item royalBlade = new ItemModSword("royalBlade", "Royal Blade", EssenceToolMaterial.ROYAL_BLADE);
-	public static final Item royalStabber = new ItemModSword("royalStabber", "Royal Stabber", EssenceToolMaterial.ROYAL_STABBER);
+	public static final Item coreMender = new ItemFireSword("coreMender", "Core Mender", EssenceToolMaterial.CORE_MENDER);
+	public static final Item royalBlade = new ItemPoisionSword("royalBlade", "Royal Blade", EssenceToolMaterial.ROYAL_BLADE);
+	public static final Item royalStabber = new ItemPoisionSword("royalStabber", "Royal Stabber", EssenceToolMaterial.ROYAL_STABBER);
 	public static final Item rocSword = new ItemModSword("rocSword", "Roc Sword", EssenceToolMaterial.ROC_SWORD);
 	public static final Item swordOfTheThunderbird = new ItemModSword("swordOfTheThunderbird", "Sword of the Thunderbird", EssenceToolMaterial.SWORD_THUNDERBIRD);
 	public static final Item bloodwieldSword = new ItemModSword("bloodWieldSword", "Blood Wielder", EssenceToolMaterial.BLOODWIELD_SWORD);
-	public static final Item charredBlade = new ItemModSword("charredBlade", "Charred Blade", EssenceToolMaterial.CHARRED_BLADE);
+	public static final Item charredBlade = new ItemWitherSword("charredBlade", "Charred Blade", EssenceToolMaterial.CHARRED_BLADE);
 	public static final Item sizzlerSword = new ItemModSword("sizzlerSword", "Sizzler Sword", EssenceToolMaterial.SIZZLER_SWORD);
 	public static final Item fluffyBlade = new ItemModSword("fluffyBlade", "Fluffy Blade", EssenceToolMaterial.FLUFFY_BLADE);
 	public static final Item golemSword = new ItemModSword("golemSword", "Golem Sword", EssenceToolMaterial.GOLEM_SWORD);
@@ -301,9 +300,13 @@ public class JourneyItems {
 	public static final Item terranaSword = new ItemModSword("terranaSword", "Terrana Sword", EssenceToolMaterial.TERRANA_SWORD);
 	public static final Item terrolicaSword = new ItemModSword("terrolicaSword", "Terrolica Sword", EssenceToolMaterial.TERROLICA_SWORD);
 	public static final Item voliteSword = new ItemModSword("voliteSword", "Volite Sword", EssenceToolMaterial.VOLITE_SWORD);
-	public static final Item terronicBlade = new ItemModSword("terronicBlade", "Terronic Blade", EssenceToolMaterial.TERRONIC_BLADE);
+	
+	public static final Item healersBlade = new ItemHealthSword("healersBlade", "Healers Blade", EssenceToolMaterial.HEALERS_BLADE, 2);
+	public static final Item terronicBlade = new ItemAddedHealthSword("terronicBlade", "Terronic Blade", EssenceToolMaterial.TERRONIC_BLADE, 4);
+	
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Developer Sword", EssenceToolMaterial.DEVELOPER_SWORD);
+	
 	
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem", "Euca Portal Gem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem", "Depths Portal Gem");
