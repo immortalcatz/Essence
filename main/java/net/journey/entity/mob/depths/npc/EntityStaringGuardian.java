@@ -17,7 +17,6 @@ import net.slayer.api.entity.EntityModVillager;
 
 public class EntityStaringGuardian extends EntityModVillager {
 
-	@SuppressWarnings("do this")
 	public EntityStaringGuardian(World var1) {
 		super(var1);
 	}

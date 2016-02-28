@@ -26,7 +26,7 @@ public class ItemHonglow extends ItemFood {
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
         JourneyItems.itemNames.add(name);
-        setCreativeTab(JourneyTabs.misc);
+        setCreativeTab(JourneyTabs.crops);
     }
 
     @Override

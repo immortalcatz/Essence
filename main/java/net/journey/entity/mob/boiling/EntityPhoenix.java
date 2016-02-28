@@ -9,7 +9,6 @@ import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityPhoenix extends EntityPeacefullUntillAttacked {
 
-	@SuppressWarnings("do this")
 	public EntityPhoenix(World w) {
 		super(w);
 	}

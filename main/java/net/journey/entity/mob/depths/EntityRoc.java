@@ -8,8 +8,7 @@ import net.minecraft.world.World;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityRoc extends EntityPeacefullUntillAttacked {
-
-	@SuppressWarnings("do this")
+	
 	public EntityRoc(World w) {
 		super(w);
 	}

@@ -9,7 +9,6 @@ import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityShiverwing extends EntityPeacefullUntillAttacked {
 
-	@SuppressWarnings("do this")
 	public EntityShiverwing(World w) {
 		super(w);
 	}

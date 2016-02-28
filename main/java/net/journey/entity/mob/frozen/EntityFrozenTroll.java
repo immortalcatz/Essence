@@ -18,7 +18,6 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityFrozenTroll extends EntityModMob {
 
-	@SuppressWarnings("do this")
 	public EntityFrozenTroll(World par1World) {
 		super(par1World);
 		addAttackingAI();

@@ -9,7 +9,6 @@ import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityCloudFlyer extends EntityPeacefullUntillAttacked {
 
-	@SuppressWarnings("do this")
 	public EntityCloudFlyer(World w) {
 		super(w);
 	}

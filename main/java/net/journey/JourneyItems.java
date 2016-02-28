@@ -467,7 +467,7 @@ public class JourneyItems {
 	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 4, 1.2F, false, false).setAlwaysEdible();
 
 	//public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
-	public static final Item essenceArrow = new ItemMod("essenceArrow", "Essence Arrow", JourneyTabs.ranged);
+	public static final Item essenceArrow = new ItemMod("essenceArrow", "Essence Arrow", JourneyTabs.ammunition);
 
 	public static final Item flameBow = new ItemModBow("flameBow", "Flame Bow", 384, essenceArrow, EntityFlameArrow.class);
 	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, essenceArrow, 18, EntityPoisonArrow.class);

@@ -9,7 +9,6 @@ import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityWoodpecker extends EntityPeacefullUntillAttacked {
 
-	@SuppressWarnings("do this")
 	public EntityWoodpecker(World w) {
 		super(w);
 	}

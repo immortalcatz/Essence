@@ -20,7 +20,7 @@ public class ItemAttractor extends ItemMod {
 	private int magic;
 
 	public ItemAttractor(String name, String finalName, boolean attracts, boolean essence, int magic) {
-		super(name, finalName, JourneyTabs.weapons);
+		super(name, finalName, JourneyTabs.wands_staves);
 		setMaxStackSize(1);
 		this.attracts = attracts;
 		this.magic = magic;

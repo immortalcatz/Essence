@@ -17,7 +17,6 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityPermafraust extends EntityModMob {
 
-	@SuppressWarnings("do this")
 	public EntityPermafraust(World par1World) {
 		super(par1World);
 		addAttackingAI();

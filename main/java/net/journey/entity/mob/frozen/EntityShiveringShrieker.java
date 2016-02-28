@@ -17,7 +17,6 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityShiveringShrieker extends EntityModMob {
 
-	@SuppressWarnings("do this")
 	public EntityShiveringShrieker(World par1World) {
 		super(par1World);
 		addAttackingAI();

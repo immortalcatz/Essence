@@ -9,7 +9,6 @@ import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
 public class EntityTurducken extends EntityPeacefullUntillAttacked {
 
-	@SuppressWarnings("do this")
 	public EntityTurducken(World w) {
 		super(w);
 	}

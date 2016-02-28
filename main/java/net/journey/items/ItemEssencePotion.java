@@ -19,7 +19,7 @@ public class ItemEssencePotion extends ItemMod {
 	private boolean isStrong, essence;
 
 	public ItemEssencePotion(String name, String f, boolean strong, boolean essence) {
-		super(name, f, JourneyTabs.misc);
+		super(name, f, JourneyTabs.util);
 		isStrong = strong;
 		this.essence = essence;
 	}

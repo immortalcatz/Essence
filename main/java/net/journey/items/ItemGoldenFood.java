@@ -23,7 +23,7 @@ public class ItemGoldenFood extends ItemModFood {
         setUnlocalizedName(name);
         GameRegistry.registerItem(this, name);
         JourneyItems.itemNames.add(name);
-        setCreativeTab(JourneyTabs.misc);
+        setCreativeTab(JourneyTabs.crops);
     }
 
     @Override

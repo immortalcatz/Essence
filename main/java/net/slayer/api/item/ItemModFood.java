@@ -21,7 +21,7 @@ public class ItemModFood extends ItemFood {
         super(food, sat, wolfFood);
         LangRegistry.addItem(name, f);
         setUnlocalizedName(name);
-        setCreativeTab(JourneyTabs.misc);
+        setCreativeTab(JourneyTabs.crops);
         JourneyItems.itemNames.add(name);
         GameRegistry.registerItem(this, name);
     }
