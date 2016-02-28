@@ -24,7 +24,9 @@ import net.journey.blocks.base.BlockModOre;
 import net.journey.blocks.crop.BlockCorveggieCrop;
 import net.journey.blocks.crop.BlockCrackenCaneCrop;
 import net.journey.blocks.crop.BlockCrakeBulbCrop;
+import net.journey.blocks.crop.BlockFloroCrop;
 import net.journey.blocks.crop.BlockGlowaCrop;
+import net.journey.blocks.crop.BlockGlowshroomCrop;
 import net.journey.blocks.crop.BlockSpineberryCrop;
 import net.journey.blocks.crop.BlockTomatoCrop;
 import net.journey.blocks.crop.BlockZatPedalsCrop;
@@ -301,6 +303,8 @@ public class JourneyBlocks {
 	public static final Block spineberryCrop = new BlockSpineberryCrop("spineberryCrop");
 	public static final Block glowaCrop = new BlockGlowaCrop("glowaCrop");
 	public static final Block zatPedalsCrop = new BlockZatPedalsCrop("zatPedalsCrop");
+	public static final Block glowshroomCrop = new BlockGlowshroomCrop("glowshroomCrop");
+	public static final Block floroCrop = new BlockFloroCrop("floroCrop");
 
 	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", "Black Block", 0.5F);
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", "White Block", 0.5F);

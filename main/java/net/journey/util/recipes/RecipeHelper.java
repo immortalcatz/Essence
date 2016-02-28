@@ -78,6 +78,8 @@ public class RecipeHelper {
 		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.blueGlowshroomBottom});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomTop});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{i.glowshroom});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.floroSeeds, 4), new Object[]{i.floroPedal});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
 		GameRegistry.addSmelting(Blocks.glass, new ItemStack(b.smoothGlass), 1.0F);
 

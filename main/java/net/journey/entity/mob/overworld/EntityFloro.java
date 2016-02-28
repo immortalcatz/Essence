@@ -80,14 +80,19 @@ public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 	}
 	
 	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
-		return super.attackEntityFrom(e, a);
+	public Item getItemDropped() {
+		return null;
 	}
 	
 	@Override
-	public Item getItemDropped() {
-		return JourneyItems.floroPedal;
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(6) == 0) dropItem(JourneyItems.floroPedal, 4);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(3) == 0) dropItem(JourneyItems.floroPedal, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(1) == 0) dropItem(JourneyItems.floroPedal, 1);
+		super.dropFewItems(b, j);
+	
 	}
+
 }
