@@ -148,7 +148,6 @@ public class Textures {
     public static final ResourceLocation netherBeast = addMob("netherBeast");
     public static final ResourceLocation witheringBeast = addMob("witheringBeast");
     public static final ResourceLocation calcia = addMob("calcia");
-    public static final ResourceLocation eudor = addMob("eudor");
     public static final ResourceLocation blazier = addMob("blazier");
     public static final ResourceLocation sentryKing = addMob("sentryKing");
     public static final ResourceLocation thunderbird = addMob("thunderbird");
@@ -156,6 +155,7 @@ public class Textures {
     public static final ResourceLocation logger = addMob("logger");
     public static final ResourceLocation corallator = addMob("corallator");
     public static final ResourceLocation skyStalker = addMob("skyStalker");
+    public static final ResourceLocation eudor = addMob("eudor");
 
     //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");
