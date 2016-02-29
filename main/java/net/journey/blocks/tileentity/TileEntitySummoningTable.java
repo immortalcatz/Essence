@@ -165,6 +165,30 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				inventory[3] = new ItemStack(JourneyItems.netherBeastOrb);
 				addParticles();
 			}
+			else if(areItemsInSlots(
+					JourneyItems.spawnerBar, 
+					JourneyItems.hellShards, 
+					JourneyItems.spawnerBar, 
+						JourneyItems.ash, 
+					JourneyItems.spawnerBar, 
+					JourneyItems.hellShards, 
+					JourneyItems.spawnerBar)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.witheringBeastOrb);
+				addParticles();
+			}
+			else if(areItemsInSlots(
+					JourneyItems.spawnerBar, 
+					JourneyItems.ash, 
+					JourneyItems.spawnerBar, 
+						JourneyItems.hellShards, 
+					JourneyItems.spawnerBar, 
+					JourneyItems.ash, 
+					JourneyItems.spawnerBar)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.calciaOrb);
+				addParticles();
+			}
 		}
 	}
 
