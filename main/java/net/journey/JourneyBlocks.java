@@ -319,6 +319,9 @@ public class JourneyBlocks {
 	public static final Block bossAltar = new BlockMod("bossAltar", "Boss Altar");
 	
 	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "Goldbot Spawner", "goldbot");
+	public static final Block observerSpawner = new BlockModSpawner("observerSpawner", "Observer Spawner", "observer");
+	
+	public static final Block screamerSpawner = new BlockModSpawner("screamerSpawner", "Screamer Spawner", "screamer");
 	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "Silverbot Spawner", "silverbot");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
