@@ -220,7 +220,7 @@ public class JourneyItems {
 	public static final Item storonShovel = new ItemModShovel("storonShovel", "Storon Shovel", EssenceToolMaterial.KORITE);
 	public static final Item mekyumShovel = new ItemModShovel("mekyumShovel", "Mekyum Shovel", EssenceToolMaterial.KORITE);
 
-	public static final Item hellstoneAxe = new ItemModAxe("hellstoneAxe", "Hellstone Axe", EssenceToolMaterial.HELLSTONE);
+	public static final Item hellstoneAxe = new ItemModAxe("hellstoneAxe", "Bloodcrust Axe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumAxe = new ItemModAxe("shadiumAxe", "Shadium Axe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumAxe = new ItemModAxe("celestiumAxe", "Celestium Axe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumAxe = new ItemModAxe("luniumAxe", "Lunium Axe", EssenceToolMaterial.LUNIUM);
@@ -233,7 +233,7 @@ public class JourneyItems {
 	public static final Item storonAxe = new ItemModAxe("storonAxe", "Storon Axe", EssenceToolMaterial.KORITE);
 	public static final Item mekyumAxe = new ItemModAxe("mekyumAxe", "Mekyum Axe", EssenceToolMaterial.KORITE);
 
-	public static final Item hellstoneHoe = new ItemModHoe("hellstoneHoe", "Hellstone Hoe", EssenceToolMaterial.HELLSTONE);
+	public static final Item hellstoneHoe = new ItemModHoe("hellstoneHoe", "Bloodcrust Hoe", EssenceToolMaterial.HELLSTONE);
 	public static final Item shadiumHoe = new ItemModHoe("shadiumHoe", "Shadium Hoe", EssenceToolMaterial.SHADIUM);
 	public static final Item celestiumHoe = new ItemModHoe("celestiumHoe", "Celestium Hoe", EssenceToolMaterial.CELESTIUM);
 	public static final Item luniumHoe = new ItemModHoe("luniumHoe", "Lunium Hoe", EssenceToolMaterial.LUNIUM);
@@ -248,7 +248,7 @@ public class JourneyItems {
 	
 	public static final Item multiToolOfEternalSmelting = new ItemMultiTool("multiToolOfEternalSmelting", "Multi Tool of Eternal Smelting", EssenceToolMaterial.SMELTING_TOOL);
 
-	public static final Item hellstoneSword = new ItemFireSword("hellstoneSword", "Hellstone Sword", EssenceToolMaterial.HELLSTONE_SWORD);
+	public static final Item hellstoneSword = new ItemFireSword("hellstoneSword", "Bloodcrust Sword", EssenceToolMaterial.HELLSTONE_SWORD);
 	public static final Item shadiumSword = new ItemFreezeSword("shadiumSword", "Shadium Sword", EssenceToolMaterial.SHADIUM_SWORD);
 	public static final Item celestiumSword = new ItemModSword("celestiumSword", "Celestium Sword", EssenceToolMaterial.CELESTIUM_SWORD);
 	public static final Item luniumSword = new ItemModSword("luniumSword", "Lunium Sword", EssenceToolMaterial.LUNIUM_SWORD);
