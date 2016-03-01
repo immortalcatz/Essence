@@ -35,17 +35,17 @@ public class EntityFrightener extends EntityModMob{
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.SPIKED_BEAST;
+		return EnumSounds.MAGMA_GIANT;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.MAGMA_GIANT_HURT;
 	}
 	
 	@Override
