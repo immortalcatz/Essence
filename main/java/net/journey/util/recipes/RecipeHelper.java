@@ -28,6 +28,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 12), new Object[] {"   ", "iii", "iii", 'i', JourneyItems.corbaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.terraniaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.terraniaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 10), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.summoningTable, 1), new Object[] {"dsd", "iii", "iii", 'i', JourneyItems.shadiumIngot, 'd', Items.diamond, 's', JourneyItems.sapphire});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.stoneClump});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
