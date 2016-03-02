@@ -24,6 +24,7 @@ public class JourneyTabs extends CreativeTabs {
 	public static final JourneyTabs spawners = new JourneyTabs("journey.spawners");
 	public static final JourneyTabs crops = new JourneyTabs("journey.crops");
 	public static final JourneyTabs machineBlocks = new JourneyTabs("journey.machineBlocks");
+	public static final JourneyTabs portalBlocks = new JourneyTabs("journey.portalBlocks");
 
 	public Item item;
 	
@@ -64,5 +65,6 @@ public class JourneyTabs extends CreativeTabs {
 		spawners.setIcon(JourneyItems.sentryKingOrb);
 		crops.setIcon(JourneyItems.crackenCaneSeeds);
 		machineBlocks.setIcon(JourneyBlocks.summoningTable);
+		portalBlocks.setIcon(JourneyBlocks.eucaPortal);
 	}
 }

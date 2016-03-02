@@ -35,16 +35,22 @@ public class LangRegistry {
 	}
 
 	public void misc() {
-		writeToFile("itemGroup.essence.blocks=Essence of the Gods: Blocks");
-		writeToFile("itemGroup.essence.items=Essence of the Gods: Items");
-		writeToFile("itemGroup.essence.weapons=Essence of the Gods: Weapons");
-		writeToFile("itemGroup.essence.ranged=Essence of the Gods: Ranged");
-		writeToFile("itemGroup.essence.tools=Essence of the Gods: Tools");
-		writeToFile("itemGroup.essence.util=Essence of the Gods: Utilities");
-		writeToFile("itemGroup.essence.misc=Essence of the Gods: Misc.");
-		writeToFile("itemGroup.essence.armor=Essence of the Gods: Armor");
-		writeToFile("itemGroup.essence.decoration=Essence of the Gods: Decoration");
-		writeToFile("itemGroup.essence.spawners=Essence of the Gods: Spawners");
+		writeToFile("itemGroup.journey.blocks=Journey into the Light: Blocks");
+		writeToFile("itemGroup.journey.decoration=Journey into the Light: Decoration Blocks");
+		writeToFile("itemGroup.journey.items=Journey into the Light: Items");
+		writeToFile("itemGroup.journey.tools=Journey into the Light: Tools");
+		writeToFile("itemGroup.journey.swords=Journey into the Light: Swords");
+		writeToFile("itemGroup.journey.battleaxes=Journey into the Light: Battleaxes");
+		writeToFile("itemGroup.journey.bows=Journey into the Light: Bows");
+		writeToFile("itemGroup.journey.piercers=Journey into the Light: Piercers");
+		writeToFile("itemGroup.journey.staves=Journey into the Light: Staves and Wands");
+		writeToFile("itemGroup.journey.util=Journey into the Light: Utilities");
+		writeToFile("itemGroup.journey.misc=Journey into the Light: Miscellaneous");
+		writeToFile("itemGroup.journey.armor=Journey into the Light: Armor");
+		writeToFile("itemGroup.journey.spawners=Journey into the Light: Spawners");
+		writeToFile("itemGroup.journey.crops=Journey into the Light: Crops");
+		writeToFile("itemGroup.journey.machineBlocks=Journey into the Light: Machine Blocks");
+		writeToFile("itemGroup.journey.portalBlocks=Journey into the Light: Portal Blocks");
 		writeToFile("item.record.underwaterWorld.desc=Chris Geddes - Underwater World");
 		writeToFile("item.record.blueWater.desc=Chris Geddes - Blue Water");
 		writeToFile("item.record.raceStar.desc=Chris Geddes - Race Star");

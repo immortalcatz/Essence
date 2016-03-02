@@ -37,7 +37,7 @@ public class BlockDepthsPortal extends BlockBreakable {
 		super(Material.portal, false);
 		LangRegistry.addBlock(name, "Depths Portal");
 		this.setTickRandomly(true);
-		setCreativeTab(JourneyTabs.blocks);
+		setCreativeTab(JourneyTabs.portalBlocks);
 		setUnlocalizedName(name);
 		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);

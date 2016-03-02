@@ -36,7 +36,7 @@ public class BlockCorbaPortal extends BlockContainer {
         super(Material.portal);
 		setHardness(2.0F);
 		LangRegistry.addBlock(name, "Corba Portal");
-		setCreativeTab(JourneyTabs.blocks);
+		setCreativeTab(JourneyTabs.portalBlocks);
 		setUnlocalizedName(name);
 		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);

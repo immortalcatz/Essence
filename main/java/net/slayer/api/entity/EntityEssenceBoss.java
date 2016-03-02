@@ -30,43 +30,55 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 		return getMaxHealth();
 	}
 
-	@Override
-	protected void onDeathUpdate() {
-		++this.deathTicks;
+	protected void onDeathUpdate()
+    {
+        ++this.deathTicks;
 
-		if(this.deathTicks >= 180 && this.deathTicks <= 200) {
-			float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
-			float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
-			float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;
-			this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D);
-		}
-		int i;
-		int j;
+        if (this.deathTicks >= 180 && this.deathTicks <= 200)
+        {
+            float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
+            float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+        }
 
-		if(!this.worldObj.isRemote) {
-			if(this.deathTicks > 150 && this.deathTicks % 5 == 0) {
-				i = 1000;
+        int i;
+        int j;
 
-				while(i > 0) {
-					j = EntityXPOrb.getXPSplit(i);
-					i -= j;
-					this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, j));
-				}
-			}
+        if (!this.worldObj.isRemote)
+        {
+            if (this.deathTicks > 150 && this.deathTicks % 5 == 0 && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
+            {
+                i = 1000;
 
-			if(this.deathTicks == 1) this.worldObj.playBroadcastSound(1018, new BlockPos(this), 0);
-		}
-		this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
-		this.renderYawOffset = this.rotationYaw += 20.0F;
-		if(this.deathTicks == 200 && !this.worldObj.isRemote) {
-			i = 2000;
+                while (i > 0)
+                {
+                    j = EntityXPOrb.getXPSplit(i);
+                    i -= j;
+                    this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, j));
+                }
+            }
 
-			while (i > 0) {
-				j = EntityXPOrb.getXPSplit(i);
-				i -= j;
-				this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, j));
-			}
-			this.setDead();
-		}
-	}
+            if (this.deathTicks == 1)
+            {
+                this.worldObj.playBroadcastSound(1018, new BlockPos(this), 0);
+            }
+        }
+
+        this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
+        this.renderYawOffset = this.rotationYaw += 20.0F;
+
+        if (this.deathTicks == 200 && !this.worldObj.isRemote)
+        {
+            i = 2000;
+
+            while (i > 0)
+            {
+                j = EntityXPOrb.getXPSplit(i);
+                i -= j;
+                this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, j));
+            }
+            this.setDead();
+        }
+    }
 }

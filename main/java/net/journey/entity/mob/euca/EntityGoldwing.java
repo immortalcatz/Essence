@@ -45,7 +45,10 @@ public class EntityGoldwing extends EntityPeacefullUntillAttacked {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(6) == 0) dropItem(JourneyItems.rocFeather, 4);
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.rocFeather, 4);
+		if(rand.nextInt(1) == 0) dropItem(JourneyItems.rocFeather, 2);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.rocMeat, 1);
+		if(rand.nextInt(6) == 0) dropItem(JourneyItems.rocMeat, 2);
 		super.dropFewItems(b, j);
 	}
 
