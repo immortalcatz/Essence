@@ -3,6 +3,8 @@ package net.journey.dimension.boil.gen;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.entity.mob.boiling.npc.EntityBoilTrader;
+import net.journey.entity.mob.boiling.npc.EntityEscapedConvict;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -319,6 +321,12 @@ public class WorldGenBrisonNetwork extends WorldGenerator {
 			world.setBlockState(new BlockPos(i + 14, j + 9, k + 7), JourneyBlocks.smallBrisonBrick.getDefaultState());
 			world.setBlockState(new BlockPos(i + 14, j + 9, k + 8), JourneyBlocks.smallBrisonBrick.getDefaultState());
 
-		return true;
+			//707
+			if(!world.isRemote) {
+				EntityEscapedConvict smith = new EntityEscapedConvict(world);
+				smith.setLocationAndAngles(i + 7, j + 1, k + 7, 0.0F, 0.0F);
+				world.spawnEntityInWorld(smith);
+			}
+			return false;
 	}
 }

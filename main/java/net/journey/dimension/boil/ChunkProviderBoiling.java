@@ -8,6 +8,7 @@ import net.journey.JourneyBlocks;
 import net.journey.dimension.boil.gen.WorldGenBoilingLamp;
 import net.journey.dimension.boil.gen.WorldGenBoilingLava;
 import net.journey.dimension.boil.gen.WorldGenBrisonNetwork;
+import net.journey.dimension.boil.gen.WorldGenTraderHutBoiling;
 import net.journey.dimension.boil.gen.WorldGenVolcano;
 import net.journey.dimension.boil.trees.WorldGenBoilTree1;
 import net.journey.dimension.boil.trees.WorldGenBoilTree2;
@@ -374,6 +375,16 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
 				new WorldGenBrisonNetwork().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				break;
+			}
+		}
+		
+		for(times = 0; times < 1; times++) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
+				new WorldGenTraderHutBoiling().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 				break;
 			}
 		}

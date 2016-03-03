@@ -1,138 +1,128 @@
 package net.journey.client.render.model.mob.boil;
 
-import net.minecraft.client.model.ModelBiped;
+import net.journey.entity.mob.boiling.EntityLavasnake;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.Vec3;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ModelLavasnake extends ModelBiped {
+public class ModelLavasnake extends ModelBase
+{
+    private ModelRenderer lavasnakeBody;
+    private ModelRenderer lavasnakeEye;
+    private ModelRenderer[] lavasnakeTail;
+    private static final String __OBFID = "CL_00002628";
 
-    ModelRenderer head;
-    ModelRenderer body;
-    ModelRenderer headFin;
-    ModelRenderer body1;
-    ModelRenderer body2;
-    ModelRenderer body3;
-    ModelRenderer fin1;
-    ModelRenderer fin2;
-    ModelRenderer fin3;
-    ModelRenderer tailFin;
-    ModelRenderer mouth;
-    ModelRenderer tooth1;
-    ModelRenderer tooth2;
+    public ModelLavasnake()
+    {
+        this.textureWidth = 64;
+        this.textureHeight = 64;
+        this.lavasnakeBody = new ModelRenderer(this);
+        this.lavasnakeBody.setTextureOffset(0, 0).addBox(-6.0F, 10.0F, -8.0F, 12, 12, 16);
+        this.lavasnakeBody.setTextureOffset(0, 28).addBox(-8.0F, 10.0F, -6.0F, 2, 12, 12);
+        this.lavasnakeBody.setTextureOffset(0, 28).addBox(6.0F, 10.0F, -6.0F, 2, 12, 12, true);
+        this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 8.0F, -6.0F, 12, 2, 12);
+        this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 22.0F, -6.0F, 12, 2, 12);
+        {
+        }
 
-	public ModelLavasnake() {
-		textureWidth = 128;
-	    textureHeight = 128;
-	    
-	      head = new ModelRenderer(this, 54, 0);
-	      head.addBox(-4F, -4F, -6F, 8, 6, 6);
-	      head.setRotationPoint(0F, 8F, -8F);
-	      head.setTextureSize(128, 128);
-	      head.mirror = true;
-	      setRotation(head, 0F, 0F, 0F);
-	      body = new ModelRenderer(this, 52, 32);
-	      body.addBox(-6F, -10F, -7F, 12, 18, 12);
-	      body.setRotationPoint(0F, 7F, 2F);
-	      body.setTextureSize(128, 128);
-	      body.mirror = true;
-	      setRotation(body, 1.570796F, 0F, 0F);
-	      headFin = new ModelRenderer(this, 0, 24);
-	      headFin.addBox(0F, 0F, 0F, 0, 6, 8);
-	      headFin.setRotationPoint(0F, 2F, -16F);
-	      headFin.setTextureSize(128, 128);
-	      headFin.mirror = true;
-	      setRotation(headFin, 0.2974289F, 0F, 0F);
-	      body1 = new ModelRenderer(this, 18, 15);
-	      body1.addBox(-5F, 0F, 0F, 10, 16, 10);
-	      body1.setRotationPoint(0F, 13F, 10F);
-	      body1.setTextureSize(128, 128);
-	      body1.mirror = true;
-	      setRotation(body1, 1.570796F, 0F, 0F);
-	      body2 = new ModelRenderer(this, 18, 60);
-	      body2.addBox(-4F, 16F, 1F, 8, 14, 7);
-	      body2.setRotationPoint(0F, 13F, 10F);
-	      body2.setTextureSize(128, 128);
-	      body2.mirror = true;
-	      setRotation(body2, 1.570796F, 0F, 0F);
-	      body3 = new ModelRenderer(this, 18, 89);
-	      body3.addBox(-3F, 30F, 2F, 6, 12, 4);
-	      body3.setRotationPoint(0F, 13F, 10F);
-	      body3.setTextureSize(128, 128);
-	      body3.mirror = true;
-	      setRotation(body3, 1.570796F, 0F, 0F);
-	      fin1 = new ModelRenderer(this, 0, 38);
-	      fin1.addBox(0F, 0F, 0F, 0, 6, 8);
-	      fin1.setRotationPoint(0F, -1F, -4F);
-	      fin1.setTextureSize(128, 128);
-	      fin1.mirror = true;
-	      setRotation(fin1, 0F, 0F, 0F);
-	      fin2 = new ModelRenderer(this, 0, 80);
-	      fin2.addBox(0F, 0F, 0F, 0, 6, 8);
-	      fin2.setRotationPoint(0F, 0F, 14F);
-	      fin2.setTextureSize(128, 128);
-	      fin2.mirror = true;
-	      setRotation(fin2, 0F, 0F, 0F);
-	      fin3 = new ModelRenderer(this, 0, 66);
-	      fin3.addBox(0F, 0F, 0F, 0, 6, 8);
-	      fin3.setRotationPoint(0F, 3F, 28F);
-	      fin3.setTextureSize(128, 128);
-	      fin3.mirror = true;
-	      setRotation(fin3, 0F, 0F, 0F);
-	      tailFin = new ModelRenderer(this, 0, 52);
-	      tailFin.addBox(0F, -2F, 0F, 0, 6, 8);
-	      tailFin.setRotationPoint(0F, 9F, 48F);
-	      tailFin.setTextureSize(128, 128);
-	      tailFin.mirror = true;
-	      setRotation(tailFin, 0.5007752F, 0F, 0F);
-	      mouth = new ModelRenderer(this, 84, 0);
-	      mouth.addBox(0F, 0F, 0F, 8, 2, 6);
-	      mouth.setRotationPoint(-4F, 11F, -14F);
-	      mouth.setTextureSize(128, 128);
-	      mouth.mirror = true;
-	      setRotation(mouth, 0F, 0F, 0F);
-	      tooth1 = new ModelRenderer(this, 84, 8);
-	      tooth1.addBox(0F, 0F, 0F, 1, 1, 1);
-	      tooth1.setRotationPoint(3F, 10F, -14F);
-	      tooth1.setTextureSize(128, 128);
-	      tooth1.mirror = true;
-	      setRotation(tooth1, 0F, 0F, 0F);
-	      tooth2 = new ModelRenderer(this, 84, 8);
-	      tooth2.addBox(0F, 0F, 0F, 1, 1, 1);
-	      tooth2.setRotationPoint(-4F, 10F, -14F);
-	      tooth2.setTextureSize(128, 128);
-	      tooth2.mirror = true;
-	      setRotation(tooth2, 0F, 0F, 0F);
-	}
+        this.lavasnakeEye = new ModelRenderer(this, 8, 0);
+        this.lavasnakeEye.addBox(-1.0F, 15.0F, 0.0F, 2, 2, 1);
+        this.lavasnakeBody.addChild(this.lavasnakeEye);
+        this.lavasnakeTail = new ModelRenderer[3];
+        this.lavasnakeTail[0] = new ModelRenderer(this, 40, 0);
+        this.lavasnakeTail[0].addBox(-2.0F, 14.0F, 7.0F, 4, 4, 8);
+        this.lavasnakeTail[1] = new ModelRenderer(this, 0, 54);
+        this.lavasnakeTail[1].addBox(0.0F, 14.0F, 0.0F, 3, 3, 7);
+        this.lavasnakeTail[2] = new ModelRenderer(this);
+        this.lavasnakeTail[2].setTextureOffset(41, 32).addBox(0.0F, 14.0F, 0.0F, 2, 2, 6);
+        this.lavasnakeTail[2].setTextureOffset(25, 19).addBox(1.0F, 10.5F, 3.0F, 1, 9, 9);
+        this.lavasnakeBody.addChild(this.lavasnakeTail[0]);
+        this.lavasnakeTail[0].addChild(this.lavasnakeTail[1]);
+        this.lavasnakeTail[1].addChild(this.lavasnakeTail[2]);
+    }
 
-	@Override
-	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-		
-	      head.render(f5);
-	      body.render(f5);
-	      headFin.render(f5);
-	      body1.render(f5);
-	      body2.render(f5);
-	      body3.render(f5);
-	      fin1.render(f5);
-	      fin2.render(f5);
-	      fin3.render(f5);
-	      tailFin.render(f5);
-	      mouth.render(f5);
-	      tooth1.render(f5);
-	      tooth2.render(f5);
-		    
-	}
+    public int func_178706_a()
+    {
+        return 54;
+    }
 
-	private void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
-	}
+    /**
+     * Sets the models various rotation angles then renders the model.
+     */
+    public void render(Entity p_78088_1_, float p_78088_2_, float p_78088_3_, float p_78088_4_, float p_78088_5_, float p_78088_6_, float p_78088_7_)
+    {
+        this.setRotationAngles(p_78088_2_, p_78088_3_, p_78088_4_, p_78088_5_, p_78088_6_, p_78088_7_, p_78088_1_);
+        this.lavasnakeBody.render(p_78088_7_);
+    }
 
-	@Override
-	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
-		
-	}
+    /**
+     * Sets the model's various rotation angles. For bipeds, par1 and par2 are used for animating the movement of arms
+     * and legs, where par1 represents the time(so that arms and legs swing back and forth) and par2 represents how
+     * "far" arms and legs can swing at most.
+     */
+    public void setRotationAngles(float p_78087_1_, float p_78087_2_, float p_78087_3_, float p_78087_4_, float p_78087_5_, float p_78087_6_, Entity p_78087_7_)
+    {
+        EntityLavasnake entitylavasnake = (EntityLavasnake)p_78087_7_;
+        float f6 = p_78087_3_ - (float)entitylavasnake.ticksExisted;
+        this.lavasnakeBody.rotateAngleY = p_78087_4_ / (180F / (float)Math.PI);
+        this.lavasnakeBody.rotateAngleX = p_78087_5_ / (180F / (float)Math.PI);
+        float[] afloat = new float[] {1.75F, 0.25F, 0.0F, 0.0F, 0.5F, 0.5F, 0.5F, 0.5F, 1.25F, 0.75F, 0.0F, 0.0F};
+        float[] afloat1 = new float[] {0.0F, 0.0F, 0.0F, 0.0F, 0.25F, 1.75F, 1.25F, 0.75F, 0.0F, 0.0F, 0.0F, 0.0F};
+        float[] afloat2 = new float[] {0.0F, 0.0F, 0.25F, 1.75F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.75F, 1.25F};
+        float[] afloat3 = new float[] {0.0F, 0.0F, 8.0F, -8.0F, -8.0F, 8.0F, 8.0F, -8.0F, 0.0F, 0.0F, 8.0F, -8.0F};
+        float[] afloat4 = new float[] { -8.0F, -8.0F, -8.0F, -8.0F, 0.0F, 0.0F, 0.0F, 0.0F, 8.0F, 8.0F, 8.0F, 8.0F};
+        float[] afloat5 = new float[] {8.0F, -8.0F, 0.0F, 0.0F, -8.0F, -8.0F, 8.0F, 8.0F, 8.0F, -8.0F, 0.0F, 0.0F};
+        float f7 = (1.0F - entitylavasnake.func_175469_o(f6)) * 0.55F;
+
+        for (int i = 0; i < 12; ++i)
+        {
+        }
+
+        this.lavasnakeEye.rotationPointZ = -8.25F;
+        Object object = Minecraft.getMinecraft().getRenderViewEntity();
+
+        if (entitylavasnake.func_175474_cn())
+        {
+            object = entitylavasnake.getTargetedEntity();
+        }
+
+        if (object != null)
+        {
+            Vec3 vec3 = ((Entity)object).getPositionEyes(0.0F);
+            Vec3 vec31 = p_78087_7_.getPositionEyes(0.0F);
+            double d0 = vec3.yCoord - vec31.yCoord;
+
+            if (d0 > 0.0D)
+            {
+                this.lavasnakeEye.rotationPointY = 0.0F;
+            }
+            else
+            {
+                this.lavasnakeEye.rotationPointY = 1.0F;
+            }
+
+            Vec3 vec32 = p_78087_7_.getLook(0.0F);
+            vec32 = new Vec3(vec32.xCoord, 0.0D, vec32.zCoord);
+            Vec3 vec33 = (new Vec3(vec31.xCoord - vec3.xCoord, 0.0D, vec31.zCoord - vec3.zCoord)).normalize().rotateYaw(((float)Math.PI / 2F));
+            double d1 = vec32.dotProduct(vec33);
+            this.lavasnakeEye.rotationPointX = MathHelper.sqrt_float((float)Math.abs(d1)) * 2.0F * (float)Math.signum(d1);
+        }
+
+        this.lavasnakeEye.showModel = true;
+        float f8 = entitylavasnake.func_175471_a(f6);
+        this.lavasnakeTail[0].rotateAngleY = MathHelper.sin(f8) * (float)Math.PI * 0.05F;
+        this.lavasnakeTail[1].rotateAngleY = MathHelper.sin(f8) * (float)Math.PI * 0.1F;
+        this.lavasnakeTail[1].rotationPointX = -1.5F;
+        this.lavasnakeTail[1].rotationPointY = 0.5F;
+        this.lavasnakeTail[1].rotationPointZ = 14.0F;
+        this.lavasnakeTail[2].rotateAngleY = MathHelper.sin(f8) * (float)Math.PI * 0.15F;
+        this.lavasnakeTail[2].rotationPointX = 0.5F;
+        this.lavasnakeTail[2].rotationPointY = 0.5F;
+        this.lavasnakeTail[2].rotationPointZ = 6.0F;
+    }
 }
