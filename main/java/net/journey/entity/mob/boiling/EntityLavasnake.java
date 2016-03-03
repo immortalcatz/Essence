@@ -59,7 +59,7 @@ public class EntityLavasnake extends EntityMob
     {
         super(worldIn);
         this.experienceValue = 10;
-        this.setSize(0.85F, 0.85F);
+        this.setSize(4.3F, 4.2F);
         this.tasks.addTask(4, new EntityLavasnake.AIGuardianAttack());
         EntityAIMoveTowardsRestriction entityaimovetowardsrestriction;
         this.tasks.addTask(5, entityaimovetowardsrestriction = new EntityAIMoveTowardsRestriction(this, 1.0D));
