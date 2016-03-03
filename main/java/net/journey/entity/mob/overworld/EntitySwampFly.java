@@ -31,7 +31,7 @@ public class EntitySwampFly extends EntityModFlying {
     }
     
     public float getBrightness(float p_70013_1_) {
-        return 10.0F;
+        return 13.0F;
     }
 
 	@Override

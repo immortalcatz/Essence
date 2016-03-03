@@ -55,7 +55,7 @@ public class EntityBlueHonglow extends EntityModMob {
 
 	@Override
 	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.stone);
+		return null;
 
 	}
 

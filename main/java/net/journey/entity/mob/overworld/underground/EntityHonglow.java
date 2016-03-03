@@ -54,12 +54,6 @@ public class EntityHonglow extends EntityModMob {
 	}
 
 	@Override
-	public Item getItemDropped() {
-		return SlayerAPI.toItem(Blocks.stone);
-
-	}
-
-	@Override
 	public boolean getCanSpawnHere() {
 		return this.posY < 40.0D && super.getCanSpawnHere() && 
 				this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock().getMaterial() == Material.rock; 
@@ -71,5 +65,10 @@ public class EntityHonglow extends EntityModMob {
 		super.dropFewItems(b, j);
 		if(rand.nextInt(5) == 0) dropItem(JourneyItems.redHonglowShroom, 2);
 		super.dropFewItems(b, j);
+	}
+
+	@Override
+	public Item getItemDropped() {
+		return null;
 	}
 }

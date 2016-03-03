@@ -6,7 +6,9 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.dimension.boil.gen.WorldGenBoilingLamp;
+import net.journey.dimension.boil.gen.WorldGenBoilingLava;
 import net.journey.dimension.boil.gen.WorldGenBrisonNetwork;
+import net.journey.dimension.boil.gen.WorldGenVolcano;
 import net.journey.dimension.boil.trees.WorldGenBoilTree1;
 import net.journey.dimension.boil.trees.WorldGenBoilTree2;
 import net.journey.dimension.boil.trees.WorldGenBoilTree3;
@@ -383,7 +385,7 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
 				trees.get(rand.nextInt(trees.size())).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
-		}
+		}	
 	}
 	
 	public boolean isBlockTop(int x, int y, int z, Block grass) {
