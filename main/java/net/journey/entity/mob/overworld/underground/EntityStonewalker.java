@@ -57,17 +57,17 @@ public class EntityStonewalker extends EntityModMob {
 		super.dropFewItems(b, j);
 		if(rand.nextInt(4) == 0) dropItem(JourneyItems.caveDust, 3);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(20) == 0) dropItem(JourneyItems.sapphire, 4);
+		if(rand.nextInt(15) == 0) dropItem(JourneyItems.sapphire, 4);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(20) == 0) dropItem(JourneyItems.shadiumIngot, 4);
+		if(rand.nextInt(12) == 0) dropItem(JourneyItems.shadiumIngot, 4);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(20) == 0) dropItem(JourneyItems.luniumIngot, 4);
+		if(rand.nextInt(12) == 0) dropItem(JourneyItems.luniumIngot, 4);
 		super.dropFewItems(b, j);
 	}
 
 	@Override
 	public boolean getCanSpawnHere() {
 		return this.posY < 40.0D && super.getCanSpawnHere() && 
-				this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock().getMaterial() == Material.rock; 
+				this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.stone;
 	}
 }

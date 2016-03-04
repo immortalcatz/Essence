@@ -3,6 +3,9 @@ package net.journey.entity.mob.boiling;
 import com.google.common.base.Predicate;
 import java.util.Iterator;
 import java.util.List;
+
+import net.journey.JourneyItems;
+import net.journey.enums.EnumSounds;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,6 +25,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFishFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -44,14 +48,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityLavasnake extends EntityMob
 {
-    private float field_175482_b;
-    private float field_175484_c;
-    private float field_175483_bk;
-    private float field_175485_bl;
-    private float field_175486_bm;
-    private EntityLivingBase field_175478_bn;
-    private int field_175479_bo;
-    private boolean field_175480_bp;
+    private float B;
+    private float C;
+    private float BK;
+    private float BL;
+    private float BM;
+    private EntityLivingBase BN;
+    private int BO;
+    private boolean BP;
     private EntityAIWander wander;
     private static final String __OBFID = "CL_00002213";
 
@@ -71,35 +75,17 @@ public class EntityLavasnake extends EntityMob
         entityaimovetowardsrestriction.setMutexBits(3);
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLivingBase.class, 10, true, false, new EntityLavasnake.GuardianTargetSelector()));
         this.moveHelper = new EntityLavasnake.GuardianMoveHelper();
-        this.field_175484_c = this.field_175482_b = this.rand.nextFloat();
+        this.C = this.B = this.rand.nextFloat();
         this.isImmuneToFire = true;
     }
 
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(12.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(16.0D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(30.0D);
-    }
-
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
-    public void readEntityFromNBT(NBTTagCompound tagCompund)
-    {
-        super.readEntityFromNBT(tagCompund);
-        this.func_175467_a(tagCompund.getBoolean("Elder"));
-    }
-
-    /**
-     * (abstract) Protected helper method to write subclass entity data to NBT.
-     */
-    public void writeEntityToNBT(NBTTagCompound tagCompound)
-    {
-        super.writeEntityToNBT(tagCompound);
-        tagCompound.setBoolean("Elder", this.isElder());
     }
 
     protected PathNavigate func_175447_b(World worldIn)
@@ -145,10 +131,10 @@ public class EntityLavasnake extends EntityMob
 
     public int func_175464_ck()
     {
-        return this.isElder() ? 60 : 80;
+        return this.is () ? 60 : 80;
     }
 
-    public boolean isElder()
+    public boolean is ()
     {
         return this.func_175468_a(4);
     }
@@ -172,7 +158,7 @@ public class EntityLavasnake extends EntityMob
     public void func_175465_cm()
     {
         this.func_175467_a(true);
-        this.field_175486_bm = this.field_175485_bl = 1.0F;
+        this.BM= this.BL = 1.0F;
     }
 
     private void func_175463_b(int p_175463_1_)
@@ -193,9 +179,9 @@ public class EntityLavasnake extends EntityMob
         }
         else if (this.worldObj.isRemote)
         {
-            if (this.field_175478_bn != null)
+            if (this.BN != null)
             {
-                return this.field_175478_bn;
+                return this.BN;
             }
             else
             {
@@ -203,8 +189,8 @@ public class EntityLavasnake extends EntityMob
 
                 if (entity instanceof EntityLivingBase)
                 {
-                    this.field_175478_bn = (EntityLivingBase)entity;
-                    return this.field_175478_bn;
+                    this.BN = (EntityLivingBase)entity;
+                    return this.BN;
                 }
                 else
                 {
@@ -224,54 +210,40 @@ public class EntityLavasnake extends EntityMob
 
         if (p_145781_1_ == 16)
         {
-            if (this.isElder() && this.width < 1.0F)
+            if (this.is () && this.width < 1.0F)
             {
                 this.setSize(1.9975F, 1.9975F);
             }
         }
         else if (p_145781_1_ == 17)
         {
-            this.field_175479_bo = 0;
-            this.field_175478_bn = null;
+            this.BO = 0;
+            this.BN = null;
         }
     }
 
-    /**
-     * Get number of ticks, at least during which the living entity will be silent.
-     */
     public int getTalkInterval()
     {
         return 160;
     }
 
-    /**
-     * Returns the sound this mob makes while it's alive.
-     */
-    protected String getLivingSound()
+    protected EnumSounds setLivingSound() {
     {
-        return !this.isInLava() ? "mob.guardian.land.idle" : (this.isElder() ? "mob.guardian.elder.idle" : "mob.guardian.idle");
+        return EnumSounds.INSECTO;
+    }
     }
 
-    /**
-     * Returns the sound this mob makes when it is hurt.
-     */
-    protected String getHurtSound()
+    protected EnumSounds setHurtSound() {
     {
-        return !this.isInLava() ? "mob.guardian.land.hit" : (this.isElder() ? "mob.guardian.elder.hit" : "mob.guardian.hit");
+        return EnumSounds.INSECTO_HURT;
+    }
     }
 
-    /**
-     * Returns the sound this mob makes on death.
-     */
     protected String getDeathSound()
     {
-        return !this.isInLava() ? "mob.guardian.land.death" : (this.isElder() ? "mob.guardian.elder.death" : "mob.guardian.death");
+        return "mob.guardian.land.death";
     }
 
-    /**
-     * returns if this entity triggers Block.onEntityWalking on the blocks they walk on. used for spiders and wolves to
-     * prevent them from trampling crops
-     */
     protected boolean canTriggerWalking()
     {
         return false;
@@ -287,60 +259,56 @@ public class EntityLavasnake extends EntityMob
         return this.worldObj.getBlockState(p_180484_1_).getBlock().getMaterial() == Material.lava ? 10.0F + this.worldObj.getLightBrightness(p_180484_1_) - 0.5F : super.func_180484_a(p_180484_1_);
     }
 
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
     public void onLivingUpdate()
     {
         if (this.worldObj.isRemote)
         {
-            this.field_175484_c = this.field_175482_b;
+            this.C = this.B;
 
-            if (!this.isInLava())
+            if (!this.isEntityAlive())
             {
-                this.field_175483_bk = 2.0F;
+                this.BK = 2.0F;
 
-                if (this.motionY > 0.0D && this.field_175480_bp && !this.isSilent())
+                if (this.motionY > 0.0D && this.BP && !this.isSilent())
                 {
                     this.worldObj.playSound(this.posX, this.posY, this.posZ, "mob.guardian.flop", 1.0F, 1.0F, false);
                 }
 
-                this.field_175480_bp = this.motionY < 0.0D && this.worldObj.isBlockNormalCube((new BlockPos(this)).down(), false);
+                this.BP = this.motionY < 0.0D && this.worldObj.isBlockNormalCube((new BlockPos(this)).down(), false);
             }
             else if (this.func_175472_n())
             {
-                if (this.field_175483_bk < 0.5F)
+                if (this.BK < 0.5F)
                 {
-                    this.field_175483_bk = 4.0F;
+                    this.BK = 4.0F;
                 }
                 else
                 {
-                    this.field_175483_bk += (0.5F - this.field_175483_bk) * 0.1F;
+                    this.BK += (0.5F - this.BK) * 0.1F;
                 }
             }
             else
             {
-                this.field_175483_bk += (0.125F - this.field_175483_bk) * 0.2F;
+                this.BK += (0.125F - this.BK) * 0.2F;
             }
 
-            this.field_175482_b += this.field_175483_bk;
-            this.field_175486_bm = this.field_175485_bl;
+            this.B += this.BK;
+            this.BM = this.BL;
 
-            if (!this.isInLava())
+            if (!this.isEntityAlive())
             {
-                this.field_175485_bl = this.rand.nextFloat();
+                this.BL = this.rand.nextFloat();
             }
             else if (this.func_175472_n())
             {
-                this.field_175485_bl += (0.0F - this.field_175485_bl) * 0.25F;
+                this.BL += (0.0F - this.BL) * 0.25F;
             }
             else
             {
-                this.field_175485_bl += (1.0F - this.field_175485_bl) * 0.06F;
+                this.BL += (1.0F - this.BL) * 0.06F;
             }
 
-            if (this.func_175472_n() && this.isInLava())
+            if (!this.isEntityAlive())
             {
                 Vec3 vec3 = this.getLook(0.0F);
 
@@ -352,9 +320,9 @@ public class EntityLavasnake extends EntityMob
 
             if (this.func_175474_cn())
             {
-                if (this.field_175479_bo < this.func_175464_ck())
+                if (this.BO < this.func_175464_ck())
                 {
-                    ++this.field_175479_bo;
+                    ++this.BO;
                 }
 
                 EntityLivingBase entitylivingbase = this.getTargetedEntity();
@@ -382,7 +350,7 @@ public class EntityLavasnake extends EntityMob
             }
         }
 
-        if (this.isInLava())
+        if (!this.isEntityAlive())
         {
             this.setAir(300);
         }
@@ -407,25 +375,25 @@ public class EntityLavasnake extends EntityMob
     @SideOnly(Side.CLIENT)
     public float func_175471_a(float p_175471_1_)
     {
-        return this.field_175484_c + (this.field_175482_b - this.field_175484_c) * p_175471_1_;
+        return this.C + (this.B - this.C) * p_175471_1_;
     }
 
     @SideOnly(Side.CLIENT)
     public float func_175469_o(float p_175469_1_)
     {
-        return this.field_175486_bm + (this.field_175485_bl - this.field_175486_bm) * p_175469_1_;
+        return this.BM + (this.BL - this.BM) * p_175469_1_;
     }
 
     public float func_175477_p(float p_175477_1_)
     {
-        return ((float)this.field_175479_bo + p_175477_1_) / (float)this.func_175464_ck();
+        return ((float)this.BO + p_175477_1_) / (float)this.func_175464_ck();
     }
 
     protected void updateAITasks()
     {
         super.updateAITasks();
 
-        if (this.isElder())
+        if (this.is ())
         {
             boolean flag = true;
             boolean flag1 = true;
@@ -468,69 +436,6 @@ public class EntityLavasnake extends EntityMob
         }
     }
 
-    /**
-     * Drop 0-2 items of this living's type
-     */
-    protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
-    {
-        int j = this.rand.nextInt(3) + this.rand.nextInt(p_70628_2_ + 1);
-
-        if (j > 0)
-        {
-            this.entityDropItem(new ItemStack(Items.prismarine_shard, j, 0), 1.0F);
-        }
-
-        if (this.rand.nextInt(3 + p_70628_2_) > 1)
-        {
-            this.entityDropItem(new ItemStack(Items.fish, 1, ItemFishFood.FishType.COD.getMetadata()), 1.0F);
-        }
-        else if (this.rand.nextInt(3 + p_70628_2_) > 1)
-        {
-            this.entityDropItem(new ItemStack(Items.prismarine_crystals, 1, 0), 1.0F);
-        }
-
-        if (p_70628_1_ && this.isElder())
-        {
-            this.entityDropItem(new ItemStack(Blocks.sponge, 1, 1), 1.0F);
-        }
-    }
-
-    /**
-     * Makes entity wear random armor based on difficulty
-     */
-    protected void addRandomArmor()
-    {
-        ItemStack itemstack = ((WeightedRandomFishable)WeightedRandom.getRandomItem(this.rand, EntityFishHook.func_174855_j())).getItemStack(this.rand);
-        this.entityDropItem(itemstack, 1.0F);
-    }
-
-    /**
-     * Checks to make sure the light is not too bright where the mob is spawning
-     */
-    protected boolean isValidLightLevel()
-    {
-        return true;
-    }
-
-    /**
-     * Whether or not the current entity is in lava
-     */
-    public boolean handleLavaMovement()
-    {
-        return this.worldObj.checkNoEntityCollision(this.getEntityBoundingBox(), this) && this.worldObj.getCollidingBoundingBoxes(this, this.getEntityBoundingBox()).isEmpty();
-    }
-
-    /**
-     * Checks if the entity's current position is a valid location to spawn this entity.
-     */
-    public boolean getCanSpawnHere()
-    {
-        return (this.rand.nextInt(20) == 0 || !this.worldObj.canBlockSeeSky(new BlockPos(this))) && super.getCanSpawnHere();
-    }
-
-    /**
-     * Called when the entity is attacked.
-     */
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
         if (!this.func_175472_n() && !source.isMagicDamage() && source.getSourceOfDamage() instanceof EntityLivingBase)
@@ -548,23 +453,16 @@ public class EntityLavasnake extends EntityMob
         return super.attackEntityFrom(source, amount);
     }
 
-    /**
-     * The speed it takes to move the entityliving's rotationPitch through the faceEntity method. This is only currently
-     * use in wolves.
-     */
     public int getVerticalFaceSpeed()
     {
         return 180;
     }
 
-    /**
-     * Moves the entity based on the specified heading.  Args: strafe, forward
-     */
     public void moveEntityWithHeading(float p_70612_1_, float p_70612_2_)
     {
         if (this.isServerWorld())
         {
-            if (this.isInLava())
+        	if (!this.isEntityAlive())
             {
                 this.moveFlying(p_70612_1_, p_70612_2_, 0.1F);
                 this.moveEntity(this.motionX, this.motionY, this.motionZ);
@@ -599,26 +497,17 @@ public class EntityLavasnake extends EntityMob
             this.setMutexBits(3);
         }
 
-        /**
-         * Returns whether the EntityAIBase should begin execution.
-         */
         public boolean shouldExecute()
         {
             EntityLivingBase entitylivingbase = this.field_179456_a.getAttackTarget();
             return entitylivingbase != null && entitylivingbase.isEntityAlive();
         }
 
-        /**
-         * Returns whether an in-progress EntityAIBase should continue executing
-         */
         public boolean continueExecuting()
         {
-            return super.continueExecuting() && (this.field_179456_a.isElder() || this.field_179456_a.getDistanceSqToEntity(this.field_179456_a.getAttackTarget()) > 9.0D);
+            return super.continueExecuting() && (this.field_179456_a.is () || this.field_179456_a.getDistanceSqToEntity(this.field_179456_a.getAttackTarget()) > 9.0D);
         }
 
-        /**
-         * Execute a one shot task or start executing a continuous task
-         */
         public void startExecuting()
         {
             this.field_179455_b = -10;
@@ -627,9 +516,6 @@ public class EntityLavasnake extends EntityMob
             this.field_179456_a.isAirBorne = true;
         }
 
-        /**
-         * Resets the task
-         */
         public void resetTask()
         {
             this.field_179456_a.func_175463_b(0);
@@ -637,9 +523,6 @@ public class EntityLavasnake extends EntityMob
             this.field_179456_a.wander.func_179480_f();
         }
 
-        /**
-         * Updates the task
-         */
         public void updateTask()
         {
             EntityLivingBase entitylivingbase = this.field_179456_a.getAttackTarget();
@@ -668,7 +551,7 @@ public class EntityLavasnake extends EntityMob
                         f += 2.0F;
                     }
 
-                    if (this.field_179456_a.isElder())
+                    if (this.field_179456_a.is ())
                     {
                         f += 2.0F;
                     }
