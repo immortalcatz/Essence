@@ -3,14 +3,18 @@ package net.journey.entity.mob.boiling;
 import com.google.common.base.Predicate;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import net.journey.JourneyItems;
+import net.journey.entity.mob.euca.EntityShimmerer;
+import net.journey.entity.projectile.EntityShimmererProjectile;
 import net.journey.enums.EnumSounds;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -34,6 +38,7 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -56,7 +61,7 @@ public class EntityLavasnake extends EntityMob
     private EntityLivingBase BN;
     private int BO;
     private boolean BP;
-    private EntityAIWander wander;
+    //private EntityAIWander wander;
     private static final String __OBFID = "CL_00002213";
 
     public EntityLavasnake(World worldIn)
@@ -67,18 +72,182 @@ public class EntityLavasnake extends EntityMob
         this.tasks.addTask(4, new EntityLavasnake.AIGuardianAttack());
         EntityAIMoveTowardsRestriction entityaimovetowardsrestriction;
         this.tasks.addTask(5, entityaimovetowardsrestriction = new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.tasks.addTask(7, this.wander = new EntityAIWander(this, 1.0D, 80));
+        //this.tasks.addTask(7, this.wander = new EntityAIWander(this, 1.0D, 80));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityLavasnake.class, 12.0F, 0.01F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
-        this.wander.setMutexBits(3);
+        //this.wander.setMutexBits(3);
         entityaimovetowardsrestriction.setMutexBits(3);
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLivingBase.class, 10, true, false, new EntityLavasnake.GuardianTargetSelector()));
         this.moveHelper = new EntityLavasnake.GuardianMoveHelper();
         this.C = this.B = this.rand.nextFloat();
+		//this.moveHelper = new EntityLavasnake.MoveHelper();
+		//this.tasks.addTask(5, new EntityLavasnake.AIRandomFly());
+		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+		this.moveHelper = new EntityLavasnake.MoveHelper();
+		this.tasks.addTask(5, new EntityLavasnake.AIRandomFly());
+		this.tasks.addTask(7, new EntityLavasnake.AIFireballAttack());
+        this.tasks.addTask(7, new EntityLavasnake.AILookAround());
+		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
         this.isImmuneToFire = true;
     }
 
+	@Override
+	public boolean getCanSpawnHere() {
+        return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+    }
+	
+	private class AIRandomFly extends EntityAIBase {
+		private EntityLavasnake e = EntityLavasnake.this;
+
+		public AIRandomFly() {
+			this.setMutexBits(1);
+		}
+
+		@Override
+		public boolean shouldExecute() {
+			EntityMoveHelper entitymovehelper = this.e.getMoveHelper();
+			if(!entitymovehelper.isUpdating()) {
+				return true;
+			} else {
+				double d0 = entitymovehelper.func_179917_d() - this.e.posX;
+				double d1 = entitymovehelper.func_179919_e() - this.e.posY;
+				double d2 = entitymovehelper.func_179918_f() - this.e.posZ;
+				double d3 = d0 * d0 + d1 * d1 + d2 * d2;
+				return d3 < 1.0D || d3 > 3600.0D;
+			}
+		}
+
+		@Override
+		public boolean continueExecuting() {
+			return false;
+		}
+
+		@Override
+		public void startExecuting() {
+			Random random = this.e.getRNG();
+			double d0 = this.e.posX + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+			double d1 = this.e.posY + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+			double d2 = this.e.posZ + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+			this.e.getMoveHelper().setMoveTo(d0, d1, d2, 1.0D);
+		}
+	}
+
+	private class MoveHelper extends EntityMoveHelper {
+		private EntityLavasnake e = EntityLavasnake.this;
+		private int height;
+
+		public MoveHelper() {
+			super(EntityLavasnake.this);
+		}
+
+		@Override
+		public void onUpdateMoveHelper() {
+			if(this.update) {
+				double d0 = this.posX - this.e.posX;
+				double d1 = this.posY - this.e.posY;
+				double d2 = this.posZ - this.e.posZ;
+				double d3 = d0 * d0 + d1 * d1 + d2 * d2;
+				if(this.height-- <= 0) {
+					this.height += this.e.getRNG().nextInt(5) + 2;
+					d3 = (double)MathHelper.sqrt_double(d3);
+					if(this.canMove(this.posX, this.posY, this.posZ, d3)) {
+						this.e.motionX += d0 / d3 * 0.1D;
+						this.e.motionY += d1 / d3 * 0.1D;
+						this.e.motionZ += d2 / d3 * 0.1D;
+					} else {
+						this.update = false;
+					}
+				}
+			}
+		}
+
+		private boolean canMove(double x, double y, double z, double h)  {
+			double d4 = (x - this.e.posX) / h;
+			double d5 = (y - this.e.posY) / h;
+			double d6 = (z - this.e.posZ) / h;
+			AxisAlignedBB axisalignedbb = this.e.getEntityBoundingBox();
+			for(int i = 1; (double)i < h; ++i) {
+				axisalignedbb = axisalignedbb.offset(d4, d5, d6);
+				if(!this.e.worldObj.getCollidingBoundingBoxes(this.e, axisalignedbb).isEmpty()) {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+
+	public class AILookAround extends EntityAIBase {
+		private EntityLavasnake e = EntityLavasnake.this;
+
+		public AILookAround() {
+			this.setMutexBits(2);
+		}
+
+		@Override
+		public boolean shouldExecute() {
+			return true;
+		}
+
+		@Override
+		public void updateTask() {
+			if (this.e.getAttackTarget() == null) {
+				this.e.renderYawOffset = this.e.rotationYaw = -((float)Math.atan2(this.e.motionX, this.e.motionZ)) * 180.0F / (float)Math.PI;
+			} else {
+				EntityLivingBase entitylivingbase = this.e.getAttackTarget();
+				double d0 = 64.0D;
+
+				if (entitylivingbase.getDistanceSqToEntity(this.e) < d0 * d0) {
+					double d1 = entitylivingbase.posX - this.e.posX;
+					double d2 = entitylivingbase.posZ - this.e.posZ;
+					this.e.renderYawOffset = this.e.rotationYaw = -((float)Math.atan2(d1, d2)) * 180.0F / (float)Math.PI;
+				}
+			}
+		}
+	}
+
+	public class AIFireballAttack extends EntityAIBase {
+		private EntityLavasnake entity = EntityLavasnake.this;
+		public int counter;
+
+		@Override
+		public boolean shouldExecute() {
+			return this.entity.getAttackTarget() != null;
+		}
+
+		@Override
+		public void startExecuting() {
+			this.counter = 0;
+		}
+
+		@Override
+		public void updateTask() {
+			EntityLivingBase entitylivingbase = this.entity.getAttackTarget();
+			double d0 = 64.0D;
+
+			if(entitylivingbase.getDistanceSqToEntity(this.entity) < d0 * d0 && this.entity.canEntityBeSeen(entitylivingbase)) {
+				World world = this.entity.worldObj;
+				counter++;
+
+				if(this.counter == 20) {
+					double d1 = 4.0D;
+					Vec3 vec3 = this.entity.getLook(1.0F);
+					double d2 = entitylivingbase.posX - (this.entity.posX + vec3.xCoord * d1);
+					double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.entity.posY + (double)(this.entity.height / 2.0F));
+					double d4 = entitylivingbase.posZ - (this.entity.posZ + vec3.zCoord * d1);
+					world.playAuxSFXAtEntity((EntityPlayer)null, 1008, new BlockPos(this.entity), 0);
+					EntityShimmererProjectile projectile = new EntityShimmererProjectile(world, this.entity, d2, d3, d4);
+					projectile.posX = this.entity.posX + vec3.xCoord * d1;
+					projectile.posY = this.entity.posY + (double)(this.entity.height / 2.0F) + 0.5D;
+					projectile.posZ = this.entity.posZ + vec3.zCoord * d1;
+					world.spawnEntityInWorld(projectile);
+					this.counter = -40;
+				}
+			}
+			else if(this.counter > 0) counter--;
+		}
+	}
+	
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
@@ -150,7 +319,7 @@ public class EntityLavasnake extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(8.0D);
             this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(80.0D);
             this.enablePersistence();
-            this.wander.func_179479_b(400);
+            //this.wander.func_179479_b(400);
         }
     }
 
@@ -267,14 +436,7 @@ public class EntityLavasnake extends EntityMob
 
             if (!this.isEntityAlive())
             {
-                this.BK = 2.0F;
 
-                if (this.motionY > 0.0D && this.BP && !this.isSilent())
-                {
-                    this.worldObj.playSound(this.posX, this.posY, this.posZ, "mob.guardian.flop", 1.0F, 1.0F, false);
-                }
-
-                this.BP = this.motionY < 0.0D && this.worldObj.isBlockNormalCube((new BlockPos(this)).down(), false);
             }
             else if (this.func_175472_n())
             {
@@ -295,18 +457,7 @@ public class EntityLavasnake extends EntityMob
             this.B += this.BK;
             this.BM = this.BL;
 
-            if (!this.isEntityAlive())
-            {
-                this.BL = this.rand.nextFloat();
-            }
-            else if (this.func_175472_n())
-            {
-                this.BL += (0.0F - this.BL) * 0.25F;
-            }
-            else
-            {
-                this.BL += (1.0F - this.BL) * 0.06F;
-            }
+
 
             if (!this.isEntityAlive())
             {
@@ -449,7 +600,7 @@ public class EntityLavasnake extends EntityMob
             }
         }
 
-        this.wander.func_179480_f();
+       // this.wander.func_179480_f();
         return super.attackEntityFrom(source, amount);
     }
 
@@ -520,7 +671,7 @@ public class EntityLavasnake extends EntityMob
         {
             this.field_179456_a.func_175463_b(0);
             this.field_179456_a.setAttackTarget((EntityLivingBase)null);
-            this.field_179456_a.wander.func_179480_f();
+            //this.field_179456_a.wander.func_179480_f();
         }
 
         public void updateTask()

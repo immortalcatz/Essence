@@ -54,11 +54,6 @@ public class EntitySkyStalker extends EntityEssenceBoss {
 	}
 
 	@Override
-	protected float getSoundVolume() {
-		return 10.0F;
-	}
-
-	@Override
 	public boolean getCanSpawnHere() {
 		return this.rand.nextInt(15) == 0 && super.getCanSpawnHere()
 				&& this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;

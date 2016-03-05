@@ -1,10 +1,13 @@
 package net.slayer.api.entity;
 
+import net.journey.client.render.particles.EntityModFireFX;
+import net.journey.client.render.particles.EntityModLavaFX;
 import net.journey.util.IEssenceBoss;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public abstract class EntityEssenceBoss extends EntityModMob implements IEssenceBoss {
 
@@ -25,6 +28,16 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 		return super.getHealth();
 	}
 	
+    protected String getDeathSound()
+    {
+        return "mob.wither.death";
+    }
+    
+    @Override
+    public float getSoundVolume() {
+    	return 10.0F;
+    }
+	
 	@Override
 	public float getModMaxHealth() {
 		return getMaxHealth();
@@ -32,14 +45,45 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 
 	protected void onDeathUpdate()
     {
-        ++this.deathTicks;
+       // ++this.deathTicks;
 
-        if (this.deathTicks >= 180 && this.deathTicks <= 200)
+       // if (this.deathTicks >= 180 && this.deathTicks <= 200)
         {
             float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
             float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
             float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 2.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 1.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 3.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
+         
             this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 1.0D, 1.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 2.0D, 2.0D, 2.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 3.0D, 2.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 3.0D, 5.0D, 4.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 5.0D, 4.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 4.0D, 5.0D, 6.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 4.0D + (double)f1, this.posZ + (double)f2, 5.0D, 6.0D, 7.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 3.0D, 2.0D, 2.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 6.0D + (double)f1, this.posZ + (double)f2, 4.0D, 2.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 7.0D + (double)f1, this.posZ + (double)f2, 5.0D, 2.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 8.0D + (double)f1, this.posZ + (double)f2, 1.0D, 3.0D, 5.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 9.0D + (double)f1, this.posZ + (double)f2, 6.0D, 4.0D, 3.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 10.0D + (double)f1, this.posZ + (double)f2, 1.0D, 5.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 11.0D + (double)f1, this.posZ + (double)f2, 2.0D, 4.0D, 2.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 12.0D + (double)f1, this.posZ + (double)f2, 3.0D, 6.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 13.0D + (double)f1, this.posZ + (double)f2, 3.0D, 5.0D, 9.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 14.0D + (double)f1, this.posZ + (double)f2, 5.0D, 8.0D, 1.0D, new int[0]);
+            
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 4.0D + (double)f1, this.posZ + (double)f2, 1.0D, 2.0D, 3.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 8.0D + (double)f1, this.posZ + (double)f2, 2.0D, 4.0D, 6.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 4.0D, 2.0D, 4.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 3.0D, 0.0D, 2.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 6.0D + (double)f1, this.posZ + (double)f2, 6.0D, 4.0D, 5.0D, new int[0]);
         }
 
         int i;
@@ -47,7 +91,7 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 
         if (!this.worldObj.isRemote)
         {
-            if (this.deathTicks > 150 && this.deathTicks % 5 == 0 && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
+            //if (this.deathTicks > 150 && this.deathTicks % 5 == 0 && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
             {
                 i = 1000;
 
@@ -59,16 +103,16 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
                 }
             }
 
-            if (this.deathTicks == 1)
+            //if (this.deathTicks == 1)
             {
-                this.worldObj.playBroadcastSound(1018, new BlockPos(this), 0);
+                //this.worldObj.playBroadcastSound(1018, new BlockPos(this), 0);
             }
         }
 
-        this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
+        //this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
         this.renderYawOffset = this.rotationYaw += 20.0F;
 
-        if (this.deathTicks == 200 && !this.worldObj.isRemote)
+        //if (this.deathTicks == 200 && !this.worldObj.isRemote)
         {
             i = 2000;
 
