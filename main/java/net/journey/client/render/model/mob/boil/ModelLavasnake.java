@@ -1,3 +1,8 @@
+/**
+ * An altered version of the Guardian Model
+ * Author ~ Ryan Bakody (Dizzlepop12), and Mojang
+ */
+
 package net.journey.client.render.model.mob.boil;
 
 import net.journey.entity.mob.boiling.EntityLavasnake;

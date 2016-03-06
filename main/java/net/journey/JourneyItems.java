@@ -280,7 +280,7 @@ public class JourneyItems {
 	public static final Item royalStabber = new ItemPoisionSword("royalStabber", "Royal Stabber", EssenceToolMaterial.ROYAL_STABBER);
 	public static final Item rocSword = new ItemModSword("rocSword", "Roc Sword", EssenceToolMaterial.ROC_SWORD);
 	public static final Item swordOfTheThunderbird = new ItemModSword("swordOfTheThunderbird", "Sword of the Thunderbird", EssenceToolMaterial.SWORD_THUNDERBIRD);
-	public static final Item bloodwieldSword = new ItemModSword("bloodWieldSword", "Blood Wielder", EssenceToolMaterial.BLOODWIELD_SWORD);
+	public static final Item bloodwieldSword = new ItemHealthSword("bloodWieldSword", "Blood Wielder", EssenceToolMaterial.BLOODWIELD_SWORD, 1);
 	public static final Item charredBlade = new ItemWitherSword("charredBlade", "Charred Blade", EssenceToolMaterial.CHARRED_BLADE);
 	public static final Item sizzlerSword = new ItemModSword("sizzlerSword", "Sizzler Sword", EssenceToolMaterial.SIZZLER_SWORD);
 	public static final Item fluffyBlade = new ItemModSword("fluffyBlade", "Fluffy Blade", EssenceToolMaterial.FLUFFY_BLADE);

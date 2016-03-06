@@ -19,6 +19,7 @@ import net.journey.blocks.BlockIcicle;
 import net.journey.blocks.BlockJoinedGlass;
 import net.journey.blocks.BlockJoinedPane;
 import net.journey.blocks.BlockMiniColouredBricks;
+import net.journey.blocks.BlockStoneCraftingTable;
 import net.journey.blocks.base.BlockModFire;
 import net.journey.blocks.base.BlockModOre;
 import net.journey.blocks.crop.BlockCorveggieCrop;
@@ -296,6 +297,7 @@ public class JourneyBlocks {
 	public static final Block blueGems = new BlockGemBlock("blueGems", "Blue Gems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	
+	public static final Block stoneCraftingTable = new BlockStoneCraftingTable("stoneCraftingTable", "Stone Crafting Table");
 	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
 	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggiesCrop");
 	public static final Block crackenCaneCrop = new BlockCrackenCaneCrop("crackenCanesCrop");

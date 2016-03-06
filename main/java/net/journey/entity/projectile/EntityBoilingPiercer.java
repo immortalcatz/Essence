@@ -27,19 +27,11 @@ public class EntityBoilingPiercer extends EntityThrowable {
 	@Override
 	protected void onImpact(MovingObjectPosition par1) {
 		if(par1.entityHit != null && par1.entityHit != this.thrower) {
+			par1.entityHit.setFire(10);
 			par1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), this.damage);
 			if(!this.worldObj.isRemote) this.setDead();
 			return;
 		}
-		if(par1.sideHit == EnumFacing.UP || par1.sideHit == EnumFacing.DOWN) {
-			this.motionY *= -1.0D;
-		} else if(par1.sideHit == EnumFacing.SOUTH || par1.sideHit == EnumFacing.NORTH) {
-			this.motionZ *= -1.0D;
-		} else if(par1.sideHit == EnumFacing.EAST || par1.sideHit == EnumFacing.WEST) {
-			this.motionX *= -1.0D;
-		}		
-		this.bounces++;
-		if(this.bounces == maxBounces) this.setDead();
 	}
 	
 	@Override

@@ -186,6 +186,7 @@ tile.burntGrass.name=Burnt Grass
 tile.grindstone.name=Grindstone
 tile.blueGems.name=Blue Gems
 tile.redGems.name=Red Gems
+tile.stoneCraftingTable.name=Stone Crafting Table
 tile.blackBlock.name=Black Block
 tile.whiteBlock.name=White Block
 tile.eucaPumpkin.name=Euca Pumpkin

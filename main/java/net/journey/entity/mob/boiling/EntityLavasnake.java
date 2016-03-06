@@ -1,3 +1,8 @@
+/**
+ * An altered version of the Guardian Entity
+ * Author ~ Ryan Bakody (Dizzlepop12), and Mojang
+ */
+
 package net.journey.entity.mob.boiling;
 
 import com.google.common.base.Predicate;
