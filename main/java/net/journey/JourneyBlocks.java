@@ -13,6 +13,7 @@ import net.journey.blocks.BlockFrozenPortal;
 import net.journey.blocks.BlockGemBlock;
 import net.journey.blocks.BlockGlowshroom;
 import net.journey.blocks.BlockHalfSlab;
+import net.journey.blocks.BlockHellThorn;
 import net.journey.blocks.BlockHotBlock;
 import net.journey.blocks.BlockIceLog;
 import net.journey.blocks.BlockIcicle;
@@ -250,6 +251,8 @@ public class JourneyBlocks {
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
 	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
+	public static final Block hellThornTop = new BlockHellThorn("hellThornTop", "Hell Thorn", true);
+	public static final Block hellThornBottom = new BlockHellThorn("hellThornBottom", "Hell Thorn", false);
 	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", "Green Glowshroom", true);
 	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
 	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);

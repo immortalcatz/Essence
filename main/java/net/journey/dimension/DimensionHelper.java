@@ -49,6 +49,7 @@ import net.journey.entity.mob.frozen.EntityPermafraust;
 import net.journey.entity.mob.frozen.EntityShatterer;
 import net.journey.entity.mob.frozen.EntityShiveringBushwalker;
 import net.journey.entity.mob.frozen.EntityShiverwing;
+import net.journey.entity.mob.nether.EntityLavasnake;
 import net.journey.entity.mob.overworld.EntityBigHongo;
 import net.journey.entity.mob.overworld.EntityBoom;
 import net.journey.entity.mob.overworld.EntityFireMage;
@@ -349,7 +350,10 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntitySwampFly.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SWAMP));
 		
 	}
-	
+	private static void addNetherSpawns() {
+		int amount = 100;
+		EntityRegistry.addSpawn(EntityLavasnake.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
+	}
 	private static void addVanillaSpawns() {
 		int amount = 4;
 		

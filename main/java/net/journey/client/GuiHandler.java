@@ -15,9 +15,11 @@ import net.journey.client.render.gui.GuiOvergrownMerchant;
 import net.journey.client.render.gui.GuiStaringGuardian;
 import net.journey.client.render.gui.GuiStarlightBlacksmith;
 import net.journey.client.render.gui.GuiStarlightVillager;
+import net.journey.client.render.gui.GuiStoneCraftingTable;
 import net.journey.client.render.gui.GuiSummoningTable;
 import net.journey.client.render.gui.GuiTerranian;
 import net.journey.client.render.gui.GuiTordo;
+import net.minecraft.client.gui.inventory.GuiCrafting;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,13 +27,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.slayer.api.entity.tileentity.container.ContainerModCrafting;
 import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN, TERRANIAN_ENCHANTER, OVERGROWN_MERCHANT, ESCAPED;
+		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN, TERRANIAN_ENCHANTER, OVERGROWN_MERCHANT, ESCAPED, CRAFTING;
 	}
+
+	public static int CRAFTING;
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -51,6 +56,10 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.TERRANIAN_ENCHANTER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.OVERGROWN_MERCHANT.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.ESCAPED.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
+		if (ID == GuiIDs.CRAFTING.ordinal())
+        {
+            return new GuiStoneCraftingTable(player.inventory, null, world);
+        }
 		return null;
 	}
 
@@ -72,6 +81,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.TERRANIAN_ENCHANTER.ordinal()) return new GuiTerranian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.OVERGROWN_MERCHANT.ordinal()) return new GuiOvergrownMerchant(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.ESCAPED.ordinal()) return new GuiEscaped(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
+		if(ID == GuiIDs.CRAFTING.ordinal()) return new GuiStoneCraftingTable(player.inventory, null, world);
 		return null;
 	}
 

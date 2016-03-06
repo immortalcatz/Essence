@@ -86,7 +86,7 @@ public class JourneyItems {
 	public static final Item blazingFireball = new ItemMod("blazingFireball", "Blazing Fireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell", "Hell Turtle Shell");
 	public static final Item sizzlingEye = new ItemMod("sizzlingEye", "Sizzling Eye");
-	public static final Item snakeFlesh = new ItemMod("snakeFlesh", "Snake Flesh");
+
 	public static final Item boilingSkull = new ItemMod("boilingSkull", "Boiling Skull");
 	public static final Item overgrownNatureBall = new ItemMod("overgrownNatureBall", "Overgrown Natureball");
 	public static final Item overseeingTablet = new ItemMod("overseeingTablet", "Overseeing Tablet");
@@ -143,6 +143,11 @@ public class JourneyItems {
 	public static final Item purplePowder = new ItemMod("purplePowder", "Purple Powder");
 	public static final Item hellShards = new ItemMod("hellShards", "Hell Shards");
 	public static final Item hellcrustIngot = new ItemMod("hellcrustIngot", "Hellcrust Ingot");
+	public static final Item flamingSprocket = new ItemMod("flamingSprocket", "Flaming Sprocket");
+	public static final Item flamingSpring = new ItemMod("flamingSpring", "Flaming Spring");
+	public static final Item blood = new ItemMod("blood", "Blood");
+	public static final Item concentratedBlood = new ItemMod("concentratedBlood", "Concentrated Blood");
+	public static final Item snakeSkin = new ItemMod("snakeSkin", "Snake Skin");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -529,15 +534,15 @@ public class JourneyItems {
 	public static final Item floroPedal = new ItemModFood("floroPedal", "Floro Pedal", 3, 3.0F, false);
 	public static final Item tomato = new ItemModFood("tomato", "Tomato", 3, 3.0F, false);
 	public static final Item glowshroom = new ItemGlowshroom("glowshroom", "Glowshroom", 4, 3.0F, false, false).setAlwaysEdible();
-	public static final Item corveggies = new ItemCorveggies("corveggies", "Corveggies", 4, 3.0F, false, false).setPotionEffect(Potion.saturation.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(Potion.damageBoost.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb"," Crake Bulb", 4, 3.0F, false, false).setPotionEffect(Potion.waterBreathing.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item spineberries = new ItemSpineberries("spineberries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(Potion.absorption.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item zatPedal = new ItemZatPedal("zatPedal", "Zat Pedal", 4, 3.0F, false, false).setPotionEffect(Potion.fireResistance.id, 5, 1, 1.0F).setAlwaysEdible();
+	public static final Item corveggies = new ItemCorveggies("corveggies", "Corveggies", 4, 3.0F, false, false).setPotionEffect(Potion.saturation.id, 20, 1, 1.0F).setAlwaysEdible();
+	public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(Potion.damageBoost.id, 20, 1, 1.0F).setAlwaysEdible();
+	public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb"," Crake Bulb", 4, 3.0F, false, false).setPotionEffect(Potion.waterBreathing.id, 20, 1, 1.0F).setAlwaysEdible();
+	public static final Item spineberries = new ItemSpineberries("spineberries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(Potion.absorption.id, 20, 1, 1.0F).setAlwaysEdible();
+	public static final Item zatPedal = new ItemZatPedal("zatPedal", "Zat Pedal", 4, 3.0F, false, false).setPotionEffect(Potion.fireResistance.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item glowa = new ItemGlowa("glowa", "Glowa", 4, 3.0F, false, false).setPotionEffect(Potion.nightVision.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item mintCandyCane = new ItemCandyCane("mintCandyCane", "Mint Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.digSpeed.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item fruityCandyCane = new ItemCandyCane("fruityCandyCane", "Fruity Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.damageBoost.id, 5, 1, 1.0F).setAlwaysEdible();
-	public static final Item cherryCandyCane = new ItemCandyCane("cherryCandyCane", "Cherry Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.regeneration.id, 5, 1, 1.0F).setAlwaysEdible();
+	public static final Item mintCandyCane = new ItemCandyCane("mintCandyCane", "Mint Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.digSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item fruityCandyCane = new ItemCandyCane("fruityCandyCane", "Fruity Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.damageBoost.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item cherryCandyCane = new ItemCandyCane("cherryCandyCane", "Cherry Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item peppermint = new ItemModFood("peppermint", "Peppermint", 1, 2.0F, false);
 	public static final Item jellyBeans = new ItemModFood("jellyBeans", "Jelly Beans", 1, 1.0F, false);
 	public static final Item chocolate = new ItemModFood("chocolate", "Chocolate Bar", 2, 1.0F, false);
@@ -556,6 +561,7 @@ public class JourneyItems {
 	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Honglowshroom", 2, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 2, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 6, 1.2F, false, false).setAlwaysEdible();
+	public static final Item snakeFlesh = new ItemZatPedal("snakeFlesh", "Snake Flesh", 6, 1.2F, false, false).setPotionEffect(Potion.fireResistance.id, 10, 1, 1.0F).setAlwaysEdible();
 
 	public static final Item glowshroomPowder = new ItemModSeeds("glowshroomPowder", "Glowshroom Powder", JourneyBlocks.glowshroomCrop);
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", "Tomato Seeds", JourneyBlocks.tomatoCrop);

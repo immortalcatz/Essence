@@ -162,6 +162,7 @@ public class Textures {
 	public static final ResourceLocation terraScatterer = addMob("terraScatterer");
 	public static final ResourceLocation purplian = addMob("purplian");
 	public static final ResourceLocation terraslug = addMob("terraslug");
+	public static final ResourceLocation hellbot = addMob("hellBot");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
