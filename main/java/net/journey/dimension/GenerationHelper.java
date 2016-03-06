@@ -7,6 +7,7 @@ import net.journey.dimension.boil.gen.WorldGenBoilingFire;
 import net.journey.dimension.boil.gen.WorldGenBoilingLava;
 import net.journey.dimension.depths.gen.WorldGenDepthsTree;
 import net.journey.dimension.euca.gen.WorldGenSmeltery;
+import net.journey.dimension.nether.gen.WorldGenHellThorn;
 import net.journey.dimension.overworld.gen.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
@@ -28,44 +29,48 @@ public class GenerationHelper {
 			break;
 		case 1:
 			y = r.nextInt(63); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			(new WorldGenSmallGlowshrooms()).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenHellThorn()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 2:
+			y = r.nextInt(63); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenSmallGlowshrooms()).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 3:
 			y = r.nextInt(20); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(JourneyBlocks.shadiumOre, 4, w, x, y, z);
 			break;
-		case 3:
+		case 4:
 			y = r.nextInt(25); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(JourneyBlocks.luniumOre, 5, w, x, y, z);
 			break;
-		case 4:
+		case 5:
 			y = r.nextInt(20); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(JourneyBlocks.sapphireOre, 5, w, x, y, z);
 			break;
-		case 5:
+		case 6:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenNether(JourneyBlocks.hellstoneOre, 5, w, x, y, z);
 			break;
-		case 6:
+		case 7:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, new BlockPos(x, y, z));
 			break;
-		case 7:
+		case 8:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 			break;
-		case 8:
+		case 9:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState()) new WorldGenTowerDungeon().generate(w, r, new BlockPos(x, y, z));
 			break;
-		case 9:
+		case 10:
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			//if(y < 60) new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
 			break;
-		case 10:
-			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(y > 100 && y < 160) new WorldGenFloatingIsland().generate(w, r, new BlockPos(x, y, z));
-			break;
+		//case 11:
+			//y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			//if(y > 100 && y < 160) new WorldGenFloatingIsland().generate(w, r, new BlockPos(x, y, z));
+			//break;
 		case 11:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenEnd(JourneyBlocks.enderilliumOre, 5, w, x, y, z);
@@ -88,6 +93,7 @@ public class GenerationHelper {
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
 			break;
+		
 		}
 	}
 

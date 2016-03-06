@@ -71,11 +71,6 @@
             return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
         }
 
-        @Override
-        public int getMaxSpawnedInChunk() {
-            return 1;
-        }
-
     	@Override
     	protected void dropFewItems(boolean b, int j) {
     		if(rand.nextInt(1) == 0) dropItem(JourneyItems.snakeFlesh, 2);

@@ -28,10 +28,10 @@ public class ModelLavasnake extends ModelBase
         this.textureHeight = 64;
         this.lavasnakeBody = new ModelRenderer(this);
         this.lavasnakeBody.setTextureOffset(0, 0).addBox(-6.0F, 10.0F, -8.0F, 12, 12, 16);
-        this.lavasnakeBody.setTextureOffset(0, 28).addBox(-8.0F, 10.0F, -6.0F, 2, 12, 12);
-        this.lavasnakeBody.setTextureOffset(0, 28).addBox(6.0F, 10.0F, -6.0F, 2, 12, 12, true);
-        this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 8.0F, -6.0F, 12, 2, 12);
-        this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 22.0F, -6.0F, 12, 2, 12);
+        //this.lavasnakeBody.setTextureOffset(0, 28).addBox(-8.0F, 10.0F, -6.0F, 2, 12, 12);
+        //this.lavasnakeBody.setTextureOffset(0, 28).addBox(6.0F, 10.0F, -6.0F, 2, 12, 12, true);
+        //this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 8.0F, -6.0F, 12, 2, 12);
+        //this.lavasnakeBody.setTextureOffset(16, 40).addBox(-6.0F, 22.0F, -6.0F, 12, 2, 12);
         {
         }
 
@@ -92,12 +92,12 @@ public class ModelLavasnake extends ModelBase
 
         //this.lavasnakeEye.showModel = true;
         //float f8 = entitylavasnake.func_175471_a(f6);
-        this.lavasnakeTail[0].rotateAngleY = MathHelper.sin(par3) * (float)Math.PI * 0.05F;
+        this.lavasnakeTail[0].rotateAngleY = MathHelper.sin(par3) * (float)Math.PI * 0.01F;
         this.lavasnakeTail[1].rotateAngleY = MathHelper.sin(par3) * (float)Math.PI * 0.1F;
         this.lavasnakeTail[1].rotationPointX = -1.5F;
         this.lavasnakeTail[1].rotationPointY = 0.5F;
         this.lavasnakeTail[1].rotationPointZ = 14.0F;
-        this.lavasnakeTail[2].rotateAngleY = MathHelper.sin(par3) * (float)Math.PI * 0.15F;
+        this.lavasnakeTail[2].rotateAngleY = MathHelper.sin(par3) * (float)Math.PI * 0.1F;
         this.lavasnakeTail[2].rotationPointX = 0.5F;
         this.lavasnakeTail[2].rotationPointY = 0.5F;
         this.lavasnakeTail[2].rotationPointZ = 6.0F;

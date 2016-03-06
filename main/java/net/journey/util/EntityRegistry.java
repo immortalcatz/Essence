@@ -210,13 +210,13 @@ public class EntityRegistry {
 	}
 
 	public static void registerBosses() {
+		SlayerAPI.registerBossMob(EntitySoulWatcher.class, "soulWatcher", "Soul Watcher");
 		SlayerAPI.registerBossMob(EntityNetherBeast.class, "beastOfTheNether", "Beast of the Nether");
 		SlayerAPI.registerBossMob(EntityWitheringBeast.class, "witheringBeast", "Withering Beast");
 		SlayerAPI.registerBossMob(EntityCalcia.class, "calcia", "Calcia");
 		SlayerAPI.registerBossMob(EntityTempleGuardian.class, "templeGuardian", "Temple Guardian");
 		SlayerAPI.registerBossMob(EntityFourfa.class, "fourfa", "Fourfa");
 		SlayerAPI.registerBossMob(EntityBlazier.class, "blazier", "Blazier");
-		SlayerAPI.registerBossMob(EntitySoulWatcher.class, "soulWatcher", "Soul Wather");
 		SlayerAPI.registerBossMob(EntitySentryKing.class, "sentryKing", "Sentry King");
 		SlayerAPI.registerBossMob(EntityThunderbird.class, "thunderbird", "Thunderbird");
 		SlayerAPI.registerBossMob(EntityLogger.class, "logger", "Logger");
