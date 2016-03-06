@@ -55,14 +55,6 @@ public class EntityBoom extends EntityModMob {
 	}
 
 	@Override
-	public void onLivingUpdate(){
-        if (this.worldObj.isDaytime()){
-            BlockPos pos = new BlockPos(this.posX, this.posY, this.posZ);
-            this.worldObj.canSeeSky(pos);
-            this.setFire(8);
-            }
-	}
-	@Override
 	public EnumSounds setDeathSound() {
 		return EnumSounds.CREEPER_DEATH;
 	}

@@ -6,6 +6,7 @@ import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.entity.mob.boss.EntityCalcia;
 import net.journey.entity.mob.boss.EntityNetherBeast;
+import net.journey.entity.mob.boss.EntitySoulWatcher;
 import net.journey.entity.mob.boss.EntityWitheringBeast;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -27,11 +28,13 @@ public class ItemNetherBossSpawner extends ItemMod {
 	@Override
 	public boolean onItemUse(ItemStack i, EntityPlayer p, World w, BlockPos pos, EnumFacing fa, float par8, float par9, float par10) {
 		Item item = i.getItem();
-		if(!w.isRemote){
+		if(!w.isRemote)
 			if(w.provider.getDimensionId() == -1) {
 				EntityWitheringBeast wither = new EntityWitheringBeast(w);
+				EntitySoulWatcher soul = new EntitySoulWatcher(w);
 				EntityCalcia calcia = new EntityCalcia(w);
 				EntityNetherBeast nether = new EntityNetherBeast(w);
+
 				if(item == JourneyItems.calciaOrb){
 					SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
 					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
@@ -47,13 +50,17 @@ public class ItemNetherBossSpawner extends ItemMod {
 					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(wither);
 				}
+				if(item == JourneyItems.soulWatcherOrb){
+					SlayerAPI.sendMessageToAll("The Soul Watcher has been summoned", true);
+					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(soul);
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
 				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the Nether.");
 			}
 		}
 		return true;
-	}
+		}
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
@@ -62,6 +69,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 		if(item == JourneyItems.calciaOrb) spawn = "Calcia";
 		if(item == JourneyItems.netherBeastOrb) spawn = "Nether Beast";
 		if(item == JourneyItems.witheringBeastOrb) spawn = "Withering Beast";
+		if(item == JourneyItems.soulWatcherOrb) spawn = "Soul Watcher";
 		list.add("Spawns the boss: " + spawn);
 	}
 }

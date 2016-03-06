@@ -164,6 +164,7 @@ public class Textures {
 	public static final ResourceLocation terraslug = addMob("terraslug");
 	public static final ResourceLocation hellbot = addMob("hellBot");
 	public static final ResourceLocation soulWatcher = addMob("soulWatcher");
+	public static final ResourceLocation witherspine = addMob("witherspine");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

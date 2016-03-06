@@ -64,7 +64,7 @@ public class BossTickHandler {
 			r = set("fourfa");
 			break;
 		case MobStats.blazierBossID:
-			imageY = 101;
+			imageY = 40;
 			barX = -40;
 			r = set("blazier");
 		case MobStats.soulWatcherBossID:
@@ -76,19 +76,19 @@ public class BossTickHandler {
 			barX = -5;
 			r = set("sentryKing");
 		case MobStats.thunderbirdBossID:
-			imageY = 141;
+			imageY = 161;
 			barX = -5;
 			r = set("thunderbird");
 		case MobStats.loggerBossID:
-			imageY = 141;
+			imageY = 181;
 			barX = -5;
 			r = set("logger");
 		case MobStats.corallatorBossID:
-			imageY = 141;
+			imageY = 20;
 			barX = -5;
 			r = set("corallator");
 		case MobStats.skyStalkerBossID:
-			imageY = 141;
+			imageY = 221;
 			barX = -5;
 			r = set("skyStalker");
 		}

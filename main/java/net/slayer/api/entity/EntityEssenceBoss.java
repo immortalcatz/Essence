@@ -12,7 +12,6 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 public abstract class EntityEssenceBoss extends EntityModMob implements IEssenceBoss {
 
 	private int deathTicks;
-
 	public EntityEssenceBoss(World par1World) {
 		super(par1World);
 		isImmuneToFire = true;
@@ -55,35 +54,16 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
             this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
             this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
             this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 2.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 1.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 3.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.5D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 2.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 1.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, this.posX + (double)f, this.posY + 3.5D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
          
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 1.0D, 1.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 2.0D, 2.0D, 2.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 3.0D, 2.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 3.0D, 5.0D, 4.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 5.0D, 4.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 4.0D, 5.0D, 6.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 4.0D + (double)f1, this.posZ + (double)f2, 5.0D, 6.0D, 7.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 3.0D, 2.0D, 2.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 6.0D + (double)f1, this.posZ + (double)f2, 4.0D, 2.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 7.0D + (double)f1, this.posZ + (double)f2, 5.0D, 2.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 8.0D + (double)f1, this.posZ + (double)f2, 1.0D, 3.0D, 5.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 9.0D + (double)f1, this.posZ + (double)f2, 6.0D, 4.0D, 3.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 10.0D + (double)f1, this.posZ + (double)f2, 1.0D, 5.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 11.0D + (double)f1, this.posZ + (double)f2, 2.0D, 4.0D, 2.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 12.0D + (double)f1, this.posZ + (double)f2, 3.0D, 6.0D, 1.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 13.0D + (double)f1, this.posZ + (double)f2, 3.0D, 5.0D, 9.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 14.0D + (double)f1, this.posZ + (double)f2, 5.0D, 8.0D, 1.0D, new int[0]);
-            
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 4.0D + (double)f1, this.posZ + (double)f2, 1.0D, 2.0D, 3.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 8.0D + (double)f1, this.posZ + (double)f2, 2.0D, 4.0D, 6.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 4.0D, 2.0D, 4.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 5.0D + (double)f1, this.posZ + (double)f2, 3.0D, 0.0D, 2.0D, new int[0]);
-            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX + (double)f, this.posY + 6.0D + (double)f1, this.posZ + (double)f2, 6.0D, 4.0D, 5.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 1.0D, 0.0D, 1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + (double)f, this.posY + 3.0D + (double)f1, this.posZ + (double)f2, -1.0D, 0.0D, -1.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)f, this.posY + 1.0D + (double)f1, this.posZ + (double)f2, 1.0D, 0.0D, -1.0D, new int[0]);
         }
 
         int i;

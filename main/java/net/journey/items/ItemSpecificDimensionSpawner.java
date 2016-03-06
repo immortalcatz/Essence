@@ -74,6 +74,16 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(corallator);
 				}
+				if(item == JourneyItems.loggerOrb) {
+					SlayerAPI.sendMessageToAll("The Logger has been summoned", true);
+					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(corallator);
+				}
+				if(item == JourneyItems.thunderbirdOrb) {
+					SlayerAPI.sendMessageToAll("The Thunderbird has been summoned", true);
+					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(corallator);
+				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
 				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the " + dimName + " dimension.");

@@ -115,5 +115,7 @@ public class MobStats {
 	public static double loggerHealth = 2000.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
 	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
 	public static double skyStalkerHealth = 1000.0D, skyStalkerDamage = 10.0D, skyStalkerSpeed = normalSpeed, skyStalkerFollowRange = follow;
+
+	public static double highNetherHealth = 60D, highNetherDamage = 10D;
 	
 }

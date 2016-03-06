@@ -93,6 +93,10 @@ public class GenerationHelper {
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
 			break;
+		case 15:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			worldMinableGenNether(JourneyBlocks.lavaRock, 5, w, x, y, z);
+			break;
 		
 		}
 	}

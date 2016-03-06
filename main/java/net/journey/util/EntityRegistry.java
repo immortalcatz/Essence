@@ -16,6 +16,7 @@ import net.journey.entity.mob.frozen.*;
 import net.journey.entity.mob.frozen.npc.*;
 import net.journey.entity.mob.nether.EntityHellbot;
 import net.journey.entity.mob.nether.EntityLavasnake;
+import net.journey.entity.mob.nether.EntityWitherspine;
 import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
@@ -90,6 +91,7 @@ public class EntityRegistry {
 
 	public static void registerNetherMobs() {
 		SlayerAPI.registerNetherMob(EntityHellbot.class, "hellbot", "Hellbot");
+		SlayerAPI.registerNetherMob(EntityWitherspine.class, "witherspine", "Witherspine");
 
 	}
 

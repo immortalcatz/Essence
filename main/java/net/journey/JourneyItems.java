@@ -148,6 +148,7 @@ public class JourneyItems {
 	public static final Item blood = new ItemMod("blood", "Blood");
 	public static final Item concentratedBlood = new ItemMod("concentratedBlood", "Concentrated Blood");
 	public static final Item snakeSkin = new ItemMod("snakeSkin", "Snake Skin");
+	public static final Item withicSpine = new ItemMod("withicSping", "Withic Spine");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -326,7 +327,7 @@ public class JourneyItems {
 	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb", "EudorOrb");
 	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Blazier Orb", "Boiling Point");
 	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Pet Roc Egg", "Overworld");
-	public static final Item soulWatcherOrb = new ItemSpecificDimensionSpawner(Config.boil, "soulWatcherOrb", "Soul Watcher Orb", "Boiling Point");
+	public static final Item soulWatcherOrb = new ItemNetherBossSpawner("soulWatcherOrb", "Soul Watcher Orb");
 	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Sentry King Orb", "Corba");
 	public static final Item loggerOrb = new ItemSpecificDimensionSpawner(Config.corba, "loggerOrb", "Logger Orb", "Corba");
 	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Thunderbird Orb", "Depths");

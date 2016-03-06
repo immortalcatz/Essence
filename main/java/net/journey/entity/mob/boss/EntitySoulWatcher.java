@@ -38,7 +38,7 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 		this.tasks.addTask(7, new EntitySoulWatcher.AILookAround());
 		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
 		addAttackingAI();
-		setSize(15.0F, 15.0F);
+		setSize(4.0F, 4.0F);
 	}
 
 	@Override
