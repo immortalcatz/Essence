@@ -81,9 +81,7 @@ public class WorldGenBoilPortal extends WorldGenerator {
 		WorldGenAPI.addRectangle(1, 1, 5, w, x + 4, y + 1, z, Blocks.nether_brick_fence);
 		WorldGenAPI.addRectangle(1, 1, 5, w, x + 4, y + 1, z + 5, Blocks.nether_brick_fence);
 		WorldGenAPI.addRectangle(1, 1, 5, w, x, y + 1, z + 5, Blocks.nether_brick_fence);
-		WorldGenAPI.addRectangle(1, 4, 5, w, x + 2, y + 1, z + 1, JourneyBlocks.boilPortalFrame);
 		WorldGenAPI.addRectangle(1, 2, 3, w, x + 2, y + 2, z + 2, Blocks.air);
-		WorldGenAPI.addBlock(w, x + 2, y + 3, z + 2, JourneyBlocks.fire);
 		return canSpawn;
 	}
 }

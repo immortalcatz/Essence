@@ -70,13 +70,13 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				addParticles();
 			}
 			else if(areItemsInSlots(
-					JourneyItems.snakeFlesh, 
-					JourneyItems.boilPowder, 
-					JourneyItems.snakeFlesh, 
-						JourneyItems.sizzlingEye, 
-					JourneyItems.snakeFlesh, 
-					JourneyItems.boilPowder, 
-					JourneyItems.snakeFlesh)) {
+					JourneyItems.snakeSkin, 
+					JourneyItems.concentratedBlood, 
+					JourneyItems.snakeSkin, 
+						JourneyItems.lostSoul, 
+					JourneyItems.snakeSkin, 
+					JourneyItems.concentratedBlood, 
+					JourneyItems.snakeSkin)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.soulWatcherOrb);
 				addParticles();

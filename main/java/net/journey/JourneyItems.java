@@ -148,7 +148,8 @@ public class JourneyItems {
 	public static final Item blood = new ItemMod("blood", "Blood");
 	public static final Item concentratedBlood = new ItemMod("concentratedBlood", "Concentrated Blood");
 	public static final Item snakeSkin = new ItemMod("snakeSkin", "Snake Skin");
-	public static final Item withicSpine = new ItemMod("withicSping", "Withic Spine");
+	public static final Item withicSpine = new ItemMod("withicSpine", "Withic Spine");
+	public static final Item lostSoul = new ItemMod("lostSoul", "Lost Spine");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -323,19 +324,17 @@ public class JourneyItems {
 
 	public static final Item calciaOrb = new ItemNetherBossSpawner("calciaOrb", "Calcia Orb");
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb", "Nether Beast Orb");
-	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb", "Withering Beast Orb");
-	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb", "EudorOrb");
+	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb", "Withering Soul");
+	public static final Item eudorOrb = new ItemEssenceBossSpawner("eudorOrb", "Valuable Crown");
 	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Blazier Orb", "Boiling Point");
 	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Pet Roc Egg", "Overworld");
-	public static final Item soulWatcherOrb = new ItemNetherBossSpawner("soulWatcherOrb", "Soul Watcher Orb");
-	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Sentry King Orb", "Corba");
-	public static final Item loggerOrb = new ItemSpecificDimensionSpawner(Config.corba, "loggerOrb", "Logger Orb", "Corba");
-	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Thunderbird Orb", "Depths");
+	public static final Item soulWatcherOrb = new ItemNetherBossSpawner("soulWatcherOrb", "Soulless Eye");
+	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Eye of the Sentry", "Corba");
+	public static final Item loggerOrb = new ItemSpecificDimensionSpawner(Config.corba, "loggerOrb", "Enchanted Log", "Corba");
+	public static final Item thunderbirdOrb = new ItemSpecificDimensionSpawner(Config.depths, "thunderbirdOrb", "Leader's Pearl", "Depths");
 	public static final Item mysteriousDisk = new ItemSpecificDimensionSpawner(Config.cloudia, "mysteriousDisk", "Mysterious Disk", "Cloudia");
-	public static final Item corallatorOrb = new ItemSpecificDimensionSpawner(Config.euca, "corallatorOrb", "Corallator Orb", "Euca");
-	
-	//TODO
-	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Scale Orb", "Depths");
+	public static final Item corallatorOrb = new ItemSpecificDimensionSpawner(Config.euca, "corallatorOrb", "Gem of Peculiar Smelting", "Euca");
+	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Aquatic Egg", "Depths");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", "Weak Dark Energy Potion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", "Strong Dark Energy Potion", true, false);

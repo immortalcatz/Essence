@@ -125,6 +125,7 @@ public class DimensionHelper {
 		addCloudiaSpawns();
 		addTerraniaSpawns();
 		addCommonVanillaSpawns();
+		addNetherSpawns();
 	}
 	
 	private static void addCloudiaSpawns() {
@@ -202,6 +203,8 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityHellwing.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityObserver.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityPhoenix.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityLavasnake.class, 20, 1, 1, EnumCreatureType.MONSTER, boiling);
+		EntityRegistry.addSpawn(EntityWitherspine.class, 20, 1, 1, EnumCreatureType.MONSTER, boiling);
 	}
 
 	private static void addDepthsSpawns() {
@@ -352,8 +355,8 @@ public class DimensionHelper {
 		
 	}
 	private static void addNetherSpawns() {
-		EntityRegistry.addSpawn(EntityLavasnake.class, 1, 1, 50, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
-		EntityRegistry.addSpawn(EntityWitherspine.class, 1, 1, 50, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
+		EntityRegistry.addSpawn(EntityLavasnake.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
+		EntityRegistry.addSpawn(EntityWitherspine.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 	}
 	private static void addVanillaSpawns() {
 		int amount = 4;

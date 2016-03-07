@@ -18,10 +18,10 @@ public class EntityWitherspine extends EntityModMob {
 		setSize(0.7F, 4.2F);
 	}
 	
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.getCanSpawnHere() && this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.nether_brick;
-	}
+	//@Override
+	//public boolean getCanSpawnHere() {
+	//	return super.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == Blocks.nether_brick;
+	//}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
@@ -45,12 +45,12 @@ public class EntityWitherspine extends EntityModMob {
     
     protected String getHurtSound()
     {
-        return "mob.wither.hurt";
+        return "mob.skeleton.hurt";
     }
     
     protected String getDeathSound()
     {
-        return "mob.wither.hurt";
+        return "mob.skeleton.death";
     }
     
 	@Override

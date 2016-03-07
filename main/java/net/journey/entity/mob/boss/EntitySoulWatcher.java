@@ -38,7 +38,7 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 		this.tasks.addTask(7, new EntitySoulWatcher.AILookAround());
 		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
 		addAttackingAI();
-		setSize(4.0F, 4.0F);
+		setSize(16.0F, 8.0F);
 	}
 
 	@Override
@@ -86,13 +86,13 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.depthsPortalGem;
+		return JourneyItems.eucaPortalGem;
 	}
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
 		switch(rand.nextInt(2)) {
-		case 0: dropItem(JourneyItems.overseerBow, 1); break;
+		case 0: dropItem(JourneyItems.staringBow, 1); break;
 		case 1: dropItem(JourneyItems.sentrySword, 1); break;
 		}
 	}

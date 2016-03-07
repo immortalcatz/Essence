@@ -119,23 +119,23 @@ public class SlayerAPI {
 	}
 	
 	public static void registerOverworldMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0x218700, 0xC4C400);
+		registerMob(entityClass, entityName, finalN, 0x7c4c2c, 0x26b530);
 	}
 	
 	public static void registerNetherMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0xA80000, 0x680000);
+		registerMob(entityClass, entityName, finalN, 0xff0000, 0xffd800);
 	}
 	
 	public static void registerBPMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0x6041160, 0xC14113);
+		registerMob(entityClass, entityName, finalN, 0xff7800, 0xffa800);
 	}
 	
 	public static void registerFLMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0x005CD6, 0x00A4DB);
+		registerMob(entityClass, entityName, finalN, 0x00d8ff, 0xd8f9ff);
 	}
 	
 	public static void registerEucaMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0xBCB600, 0xA5A5A5);
+		registerMob(entityClass, entityName, finalN, 0xffba00, 0xe0e0e0);
 	}
 	
 	public static void registerDepthsMob(Class entityClass, String entityName, String finalN) {
@@ -143,15 +143,15 @@ public class SlayerAPI {
 	}
 	
 	public static void registerCorbaMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0xAA5D41, 0x00A851);
+		registerMob(entityClass, entityName, finalN, 0x1e8c00, 0x36ff00);
 	}
 	
 	public static void registerCloudiaMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0xB3D3C1, 0xD0D1CF);
+		registerMob(entityClass, entityName, finalN, 0xa87abd, 0x9000ff);
 	}
 	
 	public static void registerTerraniaMob(Class entityClass, String entityName, String finalN) {
-		registerMob(entityClass, entityName, finalN, 0xB3D3C1, 0xD0D1CF);
+		registerMob(entityClass, entityName, finalN, 0x7813ff, 0xff58f5);
 		
 	}
 	

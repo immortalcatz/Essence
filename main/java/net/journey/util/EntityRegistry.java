@@ -92,6 +92,7 @@ public class EntityRegistry {
 	public static void registerNetherMobs() {
 		SlayerAPI.registerNetherMob(EntityHellbot.class, "hellbot", "Hellbot");
 		SlayerAPI.registerNetherMob(EntityWitherspine.class, "witherspine", "Witherspine");
+		SlayerAPI.registerNetherMob(EntityLavasnake.class, "lavasnake", "Lavasnake");
 
 	}
 
@@ -133,7 +134,6 @@ public class EntityRegistry {
 		SlayerAPI.registerBPMob(EntityObserver.class, "observer", "Observer");
 		SlayerAPI.registerBPMob(EntityScreamer.class, "screamer", "Screamer");
 		SlayerAPI.registerBPMob(EntityPhoenix.class, "phoenix", "Phoenix");
-		SlayerAPI.registerBPMob(EntityLavasnake.class, "lavasnake", "Lavasnake");
 	}
 
 	public static void registerFLMobs() {

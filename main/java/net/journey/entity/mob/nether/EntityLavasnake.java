@@ -68,7 +68,7 @@
     	
     	@Override
     	public boolean getCanSpawnHere() {
-            return this.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
+            return super.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
         }
 
     	@Override
