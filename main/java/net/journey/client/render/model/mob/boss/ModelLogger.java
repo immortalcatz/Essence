@@ -124,4 +124,15 @@ public class ModelLogger extends ModelBase {
 		model.rotateAngleZ = z;
 
 	}
+	
+	@Override
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+		this.foot1.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+		this.foot2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Shoulder1.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+		this.shoulder2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+	}
 }

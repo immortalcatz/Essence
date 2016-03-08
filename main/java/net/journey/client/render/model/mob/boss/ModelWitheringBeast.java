@@ -7,105 +7,94 @@ import net.minecraft.util.MathHelper;
 
 public class ModelWitheringBeast extends ModelBase {
 
-	private ModelRenderer Chest;
-	private ModelRenderer Stomach;
-	private ModelRenderer LeftLeg;
-	private ModelRenderer RightLeg;
-	private ModelRenderer RightShoulder;
-	private ModelRenderer RightArm;
-	private ModelRenderer LeftArm;
-	private ModelRenderer Head;
-	private ModelRenderer Rib1;
-	private ModelRenderer Rib2;
-	private ModelRenderer LeftShoulder;
+    public ModelRenderer spine1;
+    public ModelRenderer foot1;
+    public ModelRenderer foot2;
+    public ModelRenderer spine2;
+    public ModelRenderer rib1;
+    public ModelRenderer spine3;
+    public ModelRenderer spine4;
+    public ModelRenderer head;
+    public ModelRenderer rib2;
+    public ModelRenderer rib3;
+    public ModelRenderer rib4;
+    public ModelRenderer rib5;
+    public ModelRenderer head_1;
+    public ModelRenderer head_2;
+    public ModelRenderer rib4_1;
 
 	public ModelWitheringBeast() {
-		textureWidth = 128;
-		textureHeight = 64;
-
-		Chest = new ModelRenderer(this, 0, 0);
-		Chest.addBox(-6.5F, 0F, -3.5F, 13, 7, 7);
-		Chest.setRotationPoint(0F, 0F, 0F);
-		Chest.setTextureSize(128, 64);
-		Chest.mirror = true;
-		setRotation(Chest, 0F, 0F, 0F);
-		Stomach = new ModelRenderer(this, 0, 14);
-		Stomach.addBox(-3.5F, 0F, -2F, 7, 7, 4);
-		Stomach.setRotationPoint(0F, 7F, 0F);
-		Stomach.setTextureSize(128, 64);
-		Stomach.mirror = true;
-		setRotation(Stomach, 0F, 0F, 0F);
-		LeftLeg = new ModelRenderer(this, 22, 14);
-		LeftLeg.addBox(-1.5F, 0F, -1.5F, 3, 10, 3);
-		LeftLeg.setRotationPoint(2F, 14F, 0F);
-		LeftLeg.setTextureSize(128, 64);
-		LeftLeg.mirror = true;
-		setRotation(LeftLeg, 0F, 0F, 0F);
-		RightLeg = new ModelRenderer(this, 22, 14);
-		RightLeg.addBox(-1.5F, 0F, -1.5F, 3, 10, 3);
-		RightLeg.setRotationPoint(-2F, 14F, 0F);
-		RightLeg.setTextureSize(128, 64);
-		RightLeg.mirror = true;
-		setRotation(RightLeg, 0F, 0F, 0F);
-		RightShoulder = new ModelRenderer(this, 40, 0);
-		RightShoulder.addBox(-4.5F, -2.5F, -2.5F, 5, 5, 5);
-		RightShoulder.setRotationPoint(-7F, 2F, 0F);
-		RightShoulder.setTextureSize(128, 64);
-		RightShoulder.mirror = true;
-		setRotation(RightShoulder, 0F, 0F, 0F);
-		RightArm = new ModelRenderer(this, 34, 14);
-		RightArm.addBox(-2F, 0F, -2F, 4, 13, 4);
-		RightArm.setRotationPoint(-9F, 4.5F, 0F);
-		RightArm.setTextureSize(128, 64);
-		RightArm.mirror = true;
-		setRotation(RightArm, 0F, 0F, 0F);
-		LeftArm = new ModelRenderer(this, 34, 14);
-		LeftArm.addBox(-2F, 0F, -2F, 4, 13, 4);
-		LeftArm.setRotationPoint(9F, 4.5F, 0F);
-		LeftArm.setTextureSize(128, 64);
-		LeftArm.mirror = true;
-		setRotation(LeftArm, 0F, 0F, 0F);
-		Head = new ModelRenderer(this, 50, 10);
-		Head.addBox(-3F, -6F, -3F, 6, 6, 6);
-		Head.setRotationPoint(0F, 0F, 0F);
-		Head.setTextureSize(128, 64);
-		Head.mirror = true;
-		setRotation(Head, 0F, 0F, 0F);
-		Rib1 = new ModelRenderer(this, 0, 25);
-		Rib1.addBox(-4.5F, -1F, -1F, 9, 2, 2);
-		Rib1.setRotationPoint(0F, 9F, 0F);
-		Rib1.setTextureSize(128, 64);
-		Rib1.mirror = true;
-		setRotation(Rib1, 0F, 0F, 0F);
-		Rib2 = new ModelRenderer(this, 0, 25);
-		Rib2.addBox(-4.5F, -1F, -1F, 9, 2, 2);
-		Rib2.setRotationPoint(0F, 12F, 0F);
-		Rib2.setTextureSize(128, 64);
-		Rib2.mirror = true;
-		setRotation(Rib2, 0F, 0F, 0F);
-		LeftShoulder = new ModelRenderer(this, 40, 0);
-		LeftShoulder.addBox(-0.5F, -2.5F, -2.5F, 5, 5, 5);
-		LeftShoulder.setRotationPoint(7F, 2F, 0F);
-		LeftShoulder.setTextureSize(128, 64);
-		LeftShoulder.mirror = true;
-		setRotation(LeftShoulder, 0F, 0F, 0F);
+		this.textureWidth = 128;
+        this.textureHeight = 128;
+        this.head_2 = new ModelRenderer(this, 0, 0);
+        this.head_2.setRotationPoint(-16.0F, -9.0F, 1.5F);
+        this.head_2.addBox(-5.0F, -5.0F, -10.0F, 10, 10, 10, 0.0F);
+        this.rib2 = new ModelRenderer(this, 80, 20);
+        this.rib2.setRotationPoint(-9.0F, 1.0F, 0.5F);
+        this.rib2.addBox(0.0F, 0.0F, 0.0F, 18, 2, 2, 0.0F);
+        this.foot1 = new ModelRenderer(this, 80, 100);
+        this.foot1.setRotationPoint(2.0F, 10.0F, 1.5F);
+        this.foot1.addBox(0.0F, 0.0F, -3.0F, 6, 14, 6, 0.0F);
+        this.foot2 = new ModelRenderer(this, 80, 100);
+        this.foot2.setRotationPoint(1.8F, 10.0F, 1.5F);
+        this.foot2.addBox(-10.0F, 0.0F, -3.0F, 6, 14, 6, 0.0F);
+        this.head = new ModelRenderer(this, 0, 48);
+        this.head.setRotationPoint(0.0F, -22.0F, -3.0F);
+        this.head.addBox(-5.0F, -5.0F, -10.0F, 10, 10, 10, 0.0F);
+        this.rib4_1 = new ModelRenderer(this, 80, 20);
+        this.rib4_1.setRotationPoint(-9.0F, -5.0F, 0.5F);
+        this.rib4_1.addBox(0.0F, 0.0F, 0.0F, 18, 2, 2, 0.0F);
+        this.spine3 = new ModelRenderer(this, 0, 100);
+        this.spine3.setRotationPoint(-1.5F, -19.3F, -2.55F);
+        this.spine3.addBox(0.0F, 0.0F, 0.0F, 3, 4, 3, 0.0F);
+        this.setRotation(spine3, 0.45378560551852565F, 0.0F, 0.0F);
+        this.rib4 = new ModelRenderer(this, 80, 20);
+        this.rib4.setRotationPoint(-9.0F, -2.0F, 0.5F);
+        this.rib4.addBox(0.0F, 0.0F, 0.0F, 18, 2, 2, 0.0F);
+        this.spine4 = new ModelRenderer(this, 0, 22);
+        this.spine4.setRotationPoint(-1.5F, -22.1F, -5.05F);
+        this.spine4.addBox(0.0F, 0.0F, 0.0F, 3, 4, 3, 0.0F);
+        this.setRotation(spine4, 0.7330382858376184F, 0.0F, 0.0F);
+        this.rib5 = new ModelRenderer(this, 0, 80);
+        this.rib5.setRotationPoint(-18.0F, -10.0F, 0.0F);
+        this.rib5.addBox(0.0F, 0.0F, 0.0F, 36, 3, 3, 0.0F);
+        this.head_1 = new ModelRenderer(this, 0, 0);
+        this.head_1.setRotationPoint(16.0F, -9.0F, 1.5F);
+        this.head_1.addBox(-5.0F, -5.0F, -10.0F, 10, 10, 10, 0.0F);
+        this.spine1 = new ModelRenderer(this, 0, 22);
+        this.spine1.setRotationPoint(-1.5F, -12.0F, 0.0F);
+        this.spine1.addBox(0.0F, 0.0F, 0.0F, 3, 22, 3, 0.0F);
+        this.spine2 = new ModelRenderer(this, 0, 100);
+        this.spine2.setRotationPoint(-1.5F, -15.8F, -0.85F);
+        this.spine2.addBox(0.0F, 0.0F, 0.0F, 3, 4, 3, 0.0F);
+        this.setRotation(spine2, 0.22689280275926282F, 0.0F, 0.0F);
+        this.rib1 = new ModelRenderer(this, 60, 40);
+        this.rib1.setRotationPoint(-9.0F, 8.0F, -2.5F);
+        this.rib1.addBox(0.0F, 0.0F, 0.0F, 18, 5, 8, 0.0F);
+        this.rib3 = new ModelRenderer(this, 80, 20);
+        this.rib3.setRotationPoint(-9.0F, 4.0F, 0.5F);
+        this.rib3.addBox(0.0F, 0.0F, 0.0F, 18, 2, 2, 0.0F);
 	}
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		super.render(entity, f, f1, f2, f3, f4, f5);
 		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-		Chest.render(f5);
-		Stomach.render(f5);
-		LeftLeg.render(f5);
-		RightLeg.render(f5);
-		RightShoulder.render(f5);
-		RightArm.render(f5);
-		LeftArm.render(f5);
-		Head.render(f5);
-		Rib1.render(f5);
-		Rib2.render(f5);
-		LeftShoulder.render(f5);
+        this.head_2.render(f5);
+        this.rib2.render(f5);
+        this.foot1.render(f5);
+        this.foot2.render(f5);
+        this.head.render(f5);
+        this.rib4_1.render(f5);
+        this.spine3.render(f5);
+        this.rib4.render(f5);
+        this.spine4.render(f5);
+        this.rib5.render(f5);
+        this.head_1.render(f5);
+        this.spine1.render(f5);
+        this.spine2.render(f5);
+        this.rib1.render(f5);
+        this.rib3.render(f5);
 	}
 
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
@@ -115,12 +104,15 @@ public class ModelWitheringBeast extends ModelBase {
 	}
 
 	@Override
-	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
-		this.Head.rotateAngleY = par4 / (180F / (float)Math.PI);
-		this.Head.rotateAngleX = par5 / (180F / (float)Math.PI);
-		this.RightArm.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
-		this.LeftArm.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
-		this.RightLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
-		this.LeftLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+		this.head.rotateAngleY = f3 / 57.29578f;
+		this.head.rotateAngleX= f4 / 57.29578f;
+		this.head_1.rotateAngleY = f3 / 57.29578f;
+		this.head_1.rotateAngleX= f4 / 57.29578f;
+		this.head_2.rotateAngleY = f3 / 57.29578f;
+		this.head_2.rotateAngleX= f4 / 57.29578f;
+		this.foot1.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
+		this.foot2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 	}
 }

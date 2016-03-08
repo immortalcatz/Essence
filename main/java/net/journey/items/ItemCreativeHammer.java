@@ -28,14 +28,14 @@ public class ItemCreativeHammer extends ItemSword{
 	
 	protected int use;
 	protected int dam;
-	protected boolean durability;
+	protected boolean unbreakable;
 	protected Class<? extends EntityBasicProjectile> projectile;
 	protected EssenceToolMaterial mat;
 		
-	    public ItemCreativeHammer(String name, String f, EssenceToolMaterial toolMaterial, boolean durability, Class<? extends EntityLightningBall> projectile) {
+	    public ItemCreativeHammer(String name, String f, EssenceToolMaterial toolMaterial, boolean unbreakable, Class<? extends EntityLightningBall> projectile) {
 	        super(toolMaterial.getToolMaterial());
 	    	this.projectile=projectile;
-	    	this.durability=durability;
+	    	this.unbreakable=unbreakable;
 	    	setMaxStackSize(1);
 	        LangRegistry.addItem(name, f);
 	        setUnlocalizedName(name);
@@ -49,7 +49,7 @@ public class ItemCreativeHammer extends ItemSword{
 		@Override
 		public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 					EnumSounds.playSound(EnumSounds.PLASMA, world, player);
-					if(!durability) stack.damageItem(1, player);
+					if(!unbreakable) stack.damageItem(1, player);
 					try {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, dam));
 					} catch (Exception e) {
@@ -76,6 +76,6 @@ public class ItemCreativeHammer extends ItemSword{
 		public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
 			if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
 			else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
-			infoList.add(SlayerAPI.Colour.BLUE + "Creative Only");
+			infoList.add(SlayerAPI.Colour.YELLOW + "Creative Only");
 		}
 	}

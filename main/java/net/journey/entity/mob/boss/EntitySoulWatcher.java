@@ -86,11 +86,12 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalGem;
+		return JourneyItems.eucaPortalPiece;
 	}
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
+		this.dropItem(JourneyItems.eucaPortalPiece, 1);
 		switch(rand.nextInt(2)) {
 		case 0: dropItem(JourneyItems.staringBow, 1); break;
 		case 1: dropItem(JourneyItems.sentrySword, 1); break;

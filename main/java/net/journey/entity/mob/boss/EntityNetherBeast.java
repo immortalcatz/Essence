@@ -81,13 +81,12 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalGem;
+		return JourneyItems.eucaPortalPiece_1;
 	}
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(JourneyItems.eucaPortalGem, 6 + rand.nextInt(4));
-		//if(rand.nextInt(1) == 0)
-		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.netherBeastStatue), 1);
+		this.dropItem(JourneyItems.eucaPortalPiece_1, 2);
+		this.dropItem(JourneyItems.netherBeastSword, 1 + rand.nextInt(1));
 	}
 }

@@ -30,7 +30,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 10), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.summoningTable, 1), new Object[] {"dsd", "iii", "iii", 'i', JourneyItems.shadiumIngot, 'd', Items.diamond, 's', JourneyItems.sapphire});
 		
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.stoneClump});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.hellcrustIngot});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
@@ -43,8 +43,9 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneStick, 16), new Object[] {" d ", " d ", " d ", 'd', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.lostSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', Blocks.soul_sand, 'd', JourneyItems.withicDust});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.concentratedBlood, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.blood});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"   ", "  k", " ij", 'k', JourneyItems.eucaPortalPiece, 'i', JourneyItems.eucaPortalPiece_0, 'j', JourneyItems.eucaPortalPiece_1});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 

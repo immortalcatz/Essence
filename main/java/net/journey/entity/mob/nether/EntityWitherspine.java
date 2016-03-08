@@ -72,6 +72,10 @@ public class EntityWitherspine extends EntityModMob {
 		super.dropFewItems(b, j);
 		if(rand.nextInt(6) == 0) dropItem(JourneyItems.withicDust, 2);
 		super.dropFewItems(b, j);
+		if(rand.nextInt(22) == 0) dropItem(JourneyItems.withicSpine, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(33) == 0) dropItem(JourneyItems.withicSpine, 2);
+		super.dropFewItems(b, j);
 	}
 
 	@Override

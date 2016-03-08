@@ -49,7 +49,6 @@ public class ItemMultiTool extends ItemTool {
 		boolean canRepair = mat.getRepairItem() != null;
 		if(canRepair) return mat.getRepairItem() == i1.getItem() ? true : super.getIsRepairable(i, i1);
 		return super.getIsRepairable(i, i1);
-		
 	}
 	@Override
 	public boolean isItemTool(ItemStack i) {

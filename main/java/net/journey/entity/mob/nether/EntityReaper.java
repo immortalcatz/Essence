@@ -50,6 +50,20 @@ public class EntityReaper extends EntityModMob {
 	public Item getItemDropped() {
 		return JourneyItems.withicDust;
 	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(5) == 0) dropItem(JourneyItems.withicDust, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.blood, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(6) == 0) dropItem(JourneyItems.withicDust, 2);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(22) == 0) dropItem(JourneyItems.lostSoul, 1);
+		super.dropFewItems(b, j);
+		if(rand.nextInt(33) == 0) dropItem(JourneyItems.lostSoul, 2);
+		super.dropFewItems(b, j);
+	}
 
 	@Override
 	public EnumSounds setLivingSound() {

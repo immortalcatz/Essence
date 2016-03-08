@@ -61,19 +61,12 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalGem;
+		return JourneyItems.eucaPortalPiece_0;
 	}
 
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
-		switch(rand.nextInt(1)){
-		case 0:
-			this.dropItem(JourneyItems.depthsPortalGem, 6 + rand.nextInt(4));
-			break;
-		case 1:
-			this.dropItem(JourneyItems.eucaPortalGem, 6 + rand.nextInt(4));
-			break;
-		}
+		this.dropItem(JourneyItems.eucaPortalPiece_0, 2);
 		this.dropItem(JourneyItems.witheringBeastSword, 1);
 
 		//if(rand.nextInt(1) == 0)

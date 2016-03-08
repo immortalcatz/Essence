@@ -203,8 +203,6 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityHellwing.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityObserver.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityPhoenix.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityLavasnake.class, 20, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityWitherspine.class, 20, 1, 1, EnumCreatureType.MONSTER, boiling);
 	}
 
 	private static void addDepthsSpawns() {
