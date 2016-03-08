@@ -493,7 +493,8 @@ public class JourneyItems {
 	public static final Item fireWand = new ItemWand("fireWand", "Fire Wand", false, 5, 600, 8, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", "Ice Wand", true, 5, 600, 8, false, EntityIceBall.class);
 	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
-	//public static final Item hammerCreative = new ItemHammer("hammerCreative", "Hammer of Creative Spellbinding", EntityLightningBall.class, EssenceToolMaterial.CREATIVE);
+	public static final Item hammerCreative = new ItemCreativeHammer("hammerCreative", "Hammer of Creative Spellbinding", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class);
+	public static final Item hammerTEST = new ItemHammer("hammerTEST", "Hammer TEST", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class, false);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
 	public static final Item rockLauncher = new ItemChaosCannon("rockLauncher", "Rock Launcher");

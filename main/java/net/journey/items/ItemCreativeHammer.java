@@ -17,25 +17,25 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 
-public class ItemHammer extends ItemSword{
+public class ItemCreativeHammer extends ItemSword{
 	
 	protected int use;
 	protected int dam;
-	protected boolean essence, unbreakable;
+	protected boolean durability;
 	protected Class<? extends EntityBasicProjectile> projectile;
 	protected EssenceToolMaterial mat;
 		
-	    public ItemHammer(String name, String f, EssenceToolMaterial toolMaterial, boolean durability, Class<? extends EntityLightningBall> projectile, boolean essence) {
+	    public ItemCreativeHammer(String name, String f, EssenceToolMaterial toolMaterial, boolean durability, Class<? extends EntityLightningBall> projectile) {
 	        super(toolMaterial.getToolMaterial());
 	    	this.projectile=projectile;
-	    	this.essence = essence;
-	    	this.unbreakable=durability;
+	    	this.durability=durability;
 	    	setMaxStackSize(1);
 	        LangRegistry.addItem(name, f);
 	        setUnlocalizedName(name);
@@ -48,29 +48,15 @@ public class ItemHammer extends ItemSword{
 
 		@Override
 		public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-			if(essence) {
-				if(!world.isRemote && EssenceBar.getProperties(player).useBar(use)) {
 					EnumSounds.playSound(EnumSounds.PLASMA, world, player);
-					if(!unbreakable) stack.damageItem(1, player);
+					if(!durability) stack.damageItem(1, player);
 					try {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, dam));
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+					return stack;
 				}
-			} else {
-				if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(use)) {
-					EnumSounds.playSound(EnumSounds.PLASMA, world, player);
-					if(!unbreakable) stack.damageItem(1, player);
-					try {
-						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, dam));
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			}
-			return stack;
-		}
 
 	    
 		@Override
@@ -90,5 +76,6 @@ public class ItemHammer extends ItemSword{
 		public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
 			if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
 			else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
+			infoList.add(SlayerAPI.Colour.BLUE + "Creative Only");
 		}
 	}
