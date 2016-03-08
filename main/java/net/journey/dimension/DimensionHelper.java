@@ -50,6 +50,7 @@ import net.journey.entity.mob.frozen.EntityShatterer;
 import net.journey.entity.mob.frozen.EntityShiveringBushwalker;
 import net.journey.entity.mob.frozen.EntityShiverwing;
 import net.journey.entity.mob.nether.EntityLavasnake;
+import net.journey.entity.mob.nether.EntityReaper;
 import net.journey.entity.mob.nether.EntityWitherspine;
 import net.journey.entity.mob.overworld.EntityBigHongo;
 import net.journey.entity.mob.overworld.EntityBoom;
@@ -57,7 +58,6 @@ import net.journey.entity.mob.overworld.EntityFireMage;
 import net.journey.entity.mob.overworld.EntityFloro;
 import net.journey.entity.mob.overworld.EntityIceMage;
 import net.journey.entity.mob.overworld.EntityMediumHongo;
-import net.journey.entity.mob.overworld.EntityReaper;
 import net.journey.entity.mob.overworld.EntityRobot;
 import net.journey.entity.mob.overworld.EntitySandCrawler;
 import net.journey.entity.mob.overworld.EntitySmallHongo;
@@ -357,6 +357,7 @@ public class DimensionHelper {
 	private static void addNetherSpawns() {
 		EntityRegistry.addSpawn(EntityLavasnake.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 		EntityRegistry.addSpawn(EntityWitherspine.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
+		EntityRegistry.addSpawn(EntityReaper.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 	}
 	private static void addVanillaSpawns() {
 		int amount = 4;
@@ -406,13 +407,6 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntitySpyclops.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
 		EntityRegistry.addSpawn(EntitySpyclops.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
 		EntityRegistry.addSpawn(EntitySpyclops.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
-		
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DEAD));
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.MOUNTAIN));
-		EntityRegistry.addSpawn(EntityReaper.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.SPOOKY));
 
 		EntityRegistry.addSpawn(EntityFireMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
 		EntityRegistry.addSpawn(EntityFireMage.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.BEACH));

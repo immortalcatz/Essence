@@ -15,6 +15,7 @@ public class EntityWitherspine extends EntityModMob {
 	public EntityWitherspine(World par1World) {
 		super(par1World);
 		addAttackingAI();
+		this.isImmuneToFire = true;
 		setSize(0.7F, 4.2F);
 	}
 	
@@ -70,8 +71,6 @@ public class EntityWitherspine extends EntityModMob {
 		if(rand.nextInt(4) == 0) dropItem(JourneyItems.blood, 1);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(6) == 0) dropItem(JourneyItems.withicDust, 2);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(60) == 0) dropItem(Items.skull, 1);
 		super.dropFewItems(b, j);
 	}
 

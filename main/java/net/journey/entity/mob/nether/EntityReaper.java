@@ -1,4 +1,4 @@
-package net.journey.entity.mob.overworld;
+package net.journey.entity.mob.nether;
 
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
@@ -17,12 +17,8 @@ public class EntityReaper extends EntityModMob {
 	public EntityReaper(World par1World) {
 		super(par1World);
 		addAttackingAI();
+		this.isImmuneToFire = true;
 		setSize(0.7F, 2.0F);
-	}
-	
-	@Override
-	public ItemStack getHeldItem() {
-		return new ItemStack(Items.diamond_sword);
 	}
 
 	@Override
@@ -35,23 +31,38 @@ public class EntityReaper extends EntityModMob {
 		return s.reaperHealth;
 	}
 
-	@Override
-	public EnumSounds setLivingSound() {
-		return EnumSounds.REAPER;
-	}
-
-	@Override
-	public EnumSounds setHurtSound() {
-		return EnumSounds.REAPER_HURT;
-	}
-
-	@Override
-	public EnumSounds setDeathSound() {
-		return EnumSounds.REAPER_HURT;
-	}
+    protected String getLivingSound()
+    {
+        return "mob.wither.idle";
+    }
+    
+    protected String getHurtSound()
+    {
+        return "mob.skeleton.hurt";
+    }
+    
+    protected String getDeathSound()
+    {
+        return "mob.skeleton.death";
+    }
 	
 	@Override
 	public Item getItemDropped() {
 		return JourneyItems.withicDust;
+	}
+
+	@Override
+	public EnumSounds setLivingSound() {
+		return EnumSounds.EMPTY;
+	}
+
+	@Override
+	public EnumSounds setHurtSound() {
+		return EnumSounds.EMPTY;
+	}
+
+	@Override
+	public EnumSounds setDeathSound() {
+		return EnumSounds.EMPTY;
 	}
 }

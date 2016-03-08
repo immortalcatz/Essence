@@ -78,6 +78,8 @@ public enum EssenceToolMaterial {
 	VOLITE_SWORD(SlayerAPI.addMeleeMaterial(3500, 38, 25)),
 	TERRONIC_BLADE(SlayerAPI.addMeleeMaterial(3500, 39, 25)),
 	
+	CREATIVE(SlayerAPI.addMeleeMaterial(3000, 40, 25)),
+	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	
 	HELLSTONE_MULTI_TOOL(JourneyItems.hellstoneMulti, JourneyItems.hellstoneIngot, 3),

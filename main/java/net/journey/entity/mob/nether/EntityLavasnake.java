@@ -83,9 +83,9 @@
     		super.dropFewItems(b, j);
     		if(rand.nextInt(5) == 0) dropItem(JourneyItems.blood, 2);
     		super.dropFewItems(b, j);
-    		if(rand.nextInt(20) == 0) dropItem(JourneyItems.snakeSkin, 1);
+    		if(rand.nextInt(5) == 0) dropItem(JourneyItems.snakeSkin, 1);
     		super.dropFewItems(b, j);
-    		if(rand.nextInt(40) == 0) dropItem(JourneyItems.snakeSkin, 2);
+    		if(rand.nextInt(10) == 0) dropItem(JourneyItems.snakeSkin, 2);
     		super.dropFewItems(b, j);
     	}
 

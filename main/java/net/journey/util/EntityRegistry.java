@@ -16,6 +16,7 @@ import net.journey.entity.mob.frozen.*;
 import net.journey.entity.mob.frozen.npc.*;
 import net.journey.entity.mob.nether.EntityHellbot;
 import net.journey.entity.mob.nether.EntityLavasnake;
+import net.journey.entity.mob.nether.EntityReaper;
 import net.journey.entity.mob.nether.EntityWitherspine;
 import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;

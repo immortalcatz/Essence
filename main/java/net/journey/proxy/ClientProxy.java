@@ -7,7 +7,6 @@ import net.journey.client.BarTickHandler;
 import net.journey.client.BossTickHandler;
 import net.journey.client.EntityRendering;
 import net.journey.client.GuiHandler;
-import net.journey.client.MusicEvent;
 import net.journey.client.MusicHandler;
 import net.journey.client.PlayerStats;
 import net.journey.client.server.DarkEnergyBar;
@@ -72,12 +71,6 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.addBow(JourneyItems.coreExpender, "coreExpender");
 		SlayerAPI.addBow(JourneyItems.royalBow, "royalBow");
 		SlayerAPI.addBow(JourneyItems.blazingBow, "blazingBow");
-	}
-
-	@Override
-	public void registerSounds() {
-		((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(new MusicHandler());
-		FMLCommonHandler.instance().bus().register(new MusicEvent());
 	}
 
 	@Override
