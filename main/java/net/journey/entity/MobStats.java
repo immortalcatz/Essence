@@ -35,7 +35,7 @@ public class MobStats {
 	public static double sandCrawlerHealth = 35.0D, sandCrawlerDamage = 8.0D, sandCrawlerSpeed = normalSpeed, sandCrawlerFollowRange = follow;
 	public static double turtleHealth = 10.0D, turtleDamage = 3.0D, turtleSpeed = normalSpeed, turtleFollowRange = follow;
 	public static double fishHealth = 2.0D, fishSpeed = normalSpeed, fishFollowRange = follow;
-	public static double mageHealth = 35.0D, mageSpeed = normalSpeed, mageFollowRange = follow;
+	public static double mageHealth = 35.0D, mageDamage = 8.0D,mageSpeed = normalSpeed, mageFollowRange = follow;
 	public static double cavurnHealth = 35.0D, cavurnSpeed = normalSpeed, cavurnFollowRange = follow;
 	public static double cavelingHealth = 35.0D, cavelingDamage = 8.0D, cavelingSpeed = normalSpeed, cavelingFollowRange = follow;
 	public static double stonewalkerHealth = 35.0D, stonewalkerDamage = 8.0D, stonewalkerSpeed = normalSpeed, stonewalkerFollowRange = follow;

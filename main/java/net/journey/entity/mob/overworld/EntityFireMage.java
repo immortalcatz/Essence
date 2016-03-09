@@ -53,7 +53,7 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-        EntityFireBall b = new EntityFireBall(this.worldObj, this, 10F);
+        EntityFireBall b = new EntityFireBall(this.worldObj, this, 4F);
         b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
@@ -61,7 +61,7 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return 0;
+		return s.mageDamage;
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.INSECTO;
+		return EnumSounds.PSYOLLOM;
 	}
 
 	@Override
