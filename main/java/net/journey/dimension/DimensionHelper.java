@@ -49,6 +49,7 @@ import net.journey.entity.mob.frozen.EntityPermafraust;
 import net.journey.entity.mob.frozen.EntityShatterer;
 import net.journey.entity.mob.frozen.EntityShiveringBushwalker;
 import net.journey.entity.mob.frozen.EntityShiverwing;
+import net.journey.entity.mob.nether.EntityHellCow;
 import net.journey.entity.mob.nether.EntityLavasnake;
 import net.journey.entity.mob.nether.EntityReaper;
 import net.journey.entity.mob.nether.EntityWitherspine;
@@ -357,6 +358,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityLavasnake.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 		EntityRegistry.addSpawn(EntityWitherspine.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 		EntityRegistry.addSpawn(EntityReaper.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
+		EntityRegistry.addSpawn(EntityHellCow.class, 100, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.NETHER));
 	}
 	private static void addVanillaSpawns() {
 		int amount = 4;

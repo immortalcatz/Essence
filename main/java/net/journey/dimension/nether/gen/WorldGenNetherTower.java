@@ -1,4 +1,4 @@
-package net.journey.dimension.overworld.gen;
+package net.journey.dimension.nether.gen;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -45,6 +45,8 @@ public class WorldGenNetherTower extends WorldGenerator {
 		mobNames.add("LavaSlime");
 		mobNames.add("PigZombie");
 		mobNames.add("Skeleton");
+		mobNames.add("lavasnake");
+		mobNames.add("reaper");
 		
 		addLevel(w, x, y, z, 4, 1, mobNames.get(r.nextInt(mobNames.size())), mobNames.get(r.nextInt(mobNames.size())));
 		addLevel(w, x, y, z, 4, 0, mobNames.get(r.nextInt(mobNames.size())), mobNames.get(r.nextInt(mobNames.size())));

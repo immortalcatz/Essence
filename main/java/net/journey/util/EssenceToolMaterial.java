@@ -79,6 +79,8 @@ public enum EssenceToolMaterial {
 	TERRONIC_BLADE(SlayerAPI.addMeleeMaterial(3500, 39, 25)),
 	
 	CREATIVE(SlayerAPI.addMeleeMaterial(3000, 40, 25)),
+	EARTHEN_HAMMER(SlayerAPI.addMeleeMaterial(3000, 8, 25)),
+	FLAMING_HAMMER(SlayerAPI.addMeleeMaterial(3000, 12, 25)),
 	
 	DEVELOPER_SWORD(SlayerAPI.addMeleeMaterial(3000, 9000, 25)),
 	

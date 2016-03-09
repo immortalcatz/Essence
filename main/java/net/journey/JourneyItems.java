@@ -9,6 +9,7 @@ import net.journey.enums.EnumSounds;
 import net.journey.items.*;
 import net.journey.util.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.Potion;
@@ -153,7 +154,8 @@ public class JourneyItems {
 	public static final Item withicSoul = new ItemMod("withicSoul", "Withic Soul");
 	public static final Item eucaPortalPiece = new ItemMod("eucaPortalPiece", "Euca Portal Piece");
 	public static final Item eucaPortalPiece_1 = new ItemMod("eucaPortalPiece_1", "Euca Portal Piece");
-	public static final Item eucaPortalPiece_0 = new ItemMod("eucaPortalPiece_0", "Euca Portal Piece_0");
+	public static final Item eucaPortalPiece_0 = new ItemMod("eucaPortalPiece_0", "Euca Portal Piece");
+	public static final Item flamingHide = new ItemMod("flamingHide", "Flaming Hide");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -497,8 +499,13 @@ public class JourneyItems {
 	public static final Item fireWand = new ItemWand("fireWand", "Fire Wand", false, 5, 600, 8, false, EntityFireBall.class);
 	public static final Item iceWand = new ItemWand("iceWand", "Ice Wand", true, 5, 600, 8, false, EntityIceBall.class);
 	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
+	
 	public static final Item hammerCreative = new ItemCreativeHammer("hammerCreative", "Hammer of Creative Spellbinding", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class);
-	public static final Item hammerTEST = new ItemHammer("hammerTEST", "Hammer TEST", EssenceToolMaterial.CREATIVE, false, EntityEarthen.class, false, 10, 5, 2000);
+	public static final Item earthenHammer = new ItemHammer("earthenHammer", "Earthen Hammer", EssenceToolMaterial.EARTHEN_HAMMER, false, EntityEarthen.class, false, 8, 4, 642);
+	public static final Item flamingHammer = new ItemHammer("flamingHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, 12, 4, 1230);
+	public static final Item nethicHammer = new ItemHammer("nethicHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, 10, 4, 825);
+	public static final Item withicHammer = new ItemHammer("withicHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityWithic.class, false, 12, 4, 1230);
+	public static final Item royalHammer = new ItemHammer("royalHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, 14, 4, 1320);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
 	public static final Item rockLauncher = new ItemChaosCannon("rockLauncher", "Rock Launcher");

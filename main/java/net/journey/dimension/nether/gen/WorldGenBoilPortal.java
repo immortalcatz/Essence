@@ -1,4 +1,4 @@
-package net.journey.dimension.overworld.gen;
+package net.journey.dimension.nether.gen;
 
 import java.util.Random;
 

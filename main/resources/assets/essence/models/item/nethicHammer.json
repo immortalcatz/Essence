@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/hammerCreative"
+		"layer0": "essence:items/nethicHammer"
 	},
 	"display": {
 		"thirdperson": {

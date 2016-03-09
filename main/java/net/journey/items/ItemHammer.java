@@ -89,8 +89,11 @@ public class ItemHammer extends ItemSword{
 
 		@Override
 		@SideOnly(Side.CLIENT)
-		public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
-			if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
-			else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
+		public void addInformation(ItemStack item, EntityPlayer player, List l, boolean par4) {
+			if(item.getMaxDamage() != -1) l.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
+			else l.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
+			if(essence) LangHelper.useDarkEnergy(usage);
+			else LangHelper.useDarkEnergy(usage);
+			l.add(SlayerAPI.Colour.DARK_GREEN + "+" + LangHelper.rangedDamage(damage));
 		}
 	}

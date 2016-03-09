@@ -16,7 +16,8 @@
     import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
     import net.minecraft.entity.ai.EntityMoveHelper;
     import net.minecraft.entity.player.EntityPlayer;
-    import net.minecraft.item.Item;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
     import net.minecraft.util.AxisAlignedBB;
     import net.minecraft.util.BlockPos;
     import net.minecraft.util.MathHelper;
@@ -69,7 +70,7 @@
     	@Override
     	public boolean getCanSpawnHere() {
             return super.rand.nextInt(15) == 0 && super.getCanSpawnHere() && this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
-        }
+        }		
 
     	@Override
     	protected void dropFewItems(boolean b, int j) {

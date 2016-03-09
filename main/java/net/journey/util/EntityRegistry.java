@@ -96,6 +96,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNetherMob(EntityWitherspine.class, "witherspine", "Witherspine");
 		SlayerAPI.registerNetherMob(EntityLavasnake.class, "lavasnake", "Lavasnake");
 		SlayerAPI.registerNetherMob(EntityHellCow.class, "hellCow", "Hell Cow");
+		SlayerAPI.registerNetherMob(EntityReaper.class, "reaper", "Reaper");
 
 	}
 
@@ -105,7 +106,6 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntitySmallHongo.class, "smallHongo", "Small Hongo");
 		SlayerAPI.registerOverworldMob(EntityMediumHongo.class, "mediumHongo", "Medium Hongo");
 		SlayerAPI.registerOverworldMob(EntityBigHongo.class, "bigHongo", "Big Hongo");
-		SlayerAPI.registerOverworldMob(EntityReaper.class, "reaper", "Reaper");
 		SlayerAPI.registerOverworldMob(EntitySandCrawler.class, "sandCrawler", "Sand Crawler");
 		SlayerAPI.registerOverworldMob(EntityFireMage.class, "fireMage", "Fire Mage");
 		SlayerAPI.registerOverworldMob(EntityIceMage.class, "iceMage", "Ice Mage");
