@@ -40,7 +40,7 @@ public class ItemCreativeHammer extends ItemSword{
 	        LangRegistry.addItem(name, f);
 	        setUnlocalizedName(name);
 	        mat = toolMaterial;
-	        setCreativeTab(JourneyTabs.swords);
+	        setCreativeTab(JourneyTabs.hammers);
 	        JourneyItems.itemNames.add(name);
 	        GameRegistry.registerItem(this, name);
 

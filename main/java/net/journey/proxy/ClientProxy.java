@@ -11,6 +11,7 @@ import net.journey.client.MusicHandler;
 import net.journey.client.PlayerStats;
 import net.journey.client.server.DarkEnergyBar;
 import net.journey.client.server.EssenceBar;
+import net.journey.client.server.PowerBar;
 import net.journey.enums.EnumParticlesClasses;
 import net.journey.event.ClientTickEvent;
 import net.journey.event.UpdateCheckerEvent;
@@ -145,6 +146,10 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void updateEssence(int amount) {
 		EssenceBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
+	}
 	
+	@Override
+	public void updatePower(int amount) {
+		PowerBar.getProperties(Minecraft.getMinecraft().thePlayer).setBarValue(amount);
 	}
 }

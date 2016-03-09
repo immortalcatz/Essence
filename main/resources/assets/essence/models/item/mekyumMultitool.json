@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/mekyumMultiTool"
+		"layer0": "essence:items/mekyumMultitool"
 	},
 	"display": {
 		"thirdperson": {

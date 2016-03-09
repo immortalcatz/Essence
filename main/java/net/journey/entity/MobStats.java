@@ -2,7 +2,7 @@ package net.journey.entity;
 
 public class MobStats {
 
-	public static double normalSpeed = 0.200000011920929D, follow = 30D, knockBackResistance = 0.0D;
+	public static double normalSpeed = 0.2D, fastSpeed = 0.4D, follow = 30D, knockBackResistance = 0.0D;
 
 	public static final int 
 	witheringBeastBossID = 0, 
@@ -102,10 +102,10 @@ public class MobStats {
 	public static double starlightGolemHealth = 200.0D, starlightGolemDamage = 13.0D, starlightGolemSpeed = normalSpeed, starlightGolemFollowRange = follow;
 	
 	//Boss
-	public static double witheringBeastHealth = 400.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
-	public static double netherBeastHealth = 400.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
-	public static double calciaHealth = 400.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
-	public static double eudorHealth = 700.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
+	public static double witheringBeastHealth = 450.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
+	public static double netherBeastHealth = 1050.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
+	public static double calciaHealth = 1250.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
+	public static double eudorHealth = 1500.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
 	public static double fourfaHealth = 1000.0D, fourfaDamage = 10.0D, fourfaSpeed = normalSpeed, fourfaFollowRange = follow;
 	public static double BlazierHealth = 800.0D, BlazierDamage = 20.0D;
 	public static double sentryKingHealth = 2500.0D, sentryKingDamage = 20.0D;
@@ -116,6 +116,6 @@ public class MobStats {
 	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
 	public static double skyStalkerHealth = 1000.0D, skyStalkerDamage = 10.0D, skyStalkerSpeed = normalSpeed, skyStalkerFollowRange = follow;
 
-	public static double highNetherHealth = 60D, highNetherDamage = 10D;
+	public static double highNetherHealth = 60D, highNetherDamage = 10D, witherNetherSpeed = fastSpeed;
 	
 }

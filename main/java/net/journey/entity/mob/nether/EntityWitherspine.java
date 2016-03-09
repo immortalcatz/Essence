@@ -33,6 +33,11 @@ public class EntityWitherspine extends EntityModMob {
 	public double setMaxHealth(MobStats s) {
 		return MobStats.highNetherHealth;
 	}
+	
+	@Override
+	public double getMoveSpeed() {
+		return MobStats.witherNetherSpeed;
+	}
 
 	@Override
 	public EnumSounds setLivingSound() {

@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/storonMultiTool"
+		"layer0": "essence:items/storonMultitool"
 	},
 	"display": {
 		"thirdperson": {

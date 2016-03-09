@@ -5,6 +5,7 @@ import java.util.List;
 import net.journey.JourneyBlocks;
 import net.journey.client.server.DarkEnergyBar;
 import net.journey.client.server.EssenceBar;
+import net.journey.client.server.PowerBar;
 import net.journey.dimension.ModTeleporter;
 import net.journey.dimension.corba.TeleporterCorba;
 import net.journey.dimension.depths.TeleporterDepths;
@@ -45,6 +46,7 @@ public class EssenceCommands extends CommandBase {
 				p.getFoodStats().addStats(20, 1);
 			EssenceBar.getProperties(p).addBarPoints(10);
 			DarkEnergyBar.getProperties(p).addBarPoints(10);
+			PowerBar.getProperties(p).addBarPoints(10);
 		}
 
 		EntityPlayerMP playerMP = (EntityPlayerMP)var1;
