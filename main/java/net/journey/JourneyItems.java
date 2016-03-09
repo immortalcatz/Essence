@@ -543,7 +543,7 @@ public class JourneyItems {
 	public static final Item corveggies = new ItemCorveggies("corveggies", "Corveggies", 4, 3.0F, false, false).setPotionEffect(Potion.saturation.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(Potion.damageBoost.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb"," Crake Bulb", 4, 3.0F, false, false).setPotionEffect(Potion.waterBreathing.id, 20, 1, 1.0F).setAlwaysEdible();
-	public static final Item spineberries = new ItemSpineberries("spineberries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(Potion.absorption.id, 20, 1, 1.0F).setAlwaysEdible();
+	public static final Item spineberries = new ItemSpineberries("spineBerries", "Spine Berries", 4, 3.0F, false, false).setPotionEffect(Potion.absorption.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item zatPedal = new ItemZatPedal("zatPedal", "Zat Pedal", 4, 3.0F, false, false).setPotionEffect(Potion.fireResistance.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item glowa = new ItemGlowa("glowa", "Glowa", 4, 3.0F, false, false).setPotionEffect(Potion.nightVision.id, 5, 1, 1.0F).setAlwaysEdible();
 	public static final Item mintCandyCane = new ItemCandyCane("mintCandyCane", "Mint Candy Cane", 3, 1.6F, false, false).setPotionEffect(Potion.digSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
@@ -574,7 +574,7 @@ public class JourneyItems {
 	public static final Item corveggieSeeds = new ItemModSeeds("corveggieSeeds", "Corveggie", JourneyBlocks.corveggieCrop);
 	public static final Item crackenCaneSeeds = new ItemModSeeds("crackenCaneSeeds", "Kracken Cane Seeds", JourneyBlocks.crackenCaneCrop);
 	public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", "Crake Bulb Seeds", JourneyBlocks.crakeBulbCrop);
-	public static final Item spineberrySeeds = new ItemModSeeds("spineberrySeeds", "Spine Berry Seeds", JourneyBlocks.spineberryCrop);
+	public static final Item spineberrySeeds = new ItemModSeeds("spineBerrySeeds", "Spine Berry Seeds", JourneyBlocks.spineberryCrop);
 	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", "Glowa Seeds", JourneyBlocks.glowaCrop);
 	public static final Item zatSeeds = new ItemModSeeds("zatSeeds", "Zat Seeds", JourneyBlocks.zatPedalsCrop);
 	public static final Item floroSeeds = new ItemModSeeds("floroSeeds", "Floro Seeds", JourneyBlocks.floroCrop);

@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:items/jellybeans"
+		"layer0": "essence:items/jellyBeans"
 	},
 	"display": {
 		"thirdperson": {
