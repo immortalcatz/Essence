@@ -3,7 +3,7 @@
  * Author ~ Ryan Bakody (Dizzlepop12), and Mojang
  */
 
-package net.journey.client.render.model.mob.boil;
+package net.journey.client.render.model.mob.nether;
 
 import net.journey.entity.mob.nether.EntityLavasnake;
 import net.minecraft.client.Minecraft;

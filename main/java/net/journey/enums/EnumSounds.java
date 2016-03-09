@@ -67,6 +67,10 @@ public enum EnumSounds {
 	OVERSEER("essence:overseer"),
 	OVERSEER_DEATH("essence:overseerDeath"),
 	OVERSEER_HURT("essence:overeerHurt"),
+	HAMMER("essence:hammer"),
+	BIRD("essence:bird"),
+	BIRD_HURT("essence:birdHurt"),
+	BIRD_DEATH("essence:birdDeath"),
 	EMPTY("");
 	
 	private String sound;

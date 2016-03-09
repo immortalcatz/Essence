@@ -45,7 +45,6 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.concentratedBlood, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.blood});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"   ", "  k", " ij", 'k', JourneyItems.eucaPortalPiece, 'i', JourneyItems.eucaPortalPiece_0, 'j', JourneyItems.eucaPortalPiece_1});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 
@@ -85,10 +84,11 @@ public class RecipeHelper {
 		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomBottom});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{i.glowshroom});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.floroSeeds, 4), new Object[]{i.floroPedal});
+		GameRegistry.addShapelessRecipe(new ItemStack(i.eucaPortalGem, 10), new Object[]{i.eucaPortalPiece, i.eucaPortalPiece_0, i.eucaPortalPiece_1});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
 		GameRegistry.addSmelting(Blocks.glass, new ItemStack(b.smoothGlass), 1.0F);
 
-		GameRegistry.addRecipe(new ItemStack(i.calciaOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.hellstoneBlock});
+		//GameRegistry.addRecipe(new ItemStack(i.calciaOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.hellstoneBlock});
 
 		GameRegistry.addSmelting(i.ironDust, new ItemStack(Items.iron_ingot), 0.5F);
 		GameRegistry.addSmelting(i.goldDust, new ItemStack(Items.gold_ingot), 0.5F);

@@ -13,6 +13,9 @@ import net.journey.client.render.model.mob.depths.*;
 import net.journey.client.render.model.mob.end.*;
 import net.journey.client.render.model.mob.euca.*;
 import net.journey.client.render.model.mob.frozen.*;
+import net.journey.client.render.model.mob.nether.ModelHellCow;
+import net.journey.client.render.model.mob.nether.ModelLavasnake;
+import net.journey.client.render.model.mob.nether.ModelReaper;
 import net.journey.client.render.model.mob.nether.ModelWitherspine;
 import net.journey.client.render.model.mob.overworld.*;
 import net.journey.client.render.model.mob.overworld.ModelWraith;
@@ -39,6 +42,7 @@ import net.journey.entity.mob.euca.*;
 import net.journey.entity.mob.euca.npc.*;
 import net.journey.entity.mob.frozen.*;
 import net.journey.entity.mob.frozen.npc.*;
+import net.journey.entity.mob.nether.EntityHellCow;
 import net.journey.entity.mob.nether.EntityHellbot;
 import net.journey.entity.mob.nether.EntityLavasnake;
 import net.journey.entity.mob.nether.EntityReaper;
@@ -193,6 +197,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellbot.class, new RenderModMob(new ModelGoldbot(), Textures.hellbot));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLavasnake.class, new RenderModMob(new ModelLavasnake(), Textures.lavasnake));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWitherspine.class, new RenderModMob(new ModelWitherspine(), Textures.witherspine));
+		RenderingRegistry.registerEntityRenderingHandler(EntityHellCow.class, new RenderModMob(new ModelHellCow(), Textures.hellCow));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		

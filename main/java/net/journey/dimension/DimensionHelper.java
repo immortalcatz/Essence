@@ -63,6 +63,7 @@ import net.journey.entity.mob.overworld.EntitySandCrawler;
 import net.journey.entity.mob.overworld.EntitySmallHongo;
 import net.journey.entity.mob.overworld.EntitySpyclops;
 import net.journey.entity.mob.overworld.EntitySwampFly;
+import net.journey.entity.mob.overworld.EntityTurducken;
 import net.journey.entity.mob.overworld.underground.EntityBlueHonglow;
 import net.journey.entity.mob.overworld.underground.EntityCaveMage;
 import net.journey.entity.mob.overworld.underground.EntityCaveling;
@@ -359,6 +360,11 @@ public class DimensionHelper {
 	}
 	private static void addVanillaSpawns() {
 		int amount = 4;
+		
+		EntityRegistry.addSpawn(EntityTurducken.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
+		EntityRegistry.addSpawn(EntityTurducken.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));
+		EntityRegistry.addSpawn(EntityTurducken.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.FOREST));
+		EntityRegistry.addSpawn(EntityTurducken.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.JUNGLE));
 		
 		EntityRegistry.addSpawn(EntityFloro.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.PLAINS));
 		EntityRegistry.addSpawn(EntityFloro.class, amount, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.DENSE));

@@ -14,6 +14,7 @@ import net.journey.entity.mob.euca.*;
 import net.journey.entity.mob.euca.npc.*;
 import net.journey.entity.mob.frozen.*;
 import net.journey.entity.mob.frozen.npc.*;
+import net.journey.entity.mob.nether.EntityHellCow;
 import net.journey.entity.mob.nether.EntityHellbot;
 import net.journey.entity.mob.nether.EntityLavasnake;
 import net.journey.entity.mob.nether.EntityReaper;
@@ -94,6 +95,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNetherMob(EntityHellbot.class, "hellbot", "Hellbot");
 		SlayerAPI.registerNetherMob(EntityWitherspine.class, "witherspine", "Witherspine");
 		SlayerAPI.registerNetherMob(EntityLavasnake.class, "lavasnake", "Lavasnake");
+		SlayerAPI.registerNetherMob(EntityHellCow.class, "hellCow", "Hell Cow");
 
 	}
 

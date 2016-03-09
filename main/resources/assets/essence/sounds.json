@@ -1,4 +1,8 @@
 {
+ "birdDeath":{"category":"master","sounds": [{"name":"birdDeath","stream": false}]},
+ "birdHurt":{"category":"master","sounds": [{"name":"birdHurt","stream": false}]},
+ "bird":{"category":"master","sounds": [{"name":"bird","stream": false}]},
+ "hammer":{"category":"master","sounds": [{"name":"hammer","stream": false}]},
  "overseer":{"category":"master","sounds": [{"name":"overseer","stream": false}]},
  "overseerHurt":{"category":"master","sounds": [{"name":"overseerHurt","stream": false}]},
  "overseerDeath":{"category":"master","sounds": [{"name":"overseerDeath","stream": false}]},

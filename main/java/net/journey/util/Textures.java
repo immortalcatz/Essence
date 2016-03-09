@@ -156,15 +156,16 @@ public class Textures {
     public static final ResourceLocation corallator = addMob("corallator");
     public static final ResourceLocation skyStalker = addMob("skyStalker");
     public static final ResourceLocation eudor = addMob("eudor");
+	public static final ResourceLocation hellbot = addMob("hellBot");
+	public static final ResourceLocation soulWatcher = addMob("soulWatcher");
+	public static final ResourceLocation witherspine = addMob("witherspine");
+	public static final ResourceLocation hellCow = addMob("hellCow");
 
     //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");
 	public static final ResourceLocation terraScatterer = addMob("terraScatterer");
 	public static final ResourceLocation purplian = addMob("purplian");
 	public static final ResourceLocation terraslug = addMob("terraslug");
-	public static final ResourceLocation hellbot = addMob("hellBot");
-	public static final ResourceLocation soulWatcher = addMob("soulWatcher");
-	public static final ResourceLocation witherspine = addMob("witherspine");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");

@@ -22,20 +22,20 @@ public class EntityWoodpecker extends EntityPeacefullUntillAttacked {
 	public double setMaxHealth(MobStats s) {
 		return s.rocHealth;
 	}
-
+	
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BIRD;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BIRD_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BIRD_DEATH;
 	}
 
 	@Override

@@ -53,7 +53,7 @@ public class ItemHammer extends ItemSword{
 		public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 			if(essence) {
 				if(!world.isRemote && EssenceBar.getProperties(player).useBar(usage)) {
-					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+					EnumSounds.playSound(EnumSounds.HAMMER, world, player);
 					if(!unbreakable) stack.damageItem(1, player);
 					try {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
@@ -63,7 +63,7 @@ public class ItemHammer extends ItemSword{
 				}
 			} else {
 				if(!world.isRemote && DarkEnergyBar.getProperties(player).useBar(usage)) {
-					EnumSounds.playSound(EnumSounds.SPARKLE, world, player);
+					EnumSounds.playSound(EnumSounds.HAMMER, world, player);
 					if(!unbreakable) stack.damageItem(1, player);
 					try {
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
