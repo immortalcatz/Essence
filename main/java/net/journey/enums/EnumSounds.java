@@ -71,6 +71,8 @@ public enum EnumSounds {
 	BIRD("essence:bird"),
 	BIRD_HURT("essence:birdHurt"),
 	BIRD_DEATH("essence:birdDeath"),
+	CREAK("essence:gateCreak"),
+	UNLOCK("essence:unlock"),
 	EMPTY("");
 	
 	private String sound;

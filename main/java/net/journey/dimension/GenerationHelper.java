@@ -50,22 +50,26 @@ public class GenerationHelper {
 			worldMinableGenVanilla(JourneyBlocks.sapphireOre, 5, w, x, y, z);
 			break;
 		case 6:
-			y = r.nextInt(256); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(512); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenNether(JourneyBlocks.hellstoneOre, 5, w, x, y, z);
 			break;
 		case 7:
-			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, new BlockPos(x, y, z));
+			y = r.nextInt(512); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			worldMinableGenNether(JourneyBlocks.lavaRock, 5, w, x, y, z);
 			break;
 		case 8:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
+			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 9:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState()) new WorldGenTowerDungeon().generate(w, r, new BlockPos(x, y, z));
+			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 10:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState()) new WorldGenTowerDungeon().generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 11:
 			y = r.nextInt(70); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			//if(y < 60) new WorldGenCaveVine().generate(w, r, new BlockPos(x, y, z));
 			break;
@@ -73,33 +77,28 @@ public class GenerationHelper {
 			//y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			//if(y > 100 && y < 160) new WorldGenFloatingIsland().generate(w, r, new BlockPos(x, y, z));
 			//break;
-		case 11:
+		case 12:
 			y = r.nextInt(160); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenEnd(JourneyBlocks.enderilliumOre, 5, w, x, y, z);
-			break;
-		case 12:
-			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
-					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
-				new WorldGenMageHouse().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 13:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
-				new WorldGenBlacksmithHouse().generate(w, r, new BlockPos(x, y, z));
+				new WorldGenMageHouse().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 14:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
-				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
+				new WorldGenBlacksmithHouse().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 15:
-			y = r.nextInt(256); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			worldMinableGenNether(JourneyBlocks.lavaRock, 5, w, x, y, z);
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
+					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
+				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
 			break;
-		
 		}
 	}
 

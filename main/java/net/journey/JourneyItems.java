@@ -156,6 +156,7 @@ public class JourneyItems {
 	public static final Item eucaPortalPiece_1 = new ItemMod("eucaPortalPiece_1", "Euca Portal Piece");
 	public static final Item eucaPortalPiece_0 = new ItemMod("eucaPortalPiece_0", "Euca Portal Piece");
 	public static final Item flamingHide = new ItemMod("flamingHide", "Flaming Hide");
+	public static final Item boilKey = new ItemMod("boilKey", "Boil Key");
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");

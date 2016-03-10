@@ -1,4 +1,6 @@
 {
+ "unlock":{"category":"master","sounds": [{"name":"unlock","stream": false}]},
+ "gateCreak":{"category":"master","sounds": [{"name":"gateCreak","stream": false}]},
  "birdDeath":{"category":"master","sounds": [{"name":"birdDeath","stream": false}]},
  "birdHurt":{"category":"master","sounds": [{"name":"birdHurt","stream": false}]},
  "bird":{"category":"master","sounds": [{"name":"bird","stream": false}]},

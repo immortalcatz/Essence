@@ -19,6 +19,7 @@ import net.journey.blocks.BlockIceLog;
 import net.journey.blocks.BlockIcicle;
 import net.journey.blocks.BlockJoinedGlass;
 import net.journey.blocks.BlockJoinedPane;
+import net.journey.blocks.BlockLock;
 import net.journey.blocks.BlockMiniColouredBricks;
 import net.journey.blocks.BlockStoneCraftingTable;
 import net.journey.blocks.base.BlockModFire;
@@ -33,6 +34,7 @@ import net.journey.blocks.crop.BlockSpineberryCrop;
 import net.journey.blocks.crop.BlockTomatoCrop;
 import net.journey.blocks.crop.BlockZatPedalsCrop;
 import net.journey.blocks.machines.BlockGrindstone;
+import net.journey.blocks.machines.BlockJourneyChest;
 import net.journey.blocks.machines.BlockKnowledgeTable;
 import net.journey.blocks.machines.BlockSummoningTable;
 import net.journey.blocks.portal.BlockBoilPortal;
@@ -41,6 +43,7 @@ import net.journey.blocks.portal.BlockCorbaPortal;
 import net.journey.blocks.portal.BlockDepthsPortal;
 import net.journey.blocks.portal.BlockEucaPortal;
 import net.journey.blocks.portal.BlockTerraniaPortal;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.minecraft.block.Block;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
@@ -167,6 +170,12 @@ public class JourneyBlocks {
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
 	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud", "Blue Cloudia Cloud");
 	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud", "Light Blue Cloudia Cloud");
+	
+	public static final Block netherChest = new BlockJourneyChest("netherChest", "Nether Chest");
+	public static final Block nethicDungeonBricks = new BlockMod("nethicDungeonBricks", "Nethic Dungeon Bricks");
+	public static final Block boilChain = new BlockModBars("boilChain", "Boil Chain").setBlockUnbreakable();
+	public static final Block boilGate = new BlockModBars("boilGate", "Boil Gate").setBlockUnbreakable();
+	public static final Block boilLock = new BlockLock("boilLock", "Boil Lock").setBlockUnbreakable();
 	
 	public static final Block corbaPost = new BlockModFence(pinkCloudiaCloud, "corbaPost", "Corba Post");
 	public static final Block sizzlingPost = new BlockModFence(pinkCloudiaCloud, "sizzlingPost", "Sizzling Post");

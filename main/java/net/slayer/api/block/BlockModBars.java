@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
+import net.journey.enums.EnumSounds;
 import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,6 +16,7 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
@@ -31,7 +34,8 @@ import net.slayer.api.SlayerAPI;
 
 public class BlockModBars extends Block
 {
-    public static final PropertyBool NORTH = PropertyBool.create("north");
+
+	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");

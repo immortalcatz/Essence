@@ -2,8 +2,10 @@ package net.slayer.api.entity;
 
 import net.journey.client.render.particles.EntityModFireFX;
 import net.journey.client.render.particles.EntityModLavaFX;
+import net.journey.enums.EnumSounds;
 import net.journey.util.IEssenceBoss;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
@@ -42,12 +44,13 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 		return getMaxHealth();
 	}
 
-	protected void onDeathUpdate()
+	protected void onDeathUpdate(World world, EntityPlayer player)
     {
        // ++this.deathTicks;
 
        // if (this.deathTicks >= 180 && this.deathTicks <= 200)
         {
+        	EnumSounds.playSound(EnumSounds.WRAITH_DEATH, world, player);
             float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
             float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
             float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;
