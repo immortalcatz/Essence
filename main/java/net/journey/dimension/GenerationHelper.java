@@ -9,6 +9,7 @@ import net.journey.dimension.depths.gen.WorldGenDepthsTree;
 import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.nether.gen.WorldGenBoilPortal;
 import net.journey.dimension.nether.gen.WorldGenHellThorn;
+import net.journey.dimension.nether.gen.WorldGenNetherDungeons;
 import net.journey.dimension.nether.gen.WorldGenNetherTower;
 import net.journey.dimension.overworld.gen.*;
 import net.minecraft.block.Block;
@@ -98,6 +99,10 @@ public class GenerationHelper {
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
 					w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.sand.getDefaultState() || w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 16:
+			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenNetherDungeons().generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

@@ -45,6 +45,9 @@ import net.journey.blocks.portal.BlockEucaPortal;
 import net.journey.blocks.portal.BlockTerraniaPortal;
 import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.World;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.block.BlockMod;
@@ -328,6 +331,8 @@ public class JourneyBlocks {
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
 	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
+	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
+	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");

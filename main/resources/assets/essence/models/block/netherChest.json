@@ -3,7 +3,6 @@
     "textures": {
         "top": "essence:blocks/netherChest_top",
         "front": "essence:blocks/netherChest_front",
-        "side": "essence:blocks/netherChest_side",
-	   "bottom": "essence:blocks/netherChest_top"
+        "side": "essence:blocks/netherChest_side"
     }
 }
