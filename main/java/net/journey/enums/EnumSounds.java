@@ -6,6 +6,9 @@ import net.minecraft.world.World;
 
 public enum EnumSounds {
 
+	CHEST_OPEN_0("essence:chestOpen_0"),
+	CHEST_OPEN("essence:chest"),
+	CHEST_CLOSED("essence:chestClose"),
 	ROBOT("essence:robot"),
 	ROBOT_HURT("essence:robotHurt"),
 	ROBOT_DEATH("essence:robotDeath"),

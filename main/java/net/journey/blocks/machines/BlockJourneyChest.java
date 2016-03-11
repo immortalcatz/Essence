@@ -8,11 +8,14 @@ import net.journey.JITL;
 import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.blocks.tileentity.TileEntitySummoningTable;
 import net.journey.client.GuiHandler.GuiIDs;
+import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -31,12 +34,41 @@ import net.slayer.api.entity.tileentity.container.BlockModContainer;
 
 public class BlockJourneyChest extends BlockModContainer {
 
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public BlockJourneyChest(String name, String f) {
 		super(EnumMaterialTypes.WOOD, name, f, 2.0F, JourneyTabs.machineBlocks);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+	}
+	
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) && World.doesBlockHaveSolidTopSurface(worldIn, pos.down());
+	}
+
+	@Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+	}
+
+	@Override
+	protected BlockState createBlockState() {
+		return new BlockState(this, new IProperty[] {FACING});
 	}
 
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
+		EnumSounds.playSound(EnumSounds.CHEST_OPEN_0, worldIn, playerIn);
+		//EnumSounds.playSound(EnumSounds.CHEST_OPEN, worldIn, playerIn);
         if (worldIn.isRemote)
         {
             return true;

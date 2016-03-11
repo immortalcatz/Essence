@@ -359,8 +359,6 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
             double d1 = (double)i + 0.5D;   
             d2 = (double)k + 0.5D;
 
-            this.worldObj.playSoundEffect(d1, (double)j + 0.5D, d2, "random.chestopen", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
-
             if (this.adjacentChestZPos != null)
             {
                 d2 += 0.5D;
@@ -407,8 +405,6 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
                 {
                     d2 += 0.5D;
                 }
-
-                this.worldObj.playSoundEffect(d2, (double)j + 0.5D, d0, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
             }
 
             if (this.lidAngle < 0.0F)

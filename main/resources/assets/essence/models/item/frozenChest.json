@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/lavaRock",
+	"parent": "essence:block/frozenChest",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

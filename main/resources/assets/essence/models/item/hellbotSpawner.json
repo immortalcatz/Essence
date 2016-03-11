@@ -1,5 +1,5 @@
 {
-	"parent": "essence:block/lavaRock",
+	"parent": "essence:block/netherSpawner",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

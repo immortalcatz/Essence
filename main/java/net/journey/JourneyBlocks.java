@@ -173,8 +173,12 @@ public class JourneyBlocks {
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
 	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud", "Blue Cloudia Cloud");
 	public static final Block lightBlueCloudiaCloud = new BlockCloud("lightBlueCloudiaCloud", "Light Blue Cloudia Cloud");
-	
+
+	public static final Block frozenChest = new BlockJourneyChest("frozenChest", "Frozen Chest");
 	public static final Block netherChest = new BlockJourneyChest("netherChest", "Nether Chest");
+	public static final Block boilingChest = new BlockJourneyChest("boilingChest", "Boiling Chest");
+	public static final Block eucaChest = new BlockJourneyChest("eucaChest", "Euca Chest");
+
 	public static final Block nethicDungeonBricks = new BlockMod("nethicDungeonBricks", "Nethic Dungeon Bricks");
 	public static final Block boilChain = new BlockModBars("boilChain", "Boil Chain").setBlockUnbreakable();
 	public static final Block boilGate = new BlockModBars("boilGate", "Boil Gate").setBlockUnbreakable();
@@ -238,7 +242,6 @@ public class JourneyBlocks {
 	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);
 	public static final Block terranianStone = new BlockMod("terranianStone", "Terranian Stone", 2.0F);
 	public static final Block terranianBars = new BlockModBars("terranianBars", "Terranian Bars");
-	public static final Block terranianSlab = new BlockModSlab(true, "terranianSlab", "Terranian Slab");
 	public static final Block terranianDarkPanels = new BlockMod("terranianDarkPanels", "Terranian Dark Panels", 2.0F);
 	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
 	public static final BlockModFlower terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
@@ -280,7 +283,6 @@ public class JourneyBlocks {
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence", "Workshop Fence");
 	public static final BlockModDoor frozenDoor = new BlockModDoor(EnumMaterialTypes.STONE, 5.0F, "frozenDoorBlock", "Workshop Fence");
 	public static final Block candyCane = new BlockMod(EnumMaterialTypes.WOOD, "candyCane", "Candy Cane", 2.0F);
-	public static final Block workshopSlab = new BlockHalfSlab("workshopSlab", "Workshop Slab");
 	public static final Block frozenBrick = new BlockMod("frozenBricks", "Frozen Bricks");
 	public static final Block icicle = new BlockIcicle("icicle", "Icicle");
 	public static final BlockModFlower frostberryThorn = new BlockModFlower("frostberryThorn", "Frostberry Thorn").setContactDamage().setFrozenPlant();
@@ -330,7 +332,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
+	//public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	
@@ -338,11 +340,13 @@ public class JourneyBlocks {
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
 	public static final Block bossAltar = new BlockMod("bossAltar", "Boss Altar");
 	
-	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "Goldbot Spawner", "goldbot");
 	public static final Block observerSpawner = new BlockModSpawner("observerSpawner", "Observer Spawner", "observer");
-	
 	public static final Block screamerSpawner = new BlockModSpawner("screamerSpawner", "Screamer Spawner", "screamer");
+	
+	public static final Block goldbotSpawner = new BlockModSpawner("goldbotSpawner", "Goldbot Spawner", "goldbot");
 	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "Silverbot Spawner", "silverbot");
+	
+	public static final Block hellbotSpawner = new BlockModSpawner("hellbotSpawner", "Hellbot Spawner", "hellbot");
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
