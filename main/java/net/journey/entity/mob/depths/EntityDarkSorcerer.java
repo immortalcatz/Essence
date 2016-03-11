@@ -1,5 +1,6 @@
 package net.journey.entity.mob.depths;
 
+import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityBouncingProjectile;
 import net.journey.entity.projectile.EntityGreenpace;
@@ -80,14 +81,13 @@ public class EntityDarkSorcerer extends EntityModMob implements IRangedAttackMob
 	}
 	
 	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
-		return super.attackEntityFrom(e, a);
+	public Item getItemDropped() {
+		return null;
 	}
 	
 	@Override
-	public Item getItemDropped() {
-		return null;
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(90) == 0) dropItem(JourneyItems.darkOrb, 1);
+		super.dropFewItems(b, j);
 	}
 }

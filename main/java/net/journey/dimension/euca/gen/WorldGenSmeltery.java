@@ -6,9 +6,9 @@ import com.google.common.collect.Lists;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.mob.euca.npc.EntityAlloyMender;
 import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
@@ -126,7 +126,7 @@ public class WorldGenSmeltery extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 2), JourneyBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 5), JourneyBlocks.eucaChest.getStateFromMeta(5));
 		
-		TileEntityChest te = (TileEntityChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 5));
 		if(te != null) {
 			WeightedRandomChestContent.generateChestContents(r, Lists.newArrayList(loot), te, 4);
 		}
@@ -135,7 +135,7 @@ public class WorldGenSmeltery extends WorldGenerator {
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 8), JourneyBlocks.eucaBricks.getDefaultState());
 		w.setBlockState(new BlockPos(x + 2, y + 1, z + 9), JourneyBlocks.eucaChest.getStateFromMeta(5));
 		
-		TileEntityChest te2 = (TileEntityChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 9));
+		TileEntityJourneyChest te2 = (TileEntityJourneyChest)w.getTileEntity(new BlockPos(x + 2, y + 1, z + 9));
 		if(te2 != null) {
 			WeightedRandomChestContent.generateChestContents(r, Lists.newArrayList(loot), te2, 12);
 		}

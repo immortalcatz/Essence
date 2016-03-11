@@ -44,13 +44,12 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 		return getMaxHealth();
 	}
 
-	protected void onDeathUpdate(World world, EntityPlayer player)
+	protected void onDeathUpdate()
     {
        // ++this.deathTicks;
 
        // if (this.deathTicks >= 180 && this.deathTicks <= 200)
         {
-        	EnumSounds.playSound(EnumSounds.WRAITH_DEATH, world, player);
             float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
             float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
             float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;

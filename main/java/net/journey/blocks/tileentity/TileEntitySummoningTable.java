@@ -106,13 +106,13 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				addParticles();
 			}
 			else if(areItemsInSlots(
-					JourneyItems.depthsFlake, 
+					JourneyItems.scale, 
 					JourneyItems.beastlyStomach, 
-					JourneyItems.depthsFlake, 
+					JourneyItems.scale, 
 						JourneyItems.darkOrb, 
-					JourneyItems.depthsFlake, 
+					JourneyItems.scale, 
 					JourneyItems.beastlyStomach, 
-					JourneyItems.depthsFlake)) {
+					JourneyItems.scale)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.scaleOrb);
 				addParticles();

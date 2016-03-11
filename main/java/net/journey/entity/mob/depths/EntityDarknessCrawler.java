@@ -45,13 +45,6 @@ public class EntityDarknessCrawler extends EntityModMob{
 	}
 	
 	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
-		return super.attackEntityFrom(e, a);
-	}
-	
-	@Override
 	public Item getItemDropped() {
 		return null;
 	}

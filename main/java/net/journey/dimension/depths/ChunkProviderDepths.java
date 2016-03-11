@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.dimension.depths.gen.WorldGenDarkbloom;
 import net.journey.dimension.depths.gen.WorldGenDepthsLights;
 import net.journey.dimension.depths.gen.WorldGenDepthsTree;
 import net.journey.dimension.depths.gen.WorldGenSpike;
@@ -31,6 +32,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.slayer.api.block.BlockModFlower;
 
 public class ChunkProviderDepths implements IChunkProvider {
 
@@ -298,12 +300,21 @@ public class ChunkProviderDepths implements IChunkProvider {
 			new WorldGenDepthsLights.WorldGendepthsLights2().generate(this.worldObj, rand, new BlockPos(x1 + rand.nextInt(16) + 8, rand.nextInt(120) + 4, z1 + rand.nextInt(16) + 8));
 		}
 
-		for(i = 0; i < 100; i++) {
+		for(i = 0; i < 200; i++) {
 			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.darkFloor.getDefaultState()) {
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
 				new WorldGenDepthsTree(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
+		}
+		
+		for(i = 0; i < 256; i++) {
+			y = rand.nextInt(250);
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
+				new WorldGenDarkbloom().generate(worldObj, rand, new BlockPos(x, y, z));
 			}
 		}
 	}

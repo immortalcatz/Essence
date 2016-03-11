@@ -50,5 +50,4 @@ public class EntityRoc extends EntityPeacefullUntillAttacked {
 		if(rand.nextInt(6) == 0) dropItem(JourneyItems.rocMeat, 2);
 		super.dropFewItems(b, j);
 	}
-
 }

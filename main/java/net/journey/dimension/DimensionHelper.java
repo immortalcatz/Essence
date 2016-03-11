@@ -30,7 +30,9 @@ import net.journey.entity.mob.corba.EntitySurfaceSeer;
 import net.journey.entity.mob.corba.EntityTreeGolem;
 import net.journey.entity.mob.corba.EntityWoodCreature;
 import net.journey.entity.mob.corba.EntityWoodpecker;
+import net.journey.entity.mob.depths.EntityDarkSorcerer;
 import net.journey.entity.mob.depths.EntityDarkener;
+import net.journey.entity.mob.depths.EntityDarkfish;
 import net.journey.entity.mob.depths.EntityDarknessCrawler;
 import net.journey.entity.mob.depths.EntityDepthsBeast;
 import net.journey.entity.mob.depths.EntityDepthsHunter;
@@ -215,7 +217,8 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityDepthsHunter.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityRoc.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityDarkener.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntityLightener.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityLightener.class, 4, 10, 1, EnumCreatureType.MONSTER, depths);
+		EntityRegistry.addSpawn(EntityDarkSorcerer.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 	}
 	
 	private static void addCaveSpawns() {

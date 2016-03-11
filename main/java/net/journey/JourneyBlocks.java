@@ -6,6 +6,7 @@ import net.journey.blocks.BlockBrittleIce;
 import net.journey.blocks.BlockCloud;
 import net.journey.blocks.BlockColouredBricks;
 import net.journey.blocks.BlockCorbaPortalFrame;
+import net.journey.blocks.BlockDarkbloom;
 import net.journey.blocks.BlockDungeonBlock;
 import net.journey.blocks.BlockEucaPumpkin;
 import net.journey.blocks.BlockEucaSapling;
@@ -262,6 +263,9 @@ public class JourneyBlocks {
 	//public static final Block eudorStatue = new BlockStatue("eudorStatue", new ModelEudorStatue(), EnumSounds.CALCIA);
 	//public static final Block enderChampionStatue = new BlockStatue("enderChampionStatue", new ModelEnderChampionStatue());
 	//public static final Block wraithStatue = new BlockStatue("wraithStatue", new ModelWraithStatue());
+	
+	public static final Block darkbloomTop = new BlockDarkbloom("darkbloomTop", "Darkbloom", true);
+	public static final Block darkbloomBottom = new BlockDarkbloom("darkbloomBottom", "Darkbloom", false);
 	
 	public static final Block colouredBricks = new BlockColouredBricks();
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();

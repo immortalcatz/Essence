@@ -97,6 +97,7 @@ public class Textures {
     public static final ResourceLocation darkener = addMob("darkener");
     public static final ResourceLocation lightener = addMob("lightener");
     public static final ResourceLocation darkSorcerer = addMob("darkSorcerer");
+    public static final ResourceLocation darkfish = addMob("darkfish");
     
     //Corba
     public static final ResourceLocation leafBlower = addMob("leafBlower");
@@ -160,6 +161,7 @@ public class Textures {
 	public static final ResourceLocation soulWatcher = addMob("soulWatcher");
 	public static final ResourceLocation witherspine = addMob("witherspine");
 	public static final ResourceLocation hellCow = addMob("hellCow");
+	public static final ResourceLocation scale = addMob("scale");
 
     //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");

@@ -67,8 +67,8 @@ public class BlockJourneyChest extends BlockModContainer {
 
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-		EnumSounds.playSound(EnumSounds.CHEST_OPEN_0, worldIn, playerIn);
-		//EnumSounds.playSound(EnumSounds.CHEST_OPEN, worldIn, playerIn);
+		//EnumSounds.playSound(EnumSounds.CHEST_OPEN_0, worldIn, playerIn);
+		EnumSounds.playSound(EnumSounds.CHEST_OPEN, worldIn, playerIn);
         if (worldIn.isRemote)
         {
             return true;
