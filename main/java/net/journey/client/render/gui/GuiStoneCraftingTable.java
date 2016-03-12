@@ -2,7 +2,7 @@ package net.journey.client.render.gui;
 
 import org.lwjgl.opengl.GL11;
 
-import net.journey.blocks.BlockStoneCraftingTable;
+import net.journey.blocks.machines.BlockStoneCraftingTable;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;

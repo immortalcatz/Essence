@@ -50,6 +50,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
 		GameRegistry.registerTileEntity(TileEntitySummoningTable.class, "Summon Table");
+		GameRegistry.registerTileEntity(TileEntityJourneyChest.class, "Journey Chest");
 		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		//StructureBoilBridgePieces.registerBoilFortressPieces();

@@ -1,10 +1,11 @@
-package net.journey.blocks;
+package net.journey.blocks.machines;
 
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyTabs;
 import net.journey.blocks.tileentity.container.ContainerJourneyCrafting;
+import net.journey.enums.EnumSounds;
 import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockWorkbench;
@@ -142,6 +143,7 @@ public class BlockStoneCraftingTable extends Block{
 	}
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
+		EnumSounds.playSound(EnumSounds.CHEST_OPEN_0, worldIn, playerIn);
         if (worldIn.isRemote)
         {
             return true;
