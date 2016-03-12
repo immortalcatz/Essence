@@ -59,8 +59,8 @@ public class GenerationHelper {
 			worldMinableGenNether(JourneyBlocks.lavaRock, 5, w, x, y, z);
 			break;
 		case 8:
-			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(y > 30 && y < 100) (new WorldGenBoilPortal()).generate(w, r, new BlockPos(x, y, z));
+			y = r.nextInt(50); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenBoilPortal().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 9:
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
