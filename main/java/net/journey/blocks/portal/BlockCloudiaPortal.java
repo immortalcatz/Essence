@@ -133,6 +133,10 @@ public class BlockCloudiaPortal extends BlockBreakable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+        if (rand.nextInt(100) == 0)
+        {
+            worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, "portal.portal", 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+        }
 		for(int i = 0; i < 4; ++i) {
 			double d0 = (double)((float)pos.getX() + rand.nextFloat());
 			double d1 = (double)((float)pos.getY() + rand.nextFloat());

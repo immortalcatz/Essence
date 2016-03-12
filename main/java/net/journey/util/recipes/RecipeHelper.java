@@ -45,6 +45,11 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.concentratedBlood, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.blood});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.netherChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyItems.blood});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.goldEucaPlank});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.frozenPlanks});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.boilingLog});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingBars, 4), new Object[] {"   ", "ddd", "ddd", 'd', Items.blaze_rod});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 

@@ -47,7 +47,6 @@ public class CommonProxy {
 		SlayerAPI.registerEvent(new PlayerEvent());
 		SlayerAPI.registerEvent(new BarTickHandler());
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
-		GameRegistry.registerTileEntity(TileEntityCorbaPortal.class, "Corba Portal");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
 		GameRegistry.registerTileEntity(TileEntitySummoningTable.class, "Summon Table");
 		GameRegistry.registerTileEntity(TileEntityJourneyChest.class, "Journey Chest");
