@@ -1,13 +1,13 @@
 package net.journey.blocks;
 
-import net.journey.JourneyTabs;
-import net.journey.JITL;
+import java.util.Random;
+
 import net.journey.JourneyBlocks;
-import net.journey.blocks.tileentity.TileEntityJourneyChest;
-import net.journey.blocks.tileentity.TileEntitySummoningTable;
-import net.journey.client.GuiHandler.GuiIDs;
+import net.journey.JourneyTabs;
+import net.journey.blocks.tileentity.container.ContainerJourneyCrafting;
+import net.journey.util.LangRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockWorkbench;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,25 +15,132 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ContainerWorkbench;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
-import net.slayer.api.entity.tileentity.container.BlockModContainer;
+import net.slayer.api.EnumToolType;
+import net.slayer.api.SlayerAPI;
 
-public class BlockStoneCraftingTable extends BlockModContainer {
+public class BlockStoneCraftingTable extends Block{
 
-	public BlockStoneCraftingTable(String name, String f) {
-		super(EnumMaterialTypes.STONE, name, f, 2.0F, JourneyTabs.machineBlocks);
+	protected EnumMaterialTypes blockType;
+	protected Item drop = null;
+	protected Random rand;
+	public int boostBrightnessLow;
+	public int boostBrightnessHigh;
+	public boolean enhanceBrightness;
+	public String name;
+	protected boolean isOpaque = true, isNormalCube = true;
+	
+	public BlockStoneCraftingTable(String name, String finalName, float hardness) {
+		this(EnumMaterialTypes.STONE, name, finalName, hardness, JourneyTabs.blocks);
 	}
-	private static final String __OBFID = "CL_00000221";
 
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
+	public BlockStoneCraftingTable(String name, String finalName) {
+		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, JourneyTabs.blocks);
+	}
+
+	public BlockStoneCraftingTable(EnumMaterialTypes type, String name, String finalName, float hardness) {
+		this(type, name, finalName, hardness, JourneyTabs.blocks);
+	}
+
+	public BlockStoneCraftingTable(String name, String finalName, boolean breakable, CreativeTabs tab) {
+		this(EnumMaterialTypes.STONE, name, finalName, tab);
+	}
+
+	public BlockStoneCraftingTable(String name, String finalName, boolean breakable) {
+		this(name, finalName, breakable, JourneyTabs.blocks);
+	}
+
+	public BlockStoneCraftingTable(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab) {
+		super(blockType.getMaterial());
+		LangRegistry.addBlock(name, finalName);
+		this.blockType = blockType;
+		setHardness(2.0F);
+		rand = new Random();
+		setStepSound(blockType.getSound());
+		setCreativeTab(tab);
+		setUnlocalizedName(name);
+		this.name = name; 
+		JourneyBlocks.blockName.add(name);
+		GameRegistry.registerBlock(this, name);
+	}
+
+	public BlockStoneCraftingTable(EnumMaterialTypes blockType, String name, String finalName, float hardness, CreativeTabs tab) {
+		super(blockType.getMaterial());
+		LangRegistry.addBlock(name, finalName);
+		this.blockType = blockType;
+		rand = new Random();
+		setStepSound(blockType.getSound());
+		setCreativeTab(tab);
+		setUnlocalizedName(name);
+		setHardness(hardness);
+		this.name = name;
+		JourneyBlocks.blockName.add(name);
+		GameRegistry.registerBlock(this, name);
+	}
+
+	public Block addName(String name) {
+		JourneyBlocks.blockName.add(name);
+		return this;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		if(drop == null) return SlayerAPI.toItem(this);
+		return drop;
+	}
+
+	public BlockStoneCraftingTable setHarvestLevel(EnumToolType type) {
+		setHarvestLevel(type.getType(), type.getLevel());
+		return this;
+	}
+
+	@Override
+	public int getRenderType() {
+		return 3;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumWorldBlockLayer getBlockLayer() {
+		return EnumWorldBlockLayer.SOLID;
+	}
+
+	@Override
+	public int quantityDropped(Random rand) {
+		return 1;
+	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return isOpaque;
+	}
+
+	@Override
+	public boolean isNormalCube() {
+		return false;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(World w, BlockPos pos, IBlockState state, Random random) {
+
+	}
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (worldIn.isRemote)
         {
@@ -41,34 +148,27 @@ public class BlockStoneCraftingTable extends BlockModContainer {
         }
         else
         {
-            playerIn.displayGui(new BlockWorkbench.InterfaceCraftingTable(worldIn, pos));
+            playerIn.displayGui(new BlockStoneCraftingTable.InterfaceStoneCraftingTable(worldIn, pos));
             return true;
         }
     }
 
-    public static class InterfaceCraftingTable implements IInteractionObject
+    public static class InterfaceStoneCraftingTable implements IInteractionObject
         {
             private final World world;
             private final BlockPos position;
-            private static final String __OBFID = "CL_00002127";
 
-            public InterfaceCraftingTable(World worldIn, BlockPos pos)
+            public InterfaceStoneCraftingTable(World w, BlockPos p)
             {
-                this.world = worldIn;
-                this.position = pos;
+                this.world = w;
+                this.position = p;
             }
 
-            /**
-             * Gets the name of this command sender (usually username, but possibly "Rcon")
-             */
             public String getName()
             {
                 return null;
             }
 
-            /**
-             * Returns true if this thing is named
-             */
             public boolean hasCustomName()
             {
                 return false;
@@ -81,7 +181,7 @@ public class BlockStoneCraftingTable extends BlockModContainer {
 
             public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)
             {
-                return new ContainerWorkbench(playerInventory, this.world, this.position);
+                return new ContainerJourneyCrafting(playerInventory, this.world, this.position);
             }
 
             public String getGuiID()
@@ -89,9 +189,4 @@ public class BlockStoneCraftingTable extends BlockModContainer {
                 return "minecraft:crafting_table";
             }
         }
-
-	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityJourneyChest();
-	}
 }
