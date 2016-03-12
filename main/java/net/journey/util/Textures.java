@@ -162,6 +162,7 @@ public class Textures {
 	public static final ResourceLocation witherspine = addMob("witherspine");
 	public static final ResourceLocation hellCow = addMob("hellCow");
 	public static final ResourceLocation scale = addMob("scale");
+	public static final ResourceLocation terranianProtector = addMob("terranianProtector");
 
     //Terrania
 	public static final ResourceLocation terralight = addMob("terralight");

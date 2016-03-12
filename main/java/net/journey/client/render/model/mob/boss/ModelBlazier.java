@@ -1,4 +1,4 @@
-package net.journey.client.render.model.mob.boil;
+package net.journey.client.render.model.mob.boss;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

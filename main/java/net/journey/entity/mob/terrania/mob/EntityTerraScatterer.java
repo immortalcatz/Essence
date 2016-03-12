@@ -29,12 +29,12 @@ public class EntityTerraScatterer extends EntityModMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.CREEPER;
+		return EnumSounds.WRAITH;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.WRAITH_HURT;
+		return EnumSounds.CREEPER;
 	}
 
 	@Override

@@ -6,6 +6,8 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.dimension.corba.gen.WorldGenCorbaLamp;
+import net.journey.dimension.corba.gen.WorldGenCorbaVillage;
+import net.journey.dimension.corba.gen.WorldGenTreehouse;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaLargeTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaMediumTree;
@@ -13,6 +15,7 @@ import net.journey.dimension.corba.gen.trees.WorldGenCorbaSmallTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaSpruceTree1;
 import net.journey.dimension.corba.gen.trees.WorldGenHugeCorbaSpruceTree;
+import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree3;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
 import net.journey.dimension.terrania.gen.WorldGenHollowTree;
@@ -86,9 +89,9 @@ public class ChunkProviderTerrania implements IChunkProvider {
 		this.da = new double[825];
 		this.parabolicField = new float[25];
 		trees = new ArrayList<WorldGenerator>(3);
-		trees.add(new WorldGenTerraniaBigTree3());
-		trees.add(new WorldGenTerraniaBigTree2());
 		trees.add(new WorldGenTerraniaBigTree1());
+		trees.add(new WorldGenTerraniaBigTree2());
+		trees.add(new WorldGenTerraniaBigTree3());
 		for(int j = -2; j <= 2; ++j) {
 			for(int k = -2; k <= 2; ++k) {
 				float f = 10.0F / MathHelper.sqrt_float((float)(j * j + k * k) + 0.2F);
@@ -144,7 +147,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 
 							for (int j3 = 0; j3 < 4; ++j3) {
 								if ((d15 += d16) > 0.0D) {
-									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.terranianGrass.getDefaultState());
+									p_180518_3_.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + j3, JourneyBlocks.terranianStone.getDefaultState());
 								}
 							}
 
@@ -179,7 +182,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 	public final void generateBiomeTerrain(Random r, ChunkPrimer c, int x, int z, double s) {
 		boolean flag = true;
 		IBlockState iblockstate = JourneyBlocks.terranianGrass.getDefaultState();
-		IBlockState iblockstate1 = JourneyBlocks.terranianDirt.getDefaultState();
+		IBlockState iblockstate1 = JourneyBlocks.terranianStone.getDefaultState();
 		int k = -1;
 		int l = (int)(s / 3.0D + 3.0D + r.nextDouble() * 0.25D);
 		int i1 = x & 15;
@@ -191,24 +194,24 @@ public class ChunkProviderTerrania implements IChunkProvider {
 				IBlockState iblockstate2 = c.getBlockState(j1, k1, i1);
 
 				if(iblockstate2.getBlock().getMaterial() == Material.air) k = -1;
-				else if(iblockstate2.getBlock() == JourneyBlocks.terranianDirt) {
+				else if(iblockstate2.getBlock() == JourneyBlocks.terranianStone) {
 					if(k == -1) {
 						if(l <= 0) {
 							iblockstate = null;
-							iblockstate1 = JourneyBlocks.terranianDirt.getDefaultState();
+							iblockstate1 = JourneyBlocks.terranianStone.getDefaultState();
 						}
 						else if(k1 >= 59 && k1 <= 64) {
 							iblockstate = JourneyBlocks.terranianGrass.getDefaultState();
-							iblockstate1 = JourneyBlocks.terranianDirt.getDefaultState();
+							iblockstate1 = JourneyBlocks.terranianStone.getDefaultState();
 						}
 
 						if(k1 < 63 && (iblockstate == null || iblockstate.getBlock().getMaterial() == Material.air))
-							iblockstate = JourneyBlocks.terranianDirt.getDefaultState();
+							iblockstate = JourneyBlocks.terranianStone.getDefaultState();
 						k = l;
 						if(k1 >= 62) c.setBlockState(j1, k1, i1, iblockstate);
 						else if(k1 < 56 - l) {
 							iblockstate = null;
-							iblockstate1 = JourneyBlocks.terranianDirt.getDefaultState();
+							iblockstate1 = JourneyBlocks.terranianStone.getDefaultState();
 						} 
 						else c.setBlockState(j1, k1, i1, iblockstate1);
 					}
@@ -361,7 +364,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			}
 		}
 		
-		for(times = 0; times < 2; times++) {
+		for(times = 0; times > 2; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
@@ -371,7 +374,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			}
 		}
 		
-		for(times = 0; times < 1; times++) {
+		for(times = 0; times > 1; times++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;

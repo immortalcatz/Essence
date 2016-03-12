@@ -57,9 +57,7 @@ public class EntityDynaster extends EntityModMob{
 	@Override
 	protected void dropFewItems(boolean b, int j) {
 		if(rand.nextInt(54) == 0) dropItem(JourneyItems.royalDisk, 1);
-		super.dropFewItems(b, j);
 		if(rand.nextInt(5) == 0) dropItem(JourneyItems.shimmerdust, 2);
-		super.dropFewItems(b, j);
 		if(rand.nextInt(10) == 0) dropItem(JourneyItems.shimmerdust, 4);
 		super.dropFewItems(b, j);
 	}

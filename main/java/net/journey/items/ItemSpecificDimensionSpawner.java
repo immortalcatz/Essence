@@ -6,9 +6,11 @@ import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.entity.mob.boss.EntityBlazier;
 import net.journey.entity.mob.boss.EntityCorallator;
+import net.journey.entity.mob.boss.EntityLogger;
 import net.journey.entity.mob.boss.EntitySentryKing;
 import net.journey.entity.mob.boss.EntitySkyStalker;
 import net.journey.entity.mob.boss.EntitySoulWatcher;
+import net.journey.entity.mob.boss.EntityThunderbird;
 import net.journey.entity.mob.depths.EntityTameRoc;
 import net.journey.util.Config;
 import net.journey.util.LangHelper;
@@ -45,6 +47,8 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				EntitySkyStalker sky = new EntitySkyStalker(w);
 				EntityTameRoc roc = new EntityTameRoc(w, p);
 				EntityCorallator corallator = new EntityCorallator(w);
+				EntityLogger logger = new EntityLogger(w);
+				EntityThunderbird thunder = new EntityThunderbird(w);
 				if(item == JourneyItems.blazierOrb) {
 					SlayerAPI.sendMessageToAll("Blazier has been summoned", true);
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
@@ -77,13 +81,14 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				if(item == JourneyItems.loggerOrb) {
 					SlayerAPI.sendMessageToAll("The Logger has been summoned", true);
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
-					w.spawnEntityInWorld(corallator);
+					w.spawnEntityInWorld(logger);
 				}
 				if(item == JourneyItems.thunderbirdOrb) {
 					SlayerAPI.sendMessageToAll("The Thunderbird has been summoned", true);
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
-					w.spawnEntityInWorld(corallator);
+					w.spawnEntityInWorld(thunder);
 				}
+				
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
 				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the " + dimName + " dimension.");

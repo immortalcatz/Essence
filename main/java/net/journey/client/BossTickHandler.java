@@ -91,6 +91,10 @@ public class BossTickHandler {
 			imageY = 221;
 			barX = -5;
 			r = set("skyStalker");
+		case MobStats.terranianBossID:
+			imageY = 1;
+			barX = -5;
+			r = set("terranianProtector");
 		}
 
 		if(EssenceBossStatus.statusBarTime > 0 && mc.currentScreen == null) {

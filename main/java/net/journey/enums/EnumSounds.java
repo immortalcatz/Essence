@@ -6,6 +6,9 @@ import net.minecraft.world.World;
 
 public enum EnumSounds {
 
+	SORCERER_DEATH("essence:sorcererDeath"),
+	SORCERER_HURT("essence:sorcererHurt"),
+	SORCERER("essence:sorcerer"),
 	CHEST_OPEN_0("essence:chestOpen_0"),
 	CHEST_OPEN("essence:chest"),
 	CHEST_CLOSED("essence:chestClose"),

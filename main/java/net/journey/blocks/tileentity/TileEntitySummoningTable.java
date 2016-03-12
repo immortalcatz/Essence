@@ -131,11 +131,11 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 			}
 			else if(areItemsInSlots(
 					JourneyItems.gateKeys, 
-					JourneyItems.goldClump, 
+					JourneyItems.silverClump, 
 					JourneyItems.gateKeys, 
-						JourneyItems.royalDisk, 
+						JourneyItems.metalDisk, 
 					JourneyItems.gateKeys, 
-					JourneyItems.goldClump, 
+					JourneyItems.silverClump, 
 					JourneyItems.gateKeys)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.corallatorOrb);
@@ -143,11 +143,11 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 			}
 			else if(areItemsInSlots(
 					JourneyItems.gateKeys, 
-					JourneyItems.silverClump, 
+					JourneyItems.goldClump, 
 					JourneyItems.gateKeys, 
-						JourneyItems.metalDisk, 
+						JourneyItems.royalDisk, 
 					JourneyItems.gateKeys, 
-					JourneyItems.silverClump, 
+					JourneyItems.goldClump, 
 					JourneyItems.gateKeys)) {
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.eudorOrb);

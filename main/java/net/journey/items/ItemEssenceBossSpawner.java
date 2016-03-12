@@ -28,13 +28,7 @@ public class ItemEssenceBossSpawner extends ItemMod {
 		Item item = i.getItem();
 		if(!w.isRemote){
 			if(
-				w.provider.getDimensionId() == Config.euca || 
-					w.provider.getDimensionId() == Config.depths || 
-						w.provider.getDimensionId() == Config.boil || 
-							w.provider.getDimensionId() == Config.frozen|| 
-								w.provider.getDimensionId() == Config.corba|| 
-									w.provider.getDimensionId() == Config.cloudia||
-										w.provider.getDimensionId() == Config.terrania) {
+				w.provider.getDimensionId() == Config.euca) {
 				EntityEudor eudor = new EntityEudor(w);
 				if(item == JourneyItems.eudorOrb){
 					SlayerAPI.sendMessageToAll("Eudor has been summoned", true);
@@ -43,7 +37,7 @@ public class ItemEssenceBossSpawner extends ItemMod {
 				}
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
-				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in an Essence dimension.");
+				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the Euca Dimension");
 			}
 		}
 		return true;

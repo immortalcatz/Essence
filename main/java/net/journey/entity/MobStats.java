@@ -17,7 +17,8 @@ public class MobStats {
 	thunderbirdBossID = 9, 
 	loggerBossID = 10,
 	corallatorBossID = 11,
-	skyStalkerBossID = 12;
+	skyStalkerBossID = 12,
+	terranianBossID = 16;
 	
 	//End
 	public static double enderLeaperHealth = 20.0D, enderLeaperDamage = 5.0D, enderLeaperSpeed = normalSpeed, enderLeaperFollowRange = follow;
@@ -115,6 +116,7 @@ public class MobStats {
 	public static double loggerHealth = 2000.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
 	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
 	public static double skyStalkerHealth = 1000.0D, skyStalkerDamage = 10.0D, skyStalkerSpeed = normalSpeed, skyStalkerFollowRange = follow;
+	public static double terranianHealth = 1000.0D, terranianDamage = 10.0D, terranianSpeed = normalSpeed, terranianFollowRange = follow;
 
 	public static double highNetherHealth = 60D, highNetherDamage = 10D, witherNetherSpeed = fastSpeed;
 	

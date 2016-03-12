@@ -73,11 +73,11 @@ public class ModelPurplian extends ModelBase {
 	@Override
 	public void setRotationAngles(float f, float f2, float f3, float f4, float f5, float f7, Entity e) {
 		this.stick.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f2;
-		this.stick0.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f2;
-		this.stick1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f2;
-		this.stick2.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f2;
-		this.stick3.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f2;
-		this.stick4.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f2;
+		this.stick0.rotateAngleY = f2/15;
+		this.stick1.rotateAngleY = f2/15;
+		this.stick2.rotateAngleY = f2/15;
+		this.stick3.rotateAngleY = f2/15;
+		this.stick4.rotateAngleY = f2/15;
 		float f6 = f3 * (float)Math.PI * -0.1F;
 		int i;
 
