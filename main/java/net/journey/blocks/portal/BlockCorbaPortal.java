@@ -6,6 +6,7 @@ import java.util.Random;
 import net.journey.JourneyBlocks;
 import net.journey.JourneyTabs;
 import net.journey.dimension.corba.TeleporterCorba;
+import net.journey.enums.EnumSounds;
 import net.journey.util.Config;
 import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
