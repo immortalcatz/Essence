@@ -1,5 +1,6 @@
 package net.journey.entity.mob.boss;
 
+import net.journey.JourneyBlocks;
 import net.journey.entity.EntityPeacefullMob;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityTempleBall;
@@ -11,9 +12,12 @@ import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -45,6 +49,11 @@ public class EntityTempleGuardian extends EntityPeacefullMob implements IRangedA
 		if(!this.worldObj.isRemote && par1 == 0) {
 			this.setCombatTask();
 		}
+	}
+	
+	@Override
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), Blocks.chest.getDefaultState());		
 	}
 	
 	@Override

@@ -1,7 +1,10 @@
 package net.journey.entity.mob.boss;
 
+import com.google.common.collect.Lists;
+
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityDeathSkull;
 import net.journey.enums.EnumSounds;
@@ -10,11 +13,13 @@ import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
@@ -25,6 +30,22 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 		addAttackingAI();
 		setSize(2.0F, 3.8F);
 		this.tasks.addTask(1, new EntityAIArrowAttack(this, 1.0D, 40, 20.0F));
+	}
+
+	@Override
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.netherChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(2)) {
+		case 0:
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.witheringBeastSword, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.eucaPortalPiece_0, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.witheringBeastSword, 1));
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.eucaPortalPiece_0, 2));
+			break;
+		}
 	}
 
 	@Override
@@ -61,16 +82,7 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalPiece_0;
-	}
-
-	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(JourneyItems.eucaPortalPiece_0, 2);
-		this.dropItem(JourneyItems.witheringBeastSword, 1);
-
-		//if(rand.nextInt(1) == 0)
-		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.witheringBeastStatue), 1);
+		return null;
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import java.util.Random;
 import net.journey.JourneyItems;
 import net.journey.client.render.particles.EntityModFireFX;
 import net.journey.client.render.particles.EntityModSnowFX;
+import net.journey.client.render.particles.EntitySummoningFX;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -197,7 +198,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		Random r = new Random();
 		if(!worldObj.isRemote) {
 			for(int i = 0; i < 20; i++)
-				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntityModFireFX(worldObj, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat(), 0.0D, 0.0D, 0.0D));
+				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntitySummoningFX(worldObj, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat()));
 		}
 	}
 

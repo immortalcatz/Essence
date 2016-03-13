@@ -179,6 +179,10 @@ public class JourneyBlocks {
 	public static final Block netherChest = new BlockJourneyChest("netherChest", "Nether Chest");
 	public static final Block boilingChest = new BlockJourneyChest("boilingChest", "Boiling Chest");
 	public static final Block eucaChest = new BlockJourneyChest("eucaChest", "Euca Chest");
+	public static final Block depthsChest = new BlockJourneyChest("depthsChest", "Depths Chest");
+	public static final Block corbaChest = new BlockJourneyChest("corbaChest", "Corba Chest");
+	public static final Block cloudiaChest = new BlockJourneyChest("cloudiaChest", "Cloudia Chest");
+	public static final Block terraniaChest = new BlockJourneyChest("terraniaChest", "Terrania Chest");
 
 	public static final Block nethicDungeonBricks = new BlockMod("nethicDungeonBricks", "Nethic Dungeon Bricks");
 	public static final Block boilChain = new BlockModBars("boilChain", "Boil Chain").setBlockUnbreakable();

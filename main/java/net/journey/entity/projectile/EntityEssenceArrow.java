@@ -46,7 +46,7 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 	public Entity shootingEntity;
 	private int ticksInGround;
 	private int ticksInAir;
-	private double damage = 4.0D;
+	private double damage = 6.0D;
 	private int knockbackStrength;
 
 	public EntityEssenceArrow(World worldIn) {

@@ -41,11 +41,11 @@ public class BlockCorbaPortal extends Block{
 	protected boolean isNormalCube = true;
 	
 	public BlockCorbaPortal(String name, String finalName, float hardness) {
-		this(EnumMaterialTypes.STONE, name, finalName, hardness, JourneyTabs.blocks);
+		this(EnumMaterialTypes.STONE, name, finalName, hardness, JourneyTabs.portalBlocks);
 	}
 
 	public BlockCorbaPortal(String name, String finalName) {
-		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, JourneyTabs.blocks);
+		this(EnumMaterialTypes.STONE, name, finalName, 2.0F, JourneyTabs.portalBlocks);
 	}
 
 	public BlockCorbaPortal(EnumMaterialTypes type, String name, String finalName, float hardness) {
@@ -171,6 +171,7 @@ public class BlockCorbaPortal extends Block{
         double d3 = 0.0D;
         double d4 = 0.0D;
         double d5 = 0.0D;
+        worldIn.spawnParticle(EnumParticleTypes.SLIME, d0, d1, d2, d3, d4, d5, new int[0]);
         worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, d3, d4, d5, new int[0]);
         worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0, d1, d2, d3, d4, d5, new int[0]);
     }

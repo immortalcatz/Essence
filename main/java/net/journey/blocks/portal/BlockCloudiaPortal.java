@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyTabs;
+import net.journey.client.render.particles.EntityBoilPotalFX;
 import net.journey.dimension.ModTeleporter;
 import net.journey.util.Config;
 import net.journey.util.LangRegistry;
@@ -15,14 +16,17 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -41,12 +45,12 @@ public class BlockCloudiaPortal extends BlockBreakable {
 		JourneyBlocks.blockName.add(name);
 		GameRegistry.registerBlock(this, name);
 	}
-	
+
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return null;
 	}
-
+	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
 		return null;
@@ -152,8 +156,8 @@ public class BlockCloudiaPortal extends BlockBreakable {
 				d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
 				d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			}
-			//EntitycloudiaPotalFX var20 = new EntitycloudiaPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
-			//FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+			EntityBoilPotalFX var20 = new EntityBoilPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 		}
 	}
 

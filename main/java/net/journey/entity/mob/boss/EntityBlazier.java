@@ -1,9 +1,12 @@
 package net.journey.entity.mob.boss;
 
+import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityMagmaFireball;
 import net.journey.enums.EnumSounds;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -14,12 +17,16 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -44,8 +51,8 @@ public class EntityBlazier extends EntityEssenceBoss {
 		this.isImmuneToFire = true;
 		this.setSize(2.0F, 6.0F);
 		spawnTimer = 0;
+		
 	}
-
 	@Override
 	protected void entityInit() {
 		super.entityInit();
@@ -131,28 +138,34 @@ public class EntityBlazier extends EntityEssenceBoss {
 	public boolean isBurning() {
 		return this.isFlying();
 	}
-
+	
 	@Override
-	protected void dropFewItems(boolean b, int j) {
-		switch(rand.nextInt(3)) {
-		case 0: dropItem(JourneyItems.blazingBow, 1); 
-			dropItem(JourneyItems.hellShards, 6); 
-			dropItem(JourneyItems.flameHelmet, 1); 
-			dropItem(JourneyItems.flameLegs, 1);
-			dropItem(JourneyItems.flameChest, 1);
-			dropItem(JourneyItems.flameBoots, 1);break;
-		case 1: dropItem(JourneyItems.sizzlerSword, 1);
-			dropItem(JourneyItems.hellShards, 6); 
-			dropItem(JourneyItems.flameHelmet, 1); 
-			dropItem(JourneyItems.flameLegs, 1);
-			dropItem(JourneyItems.flameChest, 1);
-			dropItem(JourneyItems.flameBoots, 1);break;
-		case 3: dropItem(JourneyItems.sizzlingKnife, 128);
-			dropItem(JourneyItems.hellShards, 6); 
-			dropItem(JourneyItems.flameHelmet, 1); 
-			dropItem(JourneyItems.flameLegs, 1);
-			dropItem(JourneyItems.flameChest, 1);
-			dropItem(JourneyItems.flameBoots, 1);break;
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.boilingChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(2)) {
+		case 0:
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.blazingBow, 1));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.sizzlerSword, 1));
+			te.setInventorySlotContents(7, new ItemStack(JourneyItems.sizzlingKnife, 128));
+			te.setInventorySlotContents(8, new ItemStack(JourneyItems.hellShards, 3));
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.hellShards, 3));
+			te.setInventorySlotContents(3, new ItemStack(JourneyItems.flameHelmet, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.flameLegs, 1));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.flameChest, 1));
+			te.setInventorySlotContents(14, new ItemStack(JourneyItems.flameBoots, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.blazingBow, 1));
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.hellShards, 3));
+			te.setInventorySlotContents(3, new ItemStack(JourneyItems.flameHelmet, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.flameLegs, 1));
+			te.setInventorySlotContents(8, new ItemStack(JourneyItems.sizzlingKnife, 128));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.flameChest, 1));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.hellShards, 3));
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.sizzlerSword, 1));
+			te.setInventorySlotContents(17, new ItemStack(JourneyItems.flameBoots, 1));
+			break;
 		}
 	}
 

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityIceBall;
 import net.journey.enums.EnumSounds;
@@ -23,6 +24,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -86,15 +88,30 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalPiece;
+		return null;
 	}
-
+	
 	@Override
-	protected void dropFewItems(boolean b, int j) {
-		this.dropItem(JourneyItems.eucaPortalPiece, 1);
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.netherChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
 		switch(rand.nextInt(2)) {
-		case 0: dropItem(JourneyItems.staringBow, 1); break;
-		case 1: dropItem(JourneyItems.sentrySword, 1); break;
+		case 0:
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.staringBow, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.eucaPortalPiece_1, 1));
+			te.setInventorySlotContents(16, new ItemStack(JourneyItems.twilightBoots, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.twilightChest, 1));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.twilightHelmet, 1));
+			te.setInventorySlotContents(20, new ItemStack(JourneyItems.twilightLegs, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.staringBow, 1));
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.eucaPortalPiece_1, 2));
+			te.setInventorySlotContents(17, new ItemStack(JourneyItems.twilightBoots, 1));
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.twilightChest, 1));
+			te.setInventorySlotContents(20, new ItemStack(JourneyItems.twilightHelmet, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.twilightLegs, 1));
+			break;
 		}
 	}
 	

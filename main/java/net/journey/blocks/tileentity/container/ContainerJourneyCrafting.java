@@ -17,24 +17,22 @@ import net.minecraft.world.World;
 
 public class ContainerJourneyCrafting extends Container
 {
-    public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
-    public IInventory craftResult = new InventoryCraftResult();
-    private World world;
-    private BlockPos position;
+    public InventoryCrafting matrix = new InventoryCrafting(this, 3, 3);
+    public IInventory result = new InventoryCraftResult();
+    private World w;
+    private BlockPos pos;
 
-    public ContainerJourneyCrafting(InventoryPlayer inventory, World world, BlockPos pos)
-    {
-        this.world = world;
-        this.position = pos;
-        this.addSlotToContainer(new SlotCrafting(inventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+    public ContainerJourneyCrafting(InventoryPlayer inv, World w, BlockPos pos) {
+    	
+        this.w = w;
+        this.pos = pos;
+        this.addSlotToContainer(new SlotCrafting(inv.player, this.matrix, this.result, 0, 124, 35));
         int i;
         int j;
 
-        for (i = 0; i < 3; ++i)
-        {
-            for (j = 0; j < 3; ++j)
-            {
-                this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 3, 30 + j * 18, 17 + i * 18));
+        for (i = 0; i < 3; ++i) {
+        for (j = 0; j < 3; ++j) {
+            this.addSlotToContainer(new Slot(this.matrix, j + i * 3, 30 + j * 18, 17 + i * 18));
             }
         }
 
@@ -42,35 +40,32 @@ public class ContainerJourneyCrafting extends Container
         {
             for (j = 0; j < 9; ++j)
             {
-                this.addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.addSlotToContainer(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
         for (i = 0; i < 9; ++i)
         {
-            this.addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
+            this.addSlotToContainer(new Slot(inv, i, 8 + i * 18, 142));
         }
 
-        this.onCraftMatrixChanged(this.craftMatrix);
+        this.onCraftMatrixChanged(this.matrix);
     }
 
     public void onCraftMatrixChanged(IInventory inventoryIn)
     {
-        this.craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(this.craftMatrix, this.world));
+        this.result.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(this.matrix, this.w));
     }
 
-    /**
-     * Called when the container is closed.
-     */
     public void onContainerClosed(EntityPlayer playerIn)
     {
         super.onContainerClosed(playerIn);
 
-        if (!this.world.isRemote)
+        if (!this.w.isRemote)
         {
             for (int i = 0; i < 9; ++i)
             {
-                ItemStack itemstack = this.craftMatrix.getStackInSlotOnClosing(i);
+                ItemStack itemstack = this.matrix.getStackInSlotOnClosing(i);
 
                 if (itemstack != null)
                 {
@@ -82,7 +77,7 @@ public class ContainerJourneyCrafting extends Container
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return this.world.getBlockState(this.position).getBlock() != JourneyBlocks.stoneCraftingTable ? false : playerIn.getDistanceSq((double)this.position.getX() + 0.5D, (double)this.position.getY() + 0.5D, (double)this.position.getZ() + 0.5D) <= 64.0D;
+        return this.w.getBlockState(this.pos).getBlock() != JourneyBlocks.stoneCraftingTable ? false : playerIn.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
     }
 
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
@@ -145,6 +140,6 @@ public class ContainerJourneyCrafting extends Container
 
     public boolean canMergeSlot(ItemStack p_94530_1_, Slot p_94530_2_)
     {
-        return p_94530_2_.inventory != this.craftResult && super.canMergeSlot(p_94530_1_, p_94530_2_);
+        return p_94530_2_.inventory != this.result && super.canMergeSlot(p_94530_1_, p_94530_2_);
     }
 }

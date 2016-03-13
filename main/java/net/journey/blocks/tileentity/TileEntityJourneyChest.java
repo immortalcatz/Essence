@@ -2,6 +2,8 @@ package net.journey.blocks.tileentity;
 
 import java.util.Iterator;
 import java.util.List;
+
+import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +21,7 @@ import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -52,26 +55,16 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         this.cachedChestType = -1;
     }
 
-    /**
-     * Returns the number of slots in the inventory.
-     */
     public int getSizeInventory()
     {
         return 27;
     }
 
-    /**
-     * Returns the stack in slot i
-     */
     public ItemStack getStackInSlot(int index)
     {
         return this.chestContents[index];
     }
 
-    /**
-     * Removes from an inventory slot (first arg) up to a specified number (second arg) of items and returns them in a
-     * new stack.
-     */
     public ItemStack decrStackSize(int index, int count)
     {
         if (this.chestContents[index] != null)
@@ -104,10 +97,6 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         }
     }
 
-    /**
-     * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
-     * like when you close a workbench GUI.
-     */
     public ItemStack getStackInSlotOnClosing(int index)
     {
         if (this.chestContents[index] != null)
@@ -122,9 +111,6 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         }
     }
 
-    /**
-     * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
-     */
     public void setInventorySlotContents(int index, ItemStack stack)
     {
         this.chestContents[index] = stack;
@@ -137,17 +123,11 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         this.markDirty();
     }
 
-    /**
-     * Gets the name of this command sender (usually username, but possibly "Rcon")
-     */
     public String getName()
     {
         return this.hasCustomName() ? this.customName : "container.chest";
     }
 
-    /**
-     * Returns true if this thing is named
-     */
     public boolean hasCustomName()
     {
         return this.customName != null && this.customName.length() > 0;
@@ -156,6 +136,11 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
     public void setCustomName(String name)
     {
         this.customName = name;
+    }
+    
+    public void onContainerClosed(EntityPlayer player, World world)
+    {
+    	EnumSounds.playSound(EnumSounds.CHEST_CLOSED, world, player);
     }
 
     public void readFromNBT(NBTTagCompound compound)
@@ -205,18 +190,11 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         }
     }
 
-    /**
-     * Returns the maximum stack size for a inventory slot. Seems to always be 64, possibly will be extended. *Isn't
-     * this more of a set than a get?*
-     */
     public int getInventoryStackLimit()
     {
         return 64;
     }
 
-    /**
-     * Do not make give this method the name canInteractWith because it clashes with Container
-     */
     public boolean isUseableByPlayer(EntityPlayer player)
     {
         return this.worldObj.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
@@ -315,9 +293,6 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         }
     }
 
-    /**
-     * Updates the JList with a new model.
-     */
     public void update()
     {
         this.checkForAdjacentChests();
@@ -454,17 +429,11 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
         }
     }
 
-    /**
-     * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
-     */
     public boolean isItemValidForSlot(int index, ItemStack stack)
     {
         return true;
     }
 
-    /**
-     * invalidates a tile entity
-     */
     public void invalidate()
     {
         super.invalidate();

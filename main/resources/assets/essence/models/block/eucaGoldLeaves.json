@@ -1,6 +1,9 @@
 {
-	"parent": "block/cube_all",
+	"parent": "essence:block/grass",
 	"textures": {
-		"all": "essence:blocks/eucaGoldLeaves"
+		"particle": "essence:blocks/eucaGoldLeaves_side",
+		"bottom": "essence:blocks/eucaGoldLeaves_bottom",
+		"top": "essence:blocks/eucaGoldLeaves_top",
+		"side": "essence:blocks/eucaGoldLeaves_side"
 	}
 }

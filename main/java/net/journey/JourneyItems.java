@@ -314,10 +314,10 @@ public class JourneyItems {
 	public static final Item terranaSword = new ItemModSword("terranaSword", "Terrana Sword", EssenceToolMaterial.TERRANA_SWORD);
 	public static final Item terrolicaSword = new ItemModSword("terrolicaSword", "Terrolica Sword", EssenceToolMaterial.TERROLICA_SWORD);
 	public static final Item voliteSword = new ItemModSword("voliteSword", "Volite Sword", EssenceToolMaterial.VOLITE_SWORD);
+	public static final Item kingsSword = new ItemModSword("kingsSword", "Kings Sword", EssenceToolMaterial.KINGS_SWORD);
 	
 	public static final Item healersBlade = new ItemHealthSword("healersBlade", "Healers Blade", EssenceToolMaterial.HEALERS_BLADE, 2);
 	public static final Item terronicBlade = new ItemAddedHealthSword("terronicBlade", "Terronic Blade", EssenceToolMaterial.TERRONIC_BLADE, 4);
-	
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Creative Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 	

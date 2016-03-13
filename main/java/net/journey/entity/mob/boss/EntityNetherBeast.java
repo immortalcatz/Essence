@@ -2,6 +2,7 @@ package net.journey.entity.mob.boss;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
@@ -9,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -81,12 +83,22 @@ public class EntityNetherBeast extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalPiece_1;
+		return null;
 	}
-
+	
 	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(JourneyItems.eucaPortalPiece_1, 2);
-		this.dropItem(JourneyItems.netherBeastSword, 1 + rand.nextInt(1));
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.eucaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(2)) {
+		case 0:
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.eucaPortalPiece_1, 1));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.netherBeastSword, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.eucaPortalPiece_1, 2));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.netherBeastSword, 1));
+			break;
+		}
 	}
 }

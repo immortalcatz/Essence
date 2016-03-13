@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
 import net.minecraft.entity.Entity;
@@ -18,8 +19,10 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
@@ -154,15 +157,22 @@ public class EntityEudor extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.depthsPortalGem;
+		return null;
 	}
 	
 	@Override
-	protected void dropFewItems(boolean b, int j) {
-		dropItem(JourneyItems.depthsPortalGem, 18);
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.eucaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
 		switch(rand.nextInt(2)) {
-		case 0: dropItem(JourneyItems.coreMender, 1); break;
-		case 1: dropItem(JourneyItems.coreExpender, 1); break;
+		case 0:
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.depthsPortalGem, 8));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.kingsSword, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.depthsPortalGem, 10));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.kingsSword, 1));
+			break;
 		}
 	}
 }

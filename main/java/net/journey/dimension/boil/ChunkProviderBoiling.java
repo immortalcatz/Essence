@@ -369,23 +369,21 @@ public class ChunkProviderBoiling implements IChunkProvider {
 			}
 		}
 		
-		for(times = 0; times < 1; times++) {
+		if(rand.nextInt(16)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
 				new WorldGenBrisonNetwork().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-				break;
 			}
 		}
 		
-		for(times = 0; times < 1; times++) {
+		if(rand.nextInt(10)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.hotBlock)) {
 				new WorldGenTraderHutBoiling().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-				break;
 			}
 		}
 		

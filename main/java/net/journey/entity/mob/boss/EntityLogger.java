@@ -2,6 +2,7 @@ package net.journey.entity.mob.boss;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
@@ -9,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -78,18 +80,33 @@ public class EntityLogger extends EntityEssenceBoss {
 	public EnumSounds setDeathSound() {
 		return EnumSounds.NETHER_BEAST_HURT;
 	}
-
+	
 	@Override
-	public Item getItemDropped() {
-		return JourneyItems.eucaPortalGem;
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.eucaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(2)) {
+		case 0:
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.terraniaPortalGem, 8));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.naturesBlade, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.loggersBow, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.terraniaPortalGem, 10));
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.loggersSword, 1));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.loggersBow, 1));
+			break;
+		}
 	}
 
 	@Override
 	protected void dropFewItems(boolean b, int j) {
 		switch(rand.nextInt(3)) {
-		case 0: dropItem(JourneyItems.naturesBlade, 1); break;
-		case 1: dropItem(JourneyItems.loggersSword, 1); break;
-		case 2: dropItem(JourneyItems.loggersBow, 1); break;
 		}
+	}
+
+	@Override
+	public Item getItemDropped() {
+		return null;
 	}
 }
