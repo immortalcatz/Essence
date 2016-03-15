@@ -2,8 +2,10 @@ package net.journey.client;
 
 import net.journey.blocks.tileentity.TileEntityKnowledgeTable;
 import net.journey.blocks.tileentity.TileEntitySummoningTable;
+import net.journey.blocks.tileentity.TileEntityTrophyTable;
 import net.journey.blocks.tileentity.container.ContainerKnowledgeTable;
 import net.journey.blocks.tileentity.container.ContainerSummoningTable;
+import net.journey.blocks.tileentity.container.ContainerTrophy;
 import net.journey.client.render.gui.GuiAlloyMender;
 import net.journey.client.render.gui.GuiBlacksmith;
 import net.journey.client.render.gui.GuiBoilTrader;
@@ -19,6 +21,7 @@ import net.journey.client.render.gui.GuiStoneCraftingTable;
 import net.journey.client.render.gui.GuiSummoningTable;
 import net.journey.client.render.gui.GuiTerranian;
 import net.journey.client.render.gui.GuiTordo;
+import net.journey.client.render.gui.GuiTrophyTable;
 import net.minecraft.client.gui.inventory.GuiCrafting;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IMerchant;
@@ -33,7 +36,7 @@ import net.slayer.api.entity.tileentity.container.ContainerModVillager;
 public class GuiHandler implements IGuiHandler {
 
 	public enum GuiIDs {
-		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN, TERRANIAN_ENCHANTER, OVERGROWN_MERCHANT, ESCAPED, CRAFTING;
+		MAGE, BLACKSMITH, FROZEN_MERCHANT, KNOWLEDGE, SUMMONING, STARING_GUARDIAN, TORDO, BOIL_TRADER, ALLOY_MENDER, STARLIGHT_VILLAGER, STARLIGHT_BLACKSMITH, TERRANIAN, TERRANIAN_ENCHANTER, OVERGROWN_MERCHANT, ESCAPED, CRAFTING, TROPHY;
 	}
 
 	public static int CRAFTING;
@@ -46,6 +49,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.KNOWLEDGE.ordinal()) return new ContainerKnowledgeTable(player.inventory, (TileEntityKnowledgeTable)entity, world);
 		if(ID == GuiIDs.SUMMONING.ordinal()) return new ContainerSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
+		if(ID == GuiIDs.TROPHY.ordinal()) return new ContainerTrophy(player.inventory, (TileEntityTrophyTable)entity, world);
 		if(ID == GuiIDs.STARING_GUARDIAN.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.TORDO.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
 		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world);
@@ -71,6 +75,7 @@ public class GuiHandler implements IGuiHandler {
 		if(ID == GuiIDs.FROZEN_MERCHANT.ordinal()) return new GuiFrozenMerchant(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.KNOWLEDGE.ordinal()) return new GuiKnowledgeTable(player.inventory, (TileEntityKnowledgeTable)entity, world);
 		if(ID == GuiIDs.SUMMONING.ordinal()) return new GuiSummoningTable(player.inventory, (TileEntitySummoningTable)entity, world);
+		if(ID == GuiIDs.TROPHY.ordinal()) return new GuiTrophyTable(player.inventory, (TileEntityTrophyTable)entity, world);
 		if(ID == GuiIDs.STARING_GUARDIAN.ordinal()) return new GuiStaringGuardian(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.TORDO.ordinal()) return new GuiTordo(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));
 		if(ID == GuiIDs.BOIL_TRADER.ordinal()) return new GuiBoilTrader(new ContainerModVillager(player.inventory, (IMerchant)getEntityByID(x, world), world), (IMerchant)getEntityByID(x, world));

@@ -38,6 +38,7 @@ import net.journey.blocks.machines.BlockJourneyChest;
 import net.journey.blocks.machines.BlockKnowledgeTable;
 import net.journey.blocks.machines.BlockStoneCraftingTable;
 import net.journey.blocks.machines.BlockSummoningTable;
+import net.journey.blocks.machines.BlockTrophyTable;
 import net.journey.blocks.portal.BlockBoilPortal;
 import net.journey.blocks.portal.BlockCloudiaPortal;
 import net.journey.blocks.portal.BlockCorbaPortal;
@@ -346,6 +347,7 @@ public class JourneyBlocks {
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
+	public static final Block trophyTable = new BlockTrophyTable("trophyTable", "Trophy Table");
 	public static final Block bossAltar = new BlockMod("bossAltar", "Boss Altar");
 	
 	public static final Block observerSpawner = new BlockModSpawner("observerSpawner", "Observer Spawner", "observer");

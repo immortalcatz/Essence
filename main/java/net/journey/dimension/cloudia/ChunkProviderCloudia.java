@@ -109,12 +109,12 @@ public class ChunkProviderCloudia implements IChunkProvider {
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))village.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 		
-		if (this.rand.nextInt(15) == 0) {
+		/**if (this.rand.nextInt(15) == 0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int y = rand.nextInt(250);
 			if(y > 30 && y < 130) new WorldGenCloudiaLand().generate(worldObj, rand, new BlockPos(x, y, z));
-		}
+		}*/
 	}
 
 	@Override

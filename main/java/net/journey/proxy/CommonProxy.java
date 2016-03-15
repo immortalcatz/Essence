@@ -48,7 +48,8 @@ public class CommonProxy {
 		SlayerAPI.registerEvent(new BarTickHandler());
 		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "grindstone");
 		GameRegistry.registerTileEntity(TileEntityKnowledgeTable.class, "Knowledge Table");
-		GameRegistry.registerTileEntity(TileEntitySummoningTable.class, "Summon Table");
+		GameRegistry.registerTileEntity(TileEntitySummoningTable.class, "Summoning Table");
+		GameRegistry.registerTileEntity(TileEntityTrophyTable.class, "Trophy Table");
 		GameRegistry.registerTileEntity(TileEntityJourneyChest.class, "Journey Chest");
 		//SlayerAPI.addMapGen(MapGenBoilVillage.Start.class, "Boil Village");
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");

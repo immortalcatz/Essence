@@ -25,22 +25,21 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.cloudiaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.cloudiaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 12), new Object[] {"   ", "iii", "iii", 'i', JourneyItems.corbaPortalGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 12), new Object[] {"iii", "iii", 'i', JourneyItems.corbaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.terraniaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.terraniaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 10), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.summoningTable, 1), new Object[] {"dsd", "iii", "iii", 'i', JourneyItems.shadiumIngot, 'd', Items.diamond, 's', JourneyItems.sapphire});
-		
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.withicDust, 'i', JourneyItems.hellcrustIngot});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {" d ", " d ", " i ", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {"i", "i", "d", 'd', JourneyItems.withicDust, 'i', JourneyItems.hellcrustIngot});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {"d", "d", "i", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {"d", "d", "i", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', JourneyItems.caveCrystal});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBall), new Object[] {"   ", "idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', JourneyItems.sapphire});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBall), new Object[] {"idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', JourneyItems.sapphire});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.demonicBomb, 16), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.demonicDust, 'i', JourneyItems.crystalBall});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 4), new Object[] {"ddd", "ddd", "ddd", 'd', JourneyItems.caveDust});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneStick, 16), new Object[] {" d ", " d ", " d ", 'd', Blocks.stone});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneStick, 16), new Object[] {"d", "d", "d", 'd', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
@@ -49,7 +48,8 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.goldEucaPlank});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.frozenPlanks});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.boilingLog});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingBars, 4), new Object[] {"   ", "ddd", "ddd", 'd', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingBars, 4), new Object[] {"ddd", "ddd", 'd', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.stoneCraftingTable, 1), new Object[] {"dd", "dd", 'd', Blocks.cobblestone});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 
