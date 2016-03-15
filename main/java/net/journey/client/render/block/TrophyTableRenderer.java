@@ -1,7 +1,7 @@
 package net.journey.client.render.block;
 
 import net.journey.blocks.tileentity.TileEntityKnowledgeTable;
-import net.journey.blocks.tileentity.TileEntitySummoningTable;
+import net.journey.blocks.tileentity.TileEntityTrophyTable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderEntityItem;
@@ -17,13 +17,13 @@ import org.lwjgl.opengl.GL11;
 
 import com.google.common.primitives.SignedBytes;
 
-public class SummoningTableRenderer extends TileEntitySpecialRenderer {
+public class TrophyTableRenderer extends TileEntitySpecialRenderer {
 
 	private Minecraft mc = Minecraft.getMinecraft();
 	private RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	private RenderEntityItem renderEntity;
 
-	public SummoningTableRenderer() {
+	public TrophyTableRenderer() {
 		renderEntity = new RenderEntityItem(Minecraft.getMinecraft().getRenderManager(), Minecraft.getMinecraft().getRenderItem()){
 			@Override
 			public int func_177078_a(ItemStack stack) {
@@ -42,7 +42,7 @@ public class SummoningTableRenderer extends TileEntitySpecialRenderer {
 
 	@Override
 	public void renderTileEntityAt(TileEntity t, double x, double y, double z, float f, int j) {
-		TileEntitySummoningTable tile = (TileEntitySummoningTable)t;
+		TileEntityTrophyTable tile = (TileEntityTrophyTable)t;
 		renderItem(tile.getStackInSlot(0), t.getWorld(), x + 0.85D, y, z + 0.85D, false);
 		renderItem(tile.getStackInSlot(1), t.getWorld(), x + 0.85D, y, z + 0.5D, false);
 		renderItem(tile.getStackInSlot(2), t.getWorld(), x + 0.85D, y, z + 0.15D, false);
