@@ -4,13 +4,18 @@ import java.util.List;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
@@ -71,6 +76,22 @@ public class EntityTerranianProtector extends EntityEssenceBoss {
 				((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 25, 2));
 		}
 	}
+	
+	@Override
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.terraniaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(4)) {
+		case 0:
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.terronicBlade, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.cloudiaPortalGem, 9));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.terralightBlade, 1));
+			te.setInventorySlotContents(14, new ItemStack(JourneyItems.cloudiaPortalGem, 12));
+			break;
+		}
+	}
 
 	@Override
 	public void onLivingUpdate() {
@@ -92,15 +113,7 @@ public class EntityTerranianProtector extends EntityEssenceBoss {
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.eucaPortalGem;
-	}
-
-	@Override
-	protected void dropFewItems(boolean par1, int par2) {
-		this.dropItem(JourneyItems.eucaPortalGem, 6 + rand.nextInt(4));
-		this.dropItem(JourneyItems.calciaSword, 1);
-
-		//if(rand.nextInt(1) == 0)
-		//	this.dropItem(Item.getItemFromBlock(EssenceBlocks.calciaStatue), 1);
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -1,6 +1,8 @@
 package net.journey.entity.mob.boss;
 
 import net.journey.JourneyBlocks;
+import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.EntityPeacefullMob;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityTempleBall;
@@ -16,6 +18,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
@@ -53,7 +56,34 @@ public class EntityTempleGuardian extends EntityPeacefullMob implements IRangedA
 	
 	@Override
 	public void onDeath(DamageSource damage){
-		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), Blocks.chest.getDefaultState());		
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), Blocks.chest.getStateFromMeta(5));
+		TileEntityChest te = (TileEntityChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(4)) {
+		case 0:
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.yellowGem, 3));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.blueGem, 2));
+			te.setInventorySlotContents(16, new ItemStack(JourneyItems.greenGem, 5));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.purpleGem, 2));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.yellowGem, 4));
+			te.setInventorySlotContents(14, new ItemStack(JourneyItems.blueGem, 5));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.greenGem, 2));
+			te.setInventorySlotContents(4, new ItemStack(JourneyItems.purpleGem, 6));
+			break;
+		case 2:
+			te.setInventorySlotContents(14, new ItemStack(JourneyItems.yellowGem, 2));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.blueGem, 4));
+			te.setInventorySlotContents(4, new ItemStack(JourneyItems.greenGem, 6));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.purpleGem, 2));
+			break;
+		case 3:
+			te.setInventorySlotContents(4, new ItemStack(JourneyItems.yellowGem, 5));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.blueGem, 1));
+			te.setInventorySlotContents(14, new ItemStack(JourneyItems.greenGem, 4));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.purpleGem, 2));
+			break;
+		}
 	}
 	
 	@Override

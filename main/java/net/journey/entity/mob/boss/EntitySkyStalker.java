@@ -2,7 +2,9 @@ package net.journey.entity.mob.boss;
 
 import java.util.Random;
 
+import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.mob.cloudia.EntitySkyEel;
 import net.journey.entity.mob.euca.EntityShimmerer;
@@ -15,8 +17,10 @@ import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.EnumDifficulty;
@@ -65,16 +69,19 @@ public class EntitySkyStalker extends EntityEssenceBoss {
 	}
 
 	@Override
-	protected void dropFewItems(boolean b, int j) {
-		switch (rand.nextInt(3)) {
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.cloudiaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
+		switch(rand.nextInt(2)) {
 		case 0:
-			dropItem(JourneyItems.skyPiercer, 128);
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.skyPiercer, 128));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.fluffyBlade, 1));
+			te.setInventorySlotContents(4, new ItemStack(JourneyItems.fluffyBow, 1));
 			break;
 		case 1:
-			dropItem(JourneyItems.fluffyBlade, 1);
-			break;
-		case 2:
-			dropItem(JourneyItems.fluffyBow, 1);
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.terraniaPortalGem, 5));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.fluffyBlade, 1));
+			te.setInventorySlotContents(12, new ItemStack(JourneyItems.fluffyBow, 1));
 			break;
 		}
 	}

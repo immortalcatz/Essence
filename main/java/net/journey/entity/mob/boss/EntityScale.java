@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityIceBall;
 import net.journey.enums.EnumSounds;
@@ -23,6 +24,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -83,18 +85,20 @@ public class EntityScale extends EntityEssenceBoss implements IRangedAttackMob {
 		return this.rand.nextInt(15) == 0 && super.getCanSpawnHere()
 				&& this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
-
+	
 	@Override
-	public Item getItemDropped() {
-		return JourneyItems.eucaPortalPiece;
-	}
-
-	@Override
-	protected void dropFewItems(boolean b, int j) {
-		this.dropItem(JourneyItems.eucaPortalPiece, 1);
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.depthsChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
 		switch(rand.nextInt(2)) {
-		case 0: dropItem(JourneyItems.staringBow, 1); break;
-		case 1: dropItem(JourneyItems.sentrySword, 1); break;
+		case 0:
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.bubbleSword, 1));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.corbaPortalGem, 4));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.bubbleSword, 1));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.corbaPortalGem, 4));
+			break;
 		}
 	}
 	
@@ -266,5 +270,10 @@ public class EntityScale extends EntityEssenceBoss implements IRangedAttackMob {
 				}
 			}
 		}
+	}
+
+	@Override
+	public Item getItemDropped() {
+		return null;
 	}
 }

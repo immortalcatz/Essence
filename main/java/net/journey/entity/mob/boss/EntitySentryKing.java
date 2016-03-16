@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityIceBall;
 import net.journey.enums.EnumSounds;
@@ -23,6 +24,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -83,17 +85,22 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 		return this.rand.nextInt(15) == 0 && super.getCanSpawnHere()
 				&& this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
-
+	
 	@Override
-	public Item getItemDropped() {
-		return JourneyItems.depthsPortalGem;
-	}
-
-	@Override
-	protected void dropFewItems(boolean b, int j) {
+	public void onDeath(DamageSource damage){
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.corbaChest.getStateFromMeta(5));
+		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
 		switch(rand.nextInt(2)) {
-		case 0: dropItem(JourneyItems.overseerBow, 1); break;
-		case 1: dropItem(JourneyItems.sentrySword, 1); break;
+		case 0:
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.terraniaPortalGem, 4));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.sentrySword, 1));
+			te.setInventorySlotContents(4, new ItemStack(JourneyItems.overseerBow, 1));
+			break;
+		case 1:
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.terraniaPortalGem, 5));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.sentrySword, 1));
+			te.setInventorySlotContents(16, new ItemStack(JourneyItems.overseerBow, 1));
+			break;
 		}
 	}
 	
@@ -265,5 +272,11 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 				}
 			}
 		}
+	}
+
+	@Override
+	public Item getItemDropped() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
