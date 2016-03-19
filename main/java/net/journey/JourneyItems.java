@@ -576,7 +576,9 @@ public class JourneyItems {
 	public static final Item redHonglowShroom = new ItemHonglow("redHonglowShroom", "Red Honglowshroom", 2, 1.2F, false, false).setPotionEffect(Potion.regeneration.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item blueHonglowShroom = new ItemHonglow("blueHonglowShroom", "Blue Honglowshroom", 2, 1.2F, false, false).setPotionEffect(Potion.moveSpeed.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item honglowShroom = new ItemHonglow("honglowShroom", "Honglowshroom", 6, 1.2F, false, false).setAlwaysEdible();
-	public static final Item snakeFlesh = new ItemZatPedal("snakeFlesh", "Snake Flesh", 6, 1.2F, false, false).setPotionEffect(Potion.fireResistance.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item snakeFlesh = new ItemZatPedal("snakeFlesh", "Snake Flesh", 6, 1.2F, false, false).setPotionEffect(Potion.fireResistance.id, 60, 1, 1.0F).setAlwaysEdible();
+	public static final Item flamingBeef = new ItemModFood("flamingBeef", "Raw Flaming Beef", 6, 1.2F, false).setPotionEffect(Potion.fireResistance.id, 90, 1, 1.0F).setAlwaysEdible();
+	public static final Item flamingBeefCooked = new ItemModFood("flamingBeefCooked", "Cooked Flaming Beef", 16, 1.2F, false).setPotionEffect(Potion.fireResistance.id, 100, 2, 2.0F).setAlwaysEdible();
 
 	public static final Item glowshroomPowder = new ItemModSeeds("glowshroomPowder", "Glowshroom Powder", JourneyBlocks.glowshroomCrop);
 	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", "Tomato Seeds", JourneyBlocks.tomatoCrop);

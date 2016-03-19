@@ -57,6 +57,7 @@ import net.slayer.api.block.BlockModBars;
 import net.slayer.api.block.BlockModDoor;
 import net.slayer.api.block.BlockModFence;
 import net.slayer.api.block.BlockModFlower;
+import net.slayer.api.block.BlockModFurnace;
 import net.slayer.api.block.BlockModGrass;
 import net.slayer.api.block.BlockModLadder;
 import net.slayer.api.block.BlockModLeaves;

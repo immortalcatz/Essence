@@ -2,7 +2,7 @@ package net.journey.entity;
 
 public class MobStats {
 
-	public static double normalSpeed = 0.2D, fastSpeed = 0.4D, follow = 30D, knockBackResistance = 0.0D;
+	public static double normalSpeed = 0.2D, fastSpeed = 10.0D, follow = 30D, knockBackResistance = 0.0D;
 
 	public static final int 
 	witheringBeastBossID = 0, 

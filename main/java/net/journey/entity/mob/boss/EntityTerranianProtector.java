@@ -559,7 +559,7 @@ public class EntityTerranianProtector extends EntityEssenceBoss implements IBoss
 	public void onDeath(DamageSource damage){
 		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.terraniaChest.getStateFromMeta(5));
 		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
-		switch(rand.nextInt(4)) {
+		switch(rand.nextInt(2)) {
 		case 0:
 			te.setInventorySlotContents(2, new ItemStack(JourneyItems.terronicBlade, 1));
 			te.setInventorySlotContents(11, new ItemStack(JourneyItems.cloudiaPortalGem, 9));

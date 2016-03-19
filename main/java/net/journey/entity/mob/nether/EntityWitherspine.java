@@ -36,7 +36,7 @@ public class EntityWitherspine extends EntityModMob {
 	
 	@Override
 	public double getMoveSpeed() {
-		return MobStats.witherNetherSpeed;
+		return 20.0D;
 	}
 
 	@Override
