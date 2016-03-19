@@ -40,7 +40,7 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 		this.tasks.addTask(7, new EntitySentryKing.AILookAround());
 		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
 		addAttackingAI();
-		setSize(15.0F, 15.0F);
+		setSize(16.0F, 1F);
 	}
 
 	@Override
@@ -85,6 +85,11 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 		return this.rand.nextInt(15) == 0 && super.getCanSpawnHere()
 				&& this.worldObj.getDifficulty() != EnumDifficulty.PEACEFUL;
 	}
+
+	@Override
+	public Item getItemDropped() {
+		return null;
+	}
 	
 	@Override
 	public void onDeath(DamageSource damage){
@@ -103,6 +108,7 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 			break;
 		}
 	}
+
 	
 	@Override
 	protected void entityInit() {
@@ -272,11 +278,5 @@ public class EntitySentryKing extends EntityEssenceBoss implements IRangedAttack
 				}
 			}
 		}
-	}
-
-	@Override
-	public Item getItemDropped() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

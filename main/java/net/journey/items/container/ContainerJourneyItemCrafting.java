@@ -1,4 +1,4 @@
-package net.journey.blocks.tileentity.container;
+package net.journey.items.container;
 
 import net.journey.JourneyBlocks;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,14 +15,14 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
-public class ContainerJourneyCrafting extends Container
+public class ContainerJourneyItemCrafting extends Container
 {
     public InventoryCrafting matrix = new InventoryCrafting(this, 3, 3);
     public IInventory result = new InventoryCraftResult();
     private World w;
     private BlockPos pos;
 
-    public ContainerJourneyCrafting(InventoryPlayer inv, World w, BlockPos pos) {
+    public ContainerJourneyItemCrafting(InventoryPlayer inv, World w, BlockPos pos) {
     	
         this.w = w;
         this.pos = pos;

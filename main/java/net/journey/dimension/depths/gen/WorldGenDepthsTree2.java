@@ -12,18 +12,18 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.slayer.api.worldgen.WorldGenAPI;
 
-public class WorldGenDepthsTree extends WorldGenAbstractTree {
+public class WorldGenDepthsTree2 extends WorldGenAbstractTree {
 
 	private final int minTreeHeight;
 	private final int metaWood;
 	private final int metaLeaves;
 	private static final Random rand = new Random();
 
-	public WorldGenDepthsTree(boolean var1) {
+	public WorldGenDepthsTree2(boolean var1) {
 		this(var1, rand.nextInt(10) + 10, 0, 0);
 	}
 
-	public WorldGenDepthsTree(boolean var1, int var2, int var3, int var4) {
+	public WorldGenDepthsTree2(boolean var1, int var2, int var3, int var4) {
 		super(var1);
 		this.minTreeHeight = var2;
 		this.metaWood = var3;
@@ -128,6 +128,8 @@ public class WorldGenDepthsTree extends WorldGenAbstractTree {
 		world.setBlockState(new BlockPos(i + 4, j + 5, k + 3), JourneyBlocks.depthsLeaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 4, j + 6, k + 1), JourneyBlocks.depthsLeaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 4, j + 6, k + 2), JourneyBlocks.depthsLeaves.getDefaultState());
+		world.setBlockState(new BlockPos(i + 4, j + 6, k + 3), JourneyBlocks.depthsLeaves.getDefaultState());
+
 		return true;
 
 	}

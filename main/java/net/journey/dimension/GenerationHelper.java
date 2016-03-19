@@ -9,6 +9,8 @@ import net.journey.dimension.depths.gen.WorldGenDepthsTree;
 import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.nether.gen.WorldGenBoilPortal;
 import net.journey.dimension.nether.gen.WorldGenHellThorn;
+import net.journey.dimension.nether.gen.WorldGenHellThornMedium;
+import net.journey.dimension.nether.gen.WorldGenHellThornTall;
 import net.journey.dimension.nether.gen.WorldGenNetherDungeons;
 import net.journey.dimension.nether.gen.WorldGenNetherTower;
 import net.journey.dimension.overworld.gen.*;
@@ -31,7 +33,7 @@ public class GenerationHelper {
 			(new WorldGenTallGlowshrooms()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 1:
-			y = r.nextInt(63); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			y = r.nextInt(64); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenHellThorn()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 2:
@@ -101,8 +103,12 @@ public class GenerationHelper {
 				new WorldGenMerchant().generate(w, r, new BlockPos(x, y, z));
 			break;
 		case 16:
-			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
-			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) new WorldGenNetherDungeons().generate(w, r, new BlockPos(x, y, z));
+			y = r.nextInt(64); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenHellThornMedium()).generate(w, r, new BlockPos(x, y, z));
+			break;
+		case 17:
+			y = r.nextInt(64); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
+			(new WorldGenHellThornTall()).generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

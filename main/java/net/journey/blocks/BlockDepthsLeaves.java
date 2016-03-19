@@ -1,4 +1,4 @@
-package net.slayer.api.block;
+package net.journey.blocks;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,26 +18,27 @@ import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
+import net.slayer.api.block.BlockMod;
 
-public class BlockModLeaves extends BlockMod implements IShearable {
+public class BlockDepthsLeaves extends BlockMod implements IShearable {
 	
     protected int[] adjacentTreeBlocks;
 	private boolean isFrozenPlant = false;
 	private boolean isBurningPlant = false;
 
-    public BlockModLeaves(String name, String finalName, float hardness) {
+    public BlockDepthsLeaves(String name, String finalName, float hardness) {
         super(EnumMaterialTypes.LEAVES, name, finalName, hardness);
         this.setHardness(0.3F);
         this.setLightOpacity(1);
         this.setTickRandomly(true);
     }
     
-    public BlockModLeaves setFrozenPlant() {
+    public BlockDepthsLeaves setFrozenPlant() {
 		isFrozenPlant = true;
 		return this;
 	}
     
-    public BlockModLeaves setBurningPlant() {
+    public BlockDepthsLeaves setBurningPlant() {
 		isBurningPlant = true;
 		return this;
 	}
@@ -186,7 +187,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     
     @Override
     public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.TRANSLUCENT;
+    	return EnumWorldBlockLayer.CUTOUT_MIPPED;
     }
     
     @Override

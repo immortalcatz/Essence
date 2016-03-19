@@ -521,7 +521,7 @@ public class JourneyItems {
 	public static final Item yellowGem = new ItemMod("yellowGem", "Yellow Gem");
 
 	public static final Item eucaTablet = new ItemMod("eucaTablet", "Euca Tablet");
-	public static final Item testStorage = new ItemStorage("testStorage", "TEst storage");
+	public static final Item pocketCrafting = new ItemCrafting("pocketCrafting", "Sizzling Crafting Pack");
 	
 	public static final Item wandBase = new ItemMod("wandBase", "Wand Base");
 	public static final Item staffBase = new ItemMod("staffBase", "Staff Base");

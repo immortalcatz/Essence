@@ -22,6 +22,7 @@ import net.journey.client.render.model.mob.overworld.ModelWraith;
 import net.journey.client.render.model.mob.overworld.underground.*;
 import net.journey.client.render.model.mob.terrania.mob.ModelPurplian;
 import net.journey.client.render.model.mob.terrania.mob.ModelTerraScatterer;
+import net.journey.client.render.model.mob.terrania.mob.ModelTerragrow;
 import net.journey.client.render.model.mob.terrania.mob.ModelTerralight;
 import net.journey.client.render.model.mob.terrania.mob.ModelTerraslug;
 import net.journey.client.render.model.mob.terrania.npc.ModelTerranianTrader;
@@ -53,6 +54,7 @@ import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
 import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
+import net.journey.entity.mob.terrania.mob.EntityTerragrow;
 import net.journey.entity.mob.terrania.mob.EntityTerralight;
 import net.journey.entity.mob.terrania.mob.EntityTerraslug;
 import net.journey.entity.mob.terrania.npc.EntityTerranianEnchanter;
@@ -198,6 +200,7 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityLavasnake.class, new RenderModMob(new ModelLavasnake(), Textures.lavasnake));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWitherspine.class, new RenderModMob(new ModelWitherspine(), Textures.witherspine));
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellCow.class, new RenderModMob(new ModelHellCow(), Textures.hellCow));
+		RenderingRegistry.registerEntityRenderingHandler(EntityTerragrow.class, new RenderModMob(new ModelTerragrow(), Textures.terragrow));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
