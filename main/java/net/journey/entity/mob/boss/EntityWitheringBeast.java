@@ -57,13 +57,6 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 	public double setMaxHealth(MobStats s) {
 		return s.witheringBeastHealth;
 	}
-	
-	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).addPotionEffect(new PotionEffect(Potion.wither.id, 60, 0));
-		return super.attackEntityFrom(e, a);
-	}
 
 	@Override
 	public EnumSounds setLivingSound() {
