@@ -22,6 +22,7 @@ import net.journey.blocks.BlockJoinedGlass;
 import net.journey.blocks.BlockJoinedPane;
 import net.journey.blocks.BlockLock;
 import net.journey.blocks.BlockMiniColouredBricks;
+import net.journey.blocks.BlockStalks;
 import net.journey.blocks.base.BlockModFire;
 import net.journey.blocks.base.BlockModOre;
 import net.journey.blocks.crop.BlockCorveggieCrop;
@@ -44,6 +45,7 @@ import net.journey.blocks.portal.BlockCloudiaPortal;
 import net.journey.blocks.portal.BlockCorbaPortal;
 import net.journey.blocks.portal.BlockDepthsPortal;
 import net.journey.blocks.portal.BlockEucaPortal;
+import net.journey.blocks.portal.BlockGoldenPortal;
 import net.journey.blocks.portal.BlockTerraniaPortal;
 import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.minecraft.block.Block;
@@ -144,6 +146,9 @@ public class JourneyBlocks {
 	public static final Block frozenBark = new BlockModLog("frozenBark", "Frozen Bark");
 	public static final Block frozenPlanks = new BlockMod(EnumMaterialTypes.WOOD, "frozenPlanks", "Frozen Planks", 0.5F);
 	
+	public static final Block goldenGrass = new BlockModGrass((BlockMod)null, "goldenGrass", "Golden Grass", 0.5F);
+	public static final BlockMod goldenStone = new BlockMod("goldenStone", "Golden Stone");
+	
 	public static final BlockMod corbaStone = new BlockMod("corbaStone", "Corba Stone");
 	public static final Block corbaGrass = new BlockModGrass((BlockMod)null, "corbaGrass", "Corba Grass", 0.5F);
 	public static final Block corbaLog = new BlockModLog("corbaLog", "Corba Log");
@@ -202,6 +207,8 @@ public class JourneyBlocks {
 
 	public static final BlockEucaPortal eucaPortal = (BlockEucaPortal)new BlockEucaPortal("eucaPortal");
 	public static final Block eucaPortalFrame = new BlockMod("eucaPortalFrame", "Euca Portal Frame", 3.0F);
+	public static final BlockGoldenPortal goldenPortal = (BlockGoldenPortal)new BlockGoldenPortal("goldenPortal");
+	public static final Block goldenPortalFrame = new BlockMod("goldenPortalFrame", "Golden Portal Frame", 3.0F);
 	public static final BlockDepthsPortal depthsPortal = (BlockDepthsPortal)new BlockDepthsPortal("depthsPortal");
 	public static final Block depthsPortalFrame = new BlockMod("depthsPortalFrame", "Depths Portal Frame", 3.0F);
 	public static final BlockBoilPortal boilPortal = (BlockBoilPortal)new BlockBoilPortal("boilingPortal");
@@ -285,6 +292,12 @@ public class JourneyBlocks {
 	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
 	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);
 	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", "Blue Glowshroom", false);
+	
+	public static final Block goldenStalksTop = new BlockStalks("goldenStalksTop", "Golden Stalks", true);
+	public static final Block goldenStalksBottom = new BlockStalks("goldenStalksBottom", "Golden Stalks", false);
+	public static final BlockModFlower goldenBulb = new BlockModFlower("goldenBulb", "Golden Bulb");
+	public static final BlockModFlower goldenBloom = new BlockModFlower("goldenBloom", "Golden Bloom");
+	public static final BlockModFlower goldenStalks = new BlockModFlower("goldenStalks", "Golden Stalks");
 		
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");

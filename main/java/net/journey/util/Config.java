@@ -18,12 +18,12 @@ public class Config {
 		cfg.save();
 	}
 
-	public static boolean keepLoadingEuca, keepLoadingTerrania, keepLoadingDepths, keepLoadingBoil, keepLoadingFrozen, reRenderPlayerStats, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
+	public static boolean keepLoadingEuca, keepLoadingTerrania, keepLoadingDepths, keepLoadingBoil, keepLoadingFrozen, keepLoadingGolden, reRenderPlayerStats, spawnNetherBossesInNether, showDimensionChange, showDeathMessage, boilBlockSpawnSmoke;
 	public static boolean keepLoadingCorba, keepLoadingWastelands, keepLoadingCloudia;
 	public static boolean spawnSwordParticles, showEntityHealth;
 
-	public static int euca, depths, boil, frozen, corba, wastelands, cloudia, terrania;
-	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome, corbaBiome, wastelandsBiome, cloudiaBiome, terraniaBiome;
+	public static int euca, depths, boil, frozen, corba, wastelands, cloudia, terrania, golden;
+	public static int eucaBiome, depthsBiome, boilBiome, frozenBiome, corbaBiome, wastelandsBiome, cloudiaBiome, terraniaBiome, goldenBiome;
 
 	public static int baseMobID, baseProjectileID, baseEntityListID, entityHealthDistance;
 
@@ -46,12 +46,15 @@ public class Config {
 		cloudiaBiome = cfg.get("Dimension", "Cloudia biome ID", 66).getInt();
 		terrania = cfg.get("Dimension", "Terrania ID", 27).getInt();
 		terraniaBiome = cfg.get("Dimension", "Terrania biome ID", 67).getInt();
+		golden = cfg.get("Dimension", "Golden Grains ID", 28).getInt();
+		goldenBiome = cfg.get("Dimension", "Golden Grains biome ID", 68).getInt();
 		keepLoadingFrozen = cfg.get("Dimension", "Keep loading Frozen Lands", true).getBoolean(true);
 		keepLoadingBoil = cfg.get("Dimension", "Keep loading Boiling Point", true).getBoolean(true);
 		keepLoadingCorba = cfg.get("Dimension", "Keep loading Corba", true).getBoolean(true);
 		keepLoadingWastelands = cfg.get("Dimension", "Keep loading Wastelands", true).getBoolean(true);
 		keepLoadingCloudia = cfg.get("Dimension", "Keep loading Cloudia", true).getBoolean(true);
 		keepLoadingTerrania = cfg.get("Dimension", "Keep loading Terrania", true).getBoolean(true);
+		keepLoadingGolden = cfg.get("Dimension", "Keep loading Golden Grains", true).getBoolean(true);
 		boilBlockSpawnSmoke = cfg.get("Dimension", "Boiling Point blocks spawn smoke (More lag)", true).getBoolean(true);
 		spawnSwordParticles = cfg.get("Items", "Swords spawn particles", true).getBoolean(true);
 		//spawnNetherBossesInNether = cfg.get("Dimension", "Spawn the Nether Bosses (with the orbs) only in the Nether", true).getBoolean(true);
