@@ -25,7 +25,7 @@ public class WorldProviderGoldenGrains extends WorldProvider {
 	@Override
     @SideOnly(Side.CLIENT)
     public Vec3 getFogColor(float f1, float f2) {
-    	return new Vec3(1.0, 2.0, 0.5);
+    	return new Vec3(1.3, 1.5, 0.0);
     }
 
 	@Override

@@ -356,7 +356,7 @@ public class ChunkProviderGoldenGrains implements IChunkProvider {
 			new WorldGenModFlower(JourneyBlocks.goldenBulb).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 
-		for(i = 0; i < 1024; i++) {
+		for(i = 0; i < 29900; i++) {
 			y = r.nextInt(256); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			new WorldGenGoldenStalks().generate(worldObj, rand, new BlockPos(x, y, z));
 		}

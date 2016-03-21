@@ -14,7 +14,7 @@ public class WorldGenGoldenStalks extends WorldGenerator {
 
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
-		for(int i = 0; i < 64; i++) {
+		for(int i = 0; i < 512; i++) {
 		Block top = JourneyBlocks.goldenStalksTop, bottom = JourneyBlocks.goldenStalksBottom;
 			if(w.getBlockState(pos.down()).getBlock() == JourneyBlocks.goldenGrass && w.getBlockState(pos) == Blocks.air.getDefaultState() && w.getBlockState(pos.up()) == Blocks.air.getDefaultState()) {
 				w.setBlockState(pos, bottom.getDefaultState(), 2);
