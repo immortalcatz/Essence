@@ -14,7 +14,7 @@ import net.slayer.api.SlayerAPI;
 public class RenderFourfa extends RenderBoss {
 
 	public RenderFourfa() {
-		super(new ModelFourfa(), 0, 2.0F, Textures.blank, MobStats.fourfaBossID);
+		super(new ModelFourfa(), 0, 2.0F, Textures.blank, "fourfa");
 		this.addLayer(new LayerFourfaHeldItem(this));
 	}
 

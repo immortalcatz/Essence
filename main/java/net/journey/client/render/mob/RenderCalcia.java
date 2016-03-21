@@ -12,8 +12,8 @@ public class RenderCalcia extends RenderBoss {
 
 	private ResourceLocation texture;
 	
-	public RenderCalcia(ModelBase model, float shadow, float size, ResourceLocation tex, int bossID) {
-		super(model, shadow, size, tex, bossID);
+	public RenderCalcia(ModelBase model, float shadow, float size, ResourceLocation tex, String bar) {
+		super(model, shadow, size, tex, bar);
 		texture = tex;
 	}
 	

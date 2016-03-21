@@ -3,22 +3,6 @@ package net.journey.entity;
 public class MobStats {
 
 	public static double normalSpeed = 0.2D, fastSpeed = 10.0D, follow = 30D, knockBackResistance = 0.0D;
-
-	public static final int 
-	witheringBeastBossID = 0, 
-	netherBeastBossID = 1, 
-	calciaBossID = 2, 
-	wraithBossID = 3, 
-	eudorBossID = 4, 
-	fourfaBossID = 5, 
-	blazierBossID = 6, 
-	soulWatcherBossID = 7, 
-	sentryKingBossID = 8, 
-	thunderbirdBossID = 9, 
-	loggerBossID = 10,
-	corallatorBossID = 11,
-	skyStalkerBossID = 12,
-	terranianBossID = 16;
 	
 	//End
 	public static double enderLeaperHealth = 20.0D, enderLeaperDamage = 5.0D, enderLeaperSpeed = normalSpeed, enderLeaperFollowRange = follow;
