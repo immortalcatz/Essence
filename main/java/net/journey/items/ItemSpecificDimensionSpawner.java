@@ -58,11 +58,6 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(roc);
 				}
-				if(item == JourneyItems.soulWatcherOrb) {
-					SlayerAPI.sendMessageToAll("Soul Watcher has been summoned", true);
-					soul.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
-					w.spawnEntityInWorld(soul);
-				}
 				if(item == JourneyItems.sentryKingOrb) {
 					SlayerAPI.sendMessageToAll("Sentry King has been summoned", true);
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
@@ -70,22 +65,22 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				}
 				if(item == JourneyItems.mysteriousDisk) {
 					SlayerAPI.sendMessageToAll("The Sky Stalker has been summoned", true);
-					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					sky.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(sky);
 				}
 				if(item == JourneyItems.corallatorOrb) {
 					SlayerAPI.sendMessageToAll("The Corallator has been summoned", true);
-					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					corallator.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(corallator);
 				}
 				if(item == JourneyItems.loggerOrb) {
 					SlayerAPI.sendMessageToAll("The Logger has been summoned", true);
-					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					logger.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(logger);
 				}
 				if(item == JourneyItems.thunderbirdOrb) {
 					SlayerAPI.sendMessageToAll("The Thunderbird has been summoned", true);
-					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					thunder.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(thunder);
 				}
 				

@@ -52,7 +52,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 				}
 				if(item == JourneyItems.soulWatcherOrb){
 					SlayerAPI.sendMessageToAll("The Soul Watcher has been summoned", true);
-					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					soul.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(soul);
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
