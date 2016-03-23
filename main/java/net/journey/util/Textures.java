@@ -170,6 +170,7 @@ public class Textures {
 	public static final ResourceLocation purplian = addMob("purplian");
 	public static final ResourceLocation terraslug = addMob("terraslug");
 	public static final ResourceLocation terragrow = addMob("terragrow");
+	public static final ResourceLocation terrashroom = addMob("terrashroom");
     
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
