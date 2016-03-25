@@ -83,7 +83,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			x = chunkX + r.nextInt(16) + 8;
 			z = chunkZ + r.nextInt(16) + 8;
 			if(isBlockTop(x, y - 1, z, Blocks.netherrack)) {
-				new WorldGenBoilPortal().generate(w, r, new BlockPos(x, y, z));
+			new WorldGenBoilPortal().generate(w, r, new BlockPos(x, y, z));
 			}
 		}
 		
@@ -92,7 +92,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			x = chunkX + r.nextInt(16) + 8;
 			z = chunkZ + r.nextInt(16) + 8;
 			if(isBlockTop(x, y - 1, z, Blocks.netherrack)) {
-				(new WorldGenHellThornTall()).generate(w, r, new BlockPos(x, y, z));
+			new WorldGenHellThornTall().generate(w, r, new BlockPos(x, y, z));
 			}
 		}
 		
@@ -101,7 +101,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			x = chunkX + r.nextInt(16) + 8;
 			z = chunkZ + r.nextInt(16) + 8;
 			if(isBlockTop(x, y - 1, z, Blocks.netherrack)) {
-				(new WorldGenHellThornMedium()).generate(w, r, new BlockPos(x, y, z));
+			new WorldGenHellThornMedium().generate(w, r, new BlockPos(x, y, z));
 			}
 		}
 		
@@ -109,9 +109,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			y = r.nextInt(64); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
-			if(isBlockTop(x, y - 1, z, Blocks.netherrack)) {
-				(new WorldGenHellThorn()).generate(w, r, new BlockPos(x, y, z));
-			}
+			(new WorldGenHellThorn()).generate(w, r, new BlockPos(x, y, z));
 		}
 	}
 	
