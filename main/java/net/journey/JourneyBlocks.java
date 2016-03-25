@@ -22,6 +22,7 @@ import net.journey.blocks.BlockJoinedGlass;
 import net.journey.blocks.BlockJoinedPane;
 import net.journey.blocks.BlockLock;
 import net.journey.blocks.BlockMiniColouredBricks;
+import net.journey.blocks.BlockRoot;
 import net.journey.blocks.BlockStalks;
 import net.journey.blocks.base.BlockModFire;
 import net.journey.blocks.base.BlockModOre;
@@ -286,8 +287,12 @@ public class JourneyBlocks {
 	public static final Block miniColouredBricks = new BlockMiniColouredBricks();
 	public static final Block redGlowshroomTop = new BlockGlowshroom("redGlowshroomTop", "Red Glowshroom", true);
 	public static final Block redGlowshroomBottom = new BlockGlowshroom("redGlowshroomBottom", "Red Glowshroom", false);
+	
 	public static final Block hellThornTop = new BlockHellThorn("hellThornTop", "Hell Thorn", true);
 	public static final Block hellThornBottom = new BlockHellThorn("hellThornBottom", "Hell Thorn", false);
+	public static final Block hellThornRoot = new BlockRoot("hellThornRoot", "HellThornRoot");
+	public static final Block nethicGrass = new BlockModGrass(null, "nethicGrass", "Nethic Grass", 2.0F);
+	
 	public static final Block greenGlowshroomTop = new BlockGlowshroom("greenGlowshroomTop", "Green Glowshroom", true);
 	public static final Block greenGlowshroomBottom = new BlockGlowshroom("greenGlowshroomBottom", "Green Glowshroom", false);
 	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);

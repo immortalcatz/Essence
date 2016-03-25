@@ -72,7 +72,7 @@ public class BlockHellThorn extends Block {
 
 	@Override
 	public boolean canPlaceBlockAt(World w, BlockPos pos) {
-		return w.getBlockState(pos.down()).getBlock() == Blocks.netherrack || w.getBlockState(pos.down()).getBlock().getMaterial() == Material.plants;
+		return true;
 	}
 
 	@Override
