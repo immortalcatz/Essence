@@ -25,7 +25,7 @@ public class TileEntityTrophyTable extends TileEntity implements IInventory {
 	private ItemStack[] inventory;
 
 	public TileEntityTrophyTable() {
-		this.inventory = new ItemStack[7];
+		this.inventory = new ItemStack[1];
 	}
 
 	@Override

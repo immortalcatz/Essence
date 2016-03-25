@@ -20,7 +20,6 @@ public class TileEntityGrindstone extends TileEntity implements IUpdatePlayerLis
 	public int state = 0, count = 0;
 	public float rotation = 0.0F;
 	public boolean isActive = false;
-
 	public TileEntityGrindstone() { }
 
 	@Override

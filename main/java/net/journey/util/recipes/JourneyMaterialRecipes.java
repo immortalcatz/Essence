@@ -11,29 +11,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class RecipeHelper {
+public class JourneyMaterialRecipes {
 
 	public static void init() {
-		initCrafting();
+		initMaterialCrafting();
 	}
 
-	public static void initCrafting() {
+	public static void initMaterialCrafting() {
 		JourneyBlocks b = new JourneyBlocks();
 		JourneyItems i = new JourneyItems();
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.flameCoin), new Object[] {"iii", "idi", "iii", 'i', Items.gold_ingot, 'd', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.hellcrustIngot), new Object[] {"iii", "idi", "iii", 'i', JourneyItems.ash, 'd', JourneyItems.hellstoneIngot});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.cloudiaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.cloudiaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.corbaPortalFrame, 12), new Object[] {"iii", "iii", 'i', JourneyItems.corbaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.terraniaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.terraniaPortalGem});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenPortalFrame, 10), new Object[] {"iii", "idi", "iii", 'i', Items.snowball, 'd', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.summoningTable, 1), new Object[] {"dsd", "iii", "iii", 'i', JourneyItems.shadiumIngot, 'd', Items.diamond, 's', JourneyItems.sapphire});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicBlade), new Object[] {"i", "i", "d", 'd', JourneyItems.withicDust, 'i', JourneyItems.hellcrustIngot});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneSword), new Object[] {"d", "d", "i", 'd', JourneyItems.reinforcedStoneIngot, 'i', JourneyItems.stoneStick});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {"d", "d", "i", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedStoneIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalIngot), new Object[] {"ddd", "did", "ddd", 'd', JourneyItems.stoneClump, 'i', JourneyItems.caveCrystal});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBall), new Object[] {"idi", "ixi", 'i', Items.diamond, 'd', Items.ender_pearl, 'x', JourneyItems.sapphire});
@@ -44,35 +32,7 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.concentratedBlood, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.blood});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.netherChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyItems.blood});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.goldEucaPlank});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.frozenChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.frozenPlanks});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingChest, 4), new Object[] {"ddd", "did", "ddd", 'i', Blocks.chest, 'd', JourneyBlocks.boilingLog});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.boilingBars, 4), new Object[] {"ddd", "ddd", 'd', Items.blaze_rod});
-		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.stoneCraftingTable, 1), new Object[] {"dd", "dd", 'd', Blocks.cobblestone});
-		
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
-
-		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
-		addOre(b.hellstoneOre, i.hellstoneIngot, b.hellstoneBlock, i.hellstoneAxe, i.hellstonePickaxe, i.hellstoneShovel, i.hellstoneHoe, i.hellstoneSword, i.hellstoneMultiTool, i.hellstoneHelmet, i.hellstoneChest, i.hellstoneLegs, i.hellstoneBoots, i.hellstoneDust);
-		addOre(b.flairiumOre, i.flairiumIngot, b.flairiumBlock, i.flairiumAxe, i.flairiumPickaxe, i.flairiumShovel, i.flairiumHoe, i.flairiumSword, i.flairiumMultiTool, i.flairiumHelmet, i.flairiumChest, i.flairiumLegs, i.flairiumBoots, i.flairiumDust);
-		addOre(b.shadiumOre, i.shadiumIngot, b.shadiumBlock, i.shadiumAxe, i.shadiumPickaxe, i.shadiumShovel, i.shadiumHoe, i.shadiumSword, i.shadiumMultiTool, i.shadiumHelmet, i.shadiumChest, i.shadiumLegs, i.shadiumBoots, i.shadiumDust);
-		addOre(b.luniumOre, i.luniumIngot, b.luniumBlock, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots, i.luniumDust);
-		addOre(b.sapphireOre, i.sapphire, b.sapphireBlock, i.sapphireAxe, i.sapphirePickaxe, i.sapphireShovel, i.sapphireHoe, i.sapphireSword, i.sapphireMultiTool, i.sapphireHelmet, i.sapphireChest, i.sapphireLegs, i.sapphireBoots, i.sapphireDust);
-		addOre(b.koriteOre, i.koriteIngot, b.koriteBlock, i.koriteAxe, i.koritePickaxe, i.koriteShovel, i.koriteHoe, i.koriteSword, i.koriteMultiTool, null, null, null, null, null);
-		addOre(b.storonOre, i.storonIngot, b.storonBlock, i.storonAxe, i.storonPickaxe, i.storonShovel, i.storonHoe, i.storonSword, i.storonMultiTool, null, null, null, null, null);
-		addOre(b.mekyumOre, i.mekyumIngot, b.mekyumBlock, i.mekyumAxe, i.mekyumPickaxe, i.mekyumShovel, i.mekyumHoe, i.mekyumSword, i.mekyumMultiTool, null, null, null, null, null);
-
-		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
-		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);
-
-		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
-
-		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
-		//GameRegistry.addRecipe(new ItemStack(i.flameArrow, 8), new Object[] {"l", "s", "f", 'f', Items.feather, 's', Items.stick, 'l', Items.flint_and_steel});
-
-		//GameRegistry.addRecipe(new ItemStack(b.hotGlassPane, 16), new Object[] {"iii", "iii", 'i', b.hotGlass});
-		//GameRegistry.addRecipe(new ItemStack(b.smoothGlassPane, 16), new Object[] {"iii", "iii", 'i', b.smoothGlass});
 		
 		addOPFood(JourneyItems.goldenPork, JourneyItems.goldenPorkOP, Items.porkchop);
 		addOPFood(JourneyItems.goldenSteak, JourneyItems.goldenSteakOP, Items.beef);
@@ -91,38 +51,15 @@ public class RecipeHelper {
 		GameRegistry.addShapelessRecipe(new ItemStack(i.floroSeeds, 4), new Object[]{i.floroPedal});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.eucaPortalGem, 10), new Object[]{i.eucaPortalPiece, i.eucaPortalPiece_0, i.eucaPortalPiece_1});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
-		GameRegistry.addSmelting(Blocks.glass, new ItemStack(b.smoothGlass), 1.0F);
-
-		//GameRegistry.addRecipe(new ItemStack(i.calciaOrb), new Object[] {"iii", "ioi", "iii", 'i', i.spawnerBar, 'o', b.hellstoneBlock});
-
 		GameRegistry.addSmelting(i.flamingBeef, new ItemStack(JourneyItems.flamingBeefCooked), 0.5F);
 		GameRegistry.addSmelting(i.ironDust, new ItemStack(Items.iron_ingot), 0.5F);
 		GameRegistry.addSmelting(i.goldDust, new ItemStack(Items.gold_ingot), 0.5F);
 		GameRegistry.addSmelting(i.diamondDust, new ItemStack(Items.diamond), 0.5F);
 		GameRegistry.addSmelting(i.enderilliumDust, new ItemStack(JourneyItems.enderilliumShard), 0.5F);
-		
-		GameRegistry.addRecipe(new ItemStack(Blocks.web), new Object[] {"sss", "sss","sss", 's', Items.string});
+
 		GameRegistry.addSmelting(new ItemStack(Items.leather), new ItemStack(Items.rotten_flesh), 0.5F);
-		
-		//GameRegistry.addRecipe(new ItemStack(i.rockShard), new Object[] {" c ", "ccc"," c ", 'c', Blocks.cobblestone});
-		//GameRegistry.addRecipe(new ItemStack(i.rockChunk, 4), new Object[] {" c ", "ccc"," c ", 'c', i.rockShard});
 
-		
 		ItemStack blackDye = new ItemStack(Items.dye, 1, 15);
-		
-		//GameRegistry.addRecipe(new ItemStack(i.darknessBow), new Object[] {" is", "ibs"," is", 's', Items.string, 'i', blackDye.getItem(), 'b', Items.bow});
-		//GameRegistry.addRecipe(new ItemStack(i.frozenBow), new Object[] {" ls", "ibs"," ls", 's', Items.string, 'l', Items.slime_ball, 'i', Blocks.ice, 'b', Items.bow});
-
-		for(int j = 0; j < 13; j++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(JourneyBlocks.colouredBricks, 1, j), new Object[] {Blocks.stonebrick, BlockColouredBricks.crafting[j]});
-			GameRegistry.addRecipe(new ItemStack(JourneyBlocks.colouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.stonebrick, 'd', BlockColouredBricks.crafting[j]});
-			GameRegistry.addShapelessRecipe(new ItemStack(JourneyBlocks.miniColouredBricks, 1, j), new Object[] {Blocks.brick_block, BlockMiniColouredBricks.crafting[j]});
-			GameRegistry.addRecipe(new ItemStack(JourneyBlocks.miniColouredBricks, 8, j), new Object[] {"bbb", "bdb", "bbb", 'b', Blocks.brick_block, 'd', BlockMiniColouredBricks.crafting[j]});
-		}
-		
-		for(int j = 0; j < 13; j++) {
-			//GameRegistry.addRecipe(new ItemStack(EssenceItems.backpack, 1, j), new Object[] {"lll", "lil", "lll", 'i', ItemBackpack.crafting[j], 'l', Items.leather});
-		}
 	}
 	
 	public static void addBlock(Block made, Item used) {

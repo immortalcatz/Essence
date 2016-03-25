@@ -81,9 +81,9 @@ public class BlockGrindstone extends BlockContainer {
 		return 2;
 	}
 
-	public void setBlockBounds(int stage) {
-		this.setBlockBounds(0f, 0, 0f, 1f, 0.8f, 1f);
-	}
+	//public void setBlockBounds(int stage) {
+	//	this.setBlockBounds(0f, 0, 0f, 4f, 1.0f, 1f);
+	//}
 
 	@Override
 	public boolean removedByPlayer(World world, BlockPos pos, EntityPlayer player, boolean b) {

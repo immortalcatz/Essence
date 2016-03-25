@@ -234,7 +234,7 @@ public class JourneyBlocks {
 	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick", "Dungeon Cracked Brick");
 	public static final Block dungeonChisledBrick = new BlockDungeonBlock("dungeonChiseledBrick", "Dungeon Chiseled Brick");
 	public static final Block dungeonBrickCarved = new BlockDungeonBlock("dungeonBrickCarved", "Dungeon Carved Brick");
-	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", "Dungeon Lamp", true);
+	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", "Dungeon Lamp", true).setLightLevel(1);
 	
 	public static final Block dungeonBrickStairs = new BlockModStairs(dungeonBrick, "dungeonBrickStairs", "Dungeon Brick Stairs");
 	public static final Block dungeonCrackedBrickStairs = new BlockModStairs(dungeonCrackedBrick, "dungeonCrackedBrickStairs", "Cracked Dungeon Brick Stairs");

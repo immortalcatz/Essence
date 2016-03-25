@@ -37,7 +37,11 @@ public class CommonProxy {
 		Config.init(event);
 		//Essence.tropicalWater.setBlock(EssenceBlocks.tropicalWater);
 		EntityRegistry.init();
-		RecipeHelper.init();
+		JourneyMaterialRecipes.init();
+		JourneyBlockRecipes.init();
+		JourneyMiscRecipes.init();
+		JourneySmeltingRecipes.init();
+		JourneyWeaponRecipes.init();
 		DimensionHelper.init();
 		DimensionHelper.addSpawns();
 		JourneyTabs.init();
