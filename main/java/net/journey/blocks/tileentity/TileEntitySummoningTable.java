@@ -198,7 +198,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 		Random r = new Random();
 		if(!worldObj.isRemote) {
 			for(int i = 0; i < 20; i++)
-				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntitySummoningFX(worldObj, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat()));
+				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntitySummoningFX(worldObj, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat(), 0, 0, 0, 0, 0, 0));
 		}
 	}
 

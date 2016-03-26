@@ -59,6 +59,11 @@ public class BlockCorbaPortal extends Block{
 	public BlockCorbaPortal(String name, String finalName, boolean breakable) {
 		this(name, finalName, breakable, JourneyTabs.blocks);
 	}
+	
+    @Override
+    public void setBlockBoundsForItemRender() {
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);
+    }
 
     @Override
     public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List list, Entity collidingEntity) {

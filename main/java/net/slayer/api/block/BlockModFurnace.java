@@ -1,10 +1,17 @@
 package net.slayer.api.block;
 
+import net.journey.JourneyTabs;
+
+import java.util.Iterator;
 import java.util.Random;
 
+import net.journey.JITL;
 import net.journey.JourneyBlocks;
-import net.journey.JourneyTabs;
-import net.journey.util.LangRegistry;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
+import net.journey.blocks.tileentity.TileEntityJourneyFurnace;
+import net.journey.blocks.tileentity.TileEntitySummoningTable;
+import net.journey.client.GuiHandler.GuiIDs;
+import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
@@ -12,139 +19,48 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.ILockableContainer;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.EnumMaterialTypes;
-import net.slayer.api.EnumToolType;
-import net.slayer.api.SlayerAPI;
+import net.slayer.api.entity.tileentity.container.BlockModContainer;
 
-public class BlockModFurnace extends Block{
+public class BlockModFurnace extends BlockModContainer {
 
-	protected EnumMaterialTypes blockType;
-	protected Item drop = null;
-	protected Random rand;
-	public int boostBrightnessLow;
-	public int boostBrightnessHigh;
-	public boolean enhanceBrightness;
-	public String name;
-	protected boolean isOpaque = true, isNormalCube = true;
-	
-	public BlockModFurnace(String name, String finalName, float hardness, boolean isBurning) {
-		this(EnumMaterialTypes.STONE, name, finalName, hardness, JourneyTabs.blocks, isBurning);
-	}
-	
-	public BlockModFurnace(EnumMaterialTypes type, String name, String finalName, float hardness, JourneyTabs blocks, boolean isBurning) {
-		this(type, name, finalName, hardness, JourneyTabs.blocks, blocks, isBurning);
-	}
-
-	public BlockModFurnace(String name, String finalName, boolean breakable, CreativeTabs tab, boolean isBurning) {
-		this(isBurning);
-	}
-
-	public BlockModFurnace(String name, String finalName, boolean breakable, boolean isBurning) {
-		this(name, finalName, breakable, JourneyTabs.blocks, isBurning);
-	}
-
-	public BlockModFurnace(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab, boolean isBurning) {
-		super(blockType.getMaterial());
-		LangRegistry.addBlock(name, finalName);
-		this.blockType = blockType;
-		setHardness(2.0F);
-        this.isBurning = isBurning;
-		rand = new Random();
-		setStepSound(blockType.getSound());
-		setCreativeTab(tab);
-		setUnlocalizedName(name);
-		this.name = name; 
-		JourneyBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
-	}
-
-	public BlockModFurnace(EnumMaterialTypes blockType, String name, String finalName, float hardness, CreativeTabs tab, JourneyTabs blocks, boolean isBurning) {
-		super(blockType.getMaterial());
-		LangRegistry.addBlock(name, finalName);
-        this.isBurning = isBurning;
-		this.blockType = blockType;
-		rand = new Random();
-		setStepSound(blockType.getSound());
-		setCreativeTab(tab);
-		setUnlocalizedName(name);
-		setHardness(hardness);
-		this.name = name;
-		JourneyBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
-	}
-
-	public Block addName(String name) {
-		JourneyBlocks.blockName.add(name);
-		return this;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public BlockModFurnace setHarvestLevel(EnumToolType type) {
-		setHarvestLevel(type.getType(), type.getLevel());
-		return this;
-	}
-
-	@Override
-	public int getRenderType() {
-		return 3;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.SOLID;
-	}
-
-	@Override
-	public int quantityDropped(Random rand) {
-		return 1;
-	}
-	
-	@Override
-	public boolean isOpaqueCube() {
-		return isOpaque;
-	}
-
-	@Override
-	public boolean isNormalCube() {
-		return false;
-	}
-    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     private final boolean isBurning;
     private static boolean keepInventory;
     private static final String __OBFID = "CL_00000248";
-
-    protected BlockModFurnace(boolean isBurning)
-    {
-        super(Material.rock);
+	
+	public BlockModFurnace(String name, String f, boolean isBurning) {
+		super(EnumMaterialTypes.STONE, name, f, 2.0F, JourneyTabs.machineBlocks);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.isBurning = isBurning;
-    }
+	}
 
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Blocks.furnace);
+        return Item.getItemFromBlock(JourneyBlocks.netherFurnace);
     }
 
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
@@ -226,9 +142,9 @@ public class BlockModFurnace extends Block{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityJourneyFurnace)
             {
-                playerIn.displayGUIChest((TileEntityFurnace)tileentity);
+                playerIn.displayGUIChest((TileEntityJourneyFurnace)tileentity);
             }
 
             return true;
@@ -243,13 +159,13 @@ public class BlockModFurnace extends Block{
 
         if (active)
         {
-            worldIn.setBlockState(pos, Blocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, Blocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, JourneyBlocks.netherFurnaceActive.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, JourneyBlocks.netherFurnaceActive.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, JourneyBlocks.netherFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, JourneyBlocks.netherFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
 
         keepInventory = false;
@@ -261,9 +177,12 @@ public class BlockModFurnace extends Block{
         }
     }
 
+    /**
+     * Returns a new instance of a block's tile entity class. Called on placing the block.
+     */
     public TileEntity createNewTileEntity(World worldIn, int meta)
     {
-        return new TileEntityFurnace();
+        return new TileEntityJourneyFurnace();
     }
 
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
@@ -279,9 +198,9 @@ public class BlockModFurnace extends Block{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityJourneyFurnace)
             {
-                ((TileEntityFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
+                ((TileEntityJourneyFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
     }
@@ -292,9 +211,9 @@ public class BlockModFurnace extends Block{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityJourneyFurnace)
             {
-                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityFurnace)tileentity);
+                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityJourneyFurnace)tileentity);
                 worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
@@ -315,15 +234,29 @@ public class BlockModFurnace extends Block{
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, BlockPos pos)
     {
-        return Item.getItemFromBlock(Blocks.furnace);
+        return Item.getItemFromBlock(JourneyBlocks.netherFurnace);
     }
 
+    /**
+     * The type of render function that is called for this block
+     */
+    public int getRenderType()
+    {
+        return 3;
+    }
+
+    /**
+     * Possibly modify the given BlockState before rendering it on an Entity (Minecarts, Endermen, ...)
+     */
     @SideOnly(Side.CLIENT)
     public IBlockState getStateForEntityRender(IBlockState state)
     {
         return this.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
     }
 
+    /**
+     * Convert the given metadata into a BlockState for this Block
+     */
     public IBlockState getStateFromMeta(int meta)
     {
         EnumFacing enumfacing = EnumFacing.getFront(meta);
@@ -336,6 +269,9 @@ public class BlockModFurnace extends Block{
         return this.getDefaultState().withProperty(FACING, enumfacing);
     }
 
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
     public int getMetaFromState(IBlockState state)
     {
         return ((EnumFacing)state.getValue(FACING)).getIndex();

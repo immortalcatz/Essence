@@ -53,6 +53,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.Fluid;
 import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.block.BlockMod;
@@ -362,7 +363,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	//public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
+	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	
@@ -378,6 +379,9 @@ public class JourneyBlocks {
 	public static final Block silverbotSpawner = new BlockModSpawner("silverbotSpawner", "Silverbot Spawner", "silverbot");
 	
 	public static final Block hellbotSpawner = new BlockModSpawner("hellbotSpawner", "Hellbot Spawner", "hellbot");
+	
+	public static final Block netherFurnace = new BlockModFurnace("netherFurnace", "Nethic Furnace", false);
+	public static final Block netherFurnaceActive = new BlockModFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);;
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	

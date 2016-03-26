@@ -28,14 +28,22 @@ public class EntityDemonicBomb extends EntityThrowable{
 		this.damage = damage;
 	}
 	
+	@Override
     protected float getGravityVelocity()
     {
-        return 0.1F;
+        return 0.08F;
     }
 
+	@Override
     protected float getVelocity()
     {
-        return 2.0F;
+        return 0.8F;
+    }
+
+	@Override
+    protected float getInaccuracy()
+    {
+        return -10.0F;
     }
 
 	@Override

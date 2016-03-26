@@ -17,7 +17,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.slayer.api.item.*;
 
 public class JourneyItems {
-
+	
 	public static ToolMaterial hellstoneSwordMat = addToolMaterial(2356, 13F, 10F, true);
 	public static ToolMaterial flairiumSwordMat = addToolMaterial(3120, 13F, 25F, true);
 	public static ToolMaterial celestiumSwordMat = addToolMaterial(3120, 13F, 20F, true);
@@ -546,6 +546,7 @@ public class JourneyItems {
 	*/
 
 	//TODO
+	public static final Item friedEgg = new ItemModFood("friedEgg", "Fried Egg", 2, 3.0F, false);
 	public static final Item floroPedal = new ItemModFood("floroPedal", "Floro Pedal", 3, 3.0F, false);
 	public static final Item tomato = new ItemModFood("tomato", "Tomato", 3, 3.0F, false);
 	public static final Item glowshroom = new ItemGlowshroom("glowshroom", "Glowshroom", 4, 3.0F, false, false).setAlwaysEdible().setPotionEffect(Potion.nightVision.id, 10, 1, 1.0F).setAlwaysEdible();

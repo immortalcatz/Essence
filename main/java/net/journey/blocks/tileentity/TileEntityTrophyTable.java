@@ -55,15 +55,6 @@ public class TileEntityTrophyTable extends TileEntity implements IInventory {
 		} 
 	}
 
-	@SideOnly(Side.CLIENT)
-	public void addParticles() {
-		Random r = new Random();
-		if(!worldObj.isRemote) {
-			for(int i = 0; i < 20; i++)
-				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new EntitySummoningFX(worldObj, getPos().getX() + r.nextFloat(), getPos().getY() + 1.2D, getPos().getZ() + r.nextFloat()));
-		}
-	}
-
 	public boolean areItemStacksInSlots(ItemStack s, ItemStack s1, ItemStack s2, ItemStack s3, ItemStack s4, ItemStack s5, ItemStack s6) {
 		return inventory[0] == s && inventory[1] == s1 && inventory[2] == s2 && inventory[3] == s3 && inventory[4] == s4 && inventory[5] == s5 && inventory[6] == s6;
 	}
