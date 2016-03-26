@@ -1,4 +1,5 @@
 {
+ "summon":{"category":"master","sounds": [{"name":"summon","stream": false}]},
  "sorcererDeath":{"category":"master","sounds": [{"name":"sorcererDeath","stream": false}]},
  "sorcererHurt":{"category":"master","sounds": [{"name":"sorcererHurt","stream": false}]},
  "sorcerer":{"category":"master","sounds": [{"name":"sorcerer","stream": false}]},

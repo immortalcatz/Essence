@@ -343,6 +343,7 @@ public class JourneyItems {
 	public static final Item mysteriousDisk = new ItemSpecificDimensionSpawner(Config.cloudia, "mysteriousDisk", "Mysterious Disk", "Cloudia");
 	public static final Item corallatorOrb = new ItemSpecificDimensionSpawner(Config.euca, "corallatorOrb", "Gem of Peculiar Smelting", "Euca");
 	public static final Item scaleOrb = new ItemSpecificDimensionSpawner(Config.depths, "scaleOrb", "Aquatic Egg", "Depths");
+	public static final Item enchantedTerrastar = new ItemSpecificDimensionSpawner(Config.terrania, "enchantedTerrastar", "Enchanted Terrastar", "Terrania");
 
 	public static final Item weakDarkEnergyPotion = new ItemEssencePotion("weakDarkEnergyPotion", "Weak Dark Energy Potion", false, false);
 	public static final Item strongDarkEnergyPotion = new ItemEssencePotion("strongDarkEnergyPotion", "Strong Dark Energy Potion", true, false);

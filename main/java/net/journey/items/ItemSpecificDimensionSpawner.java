@@ -10,6 +10,7 @@ import net.journey.entity.mob.boss.EntityLogger;
 import net.journey.entity.mob.boss.EntitySentryKing;
 import net.journey.entity.mob.boss.EntitySkyStalker;
 import net.journey.entity.mob.boss.EntitySoulWatcher;
+import net.journey.entity.mob.boss.EntityTerranianProtector;
 import net.journey.entity.mob.boss.EntityThunderbird;
 import net.journey.entity.mob.depths.EntityTameRoc;
 import net.journey.util.Config;
@@ -49,6 +50,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				EntityCorallator corallator = new EntityCorallator(w);
 				EntityLogger logger = new EntityLogger(w);
 				EntityThunderbird thunder = new EntityThunderbird(w);
+				EntityTerranianProtector terrastar = new EntityTerranianProtector(w);
 				if(item == JourneyItems.blazierOrb) {
 					SlayerAPI.sendMessageToAll("Blazier has been summoned", true);
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
@@ -83,6 +85,12 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					thunder.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(thunder);
 				}
+				if(item == JourneyItems.enchantedTerrastar) {
+					SlayerAPI.sendMessageToAll("The Terrastar has been summoned", true);
+					terrastar.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(terrastar);
+					
+				}
 				
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
@@ -96,6 +104,12 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		Item item = stack.getItem();
 		if(item == JourneyItems.blazierOrb) list.add(LangHelper.setBossSpawner("Blazier"));
+		if(item == JourneyItems.sentryKingOrb) list.add(LangHelper.setBossSpawner("Sentry King"));
+		if(item == JourneyItems.mysteriousDisk) list.add(LangHelper.setBossSpawner("Sky Stalker"));
+		if(item == JourneyItems.corallatorOrb) list.add(LangHelper.setBossSpawner("Corallator"));
+		if(item == JourneyItems.loggerOrb) list.add(LangHelper.setBossSpawner("Logger"));
+		if(item == JourneyItems.thunderbirdOrb) list.add(LangHelper.setBossSpawner("Thunderbird"));
+		if(item == JourneyItems.enchantedTerrastar) list.add(LangHelper.setBossSpawner("Terranian Protector"));
 		if(item == JourneyItems.rocSpawnEgg) list.add(LangHelper.setPetSpawner("Roc"));
 		
 	}

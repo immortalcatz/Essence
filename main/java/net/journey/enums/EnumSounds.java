@@ -6,6 +6,7 @@ import net.minecraft.world.World;
 
 public enum EnumSounds {
 
+	SUMMON_TABLE("essence:summon"),
 	SORCERER_DEATH("essence:sorcererDeath"),
 	SORCERER_HURT("essence:sorcererHurt"),
 	SORCERER("essence:sorcerer"),

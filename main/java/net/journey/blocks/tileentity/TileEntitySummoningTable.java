@@ -6,6 +6,7 @@ import net.journey.JourneyItems;
 import net.journey.client.render.particles.EntityModFireFX;
 import net.journey.client.render.particles.EntityModSnowFX;
 import net.journey.client.render.particles.EntitySummoningFX;
+import net.journey.enums.EnumSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -16,6 +17,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -74,7 +76,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 					JourneyItems.snakeSkin, 
 					JourneyItems.concentratedBlood, 
 					JourneyItems.snakeSkin, 
-						JourneyItems.lostSoul, 
+						JourneyItems.sizzlingEye, 
 					JourneyItems.snakeSkin, 
 					JourneyItems.concentratedBlood, 
 					JourneyItems.snakeSkin)) {
@@ -177,8 +179,21 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.witheringBeastOrb);
 				addParticles();
-			}
+			}		
 			else if(areItemsInSlots(
+					JourneyItems.earthenCrystal, 
+					JourneyItems.purplePowder, 
+					JourneyItems.earthenCrystal, 
+						JourneyItems.terrastar, 
+					JourneyItems.earthenCrystal, 
+					JourneyItems.purplePowder, 
+					JourneyItems.earthenCrystal)) {
+				setAllSlotsToNull();
+				inventory[3] = new ItemStack(JourneyItems.enchantedTerrastar);
+				addParticles();
+				//addSound(p, w);
+			}
+			/**else if(areItemsInSlots(
 					JourneyItems.spawnerBar, 
 					JourneyItems.ash, 
 					JourneyItems.spawnerBar, 
@@ -189,10 +204,17 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.calciaOrb);
 				addParticles();
-			}
+				
+			}**/
 		}
 	}
 
+	@SideOnly(Side.CLIENT)
+	public void addSound(EntityPlayer p, World w) {
+		if(!worldObj.isRemote) {
+			EnumSounds.playSound(EnumSounds.SUMMON_TABLE, w, p);			
+		}
+	}
 	@SideOnly(Side.CLIENT)
 	public void addParticles() {
 		Random r = new Random();
