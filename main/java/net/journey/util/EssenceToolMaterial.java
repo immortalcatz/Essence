@@ -78,6 +78,7 @@ public enum EssenceToolMaterial {
 	VOLITE_SWORD(SlayerAPI.addMeleeMaterial(3500, 38, 25)),
 	TERRONIC_BLADE(SlayerAPI.addMeleeMaterial(3500, 39, 25)),
 	KINGS_SWORD(SlayerAPI.addMeleeMaterial(3500, 20, 25)),
+	DEMONIC_SWORD(SlayerAPI.addMeleeMaterial(850, (float) 5.5, 25)),
 	
 	CREATIVE(SlayerAPI.addMeleeMaterial(3500, 39, 25)),
 	EARTHEN_HAMMER(SlayerAPI.addMeleeMaterial(3500, 39, 25)),

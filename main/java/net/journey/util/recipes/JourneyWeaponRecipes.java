@@ -27,6 +27,7 @@ public class JourneyWeaponRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {"d", "d", "i", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
+		GameRegistry.addRecipe(new ItemStack(i.demonicSword),new Object[] {"d", "d", "i", 'd', i.demonicBone, 'i', i.demonicDust});
 	}
 
 	private static void addSword(Item sword, Item ingot) {

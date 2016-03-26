@@ -53,7 +53,7 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 		if(e.getWorld() != null) rotation = e.getBlockMetadata();    
 		GL11.glPushMatrix();
 		bindTexture(Textures.grindstone);
-		GL11.glTranslated(x + 0.55, y + 1.5, z + 0.5);
+		GL11.glTranslated(x + 0.5, y + 1.5, z + 0.5);
 		GL11.glRotatef(180F, 0.0F, 0F, 1.0F);
 		float scale = 1.0F;
 		switch(rotation) {
