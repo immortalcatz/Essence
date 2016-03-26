@@ -35,6 +35,7 @@ public class JourneyBlockRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.stoneCraftingTable, 1), new Object[] {"dd", "dd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
 		GameRegistry.addRecipe(new ItemStack(Blocks.web), new Object[] {"sss", "sss","sss", 's', Items.string});
+		GameRegistry.addRecipe(new ItemStack(b.netherFurnace, 4), new Object[] {"ddd", "d d", "ddd", 'd', Blocks.netherrack});
 		
 		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);

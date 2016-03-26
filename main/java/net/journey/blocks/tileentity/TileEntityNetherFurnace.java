@@ -26,44 +26,30 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.slayer.api.block.BlockModFurnace;
+import net.slayer.api.block.BlockNetherFurnace;
 
-public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory
+public class TileEntityNetherFurnace extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory
 {
     private static final int[] slotsTop = new int[] {0};
     private static final int[] slotsBottom = new int[] {2, 1};
     private static final int[] slotsSides = new int[] {1};
-    /** The ItemStacks that hold the items currently being used in the furnace */
     private ItemStack[] furnaceItemStacks = new ItemStack[3];
-    /** The number of ticks that the furnace will keep burning */
     private int furnaceBurnTime;
-    /** The number of ticks that a fresh copy of the currently-burning item would keep the furnace burning for */
     private int currentItemBurnTime;
     private int cookTime;
     private int totalCookTime;
     private String furnaceCustomName;
-    private static final String __OBFID = "CL_00000357";
 
-    /**
-     * Returns the number of slots in the inventory.
-     */
     public int getSizeInventory()
     {
         return this.furnaceItemStacks.length;
     }
 
-    /**
-     * Returns the stack in slot i
-     */
     public ItemStack getStackInSlot(int index)
     {
         return this.furnaceItemStacks[index];
     }
 
-    /**
-     * Removes from an inventory slot (first arg) up to a specified number (second arg) of items and returns them in a
-     * new stack.
-     */
     public ItemStack decrStackSize(int index, int count)
     {
         if (this.furnaceItemStacks[index] != null)
@@ -94,10 +80,6 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         }
     }
 
-    /**
-     * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
-     * like when you close a workbench GUI.
-     */
     public ItemStack getStackInSlotOnClosing(int index)
     {
         if (this.furnaceItemStacks[index] != null)
@@ -112,9 +94,6 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         }
     }
 
-    /**
-     * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
-     */
     public void setInventorySlotContents(int index, ItemStack stack)
     {
         boolean flag = stack != null && stack.isItemEqual(this.furnaceItemStacks[index]) && ItemStack.areItemStackTagsEqual(stack, this.furnaceItemStacks[index]);
@@ -133,17 +112,11 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         }
     }
 
-    /**
-     * Gets the name of this command sender (usually username, but possibly "Rcon")
-     */
     public String getName()
     {
-        return this.hasCustomName() ? this.furnaceCustomName : "container.furnace";
+        return this.hasCustomName() ? this.furnaceCustomName : "Nether Furnace";
     }
 
-    /**
-     * Returns true if this thing is named
-     */
     public boolean hasCustomName()
     {
         return this.furnaceCustomName != null && this.furnaceCustomName.length() > 0;
@@ -209,18 +182,11 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         }
     }
 
-    /**
-     * Returns the maximum stack size for a inventory slot. Seems to always be 64, possibly will be extended. *Isn't
-     * this more of a set than a get?*
-     */
     public int getInventoryStackLimit()
     {
         return 64;
     }
 
-    /**
-     * Furnace isBurning
-     */
     public boolean isBurning()
     {
         return this.furnaceBurnTime > 0;
@@ -232,9 +198,6 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         return p_174903_0_.getField(0) > 0;
     }
 
-    /**
-     * Updates the JList with a new model.
-     */
     public void update()
     {
         boolean flag = this.isBurning();
@@ -297,7 +260,7 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
             if (flag != this.isBurning())
             {
                 flag1 = true;
-                BlockModFurnace.setState(this.isBurning(), this.worldObj, this.pos);
+                BlockNetherFurnace.setState(this.isBurning(), this.worldObj, this.pos);
             }
         }
 
@@ -381,44 +344,42 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
 
                 if (block == Blocks.wooden_slab)
                 {
-                    return 150;
+                    return 300;
                 }
 
                 if (block.getMaterial() == Material.wood)
                 {
-                    return 300;
+                    return 600;
                 }
 
                 if (block == Blocks.coal_block)
                 {
-                    return 16000;
+                    return 32000;
+                }
+                
+                if (block == Blocks.netherrack)
+                {
+                	return 1600;
                 }
             }
 
             if (item instanceof ItemTool && ((ItemTool)item).getToolMaterialName().equals("WOOD")) return 200;
             if (item instanceof ItemSword && ((ItemSword)item).getToolMaterialName().equals("WOOD")) return 200;
             if (item instanceof ItemHoe && ((ItemHoe)item).getMaterialName().equals("WOOD")) return 200;
-            if (item == Items.stick) return 100;
-            if (item == Items.coal) return 1600;
-            if (item == Items.lava_bucket) return 20000;
-            if (item == Item.getItemFromBlock(Blocks.sapling)) return 100;
-            if (item == Items.blaze_rod) return 2400;
+            if (item == Items.stick) return 200;
+            if (item == Items.coal) return 3200;
+            if (item == Items.lava_bucket) return 40000;
+            if (item == Item.getItemFromBlock(Blocks.sapling)) return 200;
+            if (item == Items.blaze_rod) return 4800;
             return net.minecraftforge.fml.common.registry.GameRegistry.getFuelValue(p_145952_0_);
         }
     }
 
-    public static boolean isItemFuel(ItemStack p_145954_0_)
+    public static boolean isItemFuel(ItemStack i)
     {
-        /**
-         * Returns the number of ticks that the supplied fuel item will keep the furnace burning, or 0 if the item isn't
-         * fuel
-         */
-        return getItemBurnTime(p_145954_0_) > 0;
+        return getItemBurnTime(i) > 0;
     }
 
-    /**
-     * Do not make give this method the name canInteractWith because it clashes with Container
-     */
     public boolean isUseableByPlayer(EntityPlayer player)
     {
         return this.worldObj.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
@@ -428,9 +389,6 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
 
     public void closeInventory(EntityPlayer player) {}
 
-    /**
-     * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
-     */
     public boolean isItemValidForSlot(int index, ItemStack stack)
     {
         return index == 2 ? false : (index != 1 ? true : isItemFuel(stack) || SlotFurnaceFuel.isBucket(stack));
@@ -441,19 +399,11 @@ public class TileEntityJourneyFurnace extends TileEntityLockable implements IUpd
         return side == EnumFacing.DOWN ? slotsBottom : (side == EnumFacing.UP ? slotsTop : slotsSides);
     }
 
-    /**
-     * Returns true if automation can insert the given item in the given slot from the given side. Args: slot, item,
-     * side
-     */
     public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction)
     {
         return this.isItemValidForSlot(index, itemStackIn);
     }
 
-    /**
-     * Returns true if automation can extract the given item in the given slot from the given side. Args: slot, item,
-     * side
-     */
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction)
     {
         if (direction == EnumFacing.DOWN && index == 1)

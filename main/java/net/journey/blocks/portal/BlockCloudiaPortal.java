@@ -5,6 +5,7 @@ import java.util.Random;
 import net.journey.JourneyBlocks;
 import net.journey.JourneyTabs;
 import net.journey.client.render.particles.EntityBoilPotalFX;
+import net.journey.client.render.particles.EntityCloudiaPortalFX;
 import net.journey.dimension.ModTeleporter;
 import net.journey.util.Config;
 import net.journey.util.LangRegistry;
@@ -156,7 +157,7 @@ public class BlockCloudiaPortal extends BlockBreakable {
 				d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
 				d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
 			}
-			EntityBoilPotalFX var20 = new EntityBoilPotalFX(worldIn, d0, d1, d2, d3, d4, d5);
+			EntityCloudiaPortalFX var20 = new EntityCloudiaPortalFX(worldIn, d0, d1, d2, d3, d4, d5);
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
 		}
 	}

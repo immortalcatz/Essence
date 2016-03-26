@@ -61,7 +61,6 @@ import net.slayer.api.block.BlockModBars;
 import net.slayer.api.block.BlockModDoor;
 import net.slayer.api.block.BlockModFence;
 import net.slayer.api.block.BlockModFlower;
-import net.slayer.api.block.BlockModFurnace;
 import net.slayer.api.block.BlockModGrass;
 import net.slayer.api.block.BlockModLadder;
 import net.slayer.api.block.BlockModLeaves;
@@ -71,6 +70,7 @@ import net.slayer.api.block.BlockModSlab;
 import net.slayer.api.block.BlockModSpawner;
 import net.slayer.api.block.BlockModStairs;
 import net.slayer.api.block.BlockModVine;
+import net.slayer.api.block.BlockNetherFurnace;
 
 public class JourneyBlocks {
 
@@ -380,8 +380,11 @@ public class JourneyBlocks {
 	
 	public static final Block hellbotSpawner = new BlockModSpawner("hellbotSpawner", "Hellbot Spawner", "hellbot");
 	
-	public static final Block netherFurnace = new BlockModFurnace("netherFurnace", "Nethic Furnace", false);
-	public static final Block netherFurnaceActive = new BlockModFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);;
+	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
+	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);
+	
+	public static final Block boilingFurnace = new BlockNetherFurnace("boilingFurnace", "Boiling Furnace", false);
+	public static final Block boilingFurnaceActive = new BlockNetherFurnace("boilingFurnaceActive", "Boiling Furnace", true).setLightLevel(1).setCreativeTab(null);
 
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	

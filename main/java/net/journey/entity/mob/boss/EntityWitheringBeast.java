@@ -7,11 +7,13 @@ import net.journey.JourneyItems;
 import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityDeathSkull;
+import net.journey.entity.projectile.EntityFireBall;
 import net.journey.enums.EnumSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityWitherSkull;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -78,15 +80,66 @@ public class EntityWitheringBeast extends EntityEssenceBoss implements IRangedAt
 		return null;
 	}
 
-	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase var1, float var2) {
-		this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, new BlockPos((int)this.posX, (int)this.posY, (int)this.posZ), 0);
-		double vecX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
-		double vecY = (double)(-MathHelper.sin(var1.rotationPitch / 180.0F * (float)Math.PI));
-		double vecZ = (double)( MathHelper.cos(var1.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(var1.rotationPitch / 180.0F * (float)Math.PI));
-		double deltaX = (double)(-MathHelper.sin(var1.rotationYaw / 180.0F * (float)Math.PI));
-		double deltaZ = (double)( MathHelper.cos(var1.rotationYaw / 180.0F * (float)Math.PI));
-		EntityDeathSkull skull = new EntityDeathSkull(worldObj, var1, var1.posX + deltaX, var1.posY + 1, var1.posZ + deltaZ, vecX, vecY, vecZ);
-		this.worldObj.spawnEntityInWorld(skull);
+    public void attackEntityWithRangedAttack(EntityLivingBase e, float f1)
+    {
+        this.launchWitherSkullToEntity(0, e);
 	}
+    
+    private void launchWitherSkullToEntity(int var1, EntityLivingBase e)
+    {
+        this.launchWitherSkullToCoords(var1, e.posX, e.posY + (double)e.getEyeHeight() * 0.5D, e.posZ, var1 == 0 && this.rand.nextFloat() < 0.001F);
+        
+    }
+    
+    private void launchWitherSkullToCoords(int var1, double f2, double f4, double f6, boolean f8)
+    {
+        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, new BlockPos(this), 0);
+        double d3 = this.coordX(var1);
+        double d4 = this.coordY(var1);
+        double d5 = this.coordZ(var1);
+        double d6 = f2 - d3;
+        double d7 = f4 - d4;
+        double d8 = f6 - d5;
+        EntityDeathSkull entitydeathskull = new EntityDeathSkull(this.worldObj, this, d6, d7, d8);
+
+        if (f8)
+        {
+        	entitydeathskull.setInvulnerable(true);
+        }
+
+        entitydeathskull.posY = d4;
+        entitydeathskull.posX = d3;
+        entitydeathskull.posZ = d5;
+        this.worldObj.spawnEntityInWorld(entitydeathskull);
+	}
+    
+    private double coordX(int par1) {
+        if (par1 <= 0) {  
+            return this.posX;
+        }
+        else {
+            float f = (this.renderYawOffset + (float)(180 * (par1 - 1))) / 180.0F * (float)Math.PI;
+            float f1 = MathHelper.cos(f);
+            return this.posX + (double)f1 * 1.3D;
+        }
+    }
+
+    private double coordY(int par1)
+    {
+        return par1 <= 0 ? this.posY + 3.0D : this.posY + 2.2D;
+    }
+
+    private double coordZ(int par1)
+    {
+        if (par1 <= 0)
+        {
+            return this.posZ;
+        }
+        else
+        {
+            float f = (this.renderYawOffset + (float)(180 * (par1 - 1))) / 180.0F * (float)Math.PI;
+            float f1 = MathHelper.sin(f);
+            return this.posZ + (double)f1 * 1.3D;
+        }
+    }
 }

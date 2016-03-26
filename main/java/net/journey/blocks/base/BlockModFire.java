@@ -96,5 +96,17 @@ public class BlockModFire extends BlockMod {
 			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
 			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
 		}
+		if(!JourneyBlocks.cloudiaPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
+			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
+		}
+		if(!JourneyBlocks.terraniaPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
+			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
+		}
+		if(!JourneyBlocks.goldenPortal.makePortal(world, pos)) {
+			if(!World.doesBlockHaveSolidTopSurface(world, pos.down())) world.setBlockToAir(pos);
+			else world.scheduleUpdate(pos, this, this.tickRate(world) + world.rand.nextInt(10));
+		}
 	}
 }
