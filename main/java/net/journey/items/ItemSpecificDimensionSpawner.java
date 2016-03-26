@@ -13,6 +13,7 @@ import net.journey.entity.mob.boss.EntitySoulWatcher;
 import net.journey.entity.mob.boss.EntityTerranianProtector;
 import net.journey.entity.mob.boss.EntityThunderbird;
 import net.journey.entity.mob.depths.EntityTameRoc;
+import net.journey.entity.projectile.EntityLightningBall;
 import net.journey.util.Config;
 import net.journey.util.LangHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -42,6 +43,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 		Item item = i.getItem();
 		if(!w.isRemote) {
 			if(w.provider.getDimensionId() == dimID) {
+				EntityLightningBall light = new EntityLightningBall(w);
 				EntityBlazier blaze = new EntityBlazier(w);
 				EntitySoulWatcher soul = new EntitySoulWatcher(w);
 				EntitySentryKing sentry = new EntitySentryKing(w);
@@ -52,9 +54,13 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				EntityThunderbird thunder = new EntityThunderbird(w);
 				EntityTerranianProtector terrastar = new EntityTerranianProtector(w);
 				if(item == JourneyItems.blazierOrb) {
-					SlayerAPI.sendMessageToAll("Blazier has been summoned", true);
+					SlayerAPI.sendMessageToAll("You're playing with hot fire. It's not to late to turn back.", true);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
+					
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(blaze);
+
 				}
 				if(item == JourneyItems.rocSpawnEgg) {
 					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
