@@ -77,7 +77,10 @@ import net.journey.entity.mob.overworld.underground.EntityGreenHonglow;
 import net.journey.entity.mob.overworld.underground.EntityHonglow;
 import net.journey.entity.mob.overworld.underground.EntityStonewalker;
 import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
+import net.journey.entity.mob.terrania.mob.EntityTerragrow;
 import net.journey.entity.mob.terrania.mob.EntityTerralight;
+import net.journey.entity.mob.terrania.mob.EntityTerrashroom;
+import net.journey.entity.mob.terrania.mob.EntityTerraslug;
 import net.journey.util.Config;
 import net.journey.util.LogHelper;
 import net.minecraft.entity.EnumCreatureType;
@@ -179,6 +182,9 @@ public class DimensionHelper {
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
 		EntityRegistry.addSpawn(EntityTerraScatterer.class, 5, 1, 1, EnumCreatureType.MONSTER, terrania);
 		EntityRegistry.addSpawn(EntityTerralight.class, 5, 1, 1, EnumCreatureType.MONSTER, terrania);
+		EntityRegistry.addSpawn(EntityTerragrow.class, 5, 1, 1, EnumCreatureType.MONSTER, terrania);
+		EntityRegistry.addSpawn(EntityTerrashroom.class, 5, 1, 1, EnumCreatureType.MONSTER, terrania);
+		EntityRegistry.addSpawn(EntityTerraslug.class, 5, 1, 1, EnumCreatureType.MONSTER, terrania);
 	}
 
 	private static void addEucaSpawns() {
@@ -209,7 +215,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityBurningLight.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityMagmaBlaze.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityHellwing.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
-		EntityRegistry.addSpawn(EntityObserver.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
+		//EntityRegistry.addSpawn(EntityObserver.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 		EntityRegistry.addSpawn(EntityPhoenix.class, amount, 1, 1, EnumCreatureType.MONSTER, boiling);
 	}
 

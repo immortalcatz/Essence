@@ -58,6 +58,44 @@ public abstract class EntityModTameable extends EntityTameable {
 		return setDeathSound();
 	}
 	
+	protected void mountPlayer(EntityPlayer player){
+		
+	}
+	
+    public void onLivingUpdate()
+    {
+        super.onLivingUpdate();
+
+        if (!this.worldObj.isRemote && !this.hasPath() && this.onGround)
+        {
+            this.worldObj.setEntityState(this, (byte)8);
+        }
+
+        if (!this.worldObj.isRemote && this.getAttackTarget() == null && this.isAngry()) {
+        this.setAngry(false);
+        
+        }
+    }
+    
+    public void setAngry(boolean angry)
+    {
+        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+
+        if (angry)
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 2)));
+        }
+        else
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 & -3)));
+        }
+    }
+    
+    public boolean isAngry()
+    {
+        return (this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
+    }
+	
 	protected void addBasicAI(){
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
@@ -66,7 +104,7 @@ public abstract class EntityModTameable extends EntityTameable {
         this.tasks.addTask(5, new EntityAIFollowOwner(this, 1.0F, 10.0F, 2.0F));
         this.tasks.addTask(6, new EntityAIMate(this, 1.0F));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0F));
-        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
         this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));

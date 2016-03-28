@@ -172,6 +172,9 @@ public class Textures {
 	public static final ResourceLocation terragrow = addMob("terragrow");
 	public static final ResourceLocation terrashroom = addMob("terrashroom");
     
+	//Pets
+	public static final ResourceLocation tameRoc = addMob("tameRoc");
+	
     private static ResourceLocation addMob(String tex){
     	return new ResourceLocation(prefix + tex + ".png");
     }

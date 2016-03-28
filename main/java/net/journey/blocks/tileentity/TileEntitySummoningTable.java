@@ -28,6 +28,7 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 
 	public TileEntitySummoningTable() {
 		this.inventory = new ItemStack[7];
+		EntityPlayer EntityPlayer;
 	}
 
 	@Override
@@ -191,7 +192,6 @@ public class TileEntitySummoningTable extends TileEntity implements IUpdatePlaye
 				setAllSlotsToNull();
 				inventory[3] = new ItemStack(JourneyItems.enchantedTerrastar);
 				addParticles();
-				//addSound(p, w);
 			}
 			/**else if(areItemsInSlots(
 					JourneyItems.spawnerBar, 

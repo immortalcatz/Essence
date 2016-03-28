@@ -32,6 +32,7 @@ public class JourneyMaterialRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.stoneClump, 16), new Object[] {"ddd", "ddd", "ddd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.withicSoul, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.withicDust});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.concentratedBlood, 1), new Object[] {"ddd", "did", "ddd", 'i', JourneyItems.lostSoul, 'd', JourneyItems.blood});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.boilKey, 1), new Object[] {"dgd", "did", "dgd", 'd', i.flamingSpring, 'i', i.flamingSprocket, 'g', Items.gold_ingot});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.demonicDust, 5), new Object[]{i.demonicBone});
 		
 		addOPFood(JourneyItems.goldenPork, JourneyItems.goldenPorkOP, Items.porkchop);

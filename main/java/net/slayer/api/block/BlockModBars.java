@@ -40,14 +40,12 @@ public class BlockModBars extends Block
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
     private boolean canDrop = false;
-    private static final String __OBFID = "CL_00000322";
 
     protected BlockModBars(Material materialIn, boolean canDrop)
     {
         super(materialIn);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         this.canDrop = canDrop;
-        this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
 	protected EnumMaterialTypes blockType;

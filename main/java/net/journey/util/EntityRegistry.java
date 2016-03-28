@@ -23,6 +23,8 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.pet.EntityShiverwolf;
+import net.journey.entity.mob.pet.EntityTameRoc;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
 import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
 import net.journey.entity.mob.terrania.mob.EntityTerragrow;
@@ -124,6 +126,8 @@ public class EntityRegistry {
 		SlayerAPI.registerOverworldMob(EntityBlueHonglow.class, "blueHonglow", "Blue Honglow");
 		SlayerAPI.registerOverworldMob(EntitySwampFly.class, "swampFly", "Swamp Fly");
 		SlayerAPI.registerOverworldMob(EntityBoom.class, "boomBoom", "Boom Boom");
+		
+		SlayerAPI.registerOverworldMob(EntityTameRoc.class, "tameRoc", "Tame Roc");
 	}
 
 	public static void registerBPMobs() {

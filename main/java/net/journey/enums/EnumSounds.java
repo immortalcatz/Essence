@@ -6,6 +6,10 @@ import net.minecraft.world.World;
 
 public enum EnumSounds {
 
+	SLUG("essence:terraSlug"),
+	SLUG_HURT("essence:terraSlugHurt"),
+	SLUG_DEATH("essence:terraSlugDeath"),
+	SUMMON("essence:summonBoss"),
 	SUMMON_TABLE("essence:summon"),
 	SORCERER_DEATH("essence:sorcererDeath"),
 	SORCERER_HURT("essence:sorcererHurt"),

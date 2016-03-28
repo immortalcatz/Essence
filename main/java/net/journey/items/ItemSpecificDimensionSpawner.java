@@ -1,6 +1,7 @@
 package net.journey.items;
 
 import java.util.List;
+import java.util.Random;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
@@ -12,8 +13,9 @@ import net.journey.entity.mob.boss.EntitySkyStalker;
 import net.journey.entity.mob.boss.EntitySoulWatcher;
 import net.journey.entity.mob.boss.EntityTerranianProtector;
 import net.journey.entity.mob.boss.EntityThunderbird;
-import net.journey.entity.mob.depths.EntityTameRoc;
+import net.journey.entity.mob.pet.EntityTameRoc;
 import net.journey.entity.projectile.EntityLightningBall;
+import net.journey.enums.EnumSounds;
 import net.journey.util.Config;
 import net.journey.util.LangHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,12 +24,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
 public class ItemSpecificDimensionSpawner extends ItemMod {
 
+	private int ticks;
 	public String dimName;
 	public int dimID;
 	
@@ -53,46 +57,64 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				EntityLogger logger = new EntityLogger(w);
 				EntityThunderbird thunder = new EntityThunderbird(w);
 				EntityTerranianProtector terrastar = new EntityTerranianProtector(w);
-				if(item == JourneyItems.blazierOrb) {
-					SlayerAPI.sendMessageToAll("You're playing with hot fire. It's not to late to turn back.", true);
+				if(item == JourneyItems.blazierOrb) {			
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
 					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
 					w.spawnEntityInWorld(light);
-					
-					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
-					w.spawnEntityInWorld(blaze);
-
+					SlayerAPI.sendMessageToAll("You're playing with hot fire. It's not too late to turn back...", true);
+				    blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+				    w.spawnEntityInWorld(blaze);
 				}
 				if(item == JourneyItems.rocSpawnEgg) {
-					blaze.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					roc.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(roc);
 				}
 				if(item == JourneyItems.sentryKingOrb) {
-					SlayerAPI.sendMessageToAll("Sentry King has been summoned", true);
+					SlayerAPI.sendMessageToAll("It sucked all the energy out of this world, don't let it suck the energy out of you...", true);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
 					sentry.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(sentry);
 				}
 				if(item == JourneyItems.mysteriousDisk) {
-					SlayerAPI.sendMessageToAll("The Sky Stalker has been summoned", true);
+					SlayerAPI.sendMessageToAll("The purple flying fish monster is not happy...", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					sky.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(sky);
 				}
 				if(item == JourneyItems.corallatorOrb) {
-					SlayerAPI.sendMessageToAll("The Corallator has been summoned", true);
+					SlayerAPI.sendMessageToAll("You will regret this mistake for the rest of your life - if you'll still have one, that is...", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					corallator.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(corallator);
 				}
 				if(item == JourneyItems.loggerOrb) {
-					SlayerAPI.sendMessageToAll("The Logger has been summoned", true);
+					SlayerAPI.sendMessageToAll("You'll get chopped to pieces with this one...", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					logger.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(logger);
 				}
 				if(item == JourneyItems.thunderbirdOrb) {
-					SlayerAPI.sendMessageToAll("The Thunderbird has been summoned", true);
+					SlayerAPI.sendMessageToAll("The thunderbird is not pleased with its awakening...", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					thunder.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(thunder);
 				}
 				if(item == JourneyItems.enchantedTerrastar) {
-					SlayerAPI.sendMessageToAll("The Terrastar has been summoned", true);
+					SlayerAPI.sendMessageToAll("It's sole purpose was to protect this land. Why would you try to destroy it?", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					terrastar.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(terrastar);
 					
@@ -100,7 +122,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				
 				if(!p.capabilities.isCreativeMode) i.stackSize--;
 			} else {
-				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be spawned unless in the " + dimName + " dimension.");
+				SlayerAPI.addChatMessage(p, EnumChatFormatting.GREEN + "Cannot be called upon unless in the " + dimName + " dimension.");
 			}
 		}
 		return true;

@@ -52,6 +52,8 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.pet.EntityShiverwolf;
+import net.journey.entity.mob.pet.EntityTameRoc;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
 import net.journey.entity.mob.terrania.mob.EntityTerraScatterer;
 import net.journey.entity.mob.terrania.mob.EntityTerragrow;
@@ -221,13 +223,14 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityFourfa.class, new RenderFourfa());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlazier.class, new RenderBoss(new ModelBlazier(), 0.5F, 2.0F, Textures.blazier, "blazier"));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySentryKing.class, new RenderBoss(new ModelSentryKing(), 0.5F, 2.0F, Textures.sentryKing, "sentryKing"));
-		RenderingRegistry.registerEntityRenderingHandler(EntityThunderbird.class, new RenderBoss(new ModelThunderbird(), 0.5F, 2.0F, Textures.thunderbird, "thunderbird"));
+		RenderingRegistry.registerEntityRenderingHandler(EntityThunderbird.class, new RenderBoss(new ModelRoc(), 0.5F, 2.0F, Textures.thunderbird, "thunderbird"));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLogger.class, new RenderBoss(new ModelLogger(), 0.5F, 2.0F, Textures.logger, "logger"));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCorallator.class, new RenderBoss(new ModelCorallator(), 0.5F, 2.0F, Textures.corallator, "corallator"));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkyStalker.class, new RenderBoss(new ModelSkyStalker(), 0.5F, 2.0F, Textures.skyStalker, "skyStalker"));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEudor.class, new RenderBoss(new ModelEudor(), 0.5F, 2.0F, Textures.eudor, "eudor"));
 		RenderingRegistry.registerEntityRenderingHandler(EntityScale.class, new RenderBoss(new ModelSoulWatcher(), 0.5F, 2.0F, Textures.scale, "scale"));
 		
+		RenderingRegistry.registerEntityRenderingHandler(EntityTameRoc.class, new RenderModMob(new ModelRoc(), Textures.tameRoc));
 		//RenderingRegistry.registerEntityRenderingHandler(EntityWraith.class, new RenderBoss(new ModelWraith(), 0.5F, 1.0F, tex.wraith, stat.wraithBossID));
 		
 		//SlayerAPI.registerItemRenderer(EssenceBlocks.netherBeastStatue, new ItemRendererStatue("netherBeastStatue"));

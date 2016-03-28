@@ -363,7 +363,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
+	//public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	

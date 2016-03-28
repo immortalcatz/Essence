@@ -29,21 +29,28 @@ public class EntityTerraslug extends EntityModMob {
 	}
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.HONGO;
+		return EnumSounds.SLUG;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.SLUG_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.SLUG_DEATH;
 	}
 
 	@Override
 	public Item getItemDropped() {
-		return JourneyItems.hongoShroom;
+		return JourneyItems.slugSlime;
+	}
+	
+	@Override
+	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(1) == 0) dropItem(JourneyItems.slugSlime, 1);
+		if(rand.nextInt(3) == 0) dropItem(JourneyItems.slugSlime, 2);
+		
 	}
 }

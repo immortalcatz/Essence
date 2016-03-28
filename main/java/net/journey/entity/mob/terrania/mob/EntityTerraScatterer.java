@@ -44,15 +44,8 @@ public class EntityTerraScatterer extends EntityModMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(13) == 0) dropItem(JourneyItems.earthenCrystal, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(2) == 0) dropItem(JourneyItems.purplePowder, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(4) == 0) dropItem(JourneyItems.purplePowder, 3);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(4) == 0) dropItem(JourneyItems.darkTerrarianSoil, 4);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(2) == 0) dropItem(JourneyItems.darkTerrarianSoil, 2);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.lightTerrarianSoil, 4);
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.lightTerrarianSoil, 2);
 		super.dropFewItems(b, j);
 	}
 

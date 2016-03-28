@@ -322,6 +322,8 @@ public class JourneyItems {
 	
 	public static final Item developerSword = new ItemModSword("developerSword", "Creative Sword", EssenceToolMaterial.DEVELOPER_SWORD);
 	
+	public static final Item slugSlime = new ItemMod("slugSlime", "Slug Slime");
+	
 	
 	public static final Item eucaPortalGem = new ItemMod("eucaPortalGem", "Euca Portal Gem");
 	public static final Item depthsPortalGem = new ItemMod("depthsPortalGem", "Depths Portal Gem");

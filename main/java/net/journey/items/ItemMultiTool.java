@@ -32,16 +32,15 @@ public class ItemMultiTool extends ItemTool {
 	private static final Set<Block> blocksEffectiveAgainst = Sets.newHashSet(Block.blockRegistry);
 	protected EssenceToolMaterial mat;
 
-	public ItemMultiTool(String name, String f, EssenceToolMaterial tool) {
-		super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
+    public ItemMultiTool(String name, String f, EssenceToolMaterial tool) {
+        super(0, tool.getToolMaterial(), blocksEffectiveAgainst);
+        LangRegistry.addItem(name, f);
 		mat = tool;
-		setMaxDamage(tool.getToolMaterial().getMaxUses());
-		LangRegistry.addItem(name, f);
-		setCreativeTab(JourneyTabs.tools);
-		setUnlocalizedName(name);
-		setHarvestLevel("pickaxe", tool.getHarvestLevel());
-		JourneyItems.itemNames.add(name);
-		GameRegistry.registerItem(this, name);
+        setUnlocalizedName(name);
+        setCreativeTab(JourneyTabs.tools);
+        setHarvestLevel("pickaxe", tool.getHarvestLevel());
+        JourneyItems.itemNames.add(name);
+        GameRegistry.registerItem(this, name);
 	}
 
 	@Override
@@ -68,20 +67,20 @@ public class ItemMultiTool extends ItemTool {
 	protected boolean isEfficient(Block block) {
 		return block == Blocks.obsidian ? this.toolMaterial.getHarvestLevel() == 3 :
 			(block != Blocks.diamond_block && block != Blocks.diamond_ore ?
-					(block != Blocks.emerald_ore && block != Blocks.emerald_block ?
-							(block != Blocks.gold_block && block != Blocks.gold_ore ?
-									(block != Blocks.iron_block && block != Blocks.iron_ore ?
-											(block != Blocks.lapis_block && block != Blocks.lapis_ore ?
-													(block != Blocks.redstone_ore && block != Blocks.lit_redstone_ore ?
-															(block.getMaterial() == Material.rock ? true :
-																(block.getMaterial() == Material.iron ? true :
-																	block.getMaterial() == Material.anvil)) :
-																		this.toolMaterial.getHarvestLevel() >= 2) :
-																			this.toolMaterial.getHarvestLevel() >= 1) :
-																				this.toolMaterial.getHarvestLevel() >= 1) :
-																					this.toolMaterial.getHarvestLevel() >= 2) :
-																						this.toolMaterial.getHarvestLevel() >= 2) :
-																							this.toolMaterial.getHarvestLevel() >= 2);
+			(block != Blocks.emerald_ore && block != Blocks.emerald_block ?
+			(block != Blocks.gold_block && block != Blocks.gold_ore ?
+			(block != Blocks.iron_block && block != Blocks.iron_ore ?
+			(block != Blocks.lapis_block && block != Blocks.lapis_ore ?
+			(block != Blocks.redstone_ore && block != Blocks.lit_redstone_ore ?
+			(block.getMaterial() == Material.rock ? true :
+			(block.getMaterial() == Material.iron ? true :
+			block.getMaterial() == Material.anvil)) :
+			this.toolMaterial.getHarvestLevel() >= 2) :
+			this.toolMaterial.getHarvestLevel() >= 1) :
+			this.toolMaterial.getHarvestLevel() >= 1) :
+			this.toolMaterial.getHarvestLevel() >= 2) :
+			this.toolMaterial.getHarvestLevel() >= 2) :
+			this.toolMaterial.getHarvestLevel() >= 2);
 	}
 
 	@Override
@@ -105,7 +104,6 @@ public class ItemMultiTool extends ItemTool {
 			if (world.isRemote) return true;
 
 			world.setBlockState(pos, block1.getDefaultState());
-			stack.damageItem(1, player);
 			return true;
 		}
 		return false;
@@ -114,7 +112,6 @@ public class ItemMultiTool extends ItemTool {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
-		infoList.add(SlayerAPI.Colour.BLUE + LangHelper.getEfficiency() + ": " + toolMaterial.getEfficiencyOnProperMaterial());
 		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
 		else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
 	}

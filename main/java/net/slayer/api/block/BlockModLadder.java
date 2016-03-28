@@ -7,6 +7,7 @@ import net.journey.JourneyBlocks;
 import net.journey.JourneyTabs;
 import net.journey.util.LangRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLadder;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -28,12 +29,9 @@ import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.SlayerAPI;
 
-public class BlockModLadder extends Block
-{
-	public BlockModLadder(Material materialIn) {
-		super(materialIn);
-	}
+public class BlockModLadder extends Block{
 
+    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	protected EnumMaterialTypes blockType;
 	protected Item drop = null;
 	protected Random rand;
@@ -41,20 +39,19 @@ public class BlockModLadder extends Block
 	public int boostBrightnessHigh;
 	public boolean enhanceBrightness;
 	public String name;
-    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-    private static final String __OBFID = "CL_00000262";
+	protected boolean isOpaque = true, isNormalCube = true;
 	
 	public BlockModLadder(String name, String finalName, float hardness) {
-		this(EnumMaterialTypes.WOOD, name, finalName, JourneyTabs.blocks);
-	    this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		this(EnumMaterialTypes.WOOD, name, finalName, hardness, JourneyTabs.blocks);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 
 	public BlockModLadder(String name, String finalName) {
-		this(EnumMaterialTypes.WOOD, name, finalName, JourneyTabs.blocks);
+		this(EnumMaterialTypes.WOOD, name, finalName, 2.0F, JourneyTabs.blocks);
 	}
 
 	public BlockModLadder(EnumMaterialTypes type, String name, String finalName, float hardness) {
-		this(type, name, finalName, JourneyTabs.blocks);
+		this(type, name, finalName, hardness, JourneyTabs.blocks);
 	}
 
 	public BlockModLadder(String name, String finalName, boolean breakable, CreativeTabs tab) {
@@ -62,7 +59,7 @@ public class BlockModLadder extends Block
 	}
 
 	public BlockModLadder(String name, String finalName, boolean breakable) {
-		this(name, finalName, breakable, JourneyTabs.blocks);
+		this(name, finalName, breakable, JourneyTabs.decoration);
 	}
 
 	public BlockModLadder(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab) {
@@ -118,6 +115,16 @@ public class BlockModLadder extends Block
 		return 3;
 	}
 
+	@Override
+	public int quantityDropped(Random rand) {
+		return 1;
+	}
+
+	@Override
+	public boolean isNormalCube() {
+		return false;
+	}
+	
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)
     {
         this.setBlockBoundsBasedOnState(worldIn, pos);
@@ -175,31 +182,10 @@ public class BlockModLadder extends Block
                worldIn.isSideSolid(pos.south(), EnumFacing.NORTH, true);
     }
 
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        if (facing.getAxis().isHorizontal() && this.canBlockStay(worldIn, pos, facing))
-        {
-            return this.getDefaultState().withProperty(FACING, facing);
-        }
-        else
-        {
-            Iterator iterator = EnumFacing.Plane.HORIZONTAL.iterator();
-            EnumFacing enumfacing1;
-
-            do
-            {
-                if (!iterator.hasNext())
-                {
-                    return this.getDefaultState();
-                }
-
-                enumfacing1 = (EnumFacing)iterator.next();
-            }
-            while (!this.canBlockStay(worldIn, pos, enumfacing1));
-
-            return this.getDefaultState().withProperty(FACING, enumfacing1);
-        }
-    }
+    @Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+	}
 
     /**
      * Called when a neighboring block changes.
@@ -226,42 +212,31 @@ public class BlockModLadder extends Block
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.CUTOUT;
-    }
+	}
 
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
-    public IBlockState getStateFromMeta(int meta)
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+	}
+
+	@Override
+	protected BlockState createBlockState() {
+		return new BlockState(this, new IProperty[] {FACING});
+	}
+    @Override 
+    public boolean isLadder(IBlockAccess world, BlockPos pos, EntityLivingBase entity) 
     {
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
-
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-        {
-            enumfacing = EnumFacing.NORTH;
-        }
-
-        return this.getDefaultState().withProperty(FACING, enumfacing);
+    	return true; 
     }
-
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
-    public int getMetaFromState(IBlockState state)
-    {
-        return ((EnumFacing)state.getValue(FACING)).getIndex();
-    }
-
-    protected BlockState createBlockState()
-    {
-        return new BlockState(this, new IProperty[] {FACING});
-    }
-
-    @Override public boolean isLadder(IBlockAccess world, BlockPos pos, EntityLivingBase entity) { return true; }
 
     static final class SwitchEnumFacing
         {
             static final int[] FACING_LOOKUP = new int[EnumFacing.values().length];
-            private static final String __OBFID = "CL_00002104";
 
             static
             {
@@ -299,7 +274,7 @@ public class BlockModLadder extends Block
                 catch (NoSuchFieldError var1)
                 {
                     ;
-                }
-            }
-        }
+              }
+         }
+     }
 }

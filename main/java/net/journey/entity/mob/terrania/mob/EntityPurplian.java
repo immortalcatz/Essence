@@ -118,7 +118,13 @@ public class EntityPurplian extends EntityModMob {
 	}
 
 	@Override
+	public Item getItemDropped(){
+		return JourneyItems.purplePowder;
+	}
+	@Override
 	protected void dropFewItems(boolean b, int i) {
+		if(rand.nextInt(40) == 0) dropItem(JourneyItems.terrastar, 1);
+		if(rand.nextInt(5) == 0) dropItem(JourneyItems.purplePowder, 2);
 		if(b) {
 			int j = this.rand.nextInt(2 + i);
 			for (int k = 0; k < j; ++k) {
@@ -161,11 +167,7 @@ public class EntityPurplian extends EntityModMob {
 	@Override
 	public EnumSounds setDeathSound() {
 		return EnumSounds.BLAZE_DEATH;
-	}
 
-	@Override
-	public Item getItemDropped() {
-		return null;
 	}
 	
     class AIFireballAttack extends EntityAIBase

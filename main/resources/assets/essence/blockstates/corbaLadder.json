@@ -1,5 +1,8 @@
 {
-	"variants": {
-		"normal": { "model": "essence:corbaLamp"}
-	}
+    "variants": {
+        "facing=north": { "model": "corbaLadder" },
+        "facing=east":  { "model": "corbaLadder", "y": 90 },
+        "facing=south": { "model": "corbaLadder", "y": 180 },
+        "facing=west":  { "model": "corbaLadder", "y": 270 }
+    }
 }

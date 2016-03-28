@@ -1,6 +1,6 @@
 package net.journey.client.render.model.mob.euca;
 
-import net.journey.entity.mob.euca.EntityEucaHopper;
+import net.journey.entity.mob.pet.EntityEucaHopper;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

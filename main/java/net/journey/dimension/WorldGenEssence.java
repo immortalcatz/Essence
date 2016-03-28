@@ -77,7 +77,7 @@ public class WorldGenEssence implements IWorldGenerator {
 				new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 		}
 
-		if(r.nextInt(6)==0) {
+		if(r.nextInt(10)==0) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -85,7 +85,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			new WorldGenBoilPortal().generate(w, r, new BlockPos(x, y, z));
 		}
 		
-		for(times = 0; times < 10; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -93,7 +93,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			new WorldGenHellThornTall().generate(w, r, new BlockPos(x, y, z));
 		}
 		
-		for(times = 0; times < 10; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -101,7 +101,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			new WorldGenHellThornMedium().generate(w, r, new BlockPos(x, y, z));
 		}
 		
-		for(times = 0; times < 10; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(64); 
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);

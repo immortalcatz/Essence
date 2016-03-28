@@ -1,4 +1,4 @@
-package net.journey.entity.mob.frozen;
+package net.journey.entity.mob.pet;
 
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
@@ -170,7 +170,7 @@ public class EntityShiverwolf extends EntityModTameable {
 		return(this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
 	}
 
-	private void setAngry(boolean b) {
+	public void setAngry(boolean b) {
 		byte b0 = this.dataWatcher.getWatchableObjectByte(16);
 		if(b) this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 2)));
 		else this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 & -3)));

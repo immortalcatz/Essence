@@ -126,6 +126,10 @@ public class SlayerAPI {
 		registerMob(entityClass, entityName, finalN, 0xff0000, 0xffd800);
 	}
 	
+	public static void registerPets(Class entityClass, String entityName, String finalN) {
+		registerMob(entityClass, entityName, finalN, 0x64ffe4, 0x009cff);
+	}
+	
 	public static void registerBPMob(Class entityClass, String entityName, String finalN) {
 		registerMob(entityClass, entityName, finalN, 0xff7800, 0xffa800);
 	}
