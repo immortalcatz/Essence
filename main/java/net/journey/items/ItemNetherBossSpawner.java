@@ -8,6 +8,8 @@ import net.journey.entity.mob.boss.EntityCalcia;
 import net.journey.entity.mob.boss.EntityNetherBeast;
 import net.journey.entity.mob.boss.EntitySoulWatcher;
 import net.journey.entity.mob.boss.EntityWitheringBeast;
+import net.journey.entity.projectile.EntityLightningBall;
+import net.journey.enums.EnumSounds;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -30,27 +32,40 @@ public class ItemNetherBossSpawner extends ItemMod {
 		Item item = i.getItem();
 		if(!w.isRemote)
 			if(w.provider.getDimensionId() == -1) {
+				EntityLightningBall light = new EntityLightningBall(w);
 				EntityWitheringBeast wither = new EntityWitheringBeast(w);
 				EntitySoulWatcher soul = new EntitySoulWatcher(w);
 				EntityCalcia calcia = new EntityCalcia(w);
 				EntityNetherBeast nether = new EntityNetherBeast(w);
 
 				if(item == JourneyItems.calciaOrb){
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					SlayerAPI.sendMessageToAll("Calcia has been summoned", true);
 					calcia.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(calcia);
 				}
 				if(item == JourneyItems.netherBeastOrb){
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					SlayerAPI.sendMessageToAll("The Nether Beast has been summoned", true);
 					nether.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(nether);
 				}
 				if(item == JourneyItems.witheringBeastOrb){
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
 					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(wither);
 				}
 				if(item == JourneyItems.soulWatcherOrb){
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
 					SlayerAPI.sendMessageToAll("The Soul Watcher has been summoned", true);
 					soul.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(soul);

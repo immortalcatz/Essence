@@ -189,7 +189,7 @@ public class EntityTameRoc extends EntityModTameable {
 			if(itemstack != null) {
 				if(itemstack.getItem() instanceof ItemFood) {
 					ItemFood itemfood = (ItemFood)itemstack.getItem();
-					if(itemfood.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectFloat(18) < 20.0F) {
+					if(itemfood.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectFloat(18) < 75.0F) {
 						if(!par1EntityPlayer.capabilities.isCreativeMode)
 							--itemstack.stackSize;            
 						this.heal((float)itemfood.getHealAmount(itemstack));
@@ -218,7 +218,7 @@ public class EntityTameRoc extends EntityModTameable {
 						this.navigator.clearPathEntity();
 						this.setAttackTarget((EntityLivingBase)null);
 						this.aiSit.setSitting(true);
-						this.setHealth(20.0F);
+						this.setHealth(75.0F);
 						this.setOwnerId(par1EntityPlayer.getUniqueID().toString());
 						this.setTamed(true);
 						this.playTameEffect(true);
@@ -236,7 +236,7 @@ public class EntityTameRoc extends EntityModTameable {
                     this.navigator.clearPathEntity();
                     this.setAttackTarget((EntityLivingBase)null);
                     this.aiSit.setSitting(true);
-                    this.setHealth(20.0F);
+                    this.setHealth(75.0F);
                     this.setOwnerId(par1EntityPlayer.getUniqueID().toString());
                     this.playTameEffect(true);
                     this.worldObj.setEntityState(this, (byte)7);

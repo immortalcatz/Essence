@@ -7,6 +7,7 @@ import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.entity.mob.boss.EntityBlazier;
 import net.journey.entity.mob.boss.EntityCorallator;
+import net.journey.entity.mob.boss.EntityEudor;
 import net.journey.entity.mob.boss.EntityLogger;
 import net.journey.entity.mob.boss.EntitySentryKing;
 import net.journey.entity.mob.boss.EntitySkyStalker;
@@ -101,6 +102,15 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					w.spawnEntityInWorld(light);
 					logger.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(logger);
+				}
+				EntityEudor eudor = new EntityEudor(w);
+				if(item == JourneyItems.eudorOrb){
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
+					SlayerAPI.sendMessageToAll("The King has been summoned", true);
+					eudor.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(eudor);
 				}
 				if(item == JourneyItems.thunderbirdOrb) {
 					SlayerAPI.sendMessageToAll("The thunderbird is not pleased with its awakening...", true);
