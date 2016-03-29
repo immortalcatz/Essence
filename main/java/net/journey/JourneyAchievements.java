@@ -55,7 +55,7 @@ public class JourneyAchievements {
 		Achievement[] achievements = new Achievement[achievementsList.size()];
 
 		achievements = achievementsList.values().toArray(achievements);
-		achievementsPage = new AchievementPage(StatCollector.translateToLocal("draconicevolution.achievementPage.name"), achievements);
+		achievementsPage = new AchievementPage(StatCollector.translateToLocal("Journey Achievements"), achievements);
 		AchievementPage.registerAchievementPage(achievementsPage);
 	}
 

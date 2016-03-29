@@ -61,6 +61,7 @@ public class ItemNetherBossSpawner extends ItemMod {
 					SlayerAPI.sendMessageToAll("The Withering Beast has been summoned", true);
 					wither.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(wither);
+					if(!p.capabilities.isCreativeMode) i.stackSize--;
 				}
 				if(item == JourneyItems.soulWatcherOrb){
 				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
