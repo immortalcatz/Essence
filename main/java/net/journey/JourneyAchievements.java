@@ -1,9 +1,10 @@
+/**
 package net.journey;
 
 import java.util.HashMap;
 
+import net.journey.achievement.event.JourneyMineEvent;
 import net.journey.achievement.event.JourneyOnCraftEvent;
-import net.journey.achievement.event.JourneySapphireMineEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -25,11 +26,28 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 public class JourneyAchievements {
-
-
 	
-@EventHandler
-public void achievementPreInit(FMLPreInitializationEvent e) {
-
+	public static Achievement achievementore;
+	public static Achievement achievementGem;
+	public static Achievement achievementSapphireSword;
+	
+	@EventHandler
+	public void preInitAchievements(FMLPreInitializationEvent e) {
+		FMLCommonHandler.instance().bus().register(new JourneyOnCraftEvent());
+		FMLCommonHandler.instance().bus().register(new JourneyMineEvent());
 	}
-}
+
+	@EventHandler
+	public void initAchievements(FMLInitializationEvent event) {
+		achievementore = (Achievement) new Achievement("achievement.ore", "ore", 0, 0, new ItemStack(JourneyItems.sapphire), (Achievement)null).initIndependentStat().registerStat();
+		achievementGem = (Achievement) new Achievement("Gemstone Obtainer", "ore", -2, 0, new ItemStack(JourneyItems.blueGem), (Achievement)null).initIndependentStat().registerStat();
+		achievementSapphireSword = (Achievement) new Achievement("achievement.sapphireSword", "sapphireSword", 0, 2, new ItemStack(JourneyItems.sapphireSword), achievementore).registerStat();	
+		AchievementPage ap = new AchievementPage("Journey Achievements", new Achievement[] {
+			achievementore, 
+			achievementSapphireSword, 
+			achievementGem
+			});
+		AchievementPage.registerAchievementPage(ap);
+		}
+	}
+*/

@@ -1,6 +1,5 @@
 package net.journey.achievement.event;
 
-import net.journey.JourneyAchievements;
 import net.journey.JourneyItems;
 import net.journey.proxy.CommonProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
