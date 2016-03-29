@@ -52,7 +52,11 @@ public class LangRegistry {
 		writeToFile("itemGroup.journey.crops=Journey into the Light: Crops");
 		writeToFile("itemGroup.journey.machineBlocks=Journey into the Light: Machine Blocks");
 		writeToFile("itemGroup.journey.portalBlocks=Journey into the Light: Portal Blocks");
-		//writeToFile("itemGroup.journey.hammers=Journey into the Light: Hammers");
+		writeToFile("itemGroup.journey.hammers=Journey into the Light: Hammers");
+		writeToFile("achievement.sapphireSword=Time For An Upgrade");
+		writeToFile("achievement.sapphireSword.desc=Craft a Sapphire Sword");
+		writeToFile("achievement.ore=Unknown Substance");
+		writeToFile("achievement.ore.desc=Obtain Sapphire");
 		writeToFile("item.record.underwaterWorld.desc=Chris Geddes - Underwater World");
 		writeToFile("item.record.blueWater.desc=Chris Geddes - Blue Water");
 		writeToFile("item.record.raceStar.desc=Chris Geddes - Race Star");

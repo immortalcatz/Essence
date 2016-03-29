@@ -1,6 +1,8 @@
 package net.journey.proxy;
 
 import net.journey.*;
+import net.journey.achievement.event.JourneyOnCraftEvent;
+import net.journey.achievement.event.JourneySapphireMineEvent;
 import net.journey.blocks.tileentity.*;
 import net.journey.client.BarTickHandler;
 import net.journey.dimension.*;
@@ -13,6 +15,7 @@ import net.journey.util.recipes.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
+import net.minecraft.stats.Achievement;
 import net.minecraft.world.*;
 import net.minecraftforge.common.*;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -23,6 +26,8 @@ import net.slayer.api.*;
 
 public class CommonProxy {
 
+	public static Achievement achievementore;
+	public static Achievement achievementSapphireSword;
 	public void updateDarkEnergy(int amount) { }
 	public void updateEssence(int amount) { }
 	public void updatePower(int amount) { }
@@ -45,6 +50,7 @@ public class CommonProxy {
 		DimensionHelper.init();
 		DimensionHelper.addSpawns();
 		JourneyTabs.init();
+		
 		if(SlayerAPI.DEVMODE) LangRegistry.instance.register();
 		addOreDictionary();
 		SlayerAPI.registerEvent(new ArmorAbilityEvent());
@@ -61,9 +67,16 @@ public class CommonProxy {
 		//StructureBoilBridgePieces.registerBoilFortressPieces();
 		//StructureBoilVillagePieces.registerVillagePieces();
 		MinecraftForge.addGrassSeed(new ItemStack(JourneyItems.tomatoSeeds), 5);
+		FMLCommonHandler.instance().bus().register(new JourneyOnCraftEvent());
+		FMLCommonHandler.instance().bus().register(new JourneySapphireMineEvent());
 	}
-	
 	public void init(FMLInitializationEvent event) {
+		achievementore = (Achievement) new Achievement("achievement.ore", "ore", 0, 0, new ItemStack(JourneyItems.sapphire), (Achievement)null).initIndependentStat().registerStat();
+		achievementSapphireSword = (Achievement) new Achievement("achievement.sapphireSword", "sapphireSword", 2, 1, new ItemStack(JourneyItems.sapphireSword), achievementore).registerStat();	
+		AchievementPage ap = new AchievementPage("Journey Achievements", new Achievement[]
+				{achievementore, 
+				 achievementSapphireSword});
+		AchievementPage.registerAchievementPage(ap);
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
 		SlayerAPI.registerEvent(new PlayerEvent());
 		//EssenceAchievements.init();
