@@ -1,8 +1,9 @@
 package net.journey.proxy;
 
 import net.journey.*;
-import net.journey.achievement.event.JourneyOnCraftEvent;
-import net.journey.achievement.event.JourneyPickupItemEvent;
+import net.journey.achievement.event.JourneyDungeonEvent;
+import net.journey.achievement.event.JourneySapphireEvent;
+import net.journey.achievement.event.JourneySapphireSwordEvent;
 import net.journey.blocks.tileentity.*;
 import net.journey.client.BarTickHandler;
 import net.journey.dimension.*;
@@ -26,7 +27,7 @@ import net.slayer.api.*;
 
 public class CommonProxy {
 
-	public static Achievement achievementore;
+	public static Achievement achievementOre;
 	public static Achievement achievementGem;
 	public static Achievement achievementSapphireSword;
 	public void updateDarkEnergy(int amount) { }
@@ -68,15 +69,16 @@ public class CommonProxy {
 		//StructureBoilBridgePieces.registerBoilFortressPieces();
 		//StructureBoilVillagePieces.registerVillagePieces();
 		MinecraftForge.addGrassSeed(new ItemStack(JourneyItems.tomatoSeeds), 5);
-		FMLCommonHandler.instance().bus().register(new JourneyOnCraftEvent());
-		FMLCommonHandler.instance().bus().register(new JourneyPickupItemEvent());
+		FMLCommonHandler.instance().bus().register(new JourneySapphireSwordEvent());
+		FMLCommonHandler.instance().bus().register(new JourneySapphireEvent());
+		FMLCommonHandler.instance().bus().register(new JourneyDungeonEvent());
 	}
 	public void init(FMLInitializationEvent event) {
-		achievementore = (Achievement) new Achievement("achievement.ore", "ore", 0, 0, new ItemStack(JourneyItems.sapphire), (Achievement)null).initIndependentStat().registerStat();
-		achievementGem = (Achievement) new Achievement("Gemstone Obtainer", "gem", -2, 0, new ItemStack(JourneyItems.blueGem), (Achievement)null).initIndependentStat().registerStat();
-		achievementSapphireSword = (Achievement) new Achievement("achievement.sapphireSword", "sapphireSword", 0, 2, new ItemStack(JourneyItems.sapphireSword), achievementore).registerStat();	
+		achievementOre = (Achievement) new Achievement("achievement.ore", "ore", 0, 0, new ItemStack(JourneyItems.sapphire), (Achievement)null).initIndependentStat().registerStat();
+		achievementGem = (Achievement) new Achievement("achievement.gem", "gem", -2, 0, new ItemStack(JourneyItems.blueGem), (Achievement)null).initIndependentStat().registerStat();
+		achievementSapphireSword = (Achievement) new Achievement("achievement.sapphireSword", "sapphireSword", 0, 2, new ItemStack(JourneyItems.sapphireSword), achievementOre).registerStat();	
 		AchievementPage ap = new AchievementPage("Journey Achievements", new Achievement[]
-				{achievementore, 
+				{achievementOre, 
 				 achievementSapphireSword, 
 				 achievementGem});
 		AchievementPage.registerAchievementPage(ap);

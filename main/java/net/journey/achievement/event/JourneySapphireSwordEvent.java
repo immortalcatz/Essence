@@ -5,7 +5,7 @@ import net.journey.proxy.CommonProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-public class JourneyOnCraftEvent {
+public class JourneySapphireSwordEvent {
 
 	@SubscribeEvent
 	public void onCraftSwordEvent(PlayerEvent.ItemCraftedEvent e) {
