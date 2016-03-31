@@ -32,12 +32,12 @@ public class UpdateCheckerEvent {
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow The_SlayerMC on twitter for spoilers, when you're connected to internet ");
 						}
 						if(UpdateChecker.isUpdateAvailable() && UpdateChecker.isOnline()) {
-							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://essence-of-the-gods.net/version.txt").openStream()));
+							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://github.com/TheSlayerMC/Essence/blob/master/main/resources/assets/essence/version.txt").openStream()));
 							String curVersion = versionFile.readLine();
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.RED, "A Journey into the Light update is avaliable.");
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[New Version: " + curVersion + "]"); 
-							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow The_SlayerMC on twitter for spoilers.");
+							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.GREEN, "Follow @EssenceMod on twitter for update teasers.");
 						}
 						if((!UpdateChecker.isUpdateAvailable()) && UpdateChecker.isOnline()) {
 							SlayerAPI.addChatMessageWithColour(p, EnumChatFormatting.AQUA, "[Version: " + SlayerAPI.MOD_VERSION + "]");
