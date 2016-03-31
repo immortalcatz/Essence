@@ -18,9 +18,8 @@ import net.slayer.api.SlayerAPI;
 
 public class UpdateChecker {
 
-	@SuppressWarnings("Get a new txt file")
 	public static boolean isUpdateAvailable() throws IOException, MalformedURLException {
-		BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://essence-of-the-gods.net/version.txt").openStream()));
+		BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://github.com/TheSlayerMC/Essence/blob/master/main/resources/assets/essence/version.txt").openStream()));
 		String curVersion = versionFile.readLine();
 		versionFile.close();
 		if(!curVersion.contains(SlayerAPI.MOD_VERSION)) return true;
