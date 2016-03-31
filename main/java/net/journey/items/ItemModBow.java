@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
+import net.journey.util.LangHelper;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -25,6 +26,7 @@ public class ItemModBow extends ItemMod {
 	private Class<? extends EntityArrow> arrowClass;
 	public Item arrowItem;
 	public int dur = 18;
+	protected int damage;
 
 	public ItemModBow(String name, String f, int uses, Item arrow, int duration, Class<? extends EntityArrow> arrowEnt) {
 		super(name, f, JourneyTabs.bows);
@@ -100,6 +102,7 @@ public class ItemModBow extends ItemMod {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		list.add("Ammo: " + StatCollector.translateToLocal(arrowItem.getUnlocalizedName() + ".name"));
+		list.add(SlayerAPI.Colour.DARK_GREEN + "+" + LangHelper.rangedDamage(damage));
 		//if(dur < 72000) list.add("Faster drawback speed");
 		//else if (dur == 72000) list.add("Normal drawback speed");
 		//else list.add("Slower drawback speed");

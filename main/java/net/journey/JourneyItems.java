@@ -471,9 +471,9 @@ public class JourneyItems {
 	public static final Item essenceArrow = new ItemMod("essenceArrow", "Essence Arrow", JourneyTabs.misc);
 
 	public static final Item flameBow = new ItemModBow("flameBow", "Flame Bow", 384, essenceArrow, EntityFlameArrow.class);
-	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, essenceArrow, 18, EntityPoisonArrow.class);
-	public static final Item darknessBow = new ItemModBow("darknessBow", "Darkness Bow", 384, essenceArrow, 10, EntityDarknessArrow.class);
-	public static final Item frozenBow = new ItemModBow("frozenBow", "Frozen Bow", 384, essenceArrow, 33, EntityFrozenArrow.class);
+	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, essenceArrow, EntityPoisonArrow.class);
+	public static final Item darknessBow = new ItemModBow("darknessBow", "Darkness Bow", 384, essenceArrow, EntityDarknessArrow.class);
+	public static final Item frozenBow = new ItemModBow("frozenBow", "Frozen Bow", 384, essenceArrow, EntityFrozenArrow.class);
 	public static final Item staringBow = new ItemModBow("staringBow", "Staring Bow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item deathPiercerBow = new ItemModBow("deathPiercerBow", "Death Piercer Bow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item fusionBow = new ItemModBow("fusionBow", "Fusion Bow", 384, essenceArrow, EntityEssenceArrow.class);
@@ -498,6 +498,10 @@ public class JourneyItems {
 	public static final Item mantleBow = new ItemModBow("mantleBow", "Mantle Bow", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item coreExpender = new ItemModBow("coreExpender", "Core Expender", 384, essenceArrow, EntityEssenceArrow.class);
 	public static final Item royalBow = new ItemModBow("royalBow", "Royal Bow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item darkTerraBow = new ItemModBow("darkTerraBow", "Dark Terra Bow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item lavenderBow = new ItemModBow("lavenderBow", "Lavender Bow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item terralightBow = new ItemModBow("terralightBow", "Terralight Bow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item terrianBow = new ItemModBow("terrianBow", "Terrian Bow", 384, essenceArrow, EntityEssenceArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 

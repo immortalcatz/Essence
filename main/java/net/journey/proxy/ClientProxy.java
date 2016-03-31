@@ -72,6 +72,10 @@ public class ClientProxy extends CommonProxy {
 		SlayerAPI.addBow(JourneyItems.coreExpender, "coreExpender");
 		SlayerAPI.addBow(JourneyItems.royalBow, "royalBow");
 		SlayerAPI.addBow(JourneyItems.blazingBow, "blazingBow");
+		SlayerAPI.addBow(JourneyItems.darkTerraBow, "darkTerraBow");
+		SlayerAPI.addBow(JourneyItems.lavenderBow, "lavenderBow");
+		SlayerAPI.addBow(JourneyItems.terralightBow, "terralightBow");
+		SlayerAPI.addBow(JourneyItems.terrianBow, "terrianBow");
 	}
 
 	@Override

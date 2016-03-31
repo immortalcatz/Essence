@@ -149,6 +149,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 		if(item == JourneyItems.thunderbirdOrb) list.add(LangHelper.setBossSpawner("Thunderbird"));
 		if(item == JourneyItems.enchantedTerrastar) list.add(LangHelper.setBossSpawner("Terranian Protector"));
 		if(item == JourneyItems.rocSpawnEgg) list.add(LangHelper.setPetSpawner("Roc"));
+		if(item == JourneyItems.rocSpawnEgg) list.add(SlayerAPI.Colour.DARK_GREEN + "More powerful than a dog, less cuddly.");
 		
 	}
 }

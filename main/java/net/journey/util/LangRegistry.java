@@ -13,7 +13,7 @@ public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
 
-	public String location = "C:/Users/Camden/Desktop/Essence Modding/src/Essence/main/resources/assets/essence/lang";
+	public String location = "...assets/essence/lang";
 	//"C:/Users/Camden/Desktop/Essence Modding/src/Essence/main/resources/assets/essence/lang"
 	private BufferedWriter writer;
 	public static ArrayList<String> blockUnloc = new ArrayList<String>(), blockFinal = new ArrayList<String>(), itemUnloc = new ArrayList<String>(), itemFinal = new ArrayList<String>()
@@ -53,10 +53,12 @@ public class LangRegistry {
 		writeToFile("itemGroup.journey.machineBlocks=Journey into the Light: Machine Blocks");
 		writeToFile("itemGroup.journey.portalBlocks=Journey into the Light: Portal Blocks");
 		writeToFile("itemGroup.journey.hammers=Journey into the Light: Hammers");
-		writeToFile("achievement.sapphireSword=Time For An Upgrade");
+		writeToFile("achievement.sapphireSword=Time for an Upgrade");
 		writeToFile("achievement.sapphireSword.desc=Craft a Sapphire Sword");
-		writeToFile("achievement.ore=Unknown Substance");
+		writeToFile("achievement.ore=Unfamiliar Substance");
 		writeToFile("achievement.ore.desc=Obtain Sapphire");
+		writeToFile("achievement.gem=Dungeon Looter");
+		writeToFile("achievement.gem.desc=Obtain a dungeon gemstone");
 		writeToFile("item.record.underwaterWorld.desc=Chris Geddes - Underwater World");
 		writeToFile("item.record.blueWater.desc=Chris Geddes - Blue Water");
 		writeToFile("item.record.raceStar.desc=Chris Geddes - Race Star");
