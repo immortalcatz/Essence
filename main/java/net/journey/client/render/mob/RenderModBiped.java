@@ -18,7 +18,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderModBiped<T> extends RenderBiped {
 
-	private ResourceLocation tex;
+	public static ResourceLocation tex;
 	private float scale = 1.0F;
 	
 	public RenderModBiped(ModelBiped m, ResourceLocation tex) {
