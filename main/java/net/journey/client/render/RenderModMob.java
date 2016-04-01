@@ -10,13 +10,14 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-public class RenderModMob extends RenderLiving {
+public class RenderModMob<T> extends RenderLiving {
 
 	private ResourceLocation texture;
 
@@ -30,7 +31,7 @@ public class RenderModMob extends RenderLiving {
 	}
 
 	@Override
-	public void doRender(Entity entity, double x, double y, double z, float f, float partialTicks) {
+	public void doRender(EntityLiving entity, double x, double y, double z, float f, float partialTicks) {
 		if(Minecraft.getMinecraft().gameSettings.showDebugInfo) {
 			if(Config.showEntityHealth) {
 				EntityLivingBase e = (EntityLivingBase)entity;
@@ -61,13 +62,13 @@ public class RenderModMob extends RenderLiving {
 			WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 			byte b0 = 0;
 			GlStateManager.disableTexture2D();
-			worldrenderer.startDrawingQuads();
+			worldrenderer.begin(0, null);
 			int j = fontrenderer.getStringWidth(s) / 2;
-			worldrenderer.setColorRGBA_F(0.0F, 0.0F, 0.0F, 0.25F);
-			worldrenderer.addVertex((double)(-j - 1), (double)(-1 + b0), 0.0D);
-			worldrenderer.addVertex((double)(-j - 1), (double)(8 + b0), 0.0D);
-			worldrenderer.addVertex((double)(j + 1), (double)(8 + b0), 0.0D);
-			worldrenderer.addVertex((double)(j + 1), (double)(-1 + b0), 0.0D);
+			worldrenderer.color(0.0F, 0.0F, 0.0F, 0.25F);
+			worldrenderer.pos((double)(-j - 1), (double)(-1 + b0), 0.0D);
+			worldrenderer.pos((double)(-j - 1), (double)(8 + b0), 0.0D);
+			worldrenderer.pos((double)(j + 1), (double)(8 + b0), 0.0D);
+			worldrenderer.pos((double)(j + 1), (double)(-1 + b0), 0.0D);
 			tessellator.draw();
 			GlStateManager.enableTexture2D();
 			fontrenderer.drawString(s, -fontrenderer.getStringWidth(s) / 2, b0, 553648127);

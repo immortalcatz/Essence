@@ -27,19 +27,19 @@ public class ProgressBar {
 		Tessellator t = Tessellator.getInstance();
 		WorldRenderer tessellator = t.getWorldRenderer();
 		GL11.glDisable(3553);
-		tessellator.startDrawingQuads();
-		tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 1.0F);
-		tessellator.addVertex(x - width / 2 + 1, y + 1, 0.0);
-		tessellator.addVertex(x - width / 2 + 1, y + height - 1, 0.0);
-		tessellator.addVertex(x + width / 2 - 1, y + height - 1, 0.0);
-		tessellator.addVertex(x + width / 2 - 1, y + 1, 0.0);
+		tessellator.begin(0, null);
+		tessellator.putColorRGB_F4(0.0F, 0.0F, 0.0F);
+		tessellator.pos(x - width / 2 + 1, y + 1, 0.0);
+		tessellator.pos(x - width / 2 + 1, y + height - 1, 0.0);
+		tessellator.pos(x + width / 2 - 1, y + height - 1, 0.0);
+		tessellator.pos(x + width / 2 - 1, y + 1, 0.0);
 		
 		int barWidth = (int) (((float) value) / ((float) maxValue) * (((float) width) - 6f));
-		tessellator.setColorRGBA_F(1.0F -((float)value / (float)maxValue) * 0.8F, 0.2F + ((float)value / (float)maxValue) * 0.8F, 0.2F, 1.0F);
-		tessellator.addVertex(x - width / 2 + 3, y + 3, 0.0);
-		tessellator.addVertex(x - width / 2 + 3, y + height - 3, 0.0);
-		tessellator.addVertex(x - width / 2 + 3 + barWidth, y + height - 3, 0.0);
-		tessellator.addVertex(x - width / 2 + 3 + barWidth, y + 3, 0.0);
+		tessellator.putColorRGB_F4(1.0F -((float)value / (float)maxValue) * 0.8F, 0.2F + ((float)value / (float)maxValue) * 0.8F, 0.2F);
+		tessellator.pos(x - width / 2 + 3, y + 3, 0.0);
+		tessellator.pos(x - width / 2 + 3, y + height - 3, 0.0);
+		tessellator.pos(x - width / 2 + 3 + barWidth, y + height - 3, 0.0);
+		tessellator.pos(x - width / 2 + 3 + barWidth, y + 3, 0.0);
 		t.draw();
 		
 		GL11.glPopMatrix();

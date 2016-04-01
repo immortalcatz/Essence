@@ -15,6 +15,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.resources.model.ModelBakery;
@@ -39,7 +40,6 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
@@ -232,21 +232,25 @@ public class SlayerAPI {
 		public static final String	RESET		= SECTION_SIGN + "r";
 	}
 
+	
 	/**
 	 * Not used in 1.8
 	 */
+	/**
 	@Deprecated
-	public static void registerItemRenderer(Item i, IItemRenderer ir) {
+	public static void registerItemRenderer(Item i, ItemRenderer ir) {
 		MinecraftForgeClient.registerItemRenderer(i, ir);
 	}
 
 	/**
 	 * Not used in 1.8
 	 */
+	/**
 	@Deprecated
-	public static void registerItemRenderer(Block b, IItemRenderer ir) {
+	public static void registerItemRenderer(Block b, ItemRenderer ir) {
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(b), ir);
 	}
+	*/
 
 	@SideOnly(Side.CLIENT)
 	public static void sendMessageToAll(String message, boolean showMod) {
@@ -383,7 +387,7 @@ public class SlayerAPI {
 		if(stack != null) {
 			GL11.glTranslated(x, y, z);
 			GL11Helper.scale(scale);
-			renderItem.renderItemModel(stack);
+			renderItem.renderItemModelForEntity(stack, null, null);
 		}
 	}
 	

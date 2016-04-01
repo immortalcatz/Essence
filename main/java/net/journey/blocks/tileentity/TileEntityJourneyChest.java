@@ -15,17 +15,17 @@ import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntityJourneyChest extends TileEntityLockable implements IUpdatePlayerListBox, IInventory
+public class TileEntityJourneyChest extends TileEntityLockable implements ITickable, IInventory
 {
     private ItemStack[] chestContents = new ItemStack[27];
     /** Determines if the check for adjacent chests has taken place. */
@@ -530,4 +530,10 @@ public class TileEntityJourneyChest extends TileEntityLockable implements IUpdat
                 }
             }
         }
+
+	@Override
+	public ItemStack removeStackFromSlot(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

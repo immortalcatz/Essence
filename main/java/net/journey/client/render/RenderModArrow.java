@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.util.MathHelper;
@@ -56,29 +57,29 @@ public class RenderModArrow extends Render {
         GlStateManager.scale(f10, f10, f10);
         GlStateManager.translate(-4.0F, 0.0F, 0.0F);
         GL11.glNormal3f(f10, 0.0F, 0.0F);
-        worldrenderer.startDrawingQuads();
-        worldrenderer.addVertexWithUV(-7.0D, -2.0D, -2.0D, (double)f6, (double)f8);
-        worldrenderer.addVertexWithUV(-7.0D, -2.0D, 2.0D, (double)f7, (double)f8);
-        worldrenderer.addVertexWithUV(-7.0D, 2.0D, 2.0D, (double)f7, (double)f9);
-        worldrenderer.addVertexWithUV(-7.0D, 2.0D, -2.0D, (double)f6, (double)f9);
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+        worldrenderer.pos(-7.0D, -2.0D, -2.0D);
+        worldrenderer.pos(-7.0D, -2.0D, 2.0D);
+        worldrenderer.pos(-7.0D, 2.0D, 2.0D);
+        worldrenderer.pos(-7.0D, 2.0D, -2.0D);
         tessellator.draw();
         GL11.glNormal3f(-f10, 0.0F, 0.0F);
-        worldrenderer.startDrawingQuads();
-        worldrenderer.addVertexWithUV(-7.0D, 2.0D, -2.0D, (double)f6, (double)f8);
-        worldrenderer.addVertexWithUV(-7.0D, 2.0D, 2.0D, (double)f7, (double)f8);
-        worldrenderer.addVertexWithUV(-7.0D, -2.0D, 2.0D, (double)f7, (double)f9);
-        worldrenderer.addVertexWithUV(-7.0D, -2.0D, -2.0D, (double)f6, (double)f9);
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+        worldrenderer.pos(-7.0D, 2.0D, -2.0D);
+        worldrenderer.pos(-7.0D, 2.0D, 2.0D);
+        worldrenderer.pos(-7.0D, -2.0D, 2.0D);
+        worldrenderer.pos(-7.0D, -2.0D, -2.0D);
         tessellator.draw();
 
         for (int i = 0; i < 4; ++i)
         {
             GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
             GL11.glNormal3f(0.0F, 0.0F, f10);
-            worldrenderer.startDrawingQuads();
-            worldrenderer.addVertexWithUV(-8.0D, -2.0D, 0.0D, (double)f2, (double)f4);
-            worldrenderer.addVertexWithUV(8.0D, -2.0D, 0.0D, (double)f3, (double)f4);
-            worldrenderer.addVertexWithUV(8.0D, 2.0D, 0.0D, (double)f3, (double)f5);
-            worldrenderer.addVertexWithUV(-8.0D, 2.0D, 0.0D, (double)f2, (double)f5);
+            worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+            worldrenderer.pos(-8.0D, -2.0D, 0.0D);
+            worldrenderer.pos(8.0D, -2.0D, 0.0D);
+            worldrenderer.pos(8.0D, 2.0D, 0.0D);
+            worldrenderer.pos(-8.0D, 2.0D, 0.0D);
             tessellator.draw();
         }
 

@@ -13,7 +13,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -119,7 +118,7 @@ public class TileEntityTrophyTable extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public ItemStack getStackInSlotOnClosing(int index) {
+	public ItemStack removeStackFromSlot(int index) {
 		if(this.inventory[index] != null)  {
 			ItemStack itemstack = inventory[index];
 			this.inventory[index] = null;

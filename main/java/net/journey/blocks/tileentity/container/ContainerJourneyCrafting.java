@@ -65,7 +65,7 @@ public class ContainerJourneyCrafting extends Container
         {
             for (int i = 0; i < 9; ++i)
             {
-                ItemStack itemstack = this.matrix.getStackInSlotOnClosing(i);
+                ItemStack itemstack = this.matrix.removeStackFromSlot(i);
 
                 if (itemstack != null)
                 {

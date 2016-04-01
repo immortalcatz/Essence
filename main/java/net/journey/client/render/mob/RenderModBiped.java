@@ -11,11 +11,12 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderModBiped extends RenderBiped {
+public class RenderModBiped<T> extends RenderBiped {
 
 	private ResourceLocation tex;
 	private float scale = 1.0F;
@@ -37,7 +38,7 @@ public class RenderModBiped extends RenderBiped {
 	}
 
 	@Override
-	public void doRender(Entity entity, double x, double y, double z, float f, float partialTicks) {
+	public void doRender(EntityLiving entity, double x, double y, double z, float f, float partialTicks) {
 		if(Config.showEntityHealth) {
 			EntityLivingBase e = (EntityLivingBase)entity;
 			renderHealth(e, EnumChatFormatting.GREEN + "Health: " + EnumChatFormatting.AQUA + (int)e.getHealth() + "/" + (int)e.getMaxHealth(), x, y, z, Config.entityHealthDistance);
@@ -66,13 +67,13 @@ public class RenderModBiped extends RenderBiped {
 			WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 			byte b0 = 0;
 			GlStateManager.disableTexture2D();
-			worldrenderer.startDrawingQuads();
+			worldrenderer.begin(0, null);
 			int j = fontrenderer.getStringWidth(s) / 2;
-			worldrenderer.setColorRGBA_F(0.0F, 0.0F, 0.0F, 0.25F);
-			worldrenderer.addVertex((double)(-j - 1), (double)(-1 + b0), 0.0D);
-			worldrenderer.addVertex((double)(-j - 1), (double)(8 + b0), 0.0D);
-			worldrenderer.addVertex((double)(j + 1), (double)(8 + b0), 0.0D);
-			worldrenderer.addVertex((double)(j + 1), (double)(-1 + b0), 0.0D);
+			worldrenderer.color(0.0F, 0.0F, 0.0F, 0.25F);
+			worldrenderer.pos((double)(-j - 1), (double)(-1 + b0), 0.0D);
+			worldrenderer.pos((double)(-j - 1), (double)(8 + b0), 0.0D);
+			worldrenderer.pos((double)(j + 1), (double)(8 + b0), 0.0D);
+			worldrenderer.pos((double)(j + 1), (double)(-1 + b0), 0.0D);
 			tessellator.draw();
 			GlStateManager.enableTexture2D();
 			fontrenderer.drawString(s, -fontrenderer.getStringWidth(s) / 2, b0, 553648127);
@@ -87,7 +88,7 @@ public class RenderModBiped extends RenderBiped {
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(Entity e) {
+	protected ResourceLocation getEntityTexture(T entity){
 		return tex;
 	}
 }
