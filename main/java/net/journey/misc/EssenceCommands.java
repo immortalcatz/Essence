@@ -22,7 +22,7 @@ import net.minecraft.world.Teleporter;
 public class EssenceCommands extends CommandBase {
 
 	@Override
-	public String getName() {
+	public String getCommandName() {
 		return "essence";
 	}
 	
@@ -32,7 +32,7 @@ public class EssenceCommands extends CommandBase {
 	}
 
 	@Override
-	public void execute(ICommandSender var1, String[] var2) throws CommandException {
+	public void processCommand(ICommandSender var1, String[] var2) throws CommandException {
 		EntityPlayerMP p = null;
 		try {
 			p = getCommandSenderAsPlayer(var1);

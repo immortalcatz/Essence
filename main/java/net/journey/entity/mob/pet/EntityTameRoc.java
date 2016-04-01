@@ -277,7 +277,6 @@ public class EntityTameRoc extends EntityModTameable {
 		return !this.isTamed() && this.ticksExisted > 1200;
 	}
 
-	@Override
 	public boolean func_142018_a(EntityLivingBase par1EntityLivingBase, EntityLivingBase par2EntityLivingBase) {
 		if(!(par1EntityLivingBase instanceof EntityCreeper) && !(par1EntityLivingBase instanceof EntityGhast)) {
 			if(par1EntityLivingBase instanceof EntityTameRoc) {

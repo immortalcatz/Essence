@@ -38,16 +38,15 @@ public class EntitySummoningFX extends EntityFX{
 	}
 	
 	@Override
-	public void func_180434_a(WorldRenderer wr, Entity e, float partialTicks, float f3, float f4, float f5, float f6, float f7) {
+	public void renderParticle(WorldRenderer wr, Entity e, float partialTicks, float f3, float f4, float f5, float f6, float f7) {
 		Minecraft.getMinecraft().getTextureManager().bindTexture(this.texture);
 		GL11.glDepthMask(false);
 		GL11.glEnable(GL_BLEND);		
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glAlphaFunc(GL_GREATER, 0.003921569F);		
-		wr.startDrawingQuads();
-		wr.setBrightness(this.getBrightnessForRender(partialTicks));
-        wr.setBrightness(getBrightnessForRender(partialTicks));        
-        super.func_180434_a(wr, e, partialTicks, f3, f7, f5, f6, f7);
+		wr.begin(color, null);
+		wr.putBrightness4(this.getBrightnessForRender(partialTicks), 0, 0, 0);
+        super.renderParticle(wr, e, partialTicks, f3, f7, f5, f6, f7);
         GlStateManager.disableBlend();
         GlStateManager.enableLighting();
         float scale = 0.1F*particleScale;
@@ -64,22 +63,22 @@ public class EntitySummoningFX extends EntityFX{
 		wr.addVertexWithUV(ipx + f3 * this.scale + f4 * this.scale, ipy + f5 * this.scale, ipz + f6 * this.scale + f7 * this.scale, 0.0D, this.currentTexture * this.relativeTextureHeight);
 		wr.addVertexWithUV(ipx + f3 * this.scale - f4 * this.scale, ipy - f5 * this.scale, ipz + f6 * this.scale - f7 * this.scale, 0.0D, (this.currentTexture + 1) * this.relativeTextureHeight);
 		*/
-        wr.addVertexWithUV (
+        wr.pos (
         		x - f3 * scale - f6 * scale *this.scale, 
         		y - f4 * scale - f5 * scale,
-        		z - f5 * scale - f7 * scale, 0, 0);
-        wr.addVertexWithUV (
+        		z - f5 * scale - f7 * scale);
+        wr.pos (
         		x - f3 * scale + f6 * scale, 
         		y - f4 * scale - f5 * scale,
-        		z - f5 * scale + f7 * scale, 1, 0);
-        wr.addVertexWithUV (
+        		z - f5 * scale + f7 * scale);
+        wr.pos (
         		x + f3 * scale + f6 * scale, 
         		y + f4 * scale - f5 * scale,
-        		z + f5 * scale + f7 * scale, 1, 1);
-        wr.addVertexWithUV (
+        		z + f5 * scale + f7 * scale);
+        wr.pos (
         		x + f3 * scale - f6 * scale, 
         		y - f4 * scale - f5 * scale,
-        		z + f5 * scale - f7 * scale, 0, 1);
+        		z + f5 * scale - f7 * scale);
         Tessellator.getInstance().draw();
         glDisable(GL_BLEND);
         glDepthMask(true);

@@ -103,16 +103,11 @@ public class EntitySkyStalker extends EntityEssenceBoss {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		// TODO Auto-generated method stub
-		return 0;
+		return 20;
 	}
 
 	@Override
 	public void fall(float distance, float damageMultiplier) {
-	}
-
-	@Override
-	protected void func_180433_a(double p_180433_1_, boolean p_180433_3_, Block p_180433_4_, BlockPos p_180433_5_) {
 	}
 
 	@Override
@@ -169,9 +164,9 @@ public class EntitySkyStalker extends EntityEssenceBoss {
 			if (!entitymovehelper.isUpdating()) {
 				return true;
 			} else {
-				double d0 = entitymovehelper.func_179917_d() - this.e.posX;
-				double d1 = entitymovehelper.func_179919_e() - this.e.posY;
-				double d2 = entitymovehelper.func_179918_f() - this.e.posZ;
+				double d0 = entitymovehelper.getX() - this.e.posX;
+				double d1 = entitymovehelper.getY() - this.e.posY;
+				double d2 = entitymovehelper.getZ() - this.e.posZ;
 				double d3 = d0 * d0 + d1 * d1 + d2 * d2;
 				return d3 < 1.0D || d3 > 3600.0D;
 			}

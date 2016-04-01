@@ -44,7 +44,7 @@ public class EntityMagmaFireball extends EntitySmallFireball {
                 flag = m.entityHit.attackEntityFrom(DamageSource.causeFireballDamage(this, this.shootingEntity), 5.0F);
 
                 if (flag) {
-                    this.func_174815_a(this.shootingEntity, m.entityHit);
+                	 this.applyEnchantments(this.shootingEntity, m.entityHit);
 
                     if (!m.entityHit.isImmuneToFire()) {
                         m.entityHit.setFire(5);
@@ -54,7 +54,7 @@ public class EntityMagmaFireball extends EntitySmallFireball {
                 flag = true;
 
                 if (this.shootingEntity != null && this.shootingEntity instanceof EntityLiving) {
-                    flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
+                    flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
                 }
 
                 if (flag) {

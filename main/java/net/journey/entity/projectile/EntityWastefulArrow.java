@@ -130,7 +130,7 @@ public class EntityWastefulArrow extends EntityArrow implements IProjectile {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void func_180426_a(double x, double y, double z, float r, float yaw, int i, boolean b) {
+	public void setPositionAndRotation2(double x, double y, double z, float r, float yaw, int i, boolean b) {
 		this.setPosition(x, y, z);
 		this.setRotation(r, yaw);
 	}
@@ -288,8 +288,8 @@ public class EntityWastefulArrow extends EntityArrow implements IProjectile {
 							}
 
 							if (this.shootingEntity instanceof EntityLivingBase) {
-								EnchantmentHelper.func_151384_a(entitylivingbase, this.shootingEntity);
-								EnchantmentHelper.func_151385_b((EntityLivingBase)this.shootingEntity, entitylivingbase);
+								EnchantmentHelper.applyThornEnchantments(entitylivingbase, this.shootingEntity);
+                                EnchantmentHelper.applyArthropodEnchantments((EntityLivingBase)this.shootingEntity, entitylivingbase);
 							}
 
 							if (this.shootingEntity != null && movingobjectposition.entityHit != this.shootingEntity && movingobjectposition.entityHit instanceof EntityPlayer && this.shootingEntity instanceof EntityPlayerMP) {

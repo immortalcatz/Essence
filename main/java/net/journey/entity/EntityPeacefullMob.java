@@ -29,9 +29,8 @@ import com.google.common.base.Predicate;
 
 public abstract class EntityPeacefullMob extends EntityCreature implements IMob
 {
-    protected final EntityAIBase field_175455_a = new EntityAIAvoidEntity(this, new Predicate()
+    protected final EntityAIBase field_175455_a = new EntityAIAvoidEntity(this, null, new Predicate()
     {
-        private static final String __OBFID = "CL_00002208";
         public boolean func_179911_a(Entity p_179911_1_)
         {
             return p_179911_1_ instanceof EntityCreeper && ((EntityCreeper)p_179911_1_).getCreeperState() > 0;

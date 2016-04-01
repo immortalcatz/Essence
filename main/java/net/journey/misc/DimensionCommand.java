@@ -20,7 +20,7 @@ import net.minecraft.world.Teleporter;
 public class DimensionCommand extends CommandBase {
 
 	@Override
-	public String getName() {
+	public String getCommandName() {
 		return "dimension";
 	}
 
@@ -30,7 +30,7 @@ public class DimensionCommand extends CommandBase {
 	}
 
 	@Override
-	public void execute(ICommandSender var1, String[] var2) throws CommandException {
+	public void processCommand(ICommandSender var1, String[] var2) throws CommandException {
 		EntityPlayerMP playerMP = getCommandSenderAsPlayer(var1);
 		if(!playerMP.worldObj.isRemote) {
 			if(var2[0].equalsIgnoreCase("Overworld")) {

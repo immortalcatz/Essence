@@ -37,7 +37,7 @@ public class EntityPower extends EntityThrowable {
 		super.onUpdate();
 		lifeTicks--;
 		if(lifeTicks >= 0) this.setDead();
-		List<EntityLivingBase> list = this.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, this.getBoundingBox().expand(10.0D, 10.0D, 10.0D));
+		List<EntityLivingBase> list = this.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, this.getEntityBoundingBox().expand(10.0D, 10.0D, 10.0D));
 		if(list != null) {
 			for(int i = 0; i < list.size(); i++) {
 				Entity entity1 = (Entity)list.get(i);

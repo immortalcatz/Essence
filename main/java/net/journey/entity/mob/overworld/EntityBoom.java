@@ -200,7 +200,7 @@ public class EntityBoom extends EntityModMob {
 
 	private void func_146077_cc() {
 		if (!this.worldObj.isRemote) {
-			boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
+			boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
 
 			if (this.getPowered()) {
 				this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)(this.explosionRadius * 2), flag);

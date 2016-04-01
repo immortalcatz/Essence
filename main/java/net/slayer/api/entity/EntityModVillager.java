@@ -55,7 +55,7 @@ public abstract class EntityModVillager extends EntityVillager implements INpc, 
 		this.setSize(1.0F, 2.0F);
 		this.randomTickDivider = 0;
 		this.villageObj = null;
-		this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate() {
+		this.tasks.addTask(1, new EntityAIAvoidEntity(this, null, new Predicate() {
             public boolean func_179958_a(Entity p_179958_1_) {
                 return p_179958_1_ instanceof EntityZombie;
             }

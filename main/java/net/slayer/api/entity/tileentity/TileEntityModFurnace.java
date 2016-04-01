@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
+import net.minecraft.util.ITickable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public abstract class TileEntityModFurnace extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory {
+public abstract class TileEntityModFurnace extends TileEntityLockable implements ITickable, ISidedInventory {
 	
 	protected static final int[] slotsTop = new int[] {0};
     protected static final int[] slotsBottom = new int[] {2, 1};
@@ -60,7 +60,7 @@ public abstract class TileEntityModFurnace extends TileEntityLockable implements
     }
 
     @Override
-    public ItemStack getStackInSlotOnClosing(int par1) {
+    public ItemStack removeStackFromSlot(int par1) {
         if(this.furnaceItemStacks[par1] != null) {
             ItemStack itemstack = this.furnaceItemStacks[par1];
             this.furnaceItemStacks[par1] = null;

@@ -35,12 +35,12 @@ public class EntityShimmererFX extends EntityFX {
     }
     
     @Override
-    public void func_180434_a(WorldRenderer worldRenderer, Entity e, float f1, float f2, float f3, float f4, float f5, float f6) {
+    public void renderParticle(WorldRenderer worldRenderer, Entity e, float f1, float f2, float f3, float f4, float f5, float f6) {
         Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/particles/shimmerer.png"));
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(770, 771);
-        worldRenderer.startDrawingQuads();
-        super.func_180434_a(worldRenderer, e, f1, f2, f3, f4, f5, f6);
+        worldRenderer.begin(0, null);
+        super.renderParticle(worldRenderer, e, f1, f2, f3, f4, f5, f6);
         Tessellator.getInstance().draw();
         GlStateManager.disableBlend();
         GlStateManager.enableLighting();

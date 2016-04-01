@@ -7,7 +7,6 @@ import net.journey.event.message.MessageEssenceBar;
 import net.journey.event.message.MessagePowerBar;
 import net.journey.misc.EnchantmentHotTouch;
 import net.journey.misc.EnchantmentWaterWalk;
-import net.journey.misc.FluidTropical;
 import net.journey.proxy.CommonProxy;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;

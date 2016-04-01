@@ -37,11 +37,11 @@ public class ContainerModFurnace extends Container {
 	}
 	
 	@Override
-    public void addCraftingToCrafters(ICrafting par1ICrafting) {
-        super.addCraftingToCrafters(par1ICrafting);
-        par1ICrafting.sendProgressBarUpdate(this, 0, this.tileFurnace.furnaceCookTime);
-		par1ICrafting.sendProgressBarUpdate(this, 1, this.tileFurnace.furnaceBurnTime);
-		par1ICrafting.sendProgressBarUpdate(this, 2, this.tileFurnace.currentItemBurnTime);
+	 public void onCraftGuiOpened(ICrafting listener) {
+        super.onCraftGuiOpened(listener);
+        listener.sendProgressBarUpdate(this, 0, this.tileFurnace.furnaceCookTime);
+		listener.sendProgressBarUpdate(this, 1, this.tileFurnace.furnaceBurnTime);
+		listener.sendProgressBarUpdate(this, 2, this.tileFurnace.currentItemBurnTime);
     }
 
 	@Override
