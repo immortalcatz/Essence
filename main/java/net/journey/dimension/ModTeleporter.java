@@ -64,11 +64,11 @@ public class ModTeleporter extends Teleporter {
 	}
 
 	@Override
-	public boolean placeInExistingPortal(Entity p_180620_1_, float p_180620_2_) {
+	public boolean placeInExistingPortal(Entity e, float par2) {
 		boolean flag = true;
 		double d0 = -1.0D;
-		int i = MathHelper.floor_double(p_180620_1_.posX);
-		int j = MathHelper.floor_double(p_180620_1_.posZ);
+		int i = MathHelper.floor_double(e.posX);
+		int j = MathHelper.floor_double(e.posZ);
 		boolean flag1 = true;
 		Object object = BlockPos.ORIGIN;
 		long k = ChunkCoordIntPair.chunkXZ2Int(i, j);
@@ -83,7 +83,7 @@ public class ModTeleporter extends Teleporter {
 		}
 		else
 		{
-			BlockPos blockpos4 = new BlockPos(p_180620_1_);
+			BlockPos blockpos4 = new BlockPos(e);
 
 			for (int l = -128; l <= 128; ++l)
 			{
@@ -148,7 +148,8 @@ public class ModTeleporter extends Teleporter {
 				enumfacing = EnumFacing.WEST;
 			}
 
-			EnumFacing enumfacing1 = EnumFacing.getHorizontal(p_180620_1_.getTeleportDirection());
+			EnumFacing enumfacing1 = EnumFacing.getHorizontal(0);
+			//EnumFacing enumfacing1 = EnumFacing.getHorizontal(e.func_181012_aH());
 
 			if (enumfacing != null)
 			{
@@ -214,18 +215,18 @@ public class ModTeleporter extends Teleporter {
 					f5 = 1.0F;
 				}
 
-				double d2 = p_180620_1_.motionX;
-				double d3 = p_180620_1_.motionZ;
-				p_180620_1_.motionX = d2 * (double)f2 + d3 * (double)f5;
-				p_180620_1_.motionZ = d2 * (double)f4 + d3 * (double)f3;
-				p_180620_1_.rotationYaw = p_180620_2_ - (float)(enumfacing1.getHorizontalIndex() * 90) + (float)(enumfacing.getHorizontalIndex() * 90);
+				double d2 = e.motionX;
+				double d3 = e.motionZ;
+				e.motionX = d2 * (double)f2 + d3 * (double)f5;
+				e.motionZ = d2 * (double)f4 + d3 * (double)f3;
+				e.rotationYaw = par2 - (float)(enumfacing1.getHorizontalIndex() * 90) + (float)(enumfacing.getHorizontalIndex() * 90);
 			}
 			else
 			{
-				p_180620_1_.motionX = p_180620_1_.motionY = p_180620_1_.motionZ = 0.0D;
+				e.motionX = e.motionY = e.motionZ = 0.0D;
 			}
 
-			p_180620_1_.setLocationAndAngles(d4, d5, d6, p_180620_1_.rotationYaw, p_180620_1_.rotationPitch);
+			e.setLocationAndAngles(d4, d5, d6, e.rotationYaw, e.rotationPitch);
 			return true;
 		}
 		else

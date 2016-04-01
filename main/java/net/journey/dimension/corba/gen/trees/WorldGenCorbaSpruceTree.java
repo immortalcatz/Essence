@@ -96,7 +96,7 @@ public class WorldGenCorbaSpruceTree extends WorldGenAbstractTree {
 
                                 if ((Math.abs(j3) != i3 || Math.abs(l2) != i3 || i3 <= 0) && p_76484_1_.getBlockState(new BlockPos(j2, i2, k2)).getBlock().canBeReplacedByLeaves(p_76484_1_, new BlockPos(j2, i2, k2)))
                                 {
-                                    this.func_175905_a(p_76484_1_, new BlockPos(j2, i2, k2), leaves, 1);
+                                    this.setBlockAndNotifyAdequately(p_76484_1_, new BlockPos(j2, i2, k2), leaves.getDefaultState());
                                 }
                             }
                         }
@@ -117,7 +117,7 @@ public class WorldGenCorbaSpruceTree extends WorldGenAbstractTree {
 
                         if (block2.isAir(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_)) || block2.isLeaves(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_)))
                         {
-                            this.func_175905_a(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_), log, 1);
+                            this.setBlockAndNotifyAdequately(p_76484_1_, new BlockPos(p_76484_3_, p_76484_4_ + i2, p_76484_5_), log.getDefaultState());
                         }
                     }
 

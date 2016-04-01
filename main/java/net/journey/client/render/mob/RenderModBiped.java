@@ -16,7 +16,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderModBiped<T> extends RenderBiped {
+public class RenderModBiped<T extends EntityLiving> extends RenderBiped<T>   {
 
 	public static ResourceLocation tex;
 	private float scale = 1.0F;
@@ -33,12 +33,12 @@ public class RenderModBiped<T> extends RenderBiped {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityLivingBase var1, float var2) {
+	protected void preRenderCallback(T var1, float var2) {
 		GL11.glScalef(scale, scale, scale);
 	}
 
 	@Override
-	public void doRender(EntityLiving entity, double x, double y, double z, float f, float partialTicks) {
+	public void doRender(T entity, double x, double y, double z, float f, float partialTicks) {
 		if(Config.showEntityHealth) {
 			EntityLivingBase e = (EntityLivingBase)entity;
 			renderHealth(e, EnumChatFormatting.GREEN + "Health: " + EnumChatFormatting.AQUA + (int)e.getHealth() + "/" + (int)e.getMaxHealth(), x, y, z, Config.entityHealthDistance);
@@ -67,7 +67,7 @@ public class RenderModBiped<T> extends RenderBiped {
 			WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 			byte b0 = 0;
 			GlStateManager.disableTexture2D();
-			worldrenderer.begin(0, null);
+			worldrenderer.begin(GL11.GL_QUADS, worldrenderer.getVertexFormat());
 			int j = fontrenderer.getStringWidth(s) / 2;
 			worldrenderer.color(0.0F, 0.0F, 0.0F, 0.25F);
 			worldrenderer.pos((double)(-j - 1), (double)(-1 + b0), 0.0D);

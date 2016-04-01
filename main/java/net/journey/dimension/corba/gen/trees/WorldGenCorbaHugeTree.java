@@ -101,7 +101,7 @@ public class WorldGenCorbaHugeTree extends WorldGenAbstractTree {
 					Block block = w.getBlockState(new BlockPos(j1, y, l1)).getBlock();
 
 					if (block.isAir(w, new BlockPos(j1, y, l1)) || block.isLeaves(w, new BlockPos(j1, y, l1))) {
-						this.func_175905_a(w, new BlockPos(j1, y, l1), leaves, 0);
+						this.setBlockAndNotifyAdequately(w, new BlockPos(j1, y, l1), leaves.getDefaultState());
 					}
 				}
 			}
@@ -121,7 +121,7 @@ public class WorldGenCorbaHugeTree extends WorldGenAbstractTree {
 					Block block = w.getBlockState(new BlockPos(j1, y, l1)).getBlock();
 
 					if (block.isAir(w, new BlockPos(j1, y, l1)) || block.isLeaves(w, new BlockPos(j1, y, l1))) {
-						this.func_175905_a(w, new BlockPos(j1, y, l1), leaves, 0);
+						this.setBlockAndNotifyAdequately(w, new BlockPos(j1, y, l1), leaves.getDefaultState());
 					}
 				}
 			}
