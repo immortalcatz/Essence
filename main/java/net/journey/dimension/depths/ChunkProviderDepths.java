@@ -26,6 +26,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -398,9 +399,9 @@ public class ChunkProviderDepths implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType c, BlockPos p) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p);
-		return biomegenbase.getSpawnableList(c);
+	public List <SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(pos);
+		return biomegenbase.getSpawnableList(creatureType);
 	}
 
 	@Override

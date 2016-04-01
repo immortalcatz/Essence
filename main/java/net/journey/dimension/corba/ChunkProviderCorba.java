@@ -29,6 +29,7 @@ import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -226,8 +227,8 @@ public class ChunkProviderCorba implements IChunkProvider {
 		this.setBlocksInChunk(x, z, chunkprimer);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, x * 16, z * 16, 16, 16);
 		this.biomeBlocks(x, z, chunkprimer, this.biomesForGeneration);
-		this.caveGenerator.func_175792_a(this, this.worldObj, x, z, chunkprimer);
-		this.ravineGenerator.func_175792_a(this, this.worldObj, x, z, chunkprimer);
+		this.caveGenerator.generate(this, this.worldObj, x, z, chunkprimer);
+		this.ravineGenerator.generate(this, this.worldObj, x, z, chunkprimer);
 		Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
 		for(int k = 0; k < abyte.length; ++k) abyte[k] = (byte)this.biomesForGeneration[k].biomeID;
@@ -434,9 +435,9 @@ public class ChunkProviderCorba implements IChunkProvider {
 	}
 
 	@Override
-	public List func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p_177458_2_);
-		return biomegenbase.getSpawnableList(p_177458_1_);
+	public List <SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(pos);
+		return biomegenbase.getSpawnableList(creatureType);
 	}
 
 	@Override

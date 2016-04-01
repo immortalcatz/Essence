@@ -318,9 +318,9 @@ public class ChunkProviderEuca implements IChunkProvider {
 	}
 
 	@Override
-	public List<?> func_177458_a(EnumCreatureType p_177458_1_, BlockPos p_177458_2_) {
-		BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(p_177458_2_);
-		return var5 == null ? null : var5.getSpawnableList(p_177458_1_);
+	public List <SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(pos);
+		return biomegenbase.getSpawnableList(creatureType);
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -152,9 +153,9 @@ public class ChunkProviderCloudia implements IChunkProvider {
 	}
 
 	@Override
-	public List<?> func_177458_a(EnumCreatureType t, BlockPos p) {
-		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p);
-		return biomegenbase.getSpawnableList(t);
+	public List <SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
+		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(pos);
+		return biomegenbase.getSpawnableList(creatureType);
 	}
 
 	@Override

@@ -192,8 +192,7 @@ public abstract class EntityPeacefullMob extends EntityCreature implements IMob
             {
                 p_70652_1_.setFire(j * 4);
             }
-
-            this.func_174815_a(this, p_70652_1_);
+            //this.func_174815_a(this, p_70652_1_);
         }
 
         return flag;

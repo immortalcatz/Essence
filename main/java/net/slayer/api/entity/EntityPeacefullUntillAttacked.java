@@ -59,9 +59,7 @@ public abstract class EntityPeacefullUntillAttacked extends EntityModMob {
 			super(EntityPeacefullUntillAttacked.this, true, new Class[0]);
 		}
 
-		@Override
 		protected void func_179446_a(EntityCreature p_179446_1_, EntityLivingBase p_179446_2_) {
-			super.func_179446_a(p_179446_1_, p_179446_2_);
 			if (p_179446_1_ instanceof EntityPeacefullUntillAttacked) {
 				((EntityPeacefullUntillAttacked)p_179446_1_).becomeAngryAt(p_179446_2_);
 			}
