@@ -63,7 +63,7 @@ public class RenderStaffProjectile extends Render {
         float f10 = 0.05625F;
         GL11.glRotatef(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
-        tessellator.begin(0, null);
+        tessellator.begin(GL11.GL_QUADS, tessellator.getVertexFormat());
         GL11.glNormal3f(f10, 0.0F, 0.0F);
         tessellator.pos(0.0F - f8, 0.0F - f9, 0.0D);
         tessellator.pos(f7 - f8, 0.0F - f9, 0.0D);

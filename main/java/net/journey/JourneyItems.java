@@ -448,6 +448,7 @@ public class JourneyItems {
 	public static final Item staffOfGreenpace = new ItemStaff("staffOfGreenpace", "Staff Of Greenpace", true, 3, 1000, 10, false, EntityGreenpace.class);
 	public static final Item wizardsStar = new ItemStaff("wizardsStar", "Wizards Star", true, 3, 1000, 5, false, EntityWizardsStar.class);
 	public static final Item teleportationStaff = new ItemTeleport("teleportationStaff", "Teleportation Staff");
+	public static final Item overgrownStaff = new ItemStaff("overgrownStaff", "Overgrown Staff", true, 3, 1000, 5, false, EntityOvergrown.class);
 
 	/*public static final Item blueEgg = new ItemMod("blueEgg", EssenceTabs.misc);
 	public static final Item redEgg = new ItemMod("redEgg", EssenceTabs.misc);
@@ -510,11 +511,12 @@ public class JourneyItems {
 	public static final Item lightningWand = new ItemWand("lightningWand", "Lightning Wand", false, 10, 600, 8, false, EntityLightningBall.class);
 	
 	public static final Item hammerCreative = new ItemCreativeHammer("hammerCreative", "Hammer of Creative Spellbinding", EssenceToolMaterial.CREATIVE, false, EntityLightningBall.class);
-	public static final Item earthenHammer = new ItemHammer("earthenHammer", "Earthen Hammer", EssenceToolMaterial.EARTHEN_HAMMER, false, EntityEarthen.class, false, true, 8, 4, 642);
-	public static final Item flamingHammer = new ItemHammer("flamingHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1230);
-	public static final Item nethicHammer = new ItemHammer("nethicHammer", "Nethic Hammer", EssenceToolMaterial.NETHIC_HAMMER, false, EntityFireBall.class, false, true, 10, 4, 825);
-	public static final Item withicHammer = new ItemHammer("withicHammer", "Withic Hammer", EssenceToolMaterial.WITHIC_HAMMER, false, EntityWithic.class, false, true, 12, 4, 1230);
-	public static final Item royalHammer = new ItemHammer("royalHammer", "Royal Hammer", EssenceToolMaterial.ROYAL_HAMMER, false, EntityFireBall.class, false, true, 14, 4, 1320);
+	public static final Item earthenHammer = new ItemHammer("earthenHammer", "Earthen Hammer", EssenceToolMaterial.EARTHEN_HAMMER, false, EntityEarthen.class, false, true, 4, 4, 642);
+	public static final Item flamingHammer = new ItemHammer("flamingHammer", "Flaming Hammer", EssenceToolMaterial.FLAMING_HAMMER, false, EntityFireBall.class, false, true, 10, 4, 1230);
+	public static final Item nethicHammer = new ItemHammer("nethicHammer", "Nethic Hammer", EssenceToolMaterial.NETHIC_HAMMER, false, EntityFireBall.class, false, true, 8, 4, 825);
+	public static final Item withicHammer = new ItemHammer("withicHammer", "Withic Hammer", EssenceToolMaterial.WITHIC_HAMMER, false, EntityWithic.class, false, true, 9, 4, 1230);
+	public static final Item royalHammer = new ItemHammer("royalHammer", "Royal Hammer", EssenceToolMaterial.ROYAL_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
+	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
 	public static final Item rockLauncher = new ItemChaosCannon("rockLauncher", "Rock Launcher");
@@ -533,25 +535,8 @@ public class JourneyItems {
 	
 	public static final Item wandBase = new ItemMod("wandBase", "Wand Base");
 	public static final Item staffBase = new ItemMod("staffBase", "Staff Base");
-
-	/**
-	public static final Item whitePresent = new ItemPresent("whitePresent");
-	public static final Item orangePresent = new ItemPresent("orangePresent");
-	public static final Item magentaPresent = new ItemPresent("magentaPresent");
-	public static final Item lightBluePresent = new ItemPresent("lightBluePresent");
-	public static final Item yellowPresent = new ItemPresent("yellowPresent");
-	public static final Item limePresent = new ItemPresent("limePresent");
-	public static final Item pinkPresent = new ItemPresent("pinkPresent");
-	public static final Item grayPresent = new ItemPresent("grayPresent");
-	public static final Item silverPresent = new ItemPresent("silverPresent");
-	public static final Item cyanPresent = new ItemPresent("cyanPresent");
-	public static final Item purplePresent = new ItemPresent("purplePresent");
-	public static final Item bluePresent = new ItemPresent("bluePresent");
-	public static final Item brownPresent = new ItemPresent("brownPresent");
-	public static final Item greenPresent = new ItemPresent("greenPresent");
-	public static final Item redPresent = new ItemPresent("redPresent");
-	public static final Item blackPresent = new ItemPresent("blackPresent");
-	*/
+	
+	public static final Item frostyGift = new ItemPresent("frostyGift", "Frosty Gift");
 
 	//TODO
 	public static final Item friedEgg = new ItemModFood("friedEgg", "Fried Egg", 2, 3.0F, false);
@@ -641,7 +626,7 @@ public class JourneyItems {
 	public static final Item demonicBomb = new ItemThrowable("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
 	
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, 6, EntityBoilingPiercer.class);
-	//public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);
+	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);
 	public static final Item frozenPiercer = new ItemPiercer("frozenPiercer", "Frozen Piercer", 9F, 6, EntityFrozenPiercer.class);
 	public static final Item eucaPiercer = new ItemPiercer("eucaPiercer", "Euca Piercer", 12F, 6, EntityEucaPiercer.class);
 	public static final Item depthsPiercer = new ItemPiercer("depthsPiercer", "Depths Piercer", 21F, 6, EntityDepthsPiercer.class);
@@ -651,8 +636,8 @@ public class JourneyItems {
 	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, 6, EntityFrostyPiercer.class);
 	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, 6, EntityFrostyPiercer.class);
 	
-	public static final Item moltenKnife = new ItemThrowable("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
-	public static final Item royalKnife = new ItemThrowable("royalKnife", "Royal Knife", 14F, EntityFrostyPiercer.class);
+	public static final Item moltenKnife = new ItemKnife("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
+	public static final Item royalKnife = new ItemThrowable("royalKnife", "Royal Knife", 8F, EntityRoyalKnife.class);
 	public static final Item aquaticKnife = new ItemThrowable("aquaticKnife", "Aquatic Knife", 6F, EntityFrostyPiercer.class);
 	public static final Item bloodKnife = new ItemThrowable("bloodKnife", "Blood Knife", 6F, EntityFrostyPiercer.class);
 	public static final Item charredKnife = new ItemThrowable("charredKnife", "Charred Knife", 6F, EntityFrostyPiercer.class);

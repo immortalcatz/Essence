@@ -96,9 +96,9 @@ public class KnowledgeTableRenderer extends TileEntitySpecialRenderer {
 		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 		byte b0 = 0;
 		GlStateManager.disableTexture2D();
-		worldrenderer.begin(b0, null);
+		worldrenderer.begin(GL11.GL_QUADS, worldrenderer.getVertexFormat());
 		int j = fontrenderer.getStringWidth(s) / 2;
-		worldrenderer.putColorRGB_F4(0.0F, 0.0F, 0.0F);
+		worldrenderer.color(0.0F, 0.0F, 0.0F, (float) 0.25);
 		worldrenderer.pos((double)(-j - 1), (double)(-1 + b0), 0.0D);
 		worldrenderer.pos((double)(-j - 1), (double)(8 + b0), 0.0D);
 		worldrenderer.pos((double)(j + 1), (double)(8 + b0), 0.0D);

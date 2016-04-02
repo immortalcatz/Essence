@@ -27,7 +27,7 @@ public class ArmorDescription {
 			list.add("Full set: Adds 4 Melee Damage");
 		
 		if(i == JourneyItems.flairiumHelmet || i == JourneyItems.flairiumChest || i == JourneyItems.flairiumLegs || i == JourneyItems.flairiumBoots)
-			list.add("Full set: Lets You Fly");
+			list.add("Full set: Grants fire resistance");
 		
 		if(i == JourneyItems.sapphireHelmet || i == JourneyItems.sapphireChest || i == JourneyItems.sapphireLegs || i == JourneyItems.sapphireBoots)
 			list.add("Full set: Water breathing");
@@ -45,10 +45,10 @@ public class ArmorDescription {
 			list.add("Full set: Grants increased jump height");
 		
 		if(i == JourneyItems.treehuggersHelmet || i == JourneyItems.treehuggersChest || i == JourneyItems.treehuggersLegs || i == JourneyItems.treehuggersBoots)
-			list.add("Full set: Grants increased farming drops");
+			list.add("Full set: Grants immunity towards poison and wither effects");
 
 		if(i == JourneyItems.charskullHelmet || i == JourneyItems.charskullChest || i == JourneyItems.charskullLegs || i == JourneyItems.charskullBoots)
-			list.add("Full set: Grants immunity towards poison and wither effects");
+			list.add("Full set: Grants fire resistance and damage boost");
 		
 		if(i == JourneyItems.golditeHelmet || i == JourneyItems.golditeChest || i == JourneyItems.golditeLegs || i == JourneyItems.golditeBoots)
 			list.add("Full set: No fall damage and speed II");
