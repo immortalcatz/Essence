@@ -44,8 +44,8 @@ public class EntitySummoningFX extends EntityFX{
 		GL11.glEnable(GL_BLEND);		
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glAlphaFunc(GL_GREATER, 0.003921569F);		
-		wr.begin(color, null);
-		wr.putBrightness4(this.getBrightnessForRender(partialTicks), 0, 0, 0);
+		wr.begin(GL11.GL_QUADS, wr.getVertexFormat());
+		//wr.putBrightness4(this.getBrightnessForRender(partialTicks), 0, 0, 0);
         super.renderParticle(wr, e, partialTicks, f3, f7, f5, f6, f7);
         GlStateManager.disableBlend();
         GlStateManager.enableLighting();
