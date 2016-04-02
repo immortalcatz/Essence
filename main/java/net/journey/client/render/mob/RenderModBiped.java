@@ -39,9 +39,11 @@ public class RenderModBiped<T extends EntityLiving> extends RenderBiped<T>   {
 
 	@Override
 	public void doRender(T entity, double x, double y, double z, float f, float partialTicks) {
-		if(Config.showEntityHealth) {
-			EntityLivingBase e = (EntityLivingBase)entity;
-			renderHealth(e, EnumChatFormatting.GREEN + "Health: " + EnumChatFormatting.AQUA + (int)e.getHealth() + "/" + (int)e.getMaxHealth(), x, y, z, Config.entityHealthDistance);
+		if(Minecraft.getMinecraft().gameSettings.showDebugInfo) {
+			if(Config.showEntityHealth) {
+				EntityLivingBase e = (EntityLivingBase)entity;
+				renderHealth(e, EnumChatFormatting.GREEN + "Health: " + EnumChatFormatting.AQUA + (int)e.getHealth() + "/" + (int)e.getMaxHealth(), x, y, z, Config.entityHealthDistance);
+			}
 		}
 		super.doRender(entity, x, y, z, f, partialTicks);
 	}
