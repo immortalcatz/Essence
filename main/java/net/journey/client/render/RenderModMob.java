@@ -62,7 +62,7 @@ public class RenderModMob<T> extends RenderLiving {
 			WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 			byte b0 = 0;
 			GlStateManager.disableTexture2D();
-			worldrenderer.begin(0, null);
+			worldrenderer.begin(GL11.GL_QUADS, worldrenderer.getVertexFormat());
 			int j = fontrenderer.getStringWidth(s) / 2;
 			worldrenderer.color(0.0F, 0.0F, 0.0F, 0.25F);
 			worldrenderer.pos((double)(-j - 1), (double)(-1 + b0), 0.0D);

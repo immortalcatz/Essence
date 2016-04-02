@@ -46,7 +46,7 @@ public class RenderModBiped<T extends EntityLiving> extends RenderBiped<T>   {
 		super.doRender(entity, x, y, z, f, partialTicks);
 	}
 
-	public void renderHealth(EntityLivingBase e, String s, double x, double y, double z, int distance) {
+	public void renderHealth(Entity e, String s, double x, double y, double z, int distance) {
 		double d3 = e.getDistanceSqToEntity(this.renderManager.livingPlayer);
 		if(d3 <= (double)(distance * distance)) {
 			FontRenderer fontrenderer = this.getFontRendererFromRenderManager();
