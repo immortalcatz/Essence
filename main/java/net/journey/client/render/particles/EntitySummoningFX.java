@@ -45,7 +45,6 @@ public class EntitySummoningFX extends EntityFX{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glAlphaFunc(GL_GREATER, 0.003921569F);		
 		wr.begin(GL11.GL_QUADS, wr.getVertexFormat());
-		//wr.putBrightness4(this.getBrightnessForRender(partialTicks), 0, 0, 0);
         super.renderParticle(wr, e, partialTicks, f3, f7, f5, f6, f7);
         GlStateManager.disableBlend();
         GlStateManager.enableLighting();
@@ -53,16 +52,7 @@ public class EntitySummoningFX extends EntityFX{
         float x = (float)((this.prevPosX + (this.posX - this.prevPosX) * (double)partialTicks) - this.interpPosX);
         float y = (float)((this.prevPosY + (this.posY - this.prevPosY) * (double)partialTicks) - interpPosY);
         float z = (float)((this.prevPosZ + (this.posZ - this.prevPosZ) * (double)partialTicks) - interpPosZ);
-        
-    	float ipx = (float)((this.prevPosX + (this.posX - this.prevPosX) * (double)partialTicks) - this.interpPosX);
-		float ipy = (float)((this.prevPosY + (this.posY - this.prevPosY) * (double)partialTicks) - this.interpPosY);
-		float ipz = (float)((this.prevPosZ + (this.posZ - this.prevPosZ) * (double)partialTicks) - this.interpPosZ);
-        /**
-		wr.addVertexWithUV(ipx - f3 * this.scale - f4 * this.scale, ipy - f5 * this.scale, ipz - f6 * this.scale - f7 * this.scale, 1.0D, (this.currentTexture + 1) * this.relativeTextureHeight);
-		wr.addVertexWithUV(ipx - f3 * this.scale + f4 * this.scale, ipy + f5 * this.scale, ipz - f6 * this.scale + f7 * this.scale, 1.0D, this.currentTexture * this.relativeTextureHeight);
-		wr.addVertexWithUV(ipx + f3 * this.scale + f4 * this.scale, ipy + f5 * this.scale, ipz + f6 * this.scale + f7 * this.scale, 0.0D, this.currentTexture * this.relativeTextureHeight);
-		wr.addVertexWithUV(ipx + f3 * this.scale - f4 * this.scale, ipy - f5 * this.scale, ipz + f6 * this.scale - f7 * this.scale, 0.0D, (this.currentTexture + 1) * this.relativeTextureHeight);
-		*/
+
         wr.pos (
         		x - f3 * scale - f6 * scale *this.scale, 
         		y - f4 * scale - f5 * scale,
@@ -105,3 +95,8 @@ public class EntitySummoningFX extends EntityFX{
 		return this;		
 	}
 }
+
+/**package net.journey.client.render.particles;
+
+
+*/

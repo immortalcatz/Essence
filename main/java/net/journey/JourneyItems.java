@@ -521,7 +521,7 @@ public class JourneyItems {
 	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityOvergrown.class, false, true, 12, 4, 1320);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
-	public static final Item rockLauncher = new ItemGun("rockLauncher", "Rock Launcher", rockChunk, 9.0F, 650, EnumSounds.CANNON, EntityForestPlasma.class);
+	public static final Item rockLauncher = new ItemGun("rockLauncher", "Rock Launcher", rockChunk, 9.0F, 650, EnumSounds.CANNON);
 	public static final Item netherPlasma = new ItemChaosCannon("netherPlasma", "Nether Plasma");
 	public static final Item oceanPlasma = new ItemChaosCannon("oceanPlasma", "Ocean Plasma");
 	public static final Item forestPlasma = new ItemChaosCannon("forestPlasma", "Forest Plasma");
