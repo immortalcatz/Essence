@@ -13,7 +13,7 @@ public class LangRegistry {
 
 	public static LangRegistry instance = new LangRegistry();
 
-	public String location = "C:/Users/Camden/Desktop/Essence Modding/src/Essence/main/resources/assets/essence/lang";
+	public String location = "C:/Users/Camden/Desktop/JourneyWorkspace/src/Essence/main/resources/assets/essence/lang";
 	//"C:/Users/Camden/Desktop/Essence Modding/src/Essence/main/resources/assets/essence/lang"
 	private BufferedWriter writer;
 	public static ArrayList<String> blockUnloc = new ArrayList<String>(), blockFinal = new ArrayList<String>(), itemUnloc = new ArrayList<String>(), itemFinal = new ArrayList<String>()
@@ -30,6 +30,7 @@ public class LangRegistry {
 			if(en_US.exists()) en_US.delete();
 			en_US.createNewFile();
 			writer = new BufferedWriter(new FileWriter(en_US));
+			Desktop.getDesktop().open(new File(location));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
