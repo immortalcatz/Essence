@@ -23,6 +23,8 @@ public class EntityFloroWaterFX extends EntityFX {
         this.portalPosZ = this.posZ = var6;
         float var14 = this.rand.nextFloat() * 0.6F + 0.4F;
         this.portalParticleScale = this.particleScale = this.rand.nextFloat() * 0.2F + 0.5F;
+        this.particleBlue = 0.359595F;
+        this.particleGreen = 0.04454F;
         this.particleRed = 0.0F;
         this.particleMaxAge = (int)(Math.random() * 10.0D) + 40;
         this.noClip = true;

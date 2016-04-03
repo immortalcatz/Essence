@@ -2,15 +2,25 @@ package net.journey.entity.mob.overworld;
 
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
+import net.journey.entity.projectile.EntityFloroWater;
 import net.journey.entity.projectile.EntityGreenpace;
 import net.journey.enums.EnumSounds;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -21,12 +31,17 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 
-	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 15, 10);
+	private int ticks;
+	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 23, 10);
 
 	public EntityFloro(World par1World) {
 		super(par1World);
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.tasks.addTask(3, new EntityAIAvoidEntity(this, EntityWolf.class, 6.0F, 1.0D, 1.2D));
+        this.tasks.addTask(4, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(6, new EntityAILookIdle(this));
 		if(par1World != null && !par1World.isRemote) {
 			this.setCombatTask();
 		}
@@ -48,7 +63,7 @@ public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-        EntityGreenpace b = new EntityGreenpace(this.worldObj, this, 10F);
+        EntityFloroWater b = new EntityFloroWater(this.worldObj, this, 8F);
         b.setThrowableHeading(e.posX-this.posX, e.posY-this.posY, e.posZ-this.posZ, 1.6f, 12);
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
