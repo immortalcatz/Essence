@@ -638,6 +638,7 @@ public class JourneyItems {
 	public static final Item sunsetPiercer = new ItemPiercer("sunsetPiercer", "Sunset Piercer", 10F, 6, EntityFrostyPiercer.class);
 	public static final Item skyPiercer = new ItemPiercer("skyPiercer", "Sky Piercer", 10F, 6, EntityFrostyPiercer.class);
 	
+	/**
 	public static final Item moltenKnife = new ItemKnife("moltenKnife", "Molten Knife", 10F, EntityFrostyPiercer.class);
 	public static final Item royalKnife = new ItemThrowable("royalKnife", "Royal Knife", 8F, EntityRoyalKnife.class);
 	public static final Item aquaticKnife = new ItemThrowable("aquaticKnife", "Aquatic Knife", 6F, EntityFrostyPiercer.class);

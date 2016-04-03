@@ -86,7 +86,7 @@ public class EntityRegistry {
 		SlayerAPI.registerProjectile(EntityFrostbittenPiercer.class, "frostbittenpiercer");
 		SlayerAPI.registerProjectile(EntityFrostyPiercer.class, "frostypiercer");
 		
-		SlayerAPI.registerProjectile(EntityRoyalKnife.class, "royalKnife");
+		//SlayerAPI.registerProjectile(EntityRoyalKnife.class, "royalKnife");
 		
 		SlayerAPI.registerProjectile(EntityPower.class, "power");
 		SlayerAPI.registerProjectile(EntityShimmererProjectile.class, "shimmererprojectile");

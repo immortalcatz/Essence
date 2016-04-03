@@ -39,17 +39,9 @@ public class EntityEscapedConvict extends EntityModVillager {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.ash, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.flamingBow, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.ash, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.boilingBlade, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.ash, 10), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.moltenKnife, 15)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charskullHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charskullChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charskullLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charskullBoots, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.snakeFlesh, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.snakeskinHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.snakeFlesh, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.snakeskinChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.snakeFlesh, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.snakeskinLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.snakeFlesh, 15), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.snakeskinBoots, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 1), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charredBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 1), new ItemStack(JourneyItems.boilPowder, 10), new ItemStack(JourneyItems.charredBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.boilingSkull, 6), new ItemStack(JourneyItems.boilPowder, 64), new ItemStack(JourneyItems.bloodwieldSword, 1)));
 		
 	}
 }

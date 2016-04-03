@@ -49,7 +49,7 @@ public class EntityTerranianEnchanter extends EntityModVillager {
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(JourneyItems.blueGem, 64), new ItemStack(JourneyItems.cloudSlicer)));
 		list.add(new MerchantRecipe(new ItemStack(Items.stick, 10), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.backBiter)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.blueGem, 10), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.sunsetPiercer, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.blueGem, 10), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.aquaticKnife, 1)));
+		//list.add(new MerchantRecipe(new ItemStack(JourneyItems.blueGem, 10), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.aquaticKnife, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purpleGem, 10), new ItemStack(JourneyItems.greenGem, 10), new ItemStack(JourneyItems.poisonBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purpleGem, 10), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.darknessBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purpleGem, 10), new ItemStack(JourneyItems.blueGem, 10), new ItemStack(JourneyItems.frozenBow, 1)));

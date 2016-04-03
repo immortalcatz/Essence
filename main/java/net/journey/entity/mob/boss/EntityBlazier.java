@@ -147,7 +147,7 @@ public class EntityBlazier extends EntityEssenceBoss {
 		case 0:
 			te.setInventorySlotContents(2, new ItemStack(JourneyItems.blazingBow, 1));
 			te.setInventorySlotContents(1, new ItemStack(JourneyItems.sizzlerSword, 1));
-			te.setInventorySlotContents(7, new ItemStack(JourneyItems.sizzlingKnife, 128));
+			//te.setInventorySlotContents(7, new ItemStack(JourneyItems.sizzlingKnife, 128));
 			te.setInventorySlotContents(8, new ItemStack(JourneyItems.hellShards, 3));
 			te.setInventorySlotContents(15, new ItemStack(JourneyItems.hellShards, 3));
 			te.setInventorySlotContents(3, new ItemStack(JourneyItems.flameHelmet, 1));
@@ -160,7 +160,7 @@ public class EntityBlazier extends EntityEssenceBoss {
 			te.setInventorySlotContents(2, new ItemStack(JourneyItems.hellShards, 3));
 			te.setInventorySlotContents(3, new ItemStack(JourneyItems.flameHelmet, 1));
 			te.setInventorySlotContents(5, new ItemStack(JourneyItems.flameLegs, 1));
-			te.setInventorySlotContents(8, new ItemStack(JourneyItems.sizzlingKnife, 128));
+			//te.setInventorySlotContents(8, new ItemStack(JourneyItems.sizzlingKnife, 128));
 			te.setInventorySlotContents(11, new ItemStack(JourneyItems.flameChest, 1));
 			te.setInventorySlotContents(12, new ItemStack(JourneyItems.hellShards, 3));
 			te.setInventorySlotContents(15, new ItemStack(JourneyItems.sizzlerSword, 1));

@@ -1,4 +1,4 @@
-package net.journey.entity.projectile;
+/**package net.journey.entity.projectile;
 
 import java.util.List;
 
@@ -484,5 +484,5 @@ public class EntityRoyalKnife extends EntityThrowable{
 		
 	}
 }
-
+*/
 
