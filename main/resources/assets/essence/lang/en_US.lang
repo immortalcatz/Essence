@@ -222,7 +222,6 @@ tile.largeNetherBrick.name=Large Nether Brick
 tile.compactNetherBrick.name=Compact Nether Brick
 tile.knowledgeTable.name=Knowledge Table
 tile.summoningTable.name=Summoning Table
-tile.trophyTable.name=Trophy Table
 tile.bossAltar.name=Boss Altar
 tile.observerSpawner.name=Observer Spawner
 tile.screamerSpawner.name=Screamer Spawner

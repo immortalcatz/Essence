@@ -49,26 +49,8 @@ public class EntityRoyalKnife extends EntityThrowable{
 	public EntityRoyalKnife(World worldIn) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
-		this.setSize(0.2F, 0.2F);
+		this.setSize(0.5F, 0.5F);
 	}
-
-	@Override
-    protected float getGravityVelocity()
-    {
-        return 0.08F;
-    }
-
-	@Override
-    protected float getVelocity()
-    {
-        return 0.8F;
-    }
-
-	@Override
-    protected float getInaccuracy()
-    {
-        return -10.0F;
-    }
 
 	public EntityRoyalKnife(World worldIn, double d, double d1, double d2) {
 		super(worldIn);
@@ -447,7 +429,7 @@ public class EntityRoyalKnife extends EntityThrowable{
 		if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0) {
 			boolean flag = this.canBePickedUp == 1 || this.canBePickedUp == 2 && entityIn.capabilities.isCreativeMode;
 
-			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(JourneyItems.essenceArrow, 1))) {
+			if (this.canBePickedUp == 1 && !entityIn.inventory.addItemStackToInventory(new ItemStack(JourneyItems.royalKnife, 1))) {
 				flag = false;
 			}
 
@@ -498,6 +480,9 @@ public class EntityRoyalKnife extends EntityThrowable{
 
 	@Override
 	protected void onImpact(MovingObjectPosition p_70184_1_) {
+		// TODO Auto-generated method stub
 		
 	}
 }
+
+

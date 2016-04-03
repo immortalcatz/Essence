@@ -1,8 +1,11 @@
 package net.journey.entity.mob.corba;
 
+import java.util.List;
+
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
@@ -49,6 +52,19 @@ public class EntityLeafBlower extends EntityModMob{
 		return null; 
 	
 	}
+	
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+        if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+            float var1 = getBrightness(1.0F);
+        }
+        
+        List<Entity> e = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());        
+        for(Entity entity : e) {
+        	if(entity instanceof EntityPlayer && canEntityBeSeen(entity)) ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.poison.id, 60, 1));
+        }        
+    }
 		
 	@Override
 	protected void dropFewItems(boolean b, int j) {

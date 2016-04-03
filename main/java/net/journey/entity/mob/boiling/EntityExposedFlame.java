@@ -1,5 +1,7 @@
 package net.journey.entity.mob.boiling;
 
+import java.util.List;
+
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
@@ -8,6 +10,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
@@ -46,12 +50,18 @@ public class EntityExposedFlame extends EntityModMob{
 		return EnumSounds.BLAZE_DEATH;
 	}
 	
-	@Override
-	public boolean attackEntityFrom(DamageSource e, float a) {
-		if(e.getSourceOfDamage() instanceof EntityPlayer)
-			((EntityPlayer)e.getSourceOfDamage()).setFire(5 + rand.nextInt(7));
-		return super.attackEntityFrom(e, a);
-	}
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+        if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+            float var1 = getBrightness(1.0F);
+        }
+        
+        List<Entity> e = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());        
+        for(Entity entity : e) {
+        	if(entity instanceof EntityPlayer && canEntityBeSeen(entity)) ((EntityPlayer)entity).setFire(5 + rand.nextInt(7));
+        }        
+    }
 	
 	@Override
 	public Item getItemDropped() {

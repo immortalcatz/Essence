@@ -1,5 +1,7 @@
 package net.journey.entity.mob.boiling;
 
+import java.util.List;
+
 import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
@@ -50,6 +52,19 @@ public class EntityBurningLight extends EntityModMob{
 	public EnumSounds setDeathSound() {
 		return EnumSounds.BLAZE_DEATH;
 	}
+	
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+        if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+            float var1 = getBrightness(1.0F);
+        }
+        
+        List<Entity> e = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());        
+        for(Entity entity : e) {
+        	if(entity instanceof EntityPlayer && canEntityBeSeen(entity)) ((EntityPlayer)entity).setFire(5 + rand.nextInt(7));
+        }        
+    }
 	
 	@Override
 	public Item getItemDropped() {

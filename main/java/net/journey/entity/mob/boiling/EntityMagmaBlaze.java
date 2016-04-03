@@ -1,9 +1,12 @@
 package net.journey.entity.mob.boiling;
 
+import java.util.List;
+
 import net.journey.JourneyBlocks;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityMagmaFireball;
 import net.journey.enums.EnumSounds;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -59,10 +62,18 @@ public class EntityMagmaBlaze extends EntityModMob {
 	public float getBrightness(float p_70013_1_) {
 		return 1.0F;
 	}
-	
-	
+
 	@Override
 	public void onLivingUpdate() {
+		
+		if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+            float var1 = getBrightness(1.0F);
+		}
+        
+        List<Entity> e = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());        
+        for(Entity entity : e) {
+        	if(entity instanceof EntityPlayer && canEntityBeSeen(entity)) ((EntityPlayer)entity).setFire(5 + rand.nextInt(7));
+        }        
 
 		if (!this.onGround && this.motionY < 0.0D)
         {

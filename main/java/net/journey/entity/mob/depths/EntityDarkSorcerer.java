@@ -1,10 +1,13 @@
 package net.journey.entity.mob.depths;
 
+import java.util.List;
+
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityBouncingProjectile;
 import net.journey.entity.projectile.EntityGreenpace;
 import net.journey.enums.EnumSounds;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -32,6 +35,19 @@ public class EntityDarkSorcerer extends EntityModMob implements IRangedAttackMob
 			this.setCombatTask();
 		}
 	}
+	
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+        if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+            float var1 = getBrightness(1.0F);
+        }
+        
+        List<Entity> e = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox());        
+        for(Entity entity : e) {
+        	if(entity instanceof EntityPlayer && canEntityBeSeen(entity)) ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 1));
+        }        
+    }
 	
 	public void setCombatTask() {
 		this.tasks.removeTask(this.aiArrowAttack); {
