@@ -25,7 +25,7 @@ public class EntityOvergrownFX extends EntityFX {
         this.portalParticleScale = this.particleScale = this.rand.nextFloat() * 0.2F + 0.5F;
         this.particleBlue = 0.0F;
         this.particleGreen = 0.2F;
-        this.particleRed = 0.1F;
+        this.particleRed = 0.0F;
         this.particleMaxAge = (int)(Math.random() * 10.0D) + 40;
         this.noClip = true;
         this.setParticleTextureIndex((int)(Math.random() * 8.0D));

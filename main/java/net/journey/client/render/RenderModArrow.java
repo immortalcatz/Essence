@@ -13,13 +13,14 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.slayer.api.SlayerAPI;
 
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class RenderModArrow extends Render {
 	
-    private static final ResourceLocation arrowTextures = new ResourceLocation("essence/textures/entity/essenceArrow.png");
+    private static final ResourceLocation arrowTextures = new ResourceLocation(SlayerAPI.MOD_ID, "textures/projectile/essenceArrow.png");
 
     public RenderModArrow() {
         super(Minecraft.getMinecraft().getRenderManager());

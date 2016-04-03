@@ -113,16 +113,16 @@ public class ModelCaveling extends ModelBase {
 	@Override
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-		this.headPiece.rotateAngleY = f4 / (180F / (float)Math.PI);
-		this.headPiece.rotateAngleX = f5 / (180F / (float)Math.PI);
-		this.head.rotateAngleY = f4 / (180F / (float)Math.PI);
-		this.head.rotateAngleX = f5 / (180F / (float)Math.PI);
-		this.head1.rotateAngleY = f4 / (180F / (float)Math.PI);
-		this.head1.rotateAngleX = f5 / (180F / (float)Math.PI);
-		this.head2.rotateAngleY = f4 / (180F / (float)Math.PI);
-		this.head2.rotateAngleX = f5 / (180F / (float)Math.PI);
-		this.head3.rotateAngleY = f4 / (180F / (float)Math.PI);
-		this.head3.rotateAngleX = f5 / (180F / (float)Math.PI);
+		//this.headPiece.rotateAngleY = f4 / (180F / (float)Math.PI);
+		//this.headPiece.rotateAngleX = f5 / (180F / (float)Math.PI);
+		//this.head.rotateAngleY = f4 / (180F / (float)Math.PI);
+		//this.head.rotateAngleX = f5 / (180F / (float)Math.PI);
+		//this.head1.rotateAngleY = f4 / (180F / (float)Math.PI);
+		//this.head1.rotateAngleX = f5 / (180F / (float)Math.PI);
+		//this.head2.rotateAngleY = f4 / (180F / (float)Math.PI);
+		//this.head2.rotateAngleX = f5 / (180F / (float)Math.PI);
+		//this.head3.rotateAngleY = f4 / (180F / (float)Math.PI);
+		//this.head3.rotateAngleX = f5 / (180F / (float)Math.PI);
 		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;
 		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 		this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * f1;

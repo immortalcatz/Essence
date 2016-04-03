@@ -516,7 +516,7 @@ public class JourneyItems {
 	public static final Item nethicHammer = new ItemHammer("nethicHammer", "Nethic Hammer", EssenceToolMaterial.NETHIC_HAMMER, false, EntityFireBall.class, false, true, 8, 4, 825);
 	public static final Item withicHammer = new ItemHammer("withicHammer", "Withic Hammer", EssenceToolMaterial.WITHIC_HAMMER, false, EntityWithic.class, false, true, 9, 4, 1230);
 	public static final Item royalHammer = new ItemHammer("royalHammer", "Royal Hammer", EssenceToolMaterial.ROYAL_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
-	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
+	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityOvergrown.class, false, true, 12, 4, 1320);
 	
 	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
 	public static final Item rockLauncher = new ItemChaosCannon("rockLauncher", "Rock Launcher");
