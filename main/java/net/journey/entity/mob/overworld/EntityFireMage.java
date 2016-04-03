@@ -19,8 +19,8 @@ import net.slayer.api.entity.EntityModMob;
 
 public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
 
-	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 15, 60);
-
+	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 23, 10);
+	
 	public EntityFireMage(World par1World) {
 		super(par1World);
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));

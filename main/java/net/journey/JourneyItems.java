@@ -316,6 +316,8 @@ public class JourneyItems {
 	public static final Item voliteSword = new ItemModSword("voliteSword", "Volite Sword", EssenceToolMaterial.VOLITE_SWORD);
 	public static final Item kingsSword = new ItemModSword("kingsSword", "Kings Sword", EssenceToolMaterial.KINGS_SWORD);
 	public static final Item demonicSword = new ItemWitherSword("demonicSword", "Wither Sword", EssenceToolMaterial.DEMONIC_SWORD);
+	public static final Item vinestrandBlade = new ItemPoisionSword("vinestrandBlade", "Vinestrand Blade", EssenceToolMaterial.VINESTRAND_BLADE);
+	public static final Item darkPineSword = new ItemWitherSword("darkPineSword", "Dark Pine Sword", EssenceToolMaterial.DARK_PINE_SWORD);
 	
 	public static final Item healersBlade = new ItemHealthSword("healersBlade", "Healers Blade", EssenceToolMaterial.HEALERS_BLADE, 2);
 	public static final Item terronicBlade = new ItemAddedHealthSword("terronicBlade", "Terronic Blade", EssenceToolMaterial.TERRONIC_BLADE, 4);
