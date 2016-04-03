@@ -27,7 +27,7 @@ public class ProgressBar {
 		Tessellator t = Tessellator.getInstance();
 		WorldRenderer tessellator = t.getWorldRenderer();
 		GL11.glDisable(3553);
-		tessellator.begin(0, null);
+		tessellator.begin(GL11.GL_QUADS, tessellator.getVertexFormat());
 		tessellator.putColorRGB_F4(0.0F, 0.0F, 0.0F);
 		tessellator.pos(x - width / 2 + 1, y + 1, 0.0);
 		tessellator.pos(x - width / 2 + 1, y + height - 1, 0.0);

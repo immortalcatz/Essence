@@ -193,7 +193,7 @@ public class EntityRegistry {
 		SlayerAPI.registerCorbaMob(EntityTreeGolem.class, "treeGolem", "Tree Golem");
 		SlayerAPI.registerCorbaMob(EntityWoodCreature.class, "woodCreature", "Wood Creature");
 		SlayerAPI.registerCorbaMob(EntityNatureMage.class, "natureMage", "Nature Mage");
-		SlayerAPI.registerCorbaMob(EntityLeafBlower.class, "leafBlower", "Leaft Blower");
+		SlayerAPI.registerCorbaMob(EntityLeafBlower.class, "leafBlower", "Leaf Blower");
 		SlayerAPI.registerCorbaMob(EntityWoodpecker.class, "woodpecker", "Woodpecker");
 	}
 

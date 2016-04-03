@@ -1,5 +1,7 @@
 package net.journey.client.render.particles;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.GlStateManager;
@@ -39,7 +41,7 @@ public class EntityShimmererFX extends EntityFX {
         Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(SlayerAPI.PREFIX + "textures/particles/shimmerer.png"));
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(770, 771);
-        worldRenderer.begin(0, null);
+        worldRenderer.begin(GL11.GL_QUADS, worldRenderer.getVertexFormat());
         super.renderParticle(worldRenderer, e, f1, f2, f3, f4, f5, f6);
         Tessellator.getInstance().draw();
         GlStateManager.disableBlend();
