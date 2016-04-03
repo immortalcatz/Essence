@@ -5,9 +5,12 @@ import java.util.Random;
 import net.journey.JourneyBlocks;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
@@ -53,6 +56,18 @@ public class EntitySwampFly extends EntityModFlying {
 	public EnumSounds setDeathSound() {
 		return EnumSounds.EMPTY;
 	}
+	
+    public void onLivingUpdate()
+    {
+        super.onLivingUpdate();
+    	BlockPos blockpos = new BlockPos(this.posX, (double)Math.round(this.posY), this.posZ);
+        if (
+        		this.worldObj.isDaytime() && !
+        		this.worldObj.isRemote && !
+        		this.worldObj.canSeeSky(blockpos)) {
+            this.setDead();
+        }
+    }
 	
 	@Override
 	public Item getItemDropped() {

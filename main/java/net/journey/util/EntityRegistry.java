@@ -238,7 +238,7 @@ public class EntityRegistry {
 		SlayerAPI.registerBossMob(EntitySkyStalker.class, "skyStalker", "Sky Stalker");
 		SlayerAPI.registerBossMob(EntityEudor.class, "eudor", "Eudor");
 		SlayerAPI.registerBossMob(EntityScale.class, "scale", "Scale");
-		SlayerAPI.registerBossMob(EntityTerranianProtector.class, "terranianProtecto", "Terranian Protector");
+		SlayerAPI.registerBossMob(EntityTerranianProtector.class, "terranianProtector", "Terranian Protector");
 		//SlayerAPI.registerBossMob(EntityWraith.class, "wraith");
 	}
 	
