@@ -382,10 +382,12 @@ public class JourneyBlocks {
 	
 	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
 	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);
-	
+
+	/**
 	public static final Block boilingFurnace = new BlockNetherFurnace("boilingFurnace", "Boiling Furnace", false);
 	public static final Block boilingFurnaceActive = new BlockNetherFurnace("boilingFurnaceActive", "Boiling Furnace", true).setLightLevel(1).setCreativeTab(null);
-
+	*/
+	
 	//public static final Block tropicalWater = new BlockTropicalWater("tropicalWater");
 	
 	//public static final Block bowCraftingTable = new BlockBowCrafter("bowCraftingTable");

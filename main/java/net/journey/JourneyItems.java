@@ -434,6 +434,76 @@ public class JourneyItems {
 	public static final Item golditeLegs = new ItemModArmor(EnumArmor.GOLDITE, LEGS);
 	public static final Item golditeBoots = new ItemModArmor(EnumArmor.GOLDITE, BOOTS);
 	
+	public static final Item corbarkHelmet = new ItemModArmor(EnumArmor.CORBARK, HEAD);
+	public static final Item corbarkChest = new ItemModArmor(EnumArmor.CORBARK, BODY);
+	public static final Item corbarkLegs = new ItemModArmor(EnumArmor.CORBARK, LEGS);
+	public static final Item corbarkBoots = new ItemModArmor(EnumArmor.CORBARK, BOOTS);
+	
+	public static final Item crystalFlakeHelmet = new ItemModArmor(EnumArmor.CRYSTAL_FLAKE, HEAD);
+	public static final Item crystalFlakeChest = new ItemModArmor(EnumArmor.CRYSTAL_FLAKE, BODY);
+	public static final Item crystalFlakeLegs = new ItemModArmor(EnumArmor.CRYSTAL_FLAKE, LEGS);
+	public static final Item crystalFlakeBoots = new ItemModArmor(EnumArmor.CRYSTAL_FLAKE, BOOTS);
+	
+	public static final Item darklyHelmet = new ItemModArmor(EnumArmor.DARKLY, HEAD);
+	public static final Item darklyChest = new ItemModArmor(EnumArmor.DARKLY, BODY);
+	public static final Item darklyLegs = new ItemModArmor(EnumArmor.DARKLY, LEGS);
+	public static final Item darklyBoots = new ItemModArmor(EnumArmor.DARKLY, BOOTS);
+	
+	public static final Item depthsHelmet = new ItemModArmor(EnumArmor.DEPTHS, HEAD);
+	public static final Item depthsChest = new ItemModArmor(EnumArmor.DEPTHS, BODY);
+	public static final Item depthsLegs = new ItemModArmor(EnumArmor.DEPTHS, LEGS);
+	public static final Item depthsBoots = new ItemModArmor(EnumArmor.DEPTHS, BOOTS);
+	
+	public static final Item enlightenerHelmet = new ItemModArmor(EnumArmor.ENLIGHTENER, HEAD);
+	public static final Item enlightenerChest = new ItemModArmor(EnumArmor.ENLIGHTENER, BODY);
+	public static final Item enlightenerLegs = new ItemModArmor(EnumArmor.ENLIGHTENER, LEGS);
+	public static final Item enlightenerBoots = new ItemModArmor(EnumArmor.ENLIGHTENER, BOOTS);
+	
+	public static final Item fireboundHelmet = new ItemModArmor(EnumArmor.FIREBOUND, HEAD);
+	public static final Item fireboundChest = new ItemModArmor(EnumArmor.FIREBOUND, BODY);
+	public static final Item fireboundLegs = new ItemModArmor(EnumArmor.FIREBOUND, LEGS);
+	public static final Item fireboundBoots = new ItemModArmor(EnumArmor.FIREBOUND, BOOTS);
+	
+	public static final Item frostbittenHelmet = new ItemModArmor(EnumArmor.FROSTBITTEN, HEAD);
+	public static final Item frostbittenChest = new ItemModArmor(EnumArmor.FROSTBITTEN, BODY);
+	public static final Item frostbittenLegs = new ItemModArmor(EnumArmor.FROSTBITTEN, LEGS);
+	public static final Item frostbittenBoots = new ItemModArmor(EnumArmor.FROSTBITTEN, BOOTS);
+	
+	public static final Item hollowHelmet = new ItemModArmor(EnumArmor.HOLLOW, HEAD);
+	public static final Item hollowChest = new ItemModArmor(EnumArmor.HOLLOW, BODY);
+	public static final Item hollowLegs = new ItemModArmor(EnumArmor.HOLLOW, LEGS);
+	public static final Item hollowBoots = new ItemModArmor(EnumArmor.HOLLOW, BOOTS);
+	
+	public static final Item lightstoneHelmet = new ItemModArmor(EnumArmor.LIGHTSTONE, HEAD);
+	public static final Item lightstoneChest = new ItemModArmor(EnumArmor.LIGHTSTONE, BODY);
+	public static final Item lightstoneLegs = new ItemModArmor(EnumArmor.LIGHTSTONE, LEGS);
+	public static final Item lightstoneBoots = new ItemModArmor(EnumArmor.LIGHTSTONE, BOOTS);
+	
+	public static final Item livegreenHelmet = new ItemModArmor(EnumArmor.LIVEGREEN, HEAD);
+	public static final Item livegreenChest = new ItemModArmor(EnumArmor.LIVEGREEN, BODY);
+	public static final Item livegreenLegs = new ItemModArmor(EnumArmor.LIVEGREEN, LEGS);
+	public static final Item livegreenBoots = new ItemModArmor(EnumArmor.LIVEGREEN, BOOTS);
+	
+	public static final Item starlightHelmet = new ItemModArmor(EnumArmor.STARLIGHT, HEAD);
+	public static final Item starlightChest = new ItemModArmor(EnumArmor.STARLIGHT, BODY);
+	public static final Item starlightLegs = new ItemModArmor(EnumArmor.STARLIGHT, LEGS);
+	public static final Item starlightBoots = new ItemModArmor(EnumArmor.STARLIGHT, BOOTS);
+	
+	public static final Item bloodcrustHelmet = new ItemModArmor(EnumArmor.BLOODCRUST, HEAD);
+	public static final Item bloodcrustChest = new ItemModArmor(EnumArmor.BLOODCRUST, BODY);
+	public static final Item bloodcrustLegs = new ItemModArmor(EnumArmor.BLOODCRUST, LEGS);
+	public static final Item bloodcrustBoots = new ItemModArmor(EnumArmor.BLOODCRUST, BOOTS);
+	
+	public static final Item blazehornHelmet = new ItemModArmor(EnumArmor.BLAZEHORN, HEAD);
+	public static final Item blazehornChest = new ItemModArmor(EnumArmor.BLAZEHORN, BODY);
+	public static final Item blazehornLegs = new ItemModArmor(EnumArmor.BLAZEHORN, LEGS);
+	public static final Item blazehornBoots = new ItemModArmor(EnumArmor.BLAZEHORN, BOOTS);
+	
+	public static final Item bleedrockHelmet = new ItemModArmor(EnumArmor.BLEEDROCK, HEAD);
+	public static final Item bleedrockChest = new ItemModArmor(EnumArmor.BLEEDROCK, BODY);
+	public static final Item bleedrockLegs = new ItemModArmor(EnumArmor.BLEEDROCK, LEGS);
+	public static final Item bleedrockBoots = new ItemModArmor(EnumArmor.BLEEDROCK, BOOTS);
+	
 	public static final Item backBiter = new ItemBattleAxe("backBiter", "Back Biter", EssenceToolMaterial.BACK_BITER);
 	public static final Item dawnBreaker = new ItemBattleAxe("dawnBreaker", "Dawn Breaker", EssenceToolMaterial.DAWN_BREAKER);
 	public static final Item tempestBattleaxe = new ItemBattleAxe("tempestBattleaxe", "Tempest Battleaxe", EssenceToolMaterial.TEMPEST_BATTLEAXE);
@@ -473,38 +543,38 @@ public class JourneyItems {
 	//public static final Item flameArrow = new ItemMod("flameArrow", EssenceTabs.ranged);
 	public static final Item essenceArrow = new ItemMod("essenceArrow", "Essence Arrow", JourneyTabs.misc);
 
-	public static final Item flameBow = new ItemModBow("flameBow", "Flame Bow", 384, essenceArrow, EntityFlameArrow.class);
-	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, essenceArrow, EntityPoisonArrow.class);
-	public static final Item darknessBow = new ItemModBow("darknessBow", "Darkness Bow", 384, essenceArrow, EntityDarknessArrow.class);
-	public static final Item frozenBow = new ItemModBow("frozenBow", "Frozen Bow", 384, essenceArrow, EntityFrozenArrow.class);
-	public static final Item staringBow = new ItemModBow("staringBow", "Staring Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item deathPiercerBow = new ItemModBow("deathPiercerBow", "Death Piercer Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item fusionBow = new ItemModBow("fusionBow", "Fusion Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item springBow = new ItemModBow("springBow", "Spring Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item starlightBow = new ItemModBow("starlightBow", "Starlight Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item wastefulBow = new ItemModBow("wastefulBow", "Wasteful Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item flamingBow = new ItemModBow("flamingBow", "Flaming Bow", 384, essenceArrow, EntityFlamingArrow.class);
-	public static final Item blazingBow = new ItemModBow("blazingBow", "Blazing Bow", 384, essenceArrow, EntityFlamingArrow.class);
-	public static final Item darkEnforcer = new ItemModBow("darkEnforcer", "Dark Enforcer", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item depthsBow = new ItemModBow("depthsBow", "Depths Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item frostbittenBow = new ItemModBow("frostbittenBow", "Frostbitten Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item frostyBow = new ItemModBow("frostyBow", "Frosty Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item charredBow = new ItemModBow("charredBow", "Charred Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item fluffyBow = new ItemModBow("fluffyBow", "Fluffy Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item golemBow = new ItemModBow("golemBow", "Golem Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item loggersBow = new ItemModBow("loggersBow", "Loggers Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item overgrownBow = new ItemModBow("overgrownBow", "Overgrown Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item overseerBow = new ItemModBow("overseerBow", "Overseer Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item woodlandBow = new ItemModBow("woodlandBow", "Woodland Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item rocsWing = new ItemModBow("rocsWing", "Rocs Wing", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item scaleBow = new ItemModBow("scaleBow", "Scale Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item mantleBow = new ItemModBow("mantleBow", "Mantle Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item coreExpender = new ItemModBow("coreExpender", "Core Expender", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item royalBow = new ItemModBow("royalBow", "Royal Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item darkTerraBow = new ItemModBow("darkTerraBow", "Dark Terra Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item lavenderBow = new ItemModBow("lavenderBow", "Lavender Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item terralightBow = new ItemModBow("terralightBow", "Terralight Bow", 384, essenceArrow, EntityEssenceArrow.class);
-	public static final Item terrianBow = new ItemModBow("terrianBow", "Terrian Bow", 384, essenceArrow, EntityEssenceArrow.class);
+	public static final Item flameBow = new ItemModBow("flameBow", "Flame Bow", 384, 12, essenceArrow, "Sets enemies ablaze", EntityFlameArrow.class);
+	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, 12, essenceArrow, "Poisons enemies", EntityPoisonArrow.class);
+	public static final Item darknessBow = new ItemModBow("darknessBow", "Darkness Bow", 384, 12, essenceArrow, "Withers foe", EntityDarknessArrow.class);
+	public static final Item frozenBow = new ItemModBow("frozenBow", "Frozen Bow", 384, 12, essenceArrow, "Withers foe", EntityFrozenArrow.class);
+	public static final Item staringBow = new ItemModBow("staringBow", "Staring Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item deathPiercerBow = new ItemModBow("deathPiercerBow", "Death Piercer Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item fusionBow = new ItemModBow("fusionBow", "Fusion Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item springBow = new ItemModBow("springBow", "Spring Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item starlightBow = new ItemModBow("starlightBow", "Starlight Bow", 384, 1, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item wastefulBow = new ItemModBow("wastefulBow", "Wasteful Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item flamingBow = new ItemModBow("flamingBow", "Flaming Bow", 384, 12, essenceArrow, "Withers foe", EntityFlamingArrow.class);
+	public static final Item blazingBow = new ItemModBow("blazingBow", "Blazing Bow", 384, 12, essenceArrow, "Withers foe", EntityFlamingArrow.class);
+	public static final Item darkEnforcer = new ItemModBow("darkEnforcer", "Dark Enforcer", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item depthsBow = new ItemModBow("depthsBow", "Depths Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item frostbittenBow = new ItemModBow("frostbittenBow", "Frostbitten Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item frostyBow = new ItemModBow("frostyBow", "Frosty Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item charredBow = new ItemModBow("charredBow", "Charred Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item fluffyBow = new ItemModBow("fluffyBow", "Fluffy Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item golemBow = new ItemModBow("golemBow", "Golem Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item loggersBow = new ItemModBow("loggersBow", "Loggers Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item overgrownBow = new ItemModBow("overgrownBow", "Overgrown Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item overseerBow = new ItemModBow("overseerBow", "Overseer Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item woodlandBow = new ItemModBow("woodlandBow", "Woodland Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item rocsWing = new ItemModBow("rocsWing", "Rocs Wing", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item scaleBow = new ItemModBow("scaleBow", "Scale Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item mantleBow = new ItemModBow("mantleBow", "Mantle Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item coreExpender = new ItemModBow("coreExpender", "Core Expender", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item royalBow = new ItemModBow("royalBow", "Royal Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item darkTerraBow = new ItemModBow("darkTerraBow", "Dark Terra Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item lavenderBow = new ItemModBow("lavenderBow", "Lavender Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item terralightBow = new ItemModBow("terralightBow", "Terralight Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item terrianBow = new ItemModBow("terrianBow", "Terrian Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
 
 	//public static final Item backpack = new ItemBackpack("backpack");
 

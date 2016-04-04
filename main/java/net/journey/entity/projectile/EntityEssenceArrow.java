@@ -3,6 +3,7 @@ package net.journey.entity.projectile;
 import java.util.List;
 
 import net.journey.JourneyItems;
+import net.journey.items.ItemModBow;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -46,7 +47,7 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 	public Entity shootingEntity;
 	private int ticksInGround;
 	private int ticksInAir;
-	private double damage = 6.0D;
+	private double damage;
 	private int knockbackStrength;
 
 	public EntityEssenceArrow(World worldIn) {
@@ -62,9 +63,10 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 		this.setPosition(d, d1, d2);
 	}
 
-	public EntityEssenceArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1) {
+	public EntityEssenceArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1, float damage) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
+		this.damage = damage;
 		this.shootingEntity = e;
 
 		if (e instanceof EntityPlayer) {
@@ -88,10 +90,11 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 		}
 	}
 
-	public EntityEssenceArrow(World worldIn, EntityLivingBase e, float f) {
+	public EntityEssenceArrow(World worldIn, EntityLivingBase e, float f, float damage) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.shootingEntity = e;
+		this.damage = damage;
 		if(e instanceof EntityPlayer) this.canBePickedUp = 1;
 		this.setSize(0.5F, 0.5F);
 		this.setLocationAndAngles(e.posX, e.posY + (double)e.getEyeHeight(), e.posZ, e.rotationYaw, e.rotationPitch);
