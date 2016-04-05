@@ -69,7 +69,8 @@ public class ArmorAbilityEvent{
 				JourneyItems.twilightChest && legs == 
 				JourneyItems.twilightLegs && boots == 
 				JourneyItems.twilightBoots){
-			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 100, 100));
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 240, 55));
+			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 240, 55));
 		}
 		
 		else if(helmet == 
@@ -85,9 +86,25 @@ public class ArmorAbilityEvent{
 				JourneyItems.snakeskinChest && legs == 
 				JourneyItems.snakeskinLegs && boots ==
 				JourneyItems.snakeskinBoots){
-			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 3));
+			event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 3));
 			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 100, 10));
 			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 10, 1));
+		}
+		
+		else if(helmet == 
+				JourneyItems.blazehornHelmet && body == 
+				JourneyItems.blazehornChest && legs == 
+				JourneyItems.blazehornLegs && boots ==
+				JourneyItems.blazehornBoots){
+			if(event.player.isInLava()) event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 100, 10));
+		}
+		
+		else if(helmet == 
+				JourneyItems.crystalFlakeHelmet && body == 
+				JourneyItems.crystalFlakeChest && legs == 
+				JourneyItems.crystalFlakeLegs && boots ==
+				JourneyItems.crystalFlakeBoots){
+			event.player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 10, 1));
 		}
 		
 		else if(helmet == 
@@ -106,7 +123,6 @@ public class ArmorAbilityEvent{
 				JourneyItems.golditeBoots){
 			event.player.fallDistance=0;
 			event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 1));
-
 		}
 		
 		else if(helmet
@@ -127,7 +143,107 @@ public class ArmorAbilityEvent{
 					
 		}
 		
-		else if(helmet == JourneyItems.celestiumHelmet && body == JourneyItems.celestiumChest && legs == JourneyItems.celestiumLegs && boots == JourneyItems.celestiumBoots) {
+		else if(helmet == 
+				JourneyItems.darklyHelmet && body == 
+				JourneyItems.darklyChest && legs == 
+				JourneyItems.darklyLegs && boots == 
+				JourneyItems.darklyBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 240, 55));
+		}
+		
+		else if(helmet == 
+				JourneyItems.depthsHelmet && body == 
+				JourneyItems.depthsChest && legs == 
+				JourneyItems.depthsLegs && boots == 
+				JourneyItems.depthsBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 240, 55));
+			event.player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 10, 1));
+		}
+		
+		else if(helmet == 
+				JourneyItems.enlightenerHelmet && body == 
+				JourneyItems.enlightenerChest && legs == 
+				JourneyItems.enlightenerLegs && boots == 
+				JourneyItems.enlightenerBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.jump.id, 10, 3));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 1));
+		}
+		
+		else if(helmet == 
+				JourneyItems.fireboundHelmet && body == 
+				JourneyItems.fireboundChest && legs == 
+				JourneyItems.fireboundLegs && boots == 
+				JourneyItems.fireboundBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.jump.id, 10, 3));
+			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 1));
+		}
+		
+		else if(helmet == 
+				JourneyItems.frostbittenHelmet && body == 
+				JourneyItems.frostbittenChest && legs == 
+				JourneyItems.frostbittenLegs && boots == 
+				JourneyItems.frostbittenBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.absorption.id, 240, 55));
+		}
+		
+		else if(helmet == 
+				JourneyItems.hollowHelmet && body == 
+				JourneyItems.hollowChest && legs == 
+				JourneyItems.hollowLegs && boots == 
+				JourneyItems.hollowBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 240, 55));
+		}
+		
+		else if(helmet == 
+				JourneyItems.bloodcrustHelmet && body == 
+				JourneyItems.bloodcrustChest && legs == 
+				JourneyItems.bloodcrustLegs && boots == 
+				JourneyItems.bloodcrustBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 5));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 5));
+		}
+		
+		else if(helmet == 
+				JourneyItems.bleedrockHelmet && body == 
+				JourneyItems.bleedrockChest && legs == 
+				JourneyItems.bleedrockLegs && boots == 
+				JourneyItems.bleedrockBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.absorption.id, 10, 5));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 5));
+		}
+		
+		else if(helmet == 
+				JourneyItems.lightstoneHelmet && body == 
+				JourneyItems.lightstoneChest && legs == 
+				JourneyItems.lightstoneLegs && boots == 
+				JourneyItems.lightstoneBoots) {
+			event.player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 240, 55));
+			event.player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 2));
+			event.player.removePotionEffect(19);
+			event.player.removePotionEffect(20);
+		}
+		
+		else if(helmet == 
+				JourneyItems.livegreenHelmet && body == 
+				JourneyItems.livegreenChest && legs == 
+				JourneyItems.livegreenLegs && boots == 
+				JourneyItems.livegreenBoots) {
+			event.player.removePotionEffect(19);
+		}
+		
+		else if(helmet == 
+				JourneyItems.starlightHelmet && body == 
+				JourneyItems.starlightChest && legs == 
+				JourneyItems.starlightLegs && boots == 
+				JourneyItems.starlightBoots) {
+			event.player.fallDistance = 0.0F;
+		}
+		
+		else if(helmet == 
+				JourneyItems.celestiumHelmet && body == 
+				JourneyItems.celestiumChest && legs == 
+				JourneyItems.celestiumLegs && boots == 
+				JourneyItems.celestiumBoots) {
 			event.player.capabilities.setPlayerWalkSpeed(0.3F);
 			event.player.fallDistance = 0.0F;
 		} else {
@@ -152,8 +268,20 @@ public class ArmorAbilityEvent{
 			if(stackHelmet != null) helmet = stackHelmet.getItem();
 			else helmet = null;
 
-			if(helmet == JourneyItems.celestiumHelmet && body == JourneyItems.celestiumChest && legs == JourneyItems.celestiumLegs && boots == JourneyItems.celestiumBoots){
+			if(helmet == 
+					JourneyItems.celestiumHelmet && body == 
+					JourneyItems.celestiumChest && legs == 
+					JourneyItems.celestiumLegs && boots == 
+					JourneyItems.celestiumBoots){
 				player.addVelocity(0, 0.3, 0);
+			} 
+			
+			else if(helmet == 
+					JourneyItems.starlightHelmet && body == 
+					JourneyItems.starlightChest && legs == 
+					JourneyItems.starlightLegs && boots == 
+					JourneyItems.starlightBoots){
+				player.addVelocity(0, 0.6, 0);
 			} 
 		}
 	}
@@ -220,8 +348,35 @@ public class ArmorAbilityEvent{
 		if(!(e.entity instanceof EntityPlayer)) {
 			if(helmet == JourneyItems.luniumHelmet && body == JourneyItems.luniumChest && legs == JourneyItems.luniumLegs && boots == JourneyItems.luniumBoots)
 				e.ammount += 4;
+			
 			if(helmet == JourneyItems.bronzedHelmet && body == JourneyItems.bronzedChest && legs == JourneyItems.bronzedLegs && boots == JourneyItems.bronzedBoots)
 				e.ammount += 6;
+			
+			if(helmet == JourneyItems.blazehornHelmet && body == JourneyItems.blazehornChest && legs == JourneyItems.blazehornLegs && boots == JourneyItems.blazehornBoots)
+				e.ammount += 3;
+			
+			if(helmet == JourneyItems.darklyHelmet && body == JourneyItems.darklyChest && legs == JourneyItems.darklyLegs && boots == JourneyItems.darklyBoots)
+				e.ammount += 7;
+			
+			if(helmet == JourneyItems.crystalFlakeHelmet && body == JourneyItems.crystalFlakeChest && legs == JourneyItems.crystalFlakeLegs && boots == JourneyItems.crystalFlakeBoots)
+				e.ammount += 3;
+			
+			if(helmet == JourneyItems.frostbittenHelmet && body == JourneyItems.frostbittenChest && legs == JourneyItems.frostbittenLegs && boots == JourneyItems.frostbittenBoots)
+				e.ammount += 4;
+			
+			if(helmet == JourneyItems.corbarkHelmet && body == JourneyItems.corbarkChest && legs == JourneyItems.corbarkLegs && boots == JourneyItems.corbarkBoots) {
+				e.entityLiving.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 1000, 10));
+				e.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 1000, 10));
+			}
+			
+			if(helmet == JourneyItems.livegreenHelmet && body == JourneyItems.livegreenChest && legs == JourneyItems.livegreenLegs && boots == JourneyItems.livegreenBoots) {
+				e.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 1000, 10));
+			}
+			
+			if(helmet == JourneyItems.hollowHelmet && body == JourneyItems.hollowChest && legs == JourneyItems.hollowLegs && boots == JourneyItems.hollowBoots) {
+				e.entityLiving.addPotionEffect(new PotionEffect(Potion.wither.id, 1000, 10));
+			}
+			
 			else if(helmet == JourneyItems.flameHelmet && body == JourneyItems.flameChest && legs == JourneyItems.flameLegs && boots == JourneyItems.flameBoots)
 				e.entityLiving.setFire(5);
 		}

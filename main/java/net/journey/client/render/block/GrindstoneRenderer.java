@@ -100,7 +100,7 @@ public class GrindstoneRenderer extends TileEntitySpecialRenderer {
 				break;
 			}
 			GL11Helper.scale(0.8F);
-			renderItem.renderItemModelForEntity(new ItemStack(toRender), null, null);
+	        this.renderItem.renderItem(new ItemStack(toRender), ItemCameraTransforms.TransformType.GROUND);
 		}
 		GL11.glPopMatrix();
 	}

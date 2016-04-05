@@ -10,18 +10,17 @@ public class JourneyDungeonEvent {
 	
 	@SubscribeEvent
 	public void onGemMineEvent(PlayerEvent.ItemPickupEvent e) {
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.greenGem))) {
-			e.player.addStat(CommonProxy.achievementGem, 1);
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.greenGem)))
+			e.player.addStat(CommonProxy.achievementGem, 1); {
 		}
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.blueGem))) {
-			e.player.addStat(CommonProxy.achievementGem, 1);
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.blueGem)))
+			e.player.addStat(CommonProxy.achievementGem, 1); {
 		}
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.yellowGem))) {
-			e.player.addStat(CommonProxy.achievementGem, 1);
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.yellowGem)))
+			e.player.addStat(CommonProxy.achievementGem, 1); {
 		}
-		e.player.addStat(CommonProxy.achievementGem, 1);
-		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.purpleGem))) {
-			e.player.addStat(CommonProxy.achievementGem, 1);
+		if(e.pickedUp.getEntityItem().isItemEqual(new ItemStack(JourneyItems.purpleGem)))
+			e.player.addStat(CommonProxy.achievementGem, 1); {
 		}
 	}
 }
