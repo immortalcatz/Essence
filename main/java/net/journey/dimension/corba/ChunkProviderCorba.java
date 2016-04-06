@@ -360,23 +360,21 @@ public class ChunkProviderCorba implements IChunkProvider {
 			new WorldGenModFlower(JourneyBlocks.corbaLightPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 		
-		for(times = 0; times < 3; times++) {
+		if(rand.nextInt(9)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenTreehouse().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-				break;
 			}
 		}
 		
-		for(times = 0; times < 2; times++) {
+		if(rand.nextInt(9)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaVillage().generate(worldObj, rand, new BlockPos(x, yCoord, z));
-				break;
 			}
 		}
 		

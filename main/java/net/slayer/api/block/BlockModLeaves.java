@@ -176,7 +176,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
 
     @Override
     public boolean isOpaqueCube() {
-        return false;
+        return true;
     }
 
     @Override
@@ -186,7 +186,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
     
     @Override
     public EnumWorldBlockLayer getBlockLayer() {
-		return EnumWorldBlockLayer.TRANSLUCENT;
+		return EnumWorldBlockLayer.CUTOUT;
     }
     
     @Override

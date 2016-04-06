@@ -90,11 +90,21 @@ public class EntityLogger extends EntityEssenceBoss {
 			te.setInventorySlotContents(15, new ItemStack(JourneyItems.terraniaPortalGem, 8));
 			te.setInventorySlotContents(1, new ItemStack(JourneyItems.naturesBlade, 1));
 			te.setInventorySlotContents(5, new ItemStack(JourneyItems.loggersBow, 1));
+			
+			te.setInventorySlotContents(3, new ItemStack(JourneyItems.hollowChest, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.hollowHelmet, 1));
+			te.setInventorySlotContents(7, new ItemStack(JourneyItems.hollowLegs, 1));
+			te.setInventorySlotContents(8, new ItemStack(JourneyItems.hollowBoots, 1));
 			break;
 		case 1:
 			te.setInventorySlotContents(1, new ItemStack(JourneyItems.terraniaPortalGem, 10));
 			te.setInventorySlotContents(2, new ItemStack(JourneyItems.loggersSword, 1));
 			te.setInventorySlotContents(10, new ItemStack(JourneyItems.loggersBow, 1));
+			
+			te.setInventorySlotContents(3, new ItemStack(JourneyItems.hollowChest, 1));
+			te.setInventorySlotContents(11, new ItemStack(JourneyItems.hollowHelmet, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.hollowLegs, 1));
+			te.setInventorySlotContents(6, new ItemStack(JourneyItems.hollowBoots, 1));
 			break;
 		}
 	}

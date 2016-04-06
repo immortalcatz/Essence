@@ -48,7 +48,7 @@ public class WorldGenEssence implements IWorldGenerator {
 		if(dim == Config.frozen) generateFrozen(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.corba) generateCorba(w, r, chunkX * 16, chunkZ * 16);
 		if(dim == Config.cloudia) generateCloudia(w, r, chunkX * 16, chunkZ * 16);
-		if(dim == Config.terrania) generateCloudia(w, r, chunkX * 16, chunkZ * 16);
+		//if(dim == Config.terrania) generateTerrania(w, r, chunkX * 16, chunkZ * 16);
 		int i;
 	}
 	
@@ -77,7 +77,7 @@ public class WorldGenEssence implements IWorldGenerator {
 				new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 		}
 
-		if(r.nextInt(10)==0) {
+		if(r.nextInt(12)==0) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -131,19 +131,19 @@ public class WorldGenEssence implements IWorldGenerator {
 			z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenSmallGlowshrooms()).generate(w, r, new BlockPos(x, y, z));
 		}
-		for(times = 0; times < 3; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(20); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(JourneyBlocks.shadiumOre, 4, w, x, y, z);
 		}
-		for(times = 0; times < 6; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(25); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenVanilla(JourneyBlocks.luniumOre, 5, w, x, y, z);
 		}
-		for(times = 0; times < 2; times++) {
+		for(times = 0; times < 1; times++) {
 			y = r.nextInt(20); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
@@ -162,7 +162,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			z = chunkZ + r.nextInt(16) + 8;
 			worldMinableGenEnd(JourneyBlocks.enderilliumOre, 5, w, x, y, z);
 		}
-		if(r.nextInt(6)==0) {
+		if(r.nextInt(10)==0) {
 			y = r.nextInt(200); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
@@ -172,7 +172,7 @@ public class WorldGenEssence implements IWorldGenerator {
 				w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 			new WorldGenMageHouse().generate(w, r, new BlockPos(x, y, z));
 		}
-		if(r.nextInt(6)==0) {
+		if(r.nextInt(10)==0) {
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || 
 				w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||
@@ -180,7 +180,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			    w.getBlockState(new BlockPos(x, y, z)) == Blocks.sand.getDefaultState())
 			new WorldGenBlacksmithHouse().generate(w, r, new BlockPos(x, y, z));
 		}
-		if(r.nextInt(6)==0) {
+		if(r.nextInt(10)==0) {
 			y = r.nextInt(200); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.grass.getDefaultState() || 
 				w.getBlockState(new BlockPos(x, y, z)) == Blocks.grass.getDefaultState() ||

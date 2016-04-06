@@ -96,7 +96,7 @@ public class EntityTempleGuardian extends EntityPeacefullMob implements IRangedA
 
 	@Override
 	public ItemStack getHeldItem() {
-		return new ItemStack(Items.stick);
+		return new ItemStack(JourneyItems.earthenHammer);
 	}
 
 	@Override

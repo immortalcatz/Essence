@@ -19,15 +19,6 @@ public class EntityTerrashroom extends EntityModMob {
 		this.setSize(1.0F, 2.0F);
 	}
 	
-    public int getBrightnessForRender(float p_70070_1_)
-    {
-        return 15728880;
-    }
-    
-    public float getBrightness(float p_70013_1_) {
-        return 20.0F;
-    }
-
 	@Override
 	public double setAttackDamage(MobStats s) {
 		return MobStats.bigHongoDamage;
