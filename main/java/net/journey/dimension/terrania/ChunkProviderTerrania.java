@@ -19,6 +19,7 @@ import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.euca.gen.trees.WorldGenEucaTree3;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
 import net.journey.dimension.terrania.gen.WorldGenHollowTree;
+import net.journey.dimension.terrania.gen.WorldGenTallTree;
 import net.journey.dimension.terrania.gen.WorldGenTerranianLamp;
 import net.journey.dimension.terrania.gen.WorldGenTreeHut;
 import net.journey.dimension.terrania.gen.trees.WorldGenTerraniaBigTree1;
@@ -365,7 +366,7 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			}
 		}
 		
-		if(rand.nextInt(9)==0) {
+		if(rand.nextInt(7)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
@@ -374,12 +375,21 @@ public class ChunkProviderTerrania implements IChunkProvider {
 			}
 		}
 		
-		if(rand.nextInt(9)==0) {
+		if(rand.nextInt(7)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.terranianGrass)) {
 				new WorldGenHollowTree().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+		
+		if(rand.nextInt(2)==0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.terranianGrass)) {
+				new WorldGenTallTree().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		

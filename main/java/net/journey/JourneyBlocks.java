@@ -380,6 +380,10 @@ public class JourneyBlocks {
 	
 	public static final Block hellbotSpawner = new BlockModSpawner("hellbotSpawner", "Hellbot Spawner", "hellbot");
 	
+	public static final Block purplianSpawner = new BlockModSpawner("purplianSpawner", "Purplian Spawner", "purplian");
+	public static final Block starlightGolemSpawner = new BlockModSpawner("starlightGolemSpawner", "Starlight Golem Spawner", "starlightGolem");
+	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporter", "Starlight Transporter", "starlightTransporter");
+	
 	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
 	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);
 

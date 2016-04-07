@@ -140,17 +140,17 @@ public class DimensionHelper {
 	}
 	
 	private static void addCloudiaSpawns() {
-		int amount = 20;
-		EntityRegistry.addSpawn(EntityStarlightTransporter.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntityStarlightGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntityCloudFlyer.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntityCloudGhost.class, 1, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		int amount = 90;
+		EntityRegistry.addSpawn(EntityStarlightTransporter.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityStarlightGolem.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityCloudFlyer.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityCloudGhost.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntitySkyEel.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
 	}
 
 	private static void addCorbaSpawns() {
 		int amount = 20;
-		EntityRegistry.addSpawn(EntityTreeGolem.class, 1, 1, 1, EnumCreatureType.MONSTER, corba);
+		EntityRegistry.addSpawn(EntityTreeGolem.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 		EntityRegistry.addSpawn(EntityLeafBlower.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 		EntityRegistry.addSpawn(EntitySurfaceSeer.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
 		EntityRegistry.addSpawn(EntityWoodCreature.class, amount, 1, 1, EnumCreatureType.MONSTER, corba);
@@ -159,22 +159,22 @@ public class DimensionHelper {
 	private static void addColdFrozenSpawns() {
 		int amount = 80;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityFrozenTroll.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityIceMage.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiverwing.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityFrozenTroll.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 1, 1, EnumCreatureType.CREATURE, frozen);
 		
 	}
 
 	private static void addFrostFrozenSpawns() {
 		int amount = 80;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityPermafraust.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShatterer.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityCrystalCluster.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityIceMage.class, 1, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiverwing.class, 1, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShatterer.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityCrystalCluster.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 1, 1, EnumCreatureType.CREATURE, frozen);
 	}
 	
 	private static void addTerraniaSpawns() {
@@ -195,7 +195,7 @@ public class DimensionHelper {
 		//EntityRegistry.addSpawn(EntityPsyollom.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityEucaCharger.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityDynaster.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
-		EntityRegistry.addSpawn(EntityGolder.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
+		//EntityRegistry.addSpawn(EntityGolder.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityShimmerer.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityGolditeMage.class, amount, 1, 1, EnumCreatureType.MONSTER, euca);
 		EntityRegistry.addSpawn(EntityGoldwing.class, amount, 1, 1, EnumCreatureType.CREATURE, euca);
