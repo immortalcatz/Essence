@@ -19,6 +19,7 @@ public class Textures {
     public static final ResourceLocation basic = addProjectile("gray");
     public static final ResourceLocation bouncingProjectile = addProjectile("bouncing");
     public static final ResourceLocation magmaBall = addProjectile("magmaBall");
+    public static final ResourceLocation bubble = addProjectile("bubble");
     public static final ResourceLocation grindstone = addModel("blocks/grindstone");
     public static final ResourceLocation empty = addProjectile("empty");
     public static final ResourceLocation templeBall = addProjectile("templeBall");

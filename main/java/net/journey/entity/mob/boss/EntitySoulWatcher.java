@@ -6,7 +6,9 @@ import net.journey.JourneyBlocks;
 import net.journey.JourneyItems;
 import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.journey.entity.MobStats;
+import net.journey.entity.mob.nether.EntityLavasnake;
 import net.journey.entity.projectile.EntityIceBall;
+import net.journey.entity.projectile.EntityMagmaFireball;
 import net.journey.enums.EnumSounds;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -32,15 +34,18 @@ import net.minecraft.world.World;
 import net.slayer.api.entity.EntityEssenceBoss;
 
 public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttackMob {
+	private int spawnTimer;
 	
 	public EntitySoulWatcher(World par1World) {
 		super(par1World);
 		this.moveHelper = new EntitySoulWatcher.MoveHelper();
 		this.tasks.addTask(5, new EntitySoulWatcher.AIRandomFly());
+		this.tasks.addTask(1, new EntityAIArrowAttack(this, 1.0D, 40, 20.0F));
 		this.tasks.addTask(7, new EntitySoulWatcher.AILookAround());
 		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
 		addAttackingAI();
 		setSize(7.0F, 4.0F);
+		spawnTimer = 0;
 	}
 
 	@Override
@@ -52,17 +57,10 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 	public double setKnockbackResistance() {
 		return 1.0D;
 	}
-	
-	@Override
-	public void attackEntityWithRangedAttack(EntityLivingBase e, float f) {
-		EntityIceBall b = new EntityIceBall(this.worldObj, this, 10F);
-        EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
-        this.worldObj.spawnEntityInWorld(b);
-	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.sentryKingHealth;
+		return s.soulWatcherHealth;
 	}
 
 	@Override
@@ -250,6 +248,44 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 		}
 	}
 
+	@Override
+	public void onLivingUpdate() {
+
+		if (!this.onGround && this.motionY < 0.0D) {
+            this.motionY *= 0.6D;
+        }
+
+        if (this.worldObj.isRemote) {
+            if (this.rand.nextInt(24) == 0 && !this.isSilent()) {
+                this.worldObj.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, "fire.fire", 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
+            }
+
+            for (int i = 0; i < 2; ++i) {
+                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
+            }
+        }
+
+        if(getHealth() <= 250) {
+        	if(spawnTimer == 0 && !worldObj.isRemote) {
+    			EntityLavasnake z = new EntityLavasnake(worldObj);
+                z.setLocationAndAngles(posX + 3, posY, posZ, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityLavasnake z1 = new EntityLavasnake(worldObj);
+                z1.setLocationAndAngles(posX - 3, posY, posZ, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityLavasnake z2 = new EntityLavasnake(worldObj);
+                z2.setLocationAndAngles(posX, posY, posZ + 3, this.rand.nextFloat() * 360.0F, 0.0F);
+                EntityLavasnake z3 = new EntityLavasnake(worldObj);
+                z3.setLocationAndAngles(posX, posY, posZ - 3, this.rand.nextFloat() * 360.0F, 0.0F);
+                this.worldObj.spawnEntityInWorld(z);
+                this.worldObj.spawnEntityInWorld(z1);
+                this.worldObj.spawnEntityInWorld(z2);
+                this.worldObj.spawnEntityInWorld(z3);
+                spawnTimer = 200;
+    		}
+        	spawnTimer--;
+        } 
+		super.onLivingUpdate();
+	}
+
 	public class AILookAround extends EntityAIBase {
 		private EntitySoulWatcher e = EntitySoulWatcher.this;
 
@@ -280,4 +316,60 @@ public class EntitySoulWatcher extends EntityEssenceBoss implements IRangedAttac
 			}
 		}
 	}
+	public void attackEntityWithRangedAttack(EntityLivingBase e, float f1)
+    {
+        this.launchWitherSkullToEntity(0, e);
+	}
+    
+    private void launchWitherSkullToEntity(int var1, EntityLivingBase e)
+    {
+        this.launchWitherSkullToCoords(var1, e.posX, e.posY + (double)e.getEyeHeight() * 0.5D, e.posZ, var1 == 0 && this.rand.nextFloat() < 0.001F);
+        
+    }
+    
+    private void launchWitherSkullToCoords(int var1, double f2, double f4, double f6, boolean f8)
+    {
+        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1014, new BlockPos(this), 0);
+        double d3 = this.coordX(var1);
+        double d4 = this.coordY(var1);
+        double d5 = this.coordZ(var1);
+        double d6 = f2 - d3;
+        double d7 = f4 - d4;
+        double d8 = f6 - d5;
+        EntityMagmaFireball entitydeathskull = new EntityMagmaFireball(this.worldObj, this, d6, d7, d8);
+        entitydeathskull.posY = d4;
+        entitydeathskull.posX = d3;
+        entitydeathskull.posZ = d5;
+        this.worldObj.spawnEntityInWorld(entitydeathskull);
+	}
+    
+    private double coordX(int par1) {
+        if (par1 <= 0) {  
+            return this.posX;
+        }
+        else {
+            float f = (this.renderYawOffset + (float)(180 * (par1 - 1))) / 180.0F * (float)Math.PI;
+            float f1 = MathHelper.cos(f);
+            return this.posX + (double)f1 * 1.3D;
+        }
+    }
+
+    private double coordY(int par1)
+    {
+        return par1 <= 0 ? this.posY + 3.0D : this.posY + 2.2D;
+    }
+
+    private double coordZ(int par1)
+    {
+        if (par1 <= 0)
+        {
+            return this.posZ;
+        }
+        else
+        {
+            float f = (this.renderYawOffset + (float)(180 * (par1 - 1))) / 180.0F * (float)Math.PI;
+            float f1 = MathHelper.sin(f);
+            return this.posZ + (double)f1 * 1.3D;
+        }
+    }
 }

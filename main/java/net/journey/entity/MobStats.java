@@ -87,20 +87,22 @@ public class MobStats {
 	public static double starlightGolemHealth = 200.0D, starlightGolemDamage = 13.0D, starlightGolemSpeed = normalSpeed, starlightGolemFollowRange = follow;
 	
 	//Boss
-	public static double witheringBeastHealth = 450.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
-	public static double netherBeastHealth = 1050.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
-	public static double calciaHealth = 1250.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
-	public static double eudorHealth = 1500.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
-	public static double fourfaHealth = 1000.0D, fourfaDamage = 10.0D, fourfaSpeed = normalSpeed, fourfaFollowRange = follow;
-	public static double BlazierHealth = 800.0D, BlazierDamage = 20.0D;
-	public static double sentryKingHealth = 2500.0D, sentryKingDamage = 20.0D;
+	public static double soulWatcherHealth = 600.0D, soulWatcherDamage = 10.0D, soulWatcherSpeed = normalSpeed, soulWatcherFollowRange = follow;
+	public static double witheringBeastHealth = 600.0D, witheringBeastDamage = 10.0D, witheringBeastSpeed = normalSpeed, witheringBeastFollowRange = follow;
+	public static double netherBeastHealth = 750.0D, netherBeastDamage = 10.0D, netherBeastSpeed = normalSpeed, netherBeastFollowRange = follow;
+	public static double calciaHealth = 650.0D, calciaDamage = 10.0D, calciaSpeed = normalSpeed, calciaFollowRange = follow;
+	public static double eudorHealth = 900.0D, eudorDamage = 10.0D, eudorSpeed = normalSpeed, eudorFollowRange = follow;
+	public static double fourfaHealth = 900.0D, fourfaDamage = 10.0D, fourfaSpeed = normalSpeed, fourfaFollowRange = follow;
+	public static double BlazierHealth = 850.0D, BlazierDamage = 20.0D;
+	public static double scaleHealth = 1560.0D, scaleDamage = 20.0D;
+	public static double sentryKingHealth = 20500.0D, sentryKingDamage = 20.0D;
 	public static double templeGuardianHealth = 275.0D, templeGuardianDamage = 0.0D, templeGuardianSpeed = normalSpeed, templeGuardianFollowRange = follow;
 	public static double wraithHealth = 50.0D, wraithDamage = 10.0D, wraithSpeed = normalSpeed, wraithFollowRange = follow;
-	public static double thunderbirdHealth = 1600.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
-	public static double loggerHealth = 2000.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
-	public static double corallatorHealth = 1500.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
-	public static double skyStalkerHealth = 1000.0D, skyStalkerDamage = 10.0D, skyStalkerSpeed = normalSpeed, skyStalkerFollowRange = follow;
-	public static double terranianHealth = 1000.0D, terranianDamage = 10.0D, terranianSpeed = normalSpeed, terranianFollowRange = follow;
+	public static double thunderbirdHealth = 1500.0D, thunderbirdDamage = 10.0D, thunderbirdSpeed = normalSpeed, thunderbirdFollowRange = follow;
+	public static double loggerHealth = 1500.0D, loggerDamage = 10.0D, loggerSpeed = normalSpeed, loggerFollowRange = follow;
+	public static double corallatorHealth = 950.0D, corallatorDamage = 10.0D, corallatorSpeed = normalSpeed, corallatorFollowRange = follow;
+	public static double skyStalkerHealth = 2500.0D, skyStalkerDamage = 10.0D, skyStalkerSpeed = normalSpeed, skyStalkerFollowRange = follow;
+	public static double terranianHealth = 3500.0D, terranianDamage = 10.0D, terranianSpeed = normalSpeed, terranianFollowRange = follow;
 
 	public static double highNetherHealth = 60D, highNetherDamage = 10D, witherNetherSpeed = fastSpeed;
 	

@@ -253,7 +253,7 @@ public class JourneyBlocks {
 	public static final Block dungeonLampFence = new BlockModFence(dungeonLamp, "dungeonLampFence", "Dungeon Lamp Fence", true);
 	
 	public static final Block terraniaLeaves = new BlockModLeaves("terranianLeaves", "Terrania Leaves", 1.0F);
-	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine");
+	public static final Block terraniaVine = new BlockModVine("terranianVine", "Terrania Vine", 12);
 	public static final BlockMod terranianDirt = new BlockMod(EnumMaterialTypes.DIRT, "terranianDirt", "Terranian Dirt", 2.0F);
 	public static final Block terranianLog = new BlockModLog("terranianLog", "Terranian Log");
 	public static final Block terranianGrass = new BlockModGrass(terranianDirt, "terranianGrass", "Terranian Grass", 2.0F);

@@ -2,16 +2,27 @@ package net.journey.dimension.terrania.gen;
 
 import java.util.Random;
 
+import com.google.common.collect.Lists;
+
 import net.journey.JourneyBlocks;
+import net.journey.JourneyItems;
+import net.journey.blocks.tileentity.TileEntityJourneyChest;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.slayer.api.worldgen.WorldGenAPI;
 
 public class WorldGenTreeHut extends WorldGenerator {
+	
+	private static WeightedRandomChestContent[] loot = {
+			new WeightedRandomChestContent(JourneyItems.slugSlime, 0, 1, 5, 10), 
+			new WeightedRandomChestContent(JourneyItems.darkTerrarianSoil, 0, 1, 10, 40), 
+			new WeightedRandomChestContent(JourneyItems.earthenCrystal, 0, 1, 10, 40), 
+			new WeightedRandomChestContent(JourneyItems.lightTerrarianSoil, 0, 1, 5, 40)};
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		Block post = JourneyBlocks.terranianPost;
@@ -84,6 +95,13 @@ public class WorldGenTreeHut extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 3, j + 15, k + 2), log);
 		world.setBlockState(new BlockPos(i + 3, j + 15, k + 5), log);
 		world.setBlockState(new BlockPos(i + 3, j + 16, k + 1), plank.getDefaultState());
+		world.setBlockState(new BlockPos(i + 0, j + 14, k + 0), JourneyBlocks.terraniaChest.getDefaultState());
+		
+		TileEntityJourneyChest te = (TileEntityJourneyChest)world.getTileEntity(new BlockPos(i + 0, j + 14, k + 0));
+		if(te != null) {
+			WeightedRandomChestContent.generateChestContents(rand, Lists.newArrayList(loot), te, 4);
+		}
+		
 		world.setBlockState(new BlockPos(i + 3, j + 16, k + 2), JourneyBlocks.terranianDarkPanels.getDefaultState());
 		world.setBlockState(new BlockPos(i + 3, j + 16, k + 3), JourneyBlocks.terranianDarkPanels.getDefaultState());
 		world.setBlockState(new BlockPos(i + 3, j + 16, k + 4), JourneyBlocks.terranianDarkPanels.getDefaultState());

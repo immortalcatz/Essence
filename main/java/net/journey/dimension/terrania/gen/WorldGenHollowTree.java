@@ -3,6 +3,8 @@ package net.journey.dimension.terrania.gen;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.entity.mob.euca.npc.EntityAlloyMender;
+import net.journey.entity.mob.terrania.npc.EntityTerranianTrader;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -877,7 +879,11 @@ public class WorldGenHollowTree extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 15, j + 21, k + 7), JourneyBlocks.terraniaVine.getStateFromMeta(2));
 		world.setBlockState(new BlockPos(i + 15, j + 22, k + 7), JourneyBlocks.terraniaVine.getStateFromMeta(2));
 
-
+		if(!world.isRemote) {
+			EntityTerranianTrader smith = new EntityTerranianTrader(world);
+			smith.setLocationAndAngles(i + 6, j + 0, k + 9, 0.0F, 0.0F);
+			world.spawnEntityInWorld(smith);
+		}
 		return true;
 	}
 }

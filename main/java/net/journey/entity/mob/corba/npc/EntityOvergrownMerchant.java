@@ -53,12 +53,12 @@ public class EntityOvergrownMerchant extends EntityModVillager {
 	public void addRecipies(MerchantRecipeList list) {
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.gorbiteGem, 16), new ItemStack(JourneyItems.overgrownHammer, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.overgrownStaff, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.gorbiteGem, 16), new ItemStack(JourneyItems.darkPineSword, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.gorbiteGem, 16), new ItemStack(JourneyItems.vinestrandBlade, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.gorbiteGem, 20), new ItemStack(JourneyItems.darkPineSword, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 48), new ItemStack(JourneyItems.gorbiteGem, 16), new ItemStack(JourneyItems.vinestrandBlade, 1)));
 		
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenHelmet, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenChest, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenLegs, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 64), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenBoots, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 16), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 16), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 16), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.enchantedLeaf, 16), new ItemStack(JourneyItems.orbaditeIngot, 16), new ItemStack(JourneyItems.livegreenBoots, 1)));
 	}
 }

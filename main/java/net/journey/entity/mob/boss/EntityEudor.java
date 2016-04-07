@@ -43,7 +43,7 @@ public class EntityEudor extends EntityEssenceBoss {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.calciaHealth;
+		return s.eudorHealth;
 	}
 
 	@Override

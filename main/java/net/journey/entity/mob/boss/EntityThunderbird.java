@@ -20,7 +20,6 @@ public class EntityThunderbird extends EntityEssenceBoss {
 
 	private int attackTimer;
 
-	@SuppressWarnings("this")
 	public EntityThunderbird(World par1World) {
 		super(par1World);
 		addAttackingAI();

@@ -58,12 +58,12 @@ public class EntityLogger extends EntityEssenceBoss {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.netherBeastDamage;
+		return s.loggerDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.netherBeastHealth;
+		return s.loggerHealth;
 	}
 
 	@Override
