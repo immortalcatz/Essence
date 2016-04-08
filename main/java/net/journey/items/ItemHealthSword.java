@@ -26,14 +26,14 @@ public class ItemHealthSword extends ItemModSword {
 	private float health;
 	public ItemHealthSword(String name, String f , EssenceToolMaterial toolMaterial, float health) {
 		super(name, f, toolMaterial);
-		this.health=health;
+		this.health = health;
 	}
 
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
-		float c=player.getHealth();
-		if((c>=1F) & (c< 20F)){
-			player.setHealth(c + this.health);
+		float hearts = player.getHealth();
+		if((hearts >= 1F) & (hearts < 20F)){
+			player.setHealth(hearts + this.health);
 		}
 		
 		addParticles(hit);

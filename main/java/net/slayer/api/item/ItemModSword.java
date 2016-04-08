@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
+import net.journey.client.ItemDescription;
 import net.journey.util.EssenceToolMaterial;
 import net.journey.util.LangHelper;
 import net.journey.util.LangRegistry;
@@ -44,6 +45,7 @@ public class ItemModSword extends ItemSword {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack item, EntityPlayer player, List infoList, boolean par4) {
+		ItemDescription.addInformation(item, player, infoList);
 		if(item.getMaxDamage() != -1) infoList.add(item.getMaxDamage() - item.getItemDamage() + " " + LangHelper.getUsesRemaining());
 		else infoList.add(SlayerAPI.Colour.GREEN + LangHelper.getInfiniteUses());
 	}

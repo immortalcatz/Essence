@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
-public class ItemModBow extends ItemMod {
+public class ItemHealthBow extends ItemMod {
 
 	private Class<? extends EntityArrow> arrowClass;
 	public Item arrowItem;
@@ -31,7 +31,7 @@ public class ItemModBow extends ItemMod {
 	//protected String damageString;
 	public String ability;
 
-	public ItemModBow(String name, String f, int uses, int damage, /**String damageString,*/ Item arrow, int duration, String ability, Class<? extends EntityArrow> arrowEnt) {
+	public ItemHealthBow(String name, String f, int uses, int damage, /**String damageString,*/ Item arrow, int duration, String ability, Class<? extends EntityArrow> arrowEnt) {
 		super(name, f, JourneyTabs.bows);
 		this.maxStackSize = 1;
 		this.dur = duration;
@@ -44,7 +44,7 @@ public class ItemModBow extends ItemMod {
 		this.ability = ability;
 	}
 	
-	public ItemModBow(String name, String f, int uses, int damage, /**String damageString*/ Item arrow, String ability, Class<? extends EntityArrow> arrowEnt) {
+	public ItemHealthBow(String name, String f, int uses, int damage, /**String damageString*/ Item arrow, String ability, Class<? extends EntityArrow> arrowEnt) {
 		super(name, f, JourneyTabs.bows);
 		this.maxStackSize = 1;
 		this.ability = ability;
@@ -128,7 +128,7 @@ public class ItemModBow extends ItemMod {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining) {
-		if(stack.getItem() instanceof ItemModBow && player.getItemInUse() != null) {
+		if(stack.getItem() instanceof ItemHealthBow && player.getItemInUse() != null) {
 			int i = stack.getMaxItemUseDuration() - player.getItemInUseCount();
 			if(i >= 18) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_2", "inventory");
 			else if(i > 13) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_1", "inventory");

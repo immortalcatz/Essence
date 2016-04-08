@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
+import net.journey.client.ItemDescription;
 import net.journey.util.LangRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -44,6 +45,7 @@ public class ItemModFood extends ItemFood {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+		ItemDescription.addInformation(stack, player, list);
         list.add("Fills " + (double) getHealAmount(stack) / 2 + " Hunger Bars");
         list.add(getSaturationModifier(stack) + " Saturation");
         if(time <= 32) list.add("Faster eating");

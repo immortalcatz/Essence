@@ -5,6 +5,10 @@ import java.util.List;
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
 import net.journey.client.ItemDescription;
+import net.journey.client.server.EssenceBar;
+import net.journey.entity.projectile.EntityBasicProjectile;
+import net.journey.entity.projectile.EntityGreenpace;
+import net.journey.enums.EnumSounds;
 import net.journey.util.LangHelper;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
@@ -22,40 +26,30 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.slayer.api.SlayerAPI;
 import net.slayer.api.item.ItemMod;
 
-public class ItemModBow extends ItemMod {
+public class ItemManaEssenceBow extends ItemMod {
 
-	private Class<? extends EntityArrow> arrowClass;
-	public Item arrowItem;
-	public int dur = 18;
+	protected int usage;
 	protected int damage;
+	protected boolean essence, unBreakable;
+	protected Class<? extends EntityBasicProjectile> projectile; 
+	public int dur = 18;
 	//protected String damageString;
 	public String ability;
 
-	public ItemModBow(String name, String f, int uses, int damage, /**String damageString,*/ Item arrow, int duration, String ability, Class<? extends EntityArrow> arrowEnt) {
-		super(name, f, JourneyTabs.bows);
-		this.maxStackSize = 1;
-		this.dur = duration;
-		this.arrowClass = arrowEnt;
-		this.arrowItem = arrow;
-		this.damage = damage;
-		//this.damageString = damageString;
-		this.setMaxDamage(uses);
-		this.setFull3D();
-		this.ability = ability;
-	}
-	
-	public ItemModBow(String name, String f, int uses, int damage, /**String damageString*/ Item arrow, String ability, Class<? extends EntityArrow> arrowEnt) {
-		super(name, f, JourneyTabs.bows);
-		this.maxStackSize = 1;
-		this.ability = ability;
-		this.arrowClass = arrowEnt;
-		this.arrowItem = arrow;
-		this.damage = damage;
-		//this.damageString = damageString;
-		this.setMaxDamage(uses);
-		this.setFull3D();
+	public ItemManaEssenceBow(String name, String f, boolean essence, int magic, int uses, int dam, boolean unbreakable, Class<? extends EntityBasicProjectile> projectile) {
+		super(name, f);
+		this.projectile = projectile;
+		damage = dam;
+		usage = magic;
+		this.essence = essence;
+		this.unBreakable = unbreakable;
+		setMaxDamage(uses);
+		setMaxStackSize(1);
+		setFull3D();
+		setCreativeTab(JourneyTabs.staves);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityPlayer playerIn, int timeLeft) {
 		int j = this.getMaxItemUseDuration(stack) - timeLeft;
@@ -65,33 +59,23 @@ public class ItemModBow extends ItemMod {
 
 		boolean flag = playerIn.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0;
 
-		if (flag || playerIn.inventory.hasItem(arrowItem)) {
+		if(essence) {
 			float f = (float)j / 20.0F;
 			f = (f * f + f * 2.0F) / 3.0F;
 			if((double)f < 0.1D) return;
 			if(f > 1.0F) f = 1.0F;
 
-			EntityArrow entityarrow = null;
+			EntityGreenpace entityarrow = null;
 			try {
-				entityarrow = arrowClass.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(worldIn, playerIn, f * 2.0F);
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-			if(entityarrow != null);
-			entityarrow.setDamage(this.damage);
-			if(f == 1.0F) entityarrow.setIsCritical(true);
-			int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, stack);
-			if(k > 0) entityarrow.setDamage(entityarrow.getDamage() + (double)k * 0.5D + 0.5D);
-			int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, stack);
-			if (l > 0) entityarrow.setKnockbackStrength(l);
-			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, stack) > 0) entityarrow.setFire(100);
+			if(entityarrow != null)
 
 			stack.damageItem(1, playerIn);
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
-			if(flag) entityarrow.canBePickedUp = 2;
-			else playerIn.inventory.consumeInventoryItem(arrowItem);
 			if(!worldIn.isRemote) worldIn.spawnEntityInWorld(entityarrow);
-		}
+		} 
 	}
 
 	@Override
@@ -112,7 +96,7 @@ public class ItemModBow extends ItemMod {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		ItemDescription.addInformation(stack, player, list);
-		list.add("Ammo: " + StatCollector.translateToLocal(arrowItem.getUnlocalizedName() + ".name"));
+		list.add("Ammo: " + SlayerAPI.Colour.GREEN + "Essence");
 		list.add("Damage: " +SlayerAPI.Colour.GOLD + damage + " - " + SlayerAPI.Colour.GOLD + damage*4);
 		list.add("Ability: " + SlayerAPI.Colour.GOLD + ability);
 	}
@@ -121,14 +105,24 @@ public class ItemModBow extends ItemMod {
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
 		net.minecraftforge.event.entity.player.ArrowNockEvent event = new net.minecraftforge.event.entity.player.ArrowNockEvent(playerIn, itemStackIn);
 		if(net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event)) return event.result;
-		if(playerIn.capabilities.isCreativeMode || playerIn.inventory.hasItem(arrowItem)) playerIn.setItemInUse(itemStackIn, this.getMaxItemUseDuration(itemStackIn));
+		if(essence) {
+			if(!worldIn.isRemote && EssenceBar.getProperties(playerIn).useBar(usage)) {
+				EnumSounds.playSound(EnumSounds.SPARKLE, worldIn, playerIn);
+				if(!unBreakable) itemStackIn.damageItem(1, playerIn);
+				try {
+					worldIn.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(worldIn, playerIn, damage));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		return itemStackIn;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining) {
-		if(stack.getItem() instanceof ItemModBow && player.getItemInUse() != null) {
+		if(stack.getItem() instanceof ItemManaEssenceBow && player.getItemInUse() != null) {
 			int i = stack.getMaxItemUseDuration() - player.getItemInUseCount();
 			if(i >= 18) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_2", "inventory");
 			else if(i > 13) return new ModelResourceLocation(Item.itemRegistry.getNameForObject(stack.getItem()) + "_1", "inventory");
