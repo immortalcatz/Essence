@@ -12,11 +12,11 @@ public class ItemDescription {
 	
 	public static void addInformation(ItemStack itemStack, EntityPlayer p, List<String> list) {
 		Item item = itemStack.getItem();
-		if(item == JourneyItems.glowshroom) { list.add(SlayerAPI.Colour.GREEN + "Grants night vision when eaten"); {
-		}
-		if(item == JourneyItems.terrashroom) { list.add(SlayerAPI.Colour.LIGHT_PURPLE + "Grants night vision when eaten"); {}}
-			
-		}
+		if(item == JourneyItems.glowshroom) { list.add(SlayerAPI.Colour.GREEN + "Grants night vision when eaten"); {}
+		if(item == JourneyItems.terrashroom) { list.add(SlayerAPI.Colour.LIGHT_PURPLE + "Grants night vision when eaten"); {}
+		
+		
+		}}
 	}
 }
 

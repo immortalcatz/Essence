@@ -547,7 +547,7 @@ public class JourneyItems {
 	public static final Item poisonBow = new ItemModBow("poisonBow", "Poison Bow", 384, 12, essenceArrow, "Poisons enemies", EntityPoisonArrow.class);
 	public static final Item darknessBow = new ItemModBow("darknessBow", "Darkness Bow", 384, 12, essenceArrow, "Withers foe", EntityDarknessArrow.class);
 	public static final Item frozenBow = new ItemModBow("frozenBow", "Frozen Bow", 384, 12, essenceArrow, "Withers foe", EntityFrozenArrow.class);
-	public static final Item staringBow = new ItemModBow("staringBow", "Staring Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
+	public static final Item staringBow = new ItemModBow("staringBow", "Staring Bow", 384, 3, essenceArrow, "Withers foe", EntityEssenceArrow.class);
 	public static final Item deathPiercerBow = new ItemModBow("deathPiercerBow", "Death Piercer Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
 	public static final Item fusionBow = new ItemModBow("fusionBow", "Fusion Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
 	public static final Item springBow = new ItemModBow("springBow", "Spring Bow", 384, 12, essenceArrow, "Withers foe", EntityEssenceArrow.class);
