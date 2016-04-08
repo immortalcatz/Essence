@@ -614,8 +614,8 @@ public class JourneyItems {
 	public static final Item friedEgg = new ItemModFood("friedEgg", "Fried Egg", 2, 3.0F, false);
 	public static final Item floroPedal = new ItemModFood("floroPedal", "Floro Pedal", 3, 3.0F, false);
 	public static final Item tomato = new ItemModFood("tomato", "Tomato", 3, 3.0F, false);
-	public static final Item glowshroom = new ItemGlowshroom("glowshroom", "Glowshroom", 4, 3.0F, false, false).setAlwaysEdible().setPotionEffect(Potion.nightVision.id, 10, 1, 1.0F).setAlwaysEdible();
-	public static final Item terrashroom = new ItemGlowshroom("terrashroom", "Terrashroom", 8, 6.0F, false, false).setAlwaysEdible();
+	public static final Item glowshroom = new ItemModFood("glowshroom", "Glowshroom", 4, 3.0F, false).setAlwaysEdible().setPotionEffect(Potion.nightVision.id, 10, 1, 1.0F).setAlwaysEdible();
+	public static final Item terrashroom = new ItemModFood("terrashroom", "Terrashroom", 8, 6.0F, false).setAlwaysEdible().setPotionEffect(Potion.nightVision.id, 10, 1, 1.0F).setAlwaysEdible();
 	public static final Item corveggies = new ItemCorveggies("corveggies", "Corveggies", 4, 3.0F, false, false).setPotionEffect(Potion.saturation.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item crackenCanes = new ItemCrackenCanes("crackenCanes", "Kracken Canes", 4, 3.0F, false, false).setPotionEffect(Potion.damageBoost.id, 20, 1, 1.0F).setAlwaysEdible();
 	public static final Item crakeBulb = new ItemCrakeBulb("crakeBulb"," Crake Bulb", 4, 3.0F, false, false).setPotionEffect(Potion.waterBreathing.id, 20, 1, 1.0F).setAlwaysEdible();

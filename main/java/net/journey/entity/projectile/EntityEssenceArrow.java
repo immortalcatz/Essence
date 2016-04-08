@@ -47,7 +47,7 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 	public Entity shootingEntity;
 	private int ticksInGround;
 	private int ticksInAir;
-	private double damage;
+	private double damage = 2.0D;
 	private int knockbackStrength;
 
 	public EntityEssenceArrow(World worldIn) {
@@ -63,10 +63,9 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 		this.setPosition(d, d1, d2);
 	}
 
-	public EntityEssenceArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1, float damage) {
+	public EntityEssenceArrow(World worldIn, EntityLivingBase e, EntityLivingBase eb, float f, float f1) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
-		this.damage = damage;
 		this.shootingEntity = e;
 
 		if (e instanceof EntityPlayer) {
@@ -90,11 +89,10 @@ public class EntityEssenceArrow extends EntityArrow implements IProjectile {
 		}
 	}
 
-	public EntityEssenceArrow(World worldIn, EntityLivingBase e, float f, float damage) {
+	public EntityEssenceArrow(World worldIn, EntityLivingBase e, float f) {
 		super(worldIn);
 		this.renderDistanceWeight = 10.0D;
 		this.shootingEntity = e;
-		this.damage = damage;
 		if(e instanceof EntityPlayer) this.canBePickedUp = 1;
 		this.setSize(0.5F, 0.5F);
 		this.setLocationAndAngles(e.posX, e.posY + (double)e.getEyeHeight(), e.posZ, e.rotationYaw, e.rotationPitch);

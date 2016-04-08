@@ -92,24 +92,18 @@ public class EntityCorallator extends EntityEssenceBoss implements IRangedAttack
 	
 	@Override
 	public void onDeath(DamageSource damage){
-		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.netherChest.getStateFromMeta(5));
+		this.worldObj.setBlockState(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))), JourneyBlocks.eucaChest.getStateFromMeta(5));
 		TileEntityJourneyChest te = (TileEntityJourneyChest)worldObj.getTileEntity(new BlockPos((int)Math.floor(this.posX + 0), ((int)Math.floor(this.posY + 0)), ((int)Math.floor(this.posZ + 0))));
 		switch(rand.nextInt(2)) {
 		case 0:
-			te.setInventorySlotContents(2, new ItemStack(JourneyItems.staringBow, 1));
-			te.setInventorySlotContents(11, new ItemStack(JourneyItems.eucaPortalPiece_1, 1));
-			te.setInventorySlotContents(16, new ItemStack(JourneyItems.twilightBoots, 1));
-			te.setInventorySlotContents(5, new ItemStack(JourneyItems.twilightChest, 1));
-			te.setInventorySlotContents(10, new ItemStack(JourneyItems.twilightHelmet, 1));
-			te.setInventorySlotContents(20, new ItemStack(JourneyItems.twilightLegs, 1));
+			te.setInventorySlotContents(15, new ItemStack(JourneyItems.depthsPortalGem, 8));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.coreMender, 1));
+			te.setInventorySlotContents(5, new ItemStack(JourneyItems.coreExpender, 1));
 			break;
 		case 1:
-			te.setInventorySlotContents(5, new ItemStack(JourneyItems.staringBow, 1));
-			te.setInventorySlotContents(15, new ItemStack(JourneyItems.eucaPortalPiece_1, 2));
-			te.setInventorySlotContents(17, new ItemStack(JourneyItems.twilightBoots, 1));
-			te.setInventorySlotContents(2, new ItemStack(JourneyItems.twilightChest, 1));
-			te.setInventorySlotContents(20, new ItemStack(JourneyItems.twilightHelmet, 1));
-			te.setInventorySlotContents(11, new ItemStack(JourneyItems.twilightLegs, 1));
+			te.setInventorySlotContents(1, new ItemStack(JourneyItems.depthsPortalGem, 10));
+			te.setInventorySlotContents(2, new ItemStack(JourneyItems.coreMender, 1));
+			te.setInventorySlotContents(10, new ItemStack(JourneyItems.coreExpender, 1));
 			break;
 		}
 	}

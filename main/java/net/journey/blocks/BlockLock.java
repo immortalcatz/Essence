@@ -17,6 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -26,11 +27,12 @@ import net.slayer.api.block.BlockMod;
 import net.slayer.api.worldgen.WorldGenAPI;
 
 public class BlockLock extends BlockMod {
-
+	
+	public Item key;
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-	public BlockLock(String name, String f) {
-		super(EnumMaterialTypes.GOURD, name, f, 0.5F);
+	public BlockLock(String name, String f, Item key) {
+		super(EnumMaterialTypes.METAL_SOUND, name, f, 0.5F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.setTickRandomly(true);
 	}
@@ -61,7 +63,7 @@ public class BlockLock extends BlockMod {
 	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-		if(playerIn.getHeldItem() !=null && playerIn.getHeldItem().getItem() == JourneyItems.boilKey) {
+		if(playerIn.getHeldItem() !=null && playerIn.getHeldItem().getItem() == key) {
 			EnumSounds.playSound(EnumSounds.UNLOCK, worldIn, playerIn);
 			EnumSounds.playSound(EnumSounds.CREAK, worldIn, playerIn);
 			worldIn.setBlockState(pos.add(0, 0, 0), Blocks.air.getDefaultState());

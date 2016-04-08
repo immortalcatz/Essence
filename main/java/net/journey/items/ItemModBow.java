@@ -73,7 +73,8 @@ public class ItemModBow extends ItemMod {
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-
+			if(entityarrow != null);
+			entityarrow.setDamage(this.damage);
 			if(f == 1.0F) entityarrow.setIsCritical(true);
 			int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, stack);
 			if(k > 0) entityarrow.setDamage(entityarrow.getDamage() + (double)k * 0.5D + 0.5D);

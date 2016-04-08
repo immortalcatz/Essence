@@ -197,7 +197,7 @@ public class JourneyBlocks {
 	public static final Block nethicDungeonBricks = new BlockMod("nethicDungeonBricks", "Nethic Dungeon Bricks");
 	public static final Block boilChain = new BlockModBars("boilChain", "Boil Chain").setBlockUnbreakable();
 	public static final Block boilGate = new BlockModBars("boilGate", "Boil Gate").setBlockUnbreakable();
-	public static final Block boilLock = new BlockLock("boilLock", "Boil Lock").setBlockUnbreakable();
+	public static final Block boilLock = new BlockLock("boilLock", "Boil Lock", JourneyItems.boilKey).setBlockUnbreakable();
 	
 	public static final Block corbaPost = new BlockModFence(pinkCloudiaCloud, "corbaPost", "Corba Post");
 	public static final Block sizzlingPost = new BlockModFence(pinkCloudiaCloud, "sizzlingPost", "Sizzling Post");

@@ -4,6 +4,8 @@ import java.util.List;
 
 import net.journey.JourneyItems;
 import net.journey.JourneyTabs;
+import net.journey.client.ArmorDescription;
+import net.journey.client.ItemDescription;
 import net.journey.client.server.DarkEnergyBar;
 import net.journey.enums.EnumSounds;
 import net.journey.util.LangRegistry;
@@ -16,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -75,13 +78,15 @@ public class ItemMod extends Item {
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound) {
 		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(Items.apple), 0);
 	}
+	
 
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list){ }
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-		addInformation(par1ItemStack, par2EntityPlayer, par3List);
+	public void addInformation(ItemStack item, EntityPlayer player, List list, boolean par4) {
+		ItemDescription.addInformation(item, player, list);
+		addInformation(item, player, list);
 	}
 }
