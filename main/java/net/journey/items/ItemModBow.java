@@ -27,27 +27,30 @@ public class ItemModBow extends ItemMod {
 	public Item arrowItem;
 	public int dur = 18;
 	protected int damage;
+	protected String damageString;
 	public String ability;
 
-	public ItemModBow(String name, String f, int uses, Item arrow, int damage, int duration, String ability, Class<? extends EntityArrow> arrowEnt) {
+	public ItemModBow(String name, String f, int uses, int damage, String damageString, Item arrow, int duration, String ability, Class<? extends EntityArrow> arrowEnt) {
 		super(name, f, JourneyTabs.bows);
 		this.maxStackSize = 1;
 		this.dur = duration;
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.damage = damage;
+		this.damageString = damageString;
 		this.setMaxDamage(uses);
 		this.setFull3D();
 		this.ability = ability;
 	}
 	
-	public ItemModBow(String name, String f, int uses, int damage, Item arrow, String ability, Class<? extends EntityArrow> arrowEnt) {
+	public ItemModBow(String name, String f, int uses, int damage, String damageString, Item arrow, String ability, Class<? extends EntityArrow> arrowEnt) {
 		super(name, f, JourneyTabs.bows);
 		this.maxStackSize = 1;
 		this.ability = ability;
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.damage = damage;
+		this.damageString = damageString;
 		this.setMaxDamage(uses);
 		this.setFull3D();
 	}
@@ -108,7 +111,7 @@ public class ItemModBow extends ItemMod {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list) {
 		list.add("Ammo: " + StatCollector.translateToLocal(arrowItem.getUnlocalizedName() + ".name"));
-		list.add(SlayerAPI.Colour.DARK_GREEN + LangHelper.rangedDamage(damage));
+		list.add("Damage: " +SlayerAPI.Colour.LIGHT_PURPLE + damageString);
 		list.add("Ability: " + SlayerAPI.Colour.GOLD + ability);
 	}
 
