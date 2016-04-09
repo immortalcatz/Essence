@@ -83,7 +83,7 @@ public class JourneyItems {
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem", "Gorbite Gem");
 	public static final Item desIngot = new ItemMod("desIngot", "Des Ingot");
 
-	public static final Item elderKey = new ItemMod("elderKey", "Elder Key");
+	public static final Item elderKey = new ItemMod("elderKey", "Elder Key").setMaxStackSize(1);
 	public static final Item boilPowder = new ItemMod("boilPowder", "Boiling Powder");
 	public static final Item blazingFireball = new ItemMod("blazingFireball", "Blazing Fireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell", "Hell Turtle Shell");
@@ -157,8 +157,8 @@ public class JourneyItems {
 	public static final Item eucaPortalPiece_1 = new ItemMod("eucaPortalPiece_1", "Euca Portal Piece");
 	public static final Item eucaPortalPiece_0 = new ItemMod("eucaPortalPiece_0", "Euca Portal Piece");
 	public static final Item flamingHide = new ItemMod("flamingHide", "Flaming Hide");
-	public static final Item boilKey = new ItemMod("boilKey", "Boil Key");
-	public static final Item darkKey = new ItemMod("darkkey", "Dark Key");
+	public static final Item boilKey = new ItemMod("boilKey", "Boil Key").setMaxStackSize(1);;
+	public static final Item darkKey = new ItemMod("darkkey", "Dark Key").setMaxStackSize(1);;
 	
 	public static final Item hellstoneDust = new ItemMod("hellstoneDust", "Bloodcrust Dust");
 	public static final Item shadiumDust = new ItemMod("shadiumDust", "Shadium Dust");
@@ -592,12 +592,12 @@ public class JourneyItems {
 	public static final Item royalHammer = new ItemHammer("royalHammer", "Royal Hammer", EssenceToolMaterial.ROYAL_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
 	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityOvergrown.class, false, true, 12, 4, 1320);
 	
-	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon");
-	public static final Item rockLauncher = new ItemGun("rockLauncher", "Rock Launcher", rockChunk, 9.0F, 650, EnumSounds.CANNON);
-	public static final Item netherPlasma = new ItemChaosCannon("netherPlasma", "Nether Plasma");
-	public static final Item oceanPlasma = new ItemChaosCannon("oceanPlasma", "Ocean Plasma");
-	public static final Item forestPlasma = new ItemChaosCannon("forestPlasma", "Forest Plasma");
-	public static final Item eyeBlaster = new ItemChaosCannon("eyeBlaster", "Eye Blaster");
+	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon", 6, "Shoots a bouncing projectile", EntityBouncingProjectile.class);
+	public static final Item rockLauncher = new ItemGun("rockLauncher", "Rock Launcher", 4, "Stuns mobs for 10 seconds", EntityRockProjectile.class);
+	public static final Item netherPlasma = new ItemGun("netherPlasma", "Nether Plasma", 10, "Burns mobs for 10 seconds", EntityNetherPlasma.class);
+	public static final Item oceanPlasma = new ItemGun("oceanPlasma", "Ocean Plasma", 4, "Harms mobs", EntityOceanPlasma.class);
+	public static final Item forestPlasma = new ItemGun("forestPlasma", "Forest Plasma", 4, "Poisons Mobs for 10 seconds", EntityForestPlasma.class);
+	public static final Item eyeBlaster = new ItemGun("eyeBlaster", "Eye Blaster", 12, "Harms and burns mobs for 10 seconds", EntityEyeBlaster.class);
 	
 	public static final Item greenGem = new ItemMod("greenGem", "Green Gem");
 	public static final Item purpleGem = new ItemMod("purpleGem", "Purple Gem");
