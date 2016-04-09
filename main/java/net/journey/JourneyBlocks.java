@@ -198,6 +198,9 @@ public class JourneyBlocks {
 	public static final Block boilChain = new BlockModBars("boilChain", "Boil Chain").setBlockUnbreakable();
 	public static final Block boilGate = new BlockModBars("boilGate", "Boil Gate").setBlockUnbreakable();
 	public static final Block boilLock = new BlockLock("boilLock", "Boil Lock", JourneyItems.boilKey).setBlockUnbreakable();
+
+	public static final Block darklyGate = new BlockModBars("darklyGate", "Darkly Gate").setBlockUnbreakable();
+	public static final Block darklyLock = new BlockLock("darklyLock", "Darkly Lock", JourneyItems.darkKey).setBlockUnbreakable();
 	
 	public static final Block corbaPost = new BlockModFence(pinkCloudiaCloud, "corbaPost", "Corba Post");
 	public static final Block sizzlingPost = new BlockModFence(pinkCloudiaCloud, "sizzlingPost", "Sizzling Post");

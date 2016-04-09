@@ -70,15 +70,13 @@ public class BlockLock extends BlockMod {
 			worldIn.setBlockState(pos.add(0, 1, 0), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(0, 0, 1), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(-1, 0, 0), Blocks.air.getDefaultState());
-			worldIn.setBlockState(pos.add(0, -1, 0), Blocks.air.getDefaultState());
-		
+			worldIn.setBlockState(pos.add(0, -1, 0), Blocks.air.getDefaultState());		
 			worldIn.setBlockState(pos.add(0, 0, -1), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(1, 0, 0), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(1, 1, 0), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(-1, -1, 0), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(-1, 1, 0), Blocks.air.getDefaultState());
-			worldIn.setBlockState(pos.add(1, -1, 0), Blocks.air.getDefaultState());
-		
+			worldIn.setBlockState(pos.add(1, -1, 0), Blocks.air.getDefaultState());	
 			worldIn.setBlockState(pos.add(0, 0, 1), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(0, 1, 1), Blocks.air.getDefaultState());
 			worldIn.setBlockState(pos.add(0, -1, -1), Blocks.air.getDefaultState());
