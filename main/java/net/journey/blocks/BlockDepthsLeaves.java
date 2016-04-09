@@ -34,6 +34,17 @@ public class BlockDepthsLeaves extends BlockMod {
         this.setTickRandomly(true);
     }
     
+    @Override 
+    public boolean isOpaqueCube() {
+    	return false;
+    }
+    
+    @Override
+    public boolean isNormalCube(){
+		return false;
+    }
+    
+    @Override
 	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer() {
 		return EnumWorldBlockLayer.TRANSLUCENT;
