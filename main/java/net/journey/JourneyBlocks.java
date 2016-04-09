@@ -7,6 +7,7 @@ import net.journey.blocks.BlockCloud;
 import net.journey.blocks.BlockColouredBricks;
 import net.journey.blocks.BlockCorbaPortalFrame;
 import net.journey.blocks.BlockDarkbloom;
+import net.journey.blocks.BlockDepthsLeaves;
 import net.journey.blocks.BlockDungeonBlock;
 import net.journey.blocks.BlockEucaPumpkin;
 import net.journey.blocks.BlockEucaSapling;
@@ -133,7 +134,7 @@ public class JourneyBlocks {
 	public static final Block depthsLog = new BlockModLog("depthsLog", "Depths Log");
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", "Depths Plank", 1.0F);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs", "Depths Stairs");
-	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
+	public static final Block depthsLeaves = new BlockDepthsLeaves("depthsLeaves", "Depths Leaves", 1.0F);
 	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F).setBlockUnbreakable();
 	public static final Block darkFloor = new BlockMod("darkFloor", "Dark Floor", 2.0F).setBlockUnbreakable();
 	//public static final Block darkTile = new BlockMod("darkTile", "Dark Tile", 2.0F).setBlockUnbreakable();
@@ -161,6 +162,7 @@ public class JourneyBlocks {
 	public static final Block corbaPillar = new BlockMod("corbaPillar", "Corba Pillar");
 	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", "Corba Plank", 0.5F);
 	public static final Block corbaLamp = new BlockMod("corbaLamp", "Corba Lamp").setLightLevel(1.0F);
+	public static final Block corbaSentryBrick = new BlockMod("corbaSentryBrick", "Corba Sentry Brick");
 	
 	public static final Block boilingLamp = new BlockDungeonBlock("boilingLamp", "Boiling Lamp", true).setLightLevel(1.0F);
 	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 

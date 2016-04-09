@@ -9,9 +9,11 @@ import net.journey.dimension.depths.gen.WorldGenDepthsLights;
 import net.journey.dimension.depths.gen.WorldGenDepthsTree;
 import net.journey.dimension.depths.gen.WorldGenDepthsTree1;
 import net.journey.dimension.depths.gen.WorldGenDepthsTree2;
+import net.journey.dimension.depths.gen.WorldGenGuardianTower;
 import net.journey.dimension.depths.gen.WorldGenPlant1;
 import net.journey.dimension.depths.gen.WorldGenPlant2;
 import net.journey.dimension.depths.gen.WorldGenPlant3;
+import net.journey.dimension.depths.gen.WorldGenSorcererShrine;
 import net.journey.dimension.depths.gen.WorldGenSpike;
 import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
@@ -334,38 +336,38 @@ public class ChunkProviderDepths implements IChunkProvider {
 			}
 		}
 		
-		for(i = 0; i < 256; i++) {
+		for(i = 0; i < 100; i++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+			if(isBlockTop(x, yCoord - 2, z, JourneyBlocks.depthsGrass)) {
 				new WorldGenPlant1(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
-		for(i = 0; i < 256; i++) {
+		for(i = 0; i < 100; i++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+			if(isBlockTop(x, yCoord - 2, z, JourneyBlocks.depthsGrass)) {
 				new WorldGenPlant2(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
-		for(i = 0; i < 256; i++) {
+		for(i = 0; i < 100; i++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+			if(isBlockTop(x, yCoord - 2, z, JourneyBlocks.depthsGrass)) {
 				new WorldGenPlant3(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
-		for(i = 0; i < 256; i++) {
+		for(i = 0; i < 100; i++) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
-			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+			if(isBlockTop(x, yCoord - 2, z, JourneyBlocks.depthsGrass)) {
 				new WorldGenDarkbloom().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
@@ -375,7 +377,16 @@ public class ChunkProviderDepths implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
-				new WorldGenSmeltery().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+				new WorldGenSorcererShrine().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+		
+		if(rand.nextInt(7)==0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenGuardianTower().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 	}
