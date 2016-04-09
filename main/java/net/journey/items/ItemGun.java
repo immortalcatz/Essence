@@ -36,9 +36,9 @@ public class ItemGun extends ItemMod {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(!world.isRemote && EssenceBar.getProperties(player).useBar(1)) {
+			EnumSounds.playSound(EnumSounds.PLASMA, world, player);
 			try {
 				world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-				EnumSounds.playSound(EnumSounds.PLASMA, world, player);
 				stack.damageItem(damage, player);
 			} catch (Exception e) {
 				e.printStackTrace();
