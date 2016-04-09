@@ -29,113 +29,20 @@ import net.slayer.api.EnumMaterialTypes;
 import net.slayer.api.EnumToolType;
 import net.slayer.api.SlayerAPI;
 
-public class BlockModLadder extends Block{
+public class BlockModLadder extends BlockMod {
 
-    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	protected EnumMaterialTypes blockType;
-	protected Item drop = null;
-	protected Random rand;
-	public int boostBrightnessLow;
-	public int boostBrightnessHigh;
-	public boolean enhanceBrightness;
-	public String name;
-	protected boolean isOpaque = true, isNormalCube = true;
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	
 	public BlockModLadder(String name, String finalName, float hardness) {
-		this(EnumMaterialTypes.WOOD, name, finalName, hardness, JourneyTabs.blocks);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-	}
-
-	public BlockModLadder(String name, String finalName) {
-		this(EnumMaterialTypes.WOOD, name, finalName, 2.0F, JourneyTabs.blocks);
-	}
-
-	public BlockModLadder(EnumMaterialTypes type, String name, String finalName, float hardness) {
-		this(type, name, finalName, hardness, JourneyTabs.blocks);
-	}
-
-	public BlockModLadder(String name, String finalName, boolean breakable, CreativeTabs tab) {
-		this(EnumMaterialTypes.WOOD, name, finalName, tab);
-	}
-
-	public BlockModLadder(String name, String finalName, boolean breakable) {
-		this(name, finalName, breakable, JourneyTabs.decoration);
-	}
-
-	public BlockModLadder(EnumMaterialTypes blockType, String name, String finalName, CreativeTabs tab) {
-		super(blockType.getMaterial());
-		LangRegistry.addBlock(name, finalName);
-		this.blockType = blockType;
-		setHardness(2.0F);
-		rand = new Random();
-		setStepSound(blockType.getSound());
-		setCreativeTab(tab);
-		setUnlocalizedName(name);
-		this.name = name; 
-		JourneyBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
-	}
-
-	public BlockModLadder(EnumMaterialTypes blockType, String name, String finalName, float hardness, CreativeTabs tab) {
-		super(blockType.getMaterial());
-		LangRegistry.addBlock(name, finalName);
-		this.blockType = blockType;
-		rand = new Random();
-		setStepSound(blockType.getSound());
-		setCreativeTab(tab);
-		setUnlocalizedName(name);
-		setHardness(hardness);
-		this.name = name;
-		JourneyBlocks.blockName.add(name);
-		GameRegistry.registerBlock(this, name);
-	}
-
-	public Block addName(String name) {
-		JourneyBlocks.blockName.add(name);
-		return this;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		if(drop == null) return SlayerAPI.toItem(this);
-		return drop;
-	}
-
-	public BlockModLadder setHarvestLevel(EnumToolType type) {
-		setHarvestLevel(type.getType(), type.getLevel());
-		return this;
-	}
-
-	@Override
-	public int getRenderType() {
-		return 3;
-	}
-
-	@Override
-	public int quantityDropped(Random rand) {
-		return 1;
-	}
-
-	@Override
-	public boolean isNormalCube() {
-		return false;
+		super(EnumMaterialTypes.WOOD, name, finalName, hardness);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.setCreativeTab(JourneyTabs.decoration);
 	}
 	
 	public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)
     {
         this.setBlockBoundsBasedOnState(worldIn, pos);
         return super.getCollisionBoundingBox(worldIn, pos, state);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public AxisAlignedBB getSelectedBoundingBox(World worldIn, BlockPos pos)
-    {
-        this.setBlockBoundsBasedOnState(worldIn, pos);
-        return super.getSelectedBoundingBox(worldIn, pos);
     }
 
     public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
@@ -146,24 +53,34 @@ public class BlockModLadder extends Block{
         {
             float f = 0.125F;
 
-            switch (BlockModLadder.SwitchEnumFacing.FACING_LOOKUP[((EnumFacing)iblockstate.getValue(FACING)).ordinal()])
+            switch ((EnumFacing)iblockstate.getValue(FACING))
             {
-                case 1:
+                case NORTH:
                     this.setBlockBounds(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
                     break;
-                case 2:
+                case SOUTH:
                     this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, f);
                     break;
-                case 3:
+                case WEST:
                     this.setBlockBounds(1.0F - f, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
                     break;
-                case 4:
+                case EAST:
                 default:
                     this.setBlockBounds(0.0F, 0.0F, 0.0F, f, 1.0F, 1.0F);
             }
         }
     }
 
+    @SideOnly(Side.CLIENT)
+    public AxisAlignedBB getSelectedBoundingBox(World worldIn, BlockPos pos)
+    {
+        this.setBlockBoundsBasedOnState(worldIn, pos);
+        return super.getSelectedBoundingBox(worldIn, pos);
+    }
+
+    /**
+     * Used to determine ambient occlusion and culling when rebuilding chunks for render
+     */
     public boolean isOpaqueCube()
     {
         return false;
@@ -182,10 +99,29 @@ public class BlockModLadder extends Block{
                worldIn.isSideSolid(pos.south(), EnumFacing.NORTH, true);
     }
 
-    @Override
-	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-	}
+    /**
+     * Called by ItemBlocks just before a block is actually set in the world, to allow for adjustments to the
+     * IBlockstate
+     */
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        if (facing.getAxis().isHorizontal() && this.canBlockStay(worldIn, pos, facing))
+        {
+            return this.getDefaultState().withProperty(FACING, facing);
+        }
+        else
+        {
+            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+            {
+                if (this.canBlockStay(worldIn, pos, enumfacing))
+                {
+                    return this.getDefaultState().withProperty(FACING, enumfacing);
+                }
+            }
+
+            return this.getDefaultState();
+        }
+    }
 
     /**
      * Called when a neighboring block changes.
@@ -208,73 +144,39 @@ public class BlockModLadder extends Block{
         return worldIn.isSideSolid(pos.offset(facing.getOpposite()), facing, true);
     }
 
+    /**
+     * Convert the given metadata into a BlockState for this Block
+     */
+    public IBlockState getStateFromMeta(int meta)
+    {
+        EnumFacing enumfacing = EnumFacing.getFront(meta);
+
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+        {
+            enumfacing = EnumFacing.NORTH;
+        }
+
+        return this.getDefaultState().withProperty(FACING, enumfacing);
+    }
+
     @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.CUTOUT;
-	}
-
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
-	}
-
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
-	}
-
-	@Override
-	protected BlockState createBlockState() {
-		return new BlockState(this, new IProperty[] {FACING});
-	}
-    @Override 
-    public boolean isLadder(IBlockAccess world, BlockPos pos, EntityLivingBase entity) 
-    {
-    	return true; 
     }
 
-    static final class SwitchEnumFacing
-        {
-            static final int[] FACING_LOOKUP = new int[EnumFacing.values().length];
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((EnumFacing)state.getValue(FACING)).getIndex();
+    }
 
-            static
-            {
-                try
-                {
-                    FACING_LOOKUP[EnumFacing.NORTH.ordinal()] = 1;
-                }
-                catch (NoSuchFieldError var4)
-                {
-                    ;
-                }
+    protected BlockState createBlockState()
+    {
+        return new BlockState(this, new IProperty[] {FACING});
+    }
 
-                try
-                {
-                    FACING_LOOKUP[EnumFacing.SOUTH.ordinal()] = 2;
-                }
-                catch (NoSuchFieldError var3)
-                {
-                    ;
-                }
-
-                try
-                {
-                    FACING_LOOKUP[EnumFacing.WEST.ordinal()] = 3;
-                }
-                catch (NoSuchFieldError var2)
-                {
-                    ;
-                }
-
-                try
-                {
-                    FACING_LOOKUP[EnumFacing.EAST.ordinal()] = 4;
-                }
-                catch (NoSuchFieldError var1)
-                {
-                    ;
-              }
-         }
-     }
+    @Override public boolean isLadder(IBlockAccess world, BlockPos pos, EntityLivingBase entity) { return true; }
 }

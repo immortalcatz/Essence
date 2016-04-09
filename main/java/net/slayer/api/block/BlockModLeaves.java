@@ -176,7 +176,7 @@ public class BlockModLeaves extends BlockMod implements IShearable {
 
     @Override
     public boolean isOpaqueCube() {
-        return true;
+        return false;
     }
 
     @Override

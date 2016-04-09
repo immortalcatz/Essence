@@ -7,6 +7,7 @@ import java.util.Random;
 import net.journey.JourneyBlocks;
 import net.journey.dimension.corba.gen.WorldGenCorbaLamp;
 import net.journey.dimension.corba.gen.WorldGenCorbaVillage;
+import net.journey.dimension.corba.gen.WorldGenHugeCorbaTree;
 import net.journey.dimension.corba.gen.WorldGenTreehouse;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaHugeTree;
 import net.journey.dimension.corba.gen.trees.WorldGenCorbaLargeTree;
@@ -360,7 +361,7 @@ public class ChunkProviderCorba implements IChunkProvider {
 			new WorldGenModFlower(JourneyBlocks.corbaLightPurpleFlower).generate(worldObj, r, new BlockPos(x, y, z));
 		}
 		
-		if(rand.nextInt(9)==0) {
+		if(rand.nextInt(6)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
@@ -369,12 +370,21 @@ public class ChunkProviderCorba implements IChunkProvider {
 			}
 		}
 		
-		if(rand.nextInt(9)==0) {
+		if(rand.nextInt(7)==0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(128) + 1;
 			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
 				new WorldGenCorbaVillage().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+		
+		if(rand.nextInt(9)==0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord -0, z, JourneyBlocks.corbaGrass)) {
+				new WorldGenHugeCorbaTree().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		

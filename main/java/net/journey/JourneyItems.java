@@ -83,6 +83,7 @@ public class JourneyItems {
 	public static final Item gorbiteGem = new ItemMod("gorbiteGem", "Gorbite Gem");
 	public static final Item desIngot = new ItemMod("desIngot", "Des Ingot");
 
+	public static final Item elderKey = new ItemMod("elderKey", "Elder Key");
 	public static final Item boilPowder = new ItemMod("boilPowder", "Boiling Powder");
 	public static final Item blazingFireball = new ItemMod("blazingFireball", "Blazing Fireball");
 	public static final Item hellTurtleShell = new ItemMod("hellTurtleShell", "Hell Turtle Shell");

@@ -636,8 +636,8 @@ public class WorldGenHugeCorbaTree extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 5, j + 65, k + 7), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 65, k + 8), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 66, k + 3), JourneyBlocks.corbaPillar.getDefaultState());
-		world.setBlockState(new BlockPos(i + 5, j + 66, k + 5, Block.dirt.blockID);
-		world.setBlockState(new BlockPos(i + 5, j + 66, k + 6, Block.dirt.blockID);
+		world.setBlockState(new BlockPos(i + 5, j + 66, k + 5), JourneyBlocks.elderBlock.getDefaultState());
+		world.setBlockState(new BlockPos(i + 5, j + 66, k + 6), JourneyBlocks.elderBlock.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 66, k + 8), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 67, k + 3), JourneyBlocks.corbaSentryBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 5, j + 67, k + 8), JourneyBlocks.corbaSentryBrick.getDefaultState());
@@ -923,8 +923,8 @@ public class WorldGenHugeCorbaTree extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 6, j + 65, k + 8), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 65, k + 9), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 66, k + 3), JourneyBlocks.corbaPillar.getDefaultState());
-		world.setBlockState(new BlockPos(i + 6, j + 66, k + 5, Block.dirt.blockID);
-		world.setBlockState(new BlockPos(i + 6, j + 66, k + 6, Block.dirt.blockID);
+		world.setBlockState(new BlockPos(i + 6, j + 66, k + 5), JourneyBlocks.elderBlock.getDefaultState());
+		world.setBlockState(new BlockPos(i + 6, j + 66, k + 6), JourneyBlocks.elderBlock.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 66, k + 8), JourneyBlocks.corbaPillar.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 67, k + 3), JourneyBlocks.corbaSentryBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 6, j + 67, k + 8), JourneyBlocks.corbaSentryBrick.getDefaultState());
@@ -1333,7 +1333,7 @@ public class WorldGenHugeCorbaTree extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 10, j + 46, k + 3), JourneyBlocks.corbaSentryBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 10, j + 46, k + 7), JourneyBlocks.corbaSentryBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 10, j + 49, k + 3), JourneyBlocks.corbaSentryBrick.getDefaultState());
-		world.setBlockState(new BlockPos(i + 10, j + 49, k + 5, Block.netherrack.blockID);
+		world.setBlockState(new BlockPos(i + 10, j + 49, k + 5), JourneyBlocks.overseerSpawner.getDefaultState());
 		world.setBlockState(new BlockPos(i + 10, j + 49, k + 7), JourneyBlocks.corbaSentryBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 10, j + 50, k + 2), JourneyBlocks.corbaLeaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 10, j + 50, k + 3), JourneyBlocks.corbaLeaves.getDefaultState());
@@ -1447,5 +1447,6 @@ public class WorldGenHugeCorbaTree extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 12, j + 60, k + 6), JourneyBlocks.corbaLeaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 50, k + 5), JourneyBlocks.corbaLeaves.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 59, k + 6), JourneyBlocks.corbaLeaves.getDefaultState());
+		return false;
 	}
 }

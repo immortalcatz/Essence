@@ -328,7 +328,13 @@ public class BlockModBars extends Block
 
     public final boolean canPaneConnectToBlock(Block blockIn)
     {
-        return blockIn.isFullBlock() || blockIn == this || blockIn == Blocks.glass || blockIn == Blocks.stained_glass || blockIn == Blocks.stained_glass_pane || blockIn instanceof BlockModBars;
+        return blockIn.isFullBlock() || 
+        		blockIn == this || 
+        		blockIn == Blocks.glass || 
+        		blockIn == Blocks.stained_glass || 
+                blockIn == Blocks.iron_bars || 
+        		blockIn == Blocks.stained_glass_pane || 
+        		blockIn instanceof BlockModBars;
     }
 
     protected boolean canSilkHarvest()

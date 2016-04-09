@@ -3,6 +3,7 @@ package net.journey;
 import java.util.ArrayList;
 
 import net.journey.blocks.BlockBrittleIce;
+import net.journey.blocks.BlockChangeable;
 import net.journey.blocks.BlockCloud;
 import net.journey.blocks.BlockColouredBricks;
 import net.journey.blocks.BlockCorbaPortalFrame;
@@ -371,7 +372,7 @@ public class JourneyBlocks {
 	public static final Block eucaPumpkin = new BlockEucaPumpkin("eucaPumpkin", "Euca Pumpkin");
 	public static final Block cloud = new BlockCloud("cloud", "Cloud");
 	
-	//public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder");
+	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder", 0);
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	
@@ -389,9 +390,16 @@ public class JourneyBlocks {
 	public static final Block hellbotSpawner = new BlockModSpawner("hellbotSpawner", "Hellbot Spawner", "hellbot");
 	
 	public static final Block purplianSpawner = new BlockModSpawner("purplianSpawner", "Purplian Spawner", "purplian");
+	
 	public static final Block starlightGolemSpawner = new BlockModSpawner("starlightGolemSpawner", "Starlight Golem Spawner", "starlightGolem");
 	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporter", "Starlight Transporter Spawner", "starlightTransporter");
-	public static final Block sorcererSpawner = new BlockModSpawner("sorcererTransporter", "Sorcerer Spawner", "sorcerer");
+	
+	public static final Block sorcererSpawner = new BlockModSpawner("sorcererSpawner", "Sorcerer Spawner", "darkSorcerer");
+	
+	public static final Block overseerSpawner = new BlockModSpawner("overseerSpawner", "Overseer Spawner", "overseer");
+	public static final Block overseerElderSpawner = new BlockModSpawner("overseerElderSpawner", "Overseer Elder Spawner", "overseerElder");
+	
+	public static final Block elderBlock = new BlockChangeable("elderBlock", "Elder Block", JourneyItems.elderKey, JourneyBlocks.overseerElderSpawner);
 	
 	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
 	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);
