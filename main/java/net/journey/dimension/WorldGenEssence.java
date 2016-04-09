@@ -77,7 +77,7 @@ public class WorldGenEssence implements IWorldGenerator {
 				new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 		}
 
-		if(r.nextInt(12)==0) {
+		if(r.nextInt(16)==0) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -278,7 +278,7 @@ public class WorldGenEssence implements IWorldGenerator {
 		case 20:
 			y = r.nextInt(250); x = chunkX + r.nextInt(16) + 8; z = chunkZ + r.nextInt(16) + 8;
 			if(y > 99 && y < 130)
-			(new WorldGenMinable(JourneyBlocks.pinkCloudiaCloud.getDefaultState(), 40, BlockHelper.forBlock(Blocks.air))).generate(w, r, new BlockPos(x, y, z));
+			(new WorldGenMinable(JourneyBlocks.lightBlueCloudiaCloud.getDefaultState(), 40, BlockHelper.forBlock(Blocks.air))).generate(w, r, new BlockPos(x, y, z));
 			break;
 		}
 	}

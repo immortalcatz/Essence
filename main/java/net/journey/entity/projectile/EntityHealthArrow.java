@@ -283,8 +283,7 @@ public class EntityHealthArrow extends EntityArrow implements IProjectile {
 						EntityLivingBase player = (EntityLivingBase)movingobjectposition.entityHit;
 						float hearts = player.getHealth();
 						if((hearts >= 1.0F) & (hearts < 20.0F)){		
-							((EntityLivingBase)this.worldObj.rayTraceBlocks(vec31, vec3, false, true, false).entityHit).setHealth(hearts + 1.0F);
-							Vec3 tempVec3 = vec3;
+							((EntityLivingBase)this.worldObj.rayTraceBlocks(vec31, vec3, false, true, false).entityHit).setHealth(hearts + 1.0F);							
 						}
 					}
 

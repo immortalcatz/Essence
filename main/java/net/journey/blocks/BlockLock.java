@@ -33,6 +33,7 @@ public class BlockLock extends BlockMod {
 
 	public BlockLock(String name, String f, Item key) {
 		super(EnumMaterialTypes.METAL_SOUND, name, f, 0.5F);
+		this.key = key;
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.setTickRandomly(true);
 	}

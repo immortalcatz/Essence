@@ -13,6 +13,7 @@ import net.journey.dimension.depths.gen.WorldGenPlant1;
 import net.journey.dimension.depths.gen.WorldGenPlant2;
 import net.journey.dimension.depths.gen.WorldGenPlant3;
 import net.journey.dimension.depths.gen.WorldGenSpike;
+import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -307,67 +308,82 @@ public class ChunkProviderDepths implements IChunkProvider {
 		}
 
 		for(i = 0; i < 100; i++) {
-			y = rand.nextInt(250);
+			int yCoord = rand.nextInt(128) + 1;
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenDepthsTree(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenDepthsTree(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 100; i++) {
-			y = rand.nextInt(250);
+			int yCoord = rand.nextInt(128) + 1;
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenDepthsTree1(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenDepthsTree1(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 100; i++) {
-			y = rand.nextInt(250);
+			int yCoord = rand.nextInt(128) + 1;
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenDepthsTree2(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenDepthsTree2(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 256; i++) {
-			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenPlant1(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenPlant1(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 256; i++) {
-			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenPlant2(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenPlant2(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 256; i++) {
-			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenPlant3(true).generate(worldObj, rand, new BlockPos(x, y, z));
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenPlant3(true).generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
 		
 		for(i = 0; i < 256; i++) {
-			y = rand.nextInt(250);
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
-			if(worldObj.getBlockState(new BlockPos(x, y, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y - 1, z)) == JourneyBlocks.depthsGrass.getDefaultState()) {
-				new WorldGenDarkbloom().generate(worldObj, rand, new BlockPos(x, y, z));
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenDarkbloom().generate(worldObj, rand, new BlockPos(x, yCoord, z));
 			}
 		}
+		
+		if(rand.nextInt(9)==0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(128) + 1;
+			if(isBlockTop(x, yCoord - 1, z, JourneyBlocks.depthsGrass)) {
+				new WorldGenSmeltery().generate(worldObj, rand, new BlockPos(x, yCoord, z));
+			}
+		}
+	}
+	
+	public boolean isBlockTop(int x, int y, int z, Block grass) {
+		return worldObj.getBlockState(new BlockPos(x, y, z)) == grass.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 1, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 2, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 3, z)) == Blocks.air.getDefaultState()
+				&& worldObj.getBlockState(new BlockPos(x, y + 4, z)) == Blocks.air.getDefaultState() && worldObj.getBlockState(new BlockPos(x, y + 5, z)) == Blocks.air.getDefaultState();
 	}
 
 	@Override

@@ -134,8 +134,11 @@ public class JourneyBlocks {
 	public static final Block depthsPlank = new BlockMod(EnumMaterialTypes.WOOD, "depthsPlank", "Depths Plank", 1.0F);
 	public static final Block depthsStairs = new BlockModStairs(depthsPlank, "depthsStairs", "Depths Stairs");
 	public static final Block depthsLeaves = new BlockModLeaves("depthsLeaves", "Depths Leaves", 1.0F);
-	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F);
-	public static final Block darkFloor = new BlockModGrass(null, "darkFloor", "Dark Floor", 2.0F);
+	public static final Block darkBrick = new BlockMod("darkBrick", "Dark Brick", 2.0F).setBlockUnbreakable();
+	public static final Block darkFloor = new BlockMod("darkFloor", "Dark Floor", 2.0F).setBlockUnbreakable();
+	//public static final Block darkTile = new BlockMod("darkTile", "Dark Tile", 2.0F).setBlockUnbreakable();
+	public static final Block darkShingle = new BlockMod("darkShingle", "Dark Shingle", 2.0F).setBlockUnbreakable();
+	
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
@@ -385,7 +388,8 @@ public class JourneyBlocks {
 	
 	public static final Block purplianSpawner = new BlockModSpawner("purplianSpawner", "Purplian Spawner", "purplian");
 	public static final Block starlightGolemSpawner = new BlockModSpawner("starlightGolemSpawner", "Starlight Golem Spawner", "starlightGolem");
-	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporter", "Starlight Transporter", "starlightTransporter");
+	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporter", "Starlight Transporter Spawner", "starlightTransporter");
+	public static final Block sorcererSpawner = new BlockModSpawner("sorcererTransporter", "Sorcerer Spawner", "sorcerer");
 	
 	public static final Block netherFurnace = new BlockNetherFurnace("netherFurnace", "Nethic Furnace", false);
 	public static final Block netherFurnaceActive = new BlockNetherFurnace("netherFurnaceActive", "Nethic Furnace", true).setLightLevel(1).setCreativeTab(null);
