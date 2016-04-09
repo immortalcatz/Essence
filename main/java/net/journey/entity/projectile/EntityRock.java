@@ -2,7 +2,6 @@ package net.journey.entity.projectile;
 
 import java.util.Random;
 
-import net.journey.client.render.particles.EntityDoomFX;
 import net.journey.client.render.particles.EntityEnlightmentFX;
 import net.journey.client.render.particles.EntityRockFX;
 import net.minecraft.client.particle.EntityFX;
@@ -12,13 +11,13 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityEyeBlaster extends EntityBasicProjectile {
+public class EntityRock extends EntityBasicProjectile {
 
-	public EntityEyeBlaster(World var1) {
+	public EntityRock(World var1) {
 		super(var1);
 	}
 	
-	public EntityEyeBlaster(World var1, EntityLivingBase var3, float dam) {
+	public EntityRock(World var1, EntityLivingBase var3, float dam) {
 		super(var1, var3, dam);
 	}
 	
@@ -28,7 +27,7 @@ public class EntityEyeBlaster extends EntityBasicProjectile {
 		Random rand = new Random();
 		super.onUpdate();
 		for(int i = 0; i < 6; ++i) {
-			EntityFX effect = new EntityDoomFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
+			EntityFX effect = new EntityRockFX(this.worldObj, this.posX, this.posY - 1.0F, this.posZ, 0.0D, 0.0D, 0.0D);
 			FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
 		}
 	}

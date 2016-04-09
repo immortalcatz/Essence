@@ -21,9 +21,9 @@ import net.slayer.api.item.ItemMod;
 public class ItemGun extends ItemMod {
 
 	public int damage;
-	protected Class<? extends EntityThrowable> projectile; 
+	protected Class<? extends EntityBasicProjectile> projectile; 
 	public String ability;
-	public ItemGun(String name, String f, int damage, String ability, Class<? extends EntityThrowable> projectile) {
+	public ItemGun(String name, String f, int damage, String ability, Class<? extends EntityBasicProjectile> projectile) {
 		super(name, f, JourneyTabs.staves);
 		this.ability = ability;
 		this.projectile = projectile;

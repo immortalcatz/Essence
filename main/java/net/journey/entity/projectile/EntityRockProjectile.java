@@ -15,8 +15,9 @@ public class EntityRockProjectile extends EntityThrowable {
 		super(w);
 	}
 	
-	public EntityRockProjectile(World worldIn, EntityLivingBase throwerIn) {
+	public EntityRockProjectile(World worldIn, EntityLivingBase throwerIn, float damage) {
 		super(worldIn, throwerIn);
+		this.damage = damage;
 	}
 
 	@Override
