@@ -44,11 +44,11 @@ public class EntityHellbot extends EntityModMob {
 	protected void dropFewItems(boolean b, int j) {
 		if(rand.nextInt(5) == 0) dropItem(JourneyItems.flamingSpring, 1);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(30) == 0) dropItem(JourneyItems.flamingSprocket, 1);
+		if(rand.nextInt(80) == 0) dropItem(JourneyItems.flamingSprocket, 1);
 		super.dropFewItems(b, j);
 		if(rand.nextInt(10) == 0) dropItem(JourneyItems.flamingSpring, 2);
 		super.dropFewItems(b, j);
-		if(rand.nextInt(60) == 0) dropItem(JourneyItems.flamingSprocket, 2);
+		if(rand.nextInt(80) == 0) dropItem(JourneyItems.flamingSprocket, 2);
 		super.dropFewItems(b, j);
 	}
 

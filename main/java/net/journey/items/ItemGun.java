@@ -35,11 +35,11 @@ public class ItemGun extends ItemMod {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(!world.isRemote && EssenceBar.getProperties(player).useBar(1)) {
+		if(!world.isRemote && EssenceBar.getProperties(player).useBar(2)) {
 			EnumSounds.playSound(EnumSounds.PLASMA, world, player);
 			try {
 				world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-				stack.damageItem(damage, player);
+				stack.damageItem(1, player);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -49,9 +49,8 @@ public class ItemGun extends ItemMod {
 
 	@Override
 	public void addInformation(ItemStack i, EntityPlayer p, List l) {
-		l.add("Rapid fire");
 		l.add("Infinite ammo");
-		l.add("Uses 1 Essence");
+		l.add("Uses 2 Essence");
 		l.add(SlayerAPI.Colour.GOLD + "Ability: " + ability);
 		l.add(SlayerAPI.Colour.AQUA + "Damage: " + damage + " ranged damage");
 		l.add(i.getMaxDamage() - i.getItemDamage() + SlayerAPI.Colour.DARK_GREEN + " Uses remaining");

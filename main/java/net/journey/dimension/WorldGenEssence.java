@@ -69,7 +69,7 @@ public class WorldGenEssence implements IWorldGenerator {
 			worldMinableGenNether(JourneyBlocks.hellstoneOre, 5, w, x, y, z);
 		}
 		
-		if(r.nextInt(6)==0) {
+		if(r.nextInt(20)==0) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
@@ -77,12 +77,20 @@ public class WorldGenEssence implements IWorldGenerator {
 				new WorldGenNetherTower().generate(w, r, new BlockPos(x, y, z));
 		}
 
-		if(r.nextInt(16)==0) {
+		if(r.nextInt(40)==0) {
 			y = r.nextInt(128) + 1;
 			x = chunkX + r.nextInt(16);
 			z = chunkZ + r.nextInt(16);
 			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) 
 			new WorldGenBoilPortal().generate(w, r, new BlockPos(x, y, z));
+		}
+		
+		if(r.nextInt(40)==0) {
+			y = r.nextInt(128) + 1;
+			x = chunkX + r.nextInt(16);
+			z = chunkZ + r.nextInt(16);
+			if(y > 20 && y < 110) if(w.getBlockState(new BlockPos(x, y - 1, z)) == Blocks.netherrack.getDefaultState()) 
+			new WorldGenNetherDungeons().generate(w, r, new BlockPos(x, y, z));
 		}
 		
 		for(times = 0; times < 1; times++) {

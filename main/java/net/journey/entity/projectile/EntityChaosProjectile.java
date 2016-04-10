@@ -11,7 +11,7 @@ public class EntityChaosProjectile extends EntityBouncingProjectile {
 		super(w);
 	}
 	
-	public EntityChaosProjectile(World par1, EntityPlayer par2) {
+	public EntityChaosProjectile(World par1, EntityPlayer par2, float damage) {
 		super(par1, par2, 2, 3);
 	}
 }

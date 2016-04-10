@@ -1,12 +1,18 @@
 package net.journey.entity.projectile;
 
+import java.util.Random;
+
 import net.journey.client.render.particles.EntityHellstoneFX;
+import net.journey.client.render.particles.EntityIceballFX;
+import net.journey.client.render.particles.EntityOvergrownFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.init.Blocks;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
@@ -30,10 +36,23 @@ public class EntityBubbleProjectile extends EntityLargeFireball {
 	@Override
 	protected void onImpact(MovingObjectPosition var1) {
 		if(var1.entityHit != null) var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, shootingEntity), 20.0F);
+		((EntityLivingBase) var1.entityHit).addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
+		((EntityLivingBase) var1.entityHit).addPotionEffect(new PotionEffect(Potion.harm.id, 100, 1));
 		if(!worldObj.isRemote) this.setDead();
 	}
 
 	public void setThrowableHeading(double d, double e, double f, float g, int i) {
 		
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void onUpdate() {
+		Random rand = new Random();
+		super.onUpdate();
+		for(int i = 0; i < 20; ++i) {
+			EntityFX effect = new EntityIceballFX(this.worldObj, this.posX, this.posY - 1, this.posZ, 0.0D, 0.0D, 0.0D);
+			FMLClientHandler.instance().getClient().effectRenderer.addEffect(effect);
+		}
 	}
 }

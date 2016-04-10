@@ -225,6 +225,7 @@ tile.cloud.name=Cloud
 tile.corbaLadder.name=Corba Ladder
 tile.largeNetherBrick.name=Large Nether Brick
 tile.compactNetherBrick.name=Compact Nether Brick
+tile.nethicLamp.name=Nethic Lamp
 tile.knowledgeTable.name=Knowledge Table
 tile.summoningTable.name=Summoning Table
 tile.bossAltar.name=Boss Altar

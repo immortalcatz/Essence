@@ -592,7 +592,7 @@ public class JourneyItems {
 	public static final Item royalHammer = new ItemHammer("royalHammer", "Royal Hammer", EssenceToolMaterial.ROYAL_HAMMER, false, EntityFireBall.class, false, true, 12, 4, 1320);
 	public static final Item overgrownHammer = new ItemHammer("overgrownHammer", "Overgrown Hammer", EssenceToolMaterial.OVERGROWN_HAMMER, false, EntityOvergrown.class, false, true, 12, 4, 1320);
 	
-	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon", 6, "Shoots a bouncing projectile", EntityBouncingProjectile.class);
+	public static final Item chaosCannon = new ItemChaosCannon("chaosCannon", "Chaos Cannon", 6, 4, "Shoots a bouncing projectile");
 	public static final Item rockLauncher = new ItemGun("rockLauncher", "Rock Launcher", 4, "Stuns mobs for 10 seconds", EntityRock.class);
 	public static final Item netherPlasma = new ItemGun("netherPlasma", "Nether Plasma", 10, "Burns mobs for 10 seconds", EntityNetherPlasma.class);
 	public static final Item oceanPlasma = new ItemGun("oceanPlasma", "Ocean Plasma", 4, "Harms mobs", EntityFloroWater.class);

@@ -375,6 +375,7 @@ public class JourneyBlocks {
 	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder", 0);
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
+	public static final Block nethicLamp = new BlockMod("nethicLamp", "Nethic Lamp").setLightLevel(1);
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
