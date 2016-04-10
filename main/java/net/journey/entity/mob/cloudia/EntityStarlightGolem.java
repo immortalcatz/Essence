@@ -13,17 +13,17 @@ public class EntityStarlightGolem extends EntityModMob {
 	public EntityStarlightGolem(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(3F, 2.5F);
+		this.setSize((float) 2.0, 2);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.starlightGolemDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.starlightGolemHealth;
+		return s.cloudiaHealth;
 	}
 
 	@Override
@@ -42,13 +42,25 @@ public class EntityStarlightGolem extends EntityModMob {
 	}
 	
 	@Override
+    protected String getLivingSound() {
+        return "mob.irongolem.hit";
+    }
+	
+	@Override
+    protected String getHurtSound() {
+        return "mob.irongolem.hit";
+    }
+	
+	@Override
+    protected String getDeathSound() {
+        return "mob.irongolem.death";
+    }
+	
+	@Override
 	protected void dropFewItems(boolean b, int j) {
-		if(rand.nextInt(6) == 0) dropItem(JourneyItems.golemChunk, 1);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(12) == 0) dropItem(JourneyItems.golemChunk, 2);
-		super.dropFewItems(b, j);
-		if(rand.nextInt(18) == 0) dropItem(JourneyItems.golemChunk, 4);
-		super.dropFewItems(b, j);
+		if(rand.nextInt(1) == 0) dropItem(JourneyItems.golemChunk, 1);
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.golemChunk, 2);
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.golemChunk, 4);
 		if(rand.nextInt(40) == 0) dropItem(JourneyItems.cloudiaOrb, 1);
 		super.dropFewItems(b, j);
 		

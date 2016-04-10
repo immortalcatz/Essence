@@ -24,12 +24,12 @@ public class EntityLeafBlower extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.leafBlowerDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.leafBlowerHealth;
+		return s.corbaHealth;
 	}
 
 	@Override

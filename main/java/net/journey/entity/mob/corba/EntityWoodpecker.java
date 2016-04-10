@@ -12,15 +12,15 @@ public class EntityWoodpecker extends EntityPeacefullUntillAttacked {
 	public EntityWoodpecker(World w) {
 		super(w);
 	}
-
+	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.rocDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.rocHealth;
+		return s.corbaHealth;
 	}
 	
 	@Override

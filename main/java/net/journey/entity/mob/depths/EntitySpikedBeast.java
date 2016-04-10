@@ -36,12 +36,12 @@ public class EntitySpikedBeast extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.spikedBeastDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.spikedBeastHealth;
+		return s.depthsHealth;
 	}
 
 	@Override

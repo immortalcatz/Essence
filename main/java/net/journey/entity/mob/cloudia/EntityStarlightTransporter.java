@@ -11,31 +11,32 @@ public class EntityStarlightTransporter extends EntityPeacefullUntillAttacked {
 
 	public EntityStarlightTransporter(World w) {
 		super(w);
+		this.setSize((float) 1.5, 2);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.starlightGolemDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.starlightGolemHealth;
+		return s.cloudiaHealth;
 	}
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BUSH;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BUSH_HURT;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.EMPTY;
+		return EnumSounds.BUSH_DEATH;
 	}
 	
 	@Override

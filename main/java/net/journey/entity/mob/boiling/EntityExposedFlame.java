@@ -27,12 +27,12 @@ public class EntityExposedFlame extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.exposedFlameDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.exposedFlameHealth;
+		return s.boilHealth;
 	}
 
 	@Override

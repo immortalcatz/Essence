@@ -17,12 +17,12 @@ public class EntitySilverbot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.tinbotDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.tinbotHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

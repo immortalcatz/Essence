@@ -36,12 +36,12 @@ public class EntityDepthsHunter extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.depthsHunterDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.depthsHunterHealth;
+		return s.depthsHealth;
 	}
 
 	@Override

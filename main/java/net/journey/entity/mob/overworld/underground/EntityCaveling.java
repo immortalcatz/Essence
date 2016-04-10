@@ -21,12 +21,12 @@ public class EntityCaveling extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.bigHongoDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.bigHongoHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

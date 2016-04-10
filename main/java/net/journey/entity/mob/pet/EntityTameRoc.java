@@ -70,9 +70,9 @@ public class EntityTameRoc extends EntityModTameable {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(MobStats.rocSpeed);
-		if(this.isTamed()) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.rocHealth);
-		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.rocHealth);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(MobStats.baseNetherHealth);
+		if(this.isTamed()) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.baseNetherHealth);
+		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.baseNetherHealth);
         this.getAttributeMap().registerAttribute(SharedMonsterAttributes.attackDamage);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
 	}
@@ -164,8 +164,8 @@ public class EntityTameRoc extends EntityModTameable {
 	@Override
 	public void setTamed(boolean par1) {
 		super.setTamed(par1);
-		if(par1) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.rocHealthTamed);
-		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.rocHealth);
+		if(par1) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.baseNetherHealth);
+		else this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MobStats.baseNetherHealth);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(8.0D);
 	}
 	

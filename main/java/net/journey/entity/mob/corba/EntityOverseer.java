@@ -34,7 +34,7 @@ public class EntityOverseer extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.overseerHealth;
+		return s.flyingHealth;
 	}
 
 	@Override

@@ -143,12 +143,12 @@ public class EntityFrozenFrostbiter extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.frozenFrostbiterDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.frozenFrostbiterHealth;
+		return s.frozenHealth;
 	}
 
 	@Override

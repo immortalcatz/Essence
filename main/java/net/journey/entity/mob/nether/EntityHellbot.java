@@ -17,12 +17,12 @@ public class EntityHellbot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.silverbotDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.silverbotHealth;
+		return s.highNetherHealth;
 	}
 
 	@Override

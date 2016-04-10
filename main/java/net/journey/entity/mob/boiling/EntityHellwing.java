@@ -37,7 +37,7 @@ public class EntityHellwing extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.overseerHealth;
+		return MobStats.flyingHealth;
 	}
 
 	@Override

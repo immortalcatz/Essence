@@ -21,12 +21,12 @@ public class EntityCloudGhost extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.cloudGhostDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.cloudGhostHealth;
+		return s.cloudiaHealth;
 	}
 
 	@Override

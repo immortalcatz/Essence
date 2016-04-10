@@ -58,15 +58,15 @@ public class EntityFireMage extends EntityModMob implements IRangedAttackMob {
         EnumSounds.playSound(EnumSounds.SPARKLE, worldObj, this);
         this.worldObj.spawnEntityInWorld(b);
 	}
-
+	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.mageDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mageHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

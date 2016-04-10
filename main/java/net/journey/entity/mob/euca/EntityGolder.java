@@ -31,12 +31,12 @@ public class EntityGolder extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.golderDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.golderHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

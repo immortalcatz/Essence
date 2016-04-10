@@ -15,12 +15,12 @@ public class EntityGoldwing extends EntityPeacefullUntillAttacked {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.rocDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.rocHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

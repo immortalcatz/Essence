@@ -30,12 +30,12 @@ public class EntityBurningLight extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.burningLightDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.burningLightHealth;
+		return s.boilHealth;
 	}
 
 	@Override

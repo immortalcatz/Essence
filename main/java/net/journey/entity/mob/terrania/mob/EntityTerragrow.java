@@ -19,12 +19,12 @@ public class EntityTerragrow extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.starlightGolemDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.starlightGolemHealth;
+		return s.terraniaHealth;
 	}
 
 	@Override

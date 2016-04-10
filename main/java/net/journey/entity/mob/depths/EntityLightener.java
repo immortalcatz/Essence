@@ -34,7 +34,7 @@ public class EntityLightener extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.darkenerHealth;
+		return MobStats.flyingHealth;
 	}
 
 	@Override

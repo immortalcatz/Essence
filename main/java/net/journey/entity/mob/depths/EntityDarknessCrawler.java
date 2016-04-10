@@ -36,12 +36,12 @@ public class EntityDarknessCrawler extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.darknessCrawlerDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.darknessCrawlerHealth;
+		return s.depthsHealth;
 	}
 
 	@Override

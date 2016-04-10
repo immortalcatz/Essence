@@ -5,22 +5,23 @@ import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+import net.slayer.api.entity.EntityModMob;
 import net.slayer.api.entity.EntityPeacefullUntillAttacked;
 
-public class EntityStarlightWalker extends EntityPeacefullUntillAttacked {
+public class EntityStarlightWalker extends EntityModMob {
 
 	public EntityStarlightWalker(World w) {
 		super(w);
 	}
-
+	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.starlightGolemDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.starlightGolemHealth;
+		return s.cloudiaHealth;
 	}
 
 	@Override
@@ -44,6 +45,21 @@ public class EntityStarlightWalker extends EntityPeacefullUntillAttacked {
 		super.dropFewItems(b, j);
 		
 	}
+	
+	@Override
+    protected String getLivingSound() {
+        return "mob.irongolem.hit";
+    }
+	
+	@Override
+    protected String getHurtSound() {
+        return "mob.irongolem.hit";
+    }
+	
+	@Override
+    protected String getDeathSound() {
+        return "mob.irongolem.death";
+    }
 
 	@Override
 	public Item getItemDropped() {

@@ -27,12 +27,12 @@ public class EntityFrightener extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.frightenerDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.frightenerHealth;
+		return s.boilHealth;
 	}
 
 	@Override

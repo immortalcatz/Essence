@@ -71,12 +71,12 @@ public class EntityFloro extends EntityModMob implements IRangedAttackMob {
 	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.floroDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.floroHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

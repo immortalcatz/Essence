@@ -41,7 +41,7 @@ import net.minecraft.item.Item;
 
     	@Override
     	public double setMaxHealth(MobStats s) {
-    		return MobStats.silverbotHealth;
+    		return s.flyingHealth;
     	}
 
     	@Override

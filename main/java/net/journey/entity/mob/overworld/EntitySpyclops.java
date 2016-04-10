@@ -27,12 +27,12 @@ public class EntitySpyclops extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.spyclopsDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.spyclopsHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

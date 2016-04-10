@@ -20,13 +20,14 @@ public class EntityTerraslug extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.mediumHongoDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mediumHongoHealth;
+		return s.terraniaHealth;
 	}
+	
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.SLUG;

@@ -23,12 +23,12 @@ public class EntityDynaster extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.dynasterDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.dynasterHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

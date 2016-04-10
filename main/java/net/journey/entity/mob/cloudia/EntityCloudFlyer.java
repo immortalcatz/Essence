@@ -11,16 +11,17 @@ public class EntityCloudFlyer extends EntityPeacefullUntillAttacked {
 
 	public EntityCloudFlyer(World w) {
 		super(w);
+		this.setSize((float) 1.5, 2);
 	}
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.rocDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.rocHealth;
+		return s.cloudiaHealth;
 	}
 
 	@Override

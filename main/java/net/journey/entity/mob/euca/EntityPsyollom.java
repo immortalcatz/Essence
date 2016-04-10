@@ -26,12 +26,12 @@ public class EntityPsyollom extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.psyollomDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.psyollomHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

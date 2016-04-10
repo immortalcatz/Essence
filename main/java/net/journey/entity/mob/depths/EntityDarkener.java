@@ -34,7 +34,7 @@ public class EntityDarkener extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.darkenerHealth;
+		return s.flyingHealth;
 	}
 
 	@Override

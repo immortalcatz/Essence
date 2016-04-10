@@ -73,12 +73,12 @@ public class EntityDarkSorcerer extends EntityModMob implements IRangedAttackMob
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.darkSorcererDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.darkSorcererHealth;
+		return s.depthsHealth;
 	}
 
 	@Override

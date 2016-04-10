@@ -30,12 +30,12 @@ public class EntityBlueHonglow extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.bigHongoDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.bigHongoHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

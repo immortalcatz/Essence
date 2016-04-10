@@ -82,21 +82,21 @@ public class ChunkProviderCloudia implements IChunkProvider {
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))hut.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 
-		if (this.rand.nextInt(15) == 0) {
+		if (this.rand.nextInt(2) == 0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))lamp.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 		
-		if (this.rand.nextInt(5) == 0) {
+		if (this.rand.nextInt(2) == 0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))tree.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 		
-		if (this.rand.nextInt(10) == 0) {
+		if (this.rand.nextInt(2) == 0) {
 			x = x1 + this.rand.nextInt(16) + 8;
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;

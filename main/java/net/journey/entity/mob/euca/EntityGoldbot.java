@@ -17,14 +17,14 @@ public class EntityGoldbot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return MobStats.silverbotDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.silverbotHealth;
+		return s.eucaHealth;
 	}
-
+	
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.ROBOT;

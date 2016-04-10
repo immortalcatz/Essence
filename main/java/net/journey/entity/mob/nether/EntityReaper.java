@@ -27,12 +27,12 @@ public class EntityReaper extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.reaperDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.reaperHealth;
+		return s.baseNetherHealth;
 	}
 
     protected String getLivingSound()

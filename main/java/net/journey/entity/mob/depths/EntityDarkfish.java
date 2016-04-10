@@ -41,7 +41,7 @@
 
     	@Override
     	public double setMaxHealth(MobStats s) {
-    		return MobStats.silverbotHealth;
+    		return MobStats.flyingHealth;
     	}
 
     	@Override

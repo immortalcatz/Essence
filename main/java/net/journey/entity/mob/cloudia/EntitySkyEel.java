@@ -34,12 +34,12 @@ public class EntitySkyEel extends EntityModFlying {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.silverbotHealth;
+		return s.flyingHealth;
 	}
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.INSECTO;
+		return EnumSounds.PSYOLLOM_HURT;
 	}
 
 	@Override

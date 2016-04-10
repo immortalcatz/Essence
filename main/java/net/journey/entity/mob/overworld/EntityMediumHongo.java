@@ -20,13 +20,14 @@ public class EntityMediumHongo extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.mediumHongoDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mediumHongoHealth;
+		return s.overworldHealth;
 	}
+	
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.HONGO;

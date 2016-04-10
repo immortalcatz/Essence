@@ -25,16 +25,14 @@ public class EntitySpectre extends EntityModMob {
 		dataWatcher.addObject(ENTITY_TYPE, (int)0);
 	}
 
-	@SuppressWarnings("static-access")
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.mobWraithDamage;
+		return s.lowJourneyDamage;
 	}
 
-	@SuppressWarnings("static-access")
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mobWraithHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

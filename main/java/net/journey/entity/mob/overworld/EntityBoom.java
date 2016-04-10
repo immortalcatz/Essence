@@ -41,7 +41,7 @@ public class EntityBoom extends EntityModMob {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.boomHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

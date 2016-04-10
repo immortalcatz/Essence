@@ -38,12 +38,12 @@ public class EntityDepthsBeast extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.depthsBeastDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.depthsBeastHealth;
+		return s.depthsHealth;
 	}
 
 	@Override

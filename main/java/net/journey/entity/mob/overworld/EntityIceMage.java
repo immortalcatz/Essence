@@ -66,7 +66,7 @@ public class EntityIceMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.mageHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

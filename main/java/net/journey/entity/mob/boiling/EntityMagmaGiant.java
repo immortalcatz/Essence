@@ -23,12 +23,12 @@ public class EntityMagmaGiant extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.magmaGiantDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.magmaGiantHealth;
+		return s.boilHealth;
 	}
 
 	@Override

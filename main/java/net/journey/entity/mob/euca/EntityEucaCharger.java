@@ -17,12 +17,12 @@ public class EntityEucaCharger extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.eucaChargerDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.eucaChargerHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

@@ -147,15 +147,15 @@ public class EntityMagmaBlaze extends EntityModMob {
 		else b0 &= -2;
 		this.dataWatcher.updateObject(16, Byte.valueOf(b0));
 	}
-
+	
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.magmaBlazeDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.magmaBlazeHealth;
+		return s.boilHealth;
 	}
 
 	@Override

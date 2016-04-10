@@ -17,12 +17,12 @@ public class EntityEnderLeaper extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.enderLeaperDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.enderLeaperHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

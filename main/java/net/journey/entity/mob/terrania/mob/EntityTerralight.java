@@ -33,10 +33,10 @@ public class EntityTerralight extends EntityModFlying {
     public float getBrightness(float p_70013_1_) {
         return 10.0F;
     }
-
+    
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return MobStats.shattererHealth;
+		return s.flyingHealth;
 	}
 
 	@Override

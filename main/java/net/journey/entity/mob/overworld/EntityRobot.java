@@ -19,12 +19,12 @@ public class EntityRobot extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.robotDamage;
+		return s.lowJourneyDamage;
 	}
-	
+
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.robotHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

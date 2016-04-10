@@ -31,12 +31,12 @@ public class EntityInsecto extends EntityModMob{
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.insectoDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.insectoHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

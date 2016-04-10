@@ -26,12 +26,12 @@ public class EntityEucaFighter extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.eucaFighterDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.eucaFighterHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

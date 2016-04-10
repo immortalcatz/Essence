@@ -43,12 +43,12 @@ public class EntityFrozenTroll extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.frozenTrollDamage;
+		return s.baseJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.frozenTrollHealth;
+		return s.frozenHealth;
 	}
 
 	@Override

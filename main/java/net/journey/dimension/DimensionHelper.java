@@ -27,6 +27,7 @@ import net.journey.entity.mob.cloudia.EntityCloudGhost;
 import net.journey.entity.mob.cloudia.EntitySkyEel;
 import net.journey.entity.mob.cloudia.EntityStarlightGolem;
 import net.journey.entity.mob.cloudia.EntityStarlightTransporter;
+import net.journey.entity.mob.cloudia.EntityStarlightWalker;
 import net.journey.entity.mob.corba.EntityLeafBlower;
 import net.journey.entity.mob.corba.EntitySurfaceSeer;
 import net.journey.entity.mob.corba.EntityTreeGolem;
@@ -140,12 +141,12 @@ public class DimensionHelper {
 	}
 	
 	private static void addCloudiaSpawns() {
-		int amount = 90;
-		EntityRegistry.addSpawn(EntityStarlightTransporter.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntityStarlightGolem.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		int amount = 1000;
+		EntityRegistry.addSpawn(EntityStarlightTransporter.class, amount, 10, 20, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityStarlightGolem.class, amount, 10, 20, EnumCreatureType.MONSTER, cloudia);
 		EntityRegistry.addSpawn(EntityCloudFlyer.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntityCloudGhost.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
-		EntityRegistry.addSpawn(EntitySkyEel.class, amount, 1, 1, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntityStarlightWalker.class, amount, 10, 20, EnumCreatureType.MONSTER, cloudia);
+		EntityRegistry.addSpawn(EntitySkyEel.class, amount, 10, 20, EnumCreatureType.MONSTER, cloudia);
 	}
 
 	private static void addCorbaSpawns() {

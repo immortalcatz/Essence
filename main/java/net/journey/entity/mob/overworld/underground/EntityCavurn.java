@@ -61,7 +61,7 @@ public class EntityCavurn extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.cavurnHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

@@ -69,7 +69,7 @@ public class EntityCaveMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mageHealth;
+		return s.overworldHealth;
 	}
 
 	@Override

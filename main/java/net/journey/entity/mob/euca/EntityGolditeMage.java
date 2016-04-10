@@ -66,7 +66,7 @@ public class EntityGolditeMage extends EntityModMob implements IRangedAttackMob 
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.mageHealth;
+		return s.eucaHealth;
 	}
 
 	@Override

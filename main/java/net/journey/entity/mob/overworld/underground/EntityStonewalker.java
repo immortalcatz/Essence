@@ -21,13 +21,14 @@ public class EntityStonewalker extends EntityModMob {
 
 	@Override
 	public double setAttackDamage(MobStats s) {
-		return s.stonewalkerDamage;
+		return s.lowJourneyDamage;
 	}
 
 	@Override
 	public double setMaxHealth(MobStats s) {
-		return s.stonewalkerHealth;
+		return s.overworldHealth;
 	}
+	
 	@Override
 	public EnumSounds setLivingSound() {
 		return EnumSounds.HONGO;
