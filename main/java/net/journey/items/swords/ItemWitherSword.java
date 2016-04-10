@@ -1,4 +1,4 @@
-package net.journey.items;
+package net.journey.items.swords;
 
 import java.util.List;
 

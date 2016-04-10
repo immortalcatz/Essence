@@ -28,6 +28,7 @@ public class ItemModBow extends ItemMod {
 	public Item arrowItem;
 	public int dur = 18;
 	protected int damage;
+	protected int uses;
 	//protected String damageString;
 	public String ability;
 
@@ -38,6 +39,7 @@ public class ItemModBow extends ItemMod {
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.damage = damage;
+		this.uses = uses;
 		//this.damageString = damageString;
 		this.setMaxDamage(uses);
 		this.setFull3D();
@@ -51,6 +53,7 @@ public class ItemModBow extends ItemMod {
 		this.arrowClass = arrowEnt;
 		this.arrowItem = arrow;
 		this.damage = damage;
+		this.uses = uses;
 		//this.damageString = damageString;
 		this.setMaxDamage(uses);
 		this.setFull3D();
@@ -115,6 +118,7 @@ public class ItemModBow extends ItemMod {
 		list.add("Ammo: " + StatCollector.translateToLocal(arrowItem.getUnlocalizedName() + ".name"));
 		list.add("Damage: " +SlayerAPI.Colour.GOLD + damage + " - " + SlayerAPI.Colour.GOLD + damage*4);
 		list.add("Ability: " + SlayerAPI.Colour.GOLD + ability);
+		list.add("Uses remaining: " + SlayerAPI.Colour.GRAY + uses);
 	}
 
 	@Override
