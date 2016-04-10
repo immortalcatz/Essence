@@ -205,7 +205,7 @@ public class JourneyItems {
 	/**
 	Firebombs are throwing items that explode
 	**/
-	public static final Item fireBomb = new ItemMod("fireBomb", "Fire Bomb");
+
 
 	public static final Item hellstoneMultiTool = new ItemMultiTool("hellstoneMultiTool", "Bloodcrust Multi Tool", EssenceToolMaterial.HELLSTONE_MULTI_TOOL);
 	public static final Item shadiumMultiTool = new ItemMultiTool("shadiumMultiTool", "Shadium Multi Tool", EssenceToolMaterial.SHADIUM_MULTI_TOOL);
@@ -703,6 +703,7 @@ public class JourneyItems {
 	
 	//TODO
 	public static final Item demonicBomb = new ItemThrowable("demonicBomb", "Demonic Bomb", 8F, EntityDemonicBomb.class);
+	public static final Item fireBomb = new ItemThrowable("fireBomb", "Fire Bomb", 12F, EntityFireBomb.class);
 	
 	public static final Item boilingPiercer = new ItemPiercer("boilingPiercer", "Boiling Piercer", 12F, 6, EntityBoilingPiercer.class);
 	public static final Item nethicPiercer = new ItemPiercer("nethicPiercer", "Nethic Piercer", 11F, 6, EntityNethicPiercer.class);

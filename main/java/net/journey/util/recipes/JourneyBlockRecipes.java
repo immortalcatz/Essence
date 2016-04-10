@@ -20,6 +20,16 @@ public class JourneyBlockRecipes {
 	public static void initBlockCrafting() {
 		JourneyBlocks b = new JourneyBlocks();
 		JourneyItems i = new JourneyItems();
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.greenGemBlock, 1), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.greenGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.purpleGemBlock, 1), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.purpleGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.blueGemBlock, 1), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.blueGem});
+		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.yellowGemBlock, 1), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.yellowGem});
+		
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.greenGem, 9), new Object[] {"i", 'i', JourneyBlocks.greenGemBlock});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.purpleGem, 9), new Object[] {"i", 'i', JourneyBlocks.purpleGemBlock});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.blueGem, 9), new Object[] {"i", 'i', JourneyBlocks.blueGemBlock});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.greenGem, 9), new Object[] {"i", 'i', JourneyBlocks.yellowGemBlock});
+		
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.cloudiaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.cloudiaPortalGem});
@@ -35,7 +45,7 @@ public class JourneyBlockRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.stoneCraftingTable, 1), new Object[] {"dd", "dd", 'd', Blocks.cobblestone});
 		GameRegistry.addRecipe(new ItemStack(b.grindstone), new Object[] {" o ", "bib", "bbb", 'b', Blocks.brick_block, 'o', Blocks.obsidian, 'i', Items.iron_ingot});
 		GameRegistry.addRecipe(new ItemStack(Blocks.web), new Object[] {"sss", "sss","sss", 's', Items.string});
-		GameRegistry.addRecipe(new ItemStack(b.netherFurnace, 4), new Object[] {"ddd", "d d", "ddd", 'd', Blocks.netherrack});
+		GameRegistry.addRecipe(new ItemStack(b.netherFurnace, 1), new Object[] {"ddd", "d d", "ddd", 'd', Blocks.netherrack});
 		
 		addWood(b.eucaGoldLog, b.goldEucaPlank, b.eucaGoldStairs, 0, true);
 		addWood(b.depthsLog, b.depthsPlank, b.depthsStairs, 1, true);

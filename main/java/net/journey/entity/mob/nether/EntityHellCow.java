@@ -53,9 +53,14 @@ public class EntityHellCow extends EntityModMob {
 	
 	@Override
 	protected void dropFewItems(boolean b, int j) {
+		if(rand.nextInt(4) == 0) dropItem(JourneyItems.flamingBeef, 2);
+		if(rand.nextInt(2) == 0) dropItem(JourneyItems.flamingBeef, 2);
+		if(rand.nextInt(1) == 0) dropItem(JourneyItems.flamingBeef, 1);
 		if(rand.nextInt(4) == 0) dropItem(JourneyItems.blood, 1);
 		if(rand.nextInt(5) == 0) dropItem(JourneyItems.blood, 2);
 		if(rand.nextInt(2) == 0) dropItem(JourneyItems.flamingHide, 2);
+		if(rand.nextInt(30) == 0) dropItem(JourneyItems.horn, 1);
+		if(rand.nextInt(40) == 0) dropItem(JourneyItems.horn, 2);
 		super.dropFewItems(b, j);
 	}
 
