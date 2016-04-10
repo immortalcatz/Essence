@@ -139,23 +139,23 @@ public class WorldGenEssence implements IWorldGenerator {
 			z = chunkZ + r.nextInt(16) + 8;
 			(new WorldGenSmallGlowshrooms()).generate(w, r, new BlockPos(x, y, z));
 		}
-		for(times = 0; times < 1; times++) {
+		if(r.nextInt(1)==0) {
 			y = r.nextInt(20); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
-			worldMinableGenVanilla(JourneyBlocks.shadiumOre, 4, w, x, y, z);
+			worldMinableGenVanilla(JourneyBlocks.shadiumOre, 10, w, x, y, z);
 		}
-		for(times = 0; times < 1; times++) {
+		if(r.nextInt(1)==0) {
 			y = r.nextInt(25); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
-			worldMinableGenVanilla(JourneyBlocks.luniumOre, 5, w, x, y, z);
+			worldMinableGenVanilla(JourneyBlocks.luniumOre, 10, w, x, y, z);
 		}
-		for(times = 0; times < 1; times++) {
+		if(r.nextInt(1)==0) {
 			y = r.nextInt(20); 
 			x = chunkX + r.nextInt(16) + 8; 
 			z = chunkZ + r.nextInt(16) + 8;
-			worldMinableGenVanilla(JourneyBlocks.sapphireOre, 5, w, x, y, z);
+			worldMinableGenVanilla(JourneyBlocks.sapphireOre, 10, w, x, y, z);
 		}
 		if(r.nextInt(6)==0) {
 			y = r.nextInt(200); 

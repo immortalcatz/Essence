@@ -30,6 +30,7 @@ public class JourneySmeltingRecipes {
 		GameRegistry.addSmelting(i.enderilliumDust, new ItemStack(JourneyItems.enderilliumShard), 0.5F);
 		GameRegistry.addSmelting(new ItemStack(Items.leather), new ItemStack(Items.rotten_flesh), 0.5F);
 		GameRegistry.addSmelting(Items.egg, new ItemStack(i.friedEgg), 0.5F);
+		GameRegistry.addSmelting(i.rocMeat, new ItemStack(i.cookedRocMeat), 0.5F);
 	
 	}
 	public static void addOre(Block ore, Item ingot, Block block, Item axe, Item pick, Item shovel, Item hoe, Item sword, Item multiTool, Item helmet, Item chest, Item legs, Item boots, Item dust) {

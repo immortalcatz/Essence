@@ -68,7 +68,7 @@ public class CommonProxy {
 		//SlayerAPI.addMapGen(MapGenBoilBridge.Start.class, "Boil Bridge");
 		//StructureBoilBridgePieces.registerBoilFortressPieces();
 		//StructureBoilVillagePieces.registerVillagePieces();
-		MinecraftForge.addGrassSeed(new ItemStack(JourneyItems.tomatoSeeds), 5);
+		MinecraftForge.addGrassSeed(new ItemStack(JourneyCrops.tomatoSeeds), 5);
 		FMLCommonHandler.instance().bus().register(new JourneySapphireSwordEvent());
 		FMLCommonHandler.instance().bus().register(new JourneySapphireEvent());
 		FMLCommonHandler.instance().bus().register(new JourneyDungeonEvent());

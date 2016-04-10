@@ -1,5 +1,6 @@
 package net.journey.blocks.crop;
 
+import net.journey.JourneyCrops;
 import net.journey.JourneyItems;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.item.Item;
@@ -18,7 +19,7 @@ public class BlockGlowaCrop extends BlockModCrop {
 	
 	@Override
 	public Item getSeed() {
-		return JourneyItems.glowaSeeds;
+		return JourneyCrops.glowaSeeds;
 	}
 
 	@Override

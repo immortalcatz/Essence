@@ -64,7 +64,7 @@ public class JourneyTabs extends CreativeTabs {
 		misc.setIcon(JourneyItems.weakDarkEnergyPotion);
 		armor.setIcon(JourneyItems.twilightHelmet);
 		spawners.setIcon(JourneyItems.sentryKingOrb);
-		crops.setIcon(JourneyItems.crackenCaneSeeds);
+		crops.setIcon(JourneyCrops.crackenCaneSeeds);
 		machineBlocks.setIcon(JourneyBlocks.summoningTable);
 		portalBlocks.setIcon(JourneyBlocks.eucaPortal);
 		hammers.setIcon(JourneyItems.flamingHammer);

@@ -649,16 +649,6 @@ public class JourneyItems {
 	public static final Item flamingBeef = new ItemModFood("flamingBeef", "Raw Flaming Beef", 6, 1.2F, false).setPotionEffect(Potion.fireResistance.id, 90, 1, 1.0F).setAlwaysEdible();
 	public static final Item flamingBeefCooked = new ItemModFood("flamingBeefCooked", "Cooked Flaming Beef", 16, 1.2F, false).setPotionEffect(Potion.fireResistance.id, 100, 2, 2.0F).setAlwaysEdible();
 
-	public static final Item glowshroomPowder = new ItemModSeeds("glowshroomPowder", "Glowshroom Powder", JourneyBlocks.glowshroomCrop);
-	public static final Item tomatoSeeds = new ItemModSeeds("tomatoSeeds", "Tomato Seeds", JourneyBlocks.tomatoCrop);
-	public static final Item corveggieSeeds = new ItemModSeeds("corveggieSeeds", "Corveggie", JourneyBlocks.corveggieCrop);
-	public static final Item crackenCaneSeeds = new ItemModSeeds("crackenCaneSeeds", "Kracken Cane Seeds", JourneyBlocks.crackenCaneCrop);
-	public static final Item crakeBulbSeeds = new ItemModSeeds("crakeBulbSeeds", "Crake Bulb Seeds", JourneyBlocks.crakeBulbCrop);
-	public static final Item spineberrySeeds = new ItemModSeeds("spineBerrySeeds", "Spine Berry Seeds", JourneyBlocks.spineberryCrop);
-	public static final Item glowaSeeds = new ItemModSeeds("glowaSeeds", "Glowa Seeds", JourneyBlocks.glowaCrop);
-	public static final Item zatSeeds = new ItemModSeeds("zatSeeds", "Zat Seeds", JourneyBlocks.zatPedalsCrop);
-	public static final Item floroSeeds = new ItemModSeeds("floroSeeds", "Floro Seeds", JourneyBlocks.floroCrop);
-
 	public static final Item underwaterWorldRecord = new ItemModRecord("underwaterWorld", "Underwater World");
 	public static final Item blueWater = new ItemModRecord("blueWater", "Blue Water");
 	public static final Item raceStar = new ItemModRecord("raceStar", "Race Star");

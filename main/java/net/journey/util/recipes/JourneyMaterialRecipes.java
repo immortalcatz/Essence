@@ -1,6 +1,7 @@
 package net.journey.util.recipes;
 
 import net.journey.JourneyBlocks;
+import net.journey.JourneyCrops;
 import net.journey.JourneyItems;
 import net.journey.blocks.BlockColouredBricks;
 import net.journey.blocks.BlockMiniColouredBricks;
@@ -43,14 +44,14 @@ public class JourneyMaterialRecipes {
 		GameRegistry.addRecipe(new ItemStack(i.shadiumClump), new Object[] {"iii", 'i', i.shadiumIngot});
 		GameRegistry.addRecipe(new ItemStack(i.luniumClump), new Object[] {"iii", 'i', i.luniumIngot});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.spawnerClump), new Object[]{i.shadiumClump, i.luniumClump, i.hellstoneClump});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.redGlowshroomTop});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.redGlowshroomBottom});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.blueGlowshroomTop});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.blueGlowshroomBottom});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomTop});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{b.greenGlowshroomBottom});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.glowshroomPowder, 4), new Object[]{i.glowshroom});
-		GameRegistry.addShapelessRecipe(new ItemStack(i.floroSeeds, 4), new Object[]{i.floroPedal});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.redGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.redGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.blueGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.blueGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.greenGlowshroomTop});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{b.greenGlowshroomBottom});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.glowshroomPowder, 4), new Object[]{i.glowshroom});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyCrops.floroSeeds, 4), new Object[]{i.floroPedal});
 		GameRegistry.addShapelessRecipe(new ItemStack(i.eucaPortalGem, 10), new Object[]{i.eucaPortalPiece, i.eucaPortalPiece_0, i.eucaPortalPiece_1});
 		GameRegistry.addSmelting(i.spawnerClump, new ItemStack(i.spawnerBar), 1.0F);
 		GameRegistry.addSmelting(i.flamingBeef, new ItemStack(JourneyItems.flamingBeefCooked), 0.5F);

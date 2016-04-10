@@ -308,11 +308,11 @@ public class JourneyBlocks {
 	public static final Block blueGlowshroomTop = new BlockGlowshroom("blueGlowshroomTop", "Blue Glowshroom", true);
 	public static final Block blueGlowshroomBottom = new BlockGlowshroom("blueGlowshroomBottom", "Blue Glowshroom", false);
 	
-	public static final Block goldenStalksTop = new BlockStalks("goldenStalksTop", "Golden Stalks", true);
-	public static final Block goldenStalksBottom = new BlockStalks("goldenStalksBottom", "Golden Stalks", false);
-	public static final BlockModFlower goldenBulb = new BlockModFlower("goldenBulb", "Golden Bulb");
-	public static final BlockModFlower goldenBloom = new BlockModFlower("goldenBloom", "Golden Bloom");
-	public static final BlockModFlower goldenStalks = new BlockModFlower("goldenStalks", "Golden Stalks");
+	public static final Block goldenStalksTop = new BlockStalks("goldenStalksTop", "Golden Stalks", true).setCreativeTab(null);
+	public static final Block goldenStalksBottom = new BlockStalks("goldenStalksBottom", "Golden Stalks", false).setCreativeTab(null);
+	public static final BlockModFlower goldenBulb = (BlockModFlower) new BlockModFlower("goldenBulb", "Golden Bulb").setCreativeTab(null);
+	public static final BlockModFlower goldenBloom = (BlockModFlower) new BlockModFlower("goldenBloom", "Golden Bloom").setCreativeTab(null);
+	public static final BlockModFlower goldenStalks = (BlockModFlower) new BlockModFlower("goldenStalks", "Golden Stalks").setCreativeTab(null);
 		
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");
@@ -356,15 +356,6 @@ public class JourneyBlocks {
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	
 	public static final Block stoneCraftingTable = new BlockStoneCraftingTable("stoneCraftingTable", "Stone Crafting Table");
-	public static final Block tomatoCrop = new BlockTomatoCrop("tomatoCrop");
-	public static final Block corveggieCrop = new BlockCorveggieCrop("corveggiesCrop");
-	public static final Block crackenCaneCrop = new BlockCrackenCaneCrop("crackenCanesCrop");
-	public static final Block crakeBulbCrop = new BlockCrakeBulbCrop("crakeBulbCrop");
-	public static final Block spineberryCrop = new BlockSpineberryCrop("spineberryCrop");
-	public static final Block glowaCrop = new BlockGlowaCrop("glowaCrop");
-	public static final Block zatPedalsCrop = new BlockZatPedalsCrop("zatPedalsCrop");
-	public static final Block glowshroomCrop = new BlockGlowshroomCrop("glowshroomCrop");
-	public static final Block floroCrop = new BlockFloroCrop("floroCrop");
 
 	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", "Black Block", 0.5F);
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", "White Block", 0.5F);
@@ -393,7 +384,7 @@ public class JourneyBlocks {
 	public static final Block purplianSpawner = new BlockModSpawner("purplianSpawner", "Purplian Spawner", "purplian");
 	
 	public static final Block starlightGolemSpawner = new BlockModSpawner("starlightGolemSpawner", "Starlight Golem Spawner", "starlightGolem");
-	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporter", "Starlight Transporter Spawner", "starlightTransporter");
+	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporterSpawner", "Starlight Transporter Spawner", "starlightTransporter");
 	
 	public static final Block sorcererSpawner = new BlockModSpawner("sorcererSpawner", "Sorcerer Spawner", "darkSorcerer");
 	

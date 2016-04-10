@@ -3,6 +3,7 @@ package net.journey.dimension.corba.gen;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.JourneyCrops;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
@@ -15,7 +16,7 @@ public class WorldGenCorbaFarm extends WorldGenerator {
 	@Override
 	public boolean generate(World w, Random r, BlockPos pos) {
 		int x = pos.getX(), y = pos.getY(), z = pos.getZ();
-		Block crop = JourneyBlocks.tomatoCrop;
+		Block crop = JourneyCrops.tomatoCrop;
 		WorldGenAPI.addRectangle(11, 9, 5, w, x, y - 4, z, JourneyBlocks.corbaStone);
 		WorldGenAPI.addRectangle(11, 9, 1, w, x, y + 1, z, JourneyBlocks.corbaGrass);
 		WorldGenAPI.addRectangle(9, 7, 1, w, x + 1, y + 1, z + 1, Blocks.water);

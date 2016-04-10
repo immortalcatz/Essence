@@ -24,13 +24,13 @@ public class EntityTerranianEnchanter extends EntityModVillager {
 	public void abstractInteract(EntityPlayer p) {
 		switch(rand.nextInt(3)) {
 		case 0:
-			SlayerAPI.addFormattedChatMessage(p, "enchanter.enchant");
+			SlayerAPI.addFormattedChatMessage(p, "I infuse my weapons with the best magic in the land!");
 			break;
 		case 1:
-			SlayerAPI.addFormattedChatMessage(p, "enchanter.suspicion");
+			SlayerAPI.addFormattedChatMessage(p, "You are a very strange looking creature. And short, too.");
 			break;
 		case 2:
-			SlayerAPI.addFormattedChatMessage(p, "enchanter.magic");
+			SlayerAPI.addFormattedChatMessage(p, "This place has the most magic out of any other realm known.");
 			break;
 		}
 	}
@@ -42,7 +42,11 @@ public class EntityTerranianEnchanter extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 16), new ItemStack(JourneyItems.earthenCrystal, 4), new ItemStack(JourneyItems.terranaSword)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 16), new ItemStack(JourneyItems.earthenCrystal, 4), new ItemStack(JourneyItems.terrolicaSword)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 16), new ItemStack(JourneyItems.earthenCrystal, 4), new ItemStack(JourneyItems.terralightBow)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 4), new ItemStack(JourneyItems.earthenCrystal, 1), new ItemStack(JourneyItems.enlightenerHelmet)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 4), new ItemStack(JourneyItems.earthenCrystal, 1), new ItemStack(JourneyItems.enlightenerChest)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 4), new ItemStack(JourneyItems.earthenCrystal, 1), new ItemStack(JourneyItems.enlightenerLegs)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.purplePowder, 4), new ItemStack(JourneyItems.earthenCrystal, 1), new ItemStack(JourneyItems.enlightenerBoots)));
 	}
 }

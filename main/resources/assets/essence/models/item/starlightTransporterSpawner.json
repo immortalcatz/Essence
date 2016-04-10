@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "essence:blocks/terranianTallgrass"
+		"layer0": "essence:items/starlightTransporterSpawner"
 	},
 	"display": {
 		"thirdperson": {
