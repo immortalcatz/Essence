@@ -22,7 +22,7 @@ public class UpdateChecker {
 		BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/version.txt").openStream()));
 		String curVersion = versionFile.readLine();
 		versionFile.close();
-		if(!curVersion.contains(SlayerAPI.MOD_VERSION)) return true;
+		if(!curVersion.equals(SlayerAPI.MOD_VERSION)) return true;
 		return false;
 	}
 
