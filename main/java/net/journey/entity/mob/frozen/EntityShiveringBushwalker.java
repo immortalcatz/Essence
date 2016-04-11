@@ -50,7 +50,7 @@ public class EntityShiveringBushwalker extends EntityModMob {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.posY < 45.0D && super.getCanSpawnHere();
+		return this.posY < 60.0D && super.getCanSpawnHere();
 	}
 	
 	@Override

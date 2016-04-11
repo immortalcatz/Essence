@@ -55,5 +55,15 @@ public class EntityFrozenMerchant extends EntityModVillager {
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 15), new ItemStack(JourneyItems.frostyBow, 1), new ItemStack(JourneyItems.frostbittenBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 10), new ItemStack(JourneyItems.frostyPiercer, 10), new ItemStack(JourneyItems.frostbittenPiercer, 15)));
 		
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.crystalFlake, 4), new ItemStack(JourneyItems.frostGem, 15), new ItemStack(JourneyItems.crystalFlakeHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.crystalFlake, 4), new ItemStack(JourneyItems.frostGem, 15), new ItemStack(JourneyItems.crystalFlakeChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.crystalFlake, 4), new ItemStack(JourneyItems.frostGem, 15), new ItemStack(JourneyItems.crystalFlakeLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.crystalFlake, 4), new ItemStack(JourneyItems.frostGem, 15), new ItemStack(JourneyItems.crystalFlakeBoots, 1)));
+		
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 4), new ItemStack(JourneyItems.crystalFlakeHelmet), new ItemStack(JourneyItems.frostbittenHelmet, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 4), new ItemStack(JourneyItems.crystalFlakeChest), new ItemStack(JourneyItems.frostbittenChest, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 4), new ItemStack(JourneyItems.crystalFlakeLegs), new ItemStack(JourneyItems.frostbittenLegs, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.frostFlake, 4), new ItemStack(JourneyItems.crystalFlakeBoots), new ItemStack(JourneyItems.frostbittenBoots, 1)));
+		
 	}
 }

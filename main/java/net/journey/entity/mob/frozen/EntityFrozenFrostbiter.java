@@ -1,6 +1,7 @@
 package net.journey.entity.mob.frozen;
 
 import net.journey.JourneyBlocks;
+import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.entity.projectile.EntityMagmaFireball;
 import net.journey.enums.EnumSounds;
@@ -61,11 +62,6 @@ public class EntityFrozenFrostbiter extends EntityModMob {
 	}
 	
 	@Override
-	public boolean getCanSpawnHere() {
-		return this.worldObj.getBlockState(new BlockPos(this.posX, this.posY-1, this.posZ)).getBlock() == JourneyBlocks.hotBlock;
-	}
-	
-	@Override
 	public void onLivingUpdate() {
 
 		if (!this.onGround && this.motionY < 0.0D)
@@ -82,7 +78,7 @@ public class EntityFrozenFrostbiter extends EntityModMob {
 
             for (int i = 0; i < 2; ++i)
             {
-                this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
+                this.worldObj.spawnParticle(EnumParticleTypes.SNOW_SHOVEL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
             }
         }
 
@@ -125,7 +121,7 @@ public class EntityFrozenFrostbiter extends EntityModMob {
 		if(b) {
 			int j = this.rand.nextInt(2 + i);
 			for (int k = 0; k < j; ++k) {
-				this.dropItem(Items.blaze_rod, 1);
+				this.dropItem(JourneyItems.frostFlake, 1);
 			}
 		}
 	}

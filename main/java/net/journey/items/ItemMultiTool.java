@@ -90,7 +90,6 @@ public class ItemMultiTool extends ItemTool {
 
 		UseHoeEvent event = new UseHoeEvent(player, stack, world, pos);
 		if (MinecraftForge.EVENT_BUS.post(event)) return false;
-
 		if (event.getResult() == Result.ALLOW) {
 			stack.damageItem(1, player);
 			return true;

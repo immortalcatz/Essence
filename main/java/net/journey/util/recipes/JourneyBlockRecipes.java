@@ -28,7 +28,7 @@ public class JourneyBlockRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.greenGem, 9), new Object[] {"i", 'i', JourneyBlocks.greenGemBlock});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.purpleGem, 9), new Object[] {"i", 'i', JourneyBlocks.purpleGemBlock});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.blueGem, 9), new Object[] {"i", 'i', JourneyBlocks.blueGemBlock});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.greenGem, 9), new Object[] {"i", 'i', JourneyBlocks.yellowGemBlock});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.yellowGem, 9), new Object[] {"i", 'i', JourneyBlocks.yellowGemBlock});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.eucaPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.eucaPortalGem});
 		GameRegistry.addRecipe(new ItemStack(JourneyBlocks.depthsPortalFrame, 10), new Object[] {"iii", "iii", "iii", 'i', JourneyItems.depthsPortalGem});

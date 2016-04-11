@@ -4,19 +4,28 @@ import java.util.Random;
 import net.journey.JourneyBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenIceDungeon extends WorldGenerator {
 	
-	public boolean generate(World world, Random rand, BlockPos pos) {
-		int i = pos.getX(), j = pos.getY(), k = pos.getZ();
-		for(int x = 0; x<30; x++) {
-			for(int z = 0; z<30; z++) {
-				if((world.getBlockState(new BlockPos(i+x, j, k+z)).getBlock() != Blocks.ice || world.getBlockState(new BlockPos(i+x, j+1, k+z)).getBlock() != Blocks.air) && rand.nextInt(50)==0) return false;
+	public boolean locationIsValidSpawn(World w, int x, int y, int z) {
+		for(int i = 0; i < 11; i++) {
+			for(int l = 0; l < 11; l++) {
+				if(w.getBlockState(new BlockPos(x + i, y, z + l)) != JourneyBlocks.brittleIce) {
+					return false;
+				}
 			}
 		}
+		return true;
+	}
+	
+	@Override
+	public boolean generate(World world, Random r, BlockPos pos) {
+		int i = pos.getX(), j = pos.getY() - 1, k = pos.getZ();
+		if(locationIsValidSpawn(world, i, j, k)) return true;
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 11), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 12), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 0, j + 0, k + 13), JourneyBlocks.frozenBrick.getDefaultState());
@@ -60,8 +69,8 @@ public class WorldGenIceDungeon extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 1, j + 0, k + 15), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 0, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 11), JourneyBlocks.frozenBrick.getDefaultState());
-		world.setBlockState(new BlockPos(i + 1, j + 1, k + 13), Blocks.mob_spawner.getDefaultState());
-		world.setBlockState(new BlockPos(i + 1, j + 1, k + 14), Blocks.mob_spawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 1, j + 1, k + 13), JourneyBlocks.frostbiterSpawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 1, j + 1, k + 14), JourneyBlocks.frostbiterSpawner.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 1, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 11), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 1, j + 2, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
@@ -372,7 +381,7 @@ public class WorldGenIceDungeon extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 13, j + 0, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 0, k + 17), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 1, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
-		world.setBlockState(new BlockPos(i + 13, j + 1, k + 1), Blocks.mob_spawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 13, j + 1, k + 1), JourneyBlocks.frostbiterSpawner.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 2, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 3, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 13, j + 3, k + 6), JourneyBlocks.icicle.getDefaultState());
@@ -421,7 +430,7 @@ public class WorldGenIceDungeon extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 14, j + 0, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 14, j + 0, k + 17), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 14, j + 1, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
-		world.setBlockState(new BlockPos(i + 14, j + 1, k + 1), Blocks.mob_spawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 14, j + 1, k + 1), JourneyBlocks.frostbiterSpawner.getDefaultState());
 		world.setBlockState(new BlockPos(i + 14, j + 2, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 14, j + 3, k + 0), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 14, j + 3, k + 8), JourneyBlocks.icicle.getDefaultState());
@@ -733,8 +742,8 @@ public class WorldGenIceDungeon extends WorldGenerator {
 		world.setBlockState(new BlockPos(i + 26, j + 0, k + 15), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 26, j + 0, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 26, j + 1, k + 11), JourneyBlocks.frozenBrick.getDefaultState());
-		world.setBlockState(new BlockPos(i + 26, j + 1, k + 13), Blocks.mob_spawner.getDefaultState());
-		world.setBlockState(new BlockPos(i + 26, j + 1, k + 14), Blocks.mob_spawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 26, j + 1, k + 13), JourneyBlocks.frostbiterSpawner.getDefaultState());
+		world.setBlockState(new BlockPos(i + 26, j + 1, k + 14), JourneyBlocks.frostbiterSpawner.getDefaultState());
 		world.setBlockState(new BlockPos(i + 26, j + 1, k + 16), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 26, j + 2, k + 11), JourneyBlocks.frozenBrick.getDefaultState());
 		world.setBlockState(new BlockPos(i + 26, j + 2, k + 16), JourneyBlocks.frozenBrick.getDefaultState());

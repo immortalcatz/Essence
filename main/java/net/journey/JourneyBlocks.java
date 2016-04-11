@@ -141,6 +141,8 @@ public class JourneyBlocks {
 	//public static final Block darkTile = new BlockMod("darkTile", "Dark Tile", 2.0F).setBlockUnbreakable();
 	public static final Block darkShingle = new BlockMod("darkShingle", "Dark Shingle", 2.0F).setBlockUnbreakable();
 	
+	public static final Block iceLeaves = new BlockDepthsLeaves("iceLeaves", "Ice Leaves", 1.0F);
+	
 
 	//public static final BlockMod godDirt = new BlockMod(EnumMaterialTypes.DIRT, "godDirt", 2.0F);
 	//public static final Block godGrass = new BlockModGrass(godDirt, "godGrass", 2.0F);
@@ -332,7 +334,7 @@ public class JourneyBlocks {
 	public static final BlockModFlower shiverFlower = (BlockModFlower)new BlockModFlower("shiverFlower", "Shiver Flower").setFrozenPlant();
 	public static final BlockModFlower iceBush = (BlockModFlower)new BlockModFlower("iceBush", "Ice Bush").setFrozenPlant();
 	public static final BlockMod iceLog = new BlockIceLog();
-	public static final BlockMod brittleIce = new BlockBrittleIce();
+	public static final BlockMod brittleIce = new BlockBrittleIce(JourneyBlocks.brittleIce, "brittleIce", "Brittle Ice", 2);
 	
 	public static final BlockModFlower eucaTallGrass = new BlockModFlower("eucaTallGrass", "Euca Tall Grass");
 	public static final BlockModFlower eucaTallFlowers = new BlockModFlower("eucaTallFlowers", "Euca Tall Flowers");
@@ -368,7 +370,7 @@ public class JourneyBlocks {
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
 	public static final Block nethicLamp = new BlockMod("nethicLamp", "Nethic Lamp").setLightLevel(1);
 	
-	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table");
+	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table").setCreativeTab(null);
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
 	//public static final Block trophyTable = new BlockTrophyTable("trophyTable", "Trophy Table");
 	public static final Block bossAltar = new BlockMod("bossAltar", "Boss Altar");
@@ -387,6 +389,7 @@ public class JourneyBlocks {
 	public static final Block starlightTransporterSpawner = new BlockModSpawner("starlightTransporterSpawner", "Starlight Transporter Spawner", "starlightTransporter");
 	
 	public static final Block sorcererSpawner = new BlockModSpawner("sorcererSpawner", "Sorcerer Spawner", "darkSorcerer");
+	public static final Block frostbiterSpawner = new BlockModSpawner("frostbiterSpawner", "Frostbiter Spawner", "frozenFrostbiter");
 	
 	public static final Block overseerSpawner = new BlockModSpawner("overseerSpawner", "Overseer Spawner", "overseer");
 	public static final Block overseerElderSpawner = new BlockModSpawner("overseerElderSpawner", "Overseer Elder Spawner", "overseerElder");

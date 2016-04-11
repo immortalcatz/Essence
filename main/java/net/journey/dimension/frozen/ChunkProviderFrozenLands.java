@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.journey.JourneyBlocks;
+import net.journey.dimension.euca.gen.WorldGenSmeltery;
 import net.journey.dimension.frozen.gen.WorldGenFrozenTree;
 import net.journey.dimension.frozen.gen.WorldGenFrozenTree2;
 import net.journey.dimension.frozen.gen.WorldGenIceCrystal1;
@@ -11,6 +12,7 @@ import net.journey.dimension.frozen.gen.WorldGenIceCrystal2;
 import net.journey.dimension.frozen.gen.WorldGenIceDungeon;
 import net.journey.dimension.frozen.gen.WorldGenIceTree;
 import net.journey.dimension.frozen.gen.WorldGenIceTree2;
+import net.journey.dimension.frozen.gen.WorldGenMerchantHouse;
 import net.journey.dimension.frozen.gen.WorldGenNewLamp;
 import net.journey.dimension.overworld.gen.WorldGenModFlower;
 import net.minecraft.entity.EnumCreatureType;
@@ -532,6 +534,7 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 		int k = chunkX * 16;
 		int l = chunkZ * 16;
 		this.rand.setSeed(chunkX * this.rand.nextInt() + chunkZ * this.rand.nextInt() ^ this.worldObj.getSeed());
+		
 		for(int n = 0; n < 6; n++) {
 			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
@@ -542,6 +545,18 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 				}
 			}
 			tree.generate(worldObj, rand, new BlockPos(x, y, z));
+		}
+		
+		if(rand.nextInt(100)==0) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int y = 0;
+			for(int j = 5; j < 100; j++) {
+				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == JourneyBlocks.frozenGrass) {
+					y = j;
+					break;
+				}
+			}
+			new WorldGenMerchantHouse().generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
 		for(int n = 0; n < 2; n++) {
@@ -568,8 +583,9 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			lamp.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 
-		for(int n = 0; n < 2; n++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, z = chunkZ * 16 + rand.nextInt(16) + 8;
+		if(rand.nextInt(380)==0) {
+			int x = chunkX * 16 + rand.nextInt(16) + 8, 
+				z = chunkZ * 16 + rand.nextInt(16) + 8;
 			int y = 0;
 			for(int j = 150; j > 50; j--) {
 				if(worldObj.getBlockState(new BlockPos(x, j, z)).getBlock() == JourneyBlocks.brittleIce) {
@@ -628,34 +644,42 @@ public class ChunkProviderFrozenLands implements IChunkProvider
 			crystal2.generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
+		//Bottom flowers
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(40), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.iceBud).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(40), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.frostberryThorn).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(60), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(40), z = chunkZ * 16 + rand.nextInt(16) + 8;
 			new WorldGenModFlower(JourneyBlocks.frozenBlooms).generate(worldObj, rand, new BlockPos(x, y, z));
 		}
 		
+		//Top flowers
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
-			if(y > 63) new WorldGenModFlower(JourneyBlocks.permaFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(70), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)).getBlock() == JourneyBlocks.brittleIce) {  
+				new WorldGenModFlower(JourneyBlocks.permaFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
-			if(y > 63) new WorldGenModFlower(JourneyBlocks.shiverFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(70), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)).getBlock() == JourneyBlocks.brittleIce) { 
+				new WorldGenModFlower(JourneyBlocks.shiverFlower).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(63), z = chunkZ * 16 + rand.nextInt(16) + 8;
-			if(y > 63) new WorldGenModFlower(JourneyBlocks.iceBush).generate(worldObj, rand, new BlockPos(x, y, z));
+			int x = chunkX * 16 + rand.nextInt(16) + 8, y = rand.nextInt(70), z = chunkZ * 16 + rand.nextInt(16) + 8;
+			if(worldObj.getBlockState(new BlockPos(x, y, z)).getBlock() == JourneyBlocks.brittleIce) { 
+				new WorldGenModFlower(JourneyBlocks.iceBush).generate(worldObj, rand, new BlockPos(x, y, z));
+			}
 		}
 	}
 

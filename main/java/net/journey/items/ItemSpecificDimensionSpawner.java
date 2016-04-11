@@ -9,6 +9,7 @@ import net.journey.entity.mob.boss.EntityBlazier;
 import net.journey.entity.mob.boss.EntityCorallator;
 import net.journey.entity.mob.boss.EntityEudor;
 import net.journey.entity.mob.boss.EntityLogger;
+import net.journey.entity.mob.boss.EntityScale;
 import net.journey.entity.mob.boss.EntitySentryKing;
 import net.journey.entity.mob.boss.EntitySkyStalker;
 import net.journey.entity.mob.boss.EntitySoulWatcher;
@@ -54,6 +55,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 				EntitySentryKing sentry = new EntitySentryKing(w);
 				EntitySkyStalker sky = new EntitySkyStalker(w);
 				EntityTameRoc roc = new EntityTameRoc(w, p);
+				EntityScale scale = new EntityScale(w);
 				EntityCorallator corallator = new EntityCorallator(w);
 				EntityLogger logger = new EntityLogger(w);
 				EntityThunderbird thunder = new EntityThunderbird(w);
@@ -103,6 +105,14 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 					logger.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
 					w.spawnEntityInWorld(logger);
 				}
+				if(item == JourneyItems.scaleOrb) {
+					SlayerAPI.sendMessageToAll("(W.I.P) The blue blubby fish monster has been summoned!", true);
+				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
+					light.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					w.spawnEntityInWorld(light);
+					scale.setPosition(pos.getX(), pos.getY() + 1, pos.getZ());
+					w.spawnEntityInWorld(scale);
+				}
 				EntityEudor eudor = new EntityEudor(w);
 				if(item == JourneyItems.eudorOrb){
 				    EnumSounds.playSound(EnumSounds.SUMMON, w, p);
@@ -146,6 +156,7 @@ public class ItemSpecificDimensionSpawner extends ItemMod {
 		if(item == JourneyItems.mysteriousDisk) list.add(LangHelper.setBossSpawner("Sky Stalker"));
 		if(item == JourneyItems.corallatorOrb) list.add(LangHelper.setBossSpawner("Corallator"));
 		if(item == JourneyItems.loggerOrb) list.add(LangHelper.setBossSpawner("Logger"));
+		if(item == JourneyItems.scaleOrb) list.add(LangHelper.setBossSpawner("Sclae"));
 		if(item == JourneyItems.thunderbirdOrb) list.add(LangHelper.setBossSpawner("Thunderbird"));
 		if(item == JourneyItems.enchantedTerrastar) list.add(LangHelper.setBossSpawner("Terranian Protector"));
 		if(item == JourneyItems.rocSpawnEgg) list.add(LangHelper.setPetSpawner("Roc"));

@@ -160,22 +160,22 @@ public class DimensionHelper {
 	private static void addColdFrozenSpawns() {
 		int amount = 80;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityFrozenTroll.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityIceMage.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityFrozenTroll.class, amount, 10,  amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 10, 20, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiveringBushwalker.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 10, amount, EnumCreatureType.CREATURE, frozen);
 		
 	}
 
 	private static void addFrostFrozenSpawns() {
 		int amount = 80;
 		//EntityRegistry.addSpawn(EntitySnowman.class, 2, 1, 6, EnumCreatureType.CREATURE, frozen);
-		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShatterer.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityCrystalCluster.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityIceMage.class, amount, 1, 1, EnumCreatureType.MONSTER, frozen);
-		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 1, 1, EnumCreatureType.CREATURE, frozen);
+		EntityRegistry.addSpawn(EntityPermafraust.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShatterer.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityCrystalCluster.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityIceMage.class, amount, 10, amount, EnumCreatureType.MONSTER, frozen);
+		EntityRegistry.addSpawn(EntityShiverwing.class, amount, 10, amount, EnumCreatureType.CREATURE, frozen);
 	}
 	
 	private static void addTerraniaSpawns() {
@@ -229,7 +229,7 @@ public class DimensionHelper {
 		EntityRegistry.addSpawn(EntityRoc.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityDarkener.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 		EntityRegistry.addSpawn(EntityLightener.class, 4, 10, 1, EnumCreatureType.MONSTER, depths);
-		EntityRegistry.addSpawn(EntityDarkSorcerer.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
+		//EntityRegistry.addSpawn(EntityDarkSorcerer.class, amount, 10, 1, EnumCreatureType.MONSTER, depths);
 	}
 	
 	private static void addCaveSpawns() {

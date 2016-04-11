@@ -40,10 +40,15 @@ public class JourneyMiscRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockChest), new Object[] {"i i", "did", "idi", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockLegs), new Object[] {"idi", "d d", "i i", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockChest), new Object[] {"d d", "i i", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.woodMultiTool), new Object[] {Items.wooden_pickaxe, Items.wooden_shovel, Items.wooden_hoe, Items.wooden_axe});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.stoneMultiTool), new Object[] {Items.stone_pickaxe, Items.stone_shovel, Items.stone_hoe, Items.stone_axe});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.ironMultiTool), new Object[] {Items.iron_pickaxe, Items.iron_shovel, Items.iron_hoe, Items.iron_axe});
+		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.diamondMultiTool), new Object[] {Items.diamond_pickaxe, Items.diamond_shovel, Items.diamond_hoe, Items.diamond_axe});
 		
 		addOre(b.celestiumOre, i.celestiumIngot, b.celestiumBlock, i.celestiumAxe, i.celestiumPickaxe, i.celestiumShovel, i.celestiumHoe, i.celestiumSword, i.celestiumMultiTool, i.celestiumHelmet, i.celestiumChest, i.celestiumLegs, i.celestiumBoots, i.celestiumDust);
 		addOre(b.hellstoneOre, i.hellstoneIngot, b.hellstoneBlock, i.hellstoneAxe, i.hellstonePickaxe, i.hellstoneShovel, i.hellstoneHoe, i.hellstoneSword, i.hellstoneMultiTool, i.hellstoneHelmet, i.hellstoneChest, i.hellstoneLegs, i.hellstoneBoots, i.hellstoneDust);
 		addOre(b.flairiumOre, i.flairiumIngot, b.flairiumBlock, i.flairiumAxe, i.flairiumPickaxe, i.flairiumShovel, i.flairiumHoe, i.flairiumSword, i.flairiumMultiTool, i.flairiumHelmet, i.flairiumChest, i.flairiumLegs, i.flairiumBoots, i.flairiumDust);
+		addOre(b.desOre, i.desIngot, b.desBlock, i.desAxe, i.desPickaxe, i.desShovel, i.desHoe, i.desSword, i.desMultiTool, null, null, null, null, null);
 		addOre(b.shadiumOre, i.shadiumIngot, b.shadiumBlock, i.shadiumAxe, i.shadiumPickaxe, i.shadiumShovel, i.shadiumHoe, i.shadiumSword, i.shadiumMultiTool, i.shadiumHelmet, i.shadiumChest, i.shadiumLegs, i.shadiumBoots, i.shadiumDust);
 		addOre(b.luniumOre, i.luniumIngot, b.luniumBlock, i.luniumAxe, i.luniumPickaxe, i.luniumShovel, i.luniumHoe, i.luniumSword, i.luniumMultiTool, i.luniumHelmet, i.luniumChest, i.luniumLegs, i.luniumBoots, i.luniumDust);
 		addOre(b.sapphireOre, i.sapphire, b.sapphireBlock, i.sapphireAxe, i.sapphirePickaxe, i.sapphireShovel, i.sapphireHoe, i.sapphireSword, i.sapphireMultiTool, i.sapphireHelmet, i.sapphireChest, i.sapphireLegs, i.sapphireBoots, i.sapphireDust);
@@ -52,6 +57,7 @@ public class JourneyMiscRecipes {
 		addOre(b.koriteOre, i.koriteIngot, b.koriteBlock, i.koriteAxe, i.koritePickaxe, i.koriteShovel, i.koriteHoe, i.koriteSword, i.koriteMultiTool, null, null, null, null, null);
 		addOre(b.storonOre, i.storonIngot, b.storonBlock, i.storonAxe, i.storonPickaxe, i.storonShovel, i.storonHoe, i.storonSword, i.storonMultiTool, null, null, null, null, null);
 		addOre(b.mekyumOre, i.mekyumIngot, b.mekyumBlock, i.mekyumAxe, i.mekyumPickaxe, i.mekyumShovel, i.mekyumHoe, i.mekyumSword, i.mekyumMultiTool, null, null, null, null, null);
+		//addOre(b.ashualOre, i.ash, b.ashualBlock, null, null, null, null, null, null, null, null, null, null, i.ashDust);
 	}
 	
 	public static void addBlock(Block made, Item used) {

@@ -48,10 +48,11 @@ public class EntityStaringGuardian extends EntityModVillager {
 
 	@Override
 	public void addRecipies(MerchantRecipeList list) {
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.darkCrystal, 15), new ItemStack(JourneyItems.depthsSlayer, 1)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.beastlyStomach, 15), new ItemStack(JourneyItems.depthsBow, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.darkCrystal, 16), new ItemStack(JourneyItems.depthsSlayer, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.beastlyStomach, 16), new ItemStack(JourneyItems.depthsBow, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.depthsSlayer, 1), new ItemStack(JourneyItems.depthsDarksword, 1)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.depthsBow, 1), new ItemStack(JourneyItems.darkEnforcer, 1)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.depthsFlake, 15), new ItemStack(JourneyItems.darkCrystal, 16), new ItemStack(JourneyItems.darkKey, 1)));
 		
 	}
 }
