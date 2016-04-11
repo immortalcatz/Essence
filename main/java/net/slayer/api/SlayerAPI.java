@@ -68,7 +68,7 @@ public class SlayerAPI {
 			MOD_ID = "essence", PREFIX = MOD_ID + ":", 
 			MOD_VERSION = "1.1.0_3"; 
 	public static final boolean 
-			DEVMODE = true, 
+			DEVMODE = false, 
 			BETA = false;
 
 	public static void addRecipe(ItemStack i, Object... o) {

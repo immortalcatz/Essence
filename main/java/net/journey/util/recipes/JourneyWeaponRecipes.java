@@ -26,10 +26,8 @@ public class JourneyWeaponRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.reinforcedCrystalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.reinforcedCrystalIngot, 'i', JourneyItems.stoneStick});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.pedalSword), new Object[] {"d", "d", "i", 'd', JourneyItems.floroPedal, 'i', JourneyItems.stoneClump});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {"d", "d", "i", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
-		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
-		GameRegistry.addRecipe(new ItemStack(i.demonicSword),new Object[] {"d", "d", "i", 'd', i.demonicBone, 'i', i.demonicDust});
-		GameRegistry.addRecipe(new ItemStack(i.withicHammer),new Object[] {"ddd", "did", "i", 'd', i.hellcrustIngot, 'i', i.withicSpine});
-		GameRegistry.addRecipe(new ItemStack(i.nethicHammer),new Object[] {"jdj", "did", "i", 'd', b.hellstoneBlock, 'i', i.hellstoneClump, 'j', i.flamingSpring});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.demonicSword),new Object[] {"d", "d", "i", 'd', i.demonicBone, 'i', i.demonicDust});
 	}
 
 	private static void addSword(Item sword, Item ingot) {

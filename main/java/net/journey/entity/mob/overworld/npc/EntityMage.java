@@ -52,7 +52,7 @@ public class EntityMage extends EntityModVillager {
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.greenGem, 10), new ItemStack(JourneyItems.staffOfGreenpace)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.hellstoneIngot, 10), new ItemStack(JourneyItems.staffOfHellstone)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.purpleGem, 10), new ItemStack(JourneyItems.doomsBringer)));
-		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.yellowGem, 0), new ItemStack(JourneyItems.wizardsStar)));
+		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.yellowGem, 10), new ItemStack(JourneyItems.wizardsStar)));
 		//list.add(new MerchantRecipe(new ItemStack(EssenceItems.staffBase, 1), new ItemStack(EssenceItems.hellstoneIngot, 5), new ItemStack(EssenceItems.chaosCannon)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.staffBase, 1), new ItemStack(JourneyItems.blueGem, 10), new ItemStack(JourneyItems.staffOfEnlightenment)));
 		list.add(new MerchantRecipe(new ItemStack(JourneyItems.greenGem, 10), new ItemStack(JourneyItems.staffOfGreenpace, 1), new ItemStack(JourneyItems.conjuringStaff)));		
