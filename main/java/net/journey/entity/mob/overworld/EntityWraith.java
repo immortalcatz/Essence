@@ -3,8 +3,12 @@ package net.journey.entity.mob.overworld;
 import net.journey.JourneyItems;
 import net.journey.entity.MobStats;
 import net.journey.enums.EnumSounds;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.slayer.api.entity.EntityModMob;
 
@@ -15,7 +19,7 @@ public class EntityWraith extends EntityModMob {
 	public EntityWraith(World par1World) {
 		super(par1World);
 		addAttackingAI();
-		setSize(2.0F, 1.0F);
+		setSize(1.0F, 2.0F);
 		dataWatcher.updateObject(ENTITY_TYPE, rand.nextInt(4));
 	}
 	
@@ -35,6 +39,50 @@ public class EntityWraith extends EntityModMob {
 	public double setMaxHealth(MobStats s) {
 		return s.overworldHealth;
 	}
+	
+	@Override
+    public void onLivingUpdate()
+    {
+        if (this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isChild())
+        {
+            float f = this.getBrightness(1.0F);
+            BlockPos blockpos = new BlockPos(this.posX, (double)Math.round(this.posY), this.posZ);
+
+            if (f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.worldObj.canSeeSky(blockpos))
+            {
+                boolean flag = true;
+                ItemStack itemstack = this.getEquipmentInSlot(4);
+
+                if (itemstack != null)
+                {
+                    if (itemstack.isItemStackDamageable())
+                    {
+                        itemstack.setItemDamage(itemstack.getItemDamage() + this.rand.nextInt(2));
+
+                        if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
+                        {
+                            this.renderBrokenItemStack(itemstack);
+                            this.setCurrentItemOrArmor(4, (ItemStack)null);
+                        }
+                    }
+
+                    flag = false;
+                }
+
+                if (flag)
+                {
+                    this.setDead();
+                }
+            }
+        }
+
+        if (this.isRiding() && this.getAttackTarget() != null && this.ridingEntity instanceof EntityChicken)
+        {
+            ((EntityLiving)this.ridingEntity).getNavigator().setPath(this.getNavigator().getPath(), 1.5D);
+        }
+
+        super.onLivingUpdate();
+    }
 
 	@Override
 	public EnumSounds setLivingSound() {

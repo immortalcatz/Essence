@@ -28,6 +28,8 @@ public class JourneyWeaponRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.crystalBlade), new Object[] {"d", "d", "i", 'd', JourneyItems.caveCrystal, 'i', Blocks.stone});
 		GameRegistry.addRecipe(new ItemStack(i.flameBow), new Object[] {" fs", "f s", " fs", 'f', Items.fire_charge, 's', Items.string});
 		GameRegistry.addRecipe(new ItemStack(i.demonicSword),new Object[] {"d", "d", "i", 'd', i.demonicBone, 'i', i.demonicDust});
+		GameRegistry.addRecipe(new ItemStack(i.withicHammer),new Object[] {"ddd", "did", "i", 'd', i.hellcrustIngot, 'i', i.withicSpine});
+		GameRegistry.addRecipe(new ItemStack(i.nethicHammer),new Object[] {"jdj", "did", "i", 'd', b.hellstoneBlock, 'i', i.hellstoneClump, 'j', i.flamingSpring});
 	}
 
 	private static void addSword(Item sword, Item ingot) {

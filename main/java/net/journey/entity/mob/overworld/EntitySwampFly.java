@@ -57,6 +57,7 @@ public class EntitySwampFly extends EntityModFlying {
 		return EnumSounds.EMPTY;
 	}
 	
+	@Override
     public void onLivingUpdate()
     {
         if (this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isChild())

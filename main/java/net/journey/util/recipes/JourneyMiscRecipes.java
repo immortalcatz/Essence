@@ -24,22 +24,22 @@ public class JourneyMiscRecipes {
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.blazehornHelmet), new Object[] {"idi", "d d", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.blazehornChest), new Object[] {"i i", "did", "idi", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.blazehornLegs), new Object[] {"idi", "d d", "i i", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.blazehornChest), new Object[] {"d d", "i i", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.blazehornBoots), new Object[] {"d d", "i i", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.fireboundHelmet), new Object[] {"idi", "d d", 'd', Items.blaze_rod, 'i', JourneyBlocks.hellstoneBlock});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.fireboundChest), new Object[] {"i i", "did", "idi", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.fireboundLegs), new Object[] {"idi", "d d", "i i", 'd', Items.blaze_rod, 'i', JourneyItems.horn});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.fireboundChest), new Object[] {"d d", "i i", 'd', Items.blaze_rod, 'i', JourneyBlocks.hellstoneBlock});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.fireboundBoots), new Object[] {"d d", "i i", 'd', Items.blaze_rod, 'i', JourneyBlocks.hellstoneBlock});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bloodcrustHelmet), new Object[] {"idi", "d d", 'd', JourneyItems.hellstoneIngot, 'i', JourneyItems.hellcrustIngot});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bloodcrustChest), new Object[] {"i i", "did", "idi", 'd', JourneyItems.hellstoneIngot, 'i', JourneyItems.hellcrustIngot});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bloodcrustLegs), new Object[] {"idi", "d d", "i i", 'd', JourneyItems.hellstoneIngot, 'i', JourneyItems.hellcrustIngot});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.bloodcrustChest), new Object[] {"d d", "i i", 'd', JourneyItems.hellstoneIngot, 'i', JourneyItems.hellcrustIngot});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.bloodcrustBoots), new Object[] {"d d", "i i", 'd', JourneyItems.hellstoneIngot, 'i', JourneyItems.hellcrustIngot});
 		
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockHelmet), new Object[] {"idi", "d d", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockChest), new Object[] {"i i", "did", "idi", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
 		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockLegs), new Object[] {"idi", "d d", "i i", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
-		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockChest), new Object[] {"d d", "i i", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
+		GameRegistry.addRecipe(new ItemStack(JourneyItems.bleedrockBoots), new Object[] {"d d", "i i", 'd', JourneyBlocks.lavaRock, 'i', JourneyItems.concentratedBlood});
 		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.woodMultiTool), new Object[] {Items.wooden_pickaxe, Items.wooden_shovel, Items.wooden_hoe, Items.wooden_axe});
 		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.stoneMultiTool), new Object[] {Items.stone_pickaxe, Items.stone_shovel, Items.stone_hoe, Items.stone_axe});
 		GameRegistry.addShapelessRecipe(new ItemStack(JourneyItems.ironMultiTool), new Object[] {Items.iron_pickaxe, Items.iron_shovel, Items.iron_hoe, Items.iron_axe});
