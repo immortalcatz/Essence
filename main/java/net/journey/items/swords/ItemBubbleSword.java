@@ -30,7 +30,7 @@ public class ItemBubbleSword extends ItemModSword {
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase hit, EntityLivingBase player) {
 		hit.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 1000, 200));
-		player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 100, 20));
+		player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 10, 2));
 		addParticles(hit);
 		return super.hitEntity(par1ItemStack, hit, player);
 	}

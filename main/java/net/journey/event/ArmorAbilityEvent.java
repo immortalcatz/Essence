@@ -166,7 +166,7 @@ public class ArmorAbilityEvent{
 				JourneyItems.enlightenerLegs && boots == 
 				JourneyItems.enlightenerBoots) {
 			event.player.addPotionEffect(new PotionEffect(Potion.jump.id, 10, 3));
-			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 1));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 10));
 		}
 		
 		else if(helmet == 
@@ -183,7 +183,7 @@ public class ArmorAbilityEvent{
 				JourneyItems.frostbittenChest && legs == 
 				JourneyItems.frostbittenLegs && boots == 
 				JourneyItems.frostbittenBoots) {
-			event.player.addPotionEffect(new PotionEffect(Potion.absorption.id, 240, 55));
+			event.player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 10, 1));
 		}
 		
 		else if(helmet == 
@@ -200,7 +200,7 @@ public class ArmorAbilityEvent{
 				JourneyItems.bloodcrustLegs && boots == 
 				JourneyItems.bloodcrustBoots) {
 			event.player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 10, 5));
-			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 5));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 4));
 		}
 		
 		else if(helmet == 
@@ -208,8 +208,8 @@ public class ArmorAbilityEvent{
 				JourneyItems.bleedrockChest && legs == 
 				JourneyItems.bleedrockLegs && boots == 
 				JourneyItems.bleedrockBoots) {
-			event.player.addPotionEffect(new PotionEffect(Potion.absorption.id, 10, 5));
-			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 5));
+			event.player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 1));
+			event.player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 4));
 		}
 		
 		else if(helmet == 

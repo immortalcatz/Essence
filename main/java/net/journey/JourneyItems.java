@@ -355,7 +355,7 @@ public class JourneyItems {
 	public static final Item netherBeastOrb = new ItemNetherBossSpawner("netherBeastOrb", "Nether Beast Orb");
 	public static final Item witheringBeastOrb = new ItemNetherBossSpawner("witheringBeastOrb", "Withering Soul");
 	public static final Item eudorOrb = new ItemSpecificDimensionSpawner(Config.euca, "eudorOrb", "Valuable Crown", "Euca");
-	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Blazier Orb", "Boiling Point");
+	public static final Item blazierOrb = new ItemSpecificDimensionSpawner(Config.boil, "blazierOrb", "Burning Fireball", "Boiling Point");
 	public static final Item rocSpawnEgg = new ItemSpecificDimensionSpawner(0, "rocPetSpawnEgg", "Pet Roc Egg", "Overworld");
 	public static final Item soulWatcherOrb = new ItemNetherBossSpawner("soulWatcherOrb", "Soulless Eye");
 	public static final Item sentryKingOrb = new ItemSpecificDimensionSpawner(Config.corba, "sentryKingOrb", "Eye of the Sentry", "Corba");

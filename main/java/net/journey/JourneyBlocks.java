@@ -164,10 +164,10 @@ public class JourneyBlocks {
 	public static final Block corbaLeaves = new BlockModLeaves("corbaLeaves", "Corba Leaves", 0.2F);
 	public static final Block corbaPillar = new BlockMod("corbaPillar", "Corba Pillar");
 	public static final Block corbaPlank = new BlockMod(EnumMaterialTypes.WOOD, "corbaPlank", "Corba Plank", 0.5F);
-	public static final Block corbaLamp = new BlockMod("corbaLamp", "Corba Lamp").setLightLevel(1.0F);
+	public static final Block corbaLamp = new BlockMod("corbaLamp", "Corba Lamp").setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	public static final Block corbaSentryBrick = new BlockMod("corbaSentryBrick", "Corba Sentry Brick");
 	
-	public static final Block boilingLamp = new BlockDungeonBlock("boilingLamp", "Boiling Lamp", true).setLightLevel(1.0F);
+	public static final Block boilingLamp = new BlockDungeonBlock("boilingLamp", "Boiling Lamp", true).setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	public static final Block blazierBricks = new BlockMod("blazierBricks", "Blazier Bricks"); 
 	public static final BlockMod ashBlock = new BlockMod("ashBlock", "Ash");
 	public static final Block hotBlock = new BlockModGrass(ashBlock, "hotGround", "Hot Ground", 2.0F);
@@ -187,7 +187,7 @@ public class JourneyBlocks {
 	public static final Block cloudiaWall = new BlockMod("cloudiaWall", "Cloudia Wall").setLightLevel(0.5F);  
 	public static final Block cloudiaTile = new BlockMod("cloudiaTile", "Cloudia Tile").setLightLevel(0.5F); 
 	public static final Block cloudiaLeaves = new BlockModLeaves("cloudiaLeaves", "Cloudia Leaves", 0.5F).setLightLevel(2);
-	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp", "Cloudia Lamp").setLightLevel(1.0F);
+	public static final Block cloudiaLamp = new BlockMod("cloudiaLamp", "Cloudia Lamp").setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	//public static final Block cloudiaPost = new BlockCloudiaPost("cloudiaPost");
 	public static final Block pinkCloudiaCloud = new BlockCloud("pinkCloudiaCloud", "Pink Cloudia Cloud");
 	public static final Block blueCloudiaCloud = new BlockCloud("blueCloudiaCloud", "Blue Cloudia Cloud");
@@ -247,7 +247,7 @@ public class JourneyBlocks {
 	public static final Block dungeonCrackedBrick = new BlockDungeonBlock("dungeonCrackedBrick", "Dungeon Cracked Brick");
 	public static final Block dungeonChisledBrick = new BlockDungeonBlock("dungeonChiseledBrick", "Dungeon Chiseled Brick");
 	public static final Block dungeonBrickCarved = new BlockDungeonBlock("dungeonBrickCarved", "Dungeon Carved Brick");
-	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", "Dungeon Lamp", true).setLightLevel(1);
+	public static final Block dungeonLamp = new BlockDungeonBlock("dungeonLamp", "Dungeon Lamp", true).setLightLevel(1).setCreativeTab(JourneyTabs.decoration);
 	
 	public static final Block dungeonBrickStairs = new BlockModStairs(dungeonBrick, "dungeonBrickStairs", "Dungeon Brick Stairs");
 	public static final Block dungeonCrackedBrickStairs = new BlockModStairs(dungeonCrackedBrick, "dungeonCrackedBrickStairs", "Cracked Dungeon Brick Stairs");
@@ -274,7 +274,7 @@ public class JourneyBlocks {
 	public static final Block terranianPanels = new BlockMod("terranianPanels", "Terranian Panels", 2.0F);
 	public static final BlockModFlower terranianTallgrass = new BlockModFlower("terranianTallgrass", "Terranian Tallgrass");
 	public static final Block terragrow = new BlockModMobFlower("terragrow", "Terranian Flower");
-	public static final Block terraniaLamp = new BlockMod("terraniaLamp", "Terrania Lamp").setLightLevel(1.0F);
+	public static final Block terraniaLamp = new BlockMod("terraniaLamp", "Terrania Lamp").setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	
 	public static final Block hotBrick = new BlockMod("hotBrick", "Hot Brick", 2.0F);
 	public static final Block hotBrick_fence = new BlockModFence(hotBrick, "hotBrickFence", "Hot Brick Fence");
@@ -319,7 +319,7 @@ public class JourneyBlocks {
 	public static final Block workshopCarpet = new BlockMod(EnumMaterialTypes.WOOL, "workshopCarpet", "Workshop Carpet", 0.5F);
 	public static final Block frozenGlass = new BlockJoinedGlass("frozenGlass", "Frozen Glass");
 	//public static final Block frozenPane = new BlockJoinedPane("frozenGlass");
-	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", "Frozen Lamp", 0.5F).setLightLevel(1.0F);
+	public static final Block frozenLamp = new BlockMod(EnumMaterialTypes.GLASS, "frozenLamp", "Frozen Lamp", 0.5F).setLightLevel(1.0F).setCreativeTab(JourneyTabs.decoration);
 	public static final Block workshopStone = new BlockMod(EnumMaterialTypes.STONE, "workshopStone", "Workshop Stone", 0.5F);
 	public static final Block workshopStoneStair = new BlockModStairs(workshopStone, "workshopStairs", "Workshop Stairs");
 	public static final Block workshopStoneFence = new BlockModFence(workshopStone, "workshopStoneFence", "Workshop Fence");
@@ -357,7 +357,7 @@ public class JourneyBlocks {
 	public static final Block blueGems = new BlockGemBlock("blueGems", "Blue Gems", false);
 	public static final Block redGems = new BlockGemBlock("redGems", "Red Gems", true);
 	
-	public static final Block stoneCraftingTable = new BlockStoneCraftingTable("stoneCraftingTable", "Stone Crafting Table");
+	public static final Block stoneCraftingTable = new BlockStoneCraftingTable("stoneCraftingTable", "Stone Crafting Table").setCreativeTab(JourneyTabs.machineBlocks);
 
 	public static final Block blackBlock = new BlockMod(EnumMaterialTypes.STONE, "blackBlock", "Black Block", 0.5F);
 	public static final Block whiteBlock = new BlockMod(EnumMaterialTypes.STONE, "whiteBlock", "White Block", 0.5F);
@@ -368,7 +368,7 @@ public class JourneyBlocks {
 	public static final Block corbaLadder = new BlockModLadder("corbaLadder", "Corba Ladder", 0);
 	public static final Block largeNetherBrick = new BlockMod("largeNetherBrick", "Large Nether Brick");
 	public static final Block compactNetherBrick = new BlockMod("compactNetherBrick", "Compact Nether Brick").setBlockUnbreakable();
-	public static final Block nethicLamp = new BlockMod("nethicLamp", "Nethic Lamp").setLightLevel(1);
+	public static final Block nethicLamp = new BlockMod("nethicLamp", "Nethic Lamp").setLightLevel(1).setCreativeTab(JourneyTabs.decoration);
 	
 	public static final Block knowledgeTable = new BlockKnowledgeTable("knowledgeTable", "Knowledge Table").setCreativeTab(null);
 	public static final Block summoningTable = new BlockSummoningTable("summoningTable", "Summoning Table");
