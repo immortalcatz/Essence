@@ -34,7 +34,10 @@ public class UpdateCheckerEvent {
 						}
 						if(UpdateChecker.isUpdateAvailable() && UpdateChecker.isOnline()) {
 							BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/version.txt").openStream()));
+							BufferedReader changelogFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/ingame_changelog.txt").openStream()));
 							String curVersion = versionFile.readLine();
+							String changelog = changelogFile.readLine();
+							
 							SlayerAPI.addChatMessage(p, EnumChatFormatting.GOLD + "[|--------------------------------------------------|]"); 
 							SlayerAPI.addChatMessage(p, EnumChatFormatting.GOLD + "[Version: " + SlayerAPI.MOD_VERSION + "]");
 							SlayerAPI.addChatMessage(p, EnumChatFormatting.RED + "A Journey into the Light update is avaliable.");
