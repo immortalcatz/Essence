@@ -20,13 +20,12 @@ public class UpdateChecker {
 
 	public static boolean isUpdateAvailable() throws IOException, MalformedURLException {
 		BufferedReader versionFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/version.txt").openStream()));
-		BufferedReader changelogFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/ingame_changelog.txt").openStream()));
+		//BufferedReader changelogFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/TheSlayerMC/Essence/master/main/resources/assets/essence/ingame_changelog.txt").openStream()));
 		String curVersion = versionFile.readLine();
-		String changelog = changelogFile.readLine();
+		//String changelog = changelogFile.readLine();
 		versionFile.close();
-		changelogFile.close();
+		//changelogFile.close();
 		if(!curVersion.contentEquals(SlayerAPI.MOD_VERSION)) return true;
-		if(!changelog.contentEquals(SlayerAPI.MOD_VERSION)) return true;
 		return false;
 	}
 
