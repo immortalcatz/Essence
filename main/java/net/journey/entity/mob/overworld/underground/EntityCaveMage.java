@@ -74,17 +74,17 @@ public class EntityCaveMage extends EntityModMob implements IRangedAttackMob {
 
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.INSECTO;
+		return EnumSounds.ROCK;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.INSECTO_HURT;
+		return EnumSounds.ROCK;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.INSECTO_HURT;
+		return EnumSounds.CAVE_MOB;
 	}
 
 	@Override

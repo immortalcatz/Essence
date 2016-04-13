@@ -26,10 +26,7 @@ import net.minecraftforge.oredict.*;
 import net.slayer.api.*;
 
 public class CommonProxy {
-
-	public static Achievement achievementOre;
-	public static Achievement achievementGem;
-	public static Achievement achievementSapphireSword;
+	
 	public void updateDarkEnergy(int amount) { }
 	public void updateEssence(int amount) { }
 	public void updatePower(int amount) { }
@@ -41,6 +38,7 @@ public class CommonProxy {
 	public void registerModModels() { }
 	
 	public void preInit(FMLPreInitializationEvent event) {
+		JourneyAchievements.init();
 		Config.init(event);
 		//Essence.tropicalWater.setBlock(EssenceBlocks.tropicalWater);
 		EntityRegistry.init();
@@ -74,14 +72,6 @@ public class CommonProxy {
 		FMLCommonHandler.instance().bus().register(new JourneyDungeonEvent());
 	}
 	public void init(FMLInitializationEvent event) {
-		achievementOre = (Achievement) new Achievement("achievement.ore", "ore", 0, 0, new ItemStack(JourneyItems.sapphire), (Achievement)null).initIndependentStat().registerStat();
-		achievementGem = (Achievement) new Achievement("achievement.gem", "gem", -2, 0, new ItemStack(JourneyItems.blueGem), (Achievement)null).initIndependentStat().registerStat();
-		achievementSapphireSword = (Achievement) new Achievement("achievement.sapphireSword", "sapphireSword", 0, 2, new ItemStack(JourneyItems.sapphireSword), achievementOre).registerStat();	
-		AchievementPage ap = new AchievementPage("Journey Achievements", new Achievement[]
-				{achievementOre, 
-				 achievementSapphireSword, 
-				 achievementGem});
-		AchievementPage.registerAchievementPage(ap);
 		GameRegistry.registerWorldGenerator(new WorldGenEssence(), 2);
 		SlayerAPI.registerEvent(new PlayerEvent());
 		//EssenceAchievements.init();

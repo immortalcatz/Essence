@@ -5,7 +5,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public enum EnumSounds {
-
+	ROCK("essence:rock"),
+	BASE_MOB_HURT("essence:baseMobHurt"),
+	CAVE_MOB("essence:caveMob"),
+	BOSS_DEATH("essence:bossDeath"),
 	SLUG("essence:terraSlug"),
 	SLUG_HURT("essence:terraSlugHurt"),
 	SLUG_DEATH("essence:terraSlugDeath"),

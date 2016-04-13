@@ -29,10 +29,10 @@ public abstract class EntityEssenceBoss extends EntityModMob implements IEssence
 		return super.getHealth();
 	}
 	
-    protected String getDeathSound()
-    {
-        return "mob.wither.death";
-    }
+	@Override
+	public EnumSounds setDeathSound() {
+		return EnumSounds.BOSS_DEATH;
+	}
     
     @Override
     public float getSoundVolume() {

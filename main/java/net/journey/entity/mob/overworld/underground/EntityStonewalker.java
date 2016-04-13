@@ -31,17 +31,17 @@ public class EntityStonewalker extends EntityModMob {
 	
 	@Override
 	public EnumSounds setLivingSound() {
-		return EnumSounds.HONGO;
+		return EnumSounds.CAVE_MOB;
 	}
 
 	@Override
 	public EnumSounds setHurtSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.ROCK;
 	}
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.HONGO_HURT;
+		return EnumSounds.BASE_MOB_HURT;
 	}
 
 	@Override

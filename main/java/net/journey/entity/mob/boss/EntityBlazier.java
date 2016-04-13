@@ -206,7 +206,7 @@ public class EntityBlazier extends EntityEssenceBoss implements IRangedAttackMob
 
 	@Override
 	public EnumSounds setDeathSound() {
-		return EnumSounds.BLAZE_DEATH;
+		return EnumSounds.BOSS_DEATH;
 	}
 
 	@Override
