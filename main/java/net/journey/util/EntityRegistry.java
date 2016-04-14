@@ -23,6 +23,7 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.overworld.underground.npc.EntityRockiteGolem;
 import net.journey.entity.mob.pet.EntityShiverwolf;
 import net.journey.entity.mob.pet.EntityTameRoc;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
@@ -223,6 +224,7 @@ public class EntityRegistry {
 		SlayerAPI.registerNPC(EntityTerranianTrader.class, "terranianTrader", "Terranian Trader");
 		SlayerAPI.registerNPC(EntityOvergrownMerchant.class, "overgrownMurchant", "Overgrown Merchant");
 		SlayerAPI.registerNPC(EntityTerranianEnchanter.class, "terranianEnchanter", "Terranian Enchanter");
+		SlayerAPI.registerNPC(EntityRockiteGolem.class, "rockiteGolem", "Rockite Golem");
 	}
 
 	public static void registerBosses() {

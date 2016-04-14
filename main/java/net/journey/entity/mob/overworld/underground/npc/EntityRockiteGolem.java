@@ -1,4 +1,4 @@
-package net.journey.entity.mob.overworld.npc;
+package net.journey.entity.mob.overworld.underground.npc;
 
 import net.journey.JourneyItems;
 import net.journey.client.GuiHandler.GuiIDs;

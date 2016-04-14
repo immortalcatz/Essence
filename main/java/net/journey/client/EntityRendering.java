@@ -20,6 +20,7 @@ import net.journey.client.render.model.mob.nether.ModelWitherspine;
 import net.journey.client.render.model.mob.overworld.*;
 import net.journey.client.render.model.mob.overworld.ModelWraith;
 import net.journey.client.render.model.mob.overworld.underground.*;
+import net.journey.client.render.model.mob.overworld.underground.npc.ModelRockiteGolem;
 import net.journey.client.render.model.mob.terrania.mob.ModelPurplian;
 import net.journey.client.render.model.mob.terrania.mob.ModelTerraScatterer;
 import net.journey.client.render.model.mob.terrania.mob.ModelTerragrow;
@@ -52,6 +53,7 @@ import net.journey.entity.mob.overworld.*;
 import net.journey.entity.mob.overworld.EntityWraith;
 import net.journey.entity.mob.overworld.npc.*;
 import net.journey.entity.mob.overworld.underground.*;
+import net.journey.entity.mob.overworld.underground.npc.EntityRockiteGolem;
 import net.journey.entity.mob.pet.EntityShiverwolf;
 import net.journey.entity.mob.pet.EntityTameRoc;
 import net.journey.entity.mob.terrania.mob.EntityPurplian;
@@ -208,6 +210,8 @@ public class EntityRendering {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellCow.class, new RenderModMob(new ModelHellCow(), Textures.hellCow));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTerragrow.class, new RenderModMob(new ModelTerragrow(), Textures.terragrow));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTerrashroom.class, new RenderModMob(new ModelBigHongo(), Textures.terrashroom));
+		RenderingRegistry.registerEntityRenderingHandler(EntityStarlightGolem.class, new RenderModMob(new ModelStarlightGolem(), Textures.starlightGolem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRockiteGolem.class, new RenderModMob(new ModelRockiteGolem(), Textures.rockiteGolem));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDragonEgg.class, new RenderDragonEgg(new ModelDragonEgg()));
 		
