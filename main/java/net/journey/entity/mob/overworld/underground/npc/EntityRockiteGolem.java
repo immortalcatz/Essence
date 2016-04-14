@@ -29,7 +29,7 @@ public class EntityRockiteGolem extends EntityModVillager {
 			SlayerAPI.addFormattedChatMessage(p, "Rockite: What are you made out of? You don't look like rock to me.");
 			break;
 		case 2:
-			SlayerAPI.addFormattedChatMessage(p, "It gets dark down here sometimes. The glowshrooms help a bit, however.");
+			SlayerAPI.addFormattedChatMessage(p, "Rockite: It gets dark down here sometimes. The glowshrooms help a bit, however.");
 			break;
 		}
 	}
